@@ -101,3 +101,19 @@ div#filter i{
 margin:12px 0 0 5px;
 font-size:25px;
 }
+div.search{
+height:30px;
+line-height:0;
+}
+
+div.search button{
+margin-top:10px;
+height:26px;
+background-color:orange;
+border:0 solid white;
+color:white;
+padding:10px 15px;
+border-radius:15px;
+font-weight:bold;
+letter-spacing:1.5px;
+}
