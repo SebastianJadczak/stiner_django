@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.views.generic.list import ListView
+from .models import Post
 
-# Create your views here.
+class PostsListView(ListView):
+    model = Post
+    template_name = 'blog/list.html'
+
+    def get_queryset(self):
+        posts = super(PostsListView, self).get_queryset()
+        return posts
