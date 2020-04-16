@@ -9,11 +9,10 @@ class Post(models.Model):
         ('draft', 'Szkic'),
         ('published', 'Opublikowany'),
     )
-
+    owner = models.ForeignKey(User, related_name='posts_created', on_delete=models.CASCADE)
     title = models.CharField(max_length=30)
     slug = models.SlugField(max_length=250)
     image = models.ImageField(upload_to='media/img/%Y/%m%d')
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
