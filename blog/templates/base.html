@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %} {% endblock %}</title>
      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
@@ -26,23 +25,7 @@
         <button><a href="">Zaloguj się</a></button>
     </div>
 </div>
-<div id="filter">
-    <div class="select">
-        <select class="location">
-            <option selected>Lokalizacja</option>
-            <option value="1">Warszawa</option>
-            <option value="2">Kraków</option>
-            <option value="3">Gdańsk</option>
-        </select>
-        </div>
-    <div class="castle"><input type="checkbox"><i class="fab fa-fort-awesome"></i></div>
-    <div class="church"><input type="checkbox"><i class="fas fa-church"></i></div>
-    <div class="tree"><input type="checkbox"><i class="fas fa-tree"></i></div>
-    <div class="monument"><input type="checkbox"><i class="fas fa-landmark"></i></div>
-    <div class="culture"><input type="checkbox"><i class="fas fa-theater-masks"></i></div>
-    <div class="hotel"><input type="checkbox"><i class="fas fa-h-square"></i></i></div>
-    <div class="search"><button>Szukaj</button></div>
-</div>
+
 {% block content %}
 {% endblock %}
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>

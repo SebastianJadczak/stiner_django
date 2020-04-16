@@ -6,3 +6,4 @@ app_name = 'blog'
 urlpatterns = [
     path('', views.PostsListView.as_view(), name='list_posts')
 ]
+
