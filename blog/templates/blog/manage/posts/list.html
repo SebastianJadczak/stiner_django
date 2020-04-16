@@ -1,5 +1,24 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-edit
+
+
+<div class="content">
+    <div class="blog_title">
+        <div class="title"><p>Witaj na naszym Blogu! </p> </div>
+    </div>
+    <div class="posts">
+        {% for post in object_list %}
+            <div class="post">
+                <div class="image"><img src='{{post.image.url}}' alt=""></div>
+                <div class="title"><p>{{post.title}}</p></div>
+                <div class="body"><p>{{post.body}}</p></div>
+                <div class="info"><p>{{post.created}} {{post.owner}}</p></div>
+                {% if post.owner == request.user %}
+                <button><a href="{% url 'blog:post_edit' post.id %}">Edytuj</a></button>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

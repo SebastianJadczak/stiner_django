@@ -25,22 +25,23 @@ class OwnerPostEditMixin(OwnerPostMixin, OwnerEditMixin):
     success_url = reverse_lazy('manage_posts_list')
     template_name = 'blog/manage/posts/form.html'
 
-class ManagePostListView(ListView):
+class ManagePostListView(PermissionRequiredMixin,ListView):
     """ Widok wyświetlający wszystkie posty stworzone przez konkretnego użytkownika """
     model = Post
+    permission_required = 'blog.add_post'
     template_name = 'blog/manage/posts/list.html'
 
 class PostCreateView(PermissionRequiredMixin ,OwnerPostEditMixin, CreateView):
-   permission_required = 'posts.add_post'
+   permission_required = 'blog.add_post'
 
 class PostUpdateView(PermissionRequiredMixin ,OwnerPostEditMixin, UpdateView):
     template_name = 'blog/manage/posts/form.html'
-    permission_required = 'posts.change_post'
+    permission_required = 'blog.change_post'
 
 class PostDeleteView(OwnerPostMixin, DeleteView):
     template_name = 'blog/manage/posts/delete.html'
     success_url = reverse_lazy('manage_posts_list')
-    permission_required = 'posts.delete_post'
+    permission_required = 'blog.delete_post'
 
 
 class PostsListView(ListView):

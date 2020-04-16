@@ -68,11 +68,12 @@ margin-left:130px;
 }
 
 div.login_mapa button{
-margin-top:22px;
-padding: 10px 22px;
-border-radius:25px;
-border-style: none;
-background-color:#009900;
+    margin-top:30px;
+    width:150px;
+    height:50px;
+    border-radius:25px;
+    border-style: none;
+    background-color:#009900;
 }
 div.login_mapa button a{
 color:white;
@@ -187,15 +188,16 @@ color:blue;
 }
 
 div.login{
-margin-left:130px;
+    margin-left:130px;
 }
 
 div.login button{
-margin-top:22px;
-padding: 12px 22px;
-border-radius:25px;
-border-style: none;
-background-color:#009900;
+    margin-top:30px;
+    width:150px;
+    height:50px;
+    border-radius:25px;
+    border-style: none;
+    background-color:#009900;
 }
 div.login button a{
 color:white;

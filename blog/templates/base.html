@@ -22,7 +22,11 @@
         </ul>
     </div>
     <div class="login">
-        <button><a href="">Zaloguj się</a></button>
+        {% if user.is_authenticated %}
+        <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
+        {% else %}
+        <button><a href="{% url 'login' %}">Zaloguj się</a></button>
+        {% endif %}
     </div>
 </div>
 
