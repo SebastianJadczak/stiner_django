@@ -1,5 +1,28 @@
 {% extends "base.html" %}
 
+{% block title %}
+
+    {% if object %}
+        Edytuj post {{object.title}}
+    {% else %}
+        Dodaj nowy post
+    {% endif %}
+
+{% endblock %}
+
 {% block content %}
-{{object.title }}
+    <h2>
+        {% if object %}
+            Edytuj post "{{object.title}}"
+        {% else %}
+            Nowy post
+        {% endif %}
+    </h2>
+    <div class="form_post">
+        <form action="." method="post" >
+            {{form.as_p}}
+            {% csrf_token %}
+            <p><input type="submit" value="Zapisz"></p>
+        </form>
+    </div>
 {% endblock %}

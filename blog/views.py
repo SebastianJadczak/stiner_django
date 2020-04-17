@@ -18,11 +18,11 @@ class OwnerEditMixin(object):
 class OwnerPostMixin(OwnerMixin, LoginRequiredMixin):
     model = Post
     fields = ['title', 'image', 'body', 'slug']
-    success_url = reverse_lazy('manage_posts_list')
+    success_url = reverse_lazy('blog:manage_post_list')
 
 class OwnerPostEditMixin(OwnerPostMixin, OwnerEditMixin):
     fields =['title', 'image', 'body', 'slug']
-    success_url = reverse_lazy('manage_posts_list')
+    success_url = reverse_lazy('blog:manage_post_list')
     template_name = 'blog/manage/posts/form.html'
 
 class ManagePostListView(PermissionRequiredMixin,ListView):
@@ -40,7 +40,7 @@ class PostUpdateView(PermissionRequiredMixin ,OwnerPostEditMixin, UpdateView):
 
 class PostDeleteView(OwnerPostMixin, DeleteView):
     template_name = 'blog/manage/posts/delete.html'
-    success_url = reverse_lazy('manage_posts_list')
+    success_url = reverse_lazy('blog:manage_post_list')
     permission_required = 'blog.delete_post'
 
 
