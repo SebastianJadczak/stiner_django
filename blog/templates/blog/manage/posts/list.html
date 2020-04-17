@@ -7,6 +7,10 @@
     <div class="blog_title">
         <div class="title"><p>Witaj na naszym Blogu! </p> </div>
     </div>
+    <div class="panel_moderator_blog">
+        <span>Panel moderatora: </span>
+        <button><a href="{%url 'blog:post_create' %}">Dodaj wpis</a></button>
+    </div>
     <div class="posts">
         {% for post in object_list %}
             <div class="post">

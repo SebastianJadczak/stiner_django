@@ -315,3 +315,27 @@ div.posts div.post div.title p{
 div.posts div.post div.body{
     margin:0;
 }
+/* Podstrona Edytuj Posty / Dodaj posty */
+
+div.panel_moderator_blog{
+    border: 2px solid green;
+    background-color: #fffe93;
+    margin-top: 10px;
+    padding: 10px 30px;
+}
+div.panel_moderator_blog span{
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    margin-right: 50px;
+    font-weight: bold;
+}
+div.panel_moderator_blog button{
+    background-color: green;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 0 white;
+    border: 1px solid white;
+}
+div.panel_moderator_blog button a{
+     color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
