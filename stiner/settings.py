@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'map.apps.MapConfig',
     'blog.apps.BlogConfig',
-    'shop.apps.ShopConfig'
+    'shop.apps.ShopConfig',
+    'management.apps.ManagementConfig'
 ]
 
 MIDDLEWARE = [

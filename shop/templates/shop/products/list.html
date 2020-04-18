@@ -9,12 +9,16 @@ Lista produktów:
 
 
 {% for ob in products %}
-{{ob}}
+
+<a href='{% url "shop:product_detail" ob.name %}'> {{ob.name}}</a>
 {% endfor %}
-<br>
+
+
+
 <br>
 {% for ob in category %}
 {{ob.name}}
+<a href='{% url "shop:products_list_category" ob.name %}'> {{ob.name}}</a>
 {% endfor %}
 
 
