@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+Lista produktów:
+
+
+
+
+{% for ob in products %}
+{{ob}}
+{% endfor %}
+<br>
+<br>
+{% for ob in category %}
+{{ob.name}}
+{% endfor %}
+
+
+{% endblock %}
