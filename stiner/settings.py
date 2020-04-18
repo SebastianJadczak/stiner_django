@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'map.apps.MapConfig',
     'blog.apps.BlogConfig',
     'shop.apps.ShopConfig',
-    'management.apps.ManagementConfig'
+
 ]
 
 MIDDLEWARE = [
