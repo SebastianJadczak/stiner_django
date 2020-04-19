@@ -11,16 +11,8 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<div id="top">
+<div id="top_manage">
     <div class="logo"><img src="{% static 'img/logo.png' %}" alt="logo"></div>
-    <div class="menu">
-        <ul>
-            <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
-            <li class="green"><a href="#"><i class="fas fa-map-signs"></i>Trasy</a></li>
-            <li class="blue"><a href="{% url "blog:list_posts" %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
-        </ul>
-    </div>
     <div class="login">
         {% if user.is_authenticated %}
         <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
@@ -29,9 +21,19 @@
         {% endif %}
     </div>
 </div>
+<div class="management">
+    <div class="management_menu">
+        <span>Panel moderatora: </span>
+        <p class="management_menu_section">Blog:</p>
+        <button><a href="{%url 'management:blog_manage_post_list' %}">Wszystkie wpisy</a></button>
+        <button><a href="{%url 'management:blog_post_create' %}">Dodaj wpis</a></button>
+        <button><a href="{%url 'management:blog_posts_edit' %}">Edytuj wpis</a></button>
+        <button><a href="{%url 'management:blog_posts_delete' %}">Usuń wpis</a></button>
+    </div>
 
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
+</div>
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+{% extends "base1.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="content">
+    <div class="posts">
+        {% for post in object_list %}
+            <div class="post">
+                <div class="image"><img src='{{post.image.url}}' alt=""></div>
+                <div class="title"><p>{{post.title}}</p></div>
+                <div class="body"><p>{{post.body}}</p></div>
+                <div class="info"><p>{{post.created}} {{post.owner}}</p></div>
+                <button><a href="{% url 'management:blog_post_edit' post.id %}">Edytuj</a></button>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
