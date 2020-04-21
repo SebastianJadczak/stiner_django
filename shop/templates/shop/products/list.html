@@ -3,23 +3,38 @@
 
 {% block content %}
 
-Lista produktów:
+
+
+    <div class="promotion">
+
+    </div>
+    <div class="about_us">
+        <h2>O Nas</h2>
+    </div>
+    <div class="categories_list">
+        <h2>Kategorie produktów</h2>
+        {% for ob in category %}
+            <div class="category">
+                <div class="image_category"></div>
+                <a href='{% url "shop:products_list_category" ob.name %}'> {{ob.name}}</a>
+            </div>
+    {% endfor %}
+
+    </div>
+
+
+    Najnowsze produkty:
+
+    {% for ob in products %}
+        <div class="products">
+            <div class="image_product"></div>
+            <a href='{% url "shop:product_detail" ob.name %}'> {{ob.name}}</a>
+        </div>
+    {% endfor %}
 
 
 
-
-{% for ob in products %}
-
-<a href='{% url "shop:product_detail" ob.name %}'> {{ob.name}}</a>
-{% endfor %}
-
-
-
-<br>
-{% for ob in category %}
-{{ob.name}}
-<a href='{% url "shop:products_list_category" ob.name %}'> {{ob.name}}</a>
-{% endfor %}
+    <br>
 
 
 {% endblock %}

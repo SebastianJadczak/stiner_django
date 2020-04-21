@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="create_post">
     <h2>
         {% if object %}
             Edytuj post "{{object.title}}"
@@ -24,5 +25,6 @@
             {% csrf_token %}
             <p><input type="submit" value="Zapisz"></p>
         </form>
+    </div>
     </div>
 {% endblock %}

@@ -43,8 +43,12 @@ div#top div.menu ul li.blue a{
 color:blue;
 }
 div#top div.menu ul li.green a{
-color:green
+color:green;
 }
+div#top div.menu ul li.gold a{
+color: #ffe21f;
+}
+
 
 div#top div.menu ul li a i{
 font-size:25px;

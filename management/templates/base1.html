@@ -29,6 +29,11 @@
         <button><a href="{%url 'management:blog_post_create' %}">Dodaj wpis</a></button>
         <button><a href="{%url 'management:blog_posts_edit' %}">Edytuj wpis</a></button>
         <button><a href="{%url 'management:blog_posts_delete' %}">Usuń wpis</a></button>
+
+         <p class="management_menu_section">Sklep:</p>
+        <button><a href="{%url 'management:shop_manage_post_list' %}">Wszystkie produkty</a></button>
+
+        <button class="exit_manage"><a href="{%url 'map' %}">Wyjście z panelu</a></button>
     </div>
 
     {% block content %}

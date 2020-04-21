@@ -4,6 +4,7 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from blog.models import Post
+from shop.models import Product
 
 
 class OwnerMixin(object):
@@ -17,6 +18,8 @@ class OwnerEditMixin(object):
         form.instance.owner = self.request.user
         return super(OwnerEditMixin, self).form_valid(form)
 
+
+""" Widoki sekcji Blog """
 
 class BlogOwnerPostMixin(OwnerMixin, LoginRequiredMixin):
     """ Widok odpowiedzialny za wyświetlenie informacji o poście na stronie i przekierowanie moderatora po poprawnej
@@ -76,3 +79,12 @@ class BlogPostDeleteView(BlogOwnerPostMixin, DeleteView):
     template_name = 'blog/manage/posts/delete.html'
     success_url = reverse_lazy('management:blog_manage_post_list')
     permission_required = 'blog.delete_post'
+
+
+""" Widoki sekcji Shop """
+
+class ShopManageProductsListView(PermissionRequiredMixin, ListView):
+    """ Widok wyświetlający wszystkie posty stworzone przez konkretnego użytkownika """
+    model = Product
+    permission_required = 'shop.view_product'
+    template_name = 'shop/manage/products/list.html'

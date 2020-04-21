@@ -46,6 +46,9 @@ color:blue;
 div#top_mapa div.menu_mapa ul li.green a{
 color:green
 }
+div#top_mapa div.menu_mapa ul li.gold a {
+    color: #ab0fb5;
+}
 
 div#top_mapa div.menu_mapa ul li a i{
 font-size:25px;
@@ -60,6 +63,9 @@ color:green;
 }
 div#top_mapa div.menu_mapa ul li.blue a i{
 color:blue;
+}
+div#top_mapa div.menu_mapa ul li.gold a i{
+    color: #ab0fb5;
 }
 
 
@@ -85,7 +91,6 @@ font-size:15px;
 
 div#filter_mapa{
 display:flex;
-box-size:border-box;
 height:7vh;
 line-height:7vh;
 margin: 0 20px;
@@ -110,7 +115,7 @@ line-height:0;
 }
 
 div.search_mapa button{
-margin-top:10px;
+margin-top:15px;
 height:26px;
 background-color:orange;
 border:0 solid white;
@@ -119,6 +124,20 @@ padding:10px 15px;
 border-radius:15px;
 font-weight:bold;
 letter-spacing:1.5px;
+}
+button.panel_admin{
+    margin: 10px;
+    background-color: #007FFF;
+    height:38px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+}
+button.panel_admin a{
+   display: block;
+    line-height: 100%;
+    color:white;
+    font-weight: bold;
 }
 
 /*Reszta stron*/
@@ -171,6 +190,9 @@ color:blue;
 div#top div.menu ul li.green a{
 color:green
 }
+div#top div.menu ul li.gold a{
+    color: #ab0fb5;
+}
 
 div#top div.menu ul li a i{
 font-size:25px;
@@ -185,6 +207,9 @@ color:green;
 }
 div#top div.menu ul li.blue a i{
 color:blue;
+}
+div#top div.menu ul li.gold a i{
+    color: #ab0fb5;
 }
 
 div.login{
@@ -331,7 +356,7 @@ div.management{
 }
 div.management div.management_menu{
     padding: 20px 10px;
-    width:30vw;
+    width:20vw;
     height:70vh;
     background-color: rgba(185, 255, 200, 0.75);
     border-right: 1px solid green;
@@ -358,4 +383,78 @@ div.management div.management_menu button a{
     color: white;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+/*block content moderowania stron */
+div.posts_manage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 50px 0;
+    width:80vw;
+}
+div.posts_manage div.post_manage{
+    width:45vw;
+    margin: 10px auto;
+    height:600px;
+}
+
+div.posts_manage div.post_manage div.image{
+    width:100%;
+    height: 300px;
+}
+div.posts_manage div.post_manage div.image img{
+    width:100%;
+    height:100%;
+}
+div.posts_manage div.post_manage div.title{
+    position: relative;
+    top:-180px;
+    border:3px solid white;
+    width: 400px;
+    left:15%;
+    background-color: rgba(0, 0, 0, 0.87);
+    text-align: center;
+
+}
+div.posts_manage div.post_manage div.title p{
+    color: white;
+    font-size: 29px;
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+    margin: 10px;
+    text-transform: uppercase;
+}
+/*Dodawanie postów na stronie*/
+div.create_post{
+    width:80vw;
+}
+div.create_post h2{
+    padding-left: 50px;
+}
+
+div.form_post{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 50px 0;
+    margin-left: 100px;
+}
+/*Wyjście z panelu moderatora*/
+
+div.management div.management_menu button.exit_manage{
+    margin-top:50px;
+    background-color: red;
+}
+
+
+
+/* Zakładka sklep */
+
+div.promotion{
+    height: 30vh;
+}
+
+div.about_us{
+    height: 25vh;
 }

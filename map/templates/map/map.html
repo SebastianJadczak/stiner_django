@@ -44,6 +44,7 @@
             <li class="green"><a href="#"><i class="fas fa-map-signs"></i>Trasy</a></li>
             <li class="blue"><a href="{% url 'blog:list_posts' %}"><i class="fas fa-book-open"></i>Blog</a></li>
             <li><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
+            <li class="gold"><a href="#"><i class="fas fa-at"></i>Kontakt</a></li>
         </ul>
     </div>
     <div class="login_mapa">
@@ -70,8 +71,13 @@
     <div class="culture_mapa"><input type="checkbox"><i class="fas fa-theater-masks"></i></div>
     <div class="hotel_mapa"><input type="checkbox"><i class="fas fa-h-square"></i></i></div>
     <div class="search_mapa"><button>Szukaj</button></div>
+    {% if perms.blog.view_post%}
+    <button class="panel_admin"><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></button>
+    {% elif perms.shop.view_product %}
+    <button class="panel_admin"><a href="{% url 'management:shop_manage_post_list' %}">Panel administracyjny</a></button>
+    {% endif %}
 </div>
-    
+
             <div class="folium-map" id="map_f8d61dea3e56470eb11f3235ab12d026" ></div>
         
 </body>
