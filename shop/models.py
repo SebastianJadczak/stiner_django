@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class Category(models.Model):
@@ -13,6 +14,7 @@ class Category(models.Model):
         return self.name
 
 class Product(models.Model):
+    owner = models.ForeignKey(User, related_name='product_created', on_delete=models.CASCADE)
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True)
     slug = models.CharField(max_length=200, db_index=True )

@@ -44,7 +44,7 @@
     {% if perms.blog.view_post%}
     <button class="panel_admin"><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></button>
     {% elif perms.shop.view_product %}
-    <button class="panel_admin"><a href="{% url 'management:shop_manage_post_list' %}">Panel administracyjny</a></button>
+    <button class="panel_admin"><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></button>
     {% endif %}
 </div>
 

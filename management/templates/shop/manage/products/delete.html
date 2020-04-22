@@ -1,0 +1,16 @@
+{% extends "base1.html" %}
+
+{% block title %} Usuń post {% endblock %}
+
+{% block content %}
+
+    <h1>Usuń kurs "{{object.name}}"</h1>
+
+    <div class="module">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>Czy aby na pewno chcesz usunąć post "{{object}}"?</p>
+            <input type="submit" class="button" value="Potwierdź">
+        </form>
+    </div>
+{% endblock %}
