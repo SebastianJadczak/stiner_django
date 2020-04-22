@@ -30,7 +30,7 @@ class BlogOwnerPostMixin(OwnerMixin, LoginRequiredMixin):
 
 
 class BlogOwnerPostEditMixin(BlogOwnerPostMixin, OwnerEditMixin):
-    """ Widok odpowiedzialny za edycję posta"""
+    """ Widok odpowiedzialny za formularz edycji posta"""
     fields = ['owner', 'title', 'slug', 'image', 'body', 'publish', 'status']
     success_url = reverse_lazy('management:blog_manage_post_list')
     template_name = 'blog/manage/posts/form.html'
@@ -83,8 +83,58 @@ class BlogPostDeleteView(BlogOwnerPostMixin, DeleteView):
 
 """ Widoki sekcji Shop """
 
+class ShopOwnerProductsMixin(OwnerMixin, LoginRequiredMixin):
+    """ Widok odpowiedzialny za wyświetlenie informacji o poście na stronie i przekierowanie moderatora po poprawnej
+    edycji """
+    model = Product
+    fields = ['category', 'name', 'slug', 'image', 'description', 'price', 'available']
+    success_url = reverse_lazy('management:shop_manage_product_list')
+
+
+class ShopOwnerProductsEditMixin(ShopOwnerProductsMixin, OwnerEditMixin):
+    """ Widok odpowiedzialny za formularz edycji posta"""
+    fields = ['owner', 'title', 'slug', 'image', 'body', 'publish', 'status']
+    success_url = reverse_lazy('management:shop_manage_product_list')
+    template_name = 'blog/manage/posts/form.html'
+
+
 class ShopManageProductsListView(PermissionRequiredMixin, ListView):
     """ Widok wyświetlający wszystkie posty stworzone przez konkretnego użytkownika """
     model = Product
     permission_required = 'shop.view_product'
     template_name = 'shop/manage/products/list.html'
+
+class ShopManageEditListView(PermissionRequiredMixin, ListView):
+    """ Widok odpowiedzialny za edytowanie produktów w panelu administracyjnym """
+    template_name = 'shop/manage/products/edit-list.html'
+    permission_required = 'blog.change_post'
+    model = Post
+
+    def get_queryset(self):
+        qs = super(ShopManageEditListView, self).get_queryset()
+        return qs.filter(owner=self.request.user)
+
+class ShopDeleteProductsListView(PermissionRequiredMixin, ListView):
+    """ Widok odpowiedzialny za edytowanie postów w panelu administracyjnym """
+    template_name = 'shop/manage/products/delete-list.html'
+    permission_required = 'shop.delete_products'
+    model = Product
+
+    def get_queryset(self):
+        qs = super(ShopDeleteProductsListView, self).get_queryset()
+        return qs.filter(owner=self.request.user)
+
+class ShopProductstCreateView(PermissionRequiredMixin, ShopOwnerProductsEditMixin, CreateView):
+    """ Widok odpowiedzialny za dodawanie postów na stronie """
+    permission_required = 'shop.add_products'
+
+class ShopProductsUpdateView(PermissionRequiredMixin, ShopOwnerProductsEditMixin, UpdateView):
+    """ Widok odpowiedzialny za aktualizacje postów na blogu """
+    template_name = 'shop/manage/products/form.html'
+    permission_required = 'shop.change_products'
+
+class ShopProductDeleteView(ShopOwnerProductsMixin, DeleteView):
+    """ Widok odpowiedzialny za usuwanie widoków na blogu """
+    template_name = 'shop/manage/products/delete.html'
+    success_url = reverse_lazy('management:shop_manage_product_list')
+    permission_required = 'shop.delete_products'

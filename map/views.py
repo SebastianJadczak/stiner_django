@@ -10,4 +10,5 @@ class Map(View):
         return render(request, self.template_name,)
 
 def map_render(request):
+
     return render(request, 'map/map.html')
