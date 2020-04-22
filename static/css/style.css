@@ -124,3 +124,7 @@ letter-spacing:1.5px;
 div.content{
     border:1px solid grey;
 }
+iframe.map_render{
+    width:97vw;
+    height: 78vh;
+}

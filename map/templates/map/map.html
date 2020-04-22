@@ -1,13 +1,12 @@
-{% load static %}
 <!DOCTYPE html>
-<head>
+<head>    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-
+    
         <script>
             L_NO_TOUCH = false;
             L_DISABLE_3D = false;
         </script>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -20,71 +19,29 @@
     <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
     <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
     <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
-
+    
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_f8d61dea3e56470eb11f3235ab12d026 {
+                #map_875cf7307b5341468d3f27d9ef23a7f6 {
                     position: relative;
                     width: 100.0%;
-                    height: 80vh;
+                    height: 100.0%;
                     left: 0.0%;
                     top: 0.0%;
                 }
             </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
+        
 </head>
-<body>
-<div id="top_mapa">
-    <div class="logo_mapa"><img src="{% static "img/logo.png" %}" alt="logo"></div>
-    <div class="menu_mapa">
-        <ul>
-            <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
-            <li class="green"><a href="#"><i class="fas fa-map-signs"></i>Trasy</a></li>
-            <li class="blue"><a href="{% url 'blog:list_posts' %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
-            <li class="gold"><a href="#"><i class="fas fa-at"></i>Kontakt</a></li>
-        </ul>
-    </div>
-    <div class="login_mapa">
-       {% if user.is_authenticated %}
-        <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
-        {% else %}
-        <button><a href="{% url 'login' %}">Zaloguj się</a></button>
-        {% endif %}
-    </div>
-</div>
-<div id="filter_mapa">
-    <div class="select">
-        <select class="location">
-            <option selected>Lokalizacja</option>
-            <option value="1">Warszawa</option>
-            <option value="2">Kraków</option>
-            <option value="3">Gdańsk</option>
-        </select>
-        </div>
-    <div class="castle_mapa"><input type="checkbox"><i class="fab fa-fort-awesome"></i></div>
-    <div class="church_mapa"><input type="checkbox"><i class="fas fa-church"></i></div>
-    <div class="tree_mapa"><input type="checkbox"><i class="fas fa-tree"></i></div>
-    <div class="monument_mapa"><input type="checkbox"><i class="fas fa-landmark"></i></div>
-    <div class="culture_mapa"><input type="checkbox"><i class="fas fa-theater-masks"></i></div>
-    <div class="hotel_mapa"><input type="checkbox"><i class="fas fa-h-square"></i></i></div>
-    <div class="search_mapa"><button>Szukaj</button></div>
-    {% if perms.blog.view_post%}
-    <button class="panel_admin"><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></button>
-    {% elif perms.shop.view_product %}
-    <button class="panel_admin"><a href="{% url 'management:shop_manage_post_list' %}">Panel administracyjny</a></button>
-    {% endif %}
-</div>
-
-            <div class="folium-map" id="map_f8d61dea3e56470eb11f3235ab12d026" ></div>
+<body>    
+    
+            <div class="folium-map" id="map_875cf7307b5341468d3f27d9ef23a7f6" ></div>
         
 </body>
 <script>    
     
-            var map_f8d61dea3e56470eb11f3235ab12d026 = L.map(
-                "map_f8d61dea3e56470eb11f3235ab12d026",
+            var map_875cf7307b5341468d3f27d9ef23a7f6 = L.map(
+                "map_875cf7307b5341468d3f27d9ef23a7f6",
                 {
                     center: [42.3601, -71.0589],
                     crs: L.CRS.EPSG3857,
@@ -98,10 +55,69 @@
 
         
     
-            var tile_layer_76631ecb32b74cb98bda20ae14fa8584 = L.tileLayer(
+            var tile_layer_f60cc17045ba4c62a3c365a8fadfee95 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_f8d61dea3e56470eb11f3235ab12d026);
+            ).addTo(map_875cf7307b5341468d3f27d9ef23a7f6);
+        
+    
+            var marker_65db37bf28e64604af0ce67b15db435f = L.marker(
+                [42.3601, -71.0589],
+                {}
+            ).addTo(map_875cf7307b5341468d3f27d9ef23a7f6);
+        
+    
+        var popup_a1f71e3a9dc24ef693dafb1e422ff404 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d9d38a2b9fd94a34973a76e5c7ceae9e = $(`<div id="html_d9d38a2b9fd94a34973a76e5c7ceae9e" style="width: 100.0%; height: 100.0%;"><strong> Pierwszy punkt na mapie </strong></div>`)[0];
+            popup_a1f71e3a9dc24ef693dafb1e422ff404.setContent(html_d9d38a2b9fd94a34973a76e5c7ceae9e);
+        
+
+        marker_65db37bf28e64604af0ce67b15db435f.bindPopup(popup_a1f71e3a9dc24ef693dafb1e422ff404)
+        ;
+
+        
+    
+    
+            marker_65db37bf28e64604af0ce67b15db435f.bindTooltip(
+                `<div>
+                     Kliknij po więcej informacji
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5c72113c013149169b403914e5940d16 = L.marker(
+                [42.36201, -71.1589],
+                {}
+            ).addTo(map_875cf7307b5341468d3f27d9ef23a7f6);
+        
+    
+            var icon_cccf00e24ea14d238d8d04f9fc9e1f90 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5c72113c013149169b403914e5940d16.setIcon(icon_cccf00e24ea14d238d8d04f9fc9e1f90);
+        
+    
+        var popup_29a9a946d59245b6a28206e530c2135c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_35f9a22128b94539b9246f7efa04d7d7 = $(`<div id="html_35f9a22128b94539b9246f7efa04d7d7" style="width: 100.0%; height: 100.0%;"><strong> Pierwszy punkt na mapie </strong></div>`)[0];
+            popup_29a9a946d59245b6a28206e530c2135c.setContent(html_35f9a22128b94539b9246f7efa04d7d7);
+        
+
+        marker_5c72113c013149169b403914e5940d16.bindPopup(popup_29a9a946d59245b6a28206e530c2135c)
+        ;
+
+        
+    
+    
+            marker_5c72113c013149169b403914e5940d16.bindTooltip(
+                `<div>
+                     Kliknij po więcej informacji
+                 </div>`,
+                {"sticky": true}
+            );
         
 </script>
-<script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>

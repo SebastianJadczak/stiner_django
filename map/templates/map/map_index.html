@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+<div id="top_mapa">
+    <div class="logo_mapa"><img src="{% static "img/logo.png" %}" alt="logo"></div>
+    <div class="menu_mapa">
+        <ul>
+            <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
+            <li class="green"><a href="#"><i class="fas fa-map-signs"></i>Trasy</a></li>
+            <li class="blue"><a href="{% url 'blog:list_posts' %}"><i class="fas fa-book-open"></i>Blog</a></li>
+            <li><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
+            <li class="gold"><a href="#"><i class="fas fa-at"></i>Kontakt</a></li>
+        </ul>
+    </div>
+    <div class="login_mapa">
+       {% if user.is_authenticated %}
+        <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
+        {% else %}
+        <button><a href="{% url 'login' %}">Zaloguj się</a></button>
+        {% endif %}
+    </div>
+</div>
+<div id="filter_mapa">
+    <div class="select">
+        <select class="location">
+            <option selected>Lokalizacja</option>
+            <option value="1">Warszawa</option>
+            <option value="2">Kraków</option>
+            <option value="3">Gdańsk</option>
+        </select>
+        </div>
+    <div class="castle_mapa"><input type="checkbox"><i class="fab fa-fort-awesome"></i></div>
+    <div class="church_mapa"><input type="checkbox"><i class="fas fa-church"></i></div>
+    <div class="tree_mapa"><input type="checkbox"><i class="fas fa-tree"></i></div>
+    <div class="monument_mapa"><input type="checkbox"><i class="fas fa-landmark"></i></div>
+    <div class="culture_mapa"><input type="checkbox"><i class="fas fa-theater-masks"></i></div>
+    <div class="hotel_mapa"><input type="checkbox"><i class="fas fa-h-square"></i></i></div>
+    <div class="search_mapa"><button>Szukaj</button></div>
+    {% if perms.blog.view_post%}
+    <button class="panel_admin"><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></button>
+    {% elif perms.shop.view_product %}
+    <button class="panel_admin"><a href="{% url 'management:shop_manage_post_list' %}">Panel administracyjny</a></button>
+    {% endif %}
+</div>
+
+<iframe class="map_render" src="{%url "map_render"%}" ></iframe>
+
+<script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>

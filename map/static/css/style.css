@@ -140,6 +140,13 @@ button.panel_admin a{
     font-weight: bold;
 }
 
+/*Renderowanie mapy*/
+
+iframe.map_render{
+    width:99vw;
+    height: 79vh;
+}
+
 /*Reszta stron*/
 html, body {width: 100%;height: 100%;margin: 0;padding: 0;}
 
