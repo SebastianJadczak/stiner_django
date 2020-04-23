@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_shop.html" %}
 
 
 {% block content %}
@@ -6,17 +6,20 @@
 
 
     <div class="promotion">
-
+    <div class="text_promotion"><p>Witaj w naszym sklepie. Znajdziesz tu wszystko potrzebne do podróży i nietylko...</p></div>
     </div>
     <div class="about_us">
         <h2>O Nas</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+        </p>
     </div>
     <div class="categories_list">
         <h2>Kategorie produktów</h2>
         {% for ob in category %}
             <div class="category">
                 <div class="image_category"></div>
-                <a href='{% url "shop:products_list_category" ob.name %}'> {{ob.name}}</a>
+                <a href='{% url "shop:products_list_category" ob.id %}'> {{ob.name}}</a>
             </div>
     {% endfor %}
 
@@ -28,7 +31,7 @@
     {% for ob in products %}
         <div class="products">
             <div class="image_product"></div>
-            <a href='{% url "shop:product_detail" ob.name %}'> {{ob.name}}</a>
+            <a href='{% url "shop:product_detail" ob.id %}'> {{ob.name}}</a>
         </div>
     {% endfor %}
 

@@ -459,9 +459,46 @@ div.management div.management_menu button.exit_manage{
 /* Zakładka sklep */
 
 div.promotion{
-    height: 30vh;
+    height: 40vh;
+    background-image: url("../img/grece.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+div.promotion div.text_promotion{
+    width:600px;
+    position: relative;
+    top:110px;
+    left:25%;
+    background-color: rgba(255, 255, 255, 0.42);
+    padding: 8px;
+}
+div.promotion div.text_promotion p{
+    margin:0;
+    font-size: 25px;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    text-align: center;
+}
 div.about_us{
+    margin-top:50px;
     height: 25vh;
+    text-align: center;
+    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    color: #4f4f4f;
+}
+div.about_us p{
+    font-weight: normal;
+    font-family: Arial;
+    padding:20px 50px;
+    letter-spacing: 2px;
+    color: #6c6c6c;
+}
+div.categories_list{
+       text-align: center;
+        font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+      color: #4f4f4f;
+}
+
+div.categories_list div.category{
+
 }
