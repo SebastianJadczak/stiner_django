@@ -290,11 +290,11 @@ div.blog_title{
     background-position: center;
 }
 div.blog_title div.title{
-    color: white;
+    color: #4d474d;
     position: relative;
-    top:380px;
+    top:15px;
     border:1px solid white;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(240, 240, 240, 0.24);
     width:40vw;
     padding: 5px 0;
     margin: 0 auto;
@@ -302,6 +302,7 @@ div.blog_title div.title{
 }
 div.blog_title div.title p{
     text-transform: uppercase;
+    font-size: 20px;
     font-weight: bold;
     font-family: 'Roboto Mono', monospace;
     letter-spacing: 2px;
@@ -328,16 +329,16 @@ div.posts div.post div.image img{
 }
 div.posts div.post div.title{
     position: relative;
-    top:-180px;
-    border:3px solid white;
+    top:-290px;
+    border:3px solid rgba(236, 236, 236, 0.72);
     width: 400px;
     left:15%;
-    background-color: rgba(0, 0, 0, 0.87);
+    background-color: rgba(211, 211, 211, 0.24);
     text-align: center;
 
 }
 div.posts div.post div.title p{
-    color: white;
+    color: #151515;
     font-size: 29px;
     font-weight: bold;
     font-family: 'Roboto Mono', monospace;
