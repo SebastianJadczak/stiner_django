@@ -23,6 +23,6 @@ class ProductContentListView(TemplateResponseMixin, View):
 class ProductDetailListView(TemplateResponseMixin,View):
     template_name = 'shop/products/product/detail.html'
 
-    def get(self, request, product_name):
-        products = Product.objects.filter(name=product_name)
+    def get(self, request, id_product):
+        products = Product.objects.filter(id=id_product)
         return self.render_to_response({'products': products})

@@ -1,18 +1,17 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-sssssssssssssssss
+{% extends "base_shop.html" %}
+
+
+{% block content %}
 
 {%for ob in products%}
 {{ob.name}}
 {{ob.description}}
 {{ob.price}}zł
 {% endfor %}
-</html>
+
+
+
+
+
+
+{% endblock %}
