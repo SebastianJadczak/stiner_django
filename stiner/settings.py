@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'shop.apps.ShopConfig',
     'management.apps.ManagementConfig',
-    'cart.apps.CartConfig'
 
 ]
 
@@ -101,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+CART_SESSION_ID = 'cart'
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
