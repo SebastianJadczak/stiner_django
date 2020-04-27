@@ -24,5 +24,5 @@ class ProductDetailListView(TemplateResponseMixin,View):
     template_name = 'shop/products/product/detail.html'
 
     def get(self, request, id_product):
-        products = Product.objects.filter(id=id_product)
-        return self.render_to_response({'products': products})
+        product = get_object_or_404(Product,id=id_product)
+        return self.render_to_response({'product': product})
