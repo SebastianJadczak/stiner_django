@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Koszyk na zakupy
+{% endblock %}
+
+{% block content %}
+<div class="cart">
+<h1>Koszyk na zakupy</h1>
+
+<table class="cart">
+    <thread>
+        <tr class="name">
+            <th id="image">Obraz</th>
+            <th id="product">Produkt</th>
+            <th id="ammount">Ilość</th>
+            <th id="delete_th">Usuń</th>
+            <th id="price_detail">Cena jednostkowa</th>
+            <th id="price">Kwota</th>
+        </tr>
+    </thread>
+    <tbody>
+        {% for item in cart %}
+            {% with product=item.product %}
+                <tr class="item">
+                    <td id="image">
+                        <a href="{{product.get_absolute_url}}">
+                            <img id="min_img" src="{% if product.image %} {{product.image.url}} {% else %} {% static "img/no_image.png" %} {% endif %}">
+                        </a>
+                    </td>
+                    <td>{{product.name}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td><a href="{% url "cart:cart_remove" product.id %}" id="delete">Usuń</a></td>
+                    <td class="num1">{{item.price}} zł</td>
+                    <td class="num1">{{item.total_price}} zł</td>
+                </tr>
+    {% endwith %}
+    {% endfor %}
+    <tr class="total">
+        <td >Kwota do zapłaty</td>
+        <td colspan="4"></td>
+        <td class="num">
+            {{cart.get_total_price}} zł
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
+
+<p class="text-right">
+    <a href="#">Do kasy</a>
+</p>
+    </div>
+{% endblock %}

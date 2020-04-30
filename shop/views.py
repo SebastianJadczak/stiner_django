@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView
 from django.db.models import Count
 from django.views.generic.base import TemplateResponseMixin, View
-
+from cart.forms import CartAddProductForm
 from .models import Category, Product
 from django.views.generic.list import ListView
 
@@ -25,4 +25,5 @@ class ProductDetailListView(TemplateResponseMixin,View):
 
     def get(self, request, id_product):
         product = get_object_or_404(Product,id=id_product)
-        return self.render_to_response({'product': product})
+        cart_product_form = CartAddProductForm()
+        return self.render_to_response({'product': product, 'cart_product_form':cart_product_form})

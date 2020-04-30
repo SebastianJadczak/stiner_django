@@ -574,7 +574,7 @@ div.products div.product div.image_product img{
     height:100%;
 }
 
-div.products div.product button.buy{
+div.products div.product a button.buy{
     background-color: #d80000;
     border: none;
     width:90px;
@@ -585,6 +585,7 @@ div.products div.product button.buy{
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family:  Arial, sans-serif;
+    cursor: pointer;
 }
 div.products div.product button.buy i{
     margin: 0 10px 0 0;

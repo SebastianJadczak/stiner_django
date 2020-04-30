@@ -8,7 +8,11 @@
             <h3>{{product.name}}</h3>
             <p>{{product.description}}</p>
             <span class="price">Cena: {{product.price}} zł</span>
-            <button class="buy">Kup</button>
+          <form action="{% url "cart:cart_add" product.id %}" method="post">
+          {{cart_product_form}}
+          {% csrf_token %}
+          <input type="submit" value="Dodaj">
+          </form>
         </div>
 </div>
 

@@ -30,9 +30,11 @@
         {% for ob in products %}
             <div class="product">
                 <div class="image_product"><img src="{{ob.image.url}}" alt=""></div>
-                <a href='{% url "shop:product_detail" ob.id %}'> {{ob.name}}</a>
+                 {{ob.name}}
                 <p class="price">{{ob.price}}</p>
-                <button class="buy"><i class="fas fa-shopping-bag"></i>Kup</button>
+               <a href='{% url "shop:product_detail" ob.id %}'>
+                   <button class="buy"><i class="fas fa-shopping-bag"></i>Kup</button>
+               </a>
             </div>
         {% endfor %}
 
