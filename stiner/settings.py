@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'management.apps.ManagementConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
-    'trails.apps.TrailsConfig'
+    'trails.apps.TrailsConfig',
+    'contact.apps.ContactConfig'
 ]
 
 MIDDLEWARE = [
