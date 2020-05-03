@@ -2,7 +2,7 @@ import folium
 
 # Create map
 
-m = folium.Map(location=[42.3601, -71.0589], zoom_start=12)
+m = folium.Map(location=[52.2297700, 21.0117800], zoom_start=12)
 # Global tooltip
 tooltip = 'Kliknij po więcej informacji'
 
