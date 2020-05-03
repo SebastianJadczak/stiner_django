@@ -15,6 +15,7 @@ urlpatterns = [
     path('shop/', ProductContentListView.as_view(), name='list_products'),
     path('shop/', include('shop.urls'), name='shop'),
     path('orders/', include('orders.urls', namespace='orders')),
+    path('trails/', include('trails.urls', namespace='trails')),
     path('management/', include('management.urls'), name='management'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
