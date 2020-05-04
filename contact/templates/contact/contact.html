@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-Kontakt:
-<form action="/contact" method="post">
-    {{form.as_p}}
-    {% csrf_token %}
-    <input type="submit" value="Wyślij">
-</form>
+    {% if sent != True %}
+        Kontakt:
+        <form action="/contact" method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" value="Wyślij">
+        </form>
+    {% else %}
+        <p>Wysłano wiadomość email</p>
+    {% endif %}
 
 
 {% endblock %}
