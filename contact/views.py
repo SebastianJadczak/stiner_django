@@ -1,3 +1,4 @@
+
 from django.core.mail import send_mail
 from django.shortcuts import render
 
@@ -9,8 +10,9 @@ def post_share(request):
     if request.method == 'POST':
         form = EmailForm(request.POST)
         if form.is_valid():
-            send_mail(form,['sebastian-jadczak@wp.pl'])
+
             cd = form.cleaned_data
+            send_mail(cd['name'], cd['comments'], 'sdsdsd@ffdsf.pl', ['sebastian-jadczak@wp.pl'])
             sent=True
     else:
         form = EmailForm()
