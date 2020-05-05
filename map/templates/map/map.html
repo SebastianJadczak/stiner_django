@@ -33,13 +33,14 @@
             </style>
         
 </head>
-<body>    
-    
+<body>
             <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
-        
 </body>
-<script>    
-    
+<script>
+    fetch('/map')
+        .then(response => response.json())
+        .then(data => console.log(data));
+
             var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                 "map_1de6ef4f1218487da9d6da057bb8f454",
                 {
@@ -61,7 +62,8 @@
             ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
 
             /////////////////////////////////////////////////////////////////////////
-    
+
+
             var marker_19901ce162d44c198cd077e9d386208a = L.marker(
                 [52.2460643, 21.0140727],
                 {}
@@ -75,8 +77,11 @@
             popup_01a87f0393e4411aad48c00da5dfc357.setContent(html_96971d4f2da24e9499eaf1295989655a);
         
 
-        marker_19901ce162d44c198cd077e9d386208a.bindPopup(popup_01a87f0393e4411aad48c00da5dfc357)
-        ;
+        marker_19901ce162d44c198cd077e9d386208a.bindPopup(popup_01a87f0393e4411aad48c00da5dfc357);
+
+
+
+        //////////////////////////////////////////////////////////////////////////////
 
     
             marker_19901ce162d44c198cd077e9d386208a.bindTooltip(

@@ -10,6 +10,7 @@ from shop.views import ProductContentListView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Map.as_view(), name='map'),
+    path('map/', include('map.urls')),
     path('map_example/',map_render, name='map_render'),
     path('blog/', include('blog.urls'), name='blog'),
     path('shop/', ProductContentListView.as_view(), name='list_products'),
