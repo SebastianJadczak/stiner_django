@@ -37,9 +37,7 @@
             <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
 </body>
 <script>
-    fetch('/map')
-        .then(response => response.json())
-        .then(data => console.log(data));
+
 
             var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                 "map_1de6ef4f1218487da9d6da057bb8f454",
@@ -52,9 +50,6 @@
                 }
             );
 
-            
-
-        
     
             var tile_layer_03c10e7010194be69dc37614c4d58514 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -62,33 +57,31 @@
             ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
 
             /////////////////////////////////////////////////////////////////////////
+              fetch('/map/api/points/')
+        .then(response => response.json())
+        .then(data=>{
 
+            data.forEach(addElements);
+            function addElements(item, index) {
+                console.log(item)
+                console.log(item.name)
 
-            var marker_19901ce162d44c198cd077e9d386208a = L.marker(
-                [52.2460643, 21.0140727],
+                 var punkt = L.marker(
+                [item.coordinateX, item.coordinateY],
                 {}
             ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
-        
-    
-        var popup_01a87f0393e4411aad48c00da5dfc357 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_96971d4f2da24e9499eaf1295989655a = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;"><strong> Kościół św. Anny w Warszawie – świątynia rzymskokatolicka znajdująca się przy Krakowskim Przedmieściu 68 w dzielnicy Śródmieście, główny ośrodek duszpasterstwa akademickiego w Warszawie. Wikipedia</strong> </div>`)[0];
-            popup_01a87f0393e4411aad48c00da5dfc357.setContent(html_96971d4f2da24e9499eaf1295989655a);
-        
-
-        marker_19901ce162d44c198cd077e9d386208a.bindPopup(popup_01a87f0393e4411aad48c00da5dfc357);
 
 
+            var popup = L.popup({"Width": "300px"});
+            var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;">
+            <strong> ${item.descriptions}</strong> </div>`)[0];
 
-        //////////////////////////////////////////////////////////////////////////////
+            popup.setContent(html);
+            punkt.bindPopup(popup);
+            }
+
+        });
 
     
-            marker_19901ce162d44c198cd077e9d386208a.bindTooltip(
-                `<div>
-                     Kliknij po więcej informacji
-                 </div>`,
-                {"sticky": true}
-            );
-        
+
 </script>

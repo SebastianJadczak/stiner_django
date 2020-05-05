@@ -10,5 +10,6 @@ router.register(r'points', PointViewsets)
 urlpatterns = [
 
     path('api/', include(router.urls)),
+path('', map_json, name='map_json'),
 ]
 
