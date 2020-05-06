@@ -4,14 +4,12 @@ from django.urls import path, include
 from map.views import Map
 from django.conf import settings
 from django.conf.urls.static import static
-from map.views import map_render
 from shop.views import ProductContentListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Map.as_view(), name='map'),
     path('map/', include('map.urls')),
-    path('map_example/',map_render, name='map_render'),
     path('blog/', include('blog.urls'), name='blog'),
     path('shop/', ProductContentListView.as_view(), name='list_products'),
     path('shop/', include('shop.urls'), name='shop'),

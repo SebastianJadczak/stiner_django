@@ -1,7 +1,40 @@
 {% load static %}
 <!DOCTYPE html>
 <head>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1de6ef4f1218487da9d6da057bb8f454 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+
+</head>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
 </head>
@@ -48,6 +81,55 @@
     {% endif %}
 </div>
 
-<iframe class="map_render" src="{%url "map_render"%}" ></iframe>
+     <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
+
 
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
+<script>
+
+
+            var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
+                "map_1de6ef4f1218487da9d6da057bb8f454",
+                {
+                    center: [52.22977, 21.01178],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+
+            var tile_layer_03c10e7010194be69dc37614c4d58514 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
+
+            /////////////////////////////////////////////////////////////////////////
+              fetch('/map/api/points/')
+        .then(response => response.json())
+        .then(data=>{
+
+            data.forEach(addElements);
+            function addElements(item, index) {
+                console.log(item)
+                console.log(item.name)
+
+                 var punkt = L.marker(
+                [item.coordinateX, item.coordinateY],
+                {}
+            ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
+
+
+            var popup = L.popup({"Width": "300px"});
+            var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;">
+            <strong>${item.name}</strong>
+            <p> ${item.descriptions}</p> </div>`)[0];
+
+            popup.setContent(html);
+            punkt.bindPopup(popup);
+            }
+
+        });
+
+</script>

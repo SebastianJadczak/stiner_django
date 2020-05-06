@@ -1,0 +1,22 @@
+{% extends 'base_trail.html' %}
+
+{% block content %}
+    <div class="search_points">
+        <form action="" method="GET">
+            <input type="text" name="search">
+            <button class="search">Szukaj</button>
+        </form>
+    </div>
+
+    {% for element in list %}
+        <div class="point">
+            <div class="image_point"><img src="{{element.image.url}}" alt=""></div>
+            <div class="point_descriptions">
+                <p>{{element.name}}</p>
+                <p>{{element.descriptions}}</p>
+                 <div class="point_descriptions_more"><button><a href="#">Więcej</a></button></div>
+            </div>
+
+        </div>
+    {% endfor %}
+{% endblock %}
