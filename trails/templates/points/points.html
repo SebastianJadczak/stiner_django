@@ -14,7 +14,7 @@
             <div class="point_descriptions">
                 <p>{{element.name}}</p>
                 <p>{{element.descriptions}}</p>
-                 <div class="point_descriptions_more"><button><a href="#">Więcej</a></button></div>
+                 <div class="point_descriptions_more"><button><a href="{% url 'trails:point_detail' element.id %}">Więcej</a></button></div>
             </div>
 
         </div>
