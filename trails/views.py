@@ -1,13 +1,15 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.views.generic import ListView, TemplateView, DetailView
 from map.models import Point
 
 class Trails(TemplateView):
-    template_name= 'trails/trails.html'
+    """ Widok podstawowy zakładki Trasy """
+    template_name = 'trails/trails.html'
 
 
 class PointsListView(ListView):
-    template_name= 'points/points.html'
+    """ Widok  """
+    template_name = 'points/points.html'
     list = Point.objects.all()
 
     def get(self, request, *args, **kwargs):
