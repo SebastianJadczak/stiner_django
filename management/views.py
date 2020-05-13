@@ -74,6 +74,7 @@ class BlogPostUpdateView(PermissionRequiredMixin, BlogOwnerPostEditMixin, Update
     permission_required = 'blog.change_post'
 
 
+
 class BlogPostDeleteView(BlogOwnerPostMixin, DeleteView):
     """ Widok odpowiedzialny za usuwanie widoków na blogu """
     template_name = 'blog/manage/posts/delete.html'
