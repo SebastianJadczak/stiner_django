@@ -1,7 +1,13 @@
 {% extends 'base_trail.html' %}
-
+{% block title %} Trasy zwiedzania {% endblock %}
 {% block content %}
-
-Wszystkie trasy
-
+    <div class="all_trails">
+        {%for trail in object_list%}
+            <div class="all_trails-trail">
+                <p>{{trail.name}}</p>
+                <p>{{trail.descriptions}}</p>
+                <button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

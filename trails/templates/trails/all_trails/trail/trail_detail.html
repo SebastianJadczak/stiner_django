@@ -1,0 +1,11 @@
+{% extends 'base_trail.html' %}
+{% block title %} Trasa {% endblock %}
+{% block content %}
+
+
+    {{trails}}
+{% for item in points%}
+    {{item.name}}
+{% endfor %}
+
+{% endblock %}

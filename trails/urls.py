@@ -10,6 +10,7 @@ urlpatterns = [
     path('point/<int:pk>/', views.PointDetailView.as_view(), name='point_detail'),
     path('all_trails', views.TrailsListView.as_view(), name='all_trails'),
     path('user_trails', views.UserTrailsListView.as_view(), name='user_trails'),
-    path('user_trails_add', views.UserTrailFormAdd.as_view(), name='user_trail_add')
+    path('user_trails_add', views.UserTrailFormAdd.as_view(), name='user_trail_add'),
+    path('trail_detail/<int:pk>/', views.TrailDetailView.as_view(), name='trail_detail')
 ]
 

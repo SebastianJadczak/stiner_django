@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, TemplateView, DetailView
-from django.views.generic.base import View
+from django.views.generic.base import View, TemplateResponseMixin
 
 from map.models import Point
 from trails.models import Trail
@@ -40,6 +40,10 @@ class TrailsListView(ListView):
     template_name = 'trails/all_trails/all_trails.html'
     model = Trail
 
+    def get_queryset(self):
+        trails = super(TrailsListView, self).get_queryset()
+        return trails
+
 
 class UserTrailsListView(ListView):
     template_name = 'trails/user_trails/user_trails.html'
@@ -51,3 +55,22 @@ class UserTrailFormAdd(View):
 
     def get(self, request,*args, **kwargs):
         return render(request, self.template_name)
+
+
+# class TrailDetailView(DetailView):
+#     template_name = 'trails/all_trails/trail/trail_detail.html'
+#     model = Trail
+#
+#     def get(self,request, pk):
+#         qs = get_object_or_404(Trail, id=pk)
+#         return render(request, self.template_name,
+#                       {'trail_detail': qs})
+
+class TrailDetailView(TemplateResponseMixin, View):
+    """ Klasa odpowiedzialna za wyświetlenie wszystkich produktów """
+    template_name = 'trails/all_trails/trail/trail_detail.html'
+
+    def get(self, request, pk):
+        qs = get_object_or_404(Trail, id=pk)
+        points = Point.objects.filter(trails=qs.id)
+        return self.render_to_response({'trails':qs, 'points':points})
