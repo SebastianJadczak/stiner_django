@@ -1,11 +1,130 @@
-{% extends 'base_trail.html' %}
-{% block title %} Trasa {% endblock %}
-{% block content %}
+
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1de6ef4f1218487da9d6da057bb8f454 {
+                    position: relative;
+                    width: 50%;
+                    height: 50%;
+                    left: 30.0%;
+                    top: 0.0%;
+                }
+            </style>
 
 
-    {{trails}}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static 'css/style_trail.css' %}">
+</head>
+<body>
+<div id="top_mapa">
+    <div class="logo_mapa"><img src="{% static "img/logo.png" %}" alt="logo"></div>
+    <div class="menu_mapa">
+        <ul>
+            <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
+            <li class="green"><a href="{% url 'trails:basic_trails' %}"><i class="fas fa-map-signs"></i>Trasy</a></li>
+            <li class="blue"><a href="{% url 'blog:list_posts' %}"><i class="fas fa-book-open"></i>Blog</a></li>
+            <li><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
+            <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
+        </ul>
+    </div>
+    <div class="login_mapa">
+       {% if user.is_authenticated %}
+        <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
+        {% else %}
+        <button><a href="{% url 'login' %}">Zaloguj się</a></button>
+        {% endif %}
+    </div>
+</div>
+<div class="trail">
+ <div class="menu_trail">
+        <ul>
+            <li>Menu tras</li>
+            <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
+            <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
+            <li><a href="{% url 'trails:user_trails' %}">Twoje trasy</a></li>
+            <li><a href="{% url 'trails:user_trail_add' %}">Stwórz trasę</a></li>
+            </ul>
+    </div>
+      {{trails}}
 {% for item in points%}
     {{item.name}}
 {% endfor %}
 
-{% endblock %}
+</div>
+
+
+
+
+     <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
+
+
+<script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
+<script>
+ let trail = {{trails.id}}
+            var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
+                "map_1de6ef4f1218487da9d6da057bb8f454",
+                {
+                    center: [52.22977, 21.01178],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+
+            var tile_layer_03c10e7010194be69dc37614c4d58514 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
+
+            /////////////////////////////////////////////////////////////////////////
+              fetch(`/trails/api/${trail}`)
+        .then(response => response.json())
+        .then(data=>{
+
+            data.forEach(addElements);
+            function addElements(item, index) {
+                 var punkt = L.marker(
+                [item.coordinateX, item.coordinateY],
+                {}
+            ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
+
+
+            var popup = L.popup({"Width": "300px"});
+            var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;">
+            <strong>${item.name}</strong>
+            <p> ${item.descriptions}</p>
+            <a href="/trails/point/${item.id}">Więcej</a></div>`)[0];
+
+
+            popup.setContent(html);
+            punkt.bindPopup(popup);
+            }
+
+        });
+
+</script>
