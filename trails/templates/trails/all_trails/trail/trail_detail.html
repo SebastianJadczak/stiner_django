@@ -94,7 +94,7 @@
                     preferCanvas: false,
                 }
             );
-
+            var tablica = [];
 
             var tile_layer_03c10e7010194be69dc37614c4d58514 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -123,8 +123,27 @@
 
             popup.setContent(html);
             punkt.bindPopup(popup);
+
+
+                tablica.push(item.coordinateX, item.coordinateY)
+
+
+            }
+            console.log(tablica)
+
+            var loc = []
+            data.forEach(addElements1);
+            function addElements1(item, index) {
+                loc.push([item.coordinateX, item.coordinateY])
             }
 
+            var poly_line_ae391c8f9ca443ffb5ba6e4365f8fadd = L.polyline(
+               loc,
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
         });
+
+
+
 
 </script>
