@@ -87,6 +87,43 @@ div.points_add_to_user_trail{
 }
 
 div.point_add{
-    min-width:250px;
+    width:450px;
+    height:600px;
+    margin-right:35px;
+}
+div.point_add div.image{
+    width:400px;
     height:400px;
+}
+div.point_add div.image img{
+    width:100%;
+    height:100%;
+}
+
+button#right{
+    position: relative;
+    top:-400px;
+    right:-680px;
+    color: white;
+    background-color: #00a523;
+    width:40px;
+    height:40px;
+    border:1px solid black;
+    border-radius: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: 0;
+}
+button#left{
+    position: relative;
+    top:-400px;
+     color: white;
+    background-color: #00a523;
+    width:40px;
+    height:40px;
+    border:1px solid black;
+    border-radius: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: 0;
 }

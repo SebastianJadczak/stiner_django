@@ -5,7 +5,9 @@
     <div class="points_add_to_user_trail" id="points_add_to_user_trail">
          {% for element in lists %}
             <div class="point_add">
-                <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
+                <div class="image">
+                    <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
+                    </div>
                 {{element.name}}
                 <form action="." method="post">
 
@@ -14,8 +16,8 @@
             </div>
         {% endfor %}
     </div>
-    <button id="left"><-</button>
-    <button id="right">-></button>
+    <button id="left"><</button>
+    <button id="right">></button>
     </div>
 
 {% endblock %}
