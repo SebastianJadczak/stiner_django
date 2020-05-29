@@ -99,6 +99,11 @@ div.point_add{
     margin-right:35px;
     padding-right: 20px;
     border-right: 1px solid #9c9c9c;
+     opacity: .7;
+}
+
+div.point_add:hover{
+    opacity: 1;
 }
 
 div.point_add p{
