@@ -1,6 +1,13 @@
 {% extends 'base_trail.html' %}
 
 {% block content %}
+<h3 class="user_trails_add">Stwórz własną trasę</h3>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+    printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+    five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+    recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 <div class="przyklad">
     <div class="points_add_to_user_trail" id="points_add_to_user_trail">
          {% for element in lists %}
@@ -8,10 +15,10 @@
                 <div class="image">
                     <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
                     </div>
-                {{element.name}}
+                <p>{{element.name}}</p>
                 <form action="." method="post">
 
-                    <input type="submit" value="Dodaj">
+                    <input type="submit" value="Dodaj" class="add_to_user_trail">
                 </form>
             </div>
         {% endfor %}

@@ -76,8 +76,14 @@ div.point div.point_descriptions div.point_descriptions_more{
 
 /* Sekcja Stwórz trasę */
 
+h3.user_trails_add{
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
 div.przyklad{
-    width:61vw;
+    width:63vw;
     overflow:hidden;
 }
 div.points_add_to_user_trail{
@@ -89,9 +95,19 @@ div.points_add_to_user_trail{
 
 div.point_add{
     width:450px;
-    height:600px;
+    height:500px;
     margin-right:35px;
+    padding-right: 20px;
+    border-right: 1px solid #9c9c9c;
 }
+
+div.point_add p{
+    text-align: center;
+    font-weight: bold;
+    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    margin-top: 20px;
+}
+
 div.point_add div.image{
     width:400px;
     height:400px;
@@ -103,8 +119,8 @@ div.point_add div.image img{
 
 button#right{
     position: relative;
-    top:-400px;
-    right:-680px;
+    top:-270px;
+    right:-720px;
     color: white;
     background-color: #00a523;
     width:40px;
@@ -117,7 +133,7 @@ button#right{
 }
 button#left{
     position: relative;
-    top:-400px;
+    top:-270px;
      color: white;
     background-color: #00a523;
     width:40px;
@@ -127,4 +143,19 @@ button#left{
     font-size: 25px;
     font-weight: bold;
     outline: 0;
+}
+div.point_add form{
+    text-align: right;
+}
+
+input.add_to_user_trail{
+    background-color: #e06100;
+    border: 1px solid black;
+    color: whitesmoke;
+    width:75px;
+    height:40px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-right: 30px;
+    font-size: 16px;
 }
