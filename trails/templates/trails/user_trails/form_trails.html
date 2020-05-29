@@ -1,7 +1,17 @@
 {% extends 'base_trail.html' %}
 
 {% block content %}
+    <div class="points_add_to_user_trail">
+         {% for element in lists %}
+            <div class="point_add">
+                {{element.name}}
+                <form action="." method="post">
 
+                    <input type="submit" value="Dodaj">
+                </form>
+            </div>
+        {% endfor %}
+    </div>
 Formularz dodawania tras
 
 {% endblock %}

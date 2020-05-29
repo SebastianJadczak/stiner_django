@@ -56,6 +56,11 @@ class UserTrailFormAdd(TemplateView):
     template_name ='trails/user_trails/form_trails.html'
 
 
+    def get_context_data(self, **kwargs):
+        context = super(UserTrailFormAdd, self).get_context_data(**kwargs)
+        context['lists'] = Point.objects.all()
+        return context
+
 
 
 class TrailDetailView(TemplateResponseMixin, View):

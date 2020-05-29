@@ -73,3 +73,14 @@ div.point div.point_descriptions{
 div.point div.point_descriptions div.point_descriptions_more{
     text-align: right;
 }
+
+/* Sekcja Stwórz trasę */
+
+div.points_add_to_user_trail{
+    display: flex;
+    flex-direction: row;
+}
+
+div.point_add{
+    width:150px;
+}
