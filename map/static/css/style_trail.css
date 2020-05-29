@@ -84,6 +84,7 @@ div.points_add_to_user_trail{
     display: flex;
     flex-direction: row;
     overflow:hidden;
+    transition: .4s;
 }
 
 div.point_add{

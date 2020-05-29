@@ -53,14 +53,14 @@
      let position = 0;
     buttonRight.addEventListener('click', function () {
         let list_point_user_add = document.getElementById('points_add_to_user_trail')
-        position += 150;
+        position += 350;
         console.log(position)
         list_point_user_add.style.marginLeft =`-${position}px`
     });
     buttonLeft.addEventListener('click', function () {
         let list_point_user_add = document.getElementById('points_add_to_user_trail')
-        if (position>=150){
-            position -= 150;
+        if (position>=350){
+            position -= 350;
             console.log(position)
             list_point_user_add.style.marginLeft =`-${position}px`
         }
