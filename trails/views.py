@@ -52,11 +52,10 @@ class UserTrailsListView(ListView):
     model = Trail
 
 
-class UserTrailFormAdd(View):
+class UserTrailFormAdd(TemplateView):
     template_name ='trails/user_trails/form_trails.html'
 
-    def get(self, request,*args, **kwargs):
-        return render(request, self.template_name)
+
 
 
 class TrailDetailView(TemplateResponseMixin, View):
