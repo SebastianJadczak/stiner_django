@@ -76,11 +76,17 @@ div.point div.point_descriptions div.point_descriptions_more{
 
 /* Sekcja Stwórz trasę */
 
+div.przyklad{
+    width:61vw;
+    overflow:hidden;
+}
 div.points_add_to_user_trail{
     display: flex;
     flex-direction: row;
+    overflow:hidden;
 }
 
 div.point_add{
-    width:150px;
+    min-width:250px;
+    height:400px;
 }
