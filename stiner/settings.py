@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'trails.apps.TrailsConfig',
+    'user_trails.apps.UserTrailsConfig',
     'contact.apps.ContactConfig',
     'rest_framework'
 ]

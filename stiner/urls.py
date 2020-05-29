@@ -5,6 +5,7 @@ from map.views import Map
 from django.conf import settings
 from django.conf.urls.static import static
 from shop.views import ProductContentListView
+from user_trails.views import UserTrailsListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -15,6 +16,8 @@ urlpatterns = [
     path('shop/', include('shop.urls'), name='shop'),
     path('orders/', include('orders.urls', namespace='orders')),
     path('trails/', include('trails.urls', namespace='trails')),
+    path('yours_trails/', UserTrailsListView.as_view(), name='yours_trails'),
+    path('user_trails/', include('user_trails.urls'), name='user_trails_site'),
     path('management/', include('management.urls'), name='management'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
