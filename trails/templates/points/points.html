@@ -8,14 +8,15 @@
         </form>
     </div>
 
+<div class="point_list_interest_point">
     {% for element in list %}
         <div class="point">
             <div class="image_point"><img src="{{element.image.url}}" alt=""></div>
             <div class="point_descriptions">
                 <p>{{element.name}}</p>
-                <p>{{element.descriptions}}</p>
-                 <div class="point_descriptions_more"><button><a href="{% url 'trails:point_detail' element.id %}">Więcej</a></button></div>
+                 <div class="point_descriptions_more"><button class="more"><a href="{% url 'trails:point_detail' element.id %}">Więcej</a></button></div>
             </div>
         </div>
     {% endfor %}
+    </div>
 {% endblock %}

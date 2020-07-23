@@ -87,7 +87,6 @@
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
 <script>
 
-
             var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                 "map_1de6ef4f1218487da9d6da057bb8f454",
                 {
@@ -98,7 +97,6 @@
                     preferCanvas: false,
                 }
             );
-
 
             var tile_layer_03c10e7010194be69dc37614c4d58514 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -112,21 +110,16 @@
 
             data.forEach(addElements);
             function addElements(item, index) {
-                console.log(item)
-                console.log(item.name)
-
                  var punkt = L.marker(
                 [item.coordinateX, item.coordinateY],
                 {}
             ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
-
 
             var popup = L.popup({"Width": "300px"});
             var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;">
             <strong>${item.name}</strong>
             <p> ${item.descriptions}</p>
             <a href="/trails/point/${item.id}">Więcej</a></div>`)[0];
-
 
             popup.setContent(html);
             punkt.bindPopup(popup);
