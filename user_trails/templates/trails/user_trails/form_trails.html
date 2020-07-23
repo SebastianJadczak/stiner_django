@@ -16,8 +16,8 @@
                     <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
                     </div>
                 <p>{{element.name}}</p>
-                <form action="../../../../trails/templates/trails/user_trails" method="post">
-
+                <form action="{% url "user_trails:add_point_to_trail" element.id %}" method="post">
+                    {% csrf_token %}
                     <input type="submit" value="Dodaj" class="add_to_user_trail">
                 </form>
             </div>
