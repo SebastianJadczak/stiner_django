@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.shortcuts import render
-from django.views.generic import ListView, TemplateView
+from django.views.generic import ListView, TemplateView, DetailView
 
 from map.models import Point
 from trails.models import Trail
@@ -30,3 +30,4 @@ class AddPointToTrail(object):
         if not trail:
             trail = self.session[settings.AddPointToTrail_SESSION_ID] = {}
         self.trail = trail
+

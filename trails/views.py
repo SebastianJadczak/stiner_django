@@ -48,14 +48,15 @@ class TrailsListView(ListView):
 
 
 
-class TrailDetailView(TemplateResponseMixin, View):
-    """ Klasa odpowiedzialna za wyświetlenie wszystkich produktów """
-    template_name = 'trails/all_trails/trail/trail_detail.html'
+class TrailDetailView(DetailView):
+    """ Widok odpowiedzialny za wyświetlenie szczegółowych informacji wybranego miejsca """
 
-    def get(self, request, pk):
-        qs = get_object_or_404(Trail, id=pk)
-        points = Point.objects.filter(trails=qs.id)
-        return self.render_to_response({'trails':qs, 'points':points})
+    template_name = 'points/point/point_detail.html'
+    model = Trail
+
+    def get_context_data(self,*args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 class TrailApiFilterListView(generics.ListAPIView):
     """ Widok odpowiedzialny za filtrowanie obiektów w zależności od trasy którą użytkownik wybierze :) """
@@ -64,3 +65,4 @@ class TrailApiFilterListView(generics.ListAPIView):
     def get_queryset(self):
         pk = self.kwargs['pk']
         return Point.objects.filter(trails=pk)
+
