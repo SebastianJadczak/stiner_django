@@ -3,7 +3,27 @@
 {% block content %}
     <div class="search_points">
         <form action="" method="GET">
-            <input type="text" name="search">
+            <label class="nazwa">Nazwa:
+                <input type="text" name="search">
+            </label>
+
+            <label class="location"> Lokalizacja:
+            <select name="location" id="location">
+                <option value="Warszawa">Warszawa</option>
+                <option value="Kraków">Kraków</option>
+                <option value="Wrocław">Wrocław</option>
+                <option value="Poznań">Poznań</option>
+            </select>
+                </label>
+
+            <label class="rodzaj"> Rodzaj:
+            <select name="location" id="rodzaj">
+                <option value="Zamek">Zamek</option>
+                <option value="Kościół">Kościół</option>
+                <option value="Park">Park</option>
+                <option value="Biblioteka">Biblioteka</option>
+            </select>
+                </label>
             <button class="search">Szukaj</button>
         </form>
     </div>

@@ -1,8 +1,9 @@
 div.trail{
-display: flex;
+    display: flex;
+    background-color: #f4f4f4;
 }
 div.trail div.menu_trail{
-    width:25vw;
+    width:15vw;
     margin: 20px 50px;
     border:1px solid #cfcfcf;
     max-height:255px;
@@ -18,18 +19,18 @@ div.trail div.menu_trail ul{
 div.trail div.menu_trail ul li{
     height:50px;
     line-height: 50px;
-    border-bottom: 1px solid #262626;
+    border-bottom: 1px solid rgb(75, 75, 75);
     text-align: center;
 
 }
 
 div.trail div.menu_trail ul li:nth-of-type(1){
-    background-color: #0e53ff;
-    color:whitesmoke;
+    background-color: rgba(2, 70, 183, 0.7);
+    color: #fdfdfd;
     text-transform: uppercase;
     font-weight: bold;
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.9px;
 }
 
 div.trail div.menu_trail ul li a {
@@ -38,15 +39,16 @@ div.trail div.menu_trail ul li a {
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
     display: block;
     color: #000000;
-    background-color: rgba(0, 162, 255, 0.32);
+    background-color: rgba(0, 162, 255, 0.13);
+    letter-spacing: 1px;
 }
 div.trail div.menu_trail ul li a:hover{
-       background-color: rgba(0, 162, 255, 0.69);
+       background-color: rgba(0, 162, 255, 0.27);
 }
 
 div.trail div.content_trail{
-    margin:20px 50px;
-    width:75vw;
+    margin:20px auto;
+    width:68vw;
 }
 
 /* Sekcja Ciekawe miejsca */
