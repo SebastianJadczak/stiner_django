@@ -5,17 +5,32 @@
 
 <div class="content">
     <div class="blog_title">
-        <div class="title"><p>Witaj na naszym Blogu! </p> </div>
     </div>
-    <div class="posts">
-        {% for post in object_list %}
-            <div class="post">
-                <div class="image"><img src='{{post.image.url}}' alt=""></div>
-                <div class="title"><p>{{post.title}}</p></div>
-                <div class="body"><p>{{post.body}}</p></div>
-                <div class="info"><p>{{post.created}} {{post.owner}}</p></div>
-            </div>
-        {% endfor %}
+    <div class="text" style="width: 90vw;padding-bottom:40px; margin: 0 auto; border-bottom: 0.5px solid #b5b5b5;">
+        <h3 style="text-align: center">What is Lorem Ipsum?</h3>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+            has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+            took a galley of type and scrambled it to make a type specimen book. It has survived not only
+            five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <div class="content_center">
+        <div class="posts">
+            {% for post in object_list %}
+                <div class="post">
+                    <div class="image"><img src='{{post.image.url}}' alt=""></div>
+                    <div class="title"><p>{{post.title}}</p></div>
+                    <div class="body"><p>{{post.body}}</p></div>
+                    <div class="info"><p>{{post.created}} {{post.owner}}</p></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="right_table">
+            <div class="reklama"></div>
+        </div>
     </div>
 </div>
 {% endblock %}

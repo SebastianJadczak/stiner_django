@@ -44,6 +44,7 @@ class TrailsListView(ListView):
 
     def get_queryset(self):
         trails = super(TrailsListView, self).get_queryset()
+
         return trails
 
 
