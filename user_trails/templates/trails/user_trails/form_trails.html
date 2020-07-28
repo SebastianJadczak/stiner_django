@@ -10,22 +10,28 @@
     recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 <div class="przyklad">
     <div class="points_add_to_user_trail" id="points_add_to_user_trail">
-         {% for element in lists %}
+         {% for element in list %}
             <div class="point_add">
                 <div class="image">
                     <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
                     </div>
                 <p>{{element.name}}</p>
-                <form action="{% url "user_trails:add_point_to_trail" element.id %}" method="post">
-                    {% csrf_token %}
-                    <input type="submit" value="Dodaj" class="add_to_user_trail">
-                </form>
+                <div class="buttons">
+                <a href="{% url "user_trails:detail_point" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
+                <form action="" method="GET" >{% csrf_token %}<input hidden name="add_point" type="text" value='{{element.name}}'><button class="add">Dodaj</button></form>
+                </div>
             </div>
         {% endfor %}
     </div>
     <button id="left"><</button>
     <button id="right">></button>
     </div>
+
+    {% for element in user %}
+        {%for a in element %}
+            {{a.name}}
+        {%endfor%}
+    {% endfor %}
 <script>
 
 //      Sekcja stwórz trasę

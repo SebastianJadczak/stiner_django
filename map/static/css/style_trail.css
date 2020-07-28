@@ -240,18 +240,35 @@ button#left{
     font-weight: bold;
     outline: 0;
 }
-div.point_add form{
-    text-align: right;
+
+div.buttons {
+    display: flex;
+justify-content: space-between;
 }
 
-input.add_to_user_trail{
-    background-color: #e06100;
+div.buttons div.point_add form{
+    text-align: right;
+}
+button.add{
+    background-color: #198a00;
     border: 1px solid black;
     color: whitesmoke;
-    width:75px;
+    width:95px;
     height:40px;
     border-radius: 10px;
     font-weight: bold;
     margin-right: 30px;
+    font-size: 16px;
+}
+
+div.buttons input.add_to_user_trail{
+    background-color: #e06100;
+    border: 1px solid black;
+    color: whitesmoke;
+    width:95px;
+    height:40px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-left: 30px;
     font-size: 16px;
 }
