@@ -1,0 +1,9 @@
+{% extends 'base_trail.html' %}
+
+{% block content %}
+   {% for element in user %}
+        {%for a in element %}
+            {{a.name}}
+        {%endfor%}
+    {% endfor %}
+{% endblock %}

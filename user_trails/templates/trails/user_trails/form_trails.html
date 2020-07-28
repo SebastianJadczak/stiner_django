@@ -26,12 +26,9 @@
     <button id="left"><</button>
     <button id="right">></button>
     </div>
+{{len_user}}
+<a href="{% url "user_trails:user_trail_draft"%}">Szkic trasy</a>
 
-    {% for element in user %}
-        {%for a in element %}
-            {{a.name}}
-        {%endfor%}
-    {% endfor %}
 <script>
 
 //      Sekcja stwórz trasę
