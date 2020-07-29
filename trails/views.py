@@ -20,9 +20,11 @@ class PointsListView(ListView):
 
     def get(self, request, *args, **kwargs):
         template_name = 'points/points.html'
-        query = request.GET.get('search')
-        if query:
-            self.list = self.list.filter(name__contains=query)
+        query_name = request.GET.get('search')
+        query_location = request.GET.get('location_points')
+        query_type = request.GET.get('point_type')
+        if query_name or query_location or query_type:
+            self.list = self.list.filter(name__contains=query_name, type=query_type, location__contains= query_location)
         return render(request, template_name,
                       {'list': self.list})
 
