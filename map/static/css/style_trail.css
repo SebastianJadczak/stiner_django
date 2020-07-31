@@ -272,3 +272,69 @@ div.buttons input.add_to_user_trail{
     margin-left: 30px;
     font-size: 16px;
 }
+
+/* Szkic trasy użytkownika */
+
+div.user_trail_draft{
+    height:100vh;
+}
+
+div.user_trail_draft div.draft-list_point {
+    width: 80%;
+    height: 60vh;
+    margin:0 auto;
+    padding: 20px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 0.5px solid #0e446c;
+    background-color: #e8e8e8;
+}
+
+div.user_trail_draft div.draft-list_point div.draft-point{
+    display: flex;
+    height: 140px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding:10px 15px;
+    border: 0.5px solid #d5d5d5;
+    box-shadow: 1px 1px 1px 1px #737373;
+}
+
+div.user_trail_draft div.draft-list_point div.draft-point div.draft-point_image{
+    width: 13%;
+    height:100%;
+    margin-right: 20px;
+}
+
+div.user_trail_draft div.draft-list_point div.draft-point div.draft-point_image img{
+    width: 100%;
+    height: 100%;
+}
+div.user_trail_draft div.draft-list_point div.draft-point div.text{
+    width: 80%;
+    height: 90%;
+    overflow: hidden;
+    line-height: 23px;
+    letter-spacing: 1.5px;
+}
+
+/* Pasek przewijania*/
+
+div.user_trail_draft div.draft-list_point::-webkit-scrollbar {
+width: 8px;
+    background-color: #fff;
+}
+div.user_trail_draft div.draft-list_point::-webkit-scrollbar-track {
+border-left: 0.5px solid #000;
+}
+div.user_trail_draft div.draft-list_point::-webkit-scrollbar-thumb {
+background: #0e446c;
+    -webkit-box-shadow: inset 0 0 6px #0e446c;
+}
+div.user_trail_draft div.draft-list_point::-webkit-scrollbar-thumb:hover {
+background: #0e446c;
+    -webkit-box-shadow: inset 0 0 6px #0e446c;
+}
+div.user_trail_draft div.draft-list_point::-webkit-scrollbar-thumb:window-inactive {
+background: #0e446c;
+}

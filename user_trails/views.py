@@ -12,11 +12,13 @@ from trails.models import Trail
 
 
 class UserTrailsListView(ListView):
+    """Klasa odpowiedzialna za wyświetlenie widoku Tras zwiedzania użytkowników"""
     template_name = 'trails/user_trails/user_trails.html'
     model = Trail
 
 
 class UserTrailFormAdd(ListView):
+    """Klasa odpowiedzialna za wyświetlenie obiektów które możesz dodasz do szkicu trasy"""
     template_name ='trails/user_trails/form_trails.html'
     model = Point
     list = Point.objects.all()
@@ -33,6 +35,7 @@ class UserTrailFormAdd(ListView):
                       {'list': self.list, 'user':self.user, 'len_user':len_user})
 
 class UserTrailDraft(UserTrailFormAdd):
+    """Klasa odpowiedzialna za Szkic trasy zwiedzania"""
     template_name = 'trails/user_trails/draft/trail.html'
 
     def get_context_data(self,*args, **kwargs):

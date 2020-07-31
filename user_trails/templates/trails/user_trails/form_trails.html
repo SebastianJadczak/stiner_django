@@ -27,11 +27,12 @@
     <button id="right">></button>
     </div>
 {{len_user}}
+<div class="opacity">
 <a href="{% url "user_trails:user_trail_draft"%}">Szkic trasy</a>
-
+</div>
 <script>
 
-//      Sekcja stwórz trasę
+//      Sekcja stwórz trasę, obsługa strzałek
     let buttonRight = document.getElementById('right');
     let buttonLeft = document.getElementById('left');
      let amount = document.querySelectorAll('div.point_add');
