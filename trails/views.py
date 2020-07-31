@@ -1,7 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.views.generic import ListView, TemplateView, DetailView
-from django.views.generic.base import View, TemplateResponseMixin
-from rest_framework import viewsets, generics
+from rest_framework import  generics
 
 from map.models import Point
 from trails.api.serializers import PointTrailsSerializer
