@@ -11,14 +11,14 @@
 <div class="przyklad">
     <div class="points_add_to_user_trail" id="points_add_to_user_trail">
          {% for element in list %}
-            <div class="point_add">
+            <div class="point_add {{element.name}}">
                 <div class="image">
                     <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
                     </div>
                 <p>{{element.name}}</p>
                 <div class="buttons">
                 <a href="{% url "user_trails:detail_point" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
-                <form action="" method="GET" >{% csrf_token %}<input hidden name="add_point" type="text" value='{{element.name}}'><button class="add">Dodaj</button></form>
+                <form action="" method="GET" >{% csrf_token %}<input hidden name="add_point" type="text" value='{{element.name}}'><button class="add" >Dodaj</button></form>
                 </div>
             </div>
         {% endfor %}
@@ -26,9 +26,13 @@
     <button id="left"><</button>
     <button id="right">></button>
     </div>
-{{len_user}}
-<div class="opacity">
-<a href="{% url "user_trails:user_trail_draft"%}">Szkic trasy</a>
+{% if len_user %}
+    {{len_user}}
+    <div class="opacity">
+    <a href="{% url "user_trails:user_trail_draft"%}">Szkic trasy</a>
+    {% endif %}
+
+        {{zmienna}}
 </div>
 <script>
 
@@ -53,6 +57,7 @@
             list_point_user_add.style.marginLeft =`-${position}px`
         }
     });
+
 
 </script>
 {% endblock %}
