@@ -1,13 +1,6 @@
-import json
-from urllib import request
+from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
-from django.conf import settings
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views.decorators.http import require_POST
-from django.views.generic import ListView, TemplateView, DetailView
-
-from cart.forms import CartAddProductForm
 from map.models import Point
 from trails.models import Trail
 
@@ -26,8 +19,7 @@ class UserTrailFormAdd(ListView):
     user = []
     zmienna = ""
 
-
-    def z(self, query):
+    def checkQueryinUserDraftTrail(self, query):
         for a in self.user:
             for z in a:
                 if query == str(z):
@@ -37,8 +29,8 @@ class UserTrailFormAdd(ListView):
         request.GET._mutable = True
         query = request.GET.get('add_point')
         if query:
-            z = self.z(query)
-            if z == False:
+            result = self.checkQueryinUserDraftTrail(query)
+            if result == False:
                 self.zmienna+="Nie możesz dodać tego zabytku. Istnieje już w bazie"
             else:
                 self.user.append(self.list.filter(name=query))
@@ -55,6 +47,17 @@ class UserTrailDraft(UserTrailFormAdd):
         context = super().get_context_data(**kwargs)
         return context
 
+    def get(self,request, *args, **kwargs):
+        query = request.GET.get('delete')
+        if query:
+            for z in self.user:
+                for i in z:
+                    if i.name == query:
+                        self.user.remove(z)
+                        break
+
+        return render(request, self.template_name, {'list': self.list, 'user':self.user, 'zmienna':self.zmienna })
+
 class DetailPoint(DetailView):
     template_name = 'trails/user_trails/detail.html'
     model = Point
@@ -62,6 +65,3 @@ class DetailPoint(DetailView):
     def get_context_data(self,*args, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
-
-
-

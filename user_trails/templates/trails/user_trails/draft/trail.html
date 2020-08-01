@@ -22,6 +22,11 @@
                         <p>{{a.name}}</p>
                         <p >{{a.descriptions}}</p>
                     </div>
+                    <div class="button_delete">
+                        <form action="" method="get" class="delete">
+                            <input hidden type="text" value="{{a.name}}" name="delete"> <button>Usuń</button>
+                        </form>
+                    </div>
                 </div>
             {%endfor%}
         {% endfor %}
