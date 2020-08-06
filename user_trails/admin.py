@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import UserTrail, UserPoint
 
-# Register your models here.
+admin.site.register(UserTrail)
+admin.site.register(UserPoint)

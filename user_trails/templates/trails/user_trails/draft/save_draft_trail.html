@@ -1,0 +1,15 @@
+{% extends 'base_trail.html' %}
+
+{% block content %}
+
+
+
+<form action="" method="post" class="user_trail-form">
+    <h3>Formularz trasy: </h3>
+
+    {{form.as_p}}
+    <input type="submit" value="Stwórz_trasę" id="save_trail">
+  {% csrf_token %}
+</form>
+
+{% endblock %}

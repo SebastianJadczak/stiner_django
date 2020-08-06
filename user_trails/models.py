@@ -4,7 +4,7 @@ class UserTrail(models.Model):
     """Model odpowiedzialny za trasę użytkownika."""
     name = models.CharField(max_length=30)
     descriptions = models.TextField()
-    image = models.ImageField(upload_to='media/img_trail/%Y/%m%d', blank=True)
+    image = models.ImageField(upload_to='media/img_trail/%Y/%m%d')
 
     def __str__(self):
         return self.name

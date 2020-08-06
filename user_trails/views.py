@@ -1,8 +1,11 @@
 from django.shortcuts import render
+
 from django.views.generic import ListView, DetailView
 
 from map.models import Point
 from trails.models import Trail
+from user_trails.models import UserTrail
+from .forms import UserTrailCreateForm
 
 
 class UserTrailsListView(ListView):
@@ -65,3 +68,18 @@ class DetailPoint(DetailView):
     def get_context_data(self,*args, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
+
+def SaveDraftTrailUser(request):
+    """Widok odpowiedzialny za wyświetlenie formularza i zapisu trasy użytkownika."""
+
+    template_name = 'trails/user_trails/draft/save_draft_trail.html'
+
+    if request.method == 'POST':
+        form = UserTrailCreateForm(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = UserTrailCreateForm()
+
+    return render(request, template_name, {'form': form})
