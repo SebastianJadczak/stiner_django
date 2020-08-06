@@ -20,3 +20,6 @@ class UserPoint(models.Model):
     coordinateY = models.DecimalField(max_length=30, decimal_places=7, max_digits=100)
     image = models.ImageField()
     type = models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.name
