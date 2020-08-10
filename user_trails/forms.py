@@ -7,4 +7,5 @@ class UserTrailCreateForm(forms.ModelForm):
 
     class Meta:
         model = UserTrail
-        fields = ['name', 'descriptions', 'image']
+        fields = ['user','name', 'descriptions']
+        exclude = ["user"]

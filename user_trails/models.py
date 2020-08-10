@@ -1,10 +1,11 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class UserTrail(models.Model):
     """Model odpowiedzialny za trasę użytkownika."""
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     descriptions = models.TextField()
-    image = models.ImageField(upload_to='media/img_trail/%Y/%m%d')
 
     def __str__(self):
         return self.name

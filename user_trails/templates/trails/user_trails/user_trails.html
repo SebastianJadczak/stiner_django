@@ -2,6 +2,13 @@
 
 {% block content %}
 
-Trasa użytkownika
+    Trasy użytkownika
 
+    <div class="trails">
+        {% for item in user_trails %}
+            <div class="trail">
+                {{item.name}}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
