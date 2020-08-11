@@ -2,12 +2,49 @@
 
 {% block content %}
 
-    Trasy użytkownika
-
         <div class="trails">
+            <div class="title">
+                <h3 style="text-align: center">Lorem Ipsum</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                    been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                    1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+
+            <div class="form_trails">
+                <form action="" method="get">
+                    <label>Nazwa</label> <input type="text">
+                    <label>Region</label> <input type="text">
+                    <label>Autor</label>
+                    <select name="Autor" id="" style="width: 80px; padding: 1px ;border-radius: 10px" >
+                         <option value="">----</option>
+                         <option value="">Ja</option>
+                         <option value="">Stiner</option>
+                        </select>
+                    <label>Oceny</label>
+                    <select name="Ocena" id="" style="width: 90px; padding: 1px; border-radius: 10px" >
+                         <option value="">Wszystkie</option>
+                         <option value="">*****</option>
+                         <option value="">****</option>
+                         <option value="">***</option>
+                         <option value="">**</option>
+                         <option value="">*</option>
+                    </select>
+                    <button>Szukaj</button>
+                </form>
+            </div>
             {% for item in user_trails %}
                 <div class="trail">
-                    {{item.name}}
+                    <div class="image">
+                    </div>
+                    <div class="name">
+                        <p>{{item.name}}</p>
+                    </div>
+                    <div class="region">
+                        <p>Polska</p>
+                    </div>
                 </div>
             {% endfor %}
         </div>

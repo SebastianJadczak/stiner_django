@@ -15,6 +15,7 @@ class UserTrailsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['user_trails'] = UserTrail.objects.filter(user=self.request.user)
+        context['user_trails_point'] = UserPoint.objects.all()
         return context
 
 

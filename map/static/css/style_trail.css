@@ -360,3 +360,81 @@ form.delete button{
     cursor: pointer;
     box-shadow: 1px 1px 0.5px #565656;
 }
+
+
+/* Twoje Trasy użytkownika */
+
+div.trails{
+    width:85%;
+}
+
+div.trails div.form_trails{
+    width:100%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border:2px solid #383838;
+    background-color: rgb(145, 0, 125);
+    box-shadow: 1px 1px 1px #909090;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    color: white;
+}
+div.trails div.form_trails input{
+    border-radius: 15px;
+}
+div.trails div.form_trails input:focus{outline: none;}
+
+div.trails div.form_trails form label{
+    margin-right: 10px;
+    margin-left: 25px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+div.trails div.form_trails form button{
+    background-color: rgb(145, 0, 125);
+    border: 1px solid white;
+    color: white;
+    width:88px;
+    height:34px;
+    font-size:15px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+    margin-left:28px;
+    box-shadow: 1px 1px 1px #c2c2c2;
+}
+
+div.trails div.trail{
+    width:600px;
+    height:90px;
+    border: 0.5px solid #a5a5a5;
+    border-left: 4px solid #e46519;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px grey;
+    display: flex;
+    flex-direction: row;
+}
+
+div.trails div.trail div.image{
+    width:150px;
+    height:100%;
+}
+div.trails div.trail div.name{
+    width:200px;
+}
+div.trails div.trail div.name p{
+    font-size: 20px;
+    color: #b25118;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+div.trails div.trail div.region{
+    margin-left: 100px;
+    padding-top: 10px;
+}
