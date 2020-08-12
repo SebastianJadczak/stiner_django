@@ -2,7 +2,7 @@
 {% block title %} Trasy zwiedzania {% endblock %}
 {% block content %}
     <div class="all_trails">
-        <div class="trails" id="trails">
+        <div class="all_trail-trails" id="trails">
             {%for trail in object_list%}
                 <div class="all_trails-trail" id="all_trails-trail">
                     <div class="image_trail"><img src="{{trail.image.url}}" alt=""></div>
