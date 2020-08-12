@@ -372,7 +372,7 @@ div.trails div.title{
     background-color: #fff;
     border: 0.8px solid rgb(145, 0, 125);
     padding: 0 15px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 1px 1px 1px 1px #c5c5c5;
 }
 
@@ -386,7 +386,7 @@ div.trails div.form_trails{
     box-shadow: 1px 1px 1px #909090;
     border-radius: 15px;
     margin-top:20px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     color: white;
 }
 div.trails div.form_trails input{
@@ -418,8 +418,12 @@ div.trails div.form_trails form button{
 
 div.trails div.list-trail{
     height:60vh;
+    padding-top:30px;
      overflow: scroll;
     overflow-x: hidden;
+    background-color: #fbfbfb;
+    border: 0.2px solid #eeeeee;
+    border-radius: 15px;
 }
 
 div.trails div.list-trail::-webkit-scrollbar {
