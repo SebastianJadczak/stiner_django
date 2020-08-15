@@ -12,6 +12,7 @@ div.trail div.menu_trail ul{
     padding: 0;
     margin:0;
     border:1px solid #cfcfcf;
+    box-shadow: 1px 1px 1px #bababa;
 }
 
 div.trail div.menu_trail ul li{

@@ -2,7 +2,95 @@
 
 {% block content %}
    <div class="point_detail">
-    {{object.name}}
-    {{object.description}}
+       <div class="gallery">
+
+       </div>
+       <div class="content">
+           <div class="text">
+               <h2>{{object.name}}</h2>
+               <div class="history">
+                   <h3>Historia</h3>
+                   <p>
+                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                       when an unknown printer took a galley of type and scrambled it to make a type
+                       specimen book. It has survived not only five centuries, but also the leap into
+                       electronic typesetting, remaining essentially unchanged. It was popularised in the
+                       1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                       recently with desktop publishing software like Aldus PageMaker including versions of
+                       Lorem Ipsum.
+                   </p>
+               </div>
+               <div class="curiosities">
+                   <h3>Ciekawostki</h3>
+                    <p>
+                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                       when an unknown printer took a galley of type and scrambled it to make a type
+                       specimen book. It has survived not only five centuries, but also the leap into
+                       electronic typesetting, remaining essentially unchanged. It was popularised in the
+                       1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                       recently with desktop publishing software like Aldus PageMaker including versions of
+                       Lorem Ipsum.
+                   </p>
+               </div>
+               <div class="visiting">
+                   <h3>Zwiedzanie</h3>
+                    <p>
+                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                       when an unknown printer took a galley of type and scrambled it to make a type
+                       specimen book. It has survived not only five centuries, but also the leap into
+                       electronic typesetting, remaining essentially unchanged. It was popularised in the
+                       1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                       recently with desktop publishing software like Aldus PageMaker including versions of
+                       Lorem Ipsum.
+                   </p>
+               </div>
+               <div class="taings">
+                   <h3>Oceny i opinie</h3>
+                    <p>
+                      {{object.name}}
+                   </p>
+<!--                   Opinie -->
+<!--                   Jeśli brak opinie to...-->
+                   <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
+                   <h3>Napisz własną opinię:</h3>
+                   <form action="" method="get">
+                       <div class="top_form">
+                           <input type="text" class="nick" placeholder="Podaj swój nick">
+                           <p id="yours_stars">Twoja ocena</p>
+                           <div class="stars">
+                                <input type="radio" id="star5" name="star" value="5">
+                                <label for="star5"> Five Stars </label>
+                                <input type="radio" id="star4" name="star" value="4">
+                                <label for="star4"> Four Stars </label>
+                                <input type="radio" id="star3" name="star" value="3">
+                                <label for="star3"> Three Stars </label>
+                                <input type="radio" id="star2" name="star" value="2">
+                                <label for="star2"> Two Stars </label>
+                                <input type="radio" id="star1" name="star" value="1">
+                                <label for="star1"> One Star </label>
+                          </div>
+                       </div>
+                       <div class="bottom_form">
+                           <textarea name="" id="" placeholder="Twoja recenzja"></textarea>
+                           <button>Zapisz Opinię</button>
+                       </div>
+                   </form>
+               </div>
+           </div>
+           <div class="menu">
+               <ul>
+                   <li id="menu">Nawigacja strony</li>
+                   <li><a href="#">Galeria</a></li>
+                   <li><a href="#">Historia</a></li>
+                   <li><a href="#">Ciekawostki</a></li>
+                   <li><a href="#">Zwiedzanie</a></li>
+                   <li><a href="#">Oceny/Opinie</a></li>
+               </ul>
+           </div>
+       </div>
+
     </div>
 {% endblock %}

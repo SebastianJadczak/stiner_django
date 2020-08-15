@@ -14,6 +14,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=250)
     image = models.ImageField(upload_to='media/img/%Y/%m%d')
     body = models.TextField()
+    short_description = models.CharField(max_length=60)
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=10, choices=STATUT_CHOICES, default='draft')
