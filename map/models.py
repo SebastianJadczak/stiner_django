@@ -34,3 +34,8 @@ class Point(models.Model):
 
     def __str__(self):
         return self.name
+
+class Opinion_about_Point(models.Model):
+    user = models.CharField(max_length=30)
+    rating = models.DecimalField(max_length=10, decimal_places=1, max_digits=5)
+    point = models.ForeignKey(Point, blank=True, on_delete=models.CASCADE)

@@ -7,18 +7,11 @@
        </div>
        <div class="content">
            <div class="text">
-               <h2>{{object.name}}</h2>
+               <h2>{{object.0.name}}</h2>
                <div class="history">
                    <h3>Historia</h3>
                    <p>
-                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                       when an unknown printer took a galley of type and scrambled it to make a type
-                       specimen book. It has survived not only five centuries, but also the leap into
-                       electronic typesetting, remaining essentially unchanged. It was popularised in the
-                       1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                       recently with desktop publishing software like Aldus PageMaker including versions of
-                       Lorem Ipsum.
+                       {{object.0.descriptions}}
                    </p>
                </div>
                <div class="curiosities">
@@ -50,15 +43,15 @@
                <div class="taings">
                    <h3>Oceny i opinie</h3>
                     <p>
-                      {{object.name}}
+                      {{object.0.name}}
                    </p>
 <!--                   Opinie -->
 <!--                   Jeśli brak opinie to...-->
                    <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
                    <h3>Napisz własną opinię:</h3>
-                   <form action="" method="get">
+                   <form action="" method="post">
                        <div class="top_form">
-                           <input type="text" class="nick" placeholder="Podaj swój nick">
+                           <input type="text" class="nick" name="nick" placeholder="Podaj swój nick">
                            <p id="yours_stars">Twoja ocena</p>
                            <div class="stars">
                                 <input type="radio" id="star5" name="star" value="5">
@@ -74,7 +67,7 @@
                           </div>
                        </div>
                        <div class="bottom_form">
-                           <textarea name="" id="" placeholder="Twoja recenzja"></textarea>
+                           <textarea name="recension" id="" placeholder="Twoja recenzja"></textarea>
                            <button>Zapisz Opinię</button>
                        </div>
                    </form>

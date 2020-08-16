@@ -35,9 +35,23 @@ class PointDetailView(DetailView):
     template_name = 'points/point/point_detail.html'
     model = Point
 
-    def get_context_data(self,*args, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+    def get(self, request, *args, **kwargs):
+        nick = request.GET.get('nick')
+        star = request.GET.get('star')
+        recension = request.GET.get('recension')
+        object = list(Point.objects.filter(id=self.kwargs['pk']))
+        if nick and star and recension:
+            print("psss")
+        else:
+            if nick== "":
+                print('brak nicku')
+            elif star== None:
+                print('Brak gwiazdy')
+            elif recension== "" :
+                print('Brak recenzji')
+
+        return render(request, self.template_name, {'object':object})
+
 
 class TrailsListView(ListView):
     template_name = 'trails/all_trails/all_trails.html'
