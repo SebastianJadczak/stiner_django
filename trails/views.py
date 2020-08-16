@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, TemplateView, DetailView
 from rest_framework import  generics
 
-from map.models import Point
+from map.models import Point, Opinion_about_Point
 from trails.api.serializers import PointTrailsSerializer
 from trails.models import Trail
 
@@ -40,8 +40,12 @@ class PointDetailView(DetailView):
         star = request.GET.get('star')
         recension = request.GET.get('recension')
         object = list(Point.objects.filter(id=self.kwargs['pk']))
+        opinion = list(Opinion_about_Point.objects.filter(point=self.kwargs['pk']))
         if nick and star and recension:
-            print("psss")
+            Opinion_about_Point.objects.create(user=request.user,
+                                               opinion=recension,
+                                               rating=star,
+                                               point=object[0])
         else:
             if nick== "":
                 print('brak nicku')
@@ -50,7 +54,7 @@ class PointDetailView(DetailView):
             elif recension== "" :
                 print('Brak recenzji')
 
-        return render(request, self.template_name, {'object':object})
+        return render(request, self.template_name, {'object':object, 'opinion':opinion})
 
 
 class TrailsListView(ListView):

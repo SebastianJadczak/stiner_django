@@ -46,10 +46,30 @@
                       {{object.0.name}}
                    </p>
 <!--                   Opinie -->
-<!--                   Jeśli brak opinie to...-->
-                   <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
+                   {% if opinion %}
+                       <div class="opinions">
+                           {% for element in opinion %}
+                                <div class="opinion">
+                                    <div class="top">
+                                        <p id="user">{{element.user}}</p>
+                                        <p id="rating">Ocena
+                                            {% if element.rating is 5 %} <span>★★★★★</span>
+                                            {% elif element.rating is 4 %}<span>★★★★</span>
+                                            {% elif element.rating is 3 %}<span>★★★</span>
+                                            {% elif element.rating is 2 %}<span>★★</span>
+                                            {% elif element.rating is 1 %}<span>★</span>
+                                            {%endif%}</p>
+                                        </div>
+                                    <p id="opinion">{{element.opinion}}</p>
+                                </div>
+                           {% endfor %}
+                       </div>
+                   {% else %}
+    <!--                   Jeśli brak opinie to...-->
+                       <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
+                   {% endif %}
                    <h3>Napisz własną opinię:</h3>
-                   <form action="" method="post">
+                   <form action="" method="get">
                        <div class="top_form">
                            <input type="text" class="nick" name="nick" placeholder="Podaj swój nick">
                            <p id="yours_stars">Twoja ocena</p>
