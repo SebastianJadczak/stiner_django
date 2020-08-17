@@ -3,7 +3,14 @@
 {% block content %}
    <div class="point_detail">
        <div class="gallery">
-
+           <div class="big_image">
+                <img class="big" src="../../../../media/media/img_point/2020/0810/Teatr_Wielki.jpg" alt="room1" />
+           </div>
+           <div class="small">
+              <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg" class="room-active" alt="" />
+              <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" alt="" />
+              <img src="../../../../media/media/img_point/2020/0810/Łazienki_Królewskie.jpg" alt="" />
+            </div>
        </div>
        <div class="content">
            <div class="text">
@@ -106,4 +113,24 @@
        </div>
 
     </div>
+<script>
+
+
+function imageGallery() {
+  const big = document.querySelector(".big");
+  const small = document.querySelectorAll(".small img");
+
+  small.forEach(preview => {
+    preview.addEventListener("click", function() {
+      const smallSrc = this.src;
+      const bigSrc = smallSrc.replace( "big");
+      small.forEach(preview => preview.classList.remove("active"));
+      big.src = bigSrc;
+      preview.classList.add("active");
+    });
+  });
+}
+
+imageGallery();
+</script>
 {% endblock %}
