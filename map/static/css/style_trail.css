@@ -47,7 +47,7 @@ div.trail div.menu_trail ul li a:hover{
 
 div.trail div.content_trail{
     margin:20px auto;
-    width:68vw;
+    width:78vw;
 }
 
 /* Sekcja Ciekawe miejsca */
@@ -372,9 +372,13 @@ div.trails{
 div.trails div.title{
     background-color: #fff;
     border: 0.8px solid rgb(145, 0, 125);
-    padding: 0 15px;
     border-radius: 15px;
     box-shadow: 1px 1px 1px 1px #c5c5c5;
+    text-align: center;
+}
+div.trails div.title h3{
+    font-size: 20px;
+    letter-spacing: 1.3px;
 }
 
 div.trails div.form_trails{
@@ -423,7 +427,7 @@ div.trails div.list-trail{
      overflow: scroll;
     overflow-x: hidden;
     background-color: #fbfbfb;
-    border: 0.2px solid #eeeeee;
+    border: 0.2px solid #e7e7e7;
     border-radius: 15px;
 }
 

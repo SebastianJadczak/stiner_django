@@ -1,13 +1,13 @@
 /* Strona Mapa */
 #top_mapa{
 border-bottom:1px solid #cbcdcc;
-height: 13vh;
+height: 10vh;
 display:flex;
 }
 #top_mapa div.logo_mapa{
-margin:10px;
-height:11vh;
-width: 150px;
+margin:18px 18px 18px 35px;
+height:7vh;
+width: 110px;
 }
 #top_mapa div.logo_mapa img{
 width:100%;
@@ -15,18 +15,18 @@ height:100%;
 }
 div#top_mapa div.menu_mapa {
 width:65%;
-height:12vh;
+height:10vh;
 font-family: 'Roboto Mono', monospace;
 }
 div#top_mapa div.menu_mapa ul{
 display:flex;
 justify-content:space-between;
 list-style:none;
-height:11vh;
+height:10vh;
 }
 div#top_mapa div.menu_mapa ul li {
 width: 25%;
-line-height:13.5vh;
+line-height:12vh;
 }
 div#top_mapa div.menu_mapa ul li a{
 display:block;
@@ -76,7 +76,7 @@ margin-left:130px;
 div.login_mapa button{
     margin-top:30px;
     width:150px;
-    height:50px;
+    height:48px;
     border-radius:25px;
     border-style: none;
     background-color:#009900;
@@ -92,17 +92,16 @@ font-size:15px;
 div#filter_mapa{
 display:flex;
 height:7vh;
-line-height:7vh;
-margin: 0 20px;
+line-height:8vh;
+margin: 0 20px 0 40px;
 justify-content:space-between;
-width:81vw;
+width:80vw;
 }
 
 div#filter_mapa select.location{
 padding:5px 10px;
 border: 0.5px solid #cbcdcc;
-border-radius:15px
-
+border-radius:15px;
 }
 
 div#filter_mapa i{
@@ -115,29 +114,30 @@ line-height:0;
 }
 
 div.search_mapa button{
-margin-top:15px;
-height:26px;
+margin-top:20px;
+height:32px;
 background-color:orange;
 border:0 solid white;
 color:white;
-padding:10px 15px;
+padding:10px 14px;
 border-radius:15px;
 font-weight:bold;
 letter-spacing:1.5px;
 }
 button.panel_admin{
-    margin: 10px;
+    margin: 15px 10px 10px 10px;
     background-color: #007FFF;
     height:38px;
-    padding: 5px;
+    padding: 5px 10px;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 button.panel_admin a{
    display: block;
     line-height: 100%;
     color:white;
     font-weight: bold;
+    text-decoration: none;
 }
 
 /*Renderowanie mapy*/
@@ -152,13 +152,13 @@ html, body {width: 100%;height: 100%;margin: 0;padding: 0;}
 
 #top{
 border-bottom:1px solid #cbcdcc;
-height: 13vh;
+height: 10vh;
 display:flex;
 }
 #top div.logo{
-margin:10px;
-height:11vh;
-width: 150px;
+margin:18px 10px 10px 33px;
+height:7vh;
+width: 110px;
 }
 #top div.logo img{
 width:100%;
@@ -173,11 +173,11 @@ div#top div.menu ul{
 display:flex;
 justify-content:space-between;
 list-style:none;
-height:11vh;
+height:10vh;
 }
 div#top div.menu ul li {
 width: 25%;
-line-height:10vh;
+line-height:9vh;
 }
 div#top div.menu ul li a{
 display:block;
@@ -226,7 +226,7 @@ div.login{
 div.login button{
     margin-top:30px;
     width:150px;
-    height:50px;
+    height:48px;
     border-radius:25px;
     border-style: none;
     background-color:#009900;

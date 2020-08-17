@@ -1,8 +1,25 @@
-
-div.point_detail{
-
+div.point_detail {
+    border: 1px solid #b4b4b4;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 0 80px;
 }
 
+div.point_detail div.point_detail_name{
+    border-bottom: 1px solid black;
+       margin-bottom: 40px;
+    width:75%;
+}
+
+div.point_detail div.point_detail_name h2{
+    text-align: center;
+    margin-right: 60px;
+    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    letter-spacing: 1.3px;
+    color: #222222;
+      transform: translateX(50px);
+
+}
 /* ------------Galeria--------------------------- */
 div.point_detail div.gallery{
     width:100%;
@@ -10,8 +27,9 @@ div.point_detail div.gallery{
 }
 
 div.big_image{
-    width:100%;
+    width:60%;
     margin-bottom: 30px;
+      transform: translateX(360px);
 }
 div.big_image img{
     width:300px;
@@ -77,19 +95,21 @@ div.opinion{
     border: 0.5px solid #bcbcbc;
     border-radius: 15px;
     background-color: #f3f3f3;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     width: 500px;
     padding: 0 30px;
 }
+
 div.opinion div.top{
     display: flex;
 }
 div.opinion div.top p#user{
     padding: 5px;
+    width:200px;
 }
 
 div.opinion div.top p#rating{
-    width:200px;
+
     text-align: right;
 }
 
@@ -107,7 +127,7 @@ div.top_form{
 div.top_form input.nick{
     height:27px;
     margin-top: 8px;
-    width:250px
+    width:280px
 }
 
 div.top_form p#yours_stars{
