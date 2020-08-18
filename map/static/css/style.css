@@ -77,16 +77,35 @@ div.login_mapa button{
     margin-top:30px;
     width:150px;
     height:48px;
-    border-radius:25px;
     border-style: none;
-    background-color:#009900;
+    color: black;
+    background-color: white;
 }
+
+div.login_mapa button:focus{
+    outline: none;
+}
+div.login_mapa button.register{
+    border: 1px solid #428bca;
+    border-radius: 20px;
+}
+
+div.login_mapa button.register:hover{
+     border: 1px solid #28476c;
+    color: #28476c;
+}
+
 div.login_mapa button a{
-color:white;
 font-weight:bold;
 letter-spacing:1.5px;
 text-decoration:none;
 font-size:15px;
+}
+div.login_mapa button.register a{
+    display: block;
+   width:100%;
+    height:99%;
+        line-height:45px;
 }
 
 div#filter_mapa{
@@ -489,7 +508,7 @@ div.about_us p{
     padding:20px 50px;
     letter-spacing: 2px;
     color: #6c6c6c;
-}
+}d
 
 /* Kategorie produktów na stronie głównej */
 

@@ -83,28 +83,32 @@
                        <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
                    {% endif %}
                    <h3>Napisz własną opinię:</h3>
-                   <form action="" method="get">
-                       <div class="top_form">
-                           <input type="text" class="nick" name="nick" placeholder="Podaj swój nick">
-                           <p id="yours_stars">Twoja ocena</p>
-                           <div class="stars">
-                                <input type="radio" id="star5" name="star" value="5">
-                                <label for="star5"> Five Stars </label>
-                                <input type="radio" id="star4" name="star" value="4">
-                                <label for="star4"> Four Stars </label>
-                                <input type="radio" id="star3" name="star" value="3">
-                                <label for="star3"> Three Stars </label>
-                                <input type="radio" id="star2" name="star" value="2">
-                                <label for="star2"> Two Stars </label>
-                                <input type="radio" id="star1" name="star" value="1">
-                                <label for="star1"> One Star </label>
-                          </div>
-                       </div>
-                       <div class="bottom_form">
-                           <textarea name="recension" id="" placeholder="Twoja recenzja"></textarea>
-                           <button>Zapisz Opinię</button>
-                       </div>
-                   </form>
+                   {% if user.is_authenticated %}
+                       <form action="" method="get">
+                           <div class="top_form">
+                               <input type="text" class="nick" name="nick" placeholder="Podaj swój nick">
+                               <p id="yours_stars">Twoja ocena</p>
+                               <div class="stars">
+                                    <input type="radio" id="star5" name="star" value="5">
+                                    <label for="star5"> Five Stars </label>
+                                    <input type="radio" id="star4" name="star" value="4">
+                                    <label for="star4"> Four Stars </label>
+                                    <input type="radio" id="star3" name="star" value="3">
+                                    <label for="star3"> Three Stars </label>
+                                    <input type="radio" id="star2" name="star" value="2">
+                                    <label for="star2"> Two Stars </label>
+                                    <input type="radio" id="star1" name="star" value="1">
+                                    <label for="star1"> One Star </label>
+                              </div>
+                           </div>
+                           <div class="bottom_form">
+                               <textarea name="recension" id="" placeholder="Twoja recenzja"></textarea>
+                               <button>Zapisz Opinię</button>
+                           </div>
+                       </form>
+                   {%else%}
+                        <p>Aby dodać opinię, proszę się zalogować.</p>
+                   {% endif %}
                </div>
            </div>
            <div class="menu">

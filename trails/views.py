@@ -42,7 +42,7 @@ class PointDetailView(DetailView):
         object = list(Point.objects.filter(id=self.kwargs['pk']))
         opinion = list(Opinion_about_Point.objects.filter(point=self.kwargs['pk']))
         if nick and star and recension:
-            Opinion_about_Point.objects.create(user=request.user,
+            Opinion_about_Point.objects.create(user=nick,
                                                opinion=recension,
                                                rating=star,
                                                point=object[0])
