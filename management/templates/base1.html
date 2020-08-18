@@ -13,11 +13,12 @@
 <body>
 <div id="top_manage">
     <div class="logo"><img src="{% static 'img/logo.png' %}" alt="logo"></div>
-    <div class="login">
+    <div class="login_mapa">
         {% if user.is_authenticated %}
         <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
         {% else %}
-        <button><a href="{% url 'login' %}">Zaloguj się</a></button>
+           <button><a href="{% url 'login' %}">Zaloguj się</a></button>
+        <button class="register"><a href="{% url 'login' %}">Załóż konto</a></button>
         {% endif %}
     </div>
 </div>

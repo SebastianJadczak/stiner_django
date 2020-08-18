@@ -24,11 +24,12 @@
             <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
         </ul>
     </div>
-    <div class="login">
+    <div class="login_mapa">
         {% if user.is_authenticated %}
         <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
         {% else %}
         <button><a href="{% url 'login' %}">Zaloguj się</a></button>
+        <button class="register"><a href="{% url 'login' %}">Załóż konto</a></button>
         {% endif %}
     </div>
 </div>
