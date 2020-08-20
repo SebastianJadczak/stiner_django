@@ -73,6 +73,32 @@ div.login_mapa{
 margin-left:130px;
 }
 
+div.login_mapa div.user_menu{
+    display: none;
+}
+div.login_mapa div.user_menu.active{
+    display: block;
+}
+
+div.login_mapa button.user_menu i{
+    font-size: 28px;
+    color: #235171;
+}
+div.login_mapa button.user_menu i.fa-angle-down{
+    font-size: 18px;
+    color: #112636;
+    margin: 5px;
+
+}
+
+div.login_mapa button.user_menu{
+    margin-left: 100px;
+}
+div.login_mapa button.user_menu span{
+    margin-left: 5px;
+    color: black;
+    font-size: 17px;
+}
 div.login_mapa button{
     margin-top:30px;
     width:150px;

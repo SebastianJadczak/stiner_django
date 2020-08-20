@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
+
+from map import views
 from map.views import Map
 from django.conf import settings
 from django.conf.urls.static import static
@@ -21,6 +23,7 @@ urlpatterns = [
     path('management/', include('management.urls'), name='management'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('register/', views.UserFormView.as_view(), name='register'),
     path('cart/', include('cart.urls', namespace='cart')),
     path('contact', include('contact.urls', namespace='contact'))
 ]

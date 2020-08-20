@@ -52,10 +52,18 @@
     </div>
     <div class="login_mapa">
        {% if user.is_authenticated %}
-        <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
+<!--        <button><a href="{% url 'logout' %}">Wyloguj się</a></button>-->
+        <button class="user_menu"><i class="fas fa-user"></i> <span>{{user.username}}</span><i class="fas fa-angle-down"></i></button>
+        <div class="user_menu">
+            <ul>
+                <li><a href="#">Moje konto</a></li>
+                <li><a href="#">Ustawienia</a></li>
+                <li><a href="{% url 'logout' %}">Wyloguj</a></li>
+            </ul>
+        </div>
         {% else %}
         <button><a href="{% url 'login' %}">Zaloguj się</a></button>
-        <button class="register"><a href="{% url 'login' %}">Załóż konto</a></button>
+        <button class="register"><a href="{% url 'register' %}">Załóż konto</a></button>
         {% endif %}
     </div>
 </div>
@@ -87,7 +95,16 @@
 
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
 <script>
+<!--    "Przycisk rozwijania menu"-->
 
+let menu = document.querySelector("button.user_menu");
+let user_menu = document.querySelector("div.user_menu");
+
+menu.addEventListener('click', function () {
+    user_menu.classList.toggle("active")
+});
+
+<!--Mapa-->
             var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                 "map_1de6ef4f1218487da9d6da057bb8f454",
                 {
