@@ -78,8 +78,30 @@ div.login_mapa div.user_menu{
 }
 div.login_mapa div.user_menu.active{
     display: block;
+    position: absolute;
+    right: 160px;
+    border: 1px solid #112938;
+    background-color: #2e6993;
+    border-radius: 20px 0 20px 20px;
 }
+div.login_mapa div.user_menu.active ul{
+    padding: 5px 10px 0;
 
+}
+div.login_mapa div.user_menu.active ul li{
+    border-bottom: 1px solid white;
+    list-style: none;
+    height:33px;
+    line-height: 33px;
+}
+div.login_mapa div.user_menu.active ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    padding-left: 10px;
+}
 div.login_mapa button.user_menu i{
     font-size: 28px;
     color: #235171;
@@ -89,6 +111,8 @@ div.login_mapa button.user_menu i.fa-angle-down{
     color: #112636;
     margin: 5px;
 
+}div.login_mapa button.user_menu i.fa-angle-down.active{
+  transform:rotate(180deg);
 }
 
 div.login_mapa button.user_menu{
@@ -143,7 +167,7 @@ height:7vh;
 line-height:8vh;
 margin: 0 20px 0 40px;
 justify-content:space-between;
-width:80vw;
+width:60vw;
 }
 
 div#filter_mapa select.location{
@@ -171,21 +195,6 @@ padding:10px 14px;
 border-radius:15px;
 font-weight:bold;
 letter-spacing:1.5px;
-}
-button.panel_admin{
-    margin: 15px 10px 10px 10px;
-    background-color: #007FFF;
-    height:38px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 15px;
-}
-button.panel_admin a{
-   display: block;
-    line-height: 100%;
-    color:white;
-    font-weight: bold;
-    text-decoration: none;
 }
 
 /*Renderowanie mapy*/

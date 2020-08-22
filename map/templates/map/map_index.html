@@ -20,13 +20,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
     <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+
 
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
                 #map_1de6ef4f1218487da9d6da057bb8f454 {
-                    position: relative;
+                   z-index: -1;
                     width: 100.0%;
                     height: 83.0%;
                     left: 0.0%;
@@ -58,6 +58,13 @@
             <ul>
                 <li><a href="#">Moje konto</a></li>
                 <li><a href="#">Ustawienia</a></li>
+
+                {% if perms.blog.view_post%}
+                    <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
+                {% elif perms.shop.view_product %}
+                    <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
+                {% endif %}
+
                 <li><a href="{% url 'logout' %}">Wyloguj</a></li>
             </ul>
         </div>
@@ -83,11 +90,7 @@
     <div class="culture_mapa"><input type="checkbox"><i class="fas fa-theater-masks"></i></div>
     <div class="hotel_mapa"><input type="checkbox"><i class="fas fa-h-square"></i></i></div>
     <div class="search_mapa"><button>Szukaj</button></div>
-    {% if perms.blog.view_post%}
-    <button class="panel_admin"><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></button>
-    {% elif perms.shop.view_product %}
-    <button class="panel_admin"><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></button>
-    {% endif %}
+
 </div>
 
      <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
@@ -98,12 +101,15 @@
 <!--    "Przycisk rozwijania menu"-->
 
 let menu = document.querySelector("button.user_menu");
+let icon = document.querySelector("i.fa-angle-down");
 let user_menu = document.querySelector("div.user_menu");
 
-menu.addEventListener('click', function () {
-    user_menu.classList.toggle("active")
-});
-
+if (menu) {
+    menu.addEventListener('click', function () {
+        user_menu.classList.toggle("active");
+        icon.classList.toggle("active");
+    });
+}
 <!--Mapa-->
             var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                 "map_1de6ef4f1218487da9d6da057bb8f454",
