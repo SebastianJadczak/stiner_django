@@ -542,7 +542,6 @@ div.about_us{
 }
 div.about_us p{
     font-weight: normal;
-    font-family: Arial;
     padding:20px 50px;
     letter-spacing: 2px;
     color: #6c6c6c;
@@ -685,4 +684,62 @@ div.product_description button.buy{
     letter-spacing: 2px;
     font-family:  Arial, sans-serif;
     margin-left:400px;
+}
+
+
+/* Zakładka Kontakt. */
+
+div.contact p#contact{
+    background-color: #0f0c6a;
+    color: whitesmoke;
+    margin: 0;
+    height:60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    font-family:Verdana, Arial, sans-serif;
+    letter-spacing: 3px;
+}
+div.contact div.person{
+    width:50vw;
+    margin: 80px auto 130px;
+}
+div.contact div.person div.person-text{
+     border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 30px;
+}
+div.contact div.person div.person-text h1{
+    font-weight: normal;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    color: #0b0950;
+}
+div.contact div.person div.person-text p{
+    font-size: 18px;
+    letter-spacing: 1.6px;
+    color: #0f0c6a;
+}
+div.contact div.person div.person-info div.image{
+    width:180px;
+    height:200px;
+    margin-left: 20px;
+}
+div.contact div.person div.person-info div.image img{
+   height: auto;
+    max-width: 100%;
+    display:block;
+    border-radius: 100px;
+}
+
+div.contact div#data_company{
+    background-color: #0e0b53;
+    color: whitesmoke;
+    height:40vh;
+}
+div.contact div#data_company p{
+    text-align: center;
+    font-size: 22px;
+    padding-top: 30px;
+    letter-spacing: 2px;
 }

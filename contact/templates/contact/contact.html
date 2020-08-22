@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
-
+{%load static %}
 {% block content %}
+<div class="contact">
+    <p id="contact">Kontakt</p>
+    <div class="person">
+        <div class="person-text">
+            <h1>Stiner</h1>
+            <p>Z nami zaplanujesz wakacje.</p>
+        </div>
+        <div class="person-info">
+            <div class="image">
+                <img src="{%static 'img/ja.jpg'%}" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="data_company">
+        <p>Dane Firmy</p>
+    </div>
     {% if sent != True %}
-        Kontakt:
         <form action="/contact" method="post">
             {{form.as_p}}
             {% csrf_token %}
@@ -11,6 +26,6 @@
     {% else %}
         <p>Wysłano wiadomość email</p>
     {% endif %}
-
+</div>
 
 {% endblock %}
