@@ -1,0 +1,53 @@
+div.account {
+    background-color: #eeeeee;
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Kolumna lewa */
+
+div.account div.column-left{
+    width:50%;
+    height:90%;
+    margin: 20px 100px 50px 200px;
+}
+div.account div.column-left div.basic_info {
+    width: 100%;
+    min-height: 600px;
+    background-color: #fff;
+}
+
+div.account div.column-left div.info {
+    width: 100%;
+    min-height: 600px;
+    margin-top: 40px;
+    background-color: #fff;
+}
+
+/* Kolumna prawa */
+
+div.account div.column-right{
+    width:15%;
+    height:90%;
+    margin-top: 20px;
+}
+
+div.account div.column-right div.first-statistic{
+    width:100%;
+    min-height: 200px;
+    background-color: #fff;
+}
+
+div.account div.column-right div.second-statistic{
+    margin-top: 30px;
+    width:100%;
+    min-height: 500px;
+    background-color: #fff;
+
+}div.account div.column-right div.third-statistic{
+    margin-top: 30px;
+    width:100%;
+    min-height: 500px;
+    background-color: #fff;
+}
