@@ -796,3 +796,66 @@ div.contact div#data_company div.data{
 div.contact div#data_company div.data p{
     font-size: 16px;
 }
+
+/*Formularz*/
+
+div.contact div.form{
+    width: 40vw;
+    margin: 0 auto;
+}
+div.contact div.form h2{
+    letter-spacing: 1.5px;
+    margin: 60px 0 15px;
+    font-family: sans-serif;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 0 5px 20px 10px;
+}
+div.contact div.form p#help{
+    margin-bottom: 40px;
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    padding: 0 10px 20px;
+    border-bottom: 1px solid #cfcfcf;
+}
+div.contact div.form h3{
+    margin-left: 50px;
+    margin-bottom: 25px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+div.contact div.form form{
+    height:300px;
+    margin-left: 50px;
+}
+div.contact div.form form p{
+    height: 40px;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+div.contact div.form form p input{
+    width:360px;
+    margin-left: 36px;
+    height: 35px;
+}
+div.contact div.form form p textarea{
+    width:360px
+}
+div.contact div.form form input[type=submit]{
+    margin: 140px 0 30px 310px;
+    width: 140px;
+    height:40px;
+    background-color: whitesmoke;
+    color: #3375a4;
+    border: 1px solid #2e628d;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 17px;
+    transition: 0.5s;
+}
+
+div.contact div.form form input[type=submit]:hover{
+    background-color: #2c668f;
+    color: whitesmoke;
+    border: 1px solid #2e628d;
+    cursor:pointer;
+}
