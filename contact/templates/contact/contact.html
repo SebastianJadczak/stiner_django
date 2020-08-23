@@ -12,10 +12,29 @@
             <div class="image">
                 <img src="{%static 'img/ja.jpg'%}" alt="">
             </div>
+            <div class="info">
+                <div class="motto">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                    <p>The standard Lorem Ipsum passage, used since the 1500s</p>
+                </div>
+                <div class="data">
+                    <h3>Sebastian Jadczak</h3>
+                    <p><i class="fas fa-phone"></i>518-521-272</p>
+                    <p><i class="fas fa-at"></i>sebastian-jadczak@wp.pl</p>
+                    <p><i class="fab fa-facebook"></i>Facebook</p>
+                </div>
+            </div>
         </div>
     </div>
     <div id="data_company">
+        <i class="fas fa-home"></i>
         <p>Dane Firmy</p>
+        <div class="data">
+            <p>Stiner fikcyjna firma na potrzeby projektu</p>
+            <p>ul. Wymyślona 2, 01-123 Niebo,</p>
+            <p>woj. mazowieskie, Polska</p>
+            <p>NIP: PL078188115*</p>
+        </div>
     </div>
     {% if sent != True %}
         <form action="/contact" method="post">

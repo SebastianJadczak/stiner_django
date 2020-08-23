@@ -703,6 +703,7 @@ div.contact p#contact{
 div.contact div.person{
     width:50vw;
     margin: 80px auto 130px;
+
 }
 div.contact div.person div.person-text{
      border-top: 1px solid #cccccc;
@@ -720,16 +721,54 @@ div.contact div.person div.person-text p{
     letter-spacing: 1.6px;
     color: #0f0c6a;
 }
+
+div.contact div.person div.person-info {
+    display: flex;
+}
 div.contact div.person div.person-info div.image{
-    width:180px;
+    width:240px;
     height:200px;
     margin-left: 20px;
+    margin-top: 80px;
 }
 div.contact div.person div.person-info div.image img{
    height: auto;
     max-width: 100%;
     display:block;
-    border-radius: 100px;
+    border-radius: 130px;
+}
+
+div.contact div.person div.person-info div.info{
+    margin-left: 50px;
+}
+
+div.contact div.person div.person-info div.info div.motto p:nth-of-type(1){
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 19px;
+}
+div.contact div.person div.person-info div.info div.motto p:nth-of-type(2){
+     font-family: sans-serif;
+    letter-spacing: 1.1px;
+}
+
+div.contact div.person div.person-info div.info div.data{
+    margin-top:40px;
+}
+div.contact div.person div.person-info div.info div.data h3{
+    font-family: sans-serif;
+    letter-spacing: 1.2px;
+    font-size: 18px;
+}
+
+div.contact div.person div.person-info div.info div.data p{
+    font-size: 18px;
+}
+
+div.contact div.person div.person-info div.info div.data p i{
+    color: #1268a2;
+    margin-right: 15px;
 }
 
 div.contact div#data_company{
@@ -737,9 +776,23 @@ div.contact div#data_company{
     color: whitesmoke;
     height:40vh;
 }
+
+div.contact div#data_company i {
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    padding-top: 50px;
+    color: #44a3e2;
+}
+
 div.contact div#data_company p{
     text-align: center;
     font-size: 22px;
-    padding-top: 30px;
     letter-spacing: 2px;
+}
+div.contact div#data_company div.data{
+    margin-top:70px;
+}
+div.contact div#data_company div.data p{
+    font-size: 16px;
 }
