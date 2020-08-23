@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'trails.apps.TrailsConfig',
     'user_trails.apps.UserTrailsConfig',
     'contact.apps.ContactConfig',
+    'account.apps.AccountConfig',
     'rest_framework'
 ]
 

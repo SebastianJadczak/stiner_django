@@ -13,6 +13,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Map.as_view(), name='map'),
     path('map/', include('map.urls')),
+    path('account/', include('account.urls')),
     path('blog/', include('blog.urls'), name='blog'),
     path('shop/', ProductContentListView.as_view(), name='list_products'),
     path('shop/', include('shop.urls'), name='shop'),
