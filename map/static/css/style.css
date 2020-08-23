@@ -851,6 +851,7 @@ div.contact div.form form input[type=submit]{
     letter-spacing: 2px;
     font-size: 17px;
     transition: 0.5s;
+    border-radius: 20px;
 }
 
 div.contact div.form form input[type=submit]:hover{
