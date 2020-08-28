@@ -4,7 +4,13 @@
 
     <div class="account">
         <div class="column-left">
-            <div class="basic_info"></div>
+            <div class="basic_info">
+                <div class="photo"><img src="{{request.user.profile.photo.url}}" alt=""></div>
+                <div class="name_user">
+                    <h3>{{request.user.profile.name}}</h3>
+                </div>
+                <div class="edit_user_profile"><button>Edytuj</button></div>
+            </div>
             <div class="info"></div>
         </div>
         <div class="column-right">

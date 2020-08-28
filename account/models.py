@@ -5,6 +5,8 @@ from django.conf import settings
 class Profile(models.Model):
     """Nadpisanie modelu User."""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    name = models.TextField(max_length=30)
+    surname = models.TextField(max_length=30)
     date_of_birth = models.DateField(blank=True, null=True)
     photo = models.ImageField(upload_to='users/%Y/%m/%d', blank=True)
     country = models.TextField(max_length=30, blank=True)
@@ -15,6 +17,7 @@ class Profile(models.Model):
     postal_code = models.CharField(max_length=20, blank=True)
     main_language = models.CharField(max_length=25, blank=True)
     other_language = models.CharField(max_length=20, blank=True)
+    phone = models.TextField(max_length=10)
 
     def __str__(self):
         return 'Profil użytkownika {}.'.format(self.user.username)

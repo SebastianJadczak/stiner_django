@@ -16,7 +16,46 @@ div.account div.column-left div.basic_info {
     width: 100%;
     min-height: 600px;
     background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    padding:35px;
+    box-sizing: border-box;
 }
+div.account div.column-left div.basic_info div.edit_user_profile button{
+    background-color: #ffffff;
+    border: 1px solid #0d3757;
+    color:  #0e446c;
+    font-family: sans-serif;
+    width:100px;
+    height: 35px;
+    text-transform: lowercase;
+    font-size: 16px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+div.account div.column-left div.basic_info div.edit_user_profile button:hover{
+     background-color:  #0d3757;
+    color: white;
+}
+
+div.account div.column-left div.basic_info div.name_user{
+    width: 70%;
+    height:100%;
+}
+
+
+div.account div.column-left div.basic_info div.photo{
+    width:220px;
+    height:300px
+
+}
+div.account div.column-left div.basic_info div.photo img{
+    border-radius: 100px;
+    height: 80%;
+    width: auto;
+}
+
 
 div.account div.column-left div.info {
     width: 100%;
