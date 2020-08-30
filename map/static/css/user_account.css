@@ -14,13 +14,16 @@ div.account div.column-left{
 }
 div.account div.column-left div.basic_info {
     width: 100%;
-    min-height: 600px;
+    min-height: 250px;
     background-color: #fff;
     display: flex;
     flex-direction: row;
-    padding:35px;
+    padding:20px 35px;
     box-sizing: border-box;
 }
+div.account div.column-left div.basic_info div.edit_user_profile{
+    margin-top: 15px;
+ }
 div.account div.column-left div.basic_info div.edit_user_profile button{
     background-color: #ffffff;
     border: 1px solid #0d3757;
@@ -30,7 +33,7 @@ div.account div.column-left div.basic_info div.edit_user_profile button{
     height: 35px;
     text-transform: lowercase;
     font-size: 16px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     cursor: pointer;
     transition: 0.6s;
 }
@@ -44,26 +47,82 @@ div.account div.column-left div.basic_info div.name_user{
     height:100%;
 }
 
+div.account div.column-left div.basic_info div.name_user h3{
+    color: #12588c;
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: 3px;
+}
+div.account div.column-left div.basic_info div.name_user div.location{
+    padding: 0 20px;
+}
+
+div.account div.column-left div.basic_info div.name_user div.location p{
+    color: #0e446c;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+div.account div.column-left div.basic_info div.name_user div.date_of_birth{
+    padding: 0 20px;
+}
+div.account div.column-left div.basic_info div.name_user div.date_of_birth p {
+     color: #0e446c;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
 
 div.account div.column-left div.basic_info div.photo{
     width:220px;
-    height:300px
+    height:200px
 
 }
 div.account div.column-left div.basic_info div.photo img{
-    border-radius: 100px;
-    height: 80%;
+    height: 100%;
     width: auto;
 }
 
 
 div.account div.column-left div.info {
     width: 100%;
-    min-height: 600px;
+    min-height: 530px;
     margin-top: 40px;
     background-color: #fff;
+    font-family: sans-serif;
+}
+div.account div.column-left div.info div.data_contact{
+    text-align: center;
 }
 
+div.account div.column-left div.info div.data_contact h3{
+    color: #0e446c;
+    background-color: #f1f1f1;
+    font-size: 22px;
+    letter-spacing: 2.5px;
+    font-weight: normal;
+    padding: 5px;
+}
+div.account div.column-left div.info div.data_contact div{
+    display: flex;
+    flex-direction: row;
+    margin:0 auto;
+}
+
+div.account div.column-left div.info div.data_contact div p{
+    color: #0e446c;
+    letter-spacing: 2px;
+    font-size: 17px;
+    margin:10px 10px 10px 170px;
+    width:150px;
+    text-align: left;
+}
+div.account div.column-left div.info div.data_contact div.contact p{
+    margin:10px;
+    width: auto;
+}
+div.account div.column-left div.info div.data_contact div span{
+    margin: 12px 0 0 25px;
+    color: black;
+}
 /* Kolumna prawa */
 
 div.account div.column-right{

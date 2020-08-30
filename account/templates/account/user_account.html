@@ -7,11 +7,33 @@
             <div class="basic_info">
                 <div class="photo"><img src="{{request.user.profile.photo.url}}" alt=""></div>
                 <div class="name_user">
-                    <h3>{{request.user.profile.name}}</h3>
+                    <h3>{{request.user.profile.name}} {{request.user.profile.surname}}</h3>
+                    <div class="location">
+                        <p>{{request.user.profile.city}}, {{request.user.profile.country}}</p>
+                    </div>
+                    <div class="date_of_birth">
+                        <p>{{request.user.profile.date_of_birth}}</p>
+                    </div>
                 </div>
                 <div class="edit_user_profile"><button>Edytuj</button></div>
             </div>
-            <div class="info"></div>
+            <div class="info">
+                <div class="data_contact">
+                    <h3>Dane kontaktowe</h3>
+                    <div class="contact">
+                        <div class="email"><p>email: {{request.user.profile.email}}</p></div>
+                        <div class="phone"><p>phone: {{request.user.profile.phone}}</p></div>
+                    </div>
+                    <h3>Adres</h3>
+                    <div class="street"><p>Ulica: </p><span>{{request.user.profile.street}}</span></div>
+                    <div class="number_house"><p>Nr. domu: </p><span>{{request.user.profile.house_number}}</span></div>
+                    <div class="apartment_number"><p>Nr. Mieszkania: </p><span>{{request.user.profile.apartment_number}}</span></div>
+                    <div class="postal_code"><p>Kod pocztowy: </p><span>{{request.user.profile.postal_code}}</span></div>
+                    <h3>Języki</h3>
+                    <div class="main_language"><p>Język Ojczysty: </p><span>{{request.user.profile.main_language}}</span></div>
+                    <div class="other_language"><p>Inne Języki: </p><span>{{request.user.profile.other_language}}</span></div>
+                </div>
+            </div>
         </div>
         <div class="column-right">
             <div class="first-statistic"></div>
