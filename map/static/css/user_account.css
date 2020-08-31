@@ -99,7 +99,7 @@ div.account div.column-left div.info div.data_contact h3{
     font-size: 22px;
     letter-spacing: 2.5px;
     font-weight: normal;
-    padding: 5px;
+    padding: 7px;
 }
 div.account div.column-left div.info div.data_contact div{
     display: flex;
@@ -112,7 +112,7 @@ div.account div.column-left div.info div.data_contact div p{
     letter-spacing: 2px;
     font-size: 17px;
     margin:10px 10px 10px 170px;
-    width:150px;
+    width:230px;
     text-align: left;
 }
 div.account div.column-left div.info div.data_contact div.contact p{
@@ -123,6 +123,45 @@ div.account div.column-left div.info div.data_contact div span{
     margin: 12px 0 0 25px;
     color: black;
 }
+
+div.account div.column-left div.preference{
+    min-height: 32vh;
+    width: 100%;
+    background-color: #fff;
+    font-family: sans-serif;
+     text-align: center;
+}
+
+div.account div.column-left div.preference h3{
+    text-align: center;
+    color: #0e446c;
+   background-color: #f1f1f1;
+    font-size: 22px;
+    letter-spacing: 2.5px;
+    font-weight: normal;
+    padding: 7px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+div.account div.column-left div.preference div{
+    display: flex;
+}
+
+div.account div.column-left div.preference p{
+     color: #0e446c;
+    letter-spacing: 2px;
+    font-size: 17px;
+    margin:15px 10px 10px 170px;
+    width:230px;
+    text-align: left;
+}
+
+div.account div.column-left div.preference span{
+    margin: 15px 0 0 25px;
+    color: black;
+    font-size: 17px;
+}
+
 /* Kolumna prawa */
 
 div.account div.column-right{
