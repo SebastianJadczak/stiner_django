@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 from .import views
 
-app_name = 'management'
+app_name = 'contact'
 
 urlpatterns = [
     path('',views.post_share , name='contact_detail'),

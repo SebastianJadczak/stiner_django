@@ -361,7 +361,12 @@ div.right_table div.reklama{
     width:310px;
     height:260px;
       margin: 0 auto;
-    background-color: black;
+    background-color: white;
+    background-image: url("../img/baner.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 0 1px #bdbdbd;
 }
 div.posts{
     display: flex;

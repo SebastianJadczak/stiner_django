@@ -23,9 +23,23 @@
             <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
         </ul>
     </div>
-    <div class="login_mapa">
-        {% if user.is_authenticated %}
-        <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
+    <div class="login_mapa" >
+       {% if user.is_authenticated %}
+        <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i> <span>{{user.username}}</span><i class="fas fa-angle-down"></i></button>
+        <div class="user_menu">
+            <ul>
+                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
+                <li><a href="#">Ustawienia</a></li>
+
+                {% if perms.blog.view_post %}
+                <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
+                {% elif perms.shop.view_product %}
+                    <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
+                {% endif %}
+
+                <li><a href="{% url 'logout' %}">Wyloguj</a></li>
+            </ul>
+        </div>
         {% else %}
         <button><a href="{% url 'login' %}">Zaloguj się</a></button>
         <button class="register"><a href="{% url 'register' %}">Załóż konto</a></button>
@@ -36,5 +50,19 @@
 {% block content %}
 {% endblock %}
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
+<script>
+    <!--    "Przycisk rozwijania menu"-->
+
+let menu = document.querySelector("button.user_menu");
+let icon = document.querySelector("i.fa-angle-down");
+let user_menu = document.querySelector("div.user_menu");
+
+if (menu) {
+    menu.addEventListener('click', function () {
+        user_menu.classList.toggle("active");
+        icon.classList.toggle("active");
+    });
+}
+</script>
 </body>
 </html>
