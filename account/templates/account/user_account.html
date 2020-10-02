@@ -36,11 +36,11 @@
             </div>
             <div class="preference">
                 <h3>Preferencje</h3>
-                <div class="country"><p>Ulubiony Kraj: </p><span>Polska</span></div>
-                <div class="region"><p>Ulubiony region: </p><span>Mazury</span></div>
-                <div class="city"><p>Ulubione miasto: </p><span>Warszawa</span></div>
-                <div class="place"><p>Ulubione miejsce: </p> <span>Pałac Kultury</span></div>
-                <div class="restaurant"><p>Ulubiona restauracja: </p><span>Dolce Vita</span></div>
+                <div class="country"><p>Ulubiony Kraj: </p><span>{{request.user.preference.favorite_country}}</span></div>
+                <div class="region"><p>Ulubiony region: </p><span>{{request.user.preference.favorite_region}}</span></div>
+                <div class="city"><p>Ulubione miasto: </p><span>{{request.user.preference.favorite_city}}</span></div>
+                <div class="place"><p>Ulubione miejsce: </p> <span>{{request.user.preference.favorite_place}}</span></div>
+                <div class="restaurant"><p>Ulubiona restauracja: </p><span>{{request.user.preference.favorite_restaurant}}</span></div>
             </div>
         </div>
         <div class="column-right">
@@ -55,7 +55,7 @@
                     <h3>Twój profil Wypełniony w:</h3>
                     <div class="precent-wrap">
                         <div class="precent">
-                            <p>100</p><i class="fas fa-percent"></i>
+                            <p>{{średnia}}</p><i class="fas fa-percent"></i>
                         </div>
                     </div>
 

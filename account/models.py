@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf import settings
 
-
 class Profile(models.Model):
     """Nadpisanie modelu User."""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -18,6 +17,19 @@ class Profile(models.Model):
     main_language = models.CharField(max_length=25, blank=True)
     other_language = models.CharField(max_length=20, blank=True)
     phone = models.TextField(max_length=10)
-
+    email = models.EmailField()
     def __str__(self):
         return 'Profil użytkownika {}.'.format(self.user.username)
+
+
+class Preference(models.Model):
+    """Model preferencji użytkonika"""
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    favorite_country = models.TextField(max_length=30, blank=True, null=True)
+    favorite_region = models.TextField(max_length=30, blank=True, null=True)
+    favorite_city = models.TextField(max_length=30, blank=True, null=True)
+    favorite_place = models.TextField(max_length=30, blank=True, null=True)
+    favorite_restaurant = models.TextField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return "Preferencje"
