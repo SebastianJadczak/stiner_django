@@ -341,7 +341,7 @@ letter-spacing:1.5px;
 div.blog_title{
     width:99.1vw;
     height:80vh;
-    background-image: url("../../static/img/city.jpg");
+    background-image: url("../img/citys.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
