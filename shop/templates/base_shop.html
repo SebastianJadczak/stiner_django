@@ -16,7 +16,18 @@
     <div class="menu">
         <ul>
             <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
-            <li class="green"><a href="{% url "trails:basic_trails" %}"><i class="fas fa-map-signs"></i>Trasy</a></li>
+            <li class="green"><a href="{% url "trails:basic_trails" %}"><i class="fas fa-map-signs"></i>Trasy</a>
+                 <div class="tr">
+                    <ul>
+                        <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
+                        <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
+                        {% endif %}
+                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
+                    </ul>
+        </div>
+            </li>
             <li class="blue"><a href="{% url "blog:list_posts" %}"><i class="fas fa-book-open"></i>Blog</a></li>
             <li><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
             <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>

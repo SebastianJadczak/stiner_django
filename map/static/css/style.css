@@ -18,6 +18,41 @@ width:65%;
 height:10vh;
 font-family: 'Roboto Mono', monospace;
 }
+div#top_mapa div.menu_mapa div.tr{
+    width: 100%;
+    height: 180px;
+    background-color: #fdfdfd;
+    border: 0.5px solid #e9e8e8;
+    color: #2e6993;
+    transform: translateY(-400px);
+    z-index: -1;
+}
+div#top_mapa div.menu_mapa div.tr ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+div#top_mapa div.menu_mapa div.tr ul li{
+    height: 100%;
+    width: 100%;
+    line-height: 0;
+    padding: 12px;
+}
+div#top_mapa div.menu_mapa div.tr ul li:hover{
+     background-color: #f8f8f8;
+}
+div#top_mapa div.menu_mapa div.tr ul li a{
+    display: block;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 35px;
+    margin: 0;
+    padding: 0;
+    color: #2e6993;
+}
 div#top_mapa div.menu_mapa ul{
 display:flex;
 justify-content:space-between;
@@ -46,6 +81,12 @@ color:blue;
 div#top_mapa div.menu_mapa ul li.green a{
 color:green
 }
+
+
+div#top_mapa div.menu_mapa ul li.green:hover div.tr{
+    transform: translateY(-20px);
+}
+
 div#top_mapa div.menu_mapa ul li.gold a {
     color: #ab0fb5;
 }
@@ -236,6 +277,9 @@ div#top div.menu ul li {
 width: 25%;
 line-height:9vh;
 }
+
+
+
 div#top div.menu ul li a{
 display:block;
 text-align: center;
@@ -341,7 +385,7 @@ letter-spacing:1.5px;
 div.blog_title{
     width:99.1vw;
     height:80vh;
-    background-image: url("../img/citys.jpg");
+    background-image: url("../img/city.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -864,4 +908,46 @@ div.contact div.form form input[type=submit]:hover{
     color: whitesmoke;
     border: 1px solid #2e628d;
     cursor:pointer;
+}
+
+
+
+div#top div.menu div.tr{
+    width: 100%;
+    height: 180px;
+    background-color: #fdfdfd;
+    border: 0.5px solid #e9e8e8;
+    color: #2e6993;
+    transform: translateY(-400px);
+    z-index: -1;
+}
+div#top div.menu div.tr ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+div#top div.menu div.tr ul li{
+    height: 100%;
+    width: 100%;
+    line-height: 0;
+    padding: 12px 0;
+}
+div#top div.menu div.tr ul li:hover{
+     background-color: #f8f8f8;
+}
+div#top div.menu div.tr ul li a{
+    display: block;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 35px;
+    margin: 0;
+    padding: 0;
+    color: #2e6993;
+}
+
+div#top div.menu ul li.green:hover div.tr{
+    transform: translateY(-20px);
 }
