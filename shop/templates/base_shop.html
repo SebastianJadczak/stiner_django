@@ -30,6 +30,8 @@
             </li>
             <li class="blue"><a href="{% url "blog:list_posts" %}"><i class="fas fa-book-open"></i>Blog</a></li>
             <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a>
+<!--                Zamiast kategorii produktów, dać podstrony dla użytkownika sklepu. Np. wystaw produkt, Twoje wystawione produkty, Twoje kupione
+produkty, Twoje opinie. Ustawienia konta sklepowego-->
                 <div class="category_product">
                     <ul>
                         {% for c in  category %}
