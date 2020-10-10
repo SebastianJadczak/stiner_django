@@ -1,0 +1,40 @@
+div.product_detail{
+    width:80vw;
+    display: flex;
+    margin:100px auto;
+    border:2px solid red;
+    padding: 50px;
+    background-color: rgba(255, 209, 211, 0.53);
+}
+div.product_image{
+    height:300px;
+    width:600px;
+    margin-right: 50px;
+}
+div.product_detail div.product_image img{
+    width:100%;
+    height:100%;
+}
+div.product_description{
+    width:80%;
+    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    letter-spacing: 2px;
+}
+div.product_description span.price{
+    position: relative;
+    top:30px;
+}
+
+div.product_description button.buy{
+    background-color: #d80000;
+    border: none;
+    width:90px;
+    height:40px;
+    color:whitesmoke;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family:  Arial, sans-serif;
+    margin-left:400px;
+}
