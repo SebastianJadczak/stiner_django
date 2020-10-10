@@ -13,34 +13,8 @@
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </p>
     </div>
-    <h2 class="categories_list">Kategorie produktów</h2>
-    <div class="categories_list">
-        {% for ob in category %}
-            <div class="category">
-                <div class="image_category"><img src="{{ob.image.url}}" alt=""></div>
-                <a href='{% url "shop:products_list_category" ob.id %}'> {{ob.name}}</a>
-            </div>
-    {% endfor %}
-
-    </div>
 
 
-  <h2 class="products">Nasze produkty</h2>
-    <div class="products">
-        {% for ob in products %}
-            <div class="product">
-                <div class="image_product"><img src="{{ob.image.url}}" alt=""></div>
-                 {{ob.name}}
-                <p class="price">{{ob.price}}</p>
-               <a href='{% url "shop:product_detail" ob.id %}'>
-                   <button class="buy"><i class="fas fa-shopping-bag"></i>Kup</button>
-               </a>
-            </div>
-        {% endfor %}
-
-     </div>
-
-    <br>
 
 
 {% endblock %}

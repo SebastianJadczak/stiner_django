@@ -3,6 +3,7 @@ from django.views.generic import ListView, TemplateView, DetailView
 from rest_framework import  generics
 
 from map.models import Point, Opinion_about_Point
+from shop.models import Category
 from trails.api.serializers import PointTrailsSerializer
 from trails.models import Trail
 
@@ -11,6 +12,10 @@ class Trails(TemplateView):
     """ Widok podstawowy zakładki Trasy """
     template_name = 'trails/trails.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = Category.objects.all()
+        return context
 
 class PointsListView(ListView):
     """ Widok odpowiedzialny za listę punktów + wyszukiwarka """

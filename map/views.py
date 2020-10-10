@@ -5,13 +5,15 @@ from rest_framework import viewsets
 from map.api.serializers import PointSerializer
 from map.forms import FormularzRejestracji
 from map.models import Point
+from shop.models import Category
 
 
 class Map(View):
     template_name= 'map/map_index.html'
+    category = Category.objects.all()
 
     def get(self, request):
-        return render(request, self.template_name,)
+        return render(request, self.template_name,{'category':self.category})
 
 class PointViewsets(viewsets.ReadOnlyModelViewSet):
     queryset = Point.objects.all()

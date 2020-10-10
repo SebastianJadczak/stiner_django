@@ -50,14 +50,22 @@
                     <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
                     <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
+                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
                     {% endif %}
                     <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
                 </ul>
         </div>
             </li>
             <li class="blue"><a href="{% url 'blog:list_posts' %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
+            <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a>
+                <div class="category_product">
+                    <ul>
+                        {% for c in  category %}
+                        <li class="element">{{c}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
             <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
         </ul>
     </div>
@@ -113,6 +121,8 @@
 let menu = document.querySelector("button.user_menu");
 let icon = document.querySelector("i.fa-angle-down");
 let user_menu = document.querySelector("div.user_menu");
+let yours_trails = document.querySelector("li.yours_trails");
+let tr = document.querySelector("div.tr")
 
 if (menu) {
     menu.addEventListener('click', function () {
@@ -161,4 +171,8 @@ if (menu) {
 
         });
 
+    // Obsługa menu Trasy
+    if (yours_trails){
+     tr.classList.toggle("active");
+}
 </script>
