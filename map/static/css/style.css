@@ -26,6 +26,7 @@ div#top_mapa div.menu_mapa div.tr{
     color: #2e6993;
     transform: translateY(-400px);
     z-index: -1;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
 }
 
 div#top_mapa div.menu_mapa div.tr.active{
@@ -80,6 +81,8 @@ div#top_mapa div.menu_mapa ul li.black div.category_product{
     position: relative;
      transform: translateY(-700px);
     z-index: -1;
+          box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+
 }
 div#top_mapa div.menu_mapa ul li.black:hover div.category_product{
     transform: translateY(-20px);
@@ -90,6 +93,7 @@ div#top_mapa div.menu_mapa ul li.black div.category_product ul{
     display: flex;
     flex-direction: column;
     padding: 0;
+
 }
 div#top_mapa div.menu_mapa ul li.black div.category_product ul li{
     line-height: 4vh;
@@ -796,6 +800,8 @@ div#top div.menu div.tr{
     color: #2e6993;
     transform: translateY(-400px);
     z-index: -1;
+          box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+
 }
 div#top div.menu div.tr.active{
      height: 240px;
@@ -828,7 +834,7 @@ div#top div.menu div.tr ul li a{
 }
 
 div#top div.menu ul li.green:hover div.tr{
-    transform: translateY(-20px);
+    transform: translateY(-3px);
 }
 
 /* Menu sklepu */
@@ -842,9 +848,10 @@ div#top div.menu ul li.black div.category_product{
      transform: translateY(-700px);
     z-index: -1;
     font-family: 'Roboto Mono', monospace;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
 }
 div#top div.menu ul li.black:hover div.category_product{
-    transform: translateY(-20px);
+    transform: translateY(-4px);
     z-index: 1;
 }
 
