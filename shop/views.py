@@ -26,6 +26,7 @@ class ProductDetailListView(TemplateResponseMixin,View):
     def get(self, request, id_product):
         product = get_object_or_404(Product,id=id_product)
         cart_product_form = CartAddProductForm()
-        return self.render_to_response({'product': product, 'cart_product_form':cart_product_form})
+        category = Category.objects.all()
+        return self.render_to_response({'product': product, 'cart_product_form':cart_product_form, 'category':category})
 
 

@@ -1,5 +1,6 @@
 div.trail{
     display: flex;
+    margin-top: 8px;
     background-color: #f4f4f4;
 }
 div.trail div.menu_trail{
