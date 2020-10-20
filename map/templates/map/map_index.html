@@ -20,13 +20,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
     <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
 
 
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
                 #map_1de6ef4f1218487da9d6da057bb8f454 {
-                   z-index: -1;
+                    position: relative;
+                    margin-top:6px;
                     width: 100.0%;
                     height: 83.0%;
                     left: 0.0%;
@@ -131,7 +133,7 @@ if (menu) {
     });
 }
 <!--Mapa-->
-            var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
+var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                 "map_1de6ef4f1218487da9d6da057bb8f454",
                 {
                     center: [52.22977, 21.01178],
