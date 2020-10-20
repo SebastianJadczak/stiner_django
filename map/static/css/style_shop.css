@@ -8,8 +8,44 @@ div.menu-shop{
     height:7vh;
     background-color: #fff;
       box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    display: flex;
+
+}
+div.menu-shop div.shop-user-menu{
+    display: flex;
+}
+div.menu-shop div.search-product{
+    line-height: 7vh;
+    width:700px;
+    margin-left: 500px;
+}
+div.menu-shop div.search-product input{
+    width: 330px;
+    height: 33px;
+    padding: 0 0 0 20px;
+}
+div.menu-shop div.search-product select{
+     height: 36px;
+    width: 180px;
+    padding: 0 0 0 20px;
 }
 
+div.menu-shop div.search-product button{
+    background-color: #ff6f00;
+    color: white;
+    border: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+}
+
+
+div.menu-shop div.shop-user-menu{
+    margin-left: 50px;
+     line-height: 7vh;
+}
 
 /* Głowna strona sklepu - Lista */
 div.shop-list{
@@ -30,6 +66,33 @@ div.first-section div.left{
     height: 100%;
     background-color: #ffffff;
       box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+div.first-section div.left ul.menu-category{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+div.first-section div.left ul.menu-category li{
+    width: 100%;
+    height: 100%;
+}
+
+div.first-section div.left ul.menu-category li:hover{
+    background-color: #f6f6f6;
+    cursor: pointer;
+}
+div.first-section div.left ul.menu-category li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+     color: #214691;
+    padding: 15px 0 0 30px;
 }
 div.first-section div.center{
     width: 50vw;

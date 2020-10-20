@@ -69,7 +69,29 @@ produkty, Twoje opinie. Ustawienia konta sklepowego-->
 </div>
 </div>
 <div class="shop-content">
-    <div class="menu-shop"></div>
+    <div class="menu-shop">
+        <div class="search-product">
+                <form action="" method="GET">
+                    <label class="nazwa">
+                    <input type="text" name="search" placeholder="Czego szukasz?">
+                    <select name="category" id="category">
+                        <option value="Warszawa">Wszystkie kategorie</option>
+                        {% for c in category %}
+                        <option value="Warszawa">{{c.name}}</option>
+                        {% endfor %}
+                    </select>
+                 </label>
+            <button class="search-product">Szukaj</button>
+        </form>
+        </div>
+        <div class="shop-user-menu">
+            <div><i class="far fa-star"></i></div>
+            <div><i class="far fa-comments"></i></div>
+            <div><i class="far fa-bell"></i></div>
+            <div><i class="fas fa-shopping-basket"></i></div>
+            <div><i class="far fa-address-card"></i></div>
+        </div>
+    </div>
 </div>
 {% block content %}
 {% endblock %}
