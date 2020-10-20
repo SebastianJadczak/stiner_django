@@ -31,6 +31,8 @@ div#top_mapa div.menu_mapa div.tr{
 
 div#top_mapa div.menu_mapa div.tr.active{
      height: 240px;
+    position: relative;
+    z-index: 9;
 }
 
 div#top_mapa div.menu_mapa div.tr ul{
