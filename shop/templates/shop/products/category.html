@@ -8,18 +8,18 @@
         <div class="left">
             <ul class="menu-category">
                 {% for c in category %}
-                    <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
+                     <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
                 {% endfor %}
             </ul>
         </div>
-        <div class="center">
-            <div class="top"></div>
-            <div class="bottom"></div>
+        <div class="catefory-products">
+            {% for p in products %}
+                <div>
+                    {{p}}
+                </div>
+            {% endfor %}
         </div>
-        <div class="right">
-             <div class="top"></div>
-            <div class="bottom"></div>
-        </div>
+
     </div>
 </div>
 

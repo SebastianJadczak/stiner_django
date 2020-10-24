@@ -11,11 +11,12 @@ class ProductContentListView(TemplateResponseMixin, View):
     """ Klasa odpowiedzialna za wyświetlenie wszystkich produktów """
     template_name = 'shop/products/list.html'
 
-    def get(self, request, name_category=None):
+    def get(self, request, pk=None):
         category = Category.objects.all()
         products = Product.objects.all()
-        if name_category:
-            products = Product.objects.filter(category=name_category)
+        if pk:
+            products = Product.objects.filter(category=pk)
+            self.template_name = 'shop/products/category.html'
         return self.render_to_response({'products': products,
                                         'category': category})
 
