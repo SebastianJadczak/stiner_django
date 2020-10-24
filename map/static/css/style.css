@@ -34,7 +34,11 @@ div#top_mapa div.menu_mapa div.tr.active{
     position: relative;
     z-index: 9;
 }
-
+div#top_mapa div.menu_mapa div.tr{
+        height: 240px;
+    position: relative;
+    z-index: 1;
+}
 div#top_mapa div.menu_mapa div.tr ul{
     height: 100%;
     width: 100%;
@@ -130,6 +134,7 @@ color:green
 
 div#top_mapa div.menu_mapa ul li.green:hover div.tr{
     transform: translateY(-20px);
+    z-index: 1;
 }
 
 div#top_mapa div.menu_mapa ul li.gold a {
@@ -837,6 +842,7 @@ div#top div.menu div.tr ul li a{
 
 div#top div.menu ul li.green:hover div.tr{
     transform: translateY(-3px);
+    z-index: 1;
 }
 
 /* Menu sklepu */
