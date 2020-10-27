@@ -25,7 +25,7 @@ div.menu-shop div.search-product input{
     padding: 0 0 0 20px;
 }
 div.menu-shop div.search-product select{
-     height: 36px;
+    height: 36px;
     width: 180px;
     padding: 0 0 0 20px;
 }
@@ -83,7 +83,7 @@ div.menu-shop div.shop-user-menu div#bell:hover i{
 /* Głowna strona sklepu - Lista */
 div.shop-list{
     background-color: #f1f1f1;
-    height: 100vh;
+    min-height: 100vh;
     margin: 3px 0 0 0;
     padding: 20px 100px;
 }
@@ -91,12 +91,13 @@ div.first-section{
     width:100%;
     height: 60vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 div.first-section div.left{
     width: 15vw;
     height: 100%;
+    margin-right: 130px;
     background-color: #ffffff;
       box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
 }
@@ -118,21 +119,25 @@ div.first-section div.left ul.menu-category li:hover{
     background-color: #f6f6f6;
     cursor: pointer;
 }
+
 div.first-section div.left ul.menu-category li a{
     display: block;
     width: 100%;
     height: 100%;
     text-decoration: none;
     font-family: 'Roboto Mono', monospace;
-     color: #214691;
+    color: #131313;
+    text-shadow: 0 1px #cbcbcb;
     padding: 15px 0 0 30px;
 }
+
 div.first-section div.center{
-    width: 50vw;
+    width: 45vw;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-right: 70px;
 }
 
 div.first-section div.center div.top{

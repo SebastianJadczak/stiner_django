@@ -1,0 +1,90 @@
+div.shop-list{min-height: 200vh}
+div.category-products div.ad {
+    width:50vw;
+    height:200px;
+    background-color: #fff;
+    margin-bottom: 40px;
+}
+div.category-products div.product-wrap{
+    box-sizing: border-box;
+    width:100%;
+    background-color: #fff;
+}
+
+div.category-products div.product-wrap div.filter{
+    width:100%;
+    height:10vh;
+}
+
+div.category-products div.product{
+    border-bottom: 1px solid grey;
+    margin:0 15px;
+    padding: 10px 10px;
+    height:250px;
+    display: flex;
+}
+
+div.category-products div.product div.image-product{
+    width:220px;
+    height: 250px;
+}
+
+div.category-products div.product div.image-product img{
+    width: 100%;
+    height: 100%;
+}
+
+div.category-products div.product div.description-product{
+    margin-left: 20px;
+}
+div.category-products div.product div.description-product div{
+    display: flex;
+}
+div.category-products div.product div.description-product div.price{
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+div.category-products div.product div.description-product div.price p{
+       font-weight: normal;
+}
+div.category-products div.product div.description-product div p{
+    font-weight: bold;
+    margin: 0 10px 0 0;
+}
+div.category-products div.product div.description-product div p span{
+    font-weight: normal;
+}
+
+div.category-products div.product:hover{
+    background-color: #f3f3f3;
+}
+/* Sortowanie */
+
+div.filter div.sort form{
+    line-height: 10vh;
+    text-align: center;
+    margin-right: 100px;
+        font-family: sans-serif;
+}
+div.filter div.sort form select{
+    width:220px;
+    height:40px;
+    padding: 5px 20px;
+}
+
+div.filter div.sort form label#sort{
+    position: relative;
+    right: -150px;
+    top:-20px;
+    background-color: #fff;
+    font-size: 15px;
+}
+div.filter div.sort form button{
+    background-color: #fff;
+    border: 1px solid grey;
+    letter-spacing: 2.5px;
+    padding: 10px 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
