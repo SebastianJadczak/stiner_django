@@ -6,11 +6,13 @@
 <div class="shop-list">
     <div class="first-section">
         <div class="left">
+            <div>
             <ul class="menu-category">
                 {% for c in category %}
                     <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
                 {% endfor %}
             </ul>
+                </div>
         </div>
         <div class="center">
             <div class="top"></div>

@@ -94,13 +94,26 @@ div.first-section{
     justify-content: center;
 }
 
-div.first-section div.left{
+div.first-section div.left div{
     width: 15vw;
     height: 100%;
     margin-right: 130px;
     background-color: #ffffff;
       box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
 }
+div.first-section div.left div.filter-left{
+    margin-top:20px;
+}
+
+div.first-section div.left div.filter-left h3{
+    font-family: 'Roboto Mono', monospace;
+    color: #0e0e0e;
+    text-shadow: 0 1px #cbcbcb;
+    font-weight: normal;
+    text-align: center;
+    padding: 15px 0;
+}
+
 div.first-section div.left ul.menu-category{
     list-style: none;
     padding: 0;

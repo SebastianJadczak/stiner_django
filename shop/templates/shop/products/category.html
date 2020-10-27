@@ -5,11 +5,16 @@
 <div class="shop-list">
     <div class="first-section">
         <div class="left">
-            <ul class="menu-category">
-                {% for c in category %}
-                     <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
-                {% endfor %}
-            </ul>
+            <div class="menu">
+                <ul class="menu-category">
+                    {% for c in category %}
+                         <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="filter-left">
+                <h3>Filtry:</h3>
+            </div>
         </div>
         <div class="category-products">
             <div class="ad"></div>
