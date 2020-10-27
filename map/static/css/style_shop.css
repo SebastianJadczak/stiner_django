@@ -41,10 +41,43 @@ div.menu-shop div.search-product button{
     letter-spacing: 2.5px;
 }
 
-
 div.menu-shop div.shop-user-menu{
-    margin-left: 50px;
-     line-height: 7vh;
+    margin-left: 120px;
+     line-height: 8vh;
+    width: 25vw;
+    justify-content: flex-end;
+}
+div.menu-shop div.shop-user-menu div i{
+    font-size: 25px;
+    color: #626262;
+     text-shadow: 1px 1px #ababab;
+}
+div.menu-shop div.shop-user-menu div{
+    margin-right: 35px;
+}
+div.menu-shop div.shop-user-menu div#account{
+    margin-left:55px;
+     margin-right: 15px;
+     line-height: 9vh;
+}
+div.menu-shop div.shop-user-menu div#account i{
+    font-size: 37px;
+    color: #434343;
+    text-shadow: 1px 1px #ababab;
+}
+div.menu-shop div.shop-user-menu div#favorite:hover i{
+    color: #ffe02d;
+}
+
+div.menu-shop div.shop-user-menu div#messages:hover i{
+    color: #1A01CC;
+}
+
+div.menu-shop div.shop-user-menu div#cart:hover i{
+    color:black
+}
+div.menu-shop div.shop-user-menu div#bell:hover i{
+    color: red;
 }
 
 /* Głowna strona sklepu - Lista */
