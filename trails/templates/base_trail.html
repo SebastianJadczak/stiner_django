@@ -31,15 +31,7 @@
         </div>
             </li>
             <li class="blue"><a href="{% url "blog:list_posts" %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a>
-                <div class="category_product">
-                    <ul>
-                        {% for c in  category %}
-                        <li class="element">{{c}}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </li>
+            <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
             <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
         </ul>
     </div>
