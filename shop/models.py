@@ -32,3 +32,18 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+class Message(models.Model):
+    author = models.ForeignKey(User, related_name='message_created', on_delete=models.CASCADE)
+    recipient = models.ForeignKey(User, related_name='message_recipentd', on_delete=models.CASCADE)
+    title = models.CharField(max_length=200, db_index=True)
+    content = models.TextField(blank=True)
+    send = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('title',)
+        verbose_name = 'Message'
+        verbose_name_plural = 'Messages'
+
+    def __str__(self):
+        return self.title

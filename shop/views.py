@@ -1,9 +1,10 @@
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView
 from django.db.models import Count
-from django.views.generic.base import TemplateResponseMixin, View
+from django.views.generic.base import TemplateResponseMixin, View, TemplateView
 from cart.forms import CartAddProductForm
-from .models import Category, Product
+from .models import Category, Product, Message
 from django.views.generic.list import ListView
 
 
@@ -31,3 +32,11 @@ class ProductDetailListView(TemplateResponseMixin,View):
         return self.render_to_response({'product': product, 'cart_product_form':cart_product_form, 'category':category})
 
 
+class OwnerMixin(object):
+    def get_queryset(self):
+        qs = super(OwnerMixin, self).get_queryset()
+        return qs.filter(recipient=self.request.user)
+
+class MessagesBox(OwnerMixin, ListView):
+    template_name = 'shop/user/messages/messages-box.html'
+    model = Message

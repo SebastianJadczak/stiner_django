@@ -1,0 +1,33 @@
+{% extends "base_shop.html" %}
+
+
+{% block content %}
+<div class="messages-wrap">
+    <div class="box-left">
+        <div class="menu-messages">
+            <ul>
+                <li><a href="#">Skrzynka odbiorcza</a></li>
+                <li><a href="#">Skrzynka nadawca</a></li>
+                <li><a href="#">Wiadomości usunięte</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="box-right">
+        <div class="messages-content">
+            <ul>
+                {% for m in object_list %}
+                <li>
+                    <div class="message">
+                        <div class="checkbox"><input type="checkbox" id="horns" name="horns"></div>
+                        <div class="author"><p>{{m.author}}</p></div>
+                        <div class="title"><p>{{m.title}}</p></div>
+                        <div class="date"><p>{{m.send}}</p></div>
+                    </div>
+                </li>
+
+                {% endfor %}
+                </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

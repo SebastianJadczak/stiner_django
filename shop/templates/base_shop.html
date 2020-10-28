@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_shop.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_category_shop.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_shop_messages.css' %}">
 </head>
 <body>
 <div id="top">
@@ -77,7 +78,7 @@
         </div>
         <div class="shop-user-menu">
             <div id="favorite"><a href="#"><i class="far fa-star"></i></a></div>
-            <div id="messages"><a href="#"><i class="far fa-comments"></i></a></div>
+            <div id="messages"><a href="{% url 'shop:messages-box' %}"><i class="far fa-comments"></i></a></div>
             <div id="bell"><a href="#"><i class="far fa-bell"></i></a></div>
             <div id="cart"><a href="{%url 'cart:cart_detail'%}"><i class="fas fa-shopping-basket"></a></i></div>
             <div id="account"><a href="#"><i class="far fa-address-card"></i></a></div>
