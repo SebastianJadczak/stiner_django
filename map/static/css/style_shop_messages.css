@@ -36,6 +36,9 @@ div.messages-wrap div.box-left div.menu-messages ul li{
     line-height: 48px;
     text-align: center;
 }
+div.messages-wrap div.box-left div.menu-messages ul li.active{
+     background-color: #f6f6f6;
+}
 div.messages-wrap div.box-left div.menu-messages ul li:hover{
     background-color: #f6f6f6;
 }

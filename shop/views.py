@@ -32,11 +32,24 @@ class ProductDetailListView(TemplateResponseMixin,View):
         return self.render_to_response({'product': product, 'cart_product_form':cart_product_form, 'category':category})
 
 
-class OwnerMixin(object):
+class RecipientMixin(object):
+    """Mixin który filtruje wiadomości po odbiorcy"""
     def get_queryset(self):
-        qs = super(OwnerMixin, self).get_queryset()
+        qs = super(RecipientMixin, self).get_queryset()
         return qs.filter(recipient=self.request.user)
 
-class MessagesBox(OwnerMixin, ListView):
+class MessagesBox(RecipientMixin, ListView):
+    """Klasa odpowiedzialna za wyświetlenie wiadomości odebranych"""
     template_name = 'shop/user/messages/messages-box.html'
+    model = Message
+
+class AuthorMixin(object):
+    """Mixin który filtruje wiadomości po autorze"""
+    def get_queryset(self):
+        qs = super(AuthorMixin, self).get_queryset()
+        return qs.filter(author=self.request.user)
+
+class MessagesBoxSend(AuthorMixin, ListView):
+    """Klasa odpowiedzialna za wyświetlenie wiadomości wysłanych"""
+    template_name = 'shop/user/messages/messages-box-send.html'
     model = Message
