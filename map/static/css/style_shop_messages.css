@@ -59,6 +59,23 @@ div.messages-wrap div.box-right div.action{
     width:100%;
     height:5vh;
 }
+
+div.messages-wrap div.box-right div.action div.action-button button{
+    background-color: #00b6ff;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    border: 1.5px solid white;
+    font-family: 'Roboto Mono', monospace;
+    width:90px;
+    height:35px;
+    font-weight: bold;
+    margin-right: 5px;
+    letter-spacing: 2px;
+    font-size: 14px;
+      text-shadow: 0 1px #cbcbcb;
+      box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
+}
 div.messages-wrap div.box-right div.messages-content{
     width: 100%;
     height:100%;

@@ -15,6 +15,7 @@
 </head>
 <body>
 <div id="top">
+
     <div class="logo"><img src="{% static 'img/logo.png' %}" alt="logo"></div>
     <div class="menu">
         <ul>
@@ -59,7 +60,7 @@
         {% endif %}
     </div>
 </div>
-</div>
+
 <div class="shop-content">
     <div class="menu-shop">
         <div class="search-product">
@@ -85,8 +86,10 @@
         </div>
     </div>
 </div>
+
 {% block content %}
 {% endblock %}
+
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
 <script>
 <!--    "Przycisk rozwijania menu"-->
