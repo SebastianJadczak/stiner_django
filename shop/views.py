@@ -1,8 +1,12 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
+from django.template import RequestContext
 from django.views.generic import DetailView
 from django.db.models import Count
 from django.views.generic.base import TemplateResponseMixin, View, TemplateView
+from rest_framework.utils import json
+
 from cart.forms import CartAddProductForm
 from .models import Category, Product, Message
 from django.views.generic.list import ListView
@@ -36,12 +40,29 @@ class RecipientMixin(object):
     """Mixin który filtruje wiadomości po odbiorcy"""
     def get_queryset(self):
         qs = super(RecipientMixin, self).get_queryset()
-        return qs.filter(recipient=self.request.user)
+        return qs.filter(recipient=self.request.user, important=False)
+
+def test(request):
+    xx = request.POST
+    zz = dict(xx.lists())
+    my_list = []
+    for key, value in zz.items():
+        my_list.append(value)
+    for i in my_list[1]:
+        message = Message.objects.get(id=i)
+        message.important = True
+        message.save()
+    return HttpResponse(request.GET.get('data',''))
 
 class MessagesBox(RecipientMixin, ListView):
     """Klasa odpowiedzialna za wyświetlenie wiadomości odebranych"""
     template_name = 'shop/user/messages/messages-box.html'
     model = Message
+
+
+
+
+
 
 class AuthorMixin(object):
     """Mixin który filtruje wiadomości po autorze"""
