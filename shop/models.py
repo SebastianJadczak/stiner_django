@@ -40,6 +40,7 @@ class Message(models.Model):
     content = models.TextField(blank=True)
     send = models.DateTimeField(auto_now_add=True)
     important = models.BooleanField()
+    delete = models.BooleanField()
 
     class Meta:
         ordering = ('title',)

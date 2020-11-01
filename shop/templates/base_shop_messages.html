@@ -92,8 +92,8 @@
             <ul>
                 <li class="{% if request.path == '/shop/user/messages' %} active {% endif %}"><a href="{% url 'shop:messages-box' %}">Skrzynka odbiorcza</a></li>
                 <li class="{% if request.path == '/shop/user/messages-send' %} active {% endif %}"><a href="{% url 'shop:messages-box-send' %}">Skrzynka nadawcza</a></li>
-                <li class="{% if request.path == '/shop/user/messages-important' %} active {% endif %}"><a href="#">Wiadomości ważne</a></li>
-                <li class="{% if request.path == '/shop/user/messages-delete' %} active {% endif %}"><a href="#">Wiadomości usunięte</a></li>
+                <li class="{% if request.path == '/shop/user/messages-important' %} active {% endif %}"><a href="{% url 'shop:messages-box-important' %}">Wiadomości ważne</a></li>
+                <li class="{% if request.path == '/shop/user/messages-delete' %} active {% endif %}"><a href="{% url 'shop:messages-box-delete' %}">Wiadomości usunięte</a></li>
             </ul>
         </div>
     </div>
@@ -126,10 +126,7 @@ if (menu) {
         tr.classList.toggle("active");
     }
 
-//    Usuwanie wiadomości
-function delete_message() {
-        console.log("delete")
-    }
+
 
 // Dodawanie wiadomości do ważne
 
@@ -143,7 +140,6 @@ function  check_checked(element){
     }
 
 function add_to_important(){
-    console.log(data)
     list_checkbox_message.forEach(check_checked)
           $.ajax({
               type: "POST",
@@ -155,6 +151,20 @@ function add_to_important(){
           });
     location.reload()
 }
+
+//    Usuwanie wiadomości
+function delete_message() {
+    list_checkbox_message.forEach(check_checked)
+          $.ajax({
+              type: "POST",
+              url: "/shop/user/messages/delete",
+              data: {
+                  csrfmiddlewaretoken: "{{ csrf_token }}",
+                  data: data
+              }
+          });
+    location.reload()
+    }
 </script>
 </body>
 </html>

@@ -1,0 +1,15 @@
+{% extends "base_shop_messages.html" %}
+
+{% block content %}
+        <div class="action">
+            <div class="action-button">
+                <button><a href="#">Stwórz</a></button>
+                <button onclick="delete_message()">Usuń</button>
+                <button onclick="add_to_important()">Ważne</button>
+            </div>
+            <div class="action-filter"></div>
+        </div>
+        <div class="messages-content">
+
+        </div>
+{% endblock %}

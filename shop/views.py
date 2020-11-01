@@ -2,7 +2,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
-from django.views.generic import DetailView
+from django.views.generic import DetailView, CreateView, FormView
 from django.db.models import Count
 from django.views.generic.base import TemplateResponseMixin, View, TemplateView
 from rest_framework.utils import json
@@ -40,9 +40,9 @@ class RecipientMixin(object):
     """Mixin który filtruje wiadomości po odbiorcy"""
     def get_queryset(self):
         qs = super(RecipientMixin, self).get_queryset()
-        return qs.filter(recipient=self.request.user, important=False)
+        return qs.filter(recipient=self.request.user, important=False, delete=False)
 
-def test(request):
+def important(request):
     xx = request.POST
     zz = dict(xx.lists())
     my_list = []
@@ -59,18 +59,53 @@ class MessagesBox(RecipientMixin, ListView):
     template_name = 'shop/user/messages/messages-box.html'
     model = Message
 
-
-
-
-
-
 class AuthorMixin(object):
     """Mixin który filtruje wiadomości po autorze"""
     def get_queryset(self):
         qs = super(AuthorMixin, self).get_queryset()
-        return qs.filter(author=self.request.user)
+        return qs.filter(author=self.request.user, delete=False, important=False)
 
 class MessagesBoxSend(AuthorMixin, ListView):
     """Klasa odpowiedzialna za wyświetlenie wiadomości wysłanych"""
     template_name = 'shop/user/messages/messages-box-send.html'
     model = Message
+
+class ImportantMixin(object):
+    """Mixin który filtruje wiadomości po odbiorcy"""
+    def get_queryset(self):
+        qs = super(ImportantMixin, self).get_queryset()
+        return qs.filter(recipient=self.request.user, important=True, delete=False)
+
+class MessagesBoxImportant(ImportantMixin, ListView):
+    """Klasa odpowiedzialna za wyświetlenie ważnych wiadomości"""
+    template_name = 'shop/user/messages/messages-box-important.html'
+    model = Message
+
+class DeleteMixin(object):
+    """Mixin który filtruje wiadomości po odbiorcy"""
+    def get_queryset(self):
+        qs = super(DeleteMixin, self).get_queryset()
+        return qs.filter(recipient=self.request.user, delete=True)
+
+class MessagesBoxDelete(DeleteMixin, ListView):
+    """Klasa odpowiedzialna za wyświetlenie wiadomości wysłanych"""
+    template_name = 'shop/user/messages/messages-box-delete.html'
+    model = Message
+
+def delete(request):
+    """Metoda odpowiedzialna za usunięcie wiadomości ze skrzynek"""
+    xx = request.POST
+    zz = dict(xx.lists())
+    my_list = []
+    for key, value in zz.items():
+        my_list.append(value)
+    for i in my_list[1]:
+        message = Message.objects.get(id=i)
+        message.delete = True
+        message.save()
+    return HttpResponse(request.GET.get('data',''))
+
+def MessagesBoxNew(request):
+    """ metoda odpowiedzialna za wyświetlenie wszystkich produktów """
+    template_name = 'shop/user/messages/messages-box-form.html'
+    return render(request,template_name)

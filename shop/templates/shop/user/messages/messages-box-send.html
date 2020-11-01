@@ -15,7 +15,7 @@
                 {% for m in object_list %}
                 <li>
                     <div class="message">
-                        <div class="checkbox"><input type="checkbox" id="horns" name="horns"></div>
+                        <div class="checkbox"><input type="checkbox" class="checkbox_message" id="{{m.id}}" name="horns"></div>
                         <div class="author"><p>{{m.author}}</p></div>
                         <div class="title"><p>{{m.title}}</p></div>
                         <div class="date"><p>{{m.send}}</p></div>
