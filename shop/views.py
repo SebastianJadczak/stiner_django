@@ -107,5 +107,5 @@ def delete(request):
 
 def MessagesBoxNew(request):
     """ metoda odpowiedzialna za wyświetlenie wszystkich produktów """
-    template_name = 'shop/user/messages/messages-box-form.html'
-    return render(request,template_name)
+    template_name = 'shop/user/messages/messages-new.html'
+    return render(request, template_name)

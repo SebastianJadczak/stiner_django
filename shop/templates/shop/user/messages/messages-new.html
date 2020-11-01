@@ -10,6 +10,12 @@
             <div class="action-filter"></div>
         </div>
         <div class="messages-content">
-
+            <form action="">
+                <label>Autor</label><input type="text" value="{{request.user}}">
+                <label>Odbiorca</label><input type="text">
+                <label>Tytuł</label><input type="text">
+                <label>Treść</label><textarea></textarea>
+                <input type="button" value="Wyślij">
+            </form>
         </div>
 {% endblock %}
