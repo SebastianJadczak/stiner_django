@@ -110,17 +110,20 @@ def delete(request):
 def MessagesBoxNew(request):
     """ metoda odpowiedzialna za wyświetlenie wszystkich produktów """
     template_name = 'shop/user/messages/messages-new.html'
+
     if request.POST:
         author = request.POST.get('author')
         recipient =request.POST.get('recipient')
         title = request.POST.get('title')
         content = request.POST.get('content')
-
         user_author = User.objects.get(username=author)
-        user_recipient = User.objects.get(username=recipient)
+        try:
+            user_recipient = User.objects.get(username=recipient)
+            new_message = Message(author=user_author, recipient=user_recipient, title=title, content=content)
+            new_message.save()
+            text = 'Twoja wiadomość została wysłana'
+        except:
+            text = 'Taki użytkownik nie istnieje'
 
-        new_message = Message(author=user_author, recipient=user_recipient, title=title, content=content)
-        new_message.save()
-
-        return redirect('shop:messages-box-send',)
-    return render(request, template_name, )
+        return render(request, template_name, {'text':text})
+    return render(request, template_name)
