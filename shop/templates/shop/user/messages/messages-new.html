@@ -4,18 +4,19 @@
         <div class="action">
             <div class="action-button">
                 <button><a href="#">Stwórz</a></button>
-                <button onclick="delete_message()">Usuń</button>
-                <button onclick="add_to_important()">Ważne</button>
+                <button onclick="delete_message()" disabled>Usuń</button>
+                <button onclick="add_to_important()" disabled>Ważne</button>
             </div>
             <div class="action-filter"></div>
         </div>
         <div class="messages-content">
-            <form action="">
-                <label>Autor</label><input type="text" value="{{request.user}}">
-                <label>Odbiorca</label><input type="text">
-                <label>Tytuł</label><input type="text">
-                <label>Treść</label><textarea></textarea>
-                <input type="button" value="Wyślij">
+            <form action="" method="post">
+                <input type="text" value="{{request.user}}" hidden name="author">
+                <label>Do:</label><input type="text" name="recipient">
+                <label>Tytuł:</label><input type="text" name="title">
+                <label>Treść:</label><textarea name="content"></textarea>
+                     {% csrf_token %}
+                <button>Wyślij</button>
             </form>
         </div>
 {% endblock %}

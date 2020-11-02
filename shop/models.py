@@ -39,8 +39,8 @@ class Message(models.Model):
     title = models.CharField(max_length=200, db_index=True)
     content = models.TextField(blank=True)
     send = models.DateTimeField(auto_now_add=True)
-    important = models.BooleanField()
-    delete = models.BooleanField()
+    important = models.BooleanField(default=False)
+    delete = models.BooleanField(default=False)
 
     class Meta:
         ordering = ('title',)

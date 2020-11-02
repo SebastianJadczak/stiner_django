@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
 from django.views.generic import DetailView, CreateView, FormView
 from django.db.models import Count
@@ -59,16 +60,28 @@ class MessagesBox(RecipientMixin, ListView):
     template_name = 'shop/user/messages/messages-box.html'
     model = Message
 
-class AuthorMixin(object):
-    """Mixin który filtruje wiadomości po autorze"""
-    def get_queryset(self):
-        qs = super(AuthorMixin, self).get_queryset()
-        return qs.filter(author=self.request.user, delete=False, important=False)
+# class AuthorMixin(object):
+#     """Mixin który filtruje wiadomości po autorze"""
+#     def get_queryset(self):
+#         qs = super(AuthorMixin, self).get_queryset()
+#         return qs.filter(author=self.request.user, delete=False, important=False)
 
-class MessagesBoxSend(AuthorMixin, ListView):
+class MessagesBoxSend( ListView):
     """Klasa odpowiedzialna za wyświetlenie wiadomości wysłanych"""
     template_name = 'shop/user/messages/messages-box-send.html'
     model = Message
+    test_filter =''
+    def get_queryset(self):
+        qs = super(MessagesBoxSend, self).get_queryset()
+
+        if ('form_message' in self.request.session):
+            self.test_filter = self.request.session.get('form_message')
+        return qs.filter(author=self.request.user, delete=False, important=False)
+
+    def get_context_data(self, **kwargs):
+        context = super(MessagesBoxSend, self).get_context_data(**kwargs)
+        context['message'] = self.test_filter
+        return context
 
 class ImportantMixin(object):
     """Mixin który filtruje wiadomości po odbiorcy"""
@@ -108,4 +121,16 @@ def delete(request):
 def MessagesBoxNew(request):
     """ metoda odpowiedzialna za wyświetlenie wszystkich produktów """
     template_name = 'shop/user/messages/messages-new.html'
-    return render(request, template_name)
+    if request.POST:
+        author = request.POST.get('author')
+        user_author = User.objects.get(username=author)
+        recipient =request.POST.get('recipient')
+        user_recipient = User.objects.get(username=recipient)
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+
+        new_message = Message(author=user_author, recipient=user_recipient, title=title, content=content)
+        new_message.save()
+        request.session['form_message'] = "success"
+        return redirect('shop:messages-box-send')
+    return render(request, template_name, )
