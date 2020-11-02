@@ -1,12 +1,7 @@
-from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404, redirect
-from django.template import RequestContext
-from django.views.generic import DetailView, CreateView, FormView
-from django.db.models import Count
-from django.views.generic.base import TemplateResponseMixin, View, TemplateView
-from rest_framework.utils import json
+from django.shortcuts import render, get_object_or_404
+from django.views.generic.base import TemplateResponseMixin, View
 
 from cart.forms import CartAddProductForm
 from .models import Category, Product, Message

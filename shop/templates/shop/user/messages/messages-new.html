@@ -10,7 +10,9 @@
             <div class="action-filter"></div>
         </div>
         <div class="messages-content">
-            {{text}}
+            {% if text %}
+            <div class="message-create-message">   <h3>{{text}}</h3> </div>
+            {% endif %}
             <form action="" method="post">
                 <input type="text" value="{{request.user}}" hidden name="author">
                 <label>Do:</label><input type="text" name="recipient">
