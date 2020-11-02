@@ -15,5 +15,6 @@ urlpatterns = [
     path('user/messages/delete', views.delete, name='delete'),
     path('user/messages-important',  views.MessagesBoxImportant.as_view(), name='messages-box-important'),
     path('user/messages-delete',  views.MessagesBoxDelete.as_view(), name='messages-box-delete'),
+    path('user/put-up-for-sale',  views.PutUpForSale.as_view(), name='put-up-for-sale'),
 ]
 

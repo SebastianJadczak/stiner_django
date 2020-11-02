@@ -122,3 +122,13 @@ def MessagesBoxNew(request):
 
         return render(request, template_name, {'text':text})
     return render(request, template_name)
+
+# Sekcja Konto Użytkownika
+
+class PutUpForSale(TemplateResponseMixin,View):
+    """Klasa odpowiedzialna za wyświetlenie produktów wystawionych na sprzedaż"""
+    template_name = 'shop/user/account/put_up_for_sale.html'
+
+    def get(self, request):
+        category = Category.objects.all()
+        return self.render_to_response({'category': category})
