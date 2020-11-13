@@ -1,0 +1,58 @@
+{% extends "base_shop.html" %}
+{% block content %}
+
+<div class="shop-list">
+    <div class="first-section">
+        <div class="left">
+            <div class="menu">
+                <ul class="menu-category">
+                    {% for c in category %}
+                         <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="filter-left">
+                <h3>Filtry:</h3>
+            </div>
+        </div>
+        <div class="category-products">
+            <div class="ad"></div>
+            <div class="product-wrap">
+                     <div class="filter">
+                         <div class="sort">
+                            <form action="" method="GET">
+                                <label id="sort">Sortowanie</label>
+                                <label class="nazwa">
+                                    <select name="category" id="category">
+                                        <option value="nn">Cena: od najniższej</option>
+                                        <option value="nw">Cena: od najwyższej</option>
+                                        <option value="cdk">Czas do końca</option>
+                                        <option value="cdn">Czas dodania: najnowsze</option>
+                                    </select>
+                                </label>
+                                <button>Sortuj</button>
+                            </form>
+                         </div>
+                     </div>
+            {% for p in products %}
+                <a href="{% url 'shop:product_detail' p.id %}" style="text-decoration: none; color: black">
+                    <div class="product">
+                        <div class="image-product">
+                            <img src="{{p.image.url}}" alt="">
+                        </div>
+                        <div class="description-product">
+                            <h3>{{p}}</h3>
+                            <div><p>Stan: <span>Nowy</span></p> <p>Marka: <span>Nike</span></p></div>
+                            <div class="price"><p>{{p.price}} zł</p></div>
+                        </div>
+                    </div>
+                    </a>
+            {% endfor %}
+
+                </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

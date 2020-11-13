@@ -23,5 +23,6 @@ urlpatterns = [
     path('user/purchased_products',  views.PurchasedProducts.as_view(), name='purchased_products'),
     path('user/user_data',  views.UserData.as_view(), name='user_data'),
     path('user/sell_product',  views.SellProduct.as_view(), name='sell_product'),
+    path('user/unsold_product',  views.UnsoldProduct.as_view(), name='unsold_product'),
 ]
 
