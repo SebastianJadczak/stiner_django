@@ -1,0 +1,58 @@
+div.wrap-account{
+    background-color: #f1f1f1;
+    margin-top:6px;
+    padding: 20px 100px;
+    height: 78vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.wrap-account div.left_account{
+    width:14vw;
+
+}
+
+div.wrap-account div.left_account div.menu_account{
+    width: 260px;
+    margin-right: 130px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+div.wrap-account div.left_account div.menu_account ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+div.wrap-account div.left_account div.menu_account ul li{
+    border-bottom: 0.5px solid darkgrey;
+    height:48px;
+    line-height: 48px;
+    text-align: center;
+}
+
+div.wrap-account div.left_account div.menu_account ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    color: #131313;
+    text-shadow: 0 1px #cbcbcb;
+}
+
+div.wrap-account div.right_account {
+      width: 60vw;
+    height:100%;
+    background-color: #ffffff;
+   box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    font-family: Helvetica, Arial, sans-serif;
+}

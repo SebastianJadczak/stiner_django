@@ -10,6 +10,7 @@
      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_shop.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_shop_account.css' %}">
 </head>
 <body>
 <div id="top">
@@ -83,10 +84,25 @@
             <div id="account"><a href="#"><i class="far fa-address-card"></i></a></div>
         </div>
     </div>
-{% block content %}
-    {% endblock %}
+    <div class="wrap-account">
+        <div class="left_account">
+            <div class="menu_account">
+                <ul>
+                    <li><a href="#">Wystawione produkty</a></li>
+                    <li><a href="#">Sprzedane produkty</a></li>
+                    <li><a href="#">Niesprzedane produkty</a></li>
+                    <li><a href="#">Kupione produkty</a></li>
+                    <li><a href="#">Płatności</a></li>
+                    <li><a href="#">Dane użytkownika</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right_account">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
 </div>
-
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
 <script>
 <!--    "Przycisk rozwijania menu"-->

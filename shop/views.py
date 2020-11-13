@@ -1,20 +1,44 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from django.views.generic.base import TemplateResponseMixin, View
+from django.views.generic.base import TemplateResponseMixin, View, TemplateView
 
 from cart.forms import CartAddProductForm
 from .models import Category, Product, Message
 from django.views.generic.list import ListView
 
+class Search(TemplateView):
+    """Klasa bazowa odpowiedzialna za odnalezienie produktu i wyświetlenie wyniku wyszukania"""
+    template_name = 'shop/products/list.html'
 
-class ProductContentListView(TemplateResponseMixin, View):
+    def search(self, xx):
+        zz = dict(xx.lists())
+        my_list = []
+        for key, value in zz.items():
+            my_list.append(value)
+        print(my_list[0][0])  # dane wpisane w inputa
+        print(my_list[1])  # kategoria
+        products = Product.objects.filter(name=my_list[0][0])
+
+        return products
+
+    def post(self, request):
+        category = Category.objects.all()
+        xx = request.POST
+        products = self.search(xx)
+
+        return self.render_to_response({'products': products,
+                                        'category': category})
+
+class ProductContentListView(Search,TemplateResponseMixin, View ):
     """ Klasa odpowiedzialna za wyświetlenie wszystkich produktów """
     template_name = 'shop/products/list.html'
+
 
     def get(self, request, pk=None):
         category = Category.objects.all()
         products = Product.objects.all()
+
         if pk:
             products = Product.objects.filter(category=pk)
             self.template_name = 'shop/products/category.html'
@@ -22,7 +46,7 @@ class ProductContentListView(TemplateResponseMixin, View):
                                         'category': category})
 
 
-class ProductDetailListView(TemplateResponseMixin,View):
+class ProductDetailListView(Search,TemplateResponseMixin, View):
     template_name = 'shop/products/product/detail.html'
 
     def get(self, request, id_product):
@@ -128,6 +152,38 @@ def MessagesBoxNew(request):
 class PutUpForSale(TemplateResponseMixin,View):
     """Klasa odpowiedzialna za wyświetlenie produktów wystawionych na sprzedaż"""
     template_name = 'shop/user/account/put_up_for_sale.html'
+
+    def get(self, request):
+        category = Category.objects.all()
+        return self.render_to_response({'category': category})
+
+class SellProduct(TemplateResponseMixin,View):
+    """Klasa odpowiedzialna za wyświetlenie sprzedanych produktów"""
+    template_name = 'shop/user/account/sell_product.html'
+
+    def get(self, request):
+        category = Category.objects.all()
+        return self.render_to_response({'category': category})
+
+class UserData(TemplateResponseMixin,View):
+    """Klasa odpowiedzialna za wyświetlenie danych użytkownika"""
+    template_name = 'shop/user/account/user_data.html'
+
+    def get(self, request):
+        category = Category.objects.all()
+        return self.render_to_response({'category': category})
+
+class Payments(TemplateResponseMixin,View):
+    """Klasa odpowiedzialna za wyświetlenie danych o płatnościach"""
+    template_name = 'shop/user/account/payments.html'
+
+    def get(self, request):
+        category = Category.objects.all()
+        return self.render_to_response({'category': category})
+
+class PurchasedProducts(TemplateResponseMixin,View):
+    """Klasa odpowiedzialna za wyświetlenie danych o kupionych produktach"""
+    template_name = 'shop/user/account/purchasedProducts.html'
 
     def get(self, request):
         category = Category.objects.all()
