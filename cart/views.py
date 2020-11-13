@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
-from shop.models import Product
+from shop.models import Product, Category
 from .cart import Cart
 from .forms import CartAddProductForm
 
@@ -28,5 +28,15 @@ def cart_remove(request, product_id):
 def cart_detail(request):
     """ Widok koszyka """
     cart = Cart(request)
+
+    category = Category.objects.all()
+    if request.POST:
+        xx = request.POST
+        zz = dict(xx.lists())
+        my_list = []
+        for key, value in zz.items():
+            my_list.append(value)
+        products = Product.objects.filter(name=my_list[0][0])
+        return render(request, '../../shop/templates/shop/products/list.html', {'products': products, 'category': category})
 
     return render(request, 'cart/detail.html', {'cart': cart})

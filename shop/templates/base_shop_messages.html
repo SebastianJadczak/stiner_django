@@ -65,17 +65,18 @@
 <div class="shop-content">
     <div class="menu-shop">
         <div class="search-product">
-                <form action="" method="GET">
+                <form  action="." method="post">
                     <label class="nazwa">
-                    <input type="text" name="search" placeholder="Czego szukasz?">
+                    <input type="text" name="search" id="search_input" placeholder="Czego szukasz?">
                     <select name="category" id="category">
-                        <option value="Warszawa">Wszystkie kategorie</option>
+                        <option value="Wszystkie kategorie">Wszystkie kategorie</option>
                         {% for c in category %}
-                        <option value="Warszawa">{{c.name}}</option>
+                        <option value="{{c.id}}">{{c.name}}</option>
                         {% endfor %}
                     </select>
                  </label>
-            <button class="search-product">Szukaj</button>
+                      {% csrf_token %}
+            <button class="search-product" id="search-button">Szukaj</button>
         </form>
         </div>
         <div class="shop-user-menu">

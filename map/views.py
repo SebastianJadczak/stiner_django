@@ -9,11 +9,12 @@ from shop.models import Category
 
 
 class Map(View):
-    template_name= 'map/map_index.html'
+    template_name = 'map/map_index.html'
     category = Category.objects.all()
 
     def get(self, request):
-        return render(request, self.template_name,{'category':self.category})
+        return render(request, self.template_name, {'category': self.category})
+
 
 class PointViewsets(viewsets.ReadOnlyModelViewSet):
     queryset = Point.objects.all()
