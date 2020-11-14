@@ -24,8 +24,10 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
     sold = models.BooleanField(default=False)
+    payments = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
+    bought_by = models.ForeignKey(User, related_name='bought_by', on_delete=models.CASCADE)
 
     class Meta:
         ordering = ('name',)

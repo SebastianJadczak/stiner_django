@@ -3,4 +3,11 @@
 {% block content %}
 
 Przykładowy template dla Kupionych towarów
+
+<ul>
+    {% for p in purchased_products %}
+        <li><a href="#">{{p.name}}</a></li>
+    {% endfor %}
+</ul>
+
 {% endblock %}

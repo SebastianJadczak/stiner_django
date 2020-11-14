@@ -25,16 +25,21 @@ class Search(TemplateView):
     def get(self, request, **kwargs):
         category = Category.objects.all()
         put_up_for_sale = Product.objects.filter(owner=self.request.user, sold=False, available=True)
-        sold = Product.objects.filter(owner= self.request.user, sold=True, available=False)
-        return self.render_to_response({'category': category, 'put_up_for_sale':put_up_for_sale, 'sold': sold})
+        sold = Product.objects.filter(owner=self.request.user, sold=True, available=False)
+        unsold_product = Product.objects.filter(owner=self.request.user, sold=False, available=False)
+        purchased_products = Product.objects.filter(sold=True, available=False, bought_by=self.request.user)
+        return self.render_to_response(
+            {'category': category, 'put_up_for_sale': put_up_for_sale, 'sold': sold, 'unsold': unsold_product,
+             'purchased_products': purchased_products})
 
     def post(self, request):
         category = Category.objects.all()
         xx = request.POST
         products = self.search(xx)
-
+        self.template_name = 'shop/search/search.html'
         return self.render_to_response({'products': products,
                                         'category': category})
+
 
 class ProductContentListView(Search, TemplateResponseMixin):
     """ Klasa odpowiedzialna za wyświetlenie wszystkich produktów """
@@ -61,6 +66,7 @@ class ProductDetailListView(Search, TemplateResponseMixin, View):
         return self.render_to_response(
             {'product': product, 'cart_product_form': cart_product_form, 'category': category})
 
+
 # -------------------------------------------
 # Widoki odpowiedzialne za wiadomości
 
@@ -84,16 +90,19 @@ def important(request):
         message.save()
     return HttpResponse(request.GET.get('data', ''))
 
+
 class CategoryProductInMessage(ListView):
     def get_context_data(self, **kwargs):
         context = super(CategoryProductInMessage, self).get_context_data(**kwargs)
         context['category'] = Category.objects.all()
         return context
 
+
 class MessagesBox(RecipientMixin, CategoryProductInMessage):
     """Klasa odpowiedzialna za wyświetlenie wiadomości odebranych"""
     template_name = 'shop/user/messages/messages-box.html'
     model = Message
+
 
 class AuthorMixin(object):
     """Mixin który filtruje wiadomości po autorze"""
@@ -117,7 +126,7 @@ class ImportantMixin(object):
         return qs.filter(recipient=self.request.user, important=True, delete=False)
 
 
-class MessagesBoxImportant(ImportantMixin,CategoryProductInMessage):
+class MessagesBoxImportant(ImportantMixin, CategoryProductInMessage):
     """Klasa odpowiedzialna za wyświetlenie ważnych wiadomości"""
     template_name = 'shop/user/messages/messages-box-important.html'
     model = Message
@@ -131,7 +140,7 @@ class DeleteMixin(object):
         return qs.filter(recipient=self.request.user, delete=True)
 
 
-class MessagesBoxDelete(DeleteMixin,CategoryProductInMessage):
+class MessagesBoxDelete(DeleteMixin, CategoryProductInMessage):
     """Klasa odpowiedzialna za wyświetlenie wiadomości wysłanych"""
     template_name = 'shop/user/messages/messages-box-delete.html'
     model = Message
@@ -169,14 +178,15 @@ def MessagesBoxNew(request):
         except:
             text = 'Taki użytkownik nie istnieje'
 
-        return render(request, template_name, {'text': text,'category': category})
-    return render(request, template_name, {'category':category})
+        return render(request, template_name, {'text': text, 'category': category})
+    return render(request, template_name, {'category': category})
+
 
 # -------------------------------------------------------------------------------
 # Sekcja Konto Użytkownika
 
 
-class PutUpForSale(Search,TemplateResponseMixin):
+class PutUpForSale(Search, TemplateResponseMixin):
     """Klasa odpowiedzialna za wyświetlenie produktów wystawionych na sprzedaż przez danego użytkownika."""
     template_name = 'shop/user/account/put_up_for_sale.html'
 
@@ -186,13 +196,12 @@ class SellProduct(Search, TemplateResponseMixin):
     template_name = 'shop/user/account/sell_product.html'
 
 
-
 class UserData(Search, TemplateResponseMixin):
     """Klasa odpowiedzialna za wyświetlenie danych użytkownika"""
     template_name = 'shop/user/account/user_data.html'
 
 
-class Payments(Search,TemplateResponseMixin):
+class Payments(Search, TemplateResponseMixin):
     """Klasa odpowiedzialna za wyświetlenie danych o płatnościach"""
     template_name = 'shop/user/account/payments.html'
 
@@ -200,6 +209,7 @@ class Payments(Search,TemplateResponseMixin):
 class PurchasedProducts(Search, TemplateResponseMixin):
     """Klasa odpowiedzialna za wyświetlenie danych o kupionych produktach"""
     template_name = 'shop/user/account/purchased_products.html'
+
 
 class UnsoldProduct(Search, TemplateResponseMixin):
     template_name = 'shop/user/account/unsold_product.html'
