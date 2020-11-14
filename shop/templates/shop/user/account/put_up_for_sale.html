@@ -3,4 +3,9 @@
 {% block content %}
 
 Przykładowy template dla wystawionych towarów
+<ul>
+    {% for p in put_up_for_sale %}
+        <li><a href="#">{{p.name}}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}

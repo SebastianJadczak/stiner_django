@@ -2,5 +2,9 @@
 
 {% block content %}
 
-Przykładowy template dla Sprzedaj produkt
+<ul>
+    {% for p in sold %}
+        <li><a href="#">{{p.name}}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}

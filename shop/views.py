@@ -24,7 +24,9 @@ class Search(TemplateView):
 
     def get(self, request, **kwargs):
         category = Category.objects.all()
-        return self.render_to_response({'category': category})
+        put_up_for_sale = Product.objects.filter(owner=self.request.user, sold=False, available=True)
+        sold = Product.objects.filter(owner= self.request.user, sold=True, available=False)
+        return self.render_to_response({'category': category, 'put_up_for_sale':put_up_for_sale, 'sold': sold})
 
     def post(self, request):
         category = Category.objects.all()
@@ -173,29 +175,31 @@ def MessagesBoxNew(request):
 # -------------------------------------------------------------------------------
 # Sekcja Konto Użytkownika
 
-class PutUpForSale(Search,TemplateResponseMixin, View):
-    """Klasa odpowiedzialna za wyświetlenie produktów wystawionych na sprzedaż"""
+
+class PutUpForSale(Search,TemplateResponseMixin):
+    """Klasa odpowiedzialna za wyświetlenie produktów wystawionych na sprzedaż przez danego użytkownika."""
     template_name = 'shop/user/account/put_up_for_sale.html'
 
 
-class SellProduct(Search, TemplateResponseMixin, View):
+class SellProduct(Search, TemplateResponseMixin):
     """Klasa odpowiedzialna za wyświetlenie sprzedanych produktów"""
     template_name = 'shop/user/account/sell_product.html'
 
 
-class UserData(Search, TemplateResponseMixin, View):
+
+class UserData(Search, TemplateResponseMixin):
     """Klasa odpowiedzialna za wyświetlenie danych użytkownika"""
     template_name = 'shop/user/account/user_data.html'
 
 
-class Payments(Search,TemplateResponseMixin, View):
+class Payments(Search,TemplateResponseMixin):
     """Klasa odpowiedzialna za wyświetlenie danych o płatnościach"""
     template_name = 'shop/user/account/payments.html'
 
 
-class PurchasedProducts(Search, TemplateResponseMixin, View):
+class PurchasedProducts(Search, TemplateResponseMixin):
     """Klasa odpowiedzialna za wyświetlenie danych o kupionych produktach"""
     template_name = 'shop/user/account/purchased_products.html'
 
-class UnsoldProduct(Search, TemplateResponseMixin, View):
+class UnsoldProduct(Search, TemplateResponseMixin):
     template_name = 'shop/user/account/unsold_product.html'

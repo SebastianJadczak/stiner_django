@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_shop.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_shop_account.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_shop_user.css' %}">
 </head>
 <body>
 <div id="top">
@@ -89,12 +90,12 @@
         <div class="left_account">
             <div class="menu_account">
                 <ul>
-                    <li><a href="{% url 'shop:put-up-for-sale' %}">Wystawione produkty</a></li>
-                    <li><a href="{% url 'shop:sell_product' %}">Sprzedane produkty</a></li>
-                    <li><a href="{% url 'shop:unsold_product' %}">Niesprzedane produkty</a></li>
-                    <li><a href="{% url 'shop:purchased_products' %}">Kupione produkty</a></li>
-                    <li><a href="{% url 'shop:payments' %}">Płatności</a></li>
-                    <li><a href="{% url 'shop:user_data' %}">Dane użytkownika</a></li>
+                    <li class="{% if request.path == '/shop/user/put-up-for-sale' %} active {% endif %}"><a href="{% url 'shop:put-up-for-sale' %}">Wystawione produkty</a></li>
+                    <li class="{% if request.path == '/shop/user/sell_product' %} active {% endif %}"> <a href="{% url 'shop:sell_product' %}">Sprzedane produkty</a></li>
+                    <li class="{% if request.path == '/shop/user/unsold_product' %} active {% endif %}"><a href="{% url 'shop:unsold_product' %}">Niesprzedane produkty</a></li>
+                    <li class="{% if request.path == '/shop/user/purchased_products' %} active {% endif %}"><a href="{% url 'shop:purchased_products' %}">Kupione produkty</a></li>
+                    <li class="{% if request.path == '/shop/user/payments' %} active {% endif %}"><a href="{% url 'shop:payments' %}">Płatności</a></li>
+                    <li class="{% if request.path == '/shop/user/user_data' %} active {% endif %}"><a href="{% url 'shop:user_data' %}">Dane użytkownika</a></li>
                 </ul>
             </div>
         </div>
