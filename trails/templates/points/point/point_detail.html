@@ -84,9 +84,10 @@
                    {% endif %}
                    <h3>Napisz własną opinię:</h3>
                    {% if user.is_authenticated %}
-                       <form action="" method="get">
+                       <form action="" method="post">
                            <div class="top_form">
                                <input type="text" class="nick" name="nick" placeholder="Podaj swój nick">
+                               <input type="text" class="nick" name="point_id" placeholder="id punbktu" value="{{point_id}}">
                                <p id="yours_stars">Twoja ocena</p>
                                <div class="stars">
                                     <input type="radio" id="star5" name="star" value="5">
@@ -105,6 +106,7 @@
                                <textarea name="recension" id="" placeholder="Twoja recenzja"></textarea>
                                <button>Zapisz Opinię</button>
                            </div>
+                           {% csrf_token %}
                        </form>
                    {%else%}
                         <p>Aby dodać opinię, proszę się zalogować.</p>
