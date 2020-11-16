@@ -95,13 +95,13 @@
             <option value="3">Gdańsk</option>
         </select>
         </div>
-    <div class="castle_mapa"><input type="checkbox"><i class="fab fa-fort-awesome"></i></div>
-    <div class="church_mapa"><input type="checkbox"><i class="fas fa-church"></i></div>
-    <div class="tree_mapa"><input type="checkbox"><i class="fas fa-tree"></i></div>
-    <div class="monument_mapa"><input type="checkbox"><i class="fas fa-landmark"></i></div>
-    <div class="culture_mapa"><input type="checkbox"><i class="fas fa-theater-masks"></i></div>
-    <div class="hotel_mapa"><input type="checkbox"><i class="fas fa-h-square"></i></i></div>
-    <div class="search_mapa"><button>Szukaj</button></div>
+    <div class="castle_mapa"><input type="checkbox" class="monuments" id="castle"><i class="fab fa-fort-awesome"></i></div>
+    <div class="church_mapa"><input type="checkbox" class="monuments" id="church"><i class="fas fa-church"></i></div>
+    <div class="tree_mapa"><input type="checkbox" class="monuments" id="tree"><i class="fas fa-tree"></i></div>
+    <div class="monument_mapa"><input type="checkbox" class="monuments" id="monument"><i class="fas fa-landmark"></i></div>
+    <div class="culture_mapa"><input type="checkbox" class="monuments" id="culture"><i class="fas fa-theater-masks"></i></div>
+    <div class="hotel_mapa"><input type="checkbox" class="monuments" id="hotel"><i class="fas fa-h-square"></i></i></div>
+    <div class="search_mapa"><button onclick="post_monuments()">Szukaj</button></div>
 
 </div>
 
@@ -169,4 +169,29 @@ var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
     if (yours_trails){
      tr.classList.toggle("active");
 }
+//    Obsługa formularzu filtrowania obiektów na stronie
+
+
+let data = []
+let list_checkbox_monuments= document.querySelectorAll(".monuments")
+
+function  check_monuments(item){
+            if (item.checked) {
+                data.push(item.id)
+            }
+    }
+
+function post_monuments(){
+    list_checkbox_monuments.forEach(check_monuments)
+          $.ajax({
+              type: "POST",
+              url: "/map/api/points/",
+              data: {
+                  csrfmiddlewaretoken: "{{ csrf_token }}",
+                  data: data
+              }
+          });
+    location.reload()
+}
+
 </script>

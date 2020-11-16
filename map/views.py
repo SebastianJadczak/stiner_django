@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.views import View
-from rest_framework import viewsets
+from rest_framework import viewsets, request
 from map.api.serializers import PointSerializer
 from map.forms import FormularzRejestracji
 from map.models import Point
@@ -19,6 +19,7 @@ class Map(View):
 class PointViewsets(viewsets.ReadOnlyModelViewSet):
     queryset = Point.objects.all()
     serializer_class = PointSerializer
+    print(request)
 
 
 class UserFormView(View):
