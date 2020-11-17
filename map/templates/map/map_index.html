@@ -95,11 +95,11 @@
             <option value="3">Gdańsk</option>
         </select>
         </div>
-    <div class="castle_mapa"><input type="checkbox" class="monuments" id="castle"><i class="fab fa-fort-awesome"></i></div>
-    <div class="church_mapa"><input type="checkbox" class="monuments" id="church"><i class="fas fa-church"></i></div>
-    <div class="tree_mapa"><input type="checkbox" class="monuments" id="tree"><i class="fas fa-tree"></i></div>
-    <div class="monument_mapa"><input type="checkbox" class="monuments" id="monument"><i class="fas fa-landmark"></i></div>
-    <div class="culture_mapa"><input type="checkbox" class="monuments" id="culture"><i class="fas fa-theater-masks"></i></div>
+    <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><i class="fab fa-fort-awesome"></i></div>
+    <div class="church_mapa"><input type="checkbox" class="monuments" id="Kościoły"><i class="fas fa-church"></i></div>
+    <div class="tree_mapa"><input type="checkbox" class="monuments" id="Parki"><i class="fas fa-tree"></i></div>
+    <div class="monument_mapa"><input type="checkbox" class="monuments" id="Muzeum"><i class="fas fa-landmark"></i></div>
+    <div class="culture_mapa"><input type="checkbox" class="monuments" id="Budowle"><i class="fas fa-theater-masks"></i></div>
     <div class="hotel_mapa"><input type="checkbox" class="monuments" id="hotel"><i class="fas fa-h-square"></i></i></div>
     <div class="search_mapa"><button onclick="post_monuments()">Szukaj</button></div>
 
@@ -140,30 +140,33 @@ var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
+            var layerGroup = L.layerGroup().addTo(map_1de6ef4f1218487da9d6da057bb8f454);
 
-            /////////////////////////////////////////////////////////////////////////
-              fetch('/map/api/points/')
-        .then(response => response.json())
-        .then(data=>{
+            function zz(){
+                layerGroup.clearLayers();
+                marker =fetch('/map/api/points/')
+                        .then(response => response.json())
+                        .then(data=> {
 
-            data.forEach(addElements);
-            function addElements(item, index) {
-                 var punkt = L.marker(
-                [item.coordinateX, item.coordinateY],
-                {}
-            ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
+                            data.forEach(addElements);
 
-            var popup = L.popup({"Width": "300px"});
-            var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;">
-            <strong>${item.name}</strong>
-            <p> ${item.descriptions}</p>
-            <a href="/trails/point/${item.id}">Więcej</a></div>`)[0];
+                            function addElements(item, index) {
+                                var punkt = L.marker(
+                                    [item.coordinateX, item.coordinateY],
+                                    {}
+                                ).addTo(layerGroup);
+                                var popup = L.popup({"Width": "300px"});
+                                var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;">
+                                <strong>${item.name}</strong>
+                                <p> ${item.descriptions}</p>
+                                <a href="/trails/point/${item.id}">Więcej</a></div>`)[0];
 
-            popup.setContent(html);
-            punkt.bindPopup(popup);
+                                popup.setContent(html);
+                                punkt.bindPopup(popup);
+                            }
+                        })
             }
-
-        });
+            zz()
 
     // Obsługa menu Trasy
     if (yours_trails){
@@ -175,23 +178,43 @@ var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
 let data = []
 let list_checkbox_monuments= document.querySelectorAll(".monuments")
 
-function  check_monuments(item){
-            if (item.checked) {
-                data.push(item.id)
+function  check_monuments(){
+            for(item of list_checkbox_monuments){
+                if(item.checked){
+                    data.push(item.id)
+                }
             }
     }
 
 function post_monuments(){
-    list_checkbox_monuments.forEach(check_monuments)
-          $.ajax({
-              type: "POST",
-              url: "/map/api/points/",
-              data: {
-                  csrfmiddlewaretoken: "{{ csrf_token }}",
-                  data: data
-              }
-          });
-    location.reload()
-}
+        //Metoda która pobiera elementy z API w zależności które checkboxy są zaznaczone.
+        //Jeśli żaden nie jest zaznaczony a użytkownik kliknie seach to nic nie dostanie.
+        data=[]
 
+        check_monuments()
+        layerGroup.clearLayers();
+        for(item of data){
+           marker =fetch(`/map/api/points/${item.toString()}`)
+                        .then(response => response.json())
+                        .then(data=> {
+
+                            data.forEach(addElements);
+
+                            function addElements(item, index) {
+                                var punkt = L.marker(
+                                    [item.coordinateX, item.coordinateY],
+                                    {}
+                                ).addTo(layerGroup);
+                                var popup = L.popup({"Width": "300px"});
+                                var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;">
+                                <strong>${item.name}</strong>
+                                <p> ${item.descriptions}</p>
+                                <a href="/trails/point/${item.id}">Więcej</a></div>`)[0];
+
+                                popup.setContent(html);
+                                punkt.bindPopup(popup);
+                            }
+                        })
+        }
+    }
 </script>
