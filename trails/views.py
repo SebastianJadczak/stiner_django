@@ -41,11 +41,10 @@ class PointDetailView(DetailView):
     model = Point
 
     def post(self, request, *args, **kwargs):
-        nick = request.POST.get('nick')
+        nick = request.user
         star = request.POST.get('star')
         point_id = request.POST.get('point_id')
         recension = request.POST.get('recension')
-        opinion = list(Opinion_about_Point.objects.filter(point=self.kwargs['pk']))
         if nick and star and recension:
             Opinion_about_Point.objects.create(user=nick,
                                                opinion=recension,
@@ -62,8 +61,10 @@ class PointDetailView(DetailView):
 
     def get(self, request, *args, **kwargs):
         opinion = list(Opinion_about_Point.objects.filter(point=self.kwargs['pk']))
+        point = Point.objects.filter(id=self.kwargs['pk'])
         point_id = self.kwargs['pk']
-        return render(request, self.template_name, {'opinion': opinion, 'point_id': point_id})
+
+        return render(request, self.template_name, {'opinion': opinion, 'point':point[0], 'point_id': point_id})
 
 
 class TrailsListView(ListView):

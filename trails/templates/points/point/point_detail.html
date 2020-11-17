@@ -3,7 +3,7 @@
 {% block content %}
    <div class="point_detail">
        <div class="point_detail_name">
-            <h2>{{object.0.name}}</h2>
+            <h2>{{point.name}}</h2>
        </div>
        <div class="gallery">
            <div class="big_image">
@@ -25,7 +25,7 @@
                <div class="history">
                    <h3>Historia</h3>
                    <p>
-                       {{object.0.descriptions}}
+                       {{point.descriptions}}
                    </p>
                </div>
                <div class="curiosities">
@@ -86,8 +86,8 @@
                    {% if user.is_authenticated %}
                        <form action="" method="post">
                            <div class="top_form">
-                               <input type="text" class="nick" name="nick" placeholder="Podaj swój nick">
-                               <input type="text" class="nick" name="point_id" placeholder="id punbktu" value="{{point_id}}">
+                               <input type="text" class="nick" name="nick" placeholder="Podaj swój nick", value="{{request.user}}" disabled style="width: 100px;text-align:center; margin-right: 170px">
+                               <input type="text" class="nick" name="point_id" placeholder="id punbktu" value="{{point_id}}" hidden>
                                <p id="yours_stars">Twoja ocena</p>
                                <div class="stars">
                                     <input type="radio" id="star5" name="star" value="5">
@@ -112,16 +112,6 @@
                         <p>Aby dodać opinię, proszę się zalogować.</p>
                    {% endif %}
                </div>
-           </div>
-           <div class="menu">
-               <ul>
-                   <li id="menu">Nawigacja strony</li>
-                   <li><a href="#">Galeria</a></li>
-                   <li><a href="#">Historia</a></li>
-                   <li><a href="#">Ciekawostki</a></li>
-                   <li><a href="#">Zwiedzanie</a></li>
-                   <li><a href="#">Oceny/Opinie</a></li>
-               </ul>
            </div>
        </div>
 

@@ -7,8 +7,9 @@ div.point_detail {
 
 div.point_detail div.point_detail_name{
     border-bottom: 1px solid black;
+    margin-top:20px;
        margin-bottom: 40px;
-    width:75%;
+    width:100%;
 }
 
 div.point_detail div.point_detail_name h2{
@@ -17,7 +18,7 @@ div.point_detail div.point_detail_name h2{
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
     letter-spacing: 1.3px;
     color: #222222;
-      transform: translateX(50px);
+
 
 }
 /* ------------Galeria--------------------------- */
@@ -27,16 +28,16 @@ div.point_detail div.gallery{
 }
 
 div.big_image{
-    width:60%;
+    width:100%;
     margin-bottom: 30px;
-      transform: translateX(360px);
+      text-align: center;
 }
 div.big_image img{
-    width:300px;
-    height:200px;
+    width:400px;
+    height:300px;
 }
 div.small{
-    width:80%;
+    width:100%;
     text-align: center;
 }
 div.small img{
@@ -48,46 +49,7 @@ div.point_detail div.content{
     display: flex;
 }
 div.point_detail div.content div.text{
-    width:70%;
-}
-div.point_detail div.content div.menu{
-    background-color: rgba(238, 255, 181, 0.42);
-    height: 28vh;
-    width:270px;
-    border:0.5px solid #cfcfcf;
-    box-shadow: 1px 1px 1px #4b4b4b;
-    margin: 20px 0 0 100px;
-}
-
-div.point_detail div.content div.menu ul{
-    padding:0;
-    margin:0;
-    text-align: center;
-    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-}
-
-div.point_detail div.content div.menu ul li{
-    list-style: none;
-     font-size: 17px;
-    height:45px;
-    line-height: 45px;
-    border-bottom: 1px solid black;
-}
-div.point_detail div.content div.menu ul li:hover{
-     background-color: rgba(238, 255, 181, 0.87);
-}
-
-
-div.point_detail div.content div.menu ul li a{
-    color: #0c0060;
-    text-decoration: none;
-    display: block;
-}
-div.point_detail div.content div.menu ul li#menu{
-    border-bottom: 0.5px solid black;
-    background-color: rgba(217, 233, 165, 0.7);
-    font-weight: bold;
-    letter-spacing: 1.5px;
+    width:100%;
 }
 
 /* Ostylowanie Opini */
