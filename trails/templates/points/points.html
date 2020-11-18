@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="search_points">
-        <form action="" method="GET">
+        <form action="." method="post">
             <label class="nazwa">Nazwa:
                 <input type="text" name="search">
             </label>
@@ -20,13 +20,14 @@
             <label class="type"> Rodzaj:
             <select name="point_type" id="type">
                 <option value=""></option>
-                <option value="Zamek">Zamek</option>
-                <option value="Kościół">Kościół</option>
-                <option value="Park">Park</option>
+                <option value="Zamki">Zamki</option>
+                <option value="Kościoły">Kościoły</option>
+                <option value="Parki">Parki</option>
                 <option value="Biblioteka">Biblioteka</option>
             </select>
                 </label>
             <button class="search">Szukaj</button>
+            {% csrf_token %}
         </form>
     </div>
 

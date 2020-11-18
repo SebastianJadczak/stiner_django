@@ -21,18 +21,38 @@ class Trails(TemplateView):
 class PointsListView(ListView):
     """ Widok odpowiedzialny za listę punktów + wyszukiwarka """
     template_name = 'points/points.html'
+    model = Point
     list = Point.objects.all()
 
-    def get(self, request, *args, **kwargs):
+    def search_point(self, name=None, type=None, location=None):
+        if name and location and type:
+            self.list = self.list.filter(name__contains=name, type=type, location__contains=location)
+        if name and location :
+            self.list = self.list.filter(name__contains=name, location__contains=location)
+        if name and type:
+            self.list = self.list.filter(name__contains=name, type=type)
+        if location and type:
+            self.list = self.list.filter( type=type, location__contains=location)
+        if name:
+            self.list = self.list.filter(name__contains=name)
+        if location:
+                self.list = self.list.filter(location__contains=location)
+        if type:
+            self.list = self.list.filter(type=type)
+
+    def post(self, request, *args, **kwargs):
         template_name = 'points/points.html'
-        query_name = request.GET.get('search')
-        query_location = request.GET.get('location_points')
-        query_type = request.GET.get('point_type')
-        if query_name or query_location or query_type:
-            self.list = self.list.filter(name__contains=query_name, type=query_type, location__contains=query_location)
+        query_name = request.POST.get('search')
+        query_location = request.POST.get('location_points')
+        query_type = request.POST.get('point_type')
+        self.search_point(query_name, query_type, query_location)
         return render(request, template_name,
                       {'list': self.list})
 
+    def get_context_data(self, **kwargs):
+        context = super(PointsListView, self).get_context_data(**kwargs)
+        context['list'] = Point.objects.all()
+        return context
 
 class PointDetailView(DetailView):
     """ Widok odpowiedzialny za wyświetlenie szczegółowych informacji wybranego miejsca """

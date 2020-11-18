@@ -817,11 +817,11 @@ div#top div.menu div.tr{
     color: #2e6993;
     transform: translateY(-400px);
     z-index: -1;
-          box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
 }
 div#top div.menu div.tr.active{
      height: 240px;
+    position: relative;
 }
 div#top div.menu div.tr ul{
     height: 100%;

@@ -8,7 +8,7 @@
             </div>
             <div class="wrap">
             <div class="form_trails">
-                <form action="" method="get">
+                <form action="" method="post">
                     <label>Nazwa</label> <input type="text">
                     <label>Region</label> <input type="text">
                     <label>Autor</label>
@@ -27,6 +27,7 @@
                          <option value="">*</option>
                     </select>
                     <button>Szukaj</button>
+                    {% csrf_token %}
                 </form>
             </div>
             <div class="list-trail">
