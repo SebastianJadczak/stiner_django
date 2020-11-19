@@ -88,7 +88,7 @@
 </div>
 <div id="filter_mapa">
     <div class="select">
-        <select class="location">
+        <select class="location" onchange="clicker()">
             <option selected>Lokalizacja</option>
             <option value="1">Warszawa</option>
             <option value="2">Kraków</option>
@@ -125,10 +125,15 @@ if (menu) {
     });
 }
 <!--Mapa-->
+var x =52.22977
+var y =21.01178
+
+
 var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
+
                 "map_1de6ef4f1218487da9d6da057bb8f454",
                 {
-                    center: [52.22977, 21.01178],
+                    center: [x, y],
                     crs: L.CRS.EPSG3857,
                     zoom: 12,
                     zoomControl: true,
@@ -168,12 +173,17 @@ var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
             }
             zz()
 
+
     // Obsługa menu Trasy
     if (yours_trails){
      tr.classList.toggle("active");
 }
 //    Obsługa formularzu filtrowania obiektów na stronie
-
+function clicker(){
+        lat = 54.3674414
+    lon=18.6151566
+    map_1de6ef4f1218487da9d6da057bb8f454.setView(new L.LatLng(lat,lon))
+}
 
 let data = []
 let list_checkbox_monuments= document.querySelectorAll(".monuments")

@@ -2,7 +2,7 @@ div.wrap-account{
     background-color: #f1f1f1;
     margin-top:6px;
     padding: 20px 100px;
-    height: 78vh;
+    min-height: 78vh;
     display: flex;
     justify-content: space-between;
 }
@@ -54,19 +54,35 @@ div.wrap-account div.right_account {
     flex-direction: column;
 }
 
-div.wrap-account div.right_account  div.sort{
+div.wrap-account div.right_account  div.sort#account{
     box-sizing: border-box;
-    width:80%;
+    width:50%;
     background-color: #fff;
     text-align: center;
-    padding: 30px;
+    padding: 20px 30px;
     font-size: 20px;
     display: flex;
     flex-direction: row;
+    transform: translateX(180px);
     justify-content: space-between;
+    border-radius: 15px;
+       border: 0.5px solid #868686;
+    box-shadow: 1px 1px 4px 1px rgba(33, 33, 33, 0.4);
 }
-
-div.wrap-account div.right_account  div.sort button{
+div.wrap-account div.right_account  div.sort#exception{
+    width:30%;
+    background-color: #fff;
+    padding: 20px 15px 20px 50px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    transform: translateX(270px);
+    border-radius: 15px;
+       border: 0.5px solid #868686;
+    box-shadow: 1px 1px 4px 1px rgba(33, 33, 33, 0.4);
+}
+div.wrap-account div.right_account  div.sort#account button,
+div.wrap-account div.right_account  div.sort#exception button{
    background-color: #00b6ff;
     cursor: pointer;
     text-align: center;
@@ -82,7 +98,8 @@ div.wrap-account div.right_account  div.sort button{
     color: white;
 }
 
-div.wrap-account div.right_account  div.sort form select{
+div.wrap-account div.right_account  div.sort#account form select,
+div.wrap-account div.right_account  div.sort#exception form select{
     height: 35px;
     width:230px;
     padding-left:10px;
@@ -91,7 +108,8 @@ div.wrap-account div.right_account  div.sort form select{
     border: 1.5px solid  #000032;
     letter-spacing: 2px;
 }
-div.wrap-account div.right_account  div.sort form button{
+div.wrap-account div.right_account  div.sort#account form button,
+div.wrap-account div.right_account  div.sort#exception form button{
     background-color: #ff3857;
     color: white;
     cursor:pointer;

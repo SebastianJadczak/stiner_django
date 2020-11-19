@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 from trails.models import Trail
@@ -40,3 +41,11 @@ class Opinion_about_Point(models.Model):
     opinion = models.CharField(max_length=530)
     rating = models.IntegerField()
     point = models.ForeignKey(Point, blank=True, on_delete=models.CASCADE)
+
+class Coordinates(models.Model):
+    name = models.CharField(max_length=30)
+    coordinateX = models.DecimalField(max_length=30, decimal_places=7, max_digits=100)
+    coordinateY = models.DecimalField(max_length=30, decimal_places=7, max_digits=100)
+
+    def __str__(self):
+        return self.name

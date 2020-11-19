@@ -4,9 +4,9 @@ from django.views import View
 from rest_framework import viewsets, request
 from rest_framework.response import Response
 
-from map.api.serializers import PointSerializer
+from map.api.serializers import PointSerializer, LocationMapSerializer
 from map.forms import FormularzRejestracji
-from map.models import Point
+from map.models import Point, Coordinates
 from shop.models import Category
 
 
@@ -28,6 +28,15 @@ class PointViewsets(viewsets.ReadOnlyModelViewSet):
         serializer = PointSerializer(points, many=True)
         return Response(serializer.data)
 
+class MapCenterViewsets(viewsets.ReadOnlyModelViewSet):
+    queryset = Coordinates.objects.all()
+    serializer_class = LocationMapSerializer
+
+    def retrieve(self, request, *args, **kwargs):
+        params = kwargs
+        location = Coordinates.objects.filter(name=params['pk'])
+        serializer = LocationMapSerializer(location, many=True)
+        return Response(serializer.data)
 
 class UserFormView(View):
     """Rejestracja użytkownika"""
