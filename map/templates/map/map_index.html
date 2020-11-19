@@ -88,11 +88,10 @@
 </div>
 <div id="filter_mapa">
     <div class="select">
-        <select class="location" onchange="clicker()">
-            <option selected>Lokalizacja</option>
-            <option value="1">Warszawa</option>
-            <option value="2">Kraków</option>
-            <option value="3">Gdańsk</option>
+        <select class="location" onchange="select_city()">
+            <option value="Warszawa" selected>Warszawa</option>
+            <option value="Kraków">Kraków</option>
+            <option value="Gdańsk">Gdańsk</option>
         </select>
         </div>
     <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><i class="fab fa-fort-awesome"></i></div>
@@ -179,10 +178,34 @@ var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
      tr.classList.toggle("active");
 }
 //    Obsługa formularzu filtrowania obiektów na stronie
-function clicker(){
-        lat = 54.3674414
-    lon=18.6151566
-    map_1de6ef4f1218487da9d6da057bb8f454.setView(new L.LatLng(lat,lon))
+
+let city = document.querySelectorAll("select.location option")
+
+function selected(){
+    //    Sprawdzenie które miasto jest wybrane
+    let value_city
+    for(item of city){
+        if(item.selected){
+            value_city =item.value
+        }
+    }
+    return value_city
+}
+
+function select_city(){
+    //    Pobranie danych lokalizacji miast i przekirowanie widoku mapy
+    city_selected = selected()
+
+     fetch(`/map/api/mapCenter/${city_selected}`)
+                        .then(response => response.json())
+                        .then(data=> {
+
+                        for(item of data){
+                           lat=item.coordinateX
+                           lon =item.coordinateY
+                        }
+                        map_1de6ef4f1218487da9d6da057bb8f454.setView(new L.LatLng(lat,lon))
+                        })
 }
 
 let data = []
