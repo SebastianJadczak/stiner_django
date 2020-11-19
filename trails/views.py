@@ -100,11 +100,12 @@ class TrailsListView(ListView):
 class TrailDetailView(DetailView):
     """ Widok odpowiedzialny za wyświetlenie szczegółowych informacji wybranego miejsca """
 
-    template_name = 'points/point/point_detail.html'
+    template_name = 'trails/all_trails/trail/trail_detail.html'
     model = Trail
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['trail'] = list(Trail.objects.filter(id=self.kwargs['pk']))[0]
         return context
 
 

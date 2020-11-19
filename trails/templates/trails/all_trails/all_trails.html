@@ -1,21 +1,34 @@
 {% extends 'base_trail.html' %}
 {% block title %} Trasy zwiedzania {% endblock %}
 {% block content %}
-    <div class="all_trails">
-        <div class="all_trail-trails" id="trails">
-            {%for trail in object_list%}
-                <div class="all_trails-trail" id="all_trails-trail">
-                    <div class="image_trail"><img src="{{trail.image.url}}" alt=""></div>
-                    <p>{{trail.name}}</p>
-                    <p class="description">{{trail.descriptions}}</p>
-                    <div class="all_trails-trail_more"><button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button></div>
-                </div>
-            {% endfor %}
+<div class="wrap-trails">
+    <div class="title-trails">
+            <h3>Wybierz trasę</h3>
+            <p class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+                type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+            </div>
+    <div class="trail-center">
+        <div class="filter_trails"></div>
+        <div class="all_trails">
+            <div class="all_trail-trails" id="trails">
+                {%for trail in object_list%}
+                    <div class="all_trails-trail" id="all_trails-trail">
+                        <div class="image_trail"><img src="{{trail.image.url}}" alt=""></div>
+                        <p id="name-trail">{{trail.name}}</p>
+                        <p><span>Kraj: </span>Polska</p>
+                        <p><span>Miasto: </span>Warszawa</p>
+                        <div class="all_trails-trail_more"><button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button></div>
+                    </div>
+                {% endfor %}
+            </div>
+            <button id="left"><</button>
+            <button id="right">></button>
         </div>
-        <button id="left"><</button>
-        <button id="right">></button>
     </div>
-
+</div>
 <script>
 
 //      Sekcja stwórz trasę
@@ -25,7 +38,7 @@
      let position = 0;
     buttonRight.addEventListener('click', function () {
         let list_point_user_add = document.getElementById('trails');
-            if(position>=0 && position<=amount.length*350) {
+            if(position>=0 && position<=amount.length*10) {
                 position += 350;
                 console.log(position);
                 list_point_user_add.style.marginLeft = `-${position}px`
@@ -33,7 +46,7 @@
     });
     buttonLeft.addEventListener('click', function () {
         let list_point_user_add = document.getElementById('trails');
-        if (position>=350 ){
+        if (position>=300 ){
             position -= 350;
             console.log("position");
             list_point_user_add.style.marginLeft =`-${position}px`

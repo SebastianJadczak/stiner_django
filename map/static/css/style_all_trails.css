@@ -1,0 +1,112 @@
+/* Sekcja Trasy*/
+
+div.wrap-trails{
+    display: flex;
+    flex-direction: column;
+}
+div.wrap-trails div.title-trails{
+     background-color: #fefff2;
+    border: 1px solid #d0d0d0;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    padding: 5px 20px 10px;
+    margin: 5px 5px 50px;
+    border-radius: 20px;
+    letter-spacing: 1.3px;
+    font-family: Arial, sans-serif;
+}
+div.wrap-trails div.trail-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div.all_trails{
+    overflow: hidden;
+    width:65vw;
+    font-family: Arial, sans-serif;
+    padding-right: 45px;
+}
+
+div.wrap-trails div.title-trails h3{
+    text-align: center;
+}
+
+div.all_trails div.all_trail-trails{
+    display: flex;
+    flex-direction: row;
+    overflow:hidden;
+    transition: .6s;
+    margin:7px;
+}
+
+div.all_trails div.all_trail-trails div.all_trails-trail{
+    min-width:350px;
+    max-width:350px;
+    height:450px;
+    margin: 5px;
+    text-align: center;
+     background-color: #fff;
+    border: 1px solid #d0d0d0;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+div.all_trails div.all_trail-trails div.all_trails-trail p#name-trail{
+    font-weight: bold;
+    font-size: 17px;
+    letter-spacing: 1.3px;
+    margin-bottom: 25px;
+}
+div.all_trails div.all_trail-trails div.all_trails-trail p span{
+    font-weight: bold;
+}
+div.all_trails div.all_trail-trails div.all_trails-trail p.description{
+    height: 80px;
+     width:90%;
+}
+div.all_trails div.all_trail-trails div.all_trails-trail div.image_trail{
+    width:100%;
+    height:60%;
+    margin: 0 auto;
+}
+
+div.all_trails div.all_trail-trails div.all_trails-trail div.image_trail img{
+    width:100%;
+    height:100%;
+}
+
+div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more{
+    margin-top: 15px;
+    text-align: right;
+    margin-right:20px;
+}
+div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more button{
+    background-color: #e06100;
+     border: 1px solid #c0c0c0;
+    box-shadow: 1px 1px 0 black;
+    width:90px;
+    height:40px;
+    border-radius: 15px;
+}
+
+div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more button a {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 17px;
+    letter-spacing: 1.6px;
+    text-decoration: none;
+}
+
+div.all_trails button#left, div.all_trails button#right{
+    top:-250px;
+}
+div.all_trails button#right{
+    left: 61.5vw;
+}
+
+/*Sekcja filtrów tras*/
+
+div.wrap-trails div.trail-center div.filter_trails{
+    width: 15vw;
+    height: 50vh;
+     background-color: #fff;
+    font-family: sans-serif;
+box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}

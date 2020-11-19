@@ -98,14 +98,13 @@ div.search_points form button{
 div.point_list_interest_point{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 
 div.point{
     width:250px;
     height:300px;
-    margin: 20px 0 5px 0;
+    margin: 20px 20px 5px 0;
     display: flex;
     flex-direction: column;
     border: 0.5px solid #d9d9d9;
@@ -156,64 +155,6 @@ button.more a{
     letter-spacing: 1.5px;
     font-weight: bold;
 }
-/* Sekcja Trasy*/
-div.all_trails{
-    overflow: hidden;
-    width:63vw;
-}
-
-div.all_trails div.all_trail-trails{
-    display: flex;
-    flex-direction: row;
-    overflow:hidden;
-    transition: .6s;
-}
-
-div.all_trails div.all_trail-trails div.all_trails-trail{
-    min-width:850px;
-    max-width:850px;
-    height:900px;
-    text-align: center;;
-}
-div.all_trails div.all_trail-trails div.all_trails-trail p.description{
-    height: 80px;
-     width:90%;
-}
-div.all_trails div.all_trail-trails div.all_trails-trail div.image_trail{
-    width:90%;
-    height:60%;
-}
-
-div.all_trails div.all_trail-trails div.all_trails-trail div.image_trail img{
-    width:100%;
-    height:100%;
-}
-
-div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more{
-    text-align: right;
-    margin-right:100px;
-}
-div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more button{
-    background-color: #e06100;
-     border: 1px solid #c0c0c0;
-    box-shadow: 1px 1px 0 black;
-    width:90px;
-    height:40px;
-    border-radius: 15px;
-}
-
-div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more button a {
-    color: whitesmoke;
-    font-weight: bold;
-    font-size: 17px;
-    letter-spacing: 1.6px;
-    text-decoration: none;
-}
-
-div.all_trails button#left, div.all_trails button#right{
-    top:-550px;
-}
-
 
 
 
