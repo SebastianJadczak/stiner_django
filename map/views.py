@@ -13,9 +13,9 @@ from shop.models import Category
 class Map(View):
     template_name = 'map/map_index.html'
     category = Category.objects.all()
-
+    coordinates = Coordinates.objects.all()
     def get(self, request):
-        return render(request, self.template_name, {'category': self.category})
+        return render(request, self.template_name, {'category': self.category, 'coordinates':self.coordinates})
 
 
 class PointViewsets(viewsets.ReadOnlyModelViewSet):
@@ -28,6 +28,7 @@ class PointViewsets(viewsets.ReadOnlyModelViewSet):
         serializer = PointSerializer(points, many=True)
         return Response(serializer.data)
 
+
 class MapCenterViewsets(viewsets.ReadOnlyModelViewSet):
     queryset = Coordinates.objects.all()
     serializer_class = LocationMapSerializer
@@ -37,6 +38,7 @@ class MapCenterViewsets(viewsets.ReadOnlyModelViewSet):
         location = Coordinates.objects.filter(name=params['pk'])
         serializer = LocationMapSerializer(location, many=True)
         return Response(serializer.data)
+
 
 class UserFormView(View):
     """Rejestracja użytkownika"""

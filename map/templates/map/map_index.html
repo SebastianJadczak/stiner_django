@@ -89,9 +89,9 @@
 <div id="filter_mapa">
     <div class="select">
         <select class="location" onchange="select_city()">
-            <option value="Warszawa" selected>Warszawa</option>
-            <option value="Kraków">Kraków</option>
-            <option value="Gdańsk">Gdańsk</option>
+            {% for element in coordinates %}
+            <option value="{{element.name}}" {% if "{{element.name}}" == "Warszawa" %} selected {%endif%}>{{element.name}}</option>
+            {%endfor%}
         </select>
         </div>
     <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><i class="fab fa-fort-awesome"></i></div>
@@ -126,6 +126,7 @@ if (menu) {
 <!--Mapa-->
 var x =52.22977
 var y =21.01178
+//danie inicjujące lokalizje mapy
 
 
 var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
@@ -171,7 +172,6 @@ var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                         })
             }
             zz()
-
 
     // Obsługa menu Trasy
     if (yours_trails){
