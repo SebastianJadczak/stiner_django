@@ -161,10 +161,14 @@ var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                                     {}
                                 ).addTo(layerGroup);
                                 var popup = L.popup({"Width": "300px"});
-                                var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;">
-                                <strong>${item.name}</strong>
+                                var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%; font-family: Arial, sans-serif; letter-spacing: 1.1px">
+                                <strong style="font-size: 14px;">${item.name}</strong>
                                 <p> ${item.descriptions}</p>
-                                <a href="/trails/point/${item.id}">Więcej</a></div>`)[0];
+                                <div class="img-map" style="width:300px; height:200px;">
+                                    <img src="${item.image}" alt="" style="width: 100%; height: 100%;">
+                                </div>
+                                <div style="text-align: right; padding-top:10px;">
+                                <a href="/trails/point/${item.id}" style="color: green; font-weight: bold; letter-spacing: 1.3px; font-size: 14px;">Więcej</a></div></div>`)[0];
 
                                 popup.setContent(html);
                                 punkt.bindPopup(popup);

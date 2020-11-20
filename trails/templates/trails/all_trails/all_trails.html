@@ -11,7 +11,62 @@
                 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
             </div>
     <div class="trail-center">
-        <div class="filter_trails"></div>
+        <div class="filter_trails">
+            <h3> Filtrowanie tras: </h3>
+            <div class="filter">
+                    <form action="." method="post">
+                        <div class="name">
+                            <label>Nazwa</label>
+                            <input type="text">
+                        </div>
+                        <div class="country">
+                            <label>Kraj</label>
+                            <label><input type="checkbox">Polska</label>
+                            <label><input type="checkbox">Niemcy</label>
+                            <label><input type="checkbox">Czechy</label>
+                            <span>Pokaż więcej</span>
+                        </div>
+                        <div class="region">
+                            <label>Region</label>
+                             <label><input type="checkbox">Mazury</label>
+                             <label><input type="checkbox">Śląsk</label>
+                             <label><input type="checkbox">Morze</label>
+                            <span>Pokaż więcej</span>
+                        </div>
+                        <div class="city">
+                            <label>Miasto</label>
+                             <label><input type="checkbox">Warszawa</label>
+                             <label><input type="checkbox">Kraków</label>
+                             <label><input type="checkbox">Poznań</label>
+                            <span>Pokaż więcej</span>
+                        </div>
+                         <div class="type">
+                            <label>Typ trasy</label>
+                             <label><input type="checkbox">Historyczna</label>
+                             <label><input type="checkbox">Krajobrazowa</label>
+                             <label><input type="checkbox">Fajna</label>
+                            <span>Pokaż więcej</span>
+                        </div>
+                        <div class="top_rate">
+                            <label>Ocena</label>
+                             <label><input type="checkbox">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
+                             <label><input type="checkbox">&#9733;&#9733;&#9733;&#9733;</label>
+                             <label><input type="checkbox">&#9733;&#9733;&#9733;</label>
+                             <label><input type="checkbox">&#9733;&#9733;</label>
+                             <label><input type="checkbox">&#9733;</label>
+                            <span>Pokaż więcej</span>
+                        </div>
+                        <div class="popular">
+                            <label>Popularne</label>
+                             <label><input type="checkbox">Historyczna Stefana (200)</label>
+                             <label><input type="checkbox">Seksowna (100)</label>
+                             <label><input type="checkbox">Moja (9)</label>
+                            <span>Pokaż więcej</span>
+                        </div>
+                        <div class="accept_filter"><button>ZASTOSUJ FILTRY</button></div>
+                    </form>
+            </div>
+        </div>
         <div class="all_trails">
             <div class="all_trail-trails" id="trails">
                 {%for trail in object_list%}

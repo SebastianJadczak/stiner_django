@@ -9,7 +9,7 @@ div.wrap-trails div.title-trails{
     border: 1px solid #d0d0d0;
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
     padding: 5px 20px 10px;
-    margin: 5px 5px 50px;
+    margin: 5px 5px 70px;
     border-radius: 20px;
     letter-spacing: 1.3px;
     font-family: Arial, sans-serif;
@@ -103,10 +103,66 @@ div.all_trails button#right{
 
 /*Sekcja filtrów tras*/
 
-div.wrap-trails div.trail-center div.filter_trails{
-    width: 15vw;
-    height: 50vh;
-     background-color: #fff;
-    font-family: sans-serif;
-box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+div.wrap-trails div.trail-center div.filter_trails {
+     width: 15vw;
+    min-height: 70vh;
+    transform: translateY(-50px);
+}
+
+div.wrap-trails div.trail-center div.filter_trails h3{
+    color: #646464;
+    letter-spacing: 1.7px;
+    font-size: 20px;
+    padding-left: 5px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+div.wrap-trails div.trail-center div.filter_trails div.filter{
+    background-color: #fff;
+    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    min-height: 60vh;
+    font-size: 14px;
+}
+div.wrap-trails div.trail-center div.filter_trails div.filter form div{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.5px solid #a5a5a5;
+    padding: 10px 10px;
+}
+div.wrap-trails div.trail-center div.filter_trails div.filter form div label{
+    padding: 5px 0 10px 16px;
+}
+
+div.wrap-trails div.trail-center div.filter_trails div.filter form div label input[type='checkbox']{
+    margin-right: 10px;
+}
+
+div.wrap-trails div.trail-center div.filter_trails div.filter form div label:nth-of-type(1){
+    padding: 5px 0 10px 10px;
+    font-weight: bold;
+}
+div.wrap-trails div.trail-center div.filter_trails div.filter form div.name input{
+    width: 200px;
+}
+div.wrap-trails div.trail-center div.filter_trails div.filter form div span{
+    color: #3587ea;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 0.8px;
+}
+div.wrap-trails div.trail-center div.filter_trails div.filter form div.accept_filter{
+    padding: 0;
+    width:100%;
+    height:50px;
+}
+div.wrap-trails div.trail-center div.filter_trails div.filter form div.accept_filter button{
+    width:100%;
+    height:100%;
+    letter-spacing: 1.4px;
+    background-color: #f8ff00;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
 }
