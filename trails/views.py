@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, TemplateView, DetailView
 from rest_framework import generics
 
-from map.models import Point, Opinion_about_Point
+from map.models import Point, Opinion_about_Point, Coordinates
 from shop.models import Category
 from trails.api.serializers import PointTrailsSerializer
 from trails.models import Trail
@@ -91,9 +91,17 @@ class TrailsListView(ListView):
     template_name = 'trails/all_trails/all_trails.html'
     model = Trail
 
+    def get_city(self):
+        city=list(Coordinates.objects.all())
+        return city
+
+    def get_context_data(self, **kwargs):
+        context = super(TrailsListView, self).get_context_data(**kwargs)
+        context['city'] = self.get_city()
+        return context
+
     def get_queryset(self):
         trails = super(TrailsListView, self).get_queryset()
-
         return trails
 
 
