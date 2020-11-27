@@ -77,7 +77,13 @@
                             <p id="name-trail">{{trail.name}}</p>
                             <p><span>Kraj: </span>Polska</p>
                             <p><span>Miasto: </span>Warszawa</p>
-                            <div class="all_trails-trail_more"><span>Ocena: {{trail.average_grade}}</span><button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button></div>
+                            <div class="all_trails-trail_more" style="display: flex">
+                                <div>
+                                  <p>Wykonało: <span> {{trail.watched}} </span></p>
+                                <p>Ocena: <span> {{trail.average_grade}}</span> </p>
+                                </div>
+                          <button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
@@ -93,7 +99,13 @@
                             <p id="top_rate-name_trail">{{trail.name}}</p>
                             <p><span>Kraj: </span>Polska</p>
                             <p><span>Miasto: </span>Warszawa</p>
-                            <div class="top_rate-trail_more"><span>Ocena: {{trail.average_grade}}</span><button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button></div>
+                            <div class="top_rate-trail_more" style="display: flex">
+                                <div>
+                                    <p>Wykonało: <span> {{trail.watched}} </span></p>
+                                    <p>Ocena: <span> {{trail.average_grade}}</span> </p>
+                                </div>
+                            <button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
@@ -103,13 +115,17 @@
             <div class="popular-center">
                  <h3> Najpopularniejsze: </h3>
                 <div class="popular-trails">
-                    {%for trail in object_list%}
+                    {%for trail in popular_trail%}
                         <div class="popular-trail" id="popular-trail">
                             <div class="image_trail"><img src="{{trail.image.url}}" alt=""></div>
                             <p id="popular-name_trail">{{trail.name}}</p>
                             <p><span>Kraj: </span>Polska</p>
                             <p><span>Miasto: </span>Warszawa</p>
-                            <div class="popular-trail_more"><span>Ocena: {{trail.average_grade}} </span><button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button></div>
+                            <div class="popular-trail_more" style="display: flex"><div style="">
+                                <p>Wykonało: <span> {{trail.watched}} </span></p>
+                                <p>Ocena: <span> {{trail.average_grade}}</span> </p>
+                            </div><button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>

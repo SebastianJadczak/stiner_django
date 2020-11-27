@@ -81,10 +81,15 @@ div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_mo
     margin-top: 15px;
     margin-right:0;
 }
-div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more span{
-    margin-right: 170px;
-      font-weight: bold;
+div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more div{
+        margin-right: 150px;
+    padding-left: 20px;
 }
+div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more div p{
+    font-size: 14px;
+    margin: 5px;
+}
+
 div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more button{
     background-color: #e06100;
      border: 1px solid #c0c0c0;
@@ -265,9 +270,13 @@ div.top_rate-trail div.top_rate-trail_more, div.popular-trail div.popular-trail_
     margin-top: 15px;
     margin-right:0;
 }
-div.top_rate-trail div.top_rate-trail_more span, div.popular-trail div.popular-trail_more span{
-    margin-right: 170px;
-    font-weight: bold;
+div.top_rate-trail div.top_rate-trail_more div, div.popular-trail div.popular-trail_more div{
+    margin-right: 150px;
+   padding-left: 20px;
+}
+div.top_rate-trail div.top_rate-trail_more p, div.popular-trail div.popular-trail_more p{
+    font-size: 14px;
+    margin: 5px;
 }
 div.top_rate-trail_more button, div.popular-trail_more button{
     background-color: #e06100;

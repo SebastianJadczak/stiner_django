@@ -94,9 +94,12 @@ class TrailsListView(ListView):
     model = Trail
 
     def get_top_rate_trails(self):
-        trails = list(Trail.objects.all())
         top_rate_trails = Trail.objects.order_by('average_grade').reverse()
         return top_rate_trails
+
+    def get_wached_trails(self):
+        watched_trails = Trail.objects.order_by('watched').reverse()
+        return watched_trails
 
     def get_city(self):
         city=list(Coordinates.objects.all())
@@ -106,6 +109,7 @@ class TrailsListView(ListView):
         context = super(TrailsListView, self).get_context_data(**kwargs)
         context['city'] = self.get_city()
         context['top_rate'] = self.get_top_rate_trails()
+        context['popular_trail'] = self.get_wached_trails()
         return context
 
     def get_queryset(self):

@@ -6,6 +6,7 @@ class Trail(models.Model):
     descriptions = models.TextField()
     image = models.ImageField(upload_to='media/img_trail/%Y/%m%d', blank=True)
     average_grade = models.DecimalField(max_digits=2, decimal_places=1)
+    watched = models.IntegerField()
 
     def __str__(self):
         return self.name
