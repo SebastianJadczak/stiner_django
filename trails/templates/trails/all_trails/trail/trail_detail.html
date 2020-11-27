@@ -1,6 +1,69 @@
 {% extends 'base_trail.html' %}
 {% block title %} Trasy zwiedzania {% endblock %}
 {% block content %}
+
+<div class="trail">
+    {{trail_id}}
     {{trail.name}}
     {{trail.descriptions}}
+
+</div>
+<div class="opinion">
+                   <h3>Oceny i opinie</h3>
+                    <p>
+                      {{object.0.name}}
+                   </p>
+<!--                   Opinie -->
+                   {% if opinion %}
+                       <div class="opinions">
+                           {% for element in opinion %}
+                                <div class="opinion">
+                                    <div class="top">
+                                        <p id="user">{{element.user}}</p>
+                                        <p id="rating">Ocena
+                                            {% if element.rating is 5 %} <span>★★★★★</span>
+                                            {% elif element.rating is 4 %}<span>★★★★</span>
+                                            {% elif element.rating is 3 %}<span>★★★</span>
+                                            {% elif element.rating is 2 %}<span>★★</span>
+                                            {% elif element.rating is 1 %}<span>★</span>
+                                            {%endif%}</p>
+                                        </div>
+                                    <p id="opinion">{{element.opinion}}</p>
+                                </div>
+                           {% endfor %}
+                       </div>
+                   {% else %}
+    <!--                   Jeśli brak opinie to...-->
+                       <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
+                   {% endif %}
+                   <h3>Napisz własną opinię:</h3>
+                   {% if user.is_authenticated %}
+                       <form action="" method="post">
+                           <div class="top_form">
+                               <input type="text" class="nick" name="nick" placeholder="Podaj swój nick", value="{{request.user}}" disabled style="width: 100px;text-align:center; margin-right: 170px">
+                               <input type="text" class="nick" name="trail_id" placeholder="id punbktu" value="{{trail_id}}" hidden>
+                               <p id="yours_stars">Twoja ocena</p>
+                               <div class="stars">
+                                    <input type="radio" id="star5" name="star" value="5">
+                                    <label for="star5"> Five Stars </label>
+                                    <input type="radio" id="star4" name="star" value="4">
+                                    <label for="star4"> Four Stars </label>
+                                    <input type="radio" id="star3" name="star" value="3">
+                                    <label for="star3"> Three Stars </label>
+                                    <input type="radio" id="star2" name="star" value="2">
+                                    <label for="star2"> Two Stars </label>
+                                    <input type="radio" id="star1" name="star" value="1">
+                                    <label for="star1"> One Star </label>
+                              </div>
+                           </div>
+                           <div class="bottom_form">
+                               <textarea name="recension" id="" placeholder="Twoja recenzja"></textarea>
+                               <button>Zapisz Opinię</button>
+                           </div>
+                           {% csrf_token %}
+                       </form>
+                   {%else%}
+                        <p>Aby dodać opinię, proszę się zalogować.</p>
+                   {% endif %}
+               </div>
 {% endblock %}

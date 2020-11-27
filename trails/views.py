@@ -1,11 +1,13 @@
+from django.db.models import F
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, TemplateView, DetailView
+from numpy import sort
 from rest_framework import generics
 
 from map.models import Point, Opinion_about_Point, Coordinates
 from shop.models import Category
 from trails.api.serializers import PointTrailsSerializer
-from trails.models import Trail
+from trails.models import Trail, Rate_trail
 
 
 class Trails(TemplateView):
@@ -91,6 +93,11 @@ class TrailsListView(ListView):
     template_name = 'trails/all_trails/all_trails.html'
     model = Trail
 
+    def get_top_rate_trails(self):
+        trails = list(Trail.objects.all())
+        top_rate_trails = Trail.objects.order_by('average_grade').reverse()
+        return top_rate_trails
+
     def get_city(self):
         city=list(Coordinates.objects.all())
         return city
@@ -98,6 +105,7 @@ class TrailsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(TrailsListView, self).get_context_data(**kwargs)
         context['city'] = self.get_city()
+        context['top_rate'] = self.get_top_rate_trails()
         return context
 
     def get_queryset(self):
@@ -111,9 +119,41 @@ class TrailDetailView(DetailView):
     template_name = 'trails/all_trails/trail/trail_detail.html'
     model = Trail
 
+
+    def calculation_mean(self, trail_name):
+        rate_trail = list(Rate_trail.objects.filter(trail=trail_name))
+        average_grade = 0
+        for element in rate_trail:
+            average_grade= average_grade+ element.rate
+        average_grade = average_grade/len(rate_trail)
+        trail = Trail.objects.get(id=trail_name)
+        trail.average_grade = average_grade
+        trail.save()
+
+    def post(self, request, *args, **kwargs):
+        nick = request.user
+        star = request.POST.get('star')
+        trail_id = request.POST.get('trail_id')
+        recension = request.POST.get('recension')
+        if nick and star and recension:
+            Rate_trail.objects.create(user=nick,
+                                               opinion=recension,
+                                               rate=star,
+                                               trail=Trail.objects.get(id=trail_id))
+            self.calculation_mean(trail_id)
+        else:
+            if nick == "":
+                print('brak nicku')
+            elif star == None:
+                print('Brak gwiazdy')
+            elif recension == "":
+                print('Brak recenzji')
+        return redirect('../../trail_detail/' + trail_id)
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
         context['trail'] = list(Trail.objects.filter(id=self.kwargs['pk']))[0]
+        context['trail_id'] = self.kwargs['pk']
         return context
 
 
