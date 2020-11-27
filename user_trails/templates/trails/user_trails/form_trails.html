@@ -1,39 +1,84 @@
 {% extends 'base_trail.html' %}
 
 {% block content %}
-<h3 class="user_trails_add">Stwórz własną trasę</h3>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-    printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
-    five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
-    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-    recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<div class="przyklad">
-    <div class="points_add_to_user_trail" id="points_add_to_user_trail">
-         {% for element in list %}
-            <div class="point_add {{element.name}}">
-                <div class="image">
-                    <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
-                    </div>
-                <p>{{element.name}}</p>
-                <div class="buttons">
-                <a href="{% url "user_trails:detail_point" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
-                <form action="" method="GET" >{% csrf_token %}<input hidden name="add_point" type="text" value='{{element.name}}'><button class="add" >Dodaj</button></form>
+<div class="wrap-trails_add">
+        <div class="title-trail_add">
+            <h3>Stwórz trasę</h3>
+            <p class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+                type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+        </div>
+        <div class="trail_add-center">
+             <div class="filter_trails">
+                <h3> Filtrowanie tras: </h3>
+                <div class="filter">
+                        <form action="" method="post">
+                            <div class="name">
+                                <label>Nazwa:</label>
+                                <input type="text" placeholder="Wyszukaj trasę po nazwie">
+                            </div>
+                            <div class="country">
+                                <label>Kraj:</label>
+                                <label><input type="checkbox">Polska</label>
+                                <label><input type="checkbox">Niemcy</label>
+                                <label><input type="checkbox">Czechy</label>
+                                <p>Pokaż więcej</p>
+                            </div>
+                            <div class="region">
+                                <label>Region:</label>
+                                 <label><input type="checkbox">Mazury</label>
+                                 <label><input type="checkbox">Śląsk</label>
+                                 <label><input type="checkbox">Morze</label>
+                                <p>Pokaż więcej</p>
+                            </div>
+                            <div class="city">
+                                <label>Miasto:</label>
+                                    {% for i in city %}
+                                            <label><input type="checkbox">{{i}}</label>
+                                    {% endfor %}
+                                <p class="city">Pokaż więcej</p>
+                            </div>
+                            <div class="accept_filter"><button id="button-filter">ZASTOSUJ FILTRY</button></div>
+                            {% csrf_token %}
+                        </form>
                 </div>
             </div>
-        {% endfor %}
-    </div>
-    <button id="left"><</button>
-    <button id="right">></button>
-    </div>
-{% if len_user %}
-    {{len_user}}
-    <div class="opacity">
-    <a href="{% url "user_trails:user_trail_draft"%}">Szkic trasy</a>
-    {% endif %}
 
-        {{zmienna}}
-</div>
+
+
+              <div class="przyklad">
+                    <div class="points_add_to_user_trail" id="points_add_to_user_trail">
+                         {% for element in list %}
+                            <div class="point_add {{element.name}}">
+                                <div class="image">
+                                    <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
+                                    </div>
+                                <p>{{element.name}}</p>
+                                <div class="buttons">
+                                <a href="{% url "user_trails:detail_point" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
+                                <form action="" method="GET" >{% csrf_token %}<input hidden name="add_point" type="text" value='{{element.name}}'><button class="add" >Dodaj</button></form>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <button id="left"><</button>
+                    <button id="right">></button>
+                  {% if len_user %}
+                        {{len_user}}
+                        <div class="opacity">
+                        <a href="{% url "user_trails:user_trail_draft"%}">Szkic trasy</a>
+                        {% endif %}
+
+                            {{zmienna}}
+                        </div>
+                    </div>
+
+
+        </div>
+    </div>
+
 <script>
 
 //      Sekcja stwórz trasę, obsługa strzałek

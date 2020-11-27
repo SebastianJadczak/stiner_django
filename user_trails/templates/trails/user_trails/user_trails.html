@@ -1,50 +1,77 @@
 {% extends 'base_trail.html' %}
 
 {% block content %}
-
-        <div class="trails">
-            <div class="title">
-                <h3>Twoje trasy</h3>
-            </div>
-            <div class="wrap">
-            <div class="form_trails">
-                <form action="" method="post">
-                    <label>Nazwa</label> <input type="text">
-                    <label>Region</label> <input type="text">
-                    <label>Autor</label>
-                    <select name="Autor" id="" style="width: 80px; padding: 1px ;border-radius: 10px" >
-                         <option value="">----</option>
-                         <option value="">Ja</option>
-                         <option value="">Stiner</option>
-                        </select>
-                    <label>Oceny</label>
-                    <select name="Ocena" id="" style="width: 90px; padding: 1px; border-radius: 10px" >
-                         <option value="">Wszystkie</option>
-                         <option value="">*****</option>
-                         <option value="">****</option>
-                         <option value="">***</option>
-                         <option value="">**</option>
-                         <option value="">*</option>
-                    </select>
-                    <button>Szukaj</button>
-                    {% csrf_token %}
-                </form>
-            </div>
-            <div class="list-trail">
-                {% for item in user_trails %}
-                    <div class="trail">
-                        <div class="image">
-                        </div>
-                        <div class="name">
-                            <p>{{item.name}}</p>
-                        </div>
-                        <div class="region">
-                            <p>Polska</p>
-                        </div>
-                    </div>
-                {% endfor %}
+    <div class="wrap-your_trails">
+        <div class="title-your_trail">
+            <h3>Twoje trasy</h3>
+            <p class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+                type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+        </div>
+        <div class="your_trail-center">
+             <div class="filter_trails">
+                <h3> Filtrowanie tras: </h3>
+                <div class="filter">
+                        <form action="" method="post">
+                            <div class="name">
+                                <label>Nazwa:</label>
+                                <input type="text" placeholder="Wyszukaj trasę po nazwie">
+                            </div>
+                            <div class="country">
+                                <label>Kraj:</label>
+                                <label><input type="checkbox">Polska</label>
+                                <label><input type="checkbox">Niemcy</label>
+                                <label><input type="checkbox">Czechy</label>
+                                <p>Pokaż więcej</p>
+                            </div>
+                            <div class="region">
+                                <label>Region:</label>
+                                 <label><input type="checkbox">Mazury</label>
+                                 <label><input type="checkbox">Śląsk</label>
+                                 <label><input type="checkbox">Morze</label>
+                                <p>Pokaż więcej</p>
+                            </div>
+                            <div class="city">
+                                <label>Miasto:</label>
+                                    {% for i in city %}
+                                            <label><input type="checkbox">{{i}}</label>
+                                    {% endfor %}
+                                <p class="city">Pokaż więcej</p>
+                            </div>
+                            <div class="accept_filter"><button id="button-filter">ZASTOSUJ FILTRY</button></div>
+                            {% csrf_token %}
+                        </form>
                 </div>
-            </div>
-            </div>
+<!--                 Tutaj sekcja tras użytkownika-->
+        </div>
+        </div>
+    </div>
+<script>
+    //    Obsługa przycisku Pokaż więcej
+let more = document.querySelector('p.city');
+let div_city = document.querySelector('div.city')
 
+more.addEventListener('click', function () {
+    div_city.classList.toggle("active");
+
+})
+//Obsługa skrolowania
+//
+// const button = document.getElementById('button-filter')
+//
+//     window.addEventListener(
+//         'scroll',
+//         () => {
+//             if (window.scrollY >= 800) {
+//             button.style.position = 'static'
+//             console.log(window.scrollY)
+//         }else {
+//             button.style.position = 'fixed'
+//             console.log(window.scrollY)
+//         }
+//     }
+//     )
+</script>
 {% endblock %}

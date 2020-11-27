@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{% static 'css/style_trail.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_point.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_all_trails.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_your_trails.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_trail_add.css' %}">
 </head>
 <body>
 <div id="top">
@@ -19,7 +21,7 @@
     <div class="menu">
         <ul>
             <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
-            <li class="green"><a href="{% url "trails:basic_trails" %}"><i class="fas fa-map-signs"></i>Trasy</a>
+            <li class="green"><a href="{% url 'trails:all_trails'  %}"><i class="fas fa-map-signs"></i>Trasy</a>
                  <div class="tr">
                  <ul>
                     <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
