@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 
 from django.views.generic import ListView, DetailView
-from map.models import Point
+from map.models import Point, Coordinates
 from user_trails.models import UserTrail, UserPoint
 from .forms import UserTrailCreateForm
 
@@ -12,10 +12,15 @@ class UserTrailsListView(ListView):
     template_name = 'trails/user_trails/user_trails.html'
     model = UserTrail
 
+    def get_city(self):
+        city = list(Coordinates.objects.all())
+        return city
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['user_trails'] = UserTrail.objects.filter(user=self.request.user)
         context['user_trails_point'] = UserPoint.objects.all()
+        context['city'] = self.get_city()
         return context
 
 
@@ -26,6 +31,7 @@ class UserTrailFormAdd(ListView):
     list = Point.objects.all()
     user_trail = []
     zmienna = ""
+    city = Coordinates.objects.all()
 
     def checkQueryinUserDraftTrail(self, query):
         for a in self.user_trail:
@@ -45,7 +51,7 @@ class UserTrailFormAdd(ListView):
         len_user = len(self.user_trail)
 
         return render(request, self.template_name,
-                      {'list': self.list, 'user_trail': self.user_trail, 'len_user': len_user, 'zmienna': self.zmienna})
+                      {'list': self.list,'city':self.city, 'user_trail': self.user_trail, 'len_user': len_user, 'zmienna': self.zmienna})
 
 
 class UserTrailDraft(UserTrailFormAdd):

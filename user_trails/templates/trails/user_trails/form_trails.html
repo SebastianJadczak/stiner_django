@@ -81,6 +81,15 @@
 
 <script>
 
+        //    Obsługa przycisku Pokaż więcej
+let more = document.querySelector('p.city');
+let div_city = document.querySelector('div.city')
+
+more.addEventListener('click', function () {
+    div_city.classList.toggle("active");
+
+})
+
 //      Sekcja stwórz trasę, obsługa strzałek
     let buttonRight = document.getElementById('right');
     let buttonLeft = document.getElementById('left');

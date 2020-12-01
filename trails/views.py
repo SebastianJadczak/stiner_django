@@ -1,3 +1,5 @@
+import json
+
 from django.db.models import F
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, TemplateView, DetailView
@@ -116,6 +118,18 @@ class TrailsListView(ListView):
         trails = super(TrailsListView, self).get_queryset()
         return trails
 
+    def post(self, request, *args, **kwargs):
+        list_trails = []
+        for key, value in request.POST.items():
+            if 'name' in key:
+                pass
+            if 'city' in key:
+                pass
+            if 'star' in key:
+                list_trails.append(Trail.objects.filter(average_grade__gte=int(value), average_grade__lte=(int(value)+1)))
+
+        return render(request, 'map/map_index.html',
+                      {'list': list_trails})
 
 class TrailDetailView(DetailView):
     """ Widok odpowiedzialny za wyświetlenie szczegółowych informacji wybranego miejsca """

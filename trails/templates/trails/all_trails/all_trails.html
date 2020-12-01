@@ -36,7 +36,7 @@
                         <div class="city">
                             <label>Miasto:</label>
                                 {% for i in city %}
-                                        <label><input type="checkbox">{{i}}</label>
+                                        <label><input type="checkbox" name="city{{i.id}}" value="{{i}}">{{i}}</label>
                                 {% endfor %}
                             <p class="city">Pokaż więcej</p>
                         </div>
@@ -49,20 +49,22 @@
                         </div>
                         <div class="top_rate">
                             <label>Ocena:</label>
-                             <label class="star"><input type="checkbox">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
-                             <label class="star"><input type="checkbox">&#9733;&#9733;&#9733;&#9733;</label>
-                             <label class="star"><input type="checkbox">&#9733;&#9733;&#9733;</label>
-                             <label class="star"><input type="checkbox">&#9733;&#9733;</label>
-                             <label class="star"><input type="checkbox">&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star_5" value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star_4" value="4">&#9733;&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star_3" value="3">&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star_2" value="2">&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star_1" value="1">&#9733;</label>
                         </div>
                         <div class="popular">
                             <label>Popularne:</label>
-                             <label><input type="checkbox">Historyczna Stefana (200)</label>
-                             <label><input type="checkbox">Seksowna (100)</label>
-                             <label><input type="checkbox">Moja (9)</label>
+                             <label><input type="checkbox" name="historic" value="Historyczna Stefana">Historyczna Stefana (200)</label>
+                             <label><input type="checkbox" name="seks" value="Seksowna">Seksowna (100)</label>
+                             <label><input type="checkbox" >Moja (9)</label>
                             <p>Pokaż więcej</p>
                         </div>
-                        <div class="accept_filter"><button id="button-filter">ZASTOSUJ FILTRY</button></div>
+                        <div class="accept_filter">
+                            <button id="button-filter">ZASTOSUJ FILTRY</button>
+                        </div>
                         {% csrf_token %}
                     </form>
             </div>
