@@ -123,10 +123,16 @@ class TrailsListView(ListView):
         for key, value in request.POST.items():
             if 'name' in key:
                 pass
+            if 'region' in key:
+                pass
             if 'city' in key:
                 pass
+            if 'type_trail' in key:
+                pass
             if 'star' in key:
-                list_trails.append(Trail.objects.filter(average_grade__gte=int(value), average_grade__lte=(int(value)+1)))
+                list_trails.append(Trail.objects.filter(average_grade__range=(int(value),(float(value)+0.9))))
+            if 'popular' in key:
+                pass
 
         return render(request, 'map/map_index.html',
                       {'list': list_trails})
