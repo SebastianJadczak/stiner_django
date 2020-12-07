@@ -122,16 +122,19 @@ class TrailsListView(ListView):
         list_trails = []
         for key, value in request.POST.items():
             if 'name' in key:
-                pass
+                list_trails.append(Trail.objects.filter(name__contains=value))
+            if 'country' in key:
+                list_trails.append(Trail.objects.filter(country=value))
             if 'region' in key:
-                pass
+                list_trails.append(Trail.objects.filter(region__contains=value))
             if 'city' in key:
-                pass
+                list_trails.append(Trail.objects.filter(city__contains=value))
             if 'type_trail' in key:
-                pass
+                list_trails.append(Trail.objects.filter(type=value))
             if 'star' in key:
                 list_trails.append(Trail.objects.filter(average_grade__range=(int(value),(float(value)+0.9))))
             if 'popular' in key:
+                # Do zastanowienia i zrobienia mechanizm popularności i wymyśleć jak obsłużyć
                 pass
 
         return render(request, 'map/map_index.html',
