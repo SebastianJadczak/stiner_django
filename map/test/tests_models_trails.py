@@ -1,8 +1,7 @@
 from django.contrib.auth.models import User
 from django.test import TestCase
 
-from ..models import Trail, Rate_trail
-
+from trails.models import Trail, Rate_trail
 
 class TrailModelTestCase(TestCase):
     """Klasa odpowiedzialna za testy dla modelu Trail."""

@@ -37,12 +37,14 @@ class Point(models.Model):
         return self.name
 
 class Opinion_about_Point(models.Model):
+    """Model opisujący opinie o Punkcie."""
     user = models.CharField(max_length=30)
     opinion = models.CharField(max_length=530)
     rating = models.IntegerField()
     point = models.ForeignKey(Point, blank=True, on_delete=models.CASCADE)
 
 class Coordinates(models.Model):
+    """Model opisujący położenie miast."""
     name = models.CharField(max_length=30)
     coordinateX = models.DecimalField(max_length=30, decimal_places=7, max_digits=100)
     coordinateY = models.DecimalField(max_length=30, decimal_places=7, max_digits=100)
