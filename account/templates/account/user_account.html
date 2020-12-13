@@ -7,7 +7,7 @@
             <div class="basic_info">
                 <div class="photo"><img src="{{request.user.profile.photo.url}}" alt=""></div>
                 <div class="name_user">
-                    <h3>{{request.user.profile.name}} {{request.user.profile.surname}}</h3>
+                    <h3>{{fullname}}</h3>
                     <div class="location">
                         <p>{{request.user.profile.city}}, {{request.user.profile.country}}</p>
                     </div>

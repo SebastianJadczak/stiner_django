@@ -18,8 +18,12 @@ class Profile(models.Model):
     other_language = models.CharField(max_length=20, blank=True)
     phone = models.TextField(max_length=10)
     email = models.EmailField()
+
     def __str__(self):
         return 'Profil użytkownika {}.'.format(self.user.username)
+
+    def full_name(self):
+        return '{} {}'.format(self.name, self.surname)
 
 
 class Preference(models.Model):
