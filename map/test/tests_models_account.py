@@ -1,3 +1,4 @@
+
 from django.contrib.auth.models import User
 from django.test import TestCase
 
@@ -17,6 +18,10 @@ class PostModelTestCase(TestCase):
     def test_set_Profile(self):
         """Test sprawdzenia czy obiekt został stworzony."""
         self.assertIsNotNone(self.profile.id)
+
+    def test_method_full_name_Profile(self):
+        """Test sprawdzający poprawność metody zwracającą imię i nazwisko użytkownika."""
+        self.assertEqual(self.profile.full_name(), 'Sebastian Jadczak')
 
     # def test_set_Preference(self):
     #     """Test sprawdzenia czy obiekt został stworzony."""
