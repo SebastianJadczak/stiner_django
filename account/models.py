@@ -22,7 +22,9 @@ class Profile(models.Model):
     email = models.EmailField()
 
     MONTHS = ['', 'Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień',
-              'Październik', 'Listopad', 'Grudzien']
+              'Październik', 'Listopad', 'Grudzień']
+
+    COLORS = ['red', 'yellow', '#04d900']
 
     def __str__(self):
         return 'Profil użytkownika {}.'.format(self.user.username)
@@ -36,6 +38,16 @@ class Profile(models.Model):
         new_format = strptime(str(date_with_model), '%Y-%m-%d')
         return '{} {} {}'.format(new_format.tm_mday, self.MONTHS[new_format.tm_mon], new_format.tm_year)
 
+    def contact_fields_filled(self):
+        """Sprawdza czy wszystkie pola z sekcji Kontakt są wypełnione."""
+        user = list(Profile.objects.filter(user=self.user))
+        contact_fields = []
+        for element in user:
+            if element.email:
+                contact_fields.append(element.email)
+            if element.phone:
+                contact_fields.append(element.phone)
+        return self.COLORS[len(contact_fields)]
 
 class Preference(models.Model):
     """Model preferencji użytkonika"""

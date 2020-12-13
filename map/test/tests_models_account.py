@@ -23,6 +23,10 @@ class PostModelTestCase(TestCase):
         """Test sprawdzający poprawność metody zwracającą imię i nazwisko użytkownika."""
         self.assertEqual(self.profile.full_name(), 'Sebastian Jadczak')
 
+    def test_method_date_of_birth_user_Profile(self):
+        """Tet sprawdzający poprawność metody zwracającej datę urodzenia w nowym formacie."""
+        self.assertEqual(self.profile.date_of_birth_user(), '21 Czerwiec 1990')
+
     def test_set_Preference(self):
         """Test sprawdzenia czy obiekt został stworzony."""
         self.assertIsNotNone(self.preference.id)
