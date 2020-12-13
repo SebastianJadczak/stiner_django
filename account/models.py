@@ -1,5 +1,7 @@
 from django.db import models
 from django.conf import settings
+from time import strptime
+
 
 class Profile(models.Model):
     """Nadpisanie modelu User."""
@@ -11,19 +13,28 @@ class Profile(models.Model):
     country = models.TextField(max_length=30, blank=True)
     city = models.TextField(max_length=30, blank=True)
     street = models.TextField(max_length=30, blank=True)
-    house_number = models.IntegerField( blank=True)
-    apartment_number = models.IntegerField( blank=True)
+    house_number = models.IntegerField(blank=True)
+    apartment_number = models.IntegerField(blank=True)
     postal_code = models.CharField(max_length=20, blank=True)
     main_language = models.CharField(max_length=25, blank=True)
     other_language = models.CharField(max_length=20, blank=True)
     phone = models.TextField(max_length=10)
     email = models.EmailField()
 
+    MONTHS = ['', 'Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień',
+              'Październik', 'Listopad', 'Grudzien']
+
     def __str__(self):
         return 'Profil użytkownika {}.'.format(self.user.username)
 
     def full_name(self):
+        """Metoda zwracająca imię i nazwisko użytkownika."""
         return '{} {}'.format(self.name, self.surname)
+
+    def date_of_birth_user(self):
+        date_with_model = self.date_of_birth
+        new_format = strptime(str(date_with_model), '%Y-%m-%d')
+        return '{} {} {}'.format(new_format.tm_mday, self.MONTHS[new_format.tm_mon], new_format.tm_year)
 
 
 class Preference(models.Model):
