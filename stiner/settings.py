@@ -25,7 +25,7 @@ SECRET_KEY = 'trz)#66nwuu2qghk2_dk25r^dz-z)&nz_@udi%@7wzgtc0+v_$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['stiner-dev.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
