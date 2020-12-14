@@ -1,0 +1,263 @@
+div.account {
+    background-color: #eeeeee;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+/* Kolumna lewa */
+
+div.account div.column-left{
+    width:50%;
+    height:90%;
+    margin: 20px 100px 50px 200px;
+}
+div.account div.column-left div.basic_info {
+    width: 100%;
+    min-height: 250px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    padding:20px 35px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+div.account div.column-left div.basic_info div.edit_user_profile{
+    margin-top: 15px;
+ }
+div.account div.column-left div.basic_info div.edit_user_profile button{
+    background-color: #ffffff;
+    border: 1px solid #0d3757;
+    color:  #0e446c;
+    font-family: sans-serif;
+    width:100px;
+    height: 35px;
+    text-transform: lowercase;
+    font-size: 16px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+div.account div.column-left div.basic_info div.edit_user_profile button:hover{
+     background-color:  #0d3757;
+    color: white;
+}
+
+div.account div.column-left div.basic_info div.name_user{
+    width: 70%;
+    height:100%;
+}
+
+div.account div.column-left div.basic_info div.name_user h3{
+    color: #12588c;
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: 3px;
+}
+div.account div.column-left div.basic_info div.name_user div.location{
+    padding: 0 20px;
+}
+
+div.account div.column-left div.basic_info div.name_user div.location p{
+    color: #0e446c;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+div.account div.column-left div.basic_info div.name_user div.date_of_birth{
+    padding: 0 20px;
+}
+div.account div.column-left div.basic_info div.name_user div.date_of_birth p {
+     color: #0e446c;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+div.account div.column-left div.basic_info div.photo{
+    width:220px;
+    height:200px
+
+}
+div.account div.column-left div.basic_info div.photo img{
+    height: 100%;
+    width: auto;
+}
+
+
+div.account div.column-left div.info {
+    width: 100%;
+    min-height: 530px;
+    margin-top: 40px;
+    background-color: #fff;
+    font-family: sans-serif;
+box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+div.account div.column-left div.info div.data_contact{
+    text-align: center;
+}
+
+div.account div.column-left div.info div.data_contact h3{
+    color: #0e446c;
+    background-color: #f1f1f1;
+    font-size: 22px;
+    letter-spacing: 2.5px;
+    font-weight: normal;
+    padding: 7px;
+}
+div.account div.column-left div.info div.data_contact div{
+    display: flex;
+    flex-direction: row;
+    margin:0 auto;
+}
+
+div.account div.column-left div.info div.data_contact div p{
+    color: #0e446c;
+    letter-spacing: 2px;
+    font-size: 17px;
+    margin:10px 10px 10px 170px;
+    width:230px;
+    text-align: left;
+}
+div.account div.column-left div.info div.data_contact div.contact p{
+    margin:10px;
+    width: auto;
+}
+div.account div.column-left div.info div.data_contact div span{
+    margin: 12px 0 0 25px;
+    color: black;
+}
+
+div.account div.column-left div.preference{
+    min-height: 32vh;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 10px;
+    font-family: sans-serif;
+    text-align: center;
+    box-shadow: 0 1px 4px 1px rgba(0,0,0,0.4);
+}
+
+div.account div.column-left div.preference h3{
+    text-align: center;
+    color: #0e446c;
+   background-color: #f1f1f1;
+    font-size: 22px;
+    letter-spacing: 2.5px;
+    font-weight: normal;
+    padding: 7px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+div.account div.column-left div.preference div{
+    display: flex;
+}
+
+div.account div.column-left div.preference p{
+     color: #0e446c;
+    letter-spacing: 2px;
+    font-size: 17px;
+    margin:15px 10px 10px 170px;
+    width:230px;
+    text-align: left;
+}
+
+div.account div.column-left div.preference span{
+    margin: 15px 0 0 25px;
+    color: black;
+    font-size: 17px;
+}
+
+/* Kolumna prawa */
+
+div.account div.column-right{
+    width:15%;
+    height:90%;
+    margin-top: 20px;
+}
+
+div.account div.column-right div.first-statistic{
+    width:100%;
+    min-height: 200px;
+    background-color: white;
+    background-image: url("../img/baner.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+
+/*Druga kolumna na prawo*/
+
+div.account div.column-right div.second-statistic{
+    margin-top: 30px;
+    width:100%;
+    min-height: 500px;
+    background-color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+
+div.account div.column-right div.second-statistic h3{
+    text-align: center;
+    letter-spacing: 2.4px;
+    font-size: 17px;
+    background-color: #e8e8e8;
+    padding: 5px 0;
+    color: #0e446c;
+    font-weight: normal;
+    margin-top: 0;
+}
+div.account div.column-right div.second-statistic div{
+    display: flex;
+
+}
+div.account div.column-right div.second-statistic div i.fas.fa-star{
+    padding-top:10px;
+    margin-left: 30px;
+    margin-right: 10px;
+    font-size: 22px;
+
+}div.account div.column-right div.second-statistic div i.far.fa-star{
+    padding-top:10px;
+    margin-left: 30px;
+    margin-right: 10px;
+    font-size: 22px;
+}
+ div.account div.column-right div.second-statistic div p.profile{
+     letter-spacing: 2px;
+ }
+div.account div.column-right div.second-statistic div.summary{
+    flex-direction: column;
+}
+div.account div.column-right div.second-statistic div.summary div.precent-wrap{
+    width:85px;
+    height: 85px;
+    padding: 5px;
+    background: linear-gradient(to right, #2de300, #c6bc4c);
+     border-radius: 55px;
+    margin:15px auto 25px;
+}
+div.account div.column-right div.second-statistic div.summary div.precent{
+     color: #0e446c;
+    background-color: #fff;
+    width:85px;
+    height: 85px;
+    border-radius: 55px;
+    margin: 0 auto;
+}
+
+div.account div.column-right div.second-statistic div.summary div.precent p{
+    line-height: 40px;
+    padding: 0 2px 0 15px;
+    font-size: 23px;
+    font-weight: bold;
+}
+div.account div.column-right div.second-statistic div.summary div.precent i{
+    line-height: 85px;
+    margin-left: 0;
+     padding-top:0;
+    color: #0e446c;
+}

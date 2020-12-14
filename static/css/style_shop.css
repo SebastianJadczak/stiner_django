@@ -1,0 +1,229 @@
+/*Base dla Strony shop*/
+div.shop-content{
+    background-color: #f1f1f1;
+    padding-top:10px;
+    margin-top: 8px;
+}
+div.menu-shop{
+    height:7vh;
+    background-color: #fff;
+      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    display: flex;
+
+}
+div.menu-shop div.shop-user-menu{
+    display: flex;
+}
+div.menu-shop div.search-product{
+    line-height: 7vh;
+    width:700px;
+    margin-left: 500px;
+}
+div.menu-shop div.search-product input{
+    width: 330px;
+    height: 33px;
+    padding: 0 0 0 20px;
+}
+div.menu-shop div.search-product select{
+    height: 36px;
+    width: 180px;
+    padding: 0 0 0 20px;
+}
+
+div.menu-shop div.search-product button{
+    background-color: #ff6f00;
+    color: white;
+    border: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+}
+
+div.menu-shop div.shop-user-menu{
+    margin-left: 120px;
+     line-height: 8vh;
+    width: 25vw;
+    justify-content: flex-end;
+}
+div.menu-shop div.shop-user-menu div i{
+    font-size: 25px;
+    color: #626262;
+     text-shadow: 1px 1px #ababab;
+}
+div.menu-shop div.shop-user-menu div{
+    margin-right: 35px;
+}
+div.menu-shop div.shop-user-menu div#account{
+    margin-left:55px;
+     margin-right: 15px;
+     line-height: 9vh;
+}
+div.menu-shop div.shop-user-menu div#account i{
+    font-size: 37px;
+    color: #434343;
+    text-shadow: 1px 1px #ababab;
+}
+div.menu-shop div.shop-user-menu div#favorite:hover i{
+    color: #ffe02d;
+}
+
+div.menu-shop div.shop-user-menu div#messages:hover i{
+    color: #1A01CC;
+}
+
+div.menu-shop div.shop-user-menu div#cart:hover i{
+    color:black
+}
+div.menu-shop div.shop-user-menu div#bell:hover i{
+    color: red;
+}
+
+/* Głowna strona sklepu - Lista */
+div.shop-list{
+    background-color: #f1f1f1;
+    min-height: 100vh;
+    margin: 3px 0 0 0;
+    padding: 20px 100px;
+}
+div.first-section{
+    width:100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+}
+
+div.first-section div.left div{
+    width: 15vw;
+    height: 100%;
+    margin-right: 130px;
+    background-color: #ffffff;
+      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+div.first-section div.left div.filter-left{
+    margin-top:20px;
+}
+
+div.first-section div.left div.filter-left h3{
+    font-family: 'Roboto Mono', monospace;
+    color: #131313;
+    text-shadow: 0 1px #cbcbcb;
+    font-weight: normal;
+    text-align: center;
+    padding: 15px 0;
+}
+
+div.first-section div.left ul.menu-category{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+div.first-section div.left ul.menu-category li{
+    width: 100%;
+    height: 100%;
+}
+
+div.first-section div.left ul.menu-category li:hover{
+    background-color: #f6f6f6;
+    cursor: pointer;
+}
+
+div.first-section div.left ul.menu-category li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    color: #131313;
+    text-shadow: 0 1px #cbcbcb;
+    padding: 15px 0 0 30px;
+}
+
+div.first-section div.center{
+    width: 45vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 70px;
+}
+
+div.first-section div.center div.top{
+    width: 100%;
+    height: 48%;
+    background-color: #fff;
+     box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+div.first-section div.center div.bottom{
+     width: 100%;
+    height: 48%;
+    background-color: #fff;
+      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+
+div.first-section div.right{
+    width: 21vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.first-section div.right div.top{
+    width: 100%;
+    height: 48%;
+    background-color: #fff;
+      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+div.first-section div.right div.bottom{
+     width: 100%;
+    height: 48%;
+    background-color: #fff;
+      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+
+div.product_detail{
+    width:80vw;
+    display: flex;
+    margin:100px auto;
+    border:2px solid red;
+    padding: 50px;
+    background-color: rgba(255, 209, 211, 0.53);
+}
+div.product_image{
+    height:300px;
+    width:600px;
+    margin-right: 50px;
+}
+div.product_detail div.product_image img{
+    width:100%;
+    height:100%;
+}
+div.product_description{
+    width:80%;
+    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    letter-spacing: 2px;
+}
+div.product_description span.price{
+    position: relative;
+    top:30px;
+}
+
+div.product_description button.buy{
+    background-color: #d80000;
+    border: none;
+    width:90px;
+    height:40px;
+    color:whitesmoke;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family:  Arial, sans-serif;
+    margin-left:400px;
+}

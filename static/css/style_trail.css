@@ -1,0 +1,357 @@
+div.trail{
+    display: flex;
+    margin-top: 8px;
+    background-color: #f4f4f4;
+    min-height: 90vh;
+}
+div.trail div.menu_trail{
+    width:15vw;
+    margin: 20px 50px;
+}
+
+div.trail div.menu_trail ul{
+    list-style: none;
+    padding: 0;
+    margin:0;
+    border:1px solid #cfcfcf;
+    box-shadow: 1px 1px 1px #bababa;
+}
+
+div.trail div.menu_trail ul li{
+    height:50px;
+    line-height: 50px;
+    border-bottom: 1px solid rgb(75, 75, 75);
+    text-align: center;
+
+}
+
+div.trail div.menu_trail ul li:nth-of-type(1){
+    background-color: rgba(2, 70, 183, 0.74);
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    letter-spacing: 1.9px;
+}
+
+div.trail div.menu_trail ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    display: block;
+    color: #000000;
+    background-color: rgba(0, 162, 255, 0.13);
+    letter-spacing: 1px;
+}
+div.trail div.menu_trail ul li a:hover{
+       background-color: rgba(0, 162, 255, 0.27);
+}
+
+div.trail div.content_trail{
+    margin:20px auto;
+    width:85vw;
+}
+
+/* Sekcja Ciekawe miejsca */
+
+div.search_points{
+    text-align: center;
+    margin: 20px auto;
+    width:55%;
+    padding: 20px 0 15px;
+      border: 0.5px solid #d9d9d9;
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 1px rgba(65, 65, 65, 0.4);
+    border-radius: 15px;
+}
+div.search_points form label{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #2b2b2b;
+    z-index: -9;
+}
+div.search_points form  input{
+    margin-right: 20px;
+    height: 22px;
+       transform: translateY(-3px);
+}
+div.search_points form select{
+    margin-right: 20px;
+    height: 30px;
+    width: 120px;
+    transform: translateY(-3px);
+}
+
+div.search_points form button{
+    background-color: #6fdd00;
+    transform: translateY(-3px);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.6px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1px solid #888888;
+}
+
+
+div.point_list_interest_point{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+div.point{
+    width:250px;
+    height:300px;
+    margin: 20px 20px 5px 0;
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid #d9d9d9;
+    background-color: #fff;
+    box-shadow: 1px 1px 2px 1px rgba(65, 65, 65, 0.4);
+}
+div.point div.image_point{
+    width:100%;
+    height: 200px;
+}
+div.point div.image_point img{
+    width:100%;
+    height:100%;
+}
+
+div.point div.point_descriptions{
+    width:100%;
+    height:100%;
+    justify-content: end;
+}
+div.point div.point_descriptions p {
+    width:95%;
+    height: 30%;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1.1px;
+    font-family: Arial, sans-serif;
+    text-shadow: 1px 0 1px #d7d7d7;
+}
+
+div.point div.point_descriptions div.point_descriptions_more{
+    text-align: right;
+}
+
+button.more{
+    width:80px;
+    height:30px;
+    background-color: #ff6a1e;
+    border-radius: 15px;
+    border: 1px solid #c0c0c0;
+    box-shadow: 1px 1px 0 black;
+    margin-right: 10px;
+}
+button.more a{
+    color:white;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+
+
+/* Sekcja Stwórz trasę */
+
+h3.user_trails_add{
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+div.przyklad{
+    width:63vw;
+    overflow:hidden;
+}
+div.points_add_to_user_trail{
+    display: flex;
+    flex-direction: row;
+    overflow:hidden;
+    transition: .4s;
+}
+
+div.point_add{
+    width:450px;
+    height:500px;
+    margin-right:35px;
+    padding-right: 20px;
+    border-right: 1px solid #9c9c9c;
+     opacity: .7;
+}
+
+div.point_add:hover{
+    opacity: 1;
+}
+
+div.point_add p{
+    text-align: center;
+    font-weight: bold;
+    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    margin-top: 20px;
+}
+
+div.point_add div.image{
+    width:400px;
+    height:400px;
+}
+div.point_add div.image img{
+    width:100%;
+    height:100%;
+}
+
+button#right{
+    position: relative;
+    top:-270px;
+    right:-1120px;
+    color: white;
+    background-color: #00a523;
+    width:40px;
+    height:40px;
+    border:1px solid black;
+    border-radius: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: 0;
+}
+button#left{
+    position: relative;
+    top:-270px;
+     color: white;
+    background-color: #00a523;
+    width:40px;
+    height:40px;
+    border:1px solid black;
+    border-radius: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: 0;
+}
+
+div.buttons {
+    display: flex;
+justify-content: space-between;
+}
+
+div.buttons div.point_add form{
+    text-align: right;
+}
+button.add{
+    background-color: #198a00;
+    border: 1px solid black;
+    color: whitesmoke;
+    width:95px;
+    height:40px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-right: 30px;
+    font-size: 16px;
+}
+
+div.buttons input.add_to_user_trail{
+    background-color: #e06100;
+    border: 1px solid black;
+    color: whitesmoke;
+    width:95px;
+    height:40px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-left: 30px;
+    font-size: 16px;
+}
+
+/* Szkic trasy użytkownika */
+
+div.user_trail_draft{
+    height:100vh;
+}
+
+div.user_trail_draft div.draft-list_point {
+    width: 80%;
+    height: 60vh;
+    margin:0 auto;
+    padding: 20px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 0.5px solid #0e446c;
+    background-color: #e7e7e7;
+    border-radius: 8px;
+}
+
+div.user_trail_draft div.draft-list_point div.draft-point{
+    display: flex;
+    height: 140px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding:10px 15px;
+    border: 0.5px solid #0e446c;
+    box-shadow: 1px 1px 1px 0.5px #0e446c;
+    border-radius: 8px;
+}
+
+div.user_trail_draft div.draft-list_point div.draft-point div.draft-point_image{
+    width: 13%;
+    height:100%;
+    margin-right: 20px;
+}
+
+div.user_trail_draft div.draft-list_point div.draft-point div.draft-point_image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+div.user_trail_draft div.draft-list_point div.draft-point div.text{
+    width: 80%;
+    height: 90%;
+    overflow: hidden;
+    line-height: 23px;
+    letter-spacing: 1.5px;
+}
+
+/* Pasek przewijania*/
+
+div.user_trail_draft div.draft-list_point::-webkit-scrollbar {
+width: 8px;
+    background-color: #fff;
+}
+div.user_trail_draft div.draft-list_point::-webkit-scrollbar-track {
+border-left: 0.5px solid #000;
+}
+div.user_trail_draft div.draft-list_point::-webkit-scrollbar-thumb {
+background: #0e446c;
+    -webkit-box-shadow: inset 0 0 6px #0e446c;
+}
+div.user_trail_draft div.draft-list_point::-webkit-scrollbar-thumb:hover {
+background: #0e446c;
+    -webkit-box-shadow: inset 0 0 6px #0e446c;
+}
+div.user_trail_draft div.draft-list_point::-webkit-scrollbar-thumb:window-inactive {
+background: #0e446c;
+}
+
+form.delete{
+height: 100%;
+display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+form.delete button{
+    font-size: 16px;
+    background-color: #df0000;
+    color: #ededed;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.3px;
+    padding: 8px 10px;
+    border: 0.5px solid #d6d6d6;
+    border-radius: 8px;
+    outline: white;
+    cursor: pointer;
+    box-shadow: 1px 1px 0.5px #565656;
+}

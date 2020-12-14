@@ -1,0 +1,162 @@
+div.point_detail {
+    border: 1px solid #b4b4b4;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 0 80px;
+}
+
+div.point_detail div.point_detail_name{
+    border-bottom: 1px solid black;
+    margin-top:20px;
+       margin-bottom: 40px;
+    width:100%;
+}
+
+div.point_detail div.point_detail_name h2{
+    text-align: center;
+    margin-right: 60px;
+    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    letter-spacing: 1.3px;
+    color: #222222;
+
+
+}
+/* ------------Galeria--------------------------- */
+div.point_detail div.gallery{
+    width:100%;
+    min-height:30vh;
+}
+
+div.big_image{
+    width:100%;
+    margin-bottom: 30px;
+      text-align: center;
+}
+div.big_image img{
+    width:400px;
+    height:300px;
+}
+div.small{
+    width:100%;
+    text-align: center;
+}
+div.small img{
+    width:100px;
+    height:100px;
+}
+/*----------------------------------------------*/
+div.point_detail div.content{
+    display: flex;
+}
+div.point_detail div.content div.text{
+    width:100%;
+}
+
+/* Ostylowanie Opini */
+div.opinion{
+    border: 0.5px solid #bcbcbc;
+    border-radius: 15px;
+    background-color: #f3f3f3;
+    margin-bottom: 20px;
+    width: 500px;
+    padding: 0 30px;
+}
+
+div.opinion div.top{
+    display: flex;
+}
+div.opinion div.top p#user{
+    padding: 5px;
+    width:200px;
+}
+
+div.opinion div.top p#rating{
+
+    text-align: right;
+}
+
+div.opinion div.top p#rating span{
+    color: gold;
+}
+
+/*Style do gwiazdek -> Opinie*/
+
+div.top_form{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+div.top_form input.nick{
+    height:27px;
+    margin-top: 8px;
+    width:280px
+}
+
+div.top_form p#yours_stars{
+    margin-left: 85px;
+}
+
+.stars {
+  background: #ffffff;
+  height: 30px;
+  width: 150px;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.stars input{
+  position: absolute;
+  left: -99999px;
+}
+
+.stars label {
+  width: 20px;
+  height: 30px;
+  padding: 5px;
+  color: transparent;
+}
+
+.stars label::before {
+  content: '★';
+  color: #c0c0c0;
+  font-size: 30px;
+  line-height: 30px;
+  margin-right: -100%;
+}
+
+.stars label:hover::before,
+.stars label:hover ~ label::before,
+.stars input:checked ~ label::before {
+  color: #ffa500;
+}
+
+
+form div.bottom_form{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    width: 600px;
+}
+
+form div.bottom_form textarea{
+    width:600px;
+    height:130px;
+}
+
+form div.bottom_form button{
+    margin: 20px 0 0 auto;
+    width:200px;
+    height:40px;
+    background-color: rgba(5, 148, 0, 0.86);
+    border-radius: 10px;
+    border:0.5px solid rgba(4, 96, 0, 0.96);
+    color: whitesmoke;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
