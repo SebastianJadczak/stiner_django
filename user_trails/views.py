@@ -23,6 +23,10 @@ class UserTrailsListView(ListView):
         context['city'] = self.get_city()
         return context
 
+class SearchUserTrails(UserTrailsListView):
+    """Klasa odpowiedzialna za wyświetlenie wyników wyszukania tras użytkownika."""
+    template_name = 'trails/user_trails/search_user_trails.html'
+    model = UserTrail
 
 class UserTrailFormAdd(ListView):
     """Klasa odpowiedzialna za wyświetlenie obiektów które możesz dodasz do szkicu trasy"""
