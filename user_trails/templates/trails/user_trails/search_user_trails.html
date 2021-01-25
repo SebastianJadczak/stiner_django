@@ -4,11 +4,7 @@
     <div class="wrap-your_trails">
         <div class="title-your_trail">
             <h3>Twoje trasy</h3>
-            <p class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-                type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+            <p class="title">Wynik wyszukania wśród Twoich tras zwiedzania.</p>
         </div>
         <div class="your_trail-center">
              <div class="filter_trails">
@@ -40,19 +36,11 @@
                                     {% endfor %}
                                 <p class="city">Pokaż więcej</p>
                             </div>
-                           <div class="accept_filter">
-                            <button id="button-filter_your-trail">ZASTOSUJ FILTRY</button>
-                        </div>
+                            <div class="accept_filter"><button id="button-filter">ZASTOSUJ FILTRY</button></div>
                             {% csrf_token %}
                         </form>
                 </div>
         </div>
-            <!--                 Tutaj sekcja tras użytkownika-->
-<!--                 <div>-->
-<!--                     {% for i in user_trails %}-->
-<!--                     {{i}}-->
-<!--                     {% endfor %}-->
-<!--                 </div>-->
 
         </div>
     </div>
@@ -65,7 +53,7 @@ more.addEventListener('click', function () {
     div_city.classList.toggle("active");
 
 })
-// Obsługa skrolowania
+Obsługa skrolowania
 
 const button = document.getElementById('button-filter')
 
