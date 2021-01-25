@@ -31,16 +31,16 @@ class PointsListView(ListView):
     def search_point(self, name=None, type=None, location=None):
         if name and location and type:
             self.list = self.list.filter(name__contains=name, type=type, location__contains=location)
-        if name and location :
+        if name and location:
             self.list = self.list.filter(name__contains=name, location__contains=location)
         if name and type:
             self.list = self.list.filter(name__contains=name, type=type)
         if location and type:
-            self.list = self.list.filter( type=type, location__contains=location)
+            self.list = self.list.filter(type=type, location__contains=location)
         if name:
             self.list = self.list.filter(name__contains=name)
         if location:
-                self.list = self.list.filter(location__contains=location)
+            self.list = self.list.filter(location__contains=location)
         if type:
             self.list = self.list.filter(type=type)
 
@@ -57,6 +57,7 @@ class PointsListView(ListView):
         context = super(PointsListView, self).get_context_data(**kwargs)
         context['list'] = Point.objects.all()
         return context
+
 
 class PointDetailView(DetailView):
     """ Widok odpowiedzialny za wyświetlenie szczegółowych informacji wybranego miejsca """
@@ -88,13 +89,13 @@ class PointDetailView(DetailView):
         point = Point.objects.filter(id=self.kwargs['pk'])
         point_id = self.kwargs['pk']
 
-        return render(request, self.template_name, {'opinion': opinion, 'point':point[0], 'point_id': point_id})
+        return render(request, self.template_name, {'opinion': opinion, 'point': point[0], 'point_id': point_id})
 
 
 class TrailsListView(ListView):
     template_name = 'trails/all_trails/all_trails.html'
     model = Trail
-
+    list_trails = []
     def get_top_rate_trails(self):
         top_rate_trails = Trail.objects.order_by('average_grade').reverse()
         return top_rate_trails
@@ -104,7 +105,7 @@ class TrailsListView(ListView):
         return watched_trails
 
     def get_city(self):
-        city=list(Coordinates.objects.all())
+        city = list(Coordinates.objects.all())
         return city
 
     def get_context_data(self, **kwargs):
@@ -119,26 +120,27 @@ class TrailsListView(ListView):
         return trails
 
     def post(self, request, *args, **kwargs):
-        list_trails = []
+        self.list_trails.clear()
         for key, value in request.POST.items():
             if 'name' in key:
-                list_trails.append(Trail.objects.filter(name__contains=value))
+                self.list_trails.append(Trail.objects.filter(name__contains=value))
             if 'country' in key:
-                list_trails.append(Trail.objects.filter(country=value))
+                self.list_trails.append(Trail.objects.filter(country=value))
             if 'region' in key:
-                list_trails.append(Trail.objects.filter(region__contains=value))
+                self.list_trails.append(Trail.objects.filter(region__contains=value))
             if 'city' in key:
-                list_trails.append(Trail.objects.filter(city__contains=value))
+                self.list_trails.append(Trail.objects.filter(city__contains=value))
             if 'type_trail' in key:
-                list_trails.append(Trail.objects.filter(type=value))
+                self.list_trails.append(Trail.objects.filter(type=value))
             if 'star' in key:
-                list_trails.append(Trail.objects.filter(average_grade__range=(int(value),(float(value)+0.9))))
+                self.list_trails.append(Trail.objects.filter(average_grade__range=(int(value), (float(value) + 0.9))))
             if 'popular' in key:
                 # Do zastanowienia i zrobienia mechanizm popularności i wymyśleć jak obsłużyć
                 pass
 
-        return render(request, 'map/map_index.html',
-                      {'list': list_trails})
+        return redirect('./search_trails/',
+                      {'list': self.list_trails})
+
 
 class TrailDetailView(DetailView):
     """ Widok odpowiedzialny za wyświetlenie szczegółowych informacji wybranego miejsca """
@@ -146,13 +148,12 @@ class TrailDetailView(DetailView):
     template_name = 'trails/all_trails/trail/trail_detail.html'
     model = Trail
 
-
     def calculation_mean(self, trail_name):
         rate_trail = list(Rate_trail.objects.filter(trail=trail_name))
         average_grade = 0
         for element in rate_trail:
-            average_grade= average_grade+ element.rate
-        average_grade = average_grade/len(rate_trail)
+            average_grade = average_grade + element.rate
+        average_grade = average_grade / len(rate_trail)
         trail = Trail.objects.get(id=trail_name)
         trail.average_grade = average_grade
         trail.save()
@@ -164,9 +165,9 @@ class TrailDetailView(DetailView):
         recension = request.POST.get('recension')
         if nick and star and recension:
             Rate_trail.objects.create(user=nick,
-                                               opinion=recension,
-                                               rate=star,
-                                               trail=Trail.objects.get(id=trail_id))
+                                      opinion=recension,
+                                      rate=star,
+                                      trail=Trail.objects.get(id=trail_id))
             self.calculation_mean(trail_id)
         else:
             if nick == "":
@@ -191,3 +192,14 @@ class TrailApiFilterListView(generics.ListAPIView):
     def get_queryset(self):
         pk = self.kwargs['pk']
         return Point.objects.filter(trails=pk)
+
+
+class SearchTrails(TrailsListView):
+    template_name = 'trails/all_trails/search_trails.html'
+    model = Trail
+
+
+    def get_context_data(self, **kwargs):
+        context = super(SearchTrails, self).get_context_data(**kwargs)
+        context['list'] = self.list_trails
+        return context

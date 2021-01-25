@@ -3,13 +3,8 @@
 {% block content %}
 <div class="wrap-trails">
     <div class="title-trails">
-            <h3>Wybierz trasę</h3>
-            <p class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-                type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-            </div>
+
+    </div>
     <div class="trail-center">
         <div class="filter_trails">
             <h3> Filtrowanie tras: </h3>
@@ -17,7 +12,7 @@
                     <form action="" method="post">
                         <div class="name">
                             <label>Nazwa:</label>
-                            <input type="text" name="name" placeholder="Wyszukaj trasę po nazwie">
+                            <input type="text" placeholder="Wyszukaj trasę po nazwie">
                         </div>
                         <div class="country">
                             <label>Kraj:</label>
@@ -70,71 +65,12 @@
             </div>
         </div>
         <div class="right">
-            <div class="all_trails">
-                 <h3> Wszystkie trasy: </h3>
-                <div class="all_trail-trails" id="trails">
-                    {%for trail in object_list%}
-                        <div class="all_trails-trail" id="all_trails-trail">
-                            <div class="image_trail"><img src="{{trail.image.url}}" alt=""></div>
-                            <p id="name-trail">{{trail.name}}</p>
-                            <p><span>Kraj: </span>Polska</p>
-                            <p><span>Miasto: </span>Warszawa</p>
-                            <div class="all_trails-trail_more" style="display: flex">
-                                <div>
-                                  <p>Wykonało: <span> {{trail.watched}} </span></p>
-                                <p>Ocena: <span> {{trail.average_grade}}</span> </p>
-                                </div>
-                          <button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                <button id="left"><</button>
-                <button id="right">></button>
-            </div>
-            <div class="top_rate-center">
-                 <h3> Najwyżej oceniane: </h3>
-                <div class="top_rate-trails" id="top_rate-trails">
-                    {%for trail in top_rate%}
-                        <div class="top_rate-trail" id="top_rate-trail">
-                            <div class="image_trail"><img src="{{trail.image.url}}" alt=""></div>
-                            <p id="top_rate-name_trail">{{trail.name}}</p>
-                            <p><span>Kraj: </span>Polska</p>
-                            <p><span>Miasto: </span>Warszawa</p>
-                            <div class="top_rate-trail_more" style="display: flex">
-                                <div>
-                                    <p>Wykonało: <span> {{trail.watched}} </span></p>
-                                    <p>Ocena: <span> {{trail.average_grade}}</span> </p>
-                                </div>
-                            <button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                <button id="left-rate"><</button>
-                <button id="right-rate">></button>
-            </div>
-            <div class="popular-center">
-                 <h3> Najpopularniejsze: </h3>
-                <div class="popular-trails" id="popular-trails">
-                    {%for trail in popular_trail%}
-                        <div class="popular-trail" id="popular-trail">
-                            <div class="image_trail"><img src="{{trail.image.url}}" alt=""></div>
-                            <p id="popular-name_trail">{{trail.name}}</p>
-                            <p><span>Kraj: </span>Polska</p>
-                            <p><span>Miasto: </span>Warszawa</p>
-                            <div class="popular-trail_more" style="display: flex"><div style="">
-                                <p>Wykonało: <span> {{trail.watched}} </span></p>
-                                <p>Ocena: <span> {{trail.average_grade}}</span> </p>
-                            </div><button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                <button id="left-popular"><</button>
-                <button id="right-popular">></button>
-            </div>
-            </div>
+
+            {%for i in list %}
+                {{i}}
+            {%endfor%}
+
+        </div>
     </div>
 </div>
 <script>
