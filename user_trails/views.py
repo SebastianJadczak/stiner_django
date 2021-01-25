@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from django.views.generic import ListView, DetailView
 from map.models import Point, Coordinates
@@ -11,6 +11,21 @@ class UserTrailsListView(ListView):
     """Klasa odpowiedzialna za wyświetlenie widoku Tras zwiedzania użytkowników"""
     template_name = 'trails/user_trails/user_trails.html'
     model = UserTrail
+    your_list_trails = []
+
+    def post(self, request, *args, **kwargs):
+        self.your_list_trails.clear()
+        for key, value in request.POST.items():
+            if 'name' in key:
+                self.your_list_trails.append(UserTrail.objects.filter(name__contains=value))
+            if 'country' in key:
+                self.your_list_trails.append(UserTrail.objects.filter(country=value))
+            if 'region' in key:
+                self.your_list_trails.append(UserTrail.objects.filter(region__contains=value))
+            if 'city' in key:
+                self.your_list_trails.append(UserTrail.objects.filter(city__contains=value))
+        return redirect('../user_trails/search_user_trails/',
+                        {'list': self.your_list_trails})
 
     def get_city(self):
         city = list(Coordinates.objects.all())
