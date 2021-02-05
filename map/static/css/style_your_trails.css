@@ -121,9 +121,9 @@ div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-      position: static;
     top: 917px;
     left:136px;
+    position: fixed;
 }
 
 div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.top_rate label.star {

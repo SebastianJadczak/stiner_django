@@ -40,7 +40,7 @@
                                     {% endfor %}
                                 <p class="city">Pokaż więcej</p>
                             </div>
-                            <div class="accept_filter"><button id="button-filter">ZASTOSUJ FILTRY</button></div>
+                            <div class="accept_filter"><button id="button-filter_your-trail">ZASTOSUJ FILTRY</button></div>
                             {% csrf_token %}
                         </form>
                 </div>
@@ -112,6 +112,19 @@ more.addEventListener('click', function () {
         }
     });
 
+const button = document.getElementById('button-filter_your-trail')
 
+    window.addEventListener(
+        'scroll',
+        () => {
+            if (window.scrollY >= 175) {
+            button.style.position = 'static'
+            console.log(window.scrollY)
+        }else {
+            button.style.position = 'fixed'
+            console.log(window.scrollY)
+        }
+    }
+    )
 </script>
 {% endblock %}

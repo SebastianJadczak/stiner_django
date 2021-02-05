@@ -110,7 +110,7 @@ div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.a
     width:100%;
     height:50px;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.accept_filter button{
+#button-filter_your-trail{
     width:287px;
     height:50px;
     letter-spacing: 1.4px;
@@ -119,7 +119,7 @@ div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.a
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-      position: fixed;
+    position: fixed;
     top: 917px;
     left:136px;
 }
