@@ -1,5 +1,4 @@
 import json
-
 from django.db.models import F
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, TemplateView, DetailView
@@ -147,6 +146,10 @@ class TrailDetailView(DetailView):
 
     template_name = 'trails/all_trails/trail/trail_detail.html'
     model = Trail
+
+    def draw_path(self):
+        pass
+
 
     def calculation_mean(self, trail_name):
         rate_trail = list(Rate_trail.objects.filter(trail=trail_name))
