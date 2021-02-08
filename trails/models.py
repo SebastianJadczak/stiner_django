@@ -1,6 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from map.models import Point
+
+
 class Trail(models.Model):
     COUNTRY_TRAIL=(
         ('Polska', 'Polska'),
@@ -25,6 +28,7 @@ class Trail(models.Model):
     average_grade = models.DecimalField(max_digits=2, decimal_places=1)
     watched = models.IntegerField()
     popular = models.BooleanField(default=False)
+    points = models.ForeignKey(Point, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

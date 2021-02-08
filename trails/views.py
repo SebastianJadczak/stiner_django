@@ -1,8 +1,5 @@
-import json
-from django.db.models import F
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, TemplateView, DetailView
-from numpy import sort
 from rest_framework import generics
 
 from map.models import Point, Opinion_about_Point, Coordinates
@@ -147,8 +144,6 @@ class TrailDetailView(DetailView):
     template_name = 'trails/all_trails/trail/trail_detail.html'
     model = Trail
 
-    def draw_path(self):
-        pass
 
 
     def calculation_mean(self, trail_name):
