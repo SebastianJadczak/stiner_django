@@ -180,6 +180,7 @@ class TrailDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['trail'] = list(Trail.objects.filter(id=self.kwargs['pk']))[0]
         context['trail_id'] = self.kwargs['pk']
+        context['points'] =list(list(Trail.objects.filter(id=self.kwargs['pk']))[0].points.all())
         return context
 
 

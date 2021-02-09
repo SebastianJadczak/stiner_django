@@ -28,7 +28,7 @@ class Trail(models.Model):
     average_grade = models.DecimalField(max_digits=2, decimal_places=1)
     watched = models.IntegerField()
     popular = models.BooleanField(default=False)
-    points = models.ForeignKey(Point, on_delete=models.CASCADE)
+    points = models.ManyToManyField(Point)
 
     def __str__(self):
         return self.name

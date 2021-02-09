@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="{% static 'css/style_point.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_all_trails.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_your_trails.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_trail_detail.css' %}">
 </head>
 <body>
 <div id="top_mapa">
@@ -102,7 +103,19 @@
 </div>
 <div class="center">
     <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
-    <div>  {{trail.points}}</div>
+    <div id="points_in_trail">
+        <ul>
+            {% for p in points %}
+                <li>
+                    <div>
+                        <div class="title_point"><h3>{{p.name}}</h3></div>
+                        <div class="description_point"><p>{{p.descriptions}}</p></div>
+                        <div class="more"><p>Rozwiń</p></div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
     <div class="opinion">
                    <h3>Oceny i opinie</h3>
                     <p>
@@ -193,15 +206,15 @@ var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
 
                 "map_1de6ef4f1218487da9d6da057bb8f454",
                 {
-                    center: [x, y],
+                     center: [x, y],
                     crs: L.CRS.EPSG3857,
-                    zoom: 12,
-                    zoomControl: true,
+                    zoom: 16,
+                   zoomControl: true,
                     preferCanvas: false,
                 }
             );
 
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}{r}.png', {
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}{r}.png', {
                attribution: '© OpenStreetMap contributors'
              }).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
 
