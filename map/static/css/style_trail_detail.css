@@ -27,11 +27,28 @@ div#points_in_trail ul li div div.title_point h3{
     color: #f5f5f5;
     font-weight: bold;
 }
-div#points_in_trail ul li div div.description_point{
-    padding: 10px 20px;
+div#points_in_trail ul li div.point_in_trail div.description_point{
+    padding: 10px 20px 5px;
+    visibility: hidden;
+    height: 15px;
+    letter-spacing: 1.7px;
+    font-family: Arial, sans-serif;
 }
+div#points_in_trail ul li:nth-of-type(1) div div.description_point{
+   visibility: initial;
+    height: auto;
+}
+div#points_in_trail ul li div.point_in_trail.active div.description_point{
+    visibility: initial;
+    height: auto;
+}
+
 div#points_in_trail ul li div div.more{
     text-align: right;
+    padding-right: 15px;
+    letter-spacing: 1.7px;
+    font-weight: bold;
+    font-size: 17px;
 }
 div.leaflet-routing-container{
     display: none;
