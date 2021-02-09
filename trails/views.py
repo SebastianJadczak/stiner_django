@@ -190,7 +190,7 @@ class TrailApiFilterListView(generics.ListAPIView):
 
     def get_queryset(self):
         pk = self.kwargs['pk']
-        return Point.objects.filter(trails=pk)
+        return list(Trail.objects.filter(id=pk))[0].points.all()
 
 
 class SearchTrails(TrailsListView):

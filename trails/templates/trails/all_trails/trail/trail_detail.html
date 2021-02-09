@@ -96,6 +96,7 @@
         {% endif %}
     </div>
 </div>
+<p id="trail_id" hidden>{{trail.id}}</p>
 <div class="panorama_mapa" >
 <div class="x">
     <h3>{{trail.name}}</h3>
@@ -218,22 +219,50 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}{r}.png', {
                attribution: '© OpenStreetMap contributors'
              }).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
 
-             L.Routing.control({
-               waypoints: [
-                 L.latLng(52.22804, 21.008),
-                 L.latLng(52.231, 21.015)
-               ]
-             }).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
-
 
     // Obsługa menu Trasy
     if (yours_trails){
      tr.classList.toggle("active");
 }
-//    Obsługa formularzu filtrowania obiektów na stronie
+// Obsługa punktów na mapie
+
+
+let id_trail = document.querySelector("p#trail_id");
+let points = []
+const waypoints = []
 
 
 
+
+ function get_point_in_trail(){
+                marker =fetch(`/trails/api/${id_trail.textContent}`)
+                        .then(response => response.json())
+                        .then(data=> {
+
+                            data.forEach(addElements);
+
+                            function addElements(item, index) {
+                                waypoints.push(L.latLng( parseFloat(item.coordinateX), parseFloat(item.coordinateY)))
+                             }
+
+                        })
+
+         setTimeout(add_points_to_waypoints, 1000)
+            }
+
+get_point_in_trail()
+
+ function add_points_to_waypoints(){
+                                 L.Routing.control({
+                                       waypoints,
+                                     fitSelectedRoutes: true,
+                                    draggableWaypoints: false,
+                                    routeWhileDragging: false,
+                                    lineOptions : {
+                                        addWaypoints: false
+                                    }
+                                     }).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
+                            }
 
 </script>
 

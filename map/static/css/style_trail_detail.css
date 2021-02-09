@@ -33,3 +33,6 @@ div#points_in_trail ul li div div.description_point{
 div#points_in_trail ul li div div.more{
     text-align: right;
 }
+div.leaflet-routing-container{
+    display: none;
+}
