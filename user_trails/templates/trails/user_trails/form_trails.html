@@ -1,5 +1,5 @@
 {% extends 'base_trail.html' %}
-
+{% load static %}
 {% block content %}
 <div class="wrap-trails_add">
         <div class="title-trail_add">
@@ -10,6 +10,17 @@
                 essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
         </div>
+
+    {% if len_user %}
+    <div class="opacity" style=" height: 50px; width: 50px; position: absolute; right: 160px; top:320px" >
+        <a href="{% url "user_trails:user_trail_draft"%}"><img src="{% static 'img/map_draft.png' %}" alt="" style="height: 50px; width: 50px;"> <span style="position: absolute; right: 21px; top:15px; font-size: 24px; font-weight: bold; color: #565656">{{len_user}}</span></a>
+    </div>
+        {%else%}
+    <div class="opacity" style=" height: 50px; width: 50px; position: absolute; right: 140px;top:320px" >
+        <img src="{% static 'img/map_draft.png' %}" alt="" style="height: 50px; width: 50px;position: relative; right: 20px">
+          </div>
+        {% endif %}
+
         <div class="trail_add-center">
              <div class="filter_trails">
                 <h3> Filtrowanie tras: </h3>
@@ -65,11 +76,6 @@
                     </div>
                     <button id="left"><</button>
                     <button id="right">></button>
-                  {% if len_user %}
-                        {{len_user}}
-                        <div class="opacity">
-                        <a href="{% url "user_trails:user_trail_draft"%}">Szkic trasy</a>
-                        {% endif %}
 
                             {{zmienna}}
                         </div>
