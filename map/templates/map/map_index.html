@@ -53,8 +53,11 @@
                     <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
                     {% if user.is_authenticated %}
                         <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
-                    {% endif %}
-                    <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
+                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
+                    {%else%}
+                        <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>
+                        <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
+                     {% endif %}
                 </ul>
         </div>
             </li>
@@ -179,10 +182,6 @@ var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                             }
                         })
             }
-            //gfgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-
-
-            //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
             zz()
 
     // Obsługa menu Trasy
