@@ -1,388 +1,77 @@
-/* Strona Mapa */
-#top_mapa{
-border-bottom:1px solid #cbcdcc;
-height: 10vh;
-display:flex;
-}
-#top_mapa div.logo_mapa{
-margin:18px 18px 18px 35px;
-height:7vh;
-width: 110px;
-}
-#top_mapa div.logo_mapa img{
-width:100%;
-height:100%;
-}
-div#top_mapa div.menu_mapa {
-width:65%;
-height:10vh;
-font-family: 'Roboto Mono', monospace;
-}
-div#top_mapa div.menu_mapa div.tr{
+/* Ustawienia ogólne */
+html, body {
     width: 100%;
-    height: 240px;
-    background-color: #fdfdfd;
-    border: 0.5px solid #e9e8e8;
-    color: #2e6993;
-    transform: translateY(-400px);
-    z-index: -1;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-}
-
-div#top_mapa div.menu_mapa div.tr.active{
-     height: 240px;
-    position: relative;
-    z-index: 9;
-}
-/*div#top_mapa div.menu_mapa div.tr{*/
-/*        height: 240px;*/
-/*    position: relative;*/
-/*    z-index: 1;*/
-/*}*/
-
-
-
-div#top div.menu div.tr ul{
     height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-}
-div#top div.menu div.tr ul li{
-    height: 100%;
-    width: 100%;
-    line-height: 0;
-    padding: 12px 0;
-}
-div#top div.menu div.tr ul li:hover{
-     background-color: #f8f8f8;
-}
-div#top div.menu div.tr ul li a{
-    display: block;
-    font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    line-height: 35px;
     margin: 0;
     padding: 0;
-    color: #2e6993;
 }
 
-div#top_mapa div.menu_mapa div.tr{
-    width: 100%;
-    height: 180px;
-    background-color: #fdfdfd;
-    border: 0.5px solid #e9e8e8;
-    color: #2e6993;
-    position: relative;
-    transform: translateY(-400px);
-    z-index: 9;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+#top{
+    border-bottom:1px solid #cbcdcc;
+    height: 10vh;
+    display:flex;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
-
-div#top_mapa div.menu_mapa div.tr ul{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
+#top div.logo{
+    margin:18px 10px 10px 33px;
+    height:7vh;
+    width: 110px;
 }
-div#top_mapa div.menu_mapa div.tr ul li{
-    height: 100%;
-    width: 100%;
-    line-height: 0;
-    padding: 12px 0;
+#top div.logo img{
+    width:100%;
+    height:100%;
 }
-div#top_mapa div.menu_mapa div.tr ul li:hover{
-     background-color: #f8f8f8;
+div#top div.menu {
+    width:65%;
+    height:10vh;
+    font-family: 'Roboto Mono', monospace;
 }
-div#top_mapa div.menu_mapa div.tr ul li a{
-    display: block;
-    font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    line-height: 35px;
-    margin: 0;
-    padding: 0;
-    color: #2e6993;
-}
-
-div#top_mapa div.menu_mapa ul{
+div#top div.menu ul{
     display:flex;
     justify-content:space-between;
     list-style:none;
     height:10vh;
-    margin: 0;
-}
-
-div#top_mapa div.menu_mapa ul li {
-width: 25%;
-line-height:12vh;
-}
-
-div#top_mapa div.menu_mapa ul li a{
-display:block;
-text-align: center;
-color: black;
-font-weight:bold;
-font-size:16px;
-letter-spacing:2px;
-text-decoration:none;
-}
-div#top_mapa div.menu_mapa ul li.red a{
-color:red;
-}
-div#top_mapa div.menu_mapa ul li.blue a{
-color:blue;
-}
-div#top_mapa div.menu_mapa ul li.green a{
-color:green
-}
-
-
-div#top_mapa div.menu_mapa ul li.green:hover div.tr{
-    transform: translateY(-20px);
-    z-index: 1;
-}
-
-div#top_mapa div.menu_mapa ul li.gold a {
-    color: #ab0fb5;
-}
-
-div#top_mapa div.menu_mapa ul li a i{
-font-size:25px;
-margin-right:10px;
-color: #3b372b;
-}
-div#top_mapa div.menu_mapa ul li.red a i{
-color:red;
-}
-div#top_mapa div.menu_mapa ul li.green a i{
-color:green;
-}
-div#top_mapa div.menu_mapa ul li.blue a i{
-color:blue;
-}
-div#top_mapa div.menu_mapa ul li.gold a i{
-    color: #ab0fb5;
-}
-
-
-div.login_mapa{
-margin-left:130px;
-}
-
-div.login_mapa div.user_menu{
-    display: none;
-}
-div.login_mapa div.user_menu.active{
-    display: block;
-    position: absolute;
-    right: 160px;
-    border: 1px solid #112938;
-    background-color: #2e6993;
-    border-radius: 20px 0 20px 20px;
-    z-index: 1;
-}
-div.login_mapa div.user_menu.active ul{
-    padding: 5px 10px 0;
-
-}
-div.login_mapa div.user_menu.active ul li{
-    border-bottom: 1px solid white;
-    list-style: none;
-    height:33px;
-    line-height: 33px;
-}
-div.login_mapa div.user_menu.active ul li a{
-    color: whitesmoke;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-    letter-spacing: 1.2px;
-    padding-left: 10px;
-}
-div.login_mapa button.user_menu i{
-    font-size: 28px;
-    color: #235171;
-}
-div.login_mapa button.user_menu i.fa-angle-down{
-    font-size: 18px;
-    color: #112636;
-    margin: 5px;
-
-}div.login_mapa button.user_menu i.fa-angle-down.active{
-  transform:rotate(180deg);
-}
-
-div.login_mapa button.user_menu{
-    margin-left: 100px;
-}
-div.login_mapa button.user_menu span{
-    margin-left: 5px;
-    color: black;
-    font-size: 17px;
-}
-div.login_mapa button{
-    margin-top:30px;
-    width:150px;
-    height:48px;
-    border-style: none;
-    color: #428bca;
-    background-color: white;
-}
-
-div.login_mapa button:focus{
-    outline: none;
-}
-div.login_mapa button.register{
-    border: 1px solid #428bca;
-    border-radius: 20px;
-}
-
-div.login_mapa button.register:hover{
-     border: 1px solid #28476c;
-    color: #28476c;
-}
-div.login_mapa button.register:hover a, div.login_mapa button:hover a{
-     color: #28476c;
-}
-div.login_mapa button a{
-font-weight:bold;
-letter-spacing:1.5px;
-text-decoration:none;
-font-size:15px;
-   color: #428bca;
-}
-div.login_mapa button.register a{
-    display: block;
-   width:100%;
-    height:99%;
-        line-height:45px;
-}
-
-div#filter_mapa{
-display:flex;
-height:7vh;
-line-height:8vh;
-justify-content: left;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-    border-bottom: 1px solid rgba(0,0,0,0.4);
-}
-div#filter_mapa div:nth-of-type(1){
-    padding-left: 280px;
-    margin-right: 230px;
-    width: 200px;
-}
-div#filter_mapa div{
-    width:120px;
-}
-div#filter_mapa select.location{
-padding:5px 10px;
-border: 0.5px solid #cbcdcc;
-border-radius:15px;
-}
-
-div#filter_mapa i{
-margin:12px 0 0 2px;
-font-size:23px;
-}
-div.search_mapa{
-height:30px;
-line-height:0;
-}
-
-div.search_mapa button{
-margin-top:20px;
-height:32px;
-background-color:orange;
-border:0 solid white;
-color:white;
-padding:10px 14px;
-border-radius:15px;
-font-weight:bold;
-letter-spacing:1.5px;
-}
-
-/*Renderowanie mapy*/
-
-iframe.map_render{
-    width:99vw;
-    height: 79vh;
-}
-
-/*Reszta stron*/
-html, body {width: 100%;height: 100%;margin: 0;padding: 0;}
-
-#top{
-border-bottom:1px solid #cbcdcc;
-height: 10vh;
-display:flex;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-}
-#top div.logo{
-margin:18px 10px 10px 33px;
-height:7vh;
-width: 110px;
-}
-#top div.logo img{
-width:100%;
-height:100%;
-}
-div#top div.menu {
-width:65%;
-height:10vh;
-font-family: 'Roboto Mono', monospace;
-}
-div#top div.menu ul{
-display:flex;
-justify-content:space-between;
-list-style:none;
-height:10vh;
 }
 div#top div.menu ul li {
-width: 25%;
-line-height:9vh;
+    width: 25%;
+    line-height:9vh;
 }
-
-
 
 div#top div.menu ul li a{
-display:block;
-text-align: center;
-color: black;
-font-weight:bold;
-font-size:16px;
-letter-spacing:2px;
-text-decoration:none;
+    display:block;
+    text-align: center;
+    color: black;
+    font-weight:bold;
+    font-size:16px;
+    letter-spacing:2px;
+    text-decoration:none;
 }
 div#top div.menu ul li.red a{
-color:red;
+    color:red;
 }
 div#top div.menu ul li.blue a{
-color:blue;
+    color:blue;
 }
 div#top div.menu ul li.green a{
-color:green
+    color:green
 }
 div#top div.menu ul li.gold a{
     color: #ab0fb5;
 }
 
 div#top div.menu ul li a i{
-font-size:25px;
-margin-right:10px;
-color: #3b372b;
+    font-size:25px;
+    margin-right:10px;
+    color: #3b372b;
 }
 div#top div.menu ul li.red a i{
-color:red;
+    color:red;
 }
 div#top div.menu ul li.green a i{
-color:green;
+    color:green;
 }
 div#top div.menu ul li.blue a i{
-color:blue;
+    color:blue;
 }
 div#top div.menu ul li.gold a i{
     color: #ab0fb5;
@@ -401,413 +90,54 @@ div.login button{
     background-color:#009900;
 }
 div.login button a{
-color:white;
-font-weight:bold;
-letter-spacing:1.5px;
-text-decoration:none;
-font-size:15px;
+    color:white;
+    font-weight:bold;
+    letter-spacing:1.5px;
+    text-decoration:none;
+    font-size:15px;
 }
 
 div#filter{
-display:flex;
-height:7vh;
-line-height:6.5vh;
-margin: 0 20px;
-justify-content:space-between;
-width:81vw;
+    display:flex;
+    height:7vh;
+    line-height:6.5vh;
+    margin: 0 20px;
+    justify-content:space-between;
+    width:81vw;
 }
 
 div#filter select.location{
-padding:5px 10px;
-border: 0.5px solid #cbcdcc;
-border-radius:15px
+    padding:5px 10px;
+    border: 0.5px solid #cbcdcc;
+    border-radius:15px
 }
 
 div#filter i{
-margin:12px 0 0 0;
-font-size:23px;
+    margin:12px 0 0 0;
+    font-size:23px;
 }
 div.search{
-height:30px;
-line-height:0;
+    height:30px;
+    line-height:0;
 }
 
 div.search button{
-margin-top:10px;
-height:26px;
-background-color:orange;
-border:0 solid white;
-color:white;
-padding:10px 15px;
-border-radius:15px;
-font-weight:bold;
-letter-spacing:1.5px;
+    margin-top:10px;
+    height:26px;
+    background-color:orange;
+    border:0 solid white;
+    color:white;
+    padding:10px 15px;
+    border-radius:15px;
+    font-weight:bold;
+    letter-spacing:1.5px;
 }
-
-
 
 /*Content*/
 
 div.content{
-       margin-top: 10px;
-}
-
-div.blog_title{
-    width:99.1vw;
-    height:80vh;
-    background-image: url("../img/city.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-       box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-}
-
-div.content_center{
-    display: flex;
-    background-color: #fbfbfb;
-}
-div.right_table{
-    width:20vw;
-    border-left: 0.5px solid grey;
-    padding:50px;
-}
-
-div.right_table div.reklama{
-    width:310px;
-    height:260px;
-      margin: 0 auto;
-    background-color: white;
-    background-image: url("../img/baner.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    box-shadow: 0 0 0 1px #bdbdbd;
-}
-div.posts{
-    display: flex;
-    width:60vw;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 50px 0 50px 200px;
-    justify-content: space-between;
-}
-div.posts div.post{
-    width:300px;
-    margin: 10px 25px;
-    height:600px;
-}
-
-div.posts div.post div.image{
-    width:90%;
-    margin: 0 auto;
-    height: 200px;
-}
-div.posts div.post div.image img{
-    width:100%;
-    height:100%;
-}
-div.posts div.post div.title{
-    text-align: center;
-
-}
-div.posts div.post div.title p{
-    color: #151515;
-    font-size: 29px;
-    font-weight: bold;
-    font-family: 'Roboto Mono', monospace;
-    margin: 10px 0;
-    text-transform: uppercase;
-}
-div.posts div.post div.body{
-    margin:0;
-}
-/* sekcja moderowania stron*/
-
-div#top_manage{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 1px solid green;
-}
-
-
-div.management{
-    display: flex;
-    flex-direction: row;
-}
-div.management div.management_menu{
-    padding: 20px 10px;
-    width:20vw;
-    height:70vh;
-    background-color: rgba(185, 255, 200, 0.75);
-    border-right: 1px solid green;
-    border-bottom: 1px solid green;
-}
-
-div.management div.management_menu span{
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 19px;
-}
-div.management div.management_menu p.management_menu_section{
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-    font-weight: bold;
-}
-div.management div.management_menu button{
-    background-color: green;
-    width:200px;
-    height:25px;
-    box-shadow: 1px 1px 0 white;
-    border: 1px solid white;
-}
-div.management div.management_menu button a{
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-
-/*block content moderowania stron */
-div.posts_manage{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 50px 0;
-    width:80vw;
-}
-div.posts_manage div.post_manage{
-    width:45vw;
-    margin: 10px auto;
-    height:600px;
-}
-
-div.posts_manage div.post_manage div.image{
-    width:100%;
-    height: 300px;
-}
-div.posts_manage div.post_manage div.image img{
-    width:100%;
-    height:100%;
-}
-div.posts_manage div.post_manage div.title{
-    position: relative;
-    top:-180px;
-    border:3px solid white;
-    width: 400px;
-    left:15%;
-    background-color: rgba(0, 0, 0, 0.87);
-    text-align: center;
-
-}
-div.posts_manage div.post_manage div.title p{
-    color: white;
-    font-size: 29px;
-    font-weight: bold;
-    font-family: 'Roboto Mono', monospace;
-    margin: 10px;
-    text-transform: uppercase;
-}
-/*Dodawanie postów na stronie*/
-div.create_post{
-    width:80vw;
-}
-div.create_post h2{
-    padding-left: 50px;
-}
-
-div.form_post{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 50px 0;
-    margin-left: 100px;
-}
-/*Wyjście z panelu moderatora*/
-
-div.management div.management_menu button.exit_manage{
-    margin-top:50px;
-    background-color: red;
-}
-
-
-
-
-
-/* Zakładka Kontakt. */
-
-div.contact p#contact{
-    background-color: #0f0c6a;
-    color: whitesmoke;
-    margin: 0;
-    height:60px;
-    line-height: 60px;
-    text-align: center;
-    font-size: 24px;
-    font-family:Verdana, Arial, sans-serif;
-    letter-spacing: 3px;
     margin-top: 10px;
 }
-div.contact div.person{
-    width:50vw;
-    margin: 80px auto 130px;
-
-}
-div.contact div.person div.person-text{
-     border-top: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
-    margin-bottom: 30px;
-}
-div.contact div.person div.person-text h1{
-    font-weight: normal;
-    font-family: sans-serif;
-    letter-spacing: 2px;
-    color: #0b0950;
-}
-div.contact div.person div.person-text p{
-    font-size: 18px;
-    letter-spacing: 1.6px;
-    color: #0f0c6a;
-}
-
-div.contact div.person div.person-info {
-    display: flex;
-}
-div.contact div.person div.person-info div.image{
-    width:240px;
-    height:200px;
-    margin-left: 20px;
-    margin-top: 80px;
-}
-div.contact div.person div.person-info div.image img{
-   height: auto;
-    max-width: 100%;
-    display:block;
-    border-radius: 130px;
-}
-
-div.contact div.person div.person-info div.info{
-    margin-left: 50px;
-}
-
-div.contact div.person div.person-info div.info div.motto p:nth-of-type(1){
-    font-weight: bold;
-    font-family: sans-serif;
-    letter-spacing: 1.5px;
-    font-size: 19px;
-}
-div.contact div.person div.person-info div.info div.motto p:nth-of-type(2){
-     font-family: sans-serif;
-    letter-spacing: 1.1px;
-}
-
-div.contact div.person div.person-info div.info div.data{
-    margin-top:40px;
-}
-div.contact div.person div.person-info div.info div.data h3{
-    font-family: sans-serif;
-    letter-spacing: 1.2px;
-    font-size: 18px;
-}
-
-div.contact div.person div.person-info div.info div.data p{
-    font-size: 18px;
-}
-
-div.contact div.person div.person-info div.info div.data p i{
-    color: #1268a2;
-    margin-right: 15px;
-}
-
-div.contact div#data_company{
-    background-color: #0e0b53;
-    color: whitesmoke;
-    height:40vh;
-}
-
-div.contact div#data_company i {
-    font-size: 30px;
-    text-align: center;
-    display: block;
-    padding-top: 50px;
-    color: #44a3e2;
-}
-
-div.contact div#data_company p{
-    text-align: center;
-    font-size: 22px;
-    letter-spacing: 2px;
-}
-div.contact div#data_company div.data{
-    margin-top:70px;
-}
-div.contact div#data_company div.data p{
-    font-size: 16px;
-}
-
-/*Formularz*/
-
-div.contact div.form{
-    width: 40vw;
-    margin: 0 auto;
-}
-div.contact div.form h2{
-    letter-spacing: 1.5px;
-    margin: 60px 0 15px;
-    font-family: sans-serif;
-    border-bottom: 1px solid #d6d6d6;
-    padding: 0 5px 20px 10px;
-}
-div.contact div.form p#help{
-    margin-bottom: 40px;
-    font-family: sans-serif;
-    letter-spacing: 1.5px;
-    padding: 0 10px 20px;
-    border-bottom: 1px solid #cfcfcf;
-}
-div.contact div.form h3{
-    margin-left: 50px;
-    margin-bottom: 25px;
-    font-family: sans-serif;
-    letter-spacing: 2px;
-}
-div.contact div.form form{
-    height:300px;
-    margin-left: 50px;
-}
-div.contact div.form form p{
-    height: 40px;
-    margin-bottom: 20px;
-    font-family: sans-serif;
-}
-div.contact div.form form p input{
-    width:360px;
-    margin-left: 36px;
-    height: 35px;
-}
-div.contact div.form form p textarea{
-    width:360px
-}
-div.contact div.form form input[type=submit]{
-    margin: 140px 0 30px 310px;
-    width: 140px;
-    height:40px;
-    background-color: whitesmoke;
-    color: #3375a4;
-    border: 1px solid #2e628d;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 17px;
-    transition: 0.5s;
-    border-radius: 20px;
-}
-
-div.contact div.form form input[type=submit]:hover{
-    background-color: #2c668f;
-    color: whitesmoke;
-    border: 1px solid #2e628d;
-    cursor:pointer;
-}
-
-
 
 div#top div.menu div.tr{
     width: 100%;

@@ -1,0 +1,305 @@
+#top_mapa{
+    border-bottom:1px solid #cbcdcc;
+    height: 10vh;
+    display:flex;
+}
+#top_mapa div.logo_mapa{
+    margin:18px 18px 18px 35px;
+    height:7vh;
+    width: 110px;
+}
+#top_mapa div.logo_mapa img{
+    width:100%;
+    height:100%;
+}
+div#top_mapa div.menu_mapa {
+    width:65%;
+    height:10vh;
+    font-family: 'Roboto Mono', monospace;
+}
+div#top_mapa div.menu_mapa div.tr{
+    width: 100%;
+    height: 240px;
+    background-color: #fdfdfd;
+    border: 0.5px solid #e9e8e8;
+    color: #2e6993;
+    transform: translateY(-400px);
+    z-index: -1;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+
+div#top_mapa div.menu_mapa div.tr.active{
+     height: 240px;
+    position: relative;
+    z-index: 9;
+}
+
+div#top div.menu div.tr ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+div#top div.menu div.tr ul li{
+    height: 100%;
+    width: 100%;
+    line-height: 0;
+    padding: 12px 0;
+}
+div#top div.menu div.tr ul li:hover{
+     background-color: #f8f8f8;
+}
+div#top div.menu div.tr ul li a{
+    display: block;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 35px;
+    margin: 0;
+    padding: 0;
+    color: #2e6993;
+}
+
+div#top_mapa div.menu_mapa div.tr{
+    width: 100%;
+    height: 180px;
+    background-color: #fdfdfd;
+    border: 0.5px solid #e9e8e8;
+    color: #2e6993;
+    position: relative;
+    transform: translateY(-400px);
+    z-index: 9;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+
+div#top_mapa div.menu_mapa div.tr ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+div#top_mapa div.menu_mapa div.tr ul li{
+    height: 100%;
+    width: 100%;
+    line-height: 0;
+    padding: 12px 0;
+}
+div#top_mapa div.menu_mapa div.tr ul li:hover{
+     background-color: #f8f8f8;
+}
+div#top_mapa div.menu_mapa div.tr ul li a{
+    display: block;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 35px;
+    margin: 0;
+    padding: 0;
+    color: #2e6993;
+}
+
+div#top_mapa div.menu_mapa ul{
+    display:flex;
+    justify-content:space-between;
+    list-style:none;
+    height:10vh;
+    margin: 0;
+}
+
+div#top_mapa div.menu_mapa ul li {
+    width: 25%;
+    line-height:12vh;
+}
+
+div#top_mapa div.menu_mapa ul li a{
+    display:block;
+    text-align: center;
+    color: black;
+    font-weight:bold;
+    font-size:16px;
+    letter-spacing:2px;
+    text-decoration:none;
+}
+div#top_mapa div.menu_mapa ul li.red a{
+    color:red;
+}
+div#top_mapa div.menu_mapa ul li.blue a{
+    color:blue;
+}
+div#top_mapa div.menu_mapa ul li.green a{
+    color:green
+}
+
+
+div#top_mapa div.menu_mapa ul li.green:hover div.tr{
+    transform: translateY(-20px);
+    z-index: 1;
+}
+
+div#top_mapa div.menu_mapa ul li.gold a {
+    color: #ab0fb5;
+}
+
+div#top_mapa div.menu_mapa ul li a i{
+    font-size:25px;
+    margin-right:10px;
+    color: #3b372b;
+}
+div#top_mapa div.menu_mapa ul li.red a i{
+    color:red;
+}
+div#top_mapa div.menu_mapa ul li.green a i{
+    color:green;
+}
+div#top_mapa div.menu_mapa ul li.blue a i{
+    color:blue;
+}
+div#top_mapa div.menu_mapa ul li.gold a i{
+    color: #ab0fb5;
+}
+
+
+div.login_mapa{
+    margin-left:130px;
+}
+
+div.login_mapa div.user_menu{
+    display: none;
+}
+div.login_mapa div.user_menu.active{
+    display: block;
+    position: absolute;
+    right: 160px;
+    border: 1px solid #112938;
+    background-color: #2e6993;
+    border-radius: 20px 0 20px 20px;
+    z-index: 1;
+}
+div.login_mapa div.user_menu.active ul{
+    padding: 5px 10px 0;
+
+}
+div.login_mapa div.user_menu.active ul li{
+    border-bottom: 1px solid white;
+    list-style: none;
+    height:33px;
+    line-height: 33px;
+}
+div.login_mapa div.user_menu.active ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    padding-left: 10px;
+}
+div.login_mapa button.user_menu i{
+    font-size: 28px;
+    color: #235171;
+}
+div.login_mapa button.user_menu i.fa-angle-down{
+    font-size: 18px;
+    color: #112636;
+    margin: 5px;
+
+}div.login_mapa button.user_menu i.fa-angle-down.active{
+    transform:rotate(180deg);
+}
+
+div.login_mapa button.user_menu{
+    margin-left: 100px;
+}
+div.login_mapa button.user_menu span{
+    margin-left: 5px;
+    color: black;
+    font-size: 17px;
+}
+div.login_mapa button{
+    margin-top:30px;
+    width:150px;
+    height:48px;
+    border-style: none;
+    color: #428bca;
+    background-color: white;
+}
+
+div.login_mapa button:focus{
+    outline: none;
+}
+div.login_mapa button.register{
+    border: 1px solid #428bca;
+    border-radius: 20px;
+}
+
+div.login_mapa button.register:hover{
+    border: 1px solid #28476c;
+    color: #28476c;
+}
+div.login_mapa button.register:hover a, div.login_mapa button:hover a{
+    color: #28476c;
+}
+div.login_mapa button a{
+    font-weight:bold;
+    letter-spacing:1.5px;
+    text-decoration:none;
+    font-size:15px;
+    color: #428bca;
+}
+div.login_mapa button.register a{
+    display: block;
+    width:100%;
+    height:99%;
+    line-height:45px;
+}
+
+div#filter_mapa{
+    display:flex;
+    height:7vh;
+    line-height:8vh;
+    justify-content: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+div#filter_mapa div:nth-of-type(1){
+    padding-left: 280px;
+    margin-right: 230px;
+    width: 200px;
+}
+div#filter_mapa div{
+    width:120px;
+}
+div#filter_mapa select.location{
+    padding:5px 10px;
+    border: 0.5px solid #cbcdcc;
+    border-radius:15px;
+}
+
+div#filter_mapa i{
+    margin:12px 0 0 2px;
+    font-size:23px;
+}
+div.search_mapa{
+    height:30px;
+    line-height:0;
+}
+
+div.search_mapa button{
+    margin-top:20px;
+    height:32px;
+    background-color:orange;
+    border:0 solid white;
+    color:white;
+    padding:10px 14px;
+    border-radius:15px;
+    font-weight:bold;
+    letter-spacing:1.5px;
+}
+
+/*Renderowanie mapy*/
+
+iframe.map_render{
+    width:99vw;
+    height: 79vh;
+}
