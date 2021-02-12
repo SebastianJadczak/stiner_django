@@ -130,3 +130,18 @@ class SaveDraftTrailUser(UserTrailFormAdd):
                                              type=item.type)
             self.clear_board_user()
             return render(request, 'trails/user_trails/form_trails.html', {'form': form, 'user_trail': self.user_trail})
+
+
+class UserTrailDetail(DetailView):
+    """ Widok odpowiedzialny za wyświetlenie szczegółowych informacji wybranego miejsca """
+
+    template_name = 'trails/user_trails/user_trail_detail.html'
+    model = UserTrail
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user_trail'] = list(UserTrail.objects.filter(id=self.kwargs['pk']))[0]
+        context['user_trail_id'] = self.kwargs['pk']
+        # context['points'] =list(list(UserTrail.objects.filter(id=self.kwargs['pk']))[0].points.all())
+        return context
+

@@ -129,31 +129,64 @@ div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div
 div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.top_rate label.star {
     color: gold;
 }
+div.user_trail_wrap{
+    width:70vw;
+}
+div.user_trail_wrap ul{
+    list-style: none;
+}
+div.user_trail_wrap ul li {
+    width: 64vw;
+    height: 300px;
+    border: 0.5px solid #cfcfcf;
+    margin-bottom: 25px;
+}
+div.user_trail_wrap ul li div.user_trail{
+    width: 62.5vw;
+    height: 270px;
+    margin: 5px auto;
+    padding: 10px;
+    border: 0.5px solid #cfcfcf;
+    box-shadow: 0 0 9px 3px  rgba(0,0,0,0.3);
+    display: flex;
+}
 
-div.panorama_mapa{
-    width: 99.8vw;
-    height: 20vh;
-    background-image: url("../../static/img/panorama2.jpg");
-    background-position: center;
-    background-size: cover;
-      opacity: 0.8;
-box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-}
-div.panorama_mapa div.x{
-    opacity: 1;
-    background-color: rgba(255,255,255, 0.1);
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-    transform: translate(40vw, 7vh);
-    width: 360px;
-  text-align: center;
+div.user_trail_wrap ul li div.user_trail div.content_trail{
+    width:75%;
     margin: 0;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.8px;
 }
-div.panorama_mapa h3{
-    margin: 0;
-    padding: 0 0 0 25px;
-    color: #c40000;
+div.user_trail_wrap ul li div.user_trail div.content_trail div.title{
+    text-align: center;
+}
+div.user_trail_wrap ul li div.user_trail div.content_trail div.title h3{
+    color: #1a1a1a;
+    margin: 5px 0 0 0;
+    text-decoration: underline;
+}
+div.user_trail_wrap ul li div.user_trail div.content_trail div.description{
+    padding: 10px;
+    height: 180px;
+}
+div.user_trail_wrap ul li div.user_trail div.content_trail div.description p span{
     font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 35px;
-    /*text-align: center;*/
+}
+div.user_trail_wrap ul li div.user_trail div.content_trail div.more{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+div.user_trail_wrap ul li div.user_trail div.content_trail div.more p span{
+    font-weight: bold;
+}
+
+div.user_trail_wrap ul li div.user_trail div.img{
+    width:350px;
+    height: 270px;
+}
+div.user_trail_wrap ul li div.user_trail div.img img{
+    width: 100%;
+    height: 100%;
 }

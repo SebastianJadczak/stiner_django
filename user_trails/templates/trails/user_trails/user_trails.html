@@ -1,4 +1,5 @@
 {% extends 'base_trail.html' %}
+{% load static %}
 
 {% block content %}
     <div class="wrap-your_trails">
@@ -47,12 +48,27 @@
                         </form>
                 </div>
         </div>
-            <!--                 Tutaj sekcja tras użytkownika-->
-<!--                 <div>-->
-<!--                     {% for i in user_trails %}-->
-<!--                     {{i}}-->
-<!--                     {% endfor %}-->
-<!--                 </div>-->
+
+                 <div class="user_trail_wrap">
+                     <ul>
+                         {% for i in user_trails %}
+                         <li>
+                             <div class="user_trail">
+                                 <div class="img"><img src="{%if i.image.url %}{{i.image.url}} {%else%} {% static "img/grece.jpg" %} {%endif%}" alt=""></div>
+                                 <div class="content_trail">
+                                     <div class="title"><h3>{{i.name}}</h3></div>
+                                     <div class="description"><p><span>Opis:</span>{{i.descriptions}}</p></div>
+                                     <div class="more">
+                                             <p><span>Ocena:</span> Xx.Xx</p>
+                                             <p><span>Zwiedzających: </span>Xxx</p>
+                                             <p><a href="{% url 'user_trails:user_trail_detail' i.id %}">Więcej</a></p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </li>
+                         {% endfor %}
+                     </ul>
+                 </div>
 
         </div>
     </div>

@@ -53,3 +53,32 @@ div#points_in_trail ul li div div.more{
 div.leaflet-routing-container{
     display: none;
 }
+
+
+div.panorama_mapa{
+    width: 99.8vw;
+    height: 20vh;
+    background-image: url("../../static/img/panorama2.jpg");
+    background-position: center;
+    background-size: cover;
+      opacity: 0.8;
+box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
+div.panorama_mapa div.x{
+    opacity: 1;
+    background-color: rgba(255,255,255, 0.1);
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    transform: translate(40vw, 7vh);
+    width: 360px;
+  text-align: center;
+    margin: 0;
+}
+div.panorama_mapa h3{
+    margin: 0;
+    padding: 0 0 0 25px;
+    color: #c40000;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 35px;
+    /*text-align: center;*/
+}
