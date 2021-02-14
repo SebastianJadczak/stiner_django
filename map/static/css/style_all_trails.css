@@ -21,9 +21,10 @@ div.wrap-trails div.trail-center{
 }
 div.all_trails{
     overflow: hidden;
-    width:65vw;
+    width:67vw;
     font-family: Arial, sans-serif;
-    padding-right: 45px;
+    padding-right: 20px;
+
 }
 div.all_trails h3{
     color: #434343;
@@ -40,14 +41,14 @@ div.all_trails div.all_trail-trails{
     flex-direction: row;
     overflow:hidden;
     transition: .6s;
-    margin:7px;
+    margin:7px 0 7px 7px;
 }
 
 div.all_trails div.all_trail-trails div.all_trails-trail{
     min-width:350px;
     max-width:350px;
     height:450px;
-    margin: 5px;
+    margin: 5px 0 5px 5px;
     text-align: center;
      background-color: #fff;
     border: 1px solid #d0d0d0;
@@ -111,7 +112,7 @@ div.all_trails button#left, div.all_trails button#right{
     top:-250px;
 }
 div.all_trails button#right{
-    left: 61.5vw;
+    left: 62.5vw;
 }
 
 /*Sekcja filtrów tras*/
@@ -216,10 +217,10 @@ div.wrap-trails div.trail-center div.filter_trails div.filter form div.top_rate 
 /*Sekcja Najwyżej ocenianych tras*/
 
 div.top_rate-center, div.popular-center{
-    overflow: hidden;
-    width:65vw;
+     overflow: hidden;
+    width:67vw;
     font-family: Arial, sans-serif;
-    padding-right: 45px;
+    padding-right: 20px;
 }
 div.top_rate-center h3, div.popular-center h3{
     color: #434343;
@@ -231,7 +232,7 @@ div.top_rate-trails, div.popular-trails{
     flex-direction: row;
     overflow:hidden;
     transition: .6s;
-    margin:7px;
+    margin:7px 0 7px 7px;
 }
 div.top_rate-trails div.top_rate-trail, div.popular-trails div.popular-trail{
     min-width:350px;
@@ -305,9 +306,10 @@ div.top_rate-center button#left-rate, div.top_rate-center button#right-rate{
     font-size: 25px;
     font-weight: bold;
        top:-250px;
+
 }
 div.top_rate-center button#right-rate, div.popular-center button#right-popular{
-    left: 61.5vw;
+    left: 62.5vw;
 }
 
 div.popular-center button#left-popular, div.popular-center button#right-popular{
@@ -321,4 +323,16 @@ div.popular-center button#left-popular, div.popular-center button#right-popular{
     font-size: 25px;
     font-weight: bold;
        top:-250px;
+}
+@media only screen and (max-width: 1680px) {
+
+    div.wrap-trails div.trail-center div.filter_trails div.filter form div.name input{
+        width: 170px;
+        margin-left: 10px;
+        padding-left: 15px;
+}
+    div.wrap-trails div.trail-center div.filter_trails div.filter form div.accept_filter button{
+    width:230px;
+}
+
 }

@@ -190,3 +190,17 @@ div.user_trail_wrap ul li div.user_trail div.img img{
     width: 100%;
     height: 100%;
 }
+@media only screen and (max-width: 1680px) {
+
+    div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.name input{
+        width: 170px;
+        margin-left: 10px;
+        padding-left: 15px;
+}
+    div.accept_filter button#button-filter_your-trail{
+       width:231px;
+    }
+    button#right{
+    right:-880px;
+}
+}
