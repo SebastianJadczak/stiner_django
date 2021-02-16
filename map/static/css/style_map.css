@@ -316,4 +316,16 @@ iframe.map_render{
     div#filter_mapa select.location{
     transform: translateY(-5px);
 }
+    div.login_mapa{
+    margin-left:50px;
+}
+    div.login_mapa button{
+    margin-top:25px;
+    width:130px;
+    height:40px;
+}
+div.login_mapa button.register a{
+    line-height:40px;
+}
+
 }

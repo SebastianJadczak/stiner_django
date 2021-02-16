@@ -227,3 +227,23 @@ div.product_description button.buy{
     font-family:  Arial, sans-serif;
     margin-left:400px;
 }
+@media only screen and (max-width: 1680px) {
+
+div.menu-shop div.search-product{
+   text-align: center;
+}
+div.menu-shop div.search-product input{
+    width: 250px;
+    height: 28px;
+}
+div.menu-shop div.search-product select{
+    height: 32px;
+    width: 145px;
+    padding: 0 0 0 2px;
+}
+
+div.menu-shop div.search-product button{
+    font-size: 14px;
+    padding: 8.5px 15px;
+}
+}
