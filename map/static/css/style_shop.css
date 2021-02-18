@@ -246,4 +246,10 @@ div.menu-shop div.search-product button{
     font-size: 14px;
     padding: 8.5px 15px;
 }
+div.first-section div.left div{
+    width: 19vw;
+    height: 120%;
+    margin-right: 80px;
+    padding-bottom: 10px;
+}
 }

@@ -304,6 +304,7 @@ iframe.map_render{
     height: 79vh;
 }
 @media only screen and (max-width: 1680px) {
+
     div.login_mapa button{
         margin-top:20px;
 }
