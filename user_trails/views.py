@@ -2,8 +2,11 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 from django.views.generic import ListView, DetailView
+from rest_framework import generics
+
 from map.models import Point, Coordinates
 from user_trails.models import UserTrail, UserPoint
+from .api.serializers import UserTrailsSerializer
 from .forms import UserTrailCreateForm
 
 
@@ -115,19 +118,17 @@ class SaveDraftTrailUser(UserTrailFormAdd):
     def post(self, request):
         form = UserTrailCreateForm(request.POST)
         if form.is_valid():
-            user_trail_draft = form.save(commit=False)
-            user_trail_draft.user = User.objects.get(username=request.user)
-            user_trail_draft.save()
-            for items in self.user_trail:
-                for item in items:
-                    UserPoint.objects.create(trails=user_trail_draft,
-                                             name=item.name,
-                                             descriptions=item.descriptions,
-                                             location=item.location,
-                                             coordinateX=item.coordinateX,
-                                             coordinateY=item.coordinateY,
-                                             image=item.image,
-                                             type=item.type)
+            print(self.user_trail[0][0].id)
+            table = [i[0].id for i in self.user_trail]
+
+            if self.user_trail:
+                userTrail = UserTrail()
+                userTrail.user = request.user
+                userTrail.name = request.POST.get('name')
+                userTrail.descriptions = request.POST.get('descriptions')
+                userTrail.save()
+                userTrail.points.set(table)
+                print(userTrail)
             self.clear_board_user()
             return render(request, 'trails/user_trails/form_trails.html', {'form': form, 'user_trail': self.user_trail})
 
@@ -142,6 +143,13 @@ class UserTrailDetail(DetailView):
         context = super().get_context_data(**kwargs)
         context['user_trail'] = list(UserTrail.objects.filter(id=self.kwargs['pk']))[0]
         context['user_trail_id'] = self.kwargs['pk']
-        # context['points'] =list(list(UserTrail.objects.filter(id=self.kwargs['pk']))[0].points.all())
         return context
+
+class TrailUserApiFilterListView(generics.ListAPIView):
+    """ Widok odpowiedzialny za filtrowanie obiektów w zależności od trasy którą użytkownik wybierze :) """
+    serializer_class = UserTrailsSerializer
+
+    def get_queryset(self):
+        pk = self.kwargs['pk']
+        return list(UserTrail.objects.filter(id=pk))[0].points.all()
 

@@ -1,11 +1,15 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from map.models import Point
+
+
 class UserTrail(models.Model):
     """Model odpowiedzialny za trasę użytkownika."""
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     descriptions = models.TextField()
+    points = models.ManyToManyField(Point)
 
     def __str__(self):
         return self.name
@@ -13,7 +17,6 @@ class UserTrail(models.Model):
 class UserPoint(models.Model):
     """Model przechowywujący informacje o punkcie w trasie użytkownika."""
 
-    trails = models.ForeignKey(UserTrail, blank=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     descriptions = models.TextField()
     location = models.CharField(max_length=30)

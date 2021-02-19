@@ -228,7 +228,7 @@ const waypoints = []
 
  function get_point_in_trail(){
                 //Pobieranie danych z API odnośnie punktów w trasie
-                marker =fetch(`/trails/api/${id_trail.textContent}`)
+                marker =fetch(`/user_trails/api/${id_trail.textContent}`)
                         .then(response => response.json())
                         .then(data=> {
                             data.forEach(addElements);
