@@ -171,3 +171,13 @@ div.contact div.form form input[type=submit]:hover{
     border: 1px solid #2e628d;
     cursor:pointer;
 }
+
+@media only screen and (max-width: 1680px) {
+    div.contact div#data_company{
+    height:45vh;
+}
+    div.contact div#data_company div.data{
+    margin-top:45px;
+}
+
+}
