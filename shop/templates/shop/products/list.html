@@ -48,8 +48,21 @@
             <div class="bottom"></div>
         </div>
         <div class="right">
-             <div class="top"></div>
-            <div class="bottom"></div>
+             <div class="top">
+                 <div><i class="fas fa-baby" style="color: #0e446c"></i><p>Małe rozmiary</p></div>
+                 <div><i class="fas fa-car-side" style="color: orange"></i><p>Szybkie dostawy</p></div>
+                 <div><i class="fab fa-cc-visa" style="color: #9acfea"></i><p>Płatność Online</p></div>
+             </div>
+            <div class="bottom">
+                <div class="opportunity-title"><p>Okazja!</p></div>
+                <div class="opportunity-product">
+                    <div class="img"><img src="{{ random_product.image.url}}" alt=""></div>
+                    <div class="name">
+                        <a href="#">{{random_product.name}}</a>
+                        <p>{{random_product.price}} zł</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
