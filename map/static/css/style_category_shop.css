@@ -1,4 +1,9 @@
-div.shop-list{min-height: 200vh}
+div.shop-list{
+    min-height: 200vh;
+    background-color: #f1f1f1;
+    margin: 3px 0 0 0;
+    padding: 20px 100px;
+}
 
 div.category-products div.ad {
     width:50vw;

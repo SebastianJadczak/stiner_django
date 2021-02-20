@@ -81,9 +81,9 @@ div.menu-shop div.shop-user-menu div#bell:hover i{
 }
 
 /* Głowna strona sklepu - Lista */
-div.shop-list{
+div#sh-list{
     background-color: #f1f1f1;
-    min-height: 100vh;
+    min-height: 74vh;
     margin: 3px 0 0 0;
     padding: 20px 100px;
 }
