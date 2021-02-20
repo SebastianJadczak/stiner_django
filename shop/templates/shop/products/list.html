@@ -45,7 +45,25 @@
 
                 </div>
             </div>
-            <div class="bottom"></div>
+            <div class="bottom">
+                <div class="title"><p>Warto zobaczyć</p></div>
+                <div class="products">
+                    <ul>
+                    {% for p in slice_products %}
+                        <li>
+                            <div class="product">
+                                <div class="img">
+                                    <img src="{{p.image.url}}" alt="">
+                                </div>
+                                <div class="name">
+                                    <a href="#">{{p.name}}</a>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                        </ul>
+                </div>
+            </div>
         </div>
         <div class="right">
              <div class="top">
