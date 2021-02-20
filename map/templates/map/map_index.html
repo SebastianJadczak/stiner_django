@@ -20,7 +20,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
     <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}
+
+    </style>
 
 
             <meta name="viewport" content="width=device-width,
@@ -33,6 +35,25 @@
                     height: 83.0%;
                     left: 0.0%;
                     top: 0.0%;
+                }
+                /* Obsługa scrolowania mapy tylko z ctrl + scroll*/
+                .map-scroll:before {
+                content: 'Use ctrl + scroll to zoom the map';
+                position: absolute;
+                top: 50%;
+                left: 35%;
+                z-index: 999;
+                font-size: 34px;
+                 }
+                 .map-scroll:after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                content: '';
+                background: #00000061;
+                z-index: 999;
                 }
             </style>
 
@@ -109,6 +130,10 @@
 
      <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
 
+<div class="footer">
+    <a href="https://www.linkedin.com/in/sebastian-jadczak-b74a40182">&copy; Sebastian Jadczak</a>
+</div>
+
 
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
 <!--Skrypty do mapy-->
@@ -145,6 +170,7 @@ var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                     zoom: 12,
                     zoomControl: true,
                     preferCanvas: false,
+                    scrollWheelZoom: false
                 }
             );
 
@@ -261,4 +287,25 @@ function post_monuments(){
                         })
         }
     }
+
+        //Obsługa scrola na mapie
+        $("#map_1de6ef4f1218487da9d6da057bb8f454").bind('mousewheel DOMMouseScroll', function (event) {
+        event.stopPropagation();
+         if (event.ctrlKey === true) {
+                 event.preventDefault();
+             map_1de6ef4f1218487da9d6da057bb8f454.scrollWheelZoom.enable();
+               $('#map_1de6ef4f1218487da9d6da057bb8f454').removeClass('map-scroll');
+             setTimeout(function(){
+                 map_1de6ef4f1218487da9d6da057bb8f454.scrollWheelZoom.disable();
+             }, 1000);
+         } else {
+             map_1de6ef4f1218487da9d6da057bb8f454.scrollWheelZoom.disable();
+             $('#map_1de6ef4f1218487da9d6da057bb8f454').addClass('map-scroll');
+         }
+
+     });
+
+      $(window).bind('mousewheel DOMMouseScroll', function (event) {
+           $('#map_1de6ef4f1218487da9d6da057bb8f454').removeClass('map-scroll');
+      })
 </script>

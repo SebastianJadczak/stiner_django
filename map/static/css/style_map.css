@@ -303,6 +303,23 @@ iframe.map_render{
     width:99vw;
     height: 79vh;
 }
+div.footer{
+    background-color: #fff;
+    margin-top:5px;
+    height: 5vh;
+    line-height: 5vh;
+    box-shadow: 2px -2px 4px 0 rgba(0,0,0,0.4);
+    border-top: 1px solid rgba(0,0,0,0.4);
+    text-align: center;
+}
+div.footer a{
+    text-decoration: none;
+    color: #0e446c;
+    letter-spacing: 1.4px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 1680px) {
 
     div.login_mapa button{
