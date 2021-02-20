@@ -250,3 +250,10 @@ form.delete button{
     cursor: pointer;
     box-shadow: 1px 1px 0.5px #565656;
 }
+@media only screen and (max-width: 1680px) {
+    div.trail div.content_trail {
+        margin: 20px auto;
+        width: 90vw;
+    }
+
+}

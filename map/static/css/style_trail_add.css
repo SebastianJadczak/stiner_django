@@ -140,4 +140,12 @@ div.wrap-trails_add div.trail_add-center div.przyklad{
         margin-left: 10px;
         padding-left: 15px;
     }
+    div.wrap-trails_add div.trail_add-center div.przyklad{
+        margin: 80px auto;
+    width: 67vw;
+        padding-right: 30px;
+}
+    div.wrap-trails_add div.trail_add-center div.przyklad button#right{
+        right: -950px;
+    }
 }

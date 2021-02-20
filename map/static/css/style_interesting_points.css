@@ -103,3 +103,16 @@ button.more a{
 }
 
 
+@media only screen and (max-width: 1680px) {
+
+div.search_points{
+    width:65%;
+}
+
+div.point_list_interest_point{
+ justify-content: space-between;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+}
