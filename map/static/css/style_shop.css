@@ -227,6 +227,73 @@ div.product_description button.buy{
     font-family:  Arial, sans-serif;
     margin-left:400px;
 }
+
+
+/*Slider*/
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+    height: 280px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+    color: #ff000d;
+    width:250px;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    border-radius: 15px;
+    bottom: 80px;
+    right: 50px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: rgba(255,255,255, 0.6);
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.mySlides{
+    width:100%;
+    height: 100%;
+}
+.mySlides img{
+    width: 100%;
+     height: 100%;
+}
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
 @media only screen and (max-width: 1680px) {
 
 div.menu-shop div.search-product{
