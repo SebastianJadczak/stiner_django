@@ -171,7 +171,22 @@ div.contact div.form form input[type=submit]:hover{
     border: 1px solid #2e628d;
     cursor:pointer;
 }
-
+div.footer-contact{
+    background-color: #fff;
+    margin-top:90px;
+    height: 5vh;
+    line-height: 5vh;
+    box-shadow: 2px -2px 4px 0 rgba(0,0,0,0.4);
+    border-top: 1px solid rgba(0,0,0,0.4);
+    text-align: center;
+}
+div.footer-contact a{
+    text-decoration: none;
+    color: #0e446c;
+    letter-spacing: 1.4px;
+    font-size: 17px;
+    font-weight: bold;
+}
 @media only screen and (max-width: 1680px) {
     div.contact div#data_company{
     height:45vh;
