@@ -410,33 +410,69 @@ div.product_description button.buy{
 }
 @media only screen and (max-width: 1680px) {
 
-div.menu-shop div.search-product{
-   text-align: center;
-}
-div.menu-shop div.search-product input{
-    width: 250px;
-    height: 28px;
-}
-div.menu-shop div.search-product select{
-    height: 32px;
-    width: 145px;
-    padding: 0 0 0 2px;
-}
+    div.menu-shop div.search-product{
+       text-align: center;
+    }
+    div.menu-shop div.search-product input{
+        width: 250px;
+        height: 28px;
+    }
+    div.menu-shop div.search-product select{
+        height: 32px;
+        width: 145px;
+        padding: 0 0 0 2px;
+    }
 
-div.menu-shop div.search-product button{
-    font-size: 14px;
-    padding: 8.5px 15px;
-}
-div.first-section div.left div{
-    width: 19vw;
-    height: 120%;
-    margin-right: 80px;
-    padding-bottom: 10px;
-}
-.slideshow-container {
-  max-width: 1000px;
-    height: 220px;
-  position: relative;
-  margin: auto;
-}
+    div.menu-shop div.search-product button{
+        font-size: 14px;
+        padding: 8.5px 15px;
+    }
+    div.first-section div.left div{
+        width: 19vw;
+        height: 120%;
+        margin-right: 80px;
+        padding-bottom: 10px;
+    }
+    .slideshow-container {
+      max-width: 1000px;
+        height: 220px;
+      position: relative;
+      margin: auto;
+    }
+    div.first-section div.right div.top div i{
+        margin: 15px 15px 0 15px;
+        font-size: 30px;
+        width:30px;
+    }
+    div.first-section div.right div.top div p{
+        font-size: 14px;
+    }
+    div.first-section div.center div.bottom div.products ul li{
+        width: 100px;
+        height:120px;
+    }
+    div.first-section div.center div.bottom div.products ul li div.product div.name{
+        margin: 20px 20px 0 0;
+    }
+    div.first-section div.center div.bottom div.products ul li div.product div.name a{
+        font-size: 16px;
+    }
+    div.first-section div.center div.bottom div.products ul li div.product div.img{
+        width: 95px;
+        height: 80px;
+    }
+    div.first-section div.right div.bottom div.opportunity-product img{
+        width: 95px;
+        height: 95px;
+    }
+    div.first-section div.right div.bottom div.opportunity-product div.name{
+        padding: 45px 0 0 10px;
+    }
+    div.first-section div.right div.bottom div.opportunity-product div.name a{
+        font-size: 22px;
+    }
+    div.first-section div.right div.bottom div.opportunity-product div.name p{
+        margin: 30px 0 0 10px;
+    }
+
 }
