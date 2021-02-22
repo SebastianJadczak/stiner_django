@@ -186,6 +186,7 @@ div.first-section div.center div.bottom div.products ul{
     padding: 0;
     margin-top: 30px;
     margin-left: 10px;
+    justify-content: space-between;
 }
 div.first-section div.center div.bottom div.products ul li{
     width: 130px;
@@ -229,7 +230,7 @@ div.first-section div.right div.top{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 15px 0;
+    padding: 5px 0 15px;
 }
 
 div.first-section div.right div.top div{
@@ -275,28 +276,29 @@ div.first-section div.right div.bottom div.opportunity-product{
     display: flex;
 }
 div.first-section div.right div.bottom div.opportunity-product div.img{
-    width:60%;
+    width:50%;
     height: 90%;
 }
 div.first-section div.right div.bottom div.opportunity-product img{
-    width: 80%;
-    height: 95%;
+    width: 150px;
+    height: 150px;
     border-radius: 115px;
-    transform: translate(15px, 25px);
+    transform: translate(25px, 45px);
 }
 div.first-section div.right div.bottom div.opportunity-product div.name{
-    padding-top: 35px;
+    padding: 55px 0 0 10px;
 }
 div.first-section div.right div.bottom div.opportunity-product div.name a{
     font-size: 23px;
     text-decoration: none;
     color: #dd5800;
-    text-align: center;
+
     letter-spacing: 1.6px;
 }
 div.first-section div.right div.bottom div.opportunity-product div.name p{
-    font-size: 19px;
+    font-size: 21px;
     font-weight: bold;
+    margin: 40px 0 0 10px;
 }
 
 div.product_detail{

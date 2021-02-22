@@ -51,7 +51,7 @@ class ProductContentListView(Search, TemplateResponseMixin):
         category = Category.objects.all()
         products = Product.objects.all()
         random_product = Product.objects.filter(id=randint(2, 5))[0]
-        slice_products = products[:4]
+        slice_products = products[:5]
         print(random_product)
         print(randint(1, 6))
         if pk:
