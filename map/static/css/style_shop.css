@@ -230,12 +230,12 @@ div.first-section div.right div.top{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 5px 0 15px;
+    padding: 10px 0 20px;
 }
 
 div.first-section div.right div.top div{
     display: flex;
-    line-height: 20px;
+    padding-left: 15px;
 }
 div.first-section div.right div.top div i{
     margin: 15px 15px 0 15px;
