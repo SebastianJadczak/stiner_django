@@ -56,7 +56,7 @@
                                     <img src="{{p.image.url}}" alt="">
                                 </div>
                                 <div class="name">
-                                    <a href="#">{{p.name}}</a>
+                                    <a href="{% url 'shop:product_detail' p.id %}">{{p.name}}</a>
                                 </div>
                             </div>
                         </li>
