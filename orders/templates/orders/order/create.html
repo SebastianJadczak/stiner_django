@@ -18,14 +18,9 @@ Kasa
             <span>{{item.total_price}} zł</span>
         </li>
         {% endfor %}
-        {% if cart.coupon %}
-        <li id="coupon">
-            Kupon "{{cart.coupon.code}}" ({{cart.coupon.discount}}% rabatu)
-            <span>{{cart.get_discount|floatformat:"2"}} zł</span>
-        </li>
-        {% endif %}
+
     </ul>
-    <p class="total_price">Wartość całkowita: {{cart.get_total_price_after_discount|floatformat:"2"}} zł</p>
+    <p class="total_price">Wartość całkowita: {{cart.get_total_price|floatformat:"2"}} zł</p>
 </div>
 
 <form action="" method="post" class="order-form">
@@ -35,5 +30,8 @@ Kasa
     {% csrf_token %}
 </form>
 </div>
+</div>
+<div class="footer">
+    <a href="https://www.linkedin.com/in/sebastian-jadczak-b74a40182">&copy; Sebastian Jadczak</a>
 </div>
 {% endblock %}
