@@ -187,12 +187,28 @@ div.footer-contact a{
     font-size: 17px;
     font-weight: bold;
 }
+
 @media only screen and (max-width: 1680px) {
-    div.contact div#data_company{
-    height:45vh;
-}
-    div.contact div#data_company div.data{
-    margin-top:45px;
+    div.contact div#data_company {
+        height: 45vh;
+    }
+
+    div.contact div#data_company div.data {
+        margin-top: 45px;
+    }
 }
 
+@media only screen and (max-width: 1270px) {
+    div.contact div.form form {
+        width: 500px;
+        margin-left: 0;
+    }
+
+    div.contact div.form form p input {
+        width: 300px;
+    }
+
+    div.contact div.form form p textarea {
+        width: 300px
+    }
 }
