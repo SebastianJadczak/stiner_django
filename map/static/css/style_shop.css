@@ -1,8 +1,7 @@
 /*Base dla Strony shop*/
 div.shop-content{
-    background-color: #f1f1f1;
-    padding-top:10px;
-    margin-top: 8px;
+    background-color: #ffffff;
+    margin-top: 2px;
 }
 div.menu-shop{
     height:7vh;
@@ -82,7 +81,7 @@ div.menu-shop div.shop-user-menu div#bell:hover i{
 
 /* Głowna strona sklepu - Lista */
 div#sh-list{
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     min-height: 74vh;
     margin: 3px 0 0 0;
     padding: 20px 100px;
@@ -99,7 +98,6 @@ div.first-section div.left div{
     height: 100%;
     margin-right: 130px;
     background-color: #ffffff;
-      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
 }
 div.first-section div.left div.filter-left{
     margin-top:20px;
@@ -123,14 +121,27 @@ div.first-section div.left ul.menu-category{
     flex-direction: column;
     justify-content: space-between;
 }
+div.first-section div.left ul.menu-category h3{
+    padding: 0 0 0 30px;
+    font-size: 18px;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.6px;
+}
 div.first-section div.left ul.menu-category li{
     width: 100%;
     height: 100%;
+    border: 0.5px solid #d7d7d7;
+    padding:4px 0;
 }
 
 div.first-section div.left ul.menu-category li:hover{
-    background-color: #f6f6f6;
+    background-color: #dd0000;
     cursor: pointer;
+}
+div.first-section div.left ul.menu-category li:hover a{
+    color: white;
+     font-weight: bold;
 }
 
 div.first-section div.left ul.menu-category li a{
@@ -141,11 +152,13 @@ div.first-section div.left ul.menu-category li a{
     font-family: 'Roboto Mono', monospace;
     color: #131313;
     text-shadow: 0 1px #cbcbcb;
-    padding: 15px 0 0 30px;
+    padding: 5px 0 0 20px;
+    letter-spacing: 1.4px;
+    font-size: 15px;
 }
 
 div.first-section div.center{
-    width: 45vw;
+    width: 80vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -155,157 +168,28 @@ div.first-section div.center{
 
 div.first-section div.center div.top{
     width: 100%;
-    height: 48%;
+    height: 85%;
     background-color: #fff;
      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
 }
 div.first-section div.center div.bottom{
-     width: 100%;
-    height: 48%;
-    background-color: #fff;
-      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-}
-
-div.first-section div.center div.bottom div.title{
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #bfbfbf;
-}
-div.first-section div.center div.bottom div.title p{
-    margin: 0;
-    padding: 11px;
-    font-size: 17px;
-    font-weight: bold;
-    letter-spacing: 1.3px;
-    font-family: Arial, sans-serif;
-}
-
-div.first-section div.center div.bottom div.products ul{
-    list-style: none;
     display: flex;
-    flex-direction: row;
-    padding: 0;
-    margin-top: 30px;
-    margin-left: 10px;
     justify-content: space-between;
+    padding-top: 25px;
 }
-div.first-section div.center div.bottom div.products ul li{
-    width: 130px;
+div.first-section div.center div.bottom div{
+    width:270px;
     height:130px;
-    margin: 0 10px;
 }
-div.first-section div.center div.bottom div.products ul li div.product div.name{
-    text-align: center;
-    margin: 10px 20px 0 0;
+div.first-section div.center div.bottom div img{
+    width:100%;
+    height:100%;
 }
-div.first-section div.center div.bottom div.products ul li div.product div.name a{
-    color: #0e446c;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    text-decoration: none;
-    font-size: 19px;
-}
-div.first-section div.center div.bottom div.products ul li div.product div.img{
-    width: 120px;
-    height: 100px;
-}
-div.first-section div.center div.bottom div.products ul li div.product div.img img{
-    width: 90%;
-    height: 100%;
-    border-radius: 55px;
-}
-div.first-section div.right{
-    width: 21vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-div.first-section div.right div.top{
-    box-sizing: border-box;
-    width: 100%;
-    height: 48%;
-    background-color: #fff;
-      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px 0 20px;
-}
-
-div.first-section div.right div.top div{
-    display: flex;
-    padding-left: 15px;
-}
-div.first-section div.right div.top div i{
-    margin: 15px 15px 0 15px;
-    font-size: 35px;
-    width:39px;
-}
-div.first-section div.right div.top div p{
-    font-size: 17px;
-    letter-spacing: 1.5px;
-    font-family: Arial, sans-serif;
-    text-transform: uppercase;
-    margin: 25px 0 0 0;
-}
-
-div.first-section div.right div.bottom{
-     width: 100%;
-    height: 48%;
-    background-color: #fff;
-      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-}
-div.first-section div.right div.bottom div.opportunity-title{
-    border-bottom: 0.5px solid #c1c0c0;
-    background-color: #f5f5f5;
-    padding: 10px;
-}
-div.first-section div.right div.bottom div.opportunity-title p{
-    text-align: center;
-    font-family: Arial, sans-serif;
-    letter-spacing: 1.6px;
-    font-weight: bold;
-    color: red;
-    font-size: 19px;
-    margin: 0;
-}
-div.first-section div.right div.bottom div.opportunity-product{
-    width: 100%;
-    height: 70%;
-    display: flex;
-}
-div.first-section div.right div.bottom div.opportunity-product div.img{
-    width:50%;
-    height: 90%;
-}
-div.first-section div.right div.bottom div.opportunity-product img{
-    width: 150px;
-    height: 150px;
-    border-radius: 115px;
-    transform: translate(25px, 45px);
-}
-div.first-section div.right div.bottom div.opportunity-product div.name{
-    padding: 55px 0 0 10px;
-}
-div.first-section div.right div.bottom div.opportunity-product div.name a{
-    font-size: 23px;
-    text-decoration: none;
-    color: #dd5800;
-
-    letter-spacing: 1.6px;
-}
-div.first-section div.right div.bottom div.opportunity-product div.name p{
-    font-size: 21px;
-    font-weight: bold;
-    margin: 40px 0 0 10px;
-}
-
 /*Slider*/
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
-    height: 280px;
+    height: 853px;
   position: relative;
   margin: auto;
 }
@@ -393,7 +277,7 @@ div.first-section div.right div.bottom div.opportunity-product div.name p{
     }
     .slideshow-container {
       max-width: 1000px;
-        height: 220px;
+        height: 385px;
       position: relative;
       margin: auto;
     }

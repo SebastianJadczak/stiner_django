@@ -10,7 +10,7 @@ html, body {
     border-bottom: 1px solid #cbcdcc;
     height: 10vh;
     display: flex;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 #top div.logo {
@@ -151,7 +151,7 @@ div.search button {
 /*Content*/
 
 div.content {
-    margin-top: 10px;
+    margin-top: 2px;
 }
 
 div#top div.menu div.tr {

@@ -8,6 +8,7 @@
         <div class="left">
             <div>
             <ul class="menu-category">
+                <h3>Kategorie:</h3>
                 {% for c in category %}
                     <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
                 {% endfor %}
@@ -46,41 +47,9 @@
                 </div>
             </div>
             <div class="bottom">
-                <div class="title"><p>Warto zobaczyć</p></div>
-                <div class="products">
-                    <ul>
-                    {% for p in slice_products %}
-                        <li>
-                            <div class="product">
-                                <div class="img">
-                                    <img src="{{p.image.url}}" alt="">
-                                </div>
-                                <div class="name">
-                                    <a href="{% url 'shop:product_detail' p.id %}">{{p.name}}</a>
-                                </div>
-                            </div>
-                        </li>
-                    {% endfor %}
-                        </ul>
-                </div>
-            </div>
-        </div>
-        <div class="right">
-             <div class="top">
-                 <div><i class="fas fa-baby" style="color: #0e446c"></i><p>Małe rozmiary</p></div>
-                 <div><i class="fas fa-car-side" style="color: orange"></i><p>Szybkie dostawy</p></div>
-                 <div><i class="fab fa-cc-visa" style="color: #9acfea"></i><p>Płatność Online</p></div>
-                 <div><i class="fas fa-hand-holding-heart" style="color: #e50000"></i><p>Przyjazna obsługa</p></div>
-             </div>
-            <div class="bottom">
-                <div class="opportunity-title"><p>Okazja!</p></div>
-                <div class="opportunity-product">
-                    <div class="img"><img src="{{ random_product.image.url}}" alt=""></div>
-                    <div class="name">
-                        <a href="#">{{random_product.name}}</a>
-                        <p> {{random_product.price}} zł</p>
-                    </div>
-                </div>
+                <div class="img"><img src="{% static "img/300.jpg" %}"></div>
+                <div class="img"><img src="{% static 'img/free.jpg'%}"></div>
+                <div class="img"><img src="{% static 'img/50off.jpg'%}"></div>
             </div>
         </div>
     </div>
