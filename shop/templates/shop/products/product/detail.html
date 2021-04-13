@@ -11,7 +11,6 @@
                 <p>{{product.description}}</p>
                 <span class="price">Cena: {{product.price}} zł</span>
               <form action="{% url "cart:cart_add" product.id %}" method="post">
-
               {% csrf_token %}
                   <div id="add">  {{cart_product_form}} <input type="submit" value="Dodaj" ></div>
               </form>

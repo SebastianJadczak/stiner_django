@@ -51,8 +51,10 @@ td#image a img#min_img{
 a#delete {
     text-decoration: none;
     background-color: #e20101;
-     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
+    border: 0.5px solid #bcbcbc;
+    box-shadow: 0 0 1px #d2d2d2;
     color: #f5f5f5;
+    border-radius: 5px;
     padding: 8px 12px;
 }
 p.text-right{
@@ -61,18 +63,22 @@ p.text-right{
     margin: 0 auto;
 }
 p.text-right a{
+    border-radius: 5px;
     text-decoration: none;
     background-color: darkgreen;
     color: whitesmoke;
     font-family: "Roboto",Arial, sans-serif;
     letter-spacing: 1.6px;
     padding: 8px 12px;
-     box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    border: 0.5px solid #bcbcbc;
+    box-shadow: 0 0 1px #d2d2d2;
 }
 
 @media only screen and (max-width: 1680px) {
     div.cart{
     min-height: 71vh;
 }
-
+    div.footer{
+        margin-top:34px;
+    }
 }

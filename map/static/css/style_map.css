@@ -296,7 +296,7 @@ div.footer{
     background-color: #fff;
     height: 5vh;
     line-height: 5vh;
-    box-shadow: 0 10px 5px  rgba(0,0,0,0.4);
+    box-shadow: 0 2px 1px  rgba(0,0,0,0.4);
     border-top: 0.5px solid rgba(110, 110, 110, 0.4);
     text-align: center;
 }

@@ -7,6 +7,7 @@ class CartAddProductForm(forms.Form):
     """ Formularz dodawania produktów do koszyka """
 
     quantity = forms.TypedChoiceField(
+        label="ilość",
         choices=PRODUCT_QUANTITY_CHOICES,
         coerce=int
     )
