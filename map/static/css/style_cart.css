@@ -76,9 +76,7 @@ p.text-right a{
 
 @media only screen and (max-width: 1680px) {
     div.cart{
-    min-height: 71vh;
+    min-height: 79vh;
 }
-    div.footer{
-        margin-top:34px;
-    }
+
 }

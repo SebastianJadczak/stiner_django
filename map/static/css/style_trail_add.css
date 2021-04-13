@@ -4,9 +4,9 @@ div.wrap-trails_add{
     flex-direction: column;
 }
 div.wrap-trails_add div.title-trail_add{
-     background-color: rgb(252, 234, 225);
-    border: 1px solid #d0d0d0;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+     background-color: #fff;
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
     padding: 5px 20px 10px;
     margin: 5px 5px 30px;
     border-radius: 20px;
@@ -48,7 +48,8 @@ div.wrap-trails_add div.trail_add-center div.filter_trails h3{
 div.wrap-trails_add div.trail_add-center div.filter_trails div.filter{
     background-color: #fff;
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
     min-height: 60vh;
     font-size: 14px;
 }

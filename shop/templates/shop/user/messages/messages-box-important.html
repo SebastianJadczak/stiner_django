@@ -2,6 +2,7 @@
 
 
 {% block content %}
+  <div class="box-right">
         <div class="action">
             <div class="action-button">
                 <button><a href="{% url 'shop:messages-box-new' %}">Stwórz</a></button>
@@ -25,4 +26,5 @@
                 {% endfor %}
                 </ul>
         </div>
+  </div>
 {% endblock %}

@@ -5,9 +5,9 @@ div.search_points{
     margin: 20px auto;
     width:55%;
     padding: 20px 0 15px;
-      border: 0.5px solid #d9d9d9;
     background-color: #fff;
-    box-shadow: 1px 1px 4px 1px rgba(65, 65, 65, 0.4);
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
     border-radius: 15px;
 }
 div.search_points form label{
@@ -37,7 +37,8 @@ div.search_points form button{
     letter-spacing: 1.6px;
     padding: 8px 15px;
     border-radius: 10px;
-    border: 1px solid #888888;
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
 }
 
 
@@ -53,9 +54,9 @@ div.point{
     margin: 20px 20px 5px 0;
     display: flex;
     flex-direction: column;
-    border: 0.5px solid #d9d9d9;
     background-color: #fff;
-    box-shadow: 1px 1px 2px 1px rgba(65, 65, 65, 0.4);
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
 }
 div.point div.image_point{
     width:100%;
@@ -91,8 +92,8 @@ button.more{
     height:30px;
     background-color: #ff6a1e;
     border-radius: 15px;
-    border: 1px solid #c0c0c0;
-    box-shadow: 1px 1px 0 black;
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
     margin-right: 10px;
 }
 button.more a{
