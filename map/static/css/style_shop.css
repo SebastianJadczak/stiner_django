@@ -6,7 +6,7 @@ div.shop-content{
 div.menu-shop{
     height:7vh;
     background-color: #fff;
-     box-shadow: 0 1px 2px #c3c3c3, 0 -1px 2px #c3c3c3;
+    box-shadow: 0 1px 2px #c3c3c3, 0 -1px 2px #c3c3c3;
     display: flex;
 
 }
@@ -101,6 +101,7 @@ div.first-section div.left div{
 }
 div.first-section div.left div.filter-left{
     margin-top:20px;
+    border: 1px solid #bfbfbf;
 }
 
 div.first-section div.left div.filter-left h3{
@@ -109,7 +110,8 @@ div.first-section div.left div.filter-left h3{
     text-shadow: 0 1px #cbcbcb;
     font-weight: normal;
     text-align: center;
-    padding: 15px 0;
+    padding: 9px 0;
+    margin: 0;
 }
 
 div.first-section div.left ul.menu-category{
@@ -193,7 +195,7 @@ div.first-section div.center div.bottom div img{
 /* Caption text */
 .text {
     color: #ff000d;
-    width:250px;
+    width:280px;
     font-size: 20px;
     padding: 8px 12px;
     position: absolute;
@@ -204,6 +206,8 @@ div.first-section div.center div.bottom div img{
     font-weight: bold;
     letter-spacing: 2px;
     background-color: rgba(255,255,255, 0.6);
+    border: 0.5px solid #868686;
+    font-family: Arial, sans-serif;
 }
 
 

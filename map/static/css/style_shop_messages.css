@@ -118,12 +118,15 @@ div.messages-wrap div.box-right div.messages-content ul li  div.message div.chec
 }
 
 div.messages-wrap div.box-right div.messages-content ul li  div.message div.author{
-     column-width: 220px;
+    column-width: 220px;
     padding-left: 10px;
 }
 div.messages-wrap div.box-right div.messages-content ul li  div.message div.title{
-      column-width: 850px;
+    column-width: 800px;
     padding-left: 10px;
+}
+div.messages-wrap div.box-right div.messages-content ul li  div.message div.date {
+     width: 150px;
 }
 @media only screen and (max-width: 1680px) {
     div.messages-wrap div.box-left div.menu-messages{
@@ -137,5 +140,7 @@ div.messages-wrap div.box-right div.messages-content ul li  div.message div.titl
     div.messages-wrap div.box-right{
         max-width: 66vw;
     }
-
+    div.messages-wrap div.box-right div.messages-content ul li  div.message div.date p{
+        margin: 7px 0 0 0;
+    }
 }

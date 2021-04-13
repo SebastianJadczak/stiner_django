@@ -1,16 +1,38 @@
 div.shop-list{
-    min-height: 200vh;
+    min-height: 210vh;
     background-color: #f4f4f4;
     margin: 3px 0 0 0;
-    padding: 20px 100px;
+    padding: 20px 60px;
 }
 
 div.category-products div.ad {
-    width:50vw;
-    height:200px;
+    width:60vw;
+    height:320px;
     background-color: #fff;
     margin-bottom: 40px;
+    animation: slider_image 25s infinite;
+    background-size: cover;
 }
+
+@keyframes slider_image {
+  0%,
+  100% {
+    background-image: url("../img/baner-category/Moda.png");
+  }
+  25% {
+    background-image: url("../img/baner-category/Szare.png");
+  }
+  50% {
+    background-image: url("../img/baner-category/Szare.png");
+  }
+  56% {
+    background-image: url("../img/baner-category/Zielone.png");
+  }
+  75% {
+    background-image: url("../img/baner-category/Zielone.png");
+  }
+}
+
 div.category-products div.product-wrap{
     box-sizing: border-box;
     width:100%;
@@ -24,11 +46,11 @@ div.category-products div.product-wrap div.filter{
 }
 
 div.category-products div.product{
-     border: 1px solid #bfbfbf;
+    border: 1px solid #bfbfbf;
     padding: 10px 10px;
     margin-bottom: 15px;
     height:150px;
-   display: flex;
+    display: flex;
     background-color: #fff;
     text-decoration: none;
     color: #1a1a1a;
