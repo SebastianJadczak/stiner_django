@@ -1,7 +1,6 @@
 div#points_in_trail{
     width:75vw;
     margin: 30px auto;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
 }
 
 div#points_in_trail ul{
@@ -10,8 +9,8 @@ div#points_in_trail ul{
     padding: 0;
 }
 div#points_in_trail ul li{
-    border: 1px solid grey;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    border:1px solid #e5e5e5;
+    box-shadow: 1px 1px 1px #e0e0e0;
     margin-bottom: 15px;
 
 }
@@ -29,18 +28,15 @@ div#points_in_trail ul li div div.title_point h3{
 }
 div#points_in_trail ul li div.point_in_trail div.description_point{
     padding: 10px 20px 5px;
-    visibility: hidden;
-    height: 15px;
+    visibility: initial;
+    height: auto;
     letter-spacing: 1.7px;
     font-family: Arial, sans-serif;
 }
-div#points_in_trail ul li:nth-of-type(1) div div.description_point{
-   visibility: initial;
-    height: auto;
-}
 div#points_in_trail ul li div.point_in_trail.active div.description_point{
-    visibility: initial;
-    height: auto;
+ height: 15px;
+    visibility: hidden;
+
 }
 
 div#points_in_trail ul li div div.more{

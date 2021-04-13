@@ -111,7 +111,7 @@
                     <div class="point_in_trail" id="{{p.id}}">
                         <div class="title_point" ><h3>{{p.name}}</h3></div>
                         <div class="description_point" ><p>{{p.descriptions}}</p></div>
-                        <div class="more" onclick="add_active_to_point({{p.id}})"><p style="cursor:pointer">Rozwiń</p></div>
+                        <div class="more" onclick="add_active_to_point({{p.id}})"><p id="more" style="cursor:pointer">Zwiń</p></div>
                     </div>
                 </li>
             {% endfor %}
@@ -259,7 +259,13 @@ get_point_in_trail()
 
 function add_active_to_point (element) {
     let point_in_trail = document.getElementById(`${element}`)
+    let p_more = document.getElementById(`${element}`).getElementsByTagName('p')
         point_in_trail.classList.toggle("active");
-    console.log(element)
+
+    if (point_in_trail.className === "point_in_trail active"){
+        p_more[1].innerText = "Rozwiń"
+    }else {
+         p_more[1].innerText = "Zwiń"
+    }
     }
 </script>

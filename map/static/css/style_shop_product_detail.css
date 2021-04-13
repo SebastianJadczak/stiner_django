@@ -5,10 +5,12 @@ div.product_detail{
     padding-top: 30px;
 }
 div.product_detail div.advertisement{
-    width:730px;
-    height: 100px;
+    width:65vw;
+    height: 300px;
     background-color: #fff;
     margin: 0 auto;
+    background-image: url("../img/baner-category/ogien.png");
+    background-size: cover;
 }
 div.product_detail div.detail{
     width:60vw;
@@ -40,7 +42,7 @@ div.product_description {
 div.product_description h3{
     text-align: center;
     letter-spacing: 1.6px;
-    color: #07365a;
+    color: #323232;
 }
 span.price{
     font-weight: bold;
@@ -71,6 +73,9 @@ div.product_description form div#add input{
     border-radius: 20px;
 }
 @media only screen and (max-width: 1680px) {
+    div.product_detail{
+        min-height: 110vh;
+    }
     div.product_detail div.detail{
     width:65vw;
     height: 48vh;
