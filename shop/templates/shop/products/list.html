@@ -8,7 +8,6 @@
         <div class="left">
             <div>
             <ul class="menu-category">
-                <h3>Kategorie:</h3>
                 {% for c in category %}
                     <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
                 {% endfor %}

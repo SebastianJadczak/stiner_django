@@ -13,14 +13,14 @@ div.trail div.menu_trail ul{
     list-style: none;
     padding: 0;
     margin:0;
-    border:1px solid #cfcfcf;
-    box-shadow: 1px 1px 1px #bababa;
+    border:1px solid #e5e5e5;
+    box-shadow: 1px 1px 1px #e0e0e0;
 }
 
 div.trail div.menu_trail ul li{
     height:50px;
     line-height: 50px;
-    border-bottom: 1px solid rgb(75, 75, 75);
+    border-bottom: 1px solid rgb(152, 152, 152);
     text-align: center;
 
 }

@@ -294,11 +294,10 @@ iframe.map_render{
 }
 div.footer{
     background-color: #fff;
-    margin-top:5px;
     height: 5vh;
     line-height: 5vh;
-    box-shadow: 2px -2px 4px 0 rgba(0,0,0,0.4);
-    border-top: 1px solid rgba(0,0,0,0.4);
+    box-shadow: 0 10px 5px  rgba(0,0,0,0.4);
+    border-top: 0.5px solid rgba(110, 110, 110, 0.4);
     text-align: center;
 }
 div.footer a{
