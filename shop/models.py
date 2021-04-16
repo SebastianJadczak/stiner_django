@@ -15,6 +15,18 @@ class Category(models.Model):
         return self.name
 
 class Product(models.Model):
+    SIZE_PRODUCT = (
+        ('S','S'),
+        ('M', 'M'),
+        ('L', 'L'),
+        ('XL', 'XL'),
+        ('XXL', 'XXL'),
+    )
+    FOR_WHOM = (
+        ('Men', 'Men'),
+        ('Women', 'Women'),
+        ('Child', 'Child')
+    )
     owner = models.ForeignKey(User, related_name='product_created', on_delete=models.CASCADE)
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True)
@@ -28,6 +40,8 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
     bought_by = models.ForeignKey(User, related_name='bought_by', on_delete=models.CASCADE)
+    size = models.CharField(max_length=15, choices=SIZE_PRODUCT)
+    for_whom = models.CharField(max_length=15, choices=FOR_WHOM)
 
     class Meta:
         ordering = ('name',)
