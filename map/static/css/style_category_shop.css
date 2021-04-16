@@ -72,11 +72,16 @@ div.category-products div.product div.image-product img{
 }
 
 div.category-products div.product div.description-product{
-   margin-left: 40px;
+    margin-left: 40px;
     width:60%;
+}
+div.category-products div.product div.description-product h3{
+       margin-top:5px;
+    margin-bottom:30px;
 }
 div.category-products div.product div.description-product div{
     display: flex;
+    margin-top:12px;
 }
 div.category-products div.product div.price{
     margin-top: 20px;
