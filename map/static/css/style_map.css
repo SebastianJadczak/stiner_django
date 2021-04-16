@@ -168,7 +168,6 @@ div.login_mapa div.user_menu.active{
 }
 div.login_mapa div.user_menu.active ul{
     padding: 5px 10px 0;
-
 }
 div.login_mapa div.user_menu.active ul li{
     border-bottom: 1px solid white;
@@ -559,6 +558,11 @@ div#top_mapa div.menu_mapa ul li.green:hover div.tr{
     justify-content: left;
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+     div.login_mapa div.user_menu.active{
+    right: 10px;
+    z-index: 1;
+         width:240px;
 }
      div#filter_mapa div i{
          font-size: 14px;
