@@ -80,11 +80,14 @@
 <script>
     <!--    "Przycisk rozwijania menu"-->
 
-let menu = document.querySelector("button.user_menu");
-let icon = document.querySelector("i.fa-angle-down");
-let user_menu = document.querySelector("div.user_menu");
-let yours_trails = document.querySelector("li.yours_trails");
-let tr = document.querySelector("div.tr")
+    let menu = document.querySelector("button.user_menu");
+    let icon = document.querySelector("i.fa-angle-down");
+    let user_menu = document.querySelector("div.user_menu");
+    let yours_trails = document.querySelector("li.yours_trails");
+    let tr = document.querySelector("div.tr")
+    let filter_trails = document.querySelector("div.filter_trails")
+    let hamburger = document.getElementById("hamburger")
+
 
 if (menu) {
     menu.addEventListener('click', function () {
@@ -96,7 +99,11 @@ if (menu) {
     if (yours_trails) {
         tr.classList.toggle("active");
     }
-
+if (hamburger) {
+    hamburger.addEventListener('click', function () {
+        filter_trails.classList.toggle("rwd");
+    });
+}
 
 </script>
 </body>

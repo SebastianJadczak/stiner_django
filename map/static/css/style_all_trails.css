@@ -14,6 +14,13 @@ div.wrap-trails div.title-trails{
     letter-spacing: 1.3px;
     font-family: Arial, sans-serif;
 }
+div#hamburger{
+    display: none;
+    font-size: 30px;
+    font-weight: bold;
+    transform: translateX(-10px);
+    cursor:pointer;
+}
 div.wrap-trails div.trail-center{
     display: flex;
     flex-direction: row;
@@ -120,7 +127,6 @@ div.all_trails button#right{
 div.wrap-trails div.trail-center div.filter_trails {
      width: 15vw;
     min-height: 70vh;
-    /*transform: translateY(-50px);*/
 }
 
 div.wrap-trails div.trail-center div.filter_trails h3{
@@ -335,4 +341,143 @@ div.popular-center button#left-popular, div.popular-center button#right-popular{
     width:230px;
 }
 
+}
+@media only screen and (max-width: 1110px) {
+    div#hamburger{
+        display: block;
+    }
+    div.wrap-trails div.trail-center div.filter_trails.rwd{
+        background-color: #fff;
+        display: block;
+       position: absolute;
+        top:300px;
+        left:10px;
+        z-index: 1;
+        width:300px;
+        min-height: 100vh;
+        transition: 0.4s;
+        border: 1px solid #b7b7b7;
+}
+    div.wrap-trails div.trail-center div.filter_trails.rwd div.filter{
+        border: none;
+    }
+        div.wrap-trails div.trail-center div.filter_trails.rwd h3{
+         margin-left: 20px;
+        }
+        div.wrap-trails div.trail-center div.filter_trails.rwd div.filter div.name input{
+            width: 220px;
+        }
+    div.wrap-trails div.trail-center div.filter_trails.rwd  button#button-filter{
+       width:300px;
+  }
+
+    div.wrap-trails div.trail-center div.filter_trails {
+     display: none;
+}
+    div.right{
+        width:100vw;
+    }
+    div.all_trails{
+        width:90vw;
+    }
+    div.all_trails button#right{
+        transform: translateX(235px);
+    }
+    div.top_rate-center{
+        width:90vw;
+    }
+    div.top_rate-center button#right-rate{
+        transform: translateX(235px);
+    }
+    div.popular-center{
+        width:90vw;
+    }
+    div.popular-center button#right-popular{
+        transform: translateX(235px);
+    }
+
+}
+@media only screen and (max-width: 1060px) {
+
+     div.all_trails button#right{
+        transform: translateX(215px);
+    }
+     div.top_rate-center button#right-rate{
+        transform: translateX(215px);
+    }
+     div.popular-center button#right-popular{
+        transform: translateX(215px);
+    }
+}
+@media only screen and (max-width: 1000px) {
+
+     div.all_trails button#right{
+        transform: translateX(200px);
+    }
+     div.top_rate-center button#right-rate{
+        transform: translateX(200px);
+    }
+     div.popular-center button#right-popular{
+        transform: translateX(200px);
+    }
+}
+@media only screen and (max-width: 950px) {
+
+     div.all_trails button#right{
+        transform: translateX(180px);
+    }
+     div.top_rate-center button#right-rate{
+        transform: translateX(180px);
+    }
+     div.popular-center button#right-popular{
+        transform: translateX(180px);
+    }
+}
+@media only screen and (max-width: 870px) {
+
+     div.all_trails button#right{
+        transform: translateX(140px);
+    }
+     div.top_rate-center button#right-rate{
+        transform: translateX(140px);
+    }
+     div.popular-center button#right-popular{
+        transform: translateX(140px);
+    }
+}
+@media only screen and (max-width: 725px) {
+
+     div.all_trails button#right{
+        transform: translateX(100px);
+    }
+     div.top_rate-center button#right-rate{
+        transform: translateX(100px);
+    }
+     div.popular-center button#right-popular{
+        transform: translateX(100px);
+    }
+}
+@media only screen and (max-width: 585px) {
+
+     div.all_trails button#right{
+        transform: translateX(70px);
+    }
+     div.top_rate-center button#right-rate{
+        transform: translateX(70px);
+    }
+     div.popular-center button#right-popular{
+        transform: translateX(70px);
+    }
+}
+@media only screen and (max-width: 465px) {
+
+     div.all_trails button#right{
+        transform: translateX(35px);
+    }
+     div.top_rate-center button#right-rate{
+        transform: translateX(35px);
+    }
+     div.popular-center button#right-popular{
+        transform: translateX(35px);
+    }
 }
