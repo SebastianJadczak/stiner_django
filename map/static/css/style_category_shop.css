@@ -4,6 +4,10 @@ div.shop-list{
     margin: 3px 0 0 0;
     padding: 20px 60px;
 }
+div.category-products {
+      width:60vw;
+    min-height: 100%;
+}
 
 div.category-products div.ad {
     width:60vw;
@@ -36,6 +40,7 @@ div.category-products div.ad {
 div.category-products div.product-wrap{
     box-sizing: border-box;
     width:100%;
+    min-height: 100vh;
 }
 
 div.category-products div.product-wrap div.filter{
