@@ -50,17 +50,12 @@ class ProductContentListView(Search, TemplateResponseMixin):
     def get(self, request, pk=None):
         category = Category.objects.all()
         products = Product.objects.all()
-        random_product = Product.objects.filter(id=randint(2, 5))[0]
-        slice_products = products[:5]
-        print(random_product)
-        print(randint(1, 6))
         if pk:
             products = Product.objects.filter(category=pk)
             self.template_name = 'shop/search/search.html'
         return self.render_to_response({'products': products,
                                         'category': category,
-                                        'slice_products':slice_products,
-                                        'random_product': random_product})
+                                        })
 
 
 class ProductDetailListView(Search, TemplateResponseMixin, View):
