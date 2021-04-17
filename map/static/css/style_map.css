@@ -377,6 +377,12 @@ div.footer a{
     }
 
 }
+@media only screen and (max-width: 1480px) {
+    div.login_mapa button.user_menu {
+        height: 35px;
+    }
+}
+
 @media only screen and (max-width: 1280px) {
 
     div#top_mapa div.menu_mapa {

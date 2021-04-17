@@ -283,6 +283,95 @@ div.first-section div.center div.bottom div img{
     }
 
 }
-@media only screen and (max-width: 1051px) {
+@media only screen and (max-width: 1506px) {
+   div.menu-shop div.search-product{
+        margin-left: 350px;
+    }
+    div.menu-shop div.shop-user-menu{
+        margin-left: 100px;
+    }
+}
+@media only screen and (max-width: 1304px) {
+    div.menu-shop div.shop-user-menu {
+        margin-left: 50px;
+    }
 
+    div.menu-shop div.shop-user-menu div#account {
+        margin-left: 30px;
+    }
+    div.menu-shop div.shop-user-menu div{
+        margin-right: 20px;
+    }
+
+    div.menu-shop div.search-product {
+        margin-left: 300px;
+    }
+}
+
+@media only screen and (max-width: 1154px) {
+    div.menu-shop div.shop-user-menu{
+        margin-left: 10px;
+    }
+      div.menu-shop div.shop-user-menu div#account {
+        margin-left: 10px;
+    }
+      div.menu-shop div.search-product input{
+          width: 200px;
+      }
+      div.menu-shop div.search-product button{
+          font-size: 12px;
+          padding: 8px 10px;
+      }
+      div.menu-shop div.search-product input{
+          height: 24px;
+      }
+      div.menu-shop div.search-product select{
+          height:29px;
+      }
+}
+@media only screen and (max-width: 1027px) {
+    div.menu-shop div.shop-user-menu div{
+        margin-right: 10px;
+    }
+    div.menu-shop div.shop-user-menu div i{
+        font-size: 22px;
+    }
+    div.menu-shop div.shop-user-menu div#account i{
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width: 965px) {
+div.menu-shop div.search-product{
+    margin-left: 200px;
+}
+}
+@media only screen and (max-width: 862px) {
+div.menu-shop div.search-product input{
+    width: 140px;
+}
+}
+@media only screen and (max-width: 802px){
+    div.menu-shop div.search-product{
+    margin-left: 20px;
+}
+}
+@media only screen and (max-width: 632px) {
+    div.menu-shop div.search-product {
+        margin-left: 10px;
+    }
+    div.menu-shop div.search-product input{
+    width: 120px;
+}
+    div.menu-shop div.search-product select{
+        width: 120px;
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 589px){
+    div.menu-shop div.shop-user-menu div i{
+        font-size: 18px;
+    }
+    div.menu-shop div.shop-user-menu div{
+        margin-right: 5px;
+    }
 }
