@@ -87,6 +87,7 @@
     let tr = document.querySelector("div.tr")
     let filter_trails = document.querySelector("div.filter_trails")
     let hamburger = document.getElementById("hamburger")
+    let x_hamburger = document.getElementById("x_hamburger")
 
 
 if (menu) {
@@ -101,6 +102,9 @@ if (menu) {
     }
 if (hamburger) {
     hamburger.addEventListener('click', function () {
+        filter_trails.classList.toggle("rwd");
+    });
+    x_hamburger.addEventListener('click', function () {
         filter_trails.classList.toggle("rwd");
     });
 }
