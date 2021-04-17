@@ -1,111 +1,101 @@
 /* Sekcja Trasy*/
 
-div.wrap-trails {
+div.wrap-trails{
     display: flex;
     flex-direction: column;
 }
-
-div.wrap-trails div.title-trails {
-    background-color: #fefff2;
+div.wrap-trails div.title-trails{
+     background-color: #fefff2;
     border: 1px solid #d0d0d0;
-    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
     padding: 5px 20px 10px;
     margin: 5px 5px 30px;
     border-radius: 20px;
     letter-spacing: 1.3px;
     font-family: Arial, sans-serif;
 }
-
-div.wrap-trails div.trail-center {
+div.wrap-trails div.trail-center{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-
-div.all_trails {
+div.all_trails{
     overflow: hidden;
-    width: 65vw;
+    width:65vw;
     font-family: Arial, sans-serif;
     padding-right: 45px;
 }
-
-div.all_trails h3 {
+div.all_trails h3{
     color: #434343;
     letter-spacing: 1.2px;
     padding-left: 10px;
 }
 
-div.wrap-trails div.title-trails h3 {
+div.wrap-trails div.title-trails h3{
     text-align: center;
 }
 
-div.all_trails div.all_trail-trails {
+div.all_trails div.all_trail-trails{
     display: flex;
     flex-direction: row;
-    overflow: hidden;
+    overflow:hidden;
     transition: .6s;
-    margin: 7px;
+    margin:7px;
 }
 
-div.all_trails div.all_trail-trails div.all_trails-trail {
-    min-width: 350px;
-    max-width: 350px;
-    height: 450px;
+div.all_trails div.all_trail-trails div.all_trails-trail{
+    min-width:350px;
+    max-width:350px;
+    height:450px;
     margin: 5px;
     text-align: center;
-    background-color: #fff;
+     background-color: #fff;
     border: 1px solid #d0d0d0;
-    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
 }
-
-div.all_trails div.all_trail-trails div.all_trails-trail p#name-trail {
+div.all_trails div.all_trail-trails div.all_trails-trail p#name-trail{
     font-weight: bold;
     font-size: 17px;
     letter-spacing: 1.3px;
     margin-bottom: 25px;
 }
-
-div.all_trails div.all_trail-trails div.all_trails-trail p span {
+div.all_trails div.all_trail-trails div.all_trails-trail p span{
     font-weight: bold;
 }
-
-div.all_trails div.all_trail-trails div.all_trails-trail p.description {
+div.all_trails div.all_trail-trails div.all_trails-trail p.description{
     height: 80px;
-    width: 90%;
+     width:90%;
 }
-
-div.all_trails div.all_trail-trails div.all_trails-trail div.image_trail {
-    width: 100%;
-    height: 60%;
+div.all_trails div.all_trail-trails div.all_trails-trail div.image_trail{
+    width:100%;
+    height:60%;
     margin: 0 auto;
 }
 
-div.all_trails div.all_trail-trails div.all_trails-trail div.image_trail img {
-    width: 100%;
-    height: 100%;
+div.all_trails div.all_trail-trails div.all_trails-trail div.image_trail img{
+    width:100%;
+    height:100%;
 }
 
-div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more {
+div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more{
     margin-top: 15px;
-    margin-right: 0;
+    margin-right:0;
 }
-
-div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more div {
-    margin-right: 150px;
+div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more div{
+        margin-right: 150px;
     padding-left: 20px;
 }
-
-div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more div p {
+div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more div p{
     font-size: 14px;
     margin: 5px;
 }
 
-div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more button {
+div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more button{
     background-color: #e06100;
-    border: 1px solid #c0c0c0;
+     border: 1px solid #c0c0c0;
     box-shadow: 1px 1px 0 black;
-    width: 90px;
-    height: 40px;
+    width:90px;
+    height:40px;
     border-radius: 15px;
 }
 
@@ -117,23 +107,22 @@ div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_mo
     text-decoration: none;
 }
 
-div.all_trails button#left, div.all_trails button#right {
-    top: -250px;
+div.all_trails button#left, div.all_trails button#right{
+    top:-250px;
 }
-
-div.all_trails button#right {
+div.all_trails button#right{
     left: 61.5vw;
 }
 
 /*Sekcja filtrów tras*/
 
 div.wrap-trails div.trail-center div.filter_trails {
-    width: 15vw;
+     width: 15vw;
     min-height: 70vh;
     /*transform: translateY(-50px);*/
 }
 
-div.wrap-trails div.trail-center div.filter_trails h3 {
+div.wrap-trails div.trail-center div.filter_trails h3{
     color: #646464;
     letter-spacing: 1.7px;
     font-size: 20px;
@@ -141,93 +130,83 @@ div.wrap-trails div.trail-center div.filter_trails h3 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-div.wrap-trails div.trail-center div.filter_trails div.filter {
+div.wrap-trails div.trail-center div.filter_trails div.filter{
     background-color: #fff;
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
     min-height: 60vh;
     font-size: 14px;
 }
-
-div.wrap-trails div.trail-center div.filter_trails div.filter form div {
+div.wrap-trails div.trail-center div.filter_trails div.filter form div{
     display: flex;
     flex-direction: column;
     border-bottom: 0.5px solid #a5a5a5;
     padding: 10px 10px;
 }
-
-div.wrap-trails div.trail-center div.filter_trails div.filter form div.city {
+div.wrap-trails div.trail-center div.filter_trails div.filter form div.city{
     height: 195px;
     overflow: hidden;
 }
-
-div.wrap-trails div.trail-center div.filter_trails div.filter form div.city p.city {
+div.wrap-trails div.trail-center div.filter_trails div.filter form div.city p.city{
     background-color: white;
     width: 100%;
     position: relative;
     display: block;
-    height: 25px;
+    height:25px;
     top: -80px;
     margin: 10px 0 10px 0;
-    padding: 5px 0 10px 0;
+    padding:5px 0 10px 0;
 }
-
-div.wrap-trails div.trail-center div.filter_trails div.filter form div.city.active {
-    height: 255px;
+div.wrap-trails div.trail-center div.filter_trails div.filter form div.city.active{
+    height:255px;
 }
-
-div.wrap-trails div.trail-center div.filter_trails div.filter form div.city.active p.city {
+div.wrap-trails div.trail-center div.filter_trails div.filter form div.city.active p.city{
     top: 0;
-    margin: 0;
-    padding: 0;
+     margin:0;
+    padding:0;
 }
-
-div.wrap-trails div.trail-center div.filter_trails div.filter form div label {
+div.wrap-trails div.trail-center div.filter_trails div.filter form div label{
     padding: 5px 0 10px 16px;
 }
 
-div.wrap-trails div.trail-center div.filter_trails div.filter form div label input[type='checkbox'] {
+div.wrap-trails div.trail-center div.filter_trails div.filter form div label input[type='checkbox']{
     margin-right: 10px;
 }
 
-div.wrap-trails div.trail-center div.filter_trails div.filter form div label:nth-of-type(1) {
+div.wrap-trails div.trail-center div.filter_trails div.filter form div label:nth-of-type(1){
     padding: 5px 0 10px 10px;
     font-weight: bold;
 }
-
-div.wrap-trails div.trail-center div.filter_trails div.filter form div.name input {
+div.wrap-trails div.trail-center div.filter_trails div.filter form div.name input{
     width: 190px;
     height: 22px;
     margin-left: 25px;
     padding-left: 25px;
 }
-
-div.wrap-trails div.trail-center div.filter_trails div.filter form div p {
+div.wrap-trails div.trail-center div.filter_trails div.filter form div p{
     color: #3587ea;
     text-align: center;
     cursor: pointer;
     letter-spacing: 0.8px;
     position: relative;
 }
-
-div.wrap-trails div.trail-center div.filter_trails div.filter form div.accept_filter {
+div.wrap-trails div.trail-center div.filter_trails div.filter form div.accept_filter{
     padding: 0;
-    width: 100%;
-    height: 50px;
+    width:100%;
+    height:50px;
 }
-
-div.wrap-trails div.trail-center div.filter_trails div.filter form div.accept_filter button {
-    width: 287px;
-    height: 50px;
+div.wrap-trails div.trail-center div.filter_trails div.filter form div.accept_filter button{
+    width:287px;
+    height:50px;
     letter-spacing: 1.4px;
     background-color: #f8ff00;
     border: none;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    position: fixed;
+      position: fixed;
     top: 917px;
-    left: 136px;
+    left:136px;
 }
 
 div.wrap-trails div.trail-center div.filter_trails div.filter form div.top_rate label.star {
@@ -236,90 +215,78 @@ div.wrap-trails div.trail-center div.filter_trails div.filter form div.top_rate 
 
 /*Sekcja Najwyżej ocenianych tras*/
 
-div.top_rate-center, div.popular-center {
+div.top_rate-center, div.popular-center{
     overflow: hidden;
-    width: 65vw;
+    width:65vw;
     font-family: Arial, sans-serif;
     padding-right: 45px;
 }
-
-div.top_rate-center h3, div.popular-center h3 {
+div.top_rate-center h3, div.popular-center h3{
     color: #434343;
     letter-spacing: 1.2px;
     padding-left: 10px;
 }
-
-div.top_rate-trails, div.popular-trails {
-    display: flex;
+div.top_rate-trails, div.popular-trails{
+       display: flex;
     flex-direction: row;
-    overflow: hidden;
+    overflow:hidden;
     transition: .6s;
-    margin: 7px;
+    margin:7px;
 }
-
-div.top_rate-trails div.top_rate-trail, div.popular-trails div.popular-trail {
-    min-width: 350px;
-    max-width: 350px;
-    height: 450px;
+div.top_rate-trails div.top_rate-trail, div.popular-trails div.popular-trail{
+    min-width:350px;
+    max-width:350px;
+    height:450px;
     margin: 5px;
     text-align: center;
-    background-color: #fff;
+     background-color: #fff;
     border: 1px solid #d0d0d0;
-    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
 }
 
-div.top_rate-trail p#top_rate-name_trail, div.popular-trail p#popular-name_trail {
+div.top_rate-trail p#top_rate-name_trail, div.popular-trail p#popular-name_trail{
     font-weight: bold;
     font-size: 17px;
     letter-spacing: 1.3px;
     margin-bottom: 25px;
 }
-
-div.top_rate-trail p span, div.popular-trail p span {
+div.top_rate-trail p span, div.popular-trail p span{
     font-weight: bold;
 }
-
-div.top_rate-trail p.description, div.popular-trail p.description {
+div.top_rate-trail p.description, div.popular-trail p.description{
     height: 80px;
-    width: 90%;
+     width:90%;
 }
-
-div.top_rate-trail div.image_trail, div.popular-trail div.image_trail {
-    width: 100%;
-    height: 60%;
+div.top_rate-trail div.image_trail, div.popular-trail div.image_trail{
+    width:100%;
+    height:60%;
     margin: 0 auto;
 }
-
-div.top_rate-trail div.image_trail img, div.popular-trail div.image_trail img {
-    width: 100%;
-    height: 100%;
+div.top_rate-trail div.image_trail img, div.popular-trail div.image_trail img{
+    width:100%;
+    height:100%;
 }
-
-div.top_rate-trail div.top_rate-trail_more, div.popular-trail div.popular-trail_more {
+div.top_rate-trail div.top_rate-trail_more, div.popular-trail div.popular-trail_more{
     margin-top: 15px;
-    margin-right: 0;
+    margin-right:0;
 }
-
-div.top_rate-trail div.top_rate-trail_more div, div.popular-trail div.popular-trail_more div {
+div.top_rate-trail div.top_rate-trail_more div, div.popular-trail div.popular-trail_more div{
     margin-right: 150px;
-    padding-left: 20px;
+   padding-left: 20px;
 }
-
-div.top_rate-trail div.top_rate-trail_more p, div.popular-trail div.popular-trail_more p {
+div.top_rate-trail div.top_rate-trail_more p, div.popular-trail div.popular-trail_more p{
     font-size: 14px;
     margin: 5px;
 }
-
-div.top_rate-trail_more button, div.popular-trail_more button {
+div.top_rate-trail_more button, div.popular-trail_more button{
     background-color: #e06100;
-    border: 1px solid #c0c0c0;
+     border: 1px solid #c0c0c0;
     box-shadow: 1px 1px 0 black;
-    width: 90px;
-    height: 40px;
+    width:90px;
+    height:40px;
     border-radius: 15px;
 }
-
-div.top_rate-trail_more button a, div.popular-trail_more button a {
+div.top_rate-trail_more button a, div.popular-trail_more button a  {
     color: whitesmoke;
     font-weight: bold;
     font-size: 17px;
@@ -327,7 +294,7 @@ div.top_rate-trail_more button a, div.popular-trail_more button a {
     text-decoration: none;
 }
 
-div.top_rate-center button#left-rate, div.top_rate-center button#right-rate {
+div.top_rate-center button#left-rate, div.top_rate-center button#right-rate{
     position: relative;
     color: white;
     background-color: red;
@@ -337,14 +304,13 @@ div.top_rate-center button#left-rate, div.top_rate-center button#right-rate {
     border-radius: 25px;
     font-size: 25px;
     font-weight: bold;
-    top: -250px;
+       top:-250px;
 }
-
-div.top_rate-center button#right-rate, div.popular-center button#right-popular {
+div.top_rate-center button#right-rate, div.popular-center button#right-popular{
     left: 61.5vw;
 }
 
-div.popular-center button#left-popular, div.popular-center button#right-popular {
+div.popular-center button#left-popular, div.popular-center button#right-popular{
     position: relative;
     color: white;
     background-color: #0700ff;
@@ -354,5 +320,5 @@ div.popular-center button#left-popular, div.popular-center button#right-popular 
     border-radius: 25px;
     font-size: 25px;
     font-weight: bold;
-    top: -250px;
+       top:-250px;
 }

@@ -7,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %} {% endblock %}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_map.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_shop.css' %}">
@@ -24,38 +24,37 @@
         <ul>
             <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
             <li class="green"><a href="{% url 'trails:all_trails' %}"><i class="fas fa-map-signs"></i>Trasy</a>
-                <div class="tr">
+                 <div class="tr">
                     <ul>
                         <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
                         <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
                         {% if user.is_authenticated %}
                         <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
                         <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
-                        {%else%}
+                    {%else%}
                         <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>
                         <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
-                        {% endif %}
+                     {% endif %}
                     </ul>
-                </div>
+        </div>
             </li>
-            <li class="blue"><a href="{% url " blog:list_posts" %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li class="black"><a href="{%url " list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
+            <li class="blue"><a href="{% url "blog:list_posts" %}"><i class="fas fa-book-open"></i>Blog</a></li>
+            <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
             <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
         </ul>
     </div>
-    <div class="login_mapa">
-        {% if user.is_authenticated %}
-        <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i> <span>{{user.username}}</span><i
-                class="fas fa-angle-down"></i></button>
+     <div class="login_mapa">
+       {% if user.is_authenticated %}
+        <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i> <span>{{user.username}}</span><i class="fas fa-angle-down"></i></button>
         <div class="user_menu">
             <ul>
                 <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
                 <li><a href="#">Ustawienia</a></li>
 
                 {% if perms.blog.view_post%}
-                <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
+                    <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
                 {% elif perms.shop.view_product %}
-                <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
+                    <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
                 {% endif %}
 
                 <li><a href="{% url 'logout' %}">Wyloguj</a></li>
@@ -71,8 +70,8 @@
 <div class="shop-content">
     <div class="menu-shop">
         <div class="search-product">
-            <form action="." method="post">
-                <label class="nazwa">
+                <form  action="." method="post">
+                    <label class="nazwa">
                     <input type="text" name="search" id="search_input" placeholder="Czego szukasz?">
                     <select name="category" id="category">
                         <option value="Wszystkie kategorie">Wszystkie kategorie</option>
@@ -80,20 +79,20 @@
                         <option value="{{c.id}}">{{c.name}}</option>
                         {% endfor %}
                     </select>
-                </label>
-                {% csrf_token %}
-                <button class="search-product" id="search-button">Szukaj</button>
-            </form>
+                 </label>
+                      {% csrf_token %}
+            <button class="search-product" id="search-button">Szukaj</button>
+        </form>
         </div>
         <div class="shop-user-menu">
-            {% if user.is_authenticated %}
+                {% if user.is_authenticated %}
             <div id="favorite"><a href="#"><i class="far fa-star"></i></a></div>
             <div id="messages"><a href="{% url 'shop:messages-box' %}"><i class="far fa-comments"></i></a></div>
             <div id="bell"><a href="#"><i class="far fa-bell"></i></a></div>
             <div id="cart"><a href="{%url 'cart:cart_detail'%}"><i class="fas fa-shopping-basket"></a></i></div>
             <div id="account"><a href="{% url 'shop:put-up-for-sale' %}"><i class="far fa-address-card"></i></a></div>
             {%else%}
-            <div id="favorite"><a href="{% url 'login' %}"><i class="far fa-star"></i></a></div>
+             <div id="favorite"><a href="{% url 'login' %}"><i class="far fa-star"></i></a></div>
             <div id="messages"><a href="{% url 'login' %}"><i class="far fa-comments"></i></a></div>
             <div id="bell"><a href="{% url 'login' %}"><i class="far fa-bell"></i></a></div>
             <div id="cart"><a href="{%url 'cart:cart_detail'%}"><i class="fas fa-shopping-basket"></a></i></div>
@@ -112,53 +111,53 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
 <script>
-    <!--    "Przycisk rozwijania menu"-->
+<!--    "Przycisk rozwijania menu"-->
 
-    let menu = document.querySelector("button.user_menu");
-    let icon = document.querySelector("i.fa-angle-down");
-    let user_menu = document.querySelector("div.user_menu");
-    let yours_trails = document.querySelector("li.yours_trails");
-    let tr = document.querySelector("div.tr")
+let menu = document.querySelector("button.user_menu");
+let icon = document.querySelector("i.fa-angle-down");
+let user_menu = document.querySelector("div.user_menu");
+let yours_trails = document.querySelector("li.yours_trails");
+let tr = document.querySelector("div.tr")
 
-    if (menu) {
-        menu.addEventListener('click', function () {
-            user_menu.classList.toggle("active");
-            icon.classList.toggle("active");
-        });
-    }
-    // Obsługa menu Trasy
+if (menu) {
+    menu.addEventListener('click', function () {
+        user_menu.classList.toggle("active");
+        icon.classList.toggle("active");
+    });
+}
+// Obsługa menu Trasy
     if (yours_trails) {
         tr.classList.toggle("active");
     }
 
-    //    Usuwanie wiadomości
-    function delete_message() {
+//    Usuwanie wiadomości
+function delete_message() {
         console.log("delete")
     }
 
-    // Dodawanie wiadomości do ważne
+// Dodawanie wiadomości do ważne
 
-    let data = []
-    let list_checkbox_message = document.querySelectorAll(".checkbox_message")
+let data = []
+let list_checkbox_message= document.querySelectorAll(".checkbox_message")
 
-    function check_checked(element) {
-        if (element.checked) {
-            data.push(element.id)
+function  check_checked(element){
+        if (element.checked){
+            data.push(element.id )
         }
     }
 
-    function add_to_important() {
-        list_checkbox_message.forEach(check_checked)
-        $.ajax({
-            type: "POST",
-            url: "/shop/user/messages/important",
-            data: {
-                csrfmiddlewaretoken: "{{ csrf_token }}",
-                data: data
-            }
-        });
-        location.reload()
-    }
+function add_to_important(){
+    list_checkbox_message.forEach(check_checked)
+          $.ajax({
+              type: "POST",
+              url: "/shop/user/messages/important",
+              data: {
+                  csrfmiddlewaretoken: "{{ csrf_token }}",
+                  data: data
+              }
+          });
+    location.reload()
+}
 
 </script>
 </body>

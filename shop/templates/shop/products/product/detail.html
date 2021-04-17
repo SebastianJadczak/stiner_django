@@ -7,17 +7,17 @@
     <div class="detail">
         <div class="product_image"><img src="{{ product.image.url}}" alt=""></div>
         <div class="product_description">
-            <h3>{{product.name}}</h3>
-            <p>{{product.description}}</p>
-            <span class="price">Cena: {{product.price}} zł</span>
-            <form action="{% url " cart:cart_add
-            " product.id %}" method="post">
-            {% csrf_token %}
-            <div id="add"> {{cart_product_form}} <input type="submit" value="Dodaj"></div>
-            </form>
+                <h3>{{product.name}}</h3>
+                <p>{{product.description}}</p>
+                <span class="price">Cena: {{product.price}} zł</span>
+              <form action="{% url "cart:cart_add" product.id %}" method="post">
+              {% csrf_token %}
+                  <div id="add">  {{cart_product_form}} <input type="submit" value="Dodaj" ></div>
+              </form>
         </div>
     </div>
 </div>
+
 
 
 {% endblock %}

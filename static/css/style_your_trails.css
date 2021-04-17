@@ -1,47 +1,45 @@
 
-div.wrap-your_trails {
+div.wrap-your_trails{
     display: flex;
     flex-direction: column;
 }
-
-div.wrap-your_trails div.title-your_trail {
-    background-color: rgba(227, 252, 225, 0.9);
+div.wrap-your_trails div.title-your_trail{
+     background-color: rgba(227, 252, 225, 0.9);
     border: 1px solid #d0d0d0;
-    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
     padding: 5px 20px 10px;
     margin: 5px 5px 30px;
     border-radius: 20px;
     letter-spacing: 1.3px;
     font-family: Arial, sans-serif;
 }
-
-div.wrap-your_trails div.title-your_trail h3 {
+div.wrap-your_trails div.title-your_trail h3{
     text-align: center;
     color: #1a1a1a;
     letter-spacing: 1.8px;
 }
-
-div.wrap-your_trails div.title-your_trail p {
-    color: #212121;
+div.wrap-your_trails div.title-your_trail p{
+     color: #212121;
     letter-spacing: 1.8px;
 }
 
-div.wrap-your_trails div.your_trail-center {
+div.wrap-your_trails div.your_trail-center{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 
+
 /*Sekcja filtrów tras*/
 
 div.wrap-your_trails div.your_trail-center div.filter_trails {
-    width: 15vw;
+     width: 15vw;
     min-height: 70vh;
     /*transform: translateY(-50px);*/
 }
 
-div.wrap-your_trails div.your_trail-center div.filter_trails h3 {
+div.wrap-your_trails div.your_trail-center div.filter_trails h3{
     color: #646464;
     letter-spacing: 1.7px;
     font-size: 20px;
@@ -49,93 +47,83 @@ div.wrap-your_trails div.your_trail-center div.filter_trails h3 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter {
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter{
     background-color: #fff;
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
     min-height: 60vh;
     font-size: 14px;
 }
-
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div {
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div{
     display: flex;
     flex-direction: column;
     border-bottom: 0.5px solid #a5a5a5;
     padding: 10px 10px;
 }
-
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.city {
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.city{
     height: 195px;
     overflow: hidden;
 }
-
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.city p.city {
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.city p.city{
     background-color: white;
     width: 100%;
     position: relative;
     display: block;
-    height: 25px;
+    height:25px;
     top: -80px;
     margin: 10px 0 10px 0;
-    padding: 5px 0 10px 0;
+    padding:5px 0 10px 0;
 }
-
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.city.active {
-    height: 255px;
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.city.active{
+    height:255px;
 }
-
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.city.active p.city {
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.city.active p.city{
     top: 0;
-    margin: 0;
-    padding: 0;
+     margin:0;
+    padding:0;
 }
-
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div label {
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div label{
     padding: 5px 0 10px 16px;
 }
 
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div label input[type='checkbox'] {
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div label input[type='checkbox']{
     margin-right: 10px;
 }
 
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div label:nth-of-type(1) {
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div label:nth-of-type(1){
     padding: 5px 0 10px 10px;
     font-weight: bold;
 }
-
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.name input {
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.name input{
     width: 190px;
     height: 22px;
     margin-left: 25px;
     padding-left: 25px;
 }
-
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div p {
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div p{
     color: #3587ea;
     text-align: center;
     cursor: pointer;
     letter-spacing: 0.8px;
     position: relative;
 }
-
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.accept_filter {
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.accept_filter{
     padding: 0;
-    width: 100%;
-    height: 50px;
+    width:100%;
+    height:50px;
 }
-
-div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.accept_filter button {
-    width: 287px;
-    height: 50px;
+div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.accept_filter button{
+    width:287px;
+    height:50px;
     letter-spacing: 1.4px;
     background-color: #f8ff00;
     border: none;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    position: fixed;
+      position: fixed;
     top: 917px;
-    left: 136px;
+    left:136px;
 }
 
 div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.top_rate label.star {

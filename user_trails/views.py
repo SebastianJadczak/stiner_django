@@ -41,12 +41,10 @@ class UserTrailsListView(ListView):
         context['city'] = self.get_city()
         return context
 
-
 class SearchUserTrails(UserTrailsListView):
     """Klasa odpowiedzialna za wyświetlenie wyników wyszukania tras użytkownika."""
     template_name = 'trails/user_trails/search_user_trails.html'
     model = UserTrail
-
 
 class UserTrailFormAdd(ListView):
     """Klasa odpowiedzialna za wyświetlenie obiektów które możesz dodasz do szkicu trasy"""
@@ -75,8 +73,7 @@ class UserTrailFormAdd(ListView):
         len_user = len(self.user_trail)
 
         return render(request, self.template_name,
-                      {'list': self.list, 'city': self.city, 'user_trail': self.user_trail, 'len_user': len_user,
-                       'zmienna': self.zmienna})
+                      {'list': self.list,'city':self.city, 'user_trail': self.user_trail, 'len_user': len_user, 'zmienna': self.zmienna})
 
 
 class UserTrailDraft(UserTrailFormAdd):
@@ -96,8 +93,7 @@ class UserTrailDraft(UserTrailFormAdd):
                         self.user_trail.remove(z)
                         break
 
-        return render(request, self.template_name,
-                      {'list': self.list, 'user_trail': self.user_trail, 'zmienna': self.zmienna})
+        return render(request, self.template_name, {'list': self.list, 'user_trail': self.user_trail, 'zmienna': self.zmienna})
 
 
 class DetailPoint(DetailView):
@@ -149,7 +145,6 @@ class UserTrailDetail(DetailView):
         context['user_trail_id'] = self.kwargs['pk']
         return context
 
-
 class TrailUserApiFilterListView(generics.ListAPIView):
     """ Widok odpowiedzialny za filtrowanie obiektów w zależności od trasy którą użytkownik wybierze :) """
     serializer_class = UserTrailsSerializer
@@ -157,3 +152,4 @@ class TrailUserApiFilterListView(generics.ListAPIView):
     def get_queryset(self):
         pk = self.kwargs['pk']
         return list(UserTrail.objects.filter(id=pk))[0].points.all()
+

@@ -3,12 +3,13 @@
 {% block content %}
 
 
+
 <div class="content">
     <div class="product_manage">
         {% for product in object_list %}
-        <div class="product_manage">
-            <p>{{product.name}}</p>
-        </div>
+            <div class="product_manage">
+                <p>{{product.name}}</p>
+            </div>
         {% endfor %}
     </div>
 </div>

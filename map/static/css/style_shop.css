@@ -1,40 +1,35 @@
 /*Base dla Strony shop*/
-div.shop-content {
+div.shop-content{
     background-color: #f4f4f4;
     margin-top: 2px;
-    z-index: 4;
+       z-index: 4;
 }
-
-div.menu-shop {
-    height: 7vh;
+div.menu-shop{
+    height:7vh;
     background-color: #fff;
     box-shadow: 0 1px 2px #c3c3c3, 0 -1px 2px #c3c3c3;
     display: flex;
 }
-
-div.menu-shop div.shop-user-menu {
+div.menu-shop div.shop-user-menu{
     display: flex;
 }
-
-div.menu-shop div.search-product {
+div.menu-shop div.search-product{
     line-height: 7vh;
-    width: 700px;
+    width:700px;
     margin-left: 500px;
 }
-
-div.menu-shop div.search-product input {
+div.menu-shop div.search-product input{
     width: 330px;
     height: 33px;
     padding: 0 0 0 20px;
 }
-
-div.menu-shop div.search-product select {
+div.menu-shop div.search-product select{
     height: 36px;
     width: 180px;
     padding: 0 0 0 20px;
 }
 
-div.menu-shop div.search-product button {
+div.menu-shop div.search-product button{
     background-color: #ff6f00;
     color: white;
     border: none;
@@ -45,79 +40,71 @@ div.menu-shop div.search-product button {
     letter-spacing: 2.5px;
 }
 
-div.menu-shop div.shop-user-menu {
+div.menu-shop div.shop-user-menu{
     margin-left: 120px;
-    line-height: 8vh;
+     line-height: 8vh;
     width: 25vw;
     justify-content: flex-end;
 }
-
-div.menu-shop div.shop-user-menu div i {
+div.menu-shop div.shop-user-menu div i{
     font-size: 25px;
     color: #626262;
-    text-shadow: 1px 1px #ababab;
+     text-shadow: 1px 1px #ababab;
 }
-
-div.menu-shop div.shop-user-menu div {
+div.menu-shop div.shop-user-menu div{
     margin-right: 35px;
 }
-
-div.menu-shop div.shop-user-menu div#account {
-    margin-left: 55px;
-    margin-right: 15px;
-    line-height: 9vh;
+div.menu-shop div.shop-user-menu div#account{
+    margin-left:55px;
+     margin-right: 15px;
+     line-height: 9vh;
 }
-
-div.menu-shop div.shop-user-menu div#account i {
+div.menu-shop div.shop-user-menu div#account i{
     font-size: 37px;
     color: #434343;
     text-shadow: 1px 1px #ababab;
 }
-
-div.menu-shop div.shop-user-menu div#favorite:hover i {
+div.menu-shop div.shop-user-menu div#favorite:hover i{
     color: #ffe02d;
 }
 
-div.menu-shop div.shop-user-menu div#messages:hover i {
+div.menu-shop div.shop-user-menu div#messages:hover i{
     color: #1A01CC;
 }
 
-div.menu-shop div.shop-user-menu div#cart:hover i {
-    color: black
+div.menu-shop div.shop-user-menu div#cart:hover i{
+    color:black
 }
-
-div.menu-shop div.shop-user-menu div#bell:hover i {
+div.menu-shop div.shop-user-menu div#bell:hover i{
     color: red;
 }
 
 /* Głowna strona sklepu - Lista */
-div#sh-list {
+div#sh-list{
     background-color: #f4f4f4;
     min-height: 74vh;
     margin: 3px 0 0 0;
     padding: 20px 0 50px 100px;
 }
-
-div.first-section {
-    width: 100%;
+div.first-section{
+    width:100%;
     min-height: 60vh;
     display: flex;
     justify-content: center;
 }
 
-div.first-section div.left div {
+div.first-section div.left div{
     width: 15vw;
     height: 60vh;
     margin-right: 130px;
     background-color: #ffffff;
 }
-
-div.first-section div.left div.filter-left {
-    margin-top: 20px;
+div.first-section div.left div.filter-left{
+    margin-top:20px;
     border: 1px solid #bfbfbf;
 }
 
-div.first-section div.left div.filter-left h3 {
+div.first-section div.left div.filter-left h3{
     font-family: 'Roboto Mono', monospace;
     color: #131313;
     text-shadow: 0 1px #cbcbcb;
@@ -127,7 +114,7 @@ div.first-section div.left div.filter-left h3 {
     margin: 0;
 }
 
-div.first-section div.left ul.menu-category {
+div.first-section div.left ul.menu-category{
     list-style: none;
     padding: 0;
     margin: 0;
@@ -136,25 +123,23 @@ div.first-section div.left ul.menu-category {
     flex-direction: column;
     justify-content: space-between;
 }
-
-div.first-section div.left ul.menu-category li {
+div.first-section div.left ul.menu-category li{
     width: 100%;
     height: 36px;
     border: 0.5px solid #d7d7d7;
-    padding: 8px 0 0;
+    padding:8px 0 0;
 }
 
-div.first-section div.left ul.menu-category li:hover {
+div.first-section div.left ul.menu-category li:hover{
     background-color: #dd0000;
     cursor: pointer;
 }
-
-div.first-section div.left ul.menu-category li:hover a {
+div.first-section div.left ul.menu-category li:hover a{
     color: white;
-    font-weight: bold;
+     font-weight: bold;
 }
 
-div.first-section div.left ul.menu-category li a {
+div.first-section div.left ul.menu-category li a{
     display: block;
     width: 100%;
     height: 100%;
@@ -167,7 +152,7 @@ div.first-section div.left ul.menu-category li a {
     font-size: 15px;
 }
 
-div.first-section div.center {
+div.first-section div.center{
     width: 80vw;
     height: 100%;
     display: flex;
@@ -176,45 +161,41 @@ div.first-section div.center {
     margin-right: 70px;
 }
 
-div.first-section div.center div.top {
+div.first-section div.center div.top{
     width: 100%;
     height: 385px;
     background-color: #fff;
     border: 0.5px solid #868686;
     box-shadow: 0 0 1px #d2d2d2;
 }
-
-div.first-section div.center div.bottom {
+div.first-section div.center div.bottom{
     display: flex;
     justify-content: space-between;
     padding-top: 25px;
 }
-
-div.first-section div.center div.bottom div {
-    width: 270px;
-    height: 130px;
+div.first-section div.center div.bottom div{
+    width:270px;
+    height:130px;
     border: 0.5px solid #bebebe;
     box-shadow: 0 0 1px #d2d2d2;
 }
-
-div.first-section div.center div.bottom div img {
-    width: 100%;
-    height: 100%;
+div.first-section div.center div.bottom div img{
+    width:100%;
+    height:100%;
 }
-
 /*Slider*/
 /* Slideshow container */
 .slideshow-container {
-    max-width: 1000px;
+  max-width: 1000px;
     height: 853px;
-    position: relative;
-    margin: auto;
+  position: relative;
+  margin: auto;
 }
 
 /* Caption text */
 .text {
     color: #ff000d;
-    width: 280px;
+    width:280px;
     font-size: 20px;
     padding: 8px 12px;
     position: absolute;
@@ -224,7 +205,7 @@ div.first-section div.center div.bottom div img {
     text-align: center;
     font-weight: bold;
     letter-spacing: 2px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255,255,255, 0.6);
     border: 0.5px solid #868686;
     font-family: Arial, sans-serif;
 }
@@ -232,103 +213,84 @@ div.first-section div.center div.bottom div img {
 
 /* The dots/bullets/indicators */
 .dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
-
-.mySlides {
-    width: 100%;
+.mySlides{
+    width:100%;
     height: 100%;
 }
-
-.mySlides img {
+.mySlides img{
     width: 100%;
-    height: 100%;
+     height: 100%;
 }
-
 .active {
-    background-color: #717171;
+  background-color: #717171;
 }
 
 /* Fading animation */
 .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 @-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 @keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
+  from {opacity: .4}
+  to {opacity: 1}
 }
-
 @media only screen and (max-width: 1680px) {
 
-    div.menu-shop div.search-product {
-        text-align: center;
+    div.menu-shop div.search-product{
+       text-align: center;
     }
-
-    div.menu-shop div.search-product input {
+    div.menu-shop div.search-product input{
         width: 250px;
         height: 28px;
     }
-
-    div.menu-shop div.search-product select {
+    div.menu-shop div.search-product select{
         height: 32px;
         width: 145px;
         padding: 0 0 0 2px;
     }
 
-    div.menu-shop div.search-product button {
+    div.menu-shop div.search-product button{
         font-size: 14px;
         padding: 8.5px 15px;
     }
-
-    div.first-section div.left div {
+    div.first-section div.left div{
         width: 19vw;
         height: 66.5vh;
         margin-right: 80px;
         padding-bottom: 0;
     }
-
     .slideshow-container {
-        max-width: 1000px;
+      max-width: 1000px;
         height: 385px;
-        position: relative;
-        margin: auto;
+      position: relative;
+      margin: auto;
     }
 
 }
-
 @media only screen and (max-width: 1506px) {
-    div.menu-shop div.search-product {
+   div.menu-shop div.search-product{
         margin-left: 350px;
     }
-
-    div.menu-shop div.shop-user-menu {
+    div.menu-shop div.shop-user-menu{
         margin-left: 100px;
     }
 }
-
 @media only screen and (max-width: 1304px) {
     div.menu-shop div.shop-user-menu {
         margin-left: 50px;
@@ -337,8 +299,7 @@ div.first-section div.center div.bottom div img {
     div.menu-shop div.shop-user-menu div#account {
         margin-left: 30px;
     }
-
-    div.menu-shop div.shop-user-menu div {
+    div.menu-shop div.shop-user-menu div{
         margin-right: 20px;
     }
 
@@ -348,85 +309,69 @@ div.first-section div.center div.bottom div img {
 }
 
 @media only screen and (max-width: 1154px) {
-    div.menu-shop div.shop-user-menu {
+    div.menu-shop div.shop-user-menu{
         margin-left: 10px;
     }
-
-    div.menu-shop div.shop-user-menu div#account {
+      div.menu-shop div.shop-user-menu div#account {
         margin-left: 10px;
     }
-
-    div.menu-shop div.search-product input {
-        width: 200px;
-    }
-
-    div.menu-shop div.search-product button {
-        font-size: 12px;
-        padding: 8px 10px;
-    }
-
-    div.menu-shop div.search-product input {
-        height: 24px;
-    }
-
-    div.menu-shop div.search-product select {
-        height: 29px;
-    }
+      div.menu-shop div.search-product input{
+          width: 200px;
+      }
+      div.menu-shop div.search-product button{
+          font-size: 12px;
+          padding: 8px 10px;
+      }
+      div.menu-shop div.search-product input{
+          height: 24px;
+      }
+      div.menu-shop div.search-product select{
+          height:29px;
+      }
 }
-
 @media only screen and (max-width: 1027px) {
-    div.menu-shop div.shop-user-menu div {
+    div.menu-shop div.shop-user-menu div{
         margin-right: 10px;
     }
-
-    div.menu-shop div.shop-user-menu div i {
+    div.menu-shop div.shop-user-menu div i{
         font-size: 22px;
     }
-
-    div.menu-shop div.shop-user-menu div#account i {
+    div.menu-shop div.shop-user-menu div#account i{
         font-size: 30px;
     }
 }
-
 @media only screen and (max-width: 965px) {
-    div.menu-shop div.search-product {
-        margin-left: 200px;
-    }
+div.menu-shop div.search-product{
+    margin-left: 200px;
 }
-
+}
 @media only screen and (max-width: 862px) {
-    div.menu-shop div.search-product input {
-        width: 140px;
-    }
+div.menu-shop div.search-product input{
+    width: 140px;
 }
-
-@media only screen and (max-width: 802px) {
-    div.menu-shop div.search-product {
-        margin-left: 20px;
-    }
 }
-
+@media only screen and (max-width: 802px){
+    div.menu-shop div.search-product{
+    margin-left: 20px;
+}
+}
 @media only screen and (max-width: 632px) {
     div.menu-shop div.search-product {
         margin-left: 10px;
     }
-
-    div.menu-shop div.search-product input {
-        width: 120px;
-    }
-
-    div.menu-shop div.search-product select {
+    div.menu-shop div.search-product input{
+    width: 120px;
+}
+    div.menu-shop div.search-product select{
         width: 120px;
         font-size: 11px;
     }
 }
-
-@media only screen and (max-width: 589px) {
-    div.menu-shop div.shop-user-menu div i {
+@media only screen and (max-width: 589px){
+    div.menu-shop div.shop-user-menu div i{
         font-size: 18px;
     }
-
-    div.menu-shop div.shop-user-menu div {
+    div.menu-shop div.shop-user-menu div{
         margin-right: 5px;
     }
 }

@@ -1,5 +1,5 @@
 
-div#top_manage {
+div#top_manage{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -7,82 +7,74 @@ div#top_manage {
 }
 
 
-div.management {
+div.management{
     display: flex;
     flex-direction: row;
 }
-
-div.management div.management_menu {
+div.management div.management_menu{
     padding: 20px 10px;
-    width: 20vw;
-    height: 70vh;
+    width:20vw;
+    height:70vh;
     background-color: rgba(185, 255, 200, 0.75);
     border-right: 1px solid green;
     border-bottom: 1px solid green;
 }
 
-div.management div.management_menu span {
+div.management div.management_menu span{
     font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
     font-weight: bold;
     font-size: 19px;
 }
-
-div.management div.management_menu p.management_menu_section {
+div.management div.management_menu p.management_menu_section{
     font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
     font-weight: bold;
 }
-
-div.management div.management_menu button {
+div.management div.management_menu button{
     background-color: green;
-    width: 200px;
-    height: 25px;
+    width:200px;
+    height:25px;
     box-shadow: 1px 1px 0 white;
     border: 1px solid white;
 }
-
-div.management div.management_menu button a {
+div.management div.management_menu button a{
     color: white;
     text-transform: uppercase;
     text-decoration: none;
 }
 
 /*block content moderowania stron */
-div.posts_manage {
+div.posts_manage{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 50px 0;
-    width: 80vw;
+    width:80vw;
 }
-
-div.posts_manage div.post_manage {
-    width: 45vw;
+div.posts_manage div.post_manage{
+    width:45vw;
     margin: 10px auto;
-    height: 600px;
+    height:600px;
 }
 
-div.posts_manage div.post_manage div.image {
-    width: 100%;
+div.posts_manage div.post_manage div.image{
+    width:100%;
     height: 300px;
 }
-
-div.posts_manage div.post_manage div.image img {
-    width: 100%;
-    height: 100%;
+div.posts_manage div.post_manage div.image img{
+    width:100%;
+    height:100%;
 }
-
-div.posts_manage div.post_manage div.title {
+div.posts_manage div.post_manage div.title{
     position: relative;
-    top: -180px;
-    border: 3px solid white;
+    top:-180px;
+    border:3px solid white;
     width: 400px;
-    left: 15%;
+    left:15%;
     background-color: rgba(0, 0, 0, 0.87);
     text-align: center;
 
 }
-
-div.posts_manage div.post_manage div.title p {
+div.posts_manage div.post_manage div.title p{
     color: white;
     font-size: 29px;
     font-weight: bold;
@@ -90,27 +82,24 @@ div.posts_manage div.post_manage div.title p {
     margin: 10px;
     text-transform: uppercase;
 }
-
 /*Dodawanie postów na stronie*/
-div.create_post {
-    width: 80vw;
+div.create_post{
+    width:80vw;
 }
-
-div.create_post h2 {
+div.create_post h2{
     padding-left: 50px;
 }
 
-div.form_post {
+div.form_post{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 50px 0;
     margin-left: 100px;
 }
-
 /*Wyjście z panelu moderatora*/
 
-div.management div.management_menu button.exit_manage {
-    margin-top: 50px;
+div.management div.management_menu button.exit_manage{
+    margin-top:50px;
     background-color: red;
 }

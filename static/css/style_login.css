@@ -1,59 +1,54 @@
-body {
+body{
     padding: 0;
     margin: 0;
 }
-
-div.login {
+div.login{
     display: flex;
     flex-direction: row;
     padding: 0;
 }
 
 /* Część formularzowa */
-div.login div.login_form {
+div.login div.login_form{
     width: 23vw;
 }
 
-div.login div.login_form div.logo {
+div.login div.login_form div.logo{
     margin: 50px 0 30px;
     text-align: center;
 }
-
-div.login div.login_form h3 {
+div.login div.login_form h3{
     text-align: center;
     font-weight: normal;
-    font-family: Helvetica, Arial, Verdana, sans-serif;
+    font-family:Helvetica, Arial, Verdana, sans-serif;
     font-size: 25px;
     letter-spacing: 1.8px;
 }
-
 div.login div.login_form {
     margin: 50px 0 0 100px;
 }
 
-div.login div.login_form form input {
+div.login div.login_form form input{
     width: 250px;
     border: none;
     border-bottom: 1px solid green;
     margin: 0 0 15px 6px;
 }
-
-div.login div.login_form form input:focus {
+div.login div.login_form form input:focus{
     outline: none;
     border-bottom: 3px solid #007100;
 }
-
-div.login div.login_form form p {
+div.login div.login_form form p{
     margin: 20px 0;
 }
 
-div.login div.login_form form button {
+div.login div.login_form form button{
     border: 1px solid #235171;
     background-color: #3375a4;
     color: #fff;
-    width: 200px;
-    height: 40px;
-    margin: 15px 100px;
+    width:200px;
+    height:40px;
+    margin:15px 100px;
     font-size: 18px;
     border-radius: 20px;
     letter-spacing: 3.6px;
@@ -61,9 +56,9 @@ div.login div.login_form form button {
 
 /* Część obrazkowa */
 
-div.login div.login_image {
-    width: 77vw;
-    height: 100vh;
+div.login div.login_image{
+    width:77vw;
+    height:100vh;
     background-image: url("../img/citys.jpg");
     background-size: cover;
     background-repeat: no-repeat;

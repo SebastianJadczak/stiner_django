@@ -3,7 +3,6 @@ from django.test import TestCase
 
 from trails.models import Trail, Rate_trail
 
-
 class TrailModelTestCase(TestCase):
     """Klasa odpowiedzialna za testy dla modelu Trail."""
 

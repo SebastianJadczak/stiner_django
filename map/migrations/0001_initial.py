@@ -5,6 +5,7 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     initial = True
 
     dependencies = [
@@ -30,12 +31,7 @@ class Migration(migrations.Migration):
                 ('coordinateX', models.DecimalField(decimal_places=7, max_digits=100, max_length=30)),
                 ('coordinateY', models.DecimalField(decimal_places=7, max_digits=100, max_length=30)),
                 ('image', models.ImageField(upload_to='media/img_point/%Y/%m%d')),
-                ('type', models.CharField(
-                    choices=[('Zamki', 'Zamki'), ('Forty', 'Forty'), ('Kościoły', 'Kościoły'), ('Muzeum', 'Muzeum'),
-                             ('Parki', 'Parki'), ('Ogrody', 'Ogrody'), ('Pomniki', 'Pomniki'), ('Rynki', 'Rynki'),
-                             ('Mosty', 'Mosty'), ('Wieże', 'Wieże'), ('Stadiony', 'Stadiony'),
-                             ('Cmentarze', 'Cmentarze'), ('Budowle', 'Budowle'), ('Porty', 'Porty'),
-                             ('Filcharmonie', 'Filcharmonie')], max_length=15)),
+                ('type', models.CharField(choices=[('Zamki', 'Zamki'), ('Forty', 'Forty'), ('Kościoły', 'Kościoły'), ('Muzeum', 'Muzeum'), ('Parki', 'Parki'), ('Ogrody', 'Ogrody'), ('Pomniki', 'Pomniki'), ('Rynki', 'Rynki'), ('Mosty', 'Mosty'), ('Wieże', 'Wieże'), ('Stadiony', 'Stadiony'), ('Cmentarze', 'Cmentarze'), ('Budowle', 'Budowle'), ('Porty', 'Porty'), ('Filcharmonie', 'Filcharmonie')], max_length=15)),
             ],
         ),
         migrations.CreateModel(

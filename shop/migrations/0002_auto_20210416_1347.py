@@ -4,6 +4,7 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
         ('shop', '0001_initial'),
     ]
@@ -12,15 +13,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='product',
             name='for_whom',
-            field=models.CharField(choices=[('Men', 'Men'), ('Women', 'Women'), ('Child', 'Child')], default=1,
-                                   max_length=15),
+            field=models.CharField(choices=[('Men', 'Men'), ('Women', 'Women'), ('Child', 'Child')], default=1, max_length=15),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='product',
             name='size',
-            field=models.CharField(choices=[('S', 'S'), ('M', 'M'), ('L', 'L'), ('XL', 'XL'), ('XXL', 'XXL')],
-                                   default=1, max_length=15),
+            field=models.CharField(choices=[('S', 'S'), ('M', 'M'), ('L', 'L'), ('XL', 'XL'), ('XXL', 'XXL')], default=1, max_length=15),
             preserve_default=False,
         ),
     ]

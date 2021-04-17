@@ -2,11 +2,11 @@
 
 {% block title %}
 
-{% if object %}
-Edytuj post {{object.name}}
-{% else %}
-Dodaj nowy post
-{% endif %}
+    {% if object %}
+        Edytuj post {{object.name}}
+    {% else %}
+        Dodaj nowy post
+    {% endif %}
 
 {% endblock %}
 
@@ -14,9 +14,9 @@ Dodaj nowy post
 <div class="create_post">
     <h2>
         {% if object %}
-        Edytuj post "{{object.name}}"
+            Edytuj post "{{object.name}}"
         {% else %}
-        Nowy post
+            Nowy post
         {% endif %}
     </h2>
     <div class="form_post">
@@ -26,5 +26,5 @@ Dodaj nowy post
             <p><input type="submit" value="Zapisz"></p>
         </form>
     </div>
-</div>
+    </div>
 {% endblock %}

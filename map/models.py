@@ -2,7 +2,9 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+
 class Point(models.Model):
+
     TYPE_POINT = (
         ('Zamki', 'Zamki'),
         ('Forty', 'Forty'),
@@ -32,14 +34,12 @@ class Point(models.Model):
     def __str__(self):
         return self.name
 
-
 class Opinion_about_Point(models.Model):
     """Model opisujący opinie o Punkcie."""
     user = models.CharField(max_length=30)
     opinion = models.CharField(max_length=530)
     rating = models.IntegerField()
     point = models.ForeignKey(Point, blank=True, on_delete=models.CASCADE)
-
 
 class Coordinates(models.Model):
     """Model opisujący położenie miast."""

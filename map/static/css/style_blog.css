@@ -1,28 +1,28 @@
-div.blog_title {
-    width: 99.1vw;
-    height: 80vh;
+div.blog_title{
+    width:99.1vw;
+    height:80vh;
     background-image: url("../img/city.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+       box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
-div.content_center {
+div.content_center{
     display: flex;
     background-color: #fbfbfb;
 }
 
-div.right_table {
-    width: 20vw;
+div.right_table{
+    width:20vw;
     border-left: 0.5px solid grey;
-    padding: 50px;
+    padding:50px;
 }
 
-div.right_table div.reklama {
-    width: 310px;
-    height: 260px;
-    margin: 0 auto;
+div.right_table div.reklama{
+    width:310px;
+    height:260px;
+      margin: 0 auto;
     background-color: white;
     background-image: url("../img/baner.png");
     background-size: contain;
@@ -30,39 +30,34 @@ div.right_table div.reklama {
     background-position: center;
     box-shadow: 0 0 0 1px #bdbdbd;
 }
-
-div.posts {
+div.posts{
     display: flex;
-    width: 60vw;
+    width:60vw;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 50px 0 50px 200px;
     justify-content: space-between;
 }
-
-div.posts div.post {
-    width: 300px;
+div.posts div.post{
+    width:300px;
     margin: 10px 25px;
-    height: 600px;
+    height:600px;
 }
 
-div.posts div.post div.image {
-    width: 90%;
+div.posts div.post div.image{
+    width:90%;
     margin: 0 auto;
     height: 200px;
 }
-
-div.posts div.post div.image img {
-    width: 100%;
-    height: 100%;
+div.posts div.post div.image img{
+    width:100%;
+    height:100%;
 }
-
-div.posts div.post div.title {
+div.posts div.post div.title{
     text-align: center;
 
 }
-
-div.posts div.post div.title p {
+div.posts div.post div.title p{
     color: #151515;
     font-size: 29px;
     font-weight: bold;
@@ -70,16 +65,14 @@ div.posts div.post div.title p {
     margin: 10px 0;
     text-transform: uppercase;
 }
-
-div.posts div.post div.body {
-    margin: 0;
+div.posts div.post div.body{
+    margin:0;
 }
-
 @media only screen and (max-width: 1680px) {
 
-    div.posts {
-        width: 70vw;
-        margin: 50px 0 50px 50px;
-    }
+div.posts{
+    width:70vw;
+    margin: 50px 0 50px 50px;
+}
 
 }

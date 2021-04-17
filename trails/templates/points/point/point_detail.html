@@ -1,145 +1,139 @@
 {% extends 'base_trail.html' %}
 
 {% block content %}
-<div class="point_detail">
-    <div class="point_detail_name">
-        <h2>{{point.name}}</h2>
-    </div>
-    <div class="gallery">
-        <div class="big_image">
-            <img class="big" src="../../../../media/media/img_point/2020/0810/Teatr_Wielki.jpg" alt="room1"/>
-        </div>
-        <div class="small">
-            <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg"
-                 class="room-active" alt=""/>
-            <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" alt=""/>
-            <img src="../../../../media/media/img_point/2020/0810/Łazienki_Królewskie.jpg" alt=""/>
-            <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg"
-                 class="room-active" alt=""/>
-            <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" alt=""/>
-            <img src="../../../../media/media/img_point/2020/0810/Łazienki_Królewskie.jpg" alt=""/>
-            <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg"
-                 class="room-active" alt=""/>
-        </div>
-    </div>
-    <div class="content">
-        <div class="text">
+   <div class="point_detail">
+       <div class="point_detail_name">
+            <h2>{{point.name}}</h2>
+       </div>
+       <div class="gallery">
+           <div class="big_image">
+                <img class="big" src="../../../../media/media/img_point/2020/0810/Teatr_Wielki.jpg" alt="room1" />
+           </div>
+           <div class="small">
+              <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg" class="room-active" alt="" />
+              <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" alt="" />
+              <img src="../../../../media/media/img_point/2020/0810/Łazienki_Królewskie.jpg" alt="" />
+                <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg" class="room-active" alt="" />
+              <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" alt="" />
+              <img src="../../../../media/media/img_point/2020/0810/Łazienki_Królewskie.jpg" alt="" />
+                <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg" class="room-active" alt="" />
+            </div>
+       </div>
+       <div class="content">
+           <div class="text">
 
-            <div class="history">
-                <h3>Historia</h3>
-                <p>
-                    {{point.descriptions}}
-                </p>
-            </div>
-            <div class="curiosities">
-                <h3>Ciekawostki</h3>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type
-                    specimen book. It has survived not only five centuries, but also the leap into
-                    electronic typesetting, remaining essentially unchanged. It was popularised in the
-                    1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                    recently with desktop publishing software like Aldus PageMaker including versions of
-                    Lorem Ipsum.
-                </p>
-            </div>
-            <div class="visiting">
-                <h3>Zwiedzanie</h3>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type
-                    specimen book. It has survived not only five centuries, but also the leap into
-                    electronic typesetting, remaining essentially unchanged. It was popularised in the
-                    1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                    recently with desktop publishing software like Aldus PageMaker including versions of
-                    Lorem Ipsum.
-                </p>
-            </div>
-            <div class="taings">
-                <h3>Oceny i opinie</h3>
-                <p>
-                    {{object.0.name}}
-                </p>
-                <!--                   Opinie -->
-                {% if opinion %}
-                <div class="opinions">
-                    {% for element in opinion %}
-                    <div class="opinion">
-                        <div class="top">
-                            <p id="user">{{element.user}}</p>
-                            <p id="rating">Ocena
-                                {% if element.rating is 5 %} <span>★★★★★</span>
-                                {% elif element.rating is 4 %}<span>★★★★</span>
-                                {% elif element.rating is 3 %}<span>★★★</span>
-                                {% elif element.rating is 2 %}<span>★★</span>
-                                {% elif element.rating is 1 %}<span>★</span>
-                                {%endif%}</p>
-                        </div>
-                        <p id="opinion">{{element.opinion}}</p>
-                    </div>
-                    {% endfor %}
-                </div>
-                {% else %}
-                <!--                   Jeśli brak opinie to...-->
-                <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
-                {% endif %}
-                <h3>Napisz własną opinię:</h3>
-                {% if user.is_authenticated %}
-                <form action="" method="post">
-                    <div class="top_form">
-                        <input type="text" class="nick" name="nick" placeholder="Podaj swój nick" ,
-                               value="{{request.user}}" disabled
-                               style="width: 100px;text-align:center; margin-right: 170px">
-                        <input type="text" class="nick" name="point_id" placeholder="id punbktu" value="{{point_id}}"
-                               hidden>
-                        <p id="yours_stars">Twoja ocena</p>
-                        <div class="stars">
-                            <input type="radio" id="star5" name="star" value="5">
-                            <label for="star5"> Five Stars </label>
-                            <input type="radio" id="star4" name="star" value="4">
-                            <label for="star4"> Four Stars </label>
-                            <input type="radio" id="star3" name="star" value="3">
-                            <label for="star3"> Three Stars </label>
-                            <input type="radio" id="star2" name="star" value="2">
-                            <label for="star2"> Two Stars </label>
-                            <input type="radio" id="star1" name="star" value="1">
-                            <label for="star1"> One Star </label>
-                        </div>
-                    </div>
-                    <div class="bottom_form">
-                        <textarea name="recension" id="" placeholder="Twoja recenzja"></textarea>
-                        <button>Zapisz Opinię</button>
-                    </div>
-                    {% csrf_token %}
-                </form>
-                {%else%}
-                <p>Aby dodać opinię, proszę się zalogować.</p>
-                {% endif %}
-            </div>
-        </div>
-    </div>
+               <div class="history">
+                   <h3>Historia</h3>
+                   <p>
+                       {{point.descriptions}}
+                   </p>
+               </div>
+               <div class="curiosities">
+                   <h3>Ciekawostki</h3>
+                    <p>
+                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                       when an unknown printer took a galley of type and scrambled it to make a type
+                       specimen book. It has survived not only five centuries, but also the leap into
+                       electronic typesetting, remaining essentially unchanged. It was popularised in the
+                       1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                       recently with desktop publishing software like Aldus PageMaker including versions of
+                       Lorem Ipsum.
+                   </p>
+               </div>
+               <div class="visiting">
+                   <h3>Zwiedzanie</h3>
+                    <p>
+                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                       when an unknown printer took a galley of type and scrambled it to make a type
+                       specimen book. It has survived not only five centuries, but also the leap into
+                       electronic typesetting, remaining essentially unchanged. It was popularised in the
+                       1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                       recently with desktop publishing software like Aldus PageMaker including versions of
+                       Lorem Ipsum.
+                   </p>
+               </div>
+               <div class="taings">
+                   <h3>Oceny i opinie</h3>
+                    <p>
+                      {{object.0.name}}
+                   </p>
+<!--                   Opinie -->
+                   {% if opinion %}
+                       <div class="opinions">
+                           {% for element in opinion %}
+                                <div class="opinion">
+                                    <div class="top">
+                                        <p id="user">{{element.user}}</p>
+                                        <p id="rating">Ocena
+                                            {% if element.rating is 5 %} <span>★★★★★</span>
+                                            {% elif element.rating is 4 %}<span>★★★★</span>
+                                            {% elif element.rating is 3 %}<span>★★★</span>
+                                            {% elif element.rating is 2 %}<span>★★</span>
+                                            {% elif element.rating is 1 %}<span>★</span>
+                                            {%endif%}</p>
+                                        </div>
+                                    <p id="opinion">{{element.opinion}}</p>
+                                </div>
+                           {% endfor %}
+                       </div>
+                   {% else %}
+    <!--                   Jeśli brak opinie to...-->
+                       <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
+                   {% endif %}
+                   <h3>Napisz własną opinię:</h3>
+                   {% if user.is_authenticated %}
+                       <form action="" method="post">
+                           <div class="top_form">
+                               <input type="text" class="nick" name="nick" placeholder="Podaj swój nick", value="{{request.user}}" disabled style="width: 100px;text-align:center; margin-right: 170px">
+                               <input type="text" class="nick" name="point_id" placeholder="id punbktu" value="{{point_id}}" hidden>
+                               <p id="yours_stars">Twoja ocena</p>
+                               <div class="stars">
+                                    <input type="radio" id="star5" name="star" value="5">
+                                    <label for="star5"> Five Stars </label>
+                                    <input type="radio" id="star4" name="star" value="4">
+                                    <label for="star4"> Four Stars </label>
+                                    <input type="radio" id="star3" name="star" value="3">
+                                    <label for="star3"> Three Stars </label>
+                                    <input type="radio" id="star2" name="star" value="2">
+                                    <label for="star2"> Two Stars </label>
+                                    <input type="radio" id="star1" name="star" value="1">
+                                    <label for="star1"> One Star </label>
+                              </div>
+                           </div>
+                           <div class="bottom_form">
+                               <textarea name="recension" id="" placeholder="Twoja recenzja"></textarea>
+                               <button>Zapisz Opinię</button>
+                           </div>
+                           {% csrf_token %}
+                       </form>
+                   {%else%}
+                        <p>Aby dodać opinię, proszę się zalogować.</p>
+                   {% endif %}
+               </div>
+           </div>
+       </div>
 
-</div>
+    </div>
 <script>
 
 
-    function imageGallery() {
-        const big = document.querySelector(".big");
-        const small = document.querySelectorAll(".small img");
+function imageGallery() {
+  const big = document.querySelector(".big");
+  const small = document.querySelectorAll(".small img");
 
-        small.forEach(preview => {
-            preview.addEventListener("click", function () {
-                const smallSrc = this.src;
-                const bigSrc = smallSrc.replace("big");
-                small.forEach(preview => preview.classList.remove("active"));
-                big.src = bigSrc;
-                preview.classList.add("active");
-            });
-        });
-    }
+  small.forEach(preview => {
+    preview.addEventListener("click", function() {
+      const smallSrc = this.src;
+      const bigSrc = smallSrc.replace( "big");
+      small.forEach(preview => preview.classList.remove("active"));
+      big.src = bigSrc;
+      preview.classList.add("active");
+    });
+  });
+}
 
-    imageGallery();
+imageGallery();
 </script>
 {% endblock %}

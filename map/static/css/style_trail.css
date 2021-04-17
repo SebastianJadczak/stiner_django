@@ -1,31 +1,30 @@
-div.trail {
+div.trail{
     display: flex;
     margin-top: 2px;
     background-color: #f4f4f4;
     min-height: 90vh;
 }
-
-div.trail div.menu_trail {
-    width: 15vw;
+div.trail div.menu_trail{
+    width:15vw;
     margin: 20px 50px;
 }
 
-div.trail div.menu_trail ul {
+div.trail div.menu_trail ul{
     list-style: none;
     padding: 0;
-    margin: 0;
-    border: 1px solid #e5e5e5;
+    margin:0;
+    border:1px solid #e5e5e5;
     box-shadow: 1px 1px 1px #e0e0e0;
 }
 
-div.trail div.menu_trail ul li {
-    height: 50px;
+div.trail div.menu_trail ul li{
+    height:50px;
     line-height: 50px;
     border-bottom: 1px solid rgb(152, 152, 152);
     text-align: center;
 }
 
-div.trail div.menu_trail ul li:nth-of-type(1) {
+div.trail div.menu_trail ul li:nth-of-type(1){
     background-color: rgba(2, 70, 183, 0.74);
     color: #ffffff;
     text-transform: uppercase;
@@ -43,90 +42,86 @@ div.trail div.menu_trail ul li a {
     background-color: rgba(0, 162, 255, 0.13);
     letter-spacing: 1px;
 }
-
-div.trail div.menu_trail ul li a:hover {
-    background-color: rgba(0, 162, 255, 0.27);
+div.trail div.menu_trail ul li a:hover{
+       background-color: rgba(0, 162, 255, 0.27);
 }
 
-div.trail div.content_trail {
-    margin: 20px auto;
-    width: 85vw;
+div.trail div.content_trail{
+    margin:20px auto;
+    width:85vw;
 }
 
 
 /* Sekcja Stwórz trasę */
 
-h3.user_trails_add {
+h3.user_trails_add{
     text-transform: uppercase;
     font-family: Arial, sans-serif;
     text-align: center;
 }
 
-div.przyklad {
-    width: 63vw;
-    overflow: hidden;
+div.przyklad{
+    width:63vw;
+    overflow:hidden;
 }
-
-div.points_add_to_user_trail {
+div.points_add_to_user_trail{
     display: flex;
     flex-direction: row;
-    overflow: hidden;
+    overflow:hidden;
     transition: .4s;
 }
 
-div.point_add {
-    width: 450px;
-    height: 500px;
-    margin-right: 35px;
+div.point_add{
+    width:450px;
+    height:500px;
+    margin-right:35px;
     padding-right: 20px;
     border-right: 1px solid #9c9c9c;
-    opacity: .7;
+     opacity: .7;
 }
 
-div.point_add:hover {
+div.point_add:hover{
     opacity: 1;
 }
 
-div.point_add p {
+div.point_add p{
     text-align: center;
     font-weight: bold;
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
     margin-top: 20px;
 }
 
-div.point_add div.image {
-    width: 400px;
-    height: 400px;
+div.point_add div.image{
+    width:400px;
+    height:400px;
+}
+div.point_add div.image img{
+    width:100%;
+    height:100%;
 }
 
-div.point_add div.image img {
-    width: 100%;
-    height: 100%;
-}
-
-button#right {
+button#right{
     position: relative;
-    top: -270px;
-    right: -1120px;
+    top:-270px;
+    right:-1120px;
     color: white;
     background-color: #00a523;
-    width: 40px;
-    height: 40px;
-    border: 1px solid black;
+    width:40px;
+    height:40px;
+    border:1px solid black;
     border-radius: 25px;
     font-size: 25px;
     font-weight: bold;
     outline: 0;
 }
-
-button#left {
+button#left{
     position: relative;
-    top: -270px;
-    color: white;
+    top:-270px;
+     color: white;
     background-color: #00a523;
-    width: 40px;
-    height: 40px;
-    border: 1px solid black;
+    width:40px;
+    height:40px;
+    border:1px solid black;
     border-radius: 25px;
     font-size: 25px;
     font-weight: bold;
@@ -135,31 +130,30 @@ button#left {
 
 div.buttons {
     display: flex;
-    justify-content: space-between;
+justify-content: space-between;
 }
 
-div.buttons div.point_add form {
+div.buttons div.point_add form{
     text-align: right;
 }
-
-button.add {
+button.add{
     background-color: #198a00;
     border: 1px solid black;
     color: whitesmoke;
-    width: 95px;
-    height: 40px;
+    width:95px;
+    height:40px;
     border-radius: 10px;
     font-weight: bold;
     margin-right: 30px;
     font-size: 16px;
 }
 
-div.buttons input.add_to_user_trail {
+div.buttons input.add_to_user_trail{
     background-color: #e06100;
     border: 1px solid black;
     color: whitesmoke;
-    width: 95px;
-    height: 40px;
+    width:95px;
+    height:40px;
     border-radius: 10px;
     font-weight: bold;
     margin-left: 30px;
@@ -168,14 +162,14 @@ div.buttons input.add_to_user_trail {
 
 /* Szkic trasy użytkownika */
 
-div.user_trail_draft {
-    height: 100vh;
+div.user_trail_draft{
+    height:100vh;
 }
 
 div.user_trail_draft div.draft-list_point {
     width: 80%;
     height: 60vh;
-    margin: 0 auto;
+    margin:0 auto;
     padding: 20px;
     overflow: scroll;
     overflow-x: hidden;
@@ -184,30 +178,29 @@ div.user_trail_draft div.draft-list_point {
     border-radius: 8px;
 }
 
-div.user_trail_draft div.draft-list_point div.draft-point {
+div.user_trail_draft div.draft-list_point div.draft-point{
     display: flex;
     height: 140px;
     background-color: #fff;
     margin-bottom: 20px;
-    padding: 10px 15px;
+    padding:10px 15px;
     border: 0.5px solid #0e446c;
     box-shadow: 1px 1px 1px 0.5px #0e446c;
     border-radius: 8px;
 }
 
-div.user_trail_draft div.draft-list_point div.draft-point div.draft-point_image {
+div.user_trail_draft div.draft-list_point div.draft-point div.draft-point_image{
     width: 13%;
-    height: 100%;
+    height:100%;
     margin-right: 20px;
 }
 
-div.user_trail_draft div.draft-list_point div.draft-point div.draft-point_image img {
+div.user_trail_draft div.draft-list_point div.draft-point div.draft-point_image img{
     width: 100%;
     height: 100%;
     border-radius: 8px;
 }
-
-div.user_trail_draft div.draft-list_point div.draft-point div.text {
+div.user_trail_draft div.draft-list_point div.draft-point div.text{
     width: 80%;
     height: 90%;
     overflow: hidden;
@@ -218,36 +211,31 @@ div.user_trail_draft div.draft-list_point div.draft-point div.text {
 /* Pasek przewijania*/
 
 div.user_trail_draft div.draft-list_point::-webkit-scrollbar {
-    width: 8px;
+width: 8px;
     background-color: #fff;
 }
-
 div.user_trail_draft div.draft-list_point::-webkit-scrollbar-track {
-    border-left: 0.5px solid #000;
+border-left: 0.5px solid #000;
 }
-
 div.user_trail_draft div.draft-list_point::-webkit-scrollbar-thumb {
-    background: #0e446c;
+background: #0e446c;
     -webkit-box-shadow: inset 0 0 6px #0e446c;
 }
-
 div.user_trail_draft div.draft-list_point::-webkit-scrollbar-thumb:hover {
-    background: #0e446c;
+background: #0e446c;
     -webkit-box-shadow: inset 0 0 6px #0e446c;
 }
-
 div.user_trail_draft div.draft-list_point::-webkit-scrollbar-thumb:window-inactive {
-    background: #0e446c;
+background: #0e446c;
 }
 
-form.delete {
-    height: 100%;
-    display: flex;
+form.delete{
+height: 100%;
+display: flex;
     flex-direction: row;
     align-items: center;
 }
-
-form.delete button {
+form.delete button{
     font-size: 16px;
     background-color: #df0000;
     color: #ededed;
@@ -261,7 +249,6 @@ form.delete button {
     cursor: pointer;
     box-shadow: 1px 1px 0.5px #565656;
 }
-
 @media only screen and (max-width: 1680px) {
     div.trail div.content_trail {
         margin: 20px auto;

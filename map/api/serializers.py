@@ -7,7 +7,6 @@ class PointSerializer(serializers.ModelSerializer):
         model = Point
         fields = "__all__"
 
-
 class LocationMapSerializer(serializers.ModelSerializer):
     class Meta:
         model = Coordinates

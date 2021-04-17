@@ -32,7 +32,7 @@ Koszyk na zakupy
             </td>
             <td>{{product.name}}</td>
             <td>{{item.quantity}}</td>
-            <td><a href="{% url " cart:cart_remove" product.id %}" id="delete">Usuń</a></td>
+            <td><a href="{% url "cart:cart_remove" product.id %}" id="delete">Usuń</a></td>
             <td class="num1">{{item.price}} zł</td>
             <td class="num1">{{item.total_price}} zł</td>
         </tr>
@@ -51,7 +51,7 @@ Koszyk na zakupy
 
 
     <p class="text-right">
-        <a href="{% url " orders:order_create" %}">Do kasy</a>
+        <a href="{% url "orders:order_create" %}">Do kasy</a>
     </p>
 </div>
 {% endblock %}

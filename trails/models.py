@@ -5,11 +5,11 @@ from map.models import Point
 
 
 class Trail(models.Model):
-    COUNTRY_TRAIL = (
+    COUNTRY_TRAIL=(
         ('Polska', 'Polska'),
         ('Niemcy', 'Niemcy')
     )
-    TYPE_TRAIL = (
+    TYPE_TRAIL=(
         ('Krajoznawcza', 'krajoznawcza'),
         ('Rodzinna', 'Rodzinna'),
         ('Górska', 'Górska'),
@@ -33,9 +33,8 @@ class Trail(models.Model):
     def __str__(self):
         return self.name
 
-
 class Rate_trail(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User , on_delete=models.CASCADE)
     trail = models.ForeignKey(Trail, on_delete=models.CASCADE)
     rate = models.DecimalField(max_digits=2, decimal_places=1)
     opinion = models.TextField()

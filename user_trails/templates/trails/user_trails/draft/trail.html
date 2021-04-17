@@ -15,26 +15,25 @@
     </div>
     <div class="draft-list_point">
         {% for element in user_trail %}
-        {%for a in element %}
-        <div class="draft-point">
-            <div class="draft-point_image"><img src="{{a.image.url}}" alt=""></div>
-            <div class="text">
-                <p>{{a.name}}</p>
-                <p>{{a.descriptions}}</p>
-            </div>
-            <div class="button_delete">
-                <form action="" method="get" class="delete">
-                    <input hidden type="text" value="{{a.name}}" name="delete">
-                    <button>Usuń</button>
-                </form>
-            </div>
-        </div>
-        {%endfor%}
+            {%for a in element %}
+                <div class="draft-point">
+                    <div class="draft-point_image"><img src="{{a.image.url}}" alt=""></div>
+                    <div class="text" >
+                        <p>{{a.name}}</p>
+                        <p >{{a.descriptions}}</p>
+                    </div>
+                    <div class="button_delete">
+                        <form action="" method="get" class="delete">
+                            <input hidden type="text" value="{{a.name}}" name="delete"> <button>Usuń</button>
+                        </form>
+                    </div>
+                </div>
+            {%endfor%}
         {% endfor %}
     </div>
 
     {% if user.is_authenticated %}
-    <a href="{% url " user_trails:save_draft_trail" %}">Zapisz trasę</a>
+    <a href="{% url "user_trails:save_draft_trail" %}">Zapisz trasę</a>
     {% else %}
     <a href="#">Aby zapisać trasę, zarejestruj się</a>
     {%endif%}

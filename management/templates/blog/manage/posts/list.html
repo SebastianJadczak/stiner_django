@@ -6,12 +6,12 @@
 <div class="content">
     <div class="posts_manage">
         {% for post in object_list %}
-        <div class="post_manage">
-            <div class="image"><img src='{{post.image.url}}' alt=""></div>
-            <div class="title"><p>{{post.title}}</p></div>
-            <div class="body"><p>{{post.body}}</p></div>
-            <div class="info"><p>{{post.created}} {{post.owner}}</p></div>
-        </div>
+            <div class="post_manage">
+                <div class="image"><img src='{{post.image.url}}' alt=""></div>
+                <div class="title"><p>{{post.title}}</p></div>
+                <div class="body"><p>{{post.body}}</p></div>
+                <div class="info"><p>{{post.created}} {{post.owner}}</p></div>
+            </div>
         {% endfor %}
     </div>
 </div>

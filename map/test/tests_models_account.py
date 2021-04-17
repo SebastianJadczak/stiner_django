@@ -1,8 +1,8 @@
+
 from django.contrib.auth.models import User
 from django.test import TestCase
 
 from account.models import Profile, Preference
-
 
 class PostModelTestCase(TestCase):
     """Klasa odpowiedzialna za testy dla modeli Profile i Preference."""
@@ -10,14 +10,10 @@ class PostModelTestCase(TestCase):
     def setUp(self):
         """Zdefiniujemy obiekty na podstawie modelu."""
         self.user = User.objects.create_user(username='admin', password='Test123')
-        self.profile = Profile.objects.create(user=self.user, name='Sebastian', surname='Jadczak',
-                                              date_of_birth='1990-6-21', photo=None, country='Polska', city='Warszawa',
-                                              street='Testowa', house_number=12,
-                                              apartment_number=1, postal_code='01-111', main_language='Polish',
-                                              other_language="English", phone='123456789', email='test@test.pl')
+        self.profile = Profile.objects.create(user=self.user, name='Sebastian', surname='Jadczak', date_of_birth='1990-6-21', photo=None, country='Polska',  city='Warszawa', street='Testowa', house_number=12,
+                                              apartment_number=1, postal_code='01-111', main_language='Polish',  other_language="English", phone='123456789', email='test@test.pl')
         self.preference = Preference.objects.create(user=self.user, favorite_country='Polska', favorite_region='Mazury',
-                                                    favorite_city='Kraków', favorite_place='Molo w Sopocie',
-                                                    favorite_restaurant='Dolce Vita')
+                                                    favorite_city='Kraków', favorite_place='Molo w Sopocie', favorite_restaurant='Dolce Vita')
 
     def test_set_Profile(self):
         """Test sprawdzenia czy obiekt został stworzony."""

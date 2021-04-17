@@ -2,149 +2,135 @@
 {% load static %}
 {% block content %}
 <div class="wrap-trails_add">
-    <div class="title-trail_add">
-        <h3>Stwórz trasę</h3>
-        <p class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-            the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-            make a
-            type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining
-            essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-            Ipsum passages,
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-            Ipsum</p>
-    </div>
+        <div class="title-trail_add">
+            <h3>Stwórz trasę</h3>
+            <p class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+                type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+        </div>
 
     {% if len_user %}
-    <div class="opacity" style=" height: 50px; width: 50px; position: absolute; right: 160px; top:320px">
-        <a href="{% url " user_trails:user_trail_draft"%}"><img src="{% static 'img/map_draft.png' %}" alt=""
-                                                                style="height: 50px; width: 50px;"> <span
-            style="position: absolute; right: 21px; top:15px; font-size: 24px; font-weight: bold; color: #565656">{{len_user}}</span></a>
+    <div class="opacity" style=" height: 50px; width: 50px; position: absolute; right: 160px; top:320px" >
+        <a href="{% url "user_trails:user_trail_draft"%}"><img src="{% static 'img/map_draft.png' %}" alt="" style="height: 50px; width: 50px;"> <span style="position: absolute; right: 21px; top:15px; font-size: 24px; font-weight: bold; color: #565656">{{len_user}}</span></a>
     </div>
-    {%else%}
-    <div class="opacity" style=" height: 50px; width: 50px; position: absolute; right: 140px;top:320px">
-        <img src="{% static 'img/map_draft.png' %}" alt=""
-             style="height: 50px; width: 50px;position: relative; right: 20px">
-    </div>
-    {% endif %}
+        {%else%}
+    <div class="opacity" style=" height: 50px; width: 50px; position: absolute; right: 140px;top:320px" >
+        <img src="{% static 'img/map_draft.png' %}" alt="" style="height: 50px; width: 50px;position: relative; right: 20px">
+          </div>
+        {% endif %}
 
-    <div class="trail_add-center">
-        <div class="filter_trails">
-            <h3> Filtrowanie tras: </h3>
-            <div class="filter">
-                <form action="" method="post">
-                    <div class="name">
-                        <label>Nazwa:</label>
-                        <input type="text" placeholder="Wyszukaj trasę po nazwie">
-                    </div>
-                    <div class="country">
-                        <label>Kraj:</label>
-                        <label><input type="checkbox">Polska</label>
-                        <label><input type="checkbox">Niemcy</label>
-                        <label><input type="checkbox">Czechy</label>
-                        <p>Pokaż więcej</p>
-                    </div>
-                    <div class="region">
-                        <label>Region:</label>
-                        <label><input type="checkbox">Mazury</label>
-                        <label><input type="checkbox">Śląsk</label>
-                        <label><input type="checkbox">Morze</label>
-                        <p>Pokaż więcej</p>
-                    </div>
-                    <div class="city">
-                        <label>Miasto:</label>
-                        {% for i in city %}
-                        <label><input type="checkbox">{{i}}</label>
-                        {% endfor %}
-                        <p class="city">Pokaż więcej</p>
-                    </div>
-                    <div class="accept_filter">
-                        <button id="button-filter_your-trail">ZASTOSUJ FILTRY</button>
-                    </div>
-                    {% csrf_token %}
-                </form>
-            </div>
-        </div>
-
-
-        <div class="przyklad">
-            <div class="points_add_to_user_trail" id="points_add_to_user_trail">
-                {% for element in list %}
-                <div class="point_add {{element.name}}">
-                    <div class="image">
-                        <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
-                    </div>
-                    <p>{{element.name}}</p>
-                    <div class="buttons">
-                        <a href="{% url " user_trails:detail_point" element.id %}"><input type="submit"
-                                                                                          value="Szczegóły"
-                                                                                          class="add_to_user_trail"></a>
-                        <form action="" method="GET">{% csrf_token %}<input hidden name="add_point" type="text"
-                                                                            value='{{element.name}}'>
-                            <button class="add">Dodaj</button>
+        <div class="trail_add-center">
+             <div class="filter_trails">
+                <h3> Filtrowanie tras: </h3>
+                <div class="filter">
+                        <form action="" method="post">
+                            <div class="name">
+                                <label>Nazwa:</label>
+                                <input type="text" placeholder="Wyszukaj trasę po nazwie">
+                            </div>
+                            <div class="country">
+                                <label>Kraj:</label>
+                                <label><input type="checkbox">Polska</label>
+                                <label><input type="checkbox">Niemcy</label>
+                                <label><input type="checkbox">Czechy</label>
+                                <p>Pokaż więcej</p>
+                            </div>
+                            <div class="region">
+                                <label>Region:</label>
+                                 <label><input type="checkbox">Mazury</label>
+                                 <label><input type="checkbox">Śląsk</label>
+                                 <label><input type="checkbox">Morze</label>
+                                <p>Pokaż więcej</p>
+                            </div>
+                            <div class="city">
+                                <label>Miasto:</label>
+                                    {% for i in city %}
+                                            <label><input type="checkbox">{{i}}</label>
+                                    {% endfor %}
+                                <p class="city">Pokaż więcej</p>
+                            </div>
+                            <div class="accept_filter"><button id="button-filter_your-trail">ZASTOSUJ FILTRY</button></div>
+                            {% csrf_token %}
                         </form>
-                    </div>
                 </div>
-                {% endfor %}
             </div>
-            <button id="left"><</button>
-            <button id="right">></button>
 
-            {{zmienna}}
+
+
+              <div class="przyklad">
+                    <div class="points_add_to_user_trail" id="points_add_to_user_trail">
+                         {% for element in list %}
+                            <div class="point_add {{element.name}}">
+                                <div class="image">
+                                    <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
+                                    </div>
+                                <p>{{element.name}}</p>
+                                <div class="buttons">
+                                <a href="{% url "user_trails:detail_point" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
+                                <form action="" method="GET" >{% csrf_token %}<input hidden name="add_point" type="text" value='{{element.name}}'><button class="add" >Dodaj</button></form>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <button id="left"><</button>
+                    <button id="right">></button>
+
+                            {{zmienna}}
+                        </div>
+                    </div>
+
+
         </div>
     </div>
-
-
-</div>
-</div>
 
 <script>
 
-    //    Obsługa przycisku Pokaż więcej
-    let more = document.querySelector('p.city');
-    let div_city = document.querySelector('div.city')
+        //    Obsługa przycisku Pokaż więcej
+let more = document.querySelector('p.city');
+let div_city = document.querySelector('div.city')
 
-    more.addEventListener('click', function () {
-        div_city.classList.toggle("active");
+more.addEventListener('click', function () {
+    div_city.classList.toggle("active");
 
-    })
+})
 
-    //      Sekcja stwórz trasę, obsługa strzałek
+//      Sekcja stwórz trasę, obsługa strzałek
     let buttonRight = document.getElementById('right');
     let buttonLeft = document.getElementById('left');
-    let amount = document.querySelectorAll('div.point_add');
-    let position = 0;
+     let amount = document.querySelectorAll('div.point_add');
+     let position = 0;
     buttonRight.addEventListener('click', function () {
         let list_point_user_add = document.getElementById('points_add_to_user_trail');
-        if (position >= 0 && position <= amount.length * 350) {
+        if(position>=0 && position<= amount.length *350){
             position += 350;
             console.log(position);
-            list_point_user_add.style.marginLeft = `-${position}px`
+            list_point_user_add.style.marginLeft =`-${position}px`
         }
     });
     buttonLeft.addEventListener('click', function () {
         let list_point_user_add = document.getElementById('points_add_to_user_trail');
-        if (position >= 350) {
+        if (position>=350){
             position -= 350;
             console.log(position);
-            list_point_user_add.style.marginLeft = `-${position}px`
+            list_point_user_add.style.marginLeft =`-${position}px`
         }
     });
 
-    const button = document.getElementById('button-filter_your-trail')
+const button = document.getElementById('button-filter_your-trail')
 
     window.addEventListener(
         'scroll',
         () => {
             if (window.scrollY >= 175) {
-                button.style.position = 'static'
-                console.log(window.scrollY)
-            } else {
-                button.style.position = 'fixed'
-                console.log(window.scrollY)
-            }
+            button.style.position = 'static'
+            console.log(window.scrollY)
+        }else {
+            button.style.position = 'fixed'
+            console.log(window.scrollY)
         }
+    }
     )
 </script>
 {% endblock %}

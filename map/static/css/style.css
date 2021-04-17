@@ -9,7 +9,7 @@ body {
     height: 10vh;
     display: flex;
     justify-content: space-between;
-    box-shadow: 0 -1px 2px #d2d2d2;
+    box-shadow:  0 -1px 2px #d2d2d2;
 }
 
 #top div.logo {
@@ -203,7 +203,6 @@ div#top div.menu ul li.green:hover div.tr {
     transform: translateY(-3px);
     z-index: 1;
 }
-
 @media only screen and (max-width: 1400px) {
     div#top div.menu ul li.green:hover div.tr {
         width: 190px;
@@ -217,35 +216,29 @@ div#top div.menu ul li.green:hover div.tr {
         width: 200px;
     }
 }
-
 @media only screen and (max-width: 1220px) {
 
     div#top div.menu {
         width: 60%;
     }
-
-    div.login {
+     div.login{
         margin-left: 15px;
         margin-right: 15px;
     }
 
 }
-
-@media only screen and (max-width: 1084px) {
-    div#top div.menu ul {
+@media only screen and (max-width: 1084px){
+    div#top div.menu ul{
         padding-left: 5px;
     }
-
-    div#top div.menu ul li a i {
-        font-size: 22px;
+    div#top div.menu ul li a i{
+       font-size: 22px;
         margin-right: 3px;
     }
-
-    div#top div.menu ul li a {
-        font-size: 15px;
-    }
-
-    div#top div.menu div.tr.active ul {
+     div#top div.menu ul li a{
+         font-size: 15px;
+     }
+         div#top div.menu div.tr.active ul {
         width: 200px;
     }
 
@@ -258,47 +251,39 @@ div#top div.menu ul li.green:hover div.tr {
         height: 34px;
     }
 }
-
-@media only screen and (max-width: 895px) {
-    #top div.logo {
+@media only screen and (max-width: 895px){
+    #top div.logo{
         margin-left: 5px;
         margin-right: 5px;
     }
-
-    div#top div.menu ul li a {
-        font-size: 14px;
-    }
-
-    div#top div.menu ul li a i {
-        font-size: 18px;
+    div#top div.menu ul li a{
+         font-size: 14px;
+     }
+    div#top div.menu ul li a i{
+       font-size: 18px;
 
     }
 }
-
-@media only screen and (max-width: 822px) {
-    div#top div.menu {
+@media only screen and (max-width: 822px){
+       div#top div.menu {
         width: 45%;
     }
-
-    div#top div.menu ul li a {
-        font-size: 11px;
-    }
-
-    #top div.logo {
-        width: 90px;
-    }
+     div#top div.menu ul li a{
+         font-size: 11px;
+     }
+     #top div.logo {
+    width: 90px;
 }
+}
+@media only screen and (max-width: 760px){
 
-@media only screen and (max-width: 760px) {
-
-    div#top div.menu ul li a {
+     div#top div.menu ul li a {
         font-size: 0;
         display: block;
         width: 45px;
         height: 45px;
     }
-
-    div.login_mapa {
+    div.login_mapa{
         transform: translateY(-10px);
     }
 }
@@ -318,30 +303,25 @@ div#top div.menu ul li.green:hover div.tr {
         width: 45px;
         height: 45px;
     }
-
     div#top div.menu {
         width: 35%;
     }
 
 }
-
-@media only screen and (max-width: 518px) {
+@media only screen and (max-width: 518px){
     div#top div.menu {
         width: 35%;
     }
-
     div#top div.menu ul li {
         display: block;
         width: 35px;
         height: 35px;
     }
-
-    div#top div.menu ul li a i {
-        font-size: 16px;
+    div#top div.menu ul li a i{
+       font-size: 16px;
         margin-right: 3px;
     }
-
-    div#top div.menu div.tr.active ul {
+  div#top div.menu div.tr.active ul {
         width: 200px;
     }
 
