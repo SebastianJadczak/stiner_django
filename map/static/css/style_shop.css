@@ -1,35 +1,48 @@
 /*Base dla Strony shop*/
-div.shop-content{
+div.shop-content {
     background-color: #f4f4f4;
     margin-top: 2px;
-       z-index: 4;
+    z-index: 4;
 }
-div.menu-shop{
-    height:7vh;
+
+div.menu-shop {
+    height: 7vh;
     background-color: #fff;
     box-shadow: 0 1px 2px #c3c3c3, 0 -1px 2px #c3c3c3;
     display: flex;
 }
-div.menu-shop div.shop-user-menu{
+
+div.menu-shop div.shop-user-menu {
     display: flex;
 }
-div.menu-shop div.search-product{
+
+div#search-icon {
+    display: none;
+}
+
+div.menu-shop div.search-product {
     line-height: 7vh;
-    width:700px;
+    width: 700px;
     margin-left: 500px;
 }
-div.menu-shop div.search-product input{
+
+div#search_x {
+    display: none;
+}
+
+div.menu-shop div.search-product input {
     width: 330px;
     height: 33px;
     padding: 0 0 0 20px;
 }
-div.menu-shop div.search-product select{
+
+div.menu-shop div.search-product select {
     height: 36px;
     width: 180px;
     padding: 0 0 0 20px;
 }
 
-div.menu-shop div.search-product button{
+div.menu-shop div.search-product button {
     background-color: #ff6f00;
     color: white;
     border: none;
@@ -350,28 +363,119 @@ div.menu-shop div.search-product input{
     width: 140px;
 }
 }
-@media only screen and (max-width: 802px){
-    div.menu-shop div.search-product{
-    margin-left: 20px;
+
+@media only screen and (max-width: 802px) {
+    div.menu-shop div.search-product {
+        margin-left: 20px;
+    }
 }
-}
+
 @media only screen and (max-width: 632px) {
     div.menu-shop div.search-product {
         margin-left: 10px;
     }
-    div.menu-shop div.search-product input{
-    width: 120px;
-}
-    div.menu-shop div.search-product select{
+
+    div.menu-shop div.search-product input {
+        width: 120px;
+    }
+
+    div.menu-shop div.search-product select {
         width: 120px;
         font-size: 11px;
     }
 }
-@media only screen and (max-width: 589px){
-    div.menu-shop div.shop-user-menu div i{
+
+@media only screen and (max-width: 589px) {
+    div.menu-shop div.shop-user-menu div i {
         font-size: 18px;
     }
-    div.menu-shop div.shop-user-menu div{
+
+    div.menu-shop div.shop-user-menu div {
         margin-right: 5px;
+    }
+}
+
+@media only screen and (max-width: 539px) {
+    div.menu-shop {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    div#search-icon {
+        display: block;
+        margin-right: 10px;
+        line-height: 7vh;
+        font-size: 23px;
+        color: #565656;
+    }
+
+    div.search-product {
+        display: none;
+    }
+
+    div.menu-shop div.shop-user-menu {
+        width: 270px;
+        margin-left: 0;
+    }
+
+    div.menu-shop div.shop-user-menu div i {
+        font-size: 25px;
+        margin-right: 15px;
+    }
+
+    /*    Search modal.*/
+    div.menu-shop div.search-product.rwd {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: auto;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(255, 255, 255, 0.6);
+        z-index: 99;
+    }
+
+    div.menu-shop div.search-product.rwd div#search_x {
+        display: block;
+        position: fixed;
+        top:190px;
+        right:7px
+    }
+    div.menu-shop div.search-product.rwd div#search_x i{
+        font-size: 22px;
+    }
+
+    div.menu-shop div.search-product.rwd form {
+        margin: 200px auto;
+        background-color: #fff;
+        width: 99vw;
+        line-height: 150px;
+        height: 150px;
+        border: 1px solid #515151;
+    }
+
+    div.menu-shop div.search-product.rwd input {
+        width: 180px;
+        height: 36px;
+        padding: 0 0 0 20px;
+    }
+
+    div.menu-shop div.search-product select {
+        height: 39px;
+        width: 170px;
+        padding: 0 0 0 5px;
+        font-size: 13px;
+    }
+
+    div.menu-shop div.search-product button {
+        background-color: #ff6f00;
+        color: white;
+        border: none;
+        font-size: 15px;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        font-weight: bold;
+        letter-spacing: 2.5px;
+        height: 43px;
     }
 }

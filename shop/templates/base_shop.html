@@ -69,7 +69,8 @@
 
 <div class="shop-content">
     <div class="menu-shop">
-        <div class="search-product">
+        <div id="search-icon"><i class="fas fa-search"></i></div>
+        <div class="search-product" id="search-product">
                 <form  action="." method="post">
                     <label class="nazwa">
                     <input type="text" name="search" id="search_input" placeholder="Czego szukasz?">
@@ -83,6 +84,7 @@
                       {% csrf_token %}
             <button class="search-product" id="search-button">Szukaj</button>
         </form>
+            <div id="search_x"><i class="fas fa-times"></i></div>
         </div>
         <div class="shop-user-menu">
                 {% if user.is_authenticated %}
@@ -157,6 +159,20 @@ function add_to_important(){
               }
           });
     location.reload()
+}
+
+    let search_icon = document.getElementById('search-icon')
+    let search_modal = document.getElementById('search-product')
+    let search_x = document.getElementById('search_x')
+if(search_icon){
+    search_icon.addEventListener('click', function () {
+        search_modal.classList.toggle("rwd");
+    });
+}
+    if(search_x){
+    search_x.addEventListener('click', function () {
+        search_modal.classList.toggle("rwd");
+    });
 }
 
 </script>
