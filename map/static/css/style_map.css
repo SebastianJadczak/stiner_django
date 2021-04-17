@@ -386,11 +386,19 @@ div.footer a{
         margin-left: 15px;
         margin-right: 15px;
     }
+     div#top_mapa div.menu_mapa div.tr{
+    width: 200px;
+    color: #2e6993;
+    position: relative;
+    transform: translateY(-460px);
+    z-index: 9;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+}
 }
 @media only screen and (max-width: 1071px) {
     div#top div.menu div.tr ul li a {
         display: block;
-        font-size: 11px;
+        font-size: 16px;
         letter-spacing: 2px;
     }
 
@@ -407,6 +415,9 @@ div.footer a{
     div#top_mapa div.menu_mapa {
         width: 60%;
     }
+    div.login_mapa {
+        margin:0;
+    }
 
     div.login_mapa button {
         width: 100px;
@@ -416,20 +427,19 @@ div.footer a{
     }
 
     div.login_mapa button.register {
-        width: 70px;
-        height: 40px;
-        margin-top: 15px;
-        transform: translateY(0);
+        width: 110px;
+        height: 38px;
+        margin-top: 5px;
+        transform: translateY(10px);
+        padding: 0;
+    }
+    div.login_mapa button.register a{
+        line-height: 32px;
     }
 
     div.login_mapa button a {
         font-size: 12px;
     }
-
-    div.login_mapa button.register a {
-        line-height: 18px;
-    }
-
 
     div#top_mapa div.menu_mapa ul {
         padding-left: 20px;
@@ -473,14 +483,6 @@ div.footer a{
     div#top_mapa div.menu_mapa div.tr.active {
         height:180px;
     }
-div#top_mapa div.menu_mapa div.tr{
-    width: 200px;
-    color: #2e6993;
-    position: relative;
-    transform: translateY(-460px);
-    z-index: 9;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-}
 
 div#top_mapa div.menu_mapa div.tr ul{
     height: 100%;

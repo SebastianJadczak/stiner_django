@@ -344,13 +344,13 @@ div.popular-center button#left-popular, div.popular-center button#right-popular{
 @media only screen and (max-width: 1680px) {
 
     div.wrap-trails div.trail-center div.filter_trails div.filter form div.name input{
-        width: 170px;
+        width: 80%;
         margin-left: 10px;
         padding-left: 15px;
 }
 
     div.wrap-trails div.trail-center div.filter_trails div.filter form div.accept_filter button {
-        width: 230px;
+        width: 100%;
     }
 
 }
