@@ -365,7 +365,7 @@ div.popular-center button#left-popular, div.popular-center button#right-popular{
         background-color: #fff;
         display: block;
         position: absolute;
-        top: 300px;
+        top: 0;
         left: 10px;
         z-index: 1;
         width: 300px;
@@ -395,6 +395,8 @@ div.popular-center button#left-popular, div.popular-center button#right-popular{
     div.wrap-trails div.trail-center div.filter_trails.rwd button#button-filter,
     div.wrap-your_trails div.your_trail-center div.filter_trails.rwd button#button-filter_your-trail {
         width: 300px;
+        top:620px;
+        left: 10px;
     }
 
     div.wrap-trails div.trail-center div.filter_trails,
