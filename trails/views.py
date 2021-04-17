@@ -92,6 +92,7 @@ class TrailsListView(ListView):
     template_name = 'trails/all_trails/all_trails.html'
     model = Trail
     list_trails = []
+
     def get_top_rate_trails(self):
         top_rate_trails = Trail.objects.order_by('average_grade').reverse()
         return top_rate_trails
@@ -135,7 +136,7 @@ class TrailsListView(ListView):
                 pass
 
         return redirect('./search_trails/',
-                      {'list': self.list_trails})
+                        {'list': self.list_trails})
 
 
 class TrailDetailView(DetailView):
@@ -143,8 +144,6 @@ class TrailDetailView(DetailView):
 
     template_name = 'trails/all_trails/trail/trail_detail.html'
     model = Trail
-
-
 
     def calculation_mean(self, trail_name):
         rate_trail = list(Rate_trail.objects.filter(trail=trail_name))
@@ -180,7 +179,7 @@ class TrailDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['trail'] = list(Trail.objects.filter(id=self.kwargs['pk']))[0]
         context['trail_id'] = self.kwargs['pk']
-        context['points'] =list(list(Trail.objects.filter(id=self.kwargs['pk']))[0].points.all())
+        context['points'] = list(list(Trail.objects.filter(id=self.kwargs['pk']))[0].points.all())
         return context
 
 
@@ -196,7 +195,6 @@ class TrailApiFilterListView(generics.ListAPIView):
 class SearchTrails(TrailsListView):
     template_name = 'trails/all_trails/search_trails.html'
     model = Trail
-
 
     def get_context_data(self, **kwargs):
         context = super(SearchTrails, self).get_context_data(**kwargs)

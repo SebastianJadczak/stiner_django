@@ -9,44 +9,44 @@
             <div>
                 <ul class="menu-category">
                     {% for c in category %}
-                        <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
+                    <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
         <div class="center">
             <div class="top">
-                 <div class="promotion-element">
+                <div class="promotion-element">
                     <div class="slideshow-container">
                         <div class="mySlides fade">
                             <img src="{%static 'img/1.jpg'%}">
-                          <div class="text">Zapach który powali każdego</div>
+                            <div class="text">Zapach który powali każdego</div>
                         </div>
 
                         <div class="mySlides fade">
-                          <img src="{%static 'img/2.jpg'%}">
-                          <div class="text">Wyjątkowe kosmetyki dla Ciebie i Twojej rodziny</div>
+                            <img src="{%static 'img/2.jpg'%}">
+                            <div class="text">Wyjątkowe kosmetyki dla Ciebie i Twojej rodziny</div>
                         </div>
 
                         <div class="mySlides fade">
-                          <img src="{%static 'img/3.jpg'%}">
-                          <div class="text">Dla Ciebie, dla Twoich Bliskich!</div>
+                            <img src="{%static 'img/3.jpg'%}">
+                            <div class="text">Dla Ciebie, dla Twoich Bliskich!</div>
                         </div>
 
-                        </div>
+                    </div>
 
 
-                        <div style="text-align:center; transform: translateY(-20px)">
-                          <span class="dot"></span>
-                          <span class="dot"></span>
-                          <span class="dot"></span>
-                        </div>
+                    <div style="text-align:center; transform: translateY(-20px)">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
 
 
                 </div>
             </div>
             <div class="bottom">
-                <div class="img"><img src="{% static "img/300.jpg" %}"></div>
+                <div class="img"><img src="{% static " img/300.jpg" %}"></div>
                 <div class="img"><img src="{% static 'img/free.jpg'%}"></div>
                 <div class="img"><img src="{% static 'img/50off.jpg'%}"></div>
             </div>
@@ -60,22 +60,24 @@
     showSlides();
 
     function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-      setTimeout(showSlides, 5000); // Change image every 2 seconds
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 5000); // Change image every 2 seconds
     }
 
-//    Koniec Slider'a
+    //    Koniec Slider'a
 </script>
 {% endblock %}

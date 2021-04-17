@@ -2,30 +2,31 @@
 
 
 {% block content %}
-  <div class="box-right">
-        <div class="action">
-            <div class="action-button">
-                <button><a href="{% url 'shop:messages-box-new' %}">Stwórz</a></button>
-                <button onclick="delete_message()">Usuń</button>
-                <button onclick="add_to_important()">Ważne</button>
-            </div>
-            <div class="action-filter"></div>
+<div class="box-right">
+    <div class="action">
+        <div class="action-button">
+            <button><a href="{% url 'shop:messages-box-new' %}">Stwórz</a></button>
+            <button onclick="delete_message()">Usuń</button>
+            <button onclick="add_to_important()">Ważne</button>
         </div>
-        <div class="messages-content">
-            {{message}}
-            <ul>
-                {% for m in object_list %}
-                <li>
-                    <div class="message">
-                        <div class="checkbox"><input type="checkbox" class="checkbox_message" id="{{m.id}}" name="horns"></div>
-                        <div class="author"><p>{{m.author}}</p></div>
-                        <div class="title"><p>{{m.title}}</p></div>
-                        <div class="date"><p>{{m.send}}</p></div>
+        <div class="action-filter"></div>
+    </div>
+    <div class="messages-content">
+        {{message}}
+        <ul>
+            {% for m in object_list %}
+            <li>
+                <div class="message">
+                    <div class="checkbox"><input type="checkbox" class="checkbox_message" id="{{m.id}}" name="horns">
                     </div>
-                </li>
+                    <div class="author"><p>{{m.author}}</p></div>
+                    <div class="title"><p>{{m.title}}</p></div>
+                    <div class="date"><p>{{m.send}}</p></div>
+                </div>
+            </li>
 
-                {% endfor %}
-                </ul>
-        </div>
-  </div>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 {% endblock %}

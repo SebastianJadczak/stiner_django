@@ -4,7 +4,6 @@ from django.utils import timezone
 
 
 class Post(models.Model):
-
     STATUT_CHOICES = (
         ('draft', 'Szkic'),
         ('published', 'Opublikowany'),

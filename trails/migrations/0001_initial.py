@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -24,7 +23,10 @@ class Migration(migrations.Migration):
                 ('country', models.CharField(choices=[('Polska', 'Polska'), ('Niemcy', 'Niemcy')], max_length=15)),
                 ('region', models.CharField(max_length=30)),
                 ('city', models.CharField(max_length=30)),
-                ('type', models.CharField(choices=[('Krajoznawcza', 'krajoznawcza'), ('Rodzinna', 'Rodzinna'), ('Górska', 'Górska'), ('Wymagająca', 'Wymagająca'), ('Wakacyjna', 'Wakacyjna'), ('Inna', 'Inna')], max_length=15)),
+                ('type', models.CharField(
+                    choices=[('Krajoznawcza', 'krajoznawcza'), ('Rodzinna', 'Rodzinna'), ('Górska', 'Górska'),
+                             ('Wymagająca', 'Wymagająca'), ('Wakacyjna', 'Wakacyjna'), ('Inna', 'Inna')],
+                    max_length=15)),
                 ('image', models.ImageField(blank=True, upload_to='media/img_trail/%Y/%m%d')),
                 ('average_grade', models.DecimalField(decimal_places=1, max_digits=2)),
                 ('watched', models.IntegerField()),

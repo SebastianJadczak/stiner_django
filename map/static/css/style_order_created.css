@@ -1,7 +1,8 @@
-div.thx{
+div.thx {
     min-height: 75vh;
 }
-div.thx div{
+
+div.thx div {
     width: 30vw;
     height: 120px;
     margin: 100px auto;
@@ -10,11 +11,13 @@ div.thx div{
     box-shadow: 1px 1px 2px 1px rgba(112, 112, 112, 0.7);
     background-color: #1e7200;
 }
-div.thx div h1, div.thx div p{
+
+div.thx div h1, div.thx div p {
     font-family: Arial, sans-serif;
     letter-spacing: 1.7px;
     color: #ffffff;
 }
-div.thx div h1{
+
+div.thx div h1 {
     margin-top: 20px;
 }

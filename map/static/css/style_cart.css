@@ -1,7 +1,8 @@
-div.cart{
+div.cart {
     min-height: 73vh;
 }
-div.cart h1{
+
+div.cart h1 {
     text-align: center;
     letter-spacing: 1.5px;
     font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
@@ -13,41 +14,49 @@ div.cart h1{
     margin: 10px auto 20px;
 }
 
-table.cart{
+table.cart {
     width: 50vw;
     margin: 0 auto;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
 }
-tr.name{
+
+tr.name {
     text-align: center;
     border-bottom: 1px solid #989898;
     margin-bottom: 10px;
 }
-tr.name th{
-     padding: 10px;
+
+tr.name th {
+    padding: 10px;
 }
-tbody tr.item{
+
+tbody tr.item {
     padding-bottom: 20px;
     height: 130px;
 }
-tbody tr.item td{
+
+tbody tr.item td {
     text-align: center;
 }
-tr.total td{
+
+tr.total td {
     border-top: 1px solid grey;
-    padding-top:30px;
+    padding-top: 30px;
     font-weight: bold;
-     text-align: center;
+    text-align: center;
 }
-td.image{
-    width:100px;
-    height: 100px;
-}
-td#image a img#min_img{
+
+td.image {
     width: 100px;
     height: 100px;
 }
+
+td#image a img#min_img {
+    width: 100px;
+    height: 100px;
+}
+
 a#delete {
     text-decoration: none;
     background-color: #e20101;
@@ -57,17 +66,19 @@ a#delete {
     border-radius: 5px;
     padding: 8px 12px;
 }
-p.text-right{
+
+p.text-right {
     text-align: right;
     width: 80vw;
     margin: 0 auto;
 }
-p.text-right a{
+
+p.text-right a {
     border-radius: 5px;
     text-decoration: none;
     background-color: darkgreen;
     color: whitesmoke;
-    font-family: "Roboto",Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     letter-spacing: 1.6px;
     padding: 8px 12px;
     border: 0.5px solid #bcbcbc;
@@ -75,8 +86,8 @@ p.text-right a{
 }
 
 @media only screen and (max-width: 1680px) {
-    div.cart{
-    min-height: 79vh;
-}
+    div.cart {
+        min-height: 79vh;
+    }
 
 }

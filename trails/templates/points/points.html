@@ -1,13 +1,13 @@
 {% extends 'base_trail.html' %}
 
 {% block content %}
-    <div class="search_points">
-        <form action="." method="post">
-            <label class="nazwa">Nazwa:
-                <input type="text" name="search">
-            </label>
+<div class="search_points">
+    <form action="." method="post">
+        <label class="nazwa">Nazwa:
+            <input type="text" name="search">
+        </label>
 
-            <label class="location"> Lokalizacja:
+        <label class="location"> Lokalizacja:
             <select name="location_points" id="location">
                 <option value=""></option>
                 <option value="Warszawa">Warszawa</option>
@@ -15,9 +15,9 @@
                 <option value="Wrocław">Wrocław</option>
                 <option value="Poznań">Poznań</option>
             </select>
-                </label>
+        </label>
 
-            <label class="type"> Rodzaj:
+        <label class="type"> Rodzaj:
             <select name="point_type" id="type">
                 <option value=""></option>
                 <option value="Zamki">Zamki</option>
@@ -25,22 +25,24 @@
                 <option value="Parki">Parki</option>
                 <option value="Biblioteka">Biblioteka</option>
             </select>
-                </label>
-            <button class="search">Szukaj</button>
-            {% csrf_token %}
-        </form>
-    </div>
+        </label>
+        <button class="search">Szukaj</button>
+        {% csrf_token %}
+    </form>
+</div>
 
 <div class="point_list_interest_point">
     {% for element in list %}
-        <div class="point">
-            <div class="image_point"><img src="{{element.image.url}}" alt=""></div>
-            <div class="point_descriptions">
-                <p>{{element.name}}</p>
+    <div class="point">
+        <div class="image_point"><img src="{{element.image.url}}" alt=""></div>
+        <div class="point_descriptions">
+            <p>{{element.name}}</p>
 
-                 <div class="point_descriptions_more"><button class="more"><a href="{% url 'trails:point_detail' element.id %}">Więcej</a></button></div>
+            <div class="point_descriptions_more">
+                <button class="more"><a href="{% url 'trails:point_detail' element.id %}">Więcej</a></button>
             </div>
         </div>
-    {% endfor %}
     </div>
+    {% endfor %}
+</div>
 {% endblock %}

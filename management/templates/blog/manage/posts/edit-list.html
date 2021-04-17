@@ -6,13 +6,13 @@
 <div class="content">
     <div class="posts_manage">
         {% for post in object_list %}
-            <div class="post_manage">
-                <div class="image"><img src='{{post.image.url}}' alt=""></div>
-                <div class="title"><p>{{post.title}}</p></div>
-                <div class="body"><p>{{post.body}}</p></div>
-                <div class="info"><p>{{post.created}} {{post.owner}}</p></div>
-                <button><a href="{% url 'management:blog_post_edit' post.id %}">Edytuj</a></button>
-            </div>
+        <div class="post_manage">
+            <div class="image"><img src='{{post.image.url}}' alt=""></div>
+            <div class="title"><p>{{post.title}}</p></div>
+            <div class="body"><p>{{post.body}}</p></div>
+            <div class="info"><p>{{post.created}} {{post.owner}}</p></div>
+            <button><a href="{% url 'management:blog_post_edit' post.id %}">Edytuj</a></button>
+        </div>
         {% endfor %}
     </div>
 </div>

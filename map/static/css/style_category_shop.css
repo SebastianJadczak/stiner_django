@@ -1,17 +1,18 @@
-div.shop-list{
+div.shop-list {
     min-height: 210vh;
     background-color: #f4f4f4;
     margin: 3px 0 0 0;
     padding: 20px 60px;
 }
+
 div.category-products {
-      width:60vw;
+    width: 60vw;
     min-height: 100%;
 }
 
 div.category-products div.ad {
-    width:60vw;
-    height:320px;
+    width: 60vw;
+    height: 320px;
     background-color: #fff;
     margin-bottom: 40px;
     animation: slider_image 25s infinite;
@@ -19,92 +20,99 @@ div.category-products div.ad {
 }
 
 @keyframes slider_image {
-  0%,
-  100% {
-    background-image: url("../img/baner-category/Moda.png");
-  }
-  25% {
-    background-image: url("../img/baner-category/Szare.png");
-  }
-  50% {
-    background-image: url("../img/baner-category/Szare.png");
-  }
-  56% {
-    background-image: url("../img/baner-category/Zielone.png");
-  }
-  75% {
-    background-image: url("../img/baner-category/Zielone.png");
-  }
+    0%,
+    100% {
+        background-image: url("../img/baner-category/Moda.png");
+    }
+    25% {
+        background-image: url("../img/baner-category/Szare.png");
+    }
+    50% {
+        background-image: url("../img/baner-category/Szare.png");
+    }
+    56% {
+        background-image: url("../img/baner-category/Zielone.png");
+    }
+    75% {
+        background-image: url("../img/baner-category/Zielone.png");
+    }
 }
 
-div.category-products div.product-wrap{
+div.category-products div.product-wrap {
     box-sizing: border-box;
-    width:100%;
+    width: 100%;
     min-height: 100vh;
 }
 
-div.category-products div.product-wrap div.filter{
-    width:100%;
-    height:7vh;
+div.category-products div.product-wrap div.filter {
+    width: 100%;
+    height: 7vh;
     background-color: #fff;
     margin-bottom: 30px;
 }
 
-div.category-products div.product{
+div.category-products div.product {
     border: 1px solid #bfbfbf;
     padding: 10px 10px;
     margin-bottom: 15px;
-    height:150px;
+    height: 150px;
     display: flex;
     background-color: #fff;
     text-decoration: none;
     color: #1a1a1a;
 }
 
-div.category-products div.product div.image-product{
-    width:200px;
+div.category-products div.product div.image-product {
+    width: 200px;
     height: 150px;
 }
 
-div.category-products div.product div.image-product img{
+div.category-products div.product div.image-product img {
     width: 100%;
     height: 100%;
 }
 
-div.category-products div.product div.description-product{
+div.category-products div.product div.description-product {
     margin-left: 40px;
-    width:60%;
+    width: 60%;
 }
-div.category-products div.product div.description-product h3{
-       margin-top:5px;
-    margin-bottom:30px;
+
+div.category-products div.product div.description-product h3 {
+    margin-top: 5px;
+    margin-bottom: 30px;
 }
-div.category-products div.product div.description-product div{
+
+div.category-products div.product div.description-product div {
     display: flex;
-    margin-top:12px;
+    margin-top: 12px;
 }
-div.category-products div.product div.price{
+
+div.category-products div.product div.price {
     margin-top: 20px;
     font-size: 20px;
     font-family: 'Roboto Mono', monospace;
 }
-div.category-products div.product div.description-product div.price p{
-       font-weight: normal;
-}
-div.category-products div.product div.description-product div p{
-    font-weight: bold;
-    margin: 0 10px 0 0;
-}
-div.category-products div.product div.description-product div p span{
+
+div.category-products div.product div.description-product div.price p {
     font-weight: normal;
 }
 
-div.category-products div.product:hover{
+div.category-products div.product div.description-product div p {
+    font-weight: bold;
+    margin: 0 10px 0 0;
+}
+
+div.category-products div.product div.description-product div p span {
+    font-weight: normal;
+}
+
+div.category-products div.product:hover {
     background-color: #f3f3f3;
 }
+
 /* Sortowanie */
 
-div.filter#filter_category{
+div.filter#filter_category {
     width: 450px;
     margin: 20px auto;
     border-radius: 20px;
@@ -112,27 +120,29 @@ div.filter#filter_category{
     box-shadow: 0 0 1px #d2d2d2;
 }
 
-div.filter#filter_category div.sort form{
+div.filter#filter_category div.sort form {
     line-height: 7vh;
     text-align: center;
     font-family: sans-serif;
 }
-div.filter div.sort form select{
-    width:220px;
-    height:40px;
+
+div.filter div.sort form select {
+    width: 220px;
+    height: 40px;
     padding: 5px 20px;
     transform: translateX(-40px);
 }
 
-div.filter div.sort form label#sort{
+div.filter div.sort form label#sort {
     position: relative;
     right: -110px;
-    top:-20px;
+    top: -20px;
     background-color: #fff;
     font-size: 15px;
     z-index: 9;
 }
-div.filter div.sort form button{
+
+div.filter div.sort form button {
     background-color: #fff;
     border: 1px solid grey;
     letter-spacing: 2.5px;

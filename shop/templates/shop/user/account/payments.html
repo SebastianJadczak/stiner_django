@@ -5,8 +5,8 @@
 Przykładowy template dla płatności
 
 <ul>
-    {% for p in  purchased_products %}
-        <li><a href="#">{{p.name}}</a>Płatności: {% if p.payments %}Zapłacone{% else %}Niezapłacone{% endif %}</li>
+    {% for p in purchased_products %}
+    <li><a href="#">{{p.name}}</a>Płatności: {% if p.payments %}Zapłacone{% else %}Niezapłacone{% endif %}</li>
     {% endfor %}
 </ul>
 

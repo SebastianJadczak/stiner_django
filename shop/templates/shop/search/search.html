@@ -7,7 +7,7 @@
             <div class="menu">
                 <ul class="menu-category">
                     {% for c in category %}
-                         <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
+                    <li><a href="{% url 'shop:products_list_category' c.id %}">{{c.name}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -18,23 +18,23 @@
         <div class="category-products">
             <div class="ad"></div>
             <div class="product-wrap">
-                     <div class="filter" id="filter_category">
-                         <div class="sort">
-                            <form action="" method="post">
-                                <label id="sort">Sortowanie</label>
-                                <label class="nazwa">
-                                    <select name="category" id="category">
-                                        <option value="nn">Cena: od najniższej</option>
-                                        <option value="nw">Cena: od najwyższej</option>
-                                        <option value="cdk">Czas do końca</option>
-                                        <option value="cdn">Czas dodania: najnowsze</option>
-                                    </select>
-                                </label>
-                                <button>Sortuj</button>
-                            </form>
-                         </div>
-                     </div>
-            {% for p in products %}
+                <div class="filter" id="filter_category">
+                    <div class="sort">
+                        <form action="" method="post">
+                            <label id="sort">Sortowanie</label>
+                            <label class="nazwa">
+                                <select name="category" id="category">
+                                    <option value="nn">Cena: od najniższej</option>
+                                    <option value="nw">Cena: od najwyższej</option>
+                                    <option value="cdk">Czas do końca</option>
+                                    <option value="cdn">Czas dodania: najnowsze</option>
+                                </select>
+                            </label>
+                            <button>Sortuj</button>
+                        </form>
+                    </div>
+                </div>
+                {% for p in products %}
                 <a href="{% url 'shop:product_detail' p.id %}" style="text-decoration: none; color: black">
                     <div class="product">
                         <div class="image-product">
@@ -43,15 +43,17 @@
                         <div class="description-product">
                             <h3>{{p}}</h3>
                             <div class="owner"><p>Sprzedający: <span>Owner</span></p></div>
-                            <div><p>Stan: <span>Nowy</span></p> <p>Marka: <span>Nike</span></p></div>
-                             <div><p>Rozmiar: <span>{{p.size}}</span></p> <p>Kto: <span>{{p.for_whom}}</span></p></div>
+                            <div><p>Stan: <span>Nowy</span></p>
+                                <p>Marka: <span>Nike</span></p></div>
+                            <div><p>Rozmiar: <span>{{p.size}}</span></p>
+                                <p>Kto: <span>{{p.for_whom}}</span></p></div>
                         </div>
                         <div class="price"><p>{{p.price}} zł</p></div>
                     </div>
-                    </a>
-            {% endfor %}
+                </a>
+                {% endfor %}
 
-                </div>
+            </div>
         </div>
 
     </div>

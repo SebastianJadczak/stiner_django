@@ -3,7 +3,6 @@ from django.conf import settings
 from shop.models import Product
 
 
-
 class Cart(object):
     """ Klasa odpowiedzialna z wygląd koszyka na zakupy """
 

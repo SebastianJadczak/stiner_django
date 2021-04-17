@@ -14,6 +14,7 @@ class UserTrail(models.Model):
     def __str__(self):
         return self.name
 
+
 class UserPoint(models.Model):
     """Model przechowywujący informacje o punkcie w trasie użytkownika."""
 

@@ -7,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %} {% endblock %}</title>
-     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_management.css' %}">
 </head>
@@ -18,8 +18,8 @@
         {% if user.is_authenticated %}
         <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
         {% else %}
-           <button><a href="{% url 'login' %}">Zaloguj się</a></button>
-       <button class="register"><a href="{% url 'register' %}">Załóż konto</a></button>
+        <button><a href="{% url 'login' %}">Zaloguj się</a></button>
+        <button class="register"><a href="{% url 'register' %}">Załóż konto</a></button>
         {% endif %}
     </div>
 </div>
@@ -32,7 +32,7 @@
         <button><a href="{%url 'management:blog_posts_edit' %}">Edytuj wpis</a></button>
         <button><a href="{%url 'management:blog_posts_delete' %}">Usuń wpis</a></button>
 
-         <p class="management_menu_section">Sklep:</p>
+        <p class="management_menu_section">Sklep:</p>
         <button><a href="{%url 'management:shop_manage_product_list' %}">Wszystkie produkty</a></button>
         <button><a href="{%url 'management:shop_product_create' %}">Dodaj produkt</a></button>
         <button><a href="{%url 'management:shop_products_edit' %}">Edytuj produkt</a></button>

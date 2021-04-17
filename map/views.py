@@ -14,8 +14,9 @@ class Map(View):
     template_name = 'map/map_index.html'
     category = Category.objects.all()
     coordinates = Coordinates.objects.all()
+
     def get(self, request):
-        return render(request, self.template_name, {'category': self.category, 'coordinates':self.coordinates})
+        return render(request, self.template_name, {'category': self.category, 'coordinates': self.coordinates})
 
 
 class PointViewsets(viewsets.ReadOnlyModelViewSet):

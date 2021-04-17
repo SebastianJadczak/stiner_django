@@ -1,6 +1,6 @@
-div.messages-wrap{
+div.messages-wrap {
     background-color: #f1f1f1;
-    margin-top:2px;
+    margin-top: 2px;
     padding: 20px 100px;
     height: 90vh;
     max-width: 90vw;
@@ -9,11 +9,12 @@ div.messages-wrap{
     overflow: hidden;
 }
 
-div.messages-wrap div.box-left{
-    width:14vw;
-    height:78vh;
+div.messages-wrap div.box-left {
+    width: 14vw;
+    height: 78vh;
 }
-div.messages-wrap div.box-left div.menu-messages{
+
+div.messages-wrap div.box-left div.menu-messages {
     width: 100%;
     height: 26%;
     margin-right: 130px;
@@ -23,29 +24,33 @@ div.messages-wrap div.box-left div.menu-messages{
     display: flex;
     flex-direction: column;
 }
-div.messages-wrap div.box-left div.menu-messages ul{
+
+div.messages-wrap div.box-left div.menu-messages ul {
     height: 100%;
-     display: flex;
+    display: flex;
     flex-direction: column;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-div.messages-wrap div.box-left div.menu-messages ul li{
+div.messages-wrap div.box-left div.menu-messages ul li {
     border-bottom: 0.5px solid darkgrey;
-    height:48px;
+    height: 48px;
     line-height: 48px;
     text-align: center;
 }
-div.messages-wrap div.box-left div.menu-messages ul li.active{
-     background-color: #f6f6f6;
-}
-div.messages-wrap div.box-left div.menu-messages ul li:hover{
+
+div.messages-wrap div.box-left div.menu-messages ul li.active {
     background-color: #f6f6f6;
 }
-div.messages-wrap div.box-left div.menu-messages ul li a{
-  display: block;
+
+div.messages-wrap div.box-left div.menu-messages ul li:hover {
+    background-color: #f6f6f6;
+}
+
+div.messages-wrap div.box-left div.menu-messages ul li a {
+    display: block;
     width: 100%;
     height: 100%;
     text-decoration: none;
@@ -54,21 +59,22 @@ div.messages-wrap div.box-left div.menu-messages ul li a{
     text-shadow: 0 1px #cbcbcb;
 }
 
-div.messages-wrap div.box-right{
+div.messages-wrap div.box-right {
     width: 60vw;
     min-height: 80%;
 }
-div.messages-wrap div.box-right div.action{
-    width:68vw;
-    height:5vh;
+
+div.messages-wrap div.box-right div.action {
+    width: 68vw;
+    height: 5vh;
 }
 
-div.messages-wrap div.box-right div.action div.action-button button{
+div.messages-wrap div.box-right div.action div.action-button button {
     background-color: #00b6ff;
     cursor: pointer;
     text-align: center;
-    width:90px;
-    height:35px;
+    width: 90px;
+    height: 35px;
     margin-right: 5px;
     border: 0.5px solid #868686;
     box-shadow: 0 0 1px #d2d2d2;
@@ -78,11 +84,13 @@ div.messages-wrap div.box-right div.action div.action-button button{
     letter-spacing: 2px;
     color: white;
 }
-div.messages-wrap div.box-right div.action div.action-button button:disabled{
+
+div.messages-wrap div.box-right div.action div.action-button button:disabled {
     cursor: default;
     opacity: 0.4;
 }
-div.messages-wrap div.box-right div.action div.action-button button a{
+
+div.messages-wrap div.box-right div.action div.action-button button a {
     font-family: 'Roboto Mono', monospace;
     font-size: 14px;
     text-shadow: 0 1px #cbcbcb;
@@ -90,9 +98,10 @@ div.messages-wrap div.box-right div.action div.action-button button a{
     color: white;
     text-decoration: none;
 }
-div.messages-wrap div.box-right div.messages-content{
+
+div.messages-wrap div.box-right div.messages-content {
     width: 60vw;
-    min-height:80%;
+    min-height: 80%;
     background-color: #ffffff;
     border: 0.5px solid #868686;
     box-shadow: 0 0 1px #d2d2d2;
@@ -100,36 +109,42 @@ div.messages-wrap div.box-right div.messages-content{
     flex-direction: column;
     font-family: Helvetica, Arial, sans-serif;
 }
-div.messages-wrap div.box-right div.messages-content ul{
+
+div.messages-wrap div.box-right div.messages-content ul {
     list-style: none;
-    margin:0;
+    margin: 0;
     padding: 0;
 }
+
 div.messages-wrap div.box-right div.messages-content ul li div.message {
     display: flex;
     border-bottom: 0.5px solid darkgrey;
     height: 50px;
 
 }
-div.messages-wrap div.box-right div.messages-content ul li  div.message div.checkbox{
+
+div.messages-wrap div.box-right div.messages-content ul li div.message div.checkbox {
     column-width: 50px;
     line-height: 50px;
     text-align: center;
 }
 
-div.messages-wrap div.box-right div.messages-content ul li  div.message div.author{
+div.messages-wrap div.box-right div.messages-content ul li div.message div.author {
     column-width: 220px;
     padding-left: 10px;
 }
-div.messages-wrap div.box-right div.messages-content ul li  div.message div.title{
+
+div.messages-wrap div.box-right div.messages-content ul li div.message div.title {
     column-width: 800px;
     padding-left: 10px;
 }
-div.messages-wrap div.box-right div.messages-content ul li  div.message div.date {
-     width: 150px;
+
+div.messages-wrap div.box-right div.messages-content ul li div.message div.date {
+    width: 150px;
 }
+
 @media only screen and (max-width: 1680px) {
-    div.messages-wrap div.box-left div.menu-messages{
+    div.messages-wrap div.box-left div.menu-messages {
         width: 14vw;
         height: 33%;
         margin-right: 130px;
@@ -137,10 +152,12 @@ div.messages-wrap div.box-right div.messages-content ul li  div.message div.date
         display: flex;
         flex-direction: column;
     }
-    div.messages-wrap div.box-right{
+
+    div.messages-wrap div.box-right {
         max-width: 66vw;
     }
-    div.messages-wrap div.box-right div.messages-content ul li  div.message div.date p{
+
+    div.messages-wrap div.box-right div.messages-content ul li div.message div.date p {
         margin: 7px 0 0 0;
     }
 }

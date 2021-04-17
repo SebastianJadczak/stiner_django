@@ -6,13 +6,13 @@
 <div class="content">
     <div class="productss_manage">
         {% for product in object_list %}
-            <div class="product_manage">
-                <div class="image"><img src='{{shop.image.url}}' alt=""></div>
-                <div class="title"><p>{{product.name}}</p></div>
-                <div class="body"><p>{{product.description}}</p></div>
-                <div class="info"><p></p></div>
-                <button><a href="{% url 'management:shop_product_edit' product.id %}">Edytuj</a></button>
-            </div>
+        <div class="product_manage">
+            <div class="image"><img src='{{shop.image.url}}' alt=""></div>
+            <div class="title"><p>{{product.name}}</p></div>
+            <div class="body"><p>{{product.description}}</p></div>
+            <div class="info"><p></p></div>
+            <button><a href="{% url 'management:shop_product_edit' product.id %}">Edytuj</a></button>
+        </div>
         {% endfor %}
     </div>
 </div>

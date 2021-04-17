@@ -1,13 +1,8 @@
-
 from django.urls import path
-
 
 from . import views
 
-
 app_name = 'trails'
-
-
 
 urlpatterns = [
     path('', views.Trails.as_view(), name='basic_trails'),
@@ -19,4 +14,3 @@ urlpatterns = [
     path('api/<int:pk>', views.TrailApiFilterListView.as_view()),
 
 ]
-

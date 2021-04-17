@@ -3,12 +3,11 @@
 {% block content %}
 
 
-
 <form action="" method="post" class="user_trail-form">
     <h3>Formularz trasy: </h3>
     {{form.name}}
     {{form.descriptions}}
     <input type="submit" value="Stwórz_trasę" id="save_trail">
-  {% csrf_token %}
+    {% csrf_token %}
 </form>
 {% endblock %}

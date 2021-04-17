@@ -6,12 +6,12 @@
 <div class="content">
     <div class="posts_manage">
         {% for product in object_list %}
-            <div class="post_manage">
-                <div class="image"><img src='{{post.image.url}}' alt=""></div>
-                <div class="title"><p>{{product.name}}</p></div>
-                <div class="body"><p>{{product.description}}</p></div>
-                <button><a href="{% url 'management:shop_product_delete' product.id %}">Usuń</a></button>
-            </div>
+        <div class="post_manage">
+            <div class="image"><img src='{{post.image.url}}' alt=""></div>
+            <div class="title"><p>{{product.name}}</p></div>
+            <div class="body"><p>{{product.description}}</p></div>
+            <button><a href="{% url 'management:shop_product_delete' product.id %}">Usuń</a></button>
+        </div>
         {% endfor %}
     </div>
 </div>

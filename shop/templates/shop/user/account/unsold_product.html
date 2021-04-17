@@ -3,30 +3,31 @@
 {% block content %}
 
 <div class="product-wrap">
-        <div class="sort" id="exception">
-            <form action="" method="GET">
-                <label class="nazwa">
-                    <select name="category" id="category">
-                        <option value="nn">Cena: od najniższej</option>
-                        <option value="nw">Cena: od najwyższej</option>
-                        <option value="cdk">Czas do końca</option>
-                        <option value="cdn">Czas dodania: najnowsze</option>
-                    </select>
-                </label>
-                <button>Sortuj</button>
-            </form>
-        </div>
+    <div class="sort" id="exception">
+        <form action="" method="GET">
+            <label class="nazwa">
+                <select name="category" id="category">
+                    <option value="nn">Cena: od najniższej</option>
+                    <option value="nw">Cena: od najwyższej</option>
+                    <option value="cdk">Czas do końca</option>
+                    <option value="cdn">Czas dodania: najnowsze</option>
+                </select>
+            </label>
+            <button>Sortuj</button>
+        </form>
+    </div>
     <div class="products">
         {% for p in unsold %}
-         <a href="#">
+        <a href="#">
             <div class="image"><img src="{{p.image.url}}"></div>
-             <div class="descriptions">
-                 <h3>{{p.name}}</h3>
-                 <div class="owner"><p>Sprzedający: <span>Owner</span></p></div>
-                 <div><p>Stan: <span>Nowy</span></p> <p>Marka: <span>Nike</span></p></div>
-             </div>
-             <div class="price"><p>{{p.price}} zł</p></div>
-         </a>
+            <div class="descriptions">
+                <h3>{{p.name}}</h3>
+                <div class="owner"><p>Sprzedający: <span>Owner</span></p></div>
+                <div><p>Stan: <span>Nowy</span></p>
+                    <p>Marka: <span>Nike</span></p></div>
+            </div>
+            <div class="price"><p>{{p.price}} zł</p></div>
+        </a>
         {% endfor %}
     </div>
 

@@ -1,10 +1,11 @@
 
-div.wrap-trails_add{
+div.wrap-trails_add {
     display: flex;
     flex-direction: column;
 }
-div.wrap-trails_add div.title-trail_add{
-     background-color: #fff;
+
+div.wrap-trails_add div.title-trail_add {
+    background-color: #fff;
     border: 0.5px solid #868686;
     box-shadow: 0 0 1px #d2d2d2;
     padding: 5px 20px 10px;
@@ -13,17 +14,19 @@ div.wrap-trails_add div.title-trail_add{
     letter-spacing: 1.3px;
     font-family: Arial, sans-serif;
 }
-div.wrap-trails_add div.title-trail_add h3{
+
+div.wrap-trails_add div.title-trail_add h3 {
     text-align: center;
     color: #1a1a1a;
     letter-spacing: 1.8px;
 }
-div.wrap-trails_add div.title-trail_add p{
-     color: #212121;
+
+div.wrap-trails_add div.title-trail_add p {
+    color: #212121;
     letter-spacing: 1.8px;
 }
 
-div.wrap-trails_add div.trail_add-center{
+div.wrap-trails_add div.trail_add-center {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -32,12 +35,12 @@ div.wrap-trails_add div.trail_add-center{
 /*Sekcja filtrów tras*/
 
 div.wrap-trails_add div.trail_add-center div.filter_trails {
-     width: 15vw;
+    width: 15vw;
     min-height: 70vh;
     /*transform: translateY(-50px);*/
 }
 
-div.wrap-trails_add div.trail_add-center div.filter_trails h3{
+div.wrap-trails_add div.trail_add-center div.filter_trails h3 {
     color: #646464;
     letter-spacing: 1.7px;
     font-size: 20px;
@@ -45,7 +48,7 @@ div.wrap-trails_add div.trail_add-center div.filter_trails h3{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter{
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter {
     background-color: #fff;
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
     border: 0.5px solid #868686;
@@ -53,67 +56,77 @@ div.wrap-trails_add div.trail_add-center div.filter_trails div.filter{
     min-height: 60vh;
     font-size: 14px;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div{
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div {
     display: flex;
     flex-direction: column;
     border-bottom: 0.5px solid #a5a5a5;
     padding: 10px 10px;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city{
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city {
     height: 195px;
     overflow: hidden;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city p.city{
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city p.city {
     background-color: white;
     width: 100%;
     position: relative;
     display: block;
-    height:25px;
+    height: 25px;
     top: -80px;
     margin: 10px 0 10px 0;
-    padding:5px 0 10px 0;
+    padding: 5px 0 10px 0;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city.active{
-    height:255px;
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city.active {
+    height: 255px;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city.active p.city{
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city.active p.city {
     top: 0;
-     margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div label{
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div label {
     padding: 5px 0 10px 16px;
 }
 
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div label input[type='checkbox']{
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div label input[type='checkbox'] {
     margin-right: 10px;
 }
 
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div label:nth-of-type(1){
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div label:nth-of-type(1) {
     padding: 5px 0 10px 10px;
     font-weight: bold;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.name input{
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.name input {
     width: 190px;
     height: 22px;
     margin-left: 25px;
     padding-left: 25px;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div p{
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div p {
     color: #3587ea;
     text-align: center;
     cursor: pointer;
     letter-spacing: 0.8px;
     position: relative;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.accept_filter{
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.accept_filter {
     padding: 0;
-    width:100%;
-    height:50px;
+    width: 100%;
+    height: 50px;
 }
-#button-filter_your-trail{
-    width:287px;
-    height:50px;
+
+#button-filter_your-trail {
+    width: 287px;
+    height: 50px;
     letter-spacing: 1.4px;
     background-color: #f8ff00;
     border: none;
@@ -122,7 +135,7 @@ div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.a
     font-weight: bold;
     position: fixed;
     top: 917px;
-    left:136px;
+    left: 136px;
 }
 
 div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.top_rate label.star {
@@ -131,9 +144,10 @@ div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.t
 
 /*Sekcja środkowa.*/
 
-div.wrap-trails_add div.trail_add-center div.przyklad{
+div.wrap-trails_add div.trail_add-center div.przyklad {
     margin: 60px 20px;
 }
+
 @media only screen and (max-width: 1680px) {
 
     div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.name input {
@@ -141,12 +155,14 @@ div.wrap-trails_add div.trail_add-center div.przyklad{
         margin-left: 10px;
         padding-left: 15px;
     }
-    div.wrap-trails_add div.trail_add-center div.przyklad{
+
+    div.wrap-trails_add div.trail_add-center div.przyklad {
         margin: 80px auto;
-    width: 67vw;
+        width: 67vw;
         padding-right: 30px;
-}
-    div.wrap-trails_add div.trail_add-center div.przyklad button#right{
+    }
+
+    div.wrap-trails_add div.trail_add-center div.przyklad button#right {
         right: -950px;
     }
 }

@@ -27,7 +27,7 @@ class UserAccount(View):
             return render(request, self.template_name, {"średnia": average, "fullname": profile.full_name(),
                                                         "date_of_birth": profile.date_of_birth_user(),
                                                         "contact_colors_star": profile.contact_fields_filled(),
-                                                        'address_fields_filled':profile.address_fields_filled(),
-                                                        'language_fields_filled':profile.language_fields_filled(),
+                                                        'address_fields_filled': profile.address_fields_filled(),
+                                                        'language_fields_filled': profile.language_fields_filled(),
                                                         'preference_fields_filled': preference.preference_fields_filled()
                                                         })

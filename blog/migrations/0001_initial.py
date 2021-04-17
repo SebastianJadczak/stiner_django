@@ -7,7 +7,6 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -26,8 +25,11 @@ class Migration(migrations.Migration):
                 ('short_description', models.CharField(max_length=60)),
                 ('publish', models.DateTimeField(default=django.utils.timezone.now)),
                 ('created', models.DateTimeField(auto_now_add=True)),
-                ('status', models.CharField(choices=[('draft', 'Szkic'), ('published', 'Opublikowany')], default='draft', max_length=10)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='posts_created', to=settings.AUTH_USER_MODEL)),
+                ('status',
+                 models.CharField(choices=[('draft', 'Szkic'), ('published', 'Opublikowany')], default='draft',
+                                  max_length=10)),
+                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='posts_created',
+                                            to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'ordering': ('-publish',),

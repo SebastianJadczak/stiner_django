@@ -1,18 +1,18 @@
-div.wrap-account{
+div.wrap-account {
     background-color: #f1f1f1;
-    margin-top:6px;
+    margin-top: 6px;
     padding: 20px 100px;
     min-height: 78vh;
     display: flex;
     justify-content: space-between;
 }
 
-div.wrap-account div.left_account{
-    width:14vw;
+div.wrap-account div.left_account {
+    width: 14vw;
 
 }
 
-div.wrap-account div.left_account div.menu_account{
+div.wrap-account div.left_account div.menu_account {
     width: 260px;
     margin-right: 130px;
     background-color: #ffffff;
@@ -22,7 +22,7 @@ div.wrap-account div.left_account div.menu_account{
     flex-direction: column;
 }
 
-div.wrap-account div.left_account div.menu_account ul{
+div.wrap-account div.left_account div.menu_account ul {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -31,14 +31,14 @@ div.wrap-account div.left_account div.menu_account ul{
     margin: 0;
 }
 
-div.wrap-account div.left_account div.menu_account ul li{
+div.wrap-account div.left_account div.menu_account ul li {
     border-bottom: 0.5px solid darkgrey;
-    height:48px;
+    height: 48px;
     line-height: 48px;
     text-align: center;
 }
 
-div.wrap-account div.left_account div.menu_account ul li a{
+div.wrap-account div.left_account div.menu_account ul li a {
     display: block;
     width: 100%;
     height: 100%;
@@ -49,15 +49,15 @@ div.wrap-account div.left_account div.menu_account ul li a{
 }
 
 div.wrap-account div.right_account {
-      width: 65vw;
-    height:100%;
+    width: 65vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-div.wrap-account div.right_account  div.sort#account{
+div.wrap-account div.right_account div.sort#account {
     box-sizing: border-box;
-    width:50%;
+    width: 50%;
     background-color: #fff;
     text-align: center;
     padding: 20px 30px;
@@ -67,11 +67,12 @@ div.wrap-account div.right_account  div.sort#account{
     transform: translateX(180px);
     justify-content: space-between;
     border-radius: 15px;
-       border: 0.5px solid #868686;
+    border: 0.5px solid #868686;
     box-shadow: 1px 1px 4px 1px rgba(33, 33, 33, 0.4);
 }
-div.wrap-account div.right_account  div.sort#exception{
-    width:30%;
+
+div.wrap-account div.right_account div.sort#exception {
+    width: 30%;
     background-color: #fff;
     padding: 20px 15px 20px 50px;
     font-size: 20px;
@@ -82,16 +83,17 @@ div.wrap-account div.right_account  div.sort#exception{
     border: 0.5px solid #868686;
     box-shadow: 0 0 1px #d2d2d2;
 }
-div.wrap-account div.right_account  div.sort#account button,
-div.wrap-account div.right_account  div.sort#exception button{
-   background-color: #00b6ff;
+
+div.wrap-account div.right_account div.sort#account button,
+div.wrap-account div.right_account div.sort#exception button {
+    background-color: #00b6ff;
     cursor: pointer;
     text-align: center;
     border: 1.5px solid white;
     font-weight: bold;
     margin-right: 5px;
     padding: 5px 10px;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
     font-family: Arial, sans-serif, monospace;
     font-size: 14px;
     text-shadow: 0 1px #cbcbcb;
@@ -99,88 +101,99 @@ div.wrap-account div.right_account  div.sort#exception button{
     color: white;
 }
 
-div.wrap-account div.right_account  div.sort#account form select,
-div.wrap-account div.right_account  div.sort#exception form select{
+div.wrap-account div.right_account div.sort#account form select,
+div.wrap-account div.right_account div.sort#exception form select {
     height: 35px;
-    width:230px;
-    padding-left:10px;
-     font-weight: bold;
+    width: 230px;
+    padding-left: 10px;
+    font-weight: bold;
     font-family: 'Roboto Mono', monospace;
-    border: 1.5px solid  #000032;
+    border: 1.5px solid #000032;
     letter-spacing: 2px;
 }
-div.wrap-account div.right_account  div.sort#account form button,
-div.wrap-account div.right_account  div.sort#exception form button{
+
+div.wrap-account div.right_account div.sort#account form button,
+div.wrap-account div.right_account div.sort#exception form button {
     background-color: #ff3857;
     color: white;
-    cursor:pointer;
+    cursor: pointer;
     border: 0.5px solid #868686;
     box-shadow: 0 0 1px #d2d2d2;
     border-radius: 7px;
-    width:88px;
-    height:35px;
+    width: 88px;
+    height: 35px;
     font-weight: bold;
     font-family: 'Roboto Mono', monospace;
-      letter-spacing: 2px;
+    letter-spacing: 2px;
     margin-left: 10px;
     font-size: 15px;
 }
-div.wrap-account div.right_account div.products{
+
+div.wrap-account div.right_account div.products {
     margin-top: 20px;
     padding: 0;
-    width:80%;
+    width: 80%;
 }
-div.wrap-account div.right_account div.products a{
+
+div.wrap-account div.right_account div.products a {
     border: 1px solid #bfbfbf;
     padding: 10px 10px;
     margin-bottom: 15px;
-    height:150px;
+    height: 150px;
     display: flex;
     background-color: #fff;
     text-decoration: none;
     color: #1a1a1a;
 }
+
 div.wrap-account div.right_account div.products a div.image {
     width: 220px;
     height: 150px;
 }
+
 div.wrap-account div.right_account div.products a div.image img {
     width: 100%;
     height: 100%;
 }
-div.wrap-account div.right_account div.products a div.descriptions{
+
+div.wrap-account div.right_account div.products a div.descriptions {
     margin-left: 40px;
-    width:60%;
+    width: 60%;
 }
-div.wrap-account div.right_account div.products a div.descriptions h3{
-    font-size:18px;
+
+div.wrap-account div.right_account div.products a div.descriptions h3 {
+    font-size: 18px;
     font-family: Arial, sans-serif;
     letter-spacing: 2px;
 }
-div.wrap-account div.right_account div.products a div.descriptions  div{
+
+div.wrap-account div.right_account div.products a div.descriptions div {
     margin: 5px 0;
 }
 
-div.wrap-account div.right_account div.products div.price p{
+div.wrap-account div.right_account div.products div.price p {
     font-family: Arial, sans-serif;
     font-weight: bold;
     letter-spacing: 1.5px;
 }
+
 @media only screen and (max-width: 1680px) {
-div.wrap-account{
-    width: 90vw;
-    padding: 20px 55px 20px 80px;
+    div.wrap-account {
+        width: 90vw;
+        padding: 20px 55px 20px 80px;
 
 
-}div.wrap-account div.right_account {
-      margin-left: 30px;
-}
+    }
 
- div.wrap-account div.right_account  div.sort#exception{
-    width:40%;
-    padding: 20px 5px 20px 50px;
-    transform: translateX(170px);
-}
+    div.wrap-account div.right_account {
+        margin-left: 30px;
+    }
+
+    div.wrap-account div.right_account div.sort#exception {
+        width: 40%;
+        padding: 20px 5px 20px 50px;
+        transform: translateX(170px);
+    }
 
 }
 

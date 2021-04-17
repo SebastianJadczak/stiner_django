@@ -37,6 +37,7 @@ def cart_detail(request):
         for key, value in zz.items():
             my_list.append(value)
         products = Product.objects.filter(name=my_list[0][0])
-        return render(request, '../../shop/templates/shop/search/search.html', {'products': products, 'category': category})
+        return render(request, '../../shop/templates/shop/search/search.html',
+                      {'products': products, 'category': category})
 
-    return render(request, 'cart/detail.html', {'cart': cart, 'category':category})
+    return render(request, 'cart/detail.html', {'cart': cart, 'category': category})

@@ -7,6 +7,7 @@ class BaseTest:
     """Klasa bazowa inicjalizująca driver'a i zamykająca przeglądarkę po wykonaniu testu"""
 
     adres = 'https://stiner-dev.herokuapp.com/'
+
     @pytest.fixture()
     def setup(self):
         """Inicjalizacja przeglądarki, opóźnienie maksymalizacji okna oraz zamknięcie okna przeglądarki po zakończeniu testu"""

@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -32,7 +31,8 @@ class Migration(migrations.Migration):
                 ('other_language', models.CharField(blank=True, max_length=20)),
                 ('phone', models.TextField(max_length=10)),
                 ('email', models.EmailField(max_length=254)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                'user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
@@ -44,7 +44,8 @@ class Migration(migrations.Migration):
                 ('favorite_city', models.TextField(blank=True, max_length=30, null=True)),
                 ('favorite_place', models.TextField(blank=True, max_length=30, null=True)),
                 ('favorite_restaurant', models.TextField(blank=True, max_length=30, null=True)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                'user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

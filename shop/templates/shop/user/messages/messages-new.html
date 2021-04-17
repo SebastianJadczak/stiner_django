@@ -1,27 +1,27 @@
 {% extends "base_shop_messages.html" %}
 
 {% block content %}
-  <div class="box-right">
-        <div class="action">
-            <div class="action-button">
-                <button><a href="#">Stwórz</a></button>
-                <button onclick="delete_message()" disabled>Usuń</button>
-                <button onclick="add_to_important()" disabled>Ważne</button>
-            </div>
-            <div class="action-filter"></div>
+<div class="box-right">
+    <div class="action">
+        <div class="action-button">
+            <button><a href="#">Stwórz</a></button>
+            <button onclick="delete_message()" disabled>Usuń</button>
+            <button onclick="add_to_important()" disabled>Ważne</button>
         </div>
-        <div class="messages-content">
-            {% if text %}
-            <div class="message-create-message">   <h3>{{text}}</h3> </div>
-            {% endif %}
-            <form action="" method="post">
-                <input type="text" value="{{request.user}}" hidden name="author">
-                <label>Do:</label><input type="text" name="recipient">
-                <label>Tytuł:</label><input type="text" name="title">
-                <label>Treść:</label><textarea name="content"></textarea>
-                     {% csrf_token %}
-                <button>Wyślij</button>
-            </form>
-        </div>
-  </div>
+        <div class="action-filter"></div>
+    </div>
+    <div class="messages-content">
+        {% if text %}
+        <div class="message-create-message"><h3>{{text}}</h3></div>
+        {% endif %}
+        <form action="" method="post">
+            <input type="text" value="{{request.user}}" hidden name="author">
+            <label>Do:</label><input type="text" name="recipient">
+            <label>Tytuł:</label><input type="text" name="title">
+            <label>Treść:</label><textarea name="content"></textarea>
+            {% csrf_token %}
+            <button>Wyślij</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

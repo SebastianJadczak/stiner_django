@@ -7,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %} {% endblock %}</title>
-     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_map.css' %}">
     <link rel="stylesheet" href="{% static 'css/user_account.css' %}">
@@ -23,28 +23,29 @@
         <ul>
             <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
             <li class="green"><a href="{% url 'trails:all_trails' %}"><i class="fas fa-map-signs"></i>Trasy</a>
-                 <div class="tr">
-                 <ul>
-                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
-                    <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
-                    {% if user.is_authenticated %}
+                <div class="tr">
+                    <ul>
+                        <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
+                        <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
+                        {% if user.is_authenticated %}
                         <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
                         <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
-                    {%else%}
+                        {%else%}
                         <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>
                         <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
-                     {% endif %}
-                </ul>
-        </div>
+                        {% endif %}
+                    </ul>
+                </div>
             </li>
-            <li class="blue"><a href="{% url "blog:list_posts" %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
+            <li class="blue"><a href="{% url " blog:list_posts" %}"><i class="fas fa-book-open"></i>Blog</a></li>
+            <li class="black"><a href="{%url " list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
             <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
         </ul>
     </div>
-    <div class="login_mapa" >
-       {% if user.is_authenticated %}
-        <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i> <span>{{user.username}}</span><i class="fas fa-angle-down"></i></button>
+    <div class="login_mapa">
+        {% if user.is_authenticated %}
+        <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i> <span>{{user.username}}</span><i
+                class="fas fa-angle-down"></i></button>
         <div class="user_menu">
             <ul>
                 <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
@@ -53,7 +54,7 @@
                 {% if perms.blog.view_post %}
                 <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
                 {% elif perms.shop.view_product %}
-                    <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
+                <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
                 {% endif %}
 
                 <li><a href="{% url 'logout' %}">Wyloguj</a></li>
@@ -74,21 +75,21 @@
 <script>
     <!--    "Przycisk rozwijania menu"-->
 
-let menu = document.querySelector("button.user_menu");
-let icon = document.querySelector("i.fa-angle-down");
-let user_menu = document.querySelector("div.user_menu");
-let yours_trails = document.querySelector("li.yours_trails");
-let tr = document.querySelector("div.tr")
+    let menu = document.querySelector("button.user_menu");
+    let icon = document.querySelector("i.fa-angle-down");
+    let user_menu = document.querySelector("div.user_menu");
+    let yours_trails = document.querySelector("li.yours_trails");
+    let tr = document.querySelector("div.tr")
 
-if (menu) {
-    menu.addEventListener('click', function () {
-        user_menu.classList.toggle("active");
-        icon.classList.toggle("active");
-    });
-}
-if (yours_trails){
-     tr.classList.toggle("active");
-}
+    if (menu) {
+        menu.addEventListener('click', function () {
+            user_menu.classList.toggle("active");
+            icon.classList.toggle("active");
+        });
+    }
+    if (yours_trails) {
+        tr.classList.toggle("active");
+    }
 </script>
 </body>
 </html>
