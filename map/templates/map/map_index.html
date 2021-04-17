@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <script>
-        L_NO_TOUCH = false;
-        L_DISABLE_3D = false;
-    </script>
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
 
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -17,105 +17,88 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet"
-          href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
-    <style>html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }</style>
-    <style>#map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-    }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}
 
     </style>
 
 
-    <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <style>
-        #map_1de6ef4f1218487da9d6da057bb8f454 {
-            z-index: 0;
-            margin-top: 2px;
-            width: 100.0%;
-            height: 83.0%;
-            left: 0.0%;
-            top: 0.0%;
-        }
-
-        /* Obsługa scrolowania mapy tylko z ctrl + scroll*/
-        .map-scroll:before {
-            content: 'Use ctrl + scroll to zoom the map';
-            position: absolute;
-            top: 50%;
-            left: 35%;
-            z-index: 999;
-            font-size: 34px;
-        }
-
-        .map-scroll:after {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            content: '';
-            background: #00000061;
-            z-index: 999;
-        }
-    </style>
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1de6ef4f1218487da9d6da057bb8f454 {
+                   z-index: 0;
+                    margin-top:2px;
+                    width: 100.0%;
+                    height: 83.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                /* Obsługa scrolowania mapy tylko z ctrl + scroll*/
+                .map-scroll:before {
+                content: 'Use ctrl + scroll to zoom the map';
+                position: absolute;
+                top: 50%;
+                left: 35%;
+                z-index: 999;
+                font-size: 34px;
+                 }
+                 .map-scroll:after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                content: '';
+                background: #00000061;
+                z-index: 999;
+                }
+            </style>
 
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static " css
-    /style_map.css" %}">
+    <link rel="stylesheet" href="{% static "css/style_map.css" %}">
 </head>
 <body>
 <div id="top_mapa">
-    <div class="logo_mapa"><img src="{% static " img/logo.png" %}" alt="logo"></div>
+    <div class="logo_mapa"><img src="{% static "img/logo.png" %}" alt="logo"></div>
     <div class="menu_mapa">
         <ul>
             <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
             <li class="green"><a href="{% url 'trails:all_trails' %}"><i class="fas fa-map-signs"></i>Trasy</a>
-                <div class="tr">
-                    <ul>
-                        <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
-                        <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
-                        {% if user.is_authenticated %}
+            <div class="tr">
+                 <ul>
+                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
+                    <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
+                    {% if user.is_authenticated %}
                         <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
                         <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
-                        {%else%}
+                    {%else%}
                         <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>
                         <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
-                        {% endif %}
-                    </ul>
-                </div>
+                     {% endif %}
+                </ul>
+        </div>
             </li>
             <li class="blue"><a href="{% url 'blog:list_posts' %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li class="black"><a href="{%url " list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
+            <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
             <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
         </ul>
     </div>
     <div class="login_mapa">
-        {% if user.is_authenticated %}
-        <button class="user_menu"><i class="fas fa-user"></i> <span>{{user.username}}</span><i
-                class="fas fa-angle-down"></i></button>
+       {% if user.is_authenticated %}
+        <button class="user_menu"><i class="fas fa-user"></i> <span>{{user.username}}</span><i class="fas fa-angle-down"></i></button>
         <div class="user_menu">
             <ul>
                 <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
                 <li><a href="#">Ustawienia</a></li>
 
                 {% if perms.blog.view_post%}
-                <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
+                    <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
                 {% elif perms.shop.view_product %}
-                <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
+                    <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
                 {% endif %}
 
                 <li><a href="{% url 'logout' %}">Wyloguj</a></li>
@@ -131,28 +114,21 @@
     <div class="select">
         <select class="location" onchange="select_city()">
             {% for element in coordinates %}
-            <option value="{{element.name}}" {% if
-            "{{element.name}}" == "Warszawa" %} selected {%endif%}>{{element.name}}</option>
+            <option value="{{element.name}}" {% if "{{element.name}}" == "Warszawa" %} selected {%endif%}>{{element.name}}</option>
             {%endfor%}
         </select>
-    </div>
-    <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><i class="fab fa-fort-awesome"></i>
-    </div>
+        </div>
+    <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><i class="fab fa-fort-awesome"></i></div>
     <div class="church_mapa"><input type="checkbox" class="monuments" id="Kościoły"><i class="fas fa-church"></i></div>
     <div class="tree_mapa"><input type="checkbox" class="monuments" id="Parki"><i class="fas fa-tree"></i></div>
-    <div class="monument_mapa"><input type="checkbox" class="monuments" id="Muzeum"><i class="fas fa-landmark"></i>
-    </div>
-    <div class="culture_mapa"><input type="checkbox" class="monuments" id="Budowle"><i class="fas fa-theater-masks"></i>
-    </div>
-    <div class="hotel_mapa"><input type="checkbox" class="monuments" id="hotel"><i class="fas fa-h-square"></i></i>
-    </div>
-    <div class="search_mapa">
-        <button onclick="post_monuments()">Szukaj</button>
-    </div>
+    <div class="monument_mapa"><input type="checkbox" class="monuments" id="Muzeum"><i class="fas fa-landmark"></i></div>
+    <div class="culture_mapa"><input type="checkbox" class="monuments" id="Budowle"><i class="fas fa-theater-masks"></i></div>
+    <div class="hotel_mapa"><input type="checkbox" class="monuments" id="hotel"><i class="fas fa-h-square"></i></i></div>
+    <div class="search_mapa"><button onclick="post_monuments()">Szukaj</button></div>
 
 </div>
 
-<div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454"></div>
+     <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
 
 <div class="footer">
     <a href="https://www.linkedin.com/in/sebastian-jadczak-b74a40182">&copy; Sebastian Jadczak</a>
@@ -165,70 +141,60 @@
 <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
 
 <script>
-    <!--
-    "Przycisk rozwijania menu"-->
+<!--    "Przycisk rozwijania menu"-->
 
-    let menu = document.querySelector("button.user_menu");
-    let icon = document.querySelector("i.fa-angle-down");
-    let user_menu = document.querySelector("div.user_menu");
-    let yours_trails = document.querySelector("li.yours_trails");
-    let tr = document.querySelector("div.tr")
+let menu = document.querySelector("button.user_menu");
+let icon = document.querySelector("i.fa-angle-down");
+let user_menu = document.querySelector("div.user_menu");
+let yours_trails = document.querySelector("li.yours_trails");
+let tr = document.querySelector("div.tr")
 
-    if (menu) {
-        menu.addEventListener('click', function () {
-            user_menu.classList.toggle("active");
-            icon.classList.toggle("active");
-        });
-    }
-    <!--Mapa-->
-    var x = 52.22977
-    var y = 21.01178
-    //danie inicjujące lokalizje mapy
+if (menu) {
+    menu.addEventListener('click', function () {
+        user_menu.classList.toggle("active");
+        icon.classList.toggle("active");
+    });
+}
+<!--Mapa-->
+var x =52.22977
+var y =21.01178
+//danie inicjujące lokalizje mapy
 
 
-    var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
-        "map_1de6ef4f1218487da9d6da057bb8f454",
-        {
-            center: [x, y],
-            crs: L.CRS.EPSG3857,
-            zoom: 12,
-            zoomControl: true,
-            preferCanvas: false,
-            scrollWheelZoom: false
-        }
-    );
+var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
 
-    var tile_layer_03c10e7010194be69dc37614c4d58514 = L.tileLayer(
-        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-        {
-            "attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.",
-            "detectRetina": false,
-            "maxNativeZoom": 18,
-            "maxZoom": 18,
-            "minZoom": 0,
-            "noWrap": false,
-            "opacity": 1,
-            "subdomains": "abc",
-            "tms": false
-        }
-    ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
-    var layerGroup = L.layerGroup().addTo(map_1de6ef4f1218487da9d6da057bb8f454);
+                "map_1de6ef4f1218487da9d6da057bb8f454",
+                {
+                    center: [x, y],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                    scrollWheelZoom: false
+                }
+            );
 
-    function zz() {
-        layerGroup.clearLayers();
-        marker = fetch('/map/api/points/')
-            .then(response => response.json())
-            .then(data => {
+            var tile_layer_03c10e7010194be69dc37614c4d58514 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
+            var layerGroup = L.layerGroup().addTo(map_1de6ef4f1218487da9d6da057bb8f454);
 
-                data.forEach(addElements);
+            function zz(){
+                layerGroup.clearLayers();
+                marker =fetch('/map/api/points/')
+                        .then(response => response.json())
+                        .then(data=> {
 
-                function addElements(item, index) {
-                    var punkt = L.marker(
-                        [item.coordinateX, item.coordinateY],
-                        {}
-                    ).addTo(layerGroup);
-                    var popup = L.popup({"Width": "300px"});
-                    var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%; font-family: Arial, sans-serif; letter-spacing: 1.1px">
+                            data.forEach(addElements);
+
+                            function addElements(item, index) {
+                                var punkt = L.marker(
+                                    [item.coordinateX, item.coordinateY],
+                                    {}
+                                ).addTo(layerGroup);
+                                var popup = L.popup({"Width": "300px"});
+                                var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%; font-family: Arial, sans-serif; letter-spacing: 1.1px">
                                 <strong style="font-size: 14px;">${item.name}</strong>
                                 <p> ${item.descriptions}</p>
                                 <div class="img-map" style="width:300px; height:200px;">
@@ -237,110 +203,109 @@
                                 <div style="text-align: right; padding-top:10px;">
                                 <a href="/trails/point/${item.id}" style="color: green; font-weight: bold; letter-spacing: 1.3px; font-size: 14px;">Więcej</a></div></div>`)[0];
 
-                    popup.setContent(html);
-                    punkt.bindPopup(popup);
-                }
-            })
-    }
-
-    zz()
+                                popup.setContent(html);
+                                punkt.bindPopup(popup);
+                            }
+                        })
+            }
+            zz()
 
     // Obsługa menu Trasy
-    if (yours_trails) {
-        tr.classList.toggle("active");
-    }
-    //    Obsługa formularzu filtrowania obiektów na stronie
+    if (yours_trails){
+     tr.classList.toggle("active");
+}
+//    Obsługa formularzu filtrowania obiektów na stronie
 
-    let city = document.querySelectorAll("select.location option")
+let city = document.querySelectorAll("select.location option")
 
-    function selected() {
-        //    Sprawdzenie które miasto jest wybrane
-        let value_city
-        for (item of city) {
-            if (item.selected) {
-                value_city = item.value
-            }
+function selected(){
+    //    Sprawdzenie które miasto jest wybrane
+    let value_city
+    for(item of city){
+        if(item.selected){
+            value_city =item.value
         }
-        return value_city
     }
+    return value_city
+}
 
-    function select_city() {
-        //    Pobranie danych lokalizacji miast i przekirowanie widoku mapy
-        city_selected = selected()
+function select_city(){
+    //    Pobranie danych lokalizacji miast i przekirowanie widoku mapy
+    city_selected = selected()
 
-        fetch(`/map/api/mapCenter/${city_selected}`)
-            .then(response => response.json())
-            .then(data => {
+     fetch(`/map/api/mapCenter/${city_selected}`)
+                        .then(response => response.json())
+                        .then(data=> {
 
-                for (item of data) {
-                    lat = item.coordinateX
-                    lon = item.coordinateY
+                        for(item of data){
+                           lat=item.coordinateX
+                           lon =item.coordinateY
+                        }
+                        map_1de6ef4f1218487da9d6da057bb8f454.setView(new L.LatLng(lat,lon))
+                        })
+}
+
+let data = []
+let list_checkbox_monuments= document.querySelectorAll(".monuments")
+
+function  check_monuments(){
+            for(item of list_checkbox_monuments){
+                if(item.checked){
+                    data.push(item.id)
                 }
-                map_1de6ef4f1218487da9d6da057bb8f454.setView(new L.LatLng(lat, lon))
-            })
-    }
-
-    let data = []
-    let list_checkbox_monuments = document.querySelectorAll(".monuments")
-
-    function check_monuments() {
-        for (item of list_checkbox_monuments) {
-            if (item.checked) {
-                data.push(item.id)
             }
-        }
     }
 
-    function post_monuments() {
+function post_monuments(){
         //Metoda która pobiera elementy z API w zależności które checkboxy są zaznaczone.
         //Jeśli żaden nie jest zaznaczony a użytkownik kliknie seach to nic nie dostanie.
-        data = []
+        data=[]
 
         check_monuments()
         layerGroup.clearLayers();
-        for (item of data) {
-            marker = fetch(`/map/api/points/${item.toString()}`)
-                .then(response => response.json())
-                .then(data => {
+        for(item of data){
+           marker =fetch(`/map/api/points/${item.toString()}`)
+                        .then(response => response.json())
+                        .then(data=> {
 
-                    data.forEach(addElements);
+                            data.forEach(addElements);
 
-                    function addElements(item, index) {
-                        var punkt = L.marker(
-                            [item.coordinateX, item.coordinateY],
-                            {}
-                        ).addTo(layerGroup);
-                        var popup = L.popup({"Width": "300px"});
-                        var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;">
+                            function addElements(item, index) {
+                                var punkt = L.marker(
+                                    [item.coordinateX, item.coordinateY],
+                                    {}
+                                ).addTo(layerGroup);
+                                var popup = L.popup({"Width": "300px"});
+                                var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;">
                                 <strong>${item.name}</strong>
                                 <p> ${item.descriptions}</p>
                                 <a href="/trails/point/${item.id}">Więcej</a></div>`)[0];
 
-                        popup.setContent(html);
-                        punkt.bindPopup(popup);
-                    }
-                })
+                                popup.setContent(html);
+                                punkt.bindPopup(popup);
+                            }
+                        })
         }
     }
 
-    //Obsługa scrola na mapie
-    $("#map_1de6ef4f1218487da9d6da057bb8f454").bind('mousewheel DOMMouseScroll', function (event) {
+        //Obsługa scrola na mapie
+        $("#map_1de6ef4f1218487da9d6da057bb8f454").bind('mousewheel DOMMouseScroll', function (event) {
         event.stopPropagation();
-        if (event.ctrlKey === true) {
-            event.preventDefault();
-            map_1de6ef4f1218487da9d6da057bb8f454.scrollWheelZoom.enable();
-            $('#map_1de6ef4f1218487da9d6da057bb8f454').removeClass('map-scroll');
-            setTimeout(function () {
-                map_1de6ef4f1218487da9d6da057bb8f454.scrollWheelZoom.disable();
-            }, 1000);
-        } else {
-            map_1de6ef4f1218487da9d6da057bb8f454.scrollWheelZoom.disable();
-            $('#map_1de6ef4f1218487da9d6da057bb8f454').addClass('map-scroll');
-        }
+         if (event.ctrlKey === true) {
+                 event.preventDefault();
+             map_1de6ef4f1218487da9d6da057bb8f454.scrollWheelZoom.enable();
+               $('#map_1de6ef4f1218487da9d6da057bb8f454').removeClass('map-scroll');
+             setTimeout(function(){
+                 map_1de6ef4f1218487da9d6da057bb8f454.scrollWheelZoom.disable();
+             }, 1000);
+         } else {
+             map_1de6ef4f1218487da9d6da057bb8f454.scrollWheelZoom.disable();
+             $('#map_1de6ef4f1218487da9d6da057bb8f454').addClass('map-scroll');
+         }
 
-    });
+     });
 
-    $(window).bind('mousewheel DOMMouseScroll', function (event) {
-        $('#map_1de6ef4f1218487da9d6da057bb8f454').removeClass('map-scroll');
-    })
+      $(window).bind('mousewheel DOMMouseScroll', function (event) {
+           $('#map_1de6ef4f1218487da9d6da057bb8f454').removeClass('map-scroll');
+      })
 </script>
