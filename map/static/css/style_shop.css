@@ -93,31 +93,54 @@ div.menu-shop div.shop-user-menu div#bell:hover i{
 }
 
 /* Głowna strona sklepu - Lista */
-div#sh-list{
+div#sh-list {
     background-color: #f4f4f4;
     min-height: 74vh;
     margin: 3px 0 0 0;
     padding: 20px 0 50px 100px;
 }
-div.first-section{
-    width:100%;
+
+div.first-section {
+    width: 100%;
     min-height: 60vh;
     display: flex;
     justify-content: center;
 }
 
-div.first-section div.left div{
+
+div#hamburger-shop {
+    display: none;
+    cursor: pointer;
+}
+
+div#hamburger-shop_x {
+    display: none;
+    position: absolute;
+    width: 30px;
+    z-index: 2;
+    top: 2px;
+    left: 270px;
+}
+
+div#hamburger-shop i {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+div.first-section div.left div {
     width: 15vw;
     height: 460px;
     margin-right: 130px;
     background-color: #ffffff;
 }
-div.first-section div.left div.filter-left{
-    margin-top:20px;
+
+div.first-section div.left div.filter-left {
+    margin-top: 20px;
     border: 1px solid #bfbfbf;
 }
 
-div.first-section div.left div.filter-left h3{
+div.first-section div.left div.filter-left h3 {
     font-family: 'Roboto Mono', monospace;
     color: #131313;
     text-shadow: 0 1px #cbcbcb;
@@ -441,7 +464,7 @@ div.first-section div.center div.bottom div img{
 
 @media only screen and (max-width: 802px) {
     div.menu-shop div.search-product {
-        margin-left: 20px;
+        margin-left: 5px;
     }
 
     div.left {
@@ -473,6 +496,12 @@ div.first-section div.center div.bottom div img{
         display: none;
     }
 
+    div#hamburger-shop {
+        display: block;
+        margin: 10px;
+    }
+
+
     div.first-section div.center {
         width: 80vw
     }
@@ -494,19 +523,18 @@ div.first-section div.center div.bottom div img{
 }
 
 @media only screen and (max-width: 589px) {
+
+    div#hamburger-shop {
+        margin: 10px;
+        margin-right: 35%;
+    }
+
     div.menu-shop div.shop-user-menu div i {
         font-size: 18px;
     }
 
     div.menu-shop div.shop-user-menu div {
         margin-right: 5px;
-    }
-}
-
-@media only screen and (max-width: 539px) {
-    div.menu-shop {
-        display: flex;
-        justify-content: flex-end;
     }
 
     div#search-icon {
@@ -546,10 +574,11 @@ div.first-section div.center div.bottom div img{
     div.menu-shop div.search-product.rwd div#search_x {
         display: block;
         position: fixed;
-        top:190px;
-        right:7px
+        top: 190px;
+        right: 7px
     }
-    div.menu-shop div.search-product.rwd div#search_x i{
+
+    div.menu-shop div.search-product.rwd div#search_x i {
         font-size: 22px;
     }
 
@@ -561,6 +590,12 @@ div.first-section div.center div.bottom div img{
         height: 150px;
         border: 1px solid #515151;
     }
+
+    div.menu-shop {
+        display: flex;
+        justify-content: flex-end;
+    }
+
 
     div.menu-shop div.search-product.rwd input {
         width: 180px;
@@ -596,8 +631,11 @@ div.first-section div.center div.bottom div img{
     }
 }
 
-@media only screen and (max-width: 493px) {
 
+@media only screen and (max-width: 493px) {
+    div#hamburger-shop {
+        margin-right: 25%;
+    }
 
     div.menu-shop div.search-product.rwd input {
         width: 170px;
@@ -621,6 +659,9 @@ div.first-section div.center div.bottom div img{
 }
 
 @media only screen and (max-width: 439px) {
+     div#hamburger-shop {
+        margin-right: 20%;
+    }
     div.menu-shop div.search-product.rwd input {
         height: 28px;
     }
@@ -646,8 +687,16 @@ div.first-section div.center div.bottom div img{
         right: 5px;
     }
 }
+@media only screen and (max-width: 398px) {
 
+    div#hamburger-shop {
+        margin-right: 15%;
+    }
+}
 @media only screen and (max-width: 380px) {
+    div#hamburger-shop {
+        margin-right: 10%;
+    }
     div.menu-shop div.search-product.rwd input {
         width: 120px;
     }
@@ -668,6 +717,10 @@ div.first-section div.center div.bottom div img{
         padding: 5px 7px;
     }
 }
+@media only screen and (max-width: 356px) {
+    div#hamburger-shop {
+        margin-right: 5%;
+    }
 
 @media only screen and (max-width: 305px) {
      div.menu-shop div.search-product.rwd input {
