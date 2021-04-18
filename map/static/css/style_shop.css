@@ -721,7 +721,7 @@ div.first-section div.center div.bottom div img{
     div#hamburger-shop {
         margin-right: 5%;
     }
-
+}
 @media only screen and (max-width: 305px) {
      div.menu-shop div.search-product.rwd input {
         width: 110px;
