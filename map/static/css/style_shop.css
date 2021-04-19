@@ -116,10 +116,15 @@ div#hamburger-shop {
 div#hamburger-shop_x {
     display: none;
     position: absolute;
-    width: 30px;
+    width: 25px;
+    height: 30px;
     z-index: 2;
-    top: 2px;
-    left: 270px;
+    top: 67px;
+    left: 310px;
+}
+
+div#hamburger-shop_x i {
+    font-size: 20px;
 }
 
 div#hamburger-shop i {
@@ -501,10 +506,34 @@ div.first-section div.center div.bottom div img{
         margin: 10px;
     }
 
+    div#hamburger-shop_x {
+        display: block;
+    }
 
     div.first-section div.center {
         width: 80vw
     }
+
+    .left.rwd {
+        display: block;
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.4);
+        z-index: 99;
+    }
+
+    div.first-section div.left.rwd div {
+        background-color: #fff;
+        width: 335px;
+        top:10vh;
+        position: relative;
+    }
+     div.first-section div.left.rwd div ul li a{
+         font-size: 14px;
+     }
 }
 
 @media only screen and (max-width: 632px) {
