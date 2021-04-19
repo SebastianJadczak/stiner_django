@@ -10,12 +10,13 @@ div.category-products {
 }
 
 div.category-products div.ad {
-    width:60vw;
+    max-width:60vw;
     height:320px;
     background-color: #fff;
     margin-bottom: 40px;
     animation: slider_image 25s infinite;
     background-size: cover;
+
 }
 
 @keyframes slider_image {
@@ -140,4 +141,12 @@ div.filter div.sort form button{
     text-transform: uppercase;
     cursor: pointer;
     transform: translateX(-30px);
+}
+@media only screen and (max-width: 673px) {
+    div.category-products{
+        width: 90vw;
+    }
+    div.category-products div.ad{
+        max-width: 90vw;
+    }
 }
