@@ -290,9 +290,6 @@ div#top div.menu ul li.green:hover div.tr {
 
 
 @media only screen and (max-width: 680px) {
-    div#top div.menu div.tr.active {
-        transform: translateY(10px);
-    }
 
     div#top div.menu ul li.green:hover div.active {
         transform: translateY(12px) translateX(-40px);
