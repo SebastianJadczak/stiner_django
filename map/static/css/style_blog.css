@@ -1,21 +1,23 @@
-div.blog_title{
-    width:99.1vw;
-    height:80vh;
+div.blog_title {
+    width: 99.1vw;
+    height: 80vh;
     background-image: url("../img/city.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-       box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 div.content_center{
     display: flex;
     background-color: #fbfbfb;
 }
+div.text h3{
+    font-family: Verdana, sans-serif;
+}
 
 div.right_table{
     width:20vw;
-    border-left: 0.5px solid grey;
     padding:50px;
 }
 
