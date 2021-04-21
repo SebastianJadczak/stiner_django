@@ -104,14 +104,23 @@ div.posts div.post div.info {
 
 @media only screen and (max-width: 1537px) {
     div.posts div.post {
-        width: 300px;
-        margin: 10px 25px;
+        width: 310px;
+        margin: 10px;
+    }
+    div.right_table{
+        padding:50px 10px;
     }
 }
 
 @media only screen and (max-width: 1500px) {
     div.posts div.post {
         margin: 10px;
+    }
+}
+@media only screen and (max-width: 1415px) {
+    div.posts div.post {
+        width: 300px;
+        margin: 10px 5;
     }
 }
 
