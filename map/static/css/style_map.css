@@ -150,8 +150,12 @@ div#top_mapa div.menu_mapa ul li.gold a i{
 }
 
 
-div.login_mapa{
-    margin-left:130px;
+div.login_mapa {
+    margin-left: 130px;
+}
+
+div#login_rwd {
+    display: none;
 }
 
 div.login_mapa div.user_menu{
@@ -580,13 +584,39 @@ div#filter_mapa div:nth-of-type(1){
     margin-right: 10px;
     width: 100px;
 }
-div#filter_mapa div:nth-of-type(1) select{
-    font-size: 11px;
-    padding: 5px;
+
+    div#filter_mapa div:nth-of-type(1) select {
+        font-size: 11px;
+        padding: 5px;
+    }
+
+    div.search_mapa button {
+        margin-top: 15px;
+        padding: 0 8px;
+        font-size: 12px;
+    }
 }
-div.search_mapa button{
-    margin-top: 15px;
-    padding: 0 8px;
-    font-size: 12px;
-}
+
+@media only screen and (max-width: 413px) {
+
+    div#top_mapa div.menu_mapa {
+        width: 50%;
+        margin: 0 0 0 20px;
+    }
+
+    div.login_mapa {
+        display: none;
+    }
+    /*div#top_mapa div.menu_mapa ul li a{*/
+    /*    height: 70px;*/
+    /*}*/
+
+    div#login_rwd {
+        display: block;
+        margin-left: 30px;
+        line-height: 100px;
+    }
+     div#login_rwd i{
+         font-size: 30px;
+     }
 }

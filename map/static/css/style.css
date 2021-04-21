@@ -334,3 +334,43 @@ div#top div.menu ul li.green:hover div.tr {
         height: 34px;
     }
 }
+
+@media only screen and (max-width: 413px) {
+    #top {
+        width: 99vw;
+        justify-content: normal;
+    }
+
+    div#top div.menu {
+        width: 50%;
+        margin: 0 0 0 20px;
+    }
+
+    div.login {
+        display: none;
+    }
+
+    div#top div.menu ul li a {
+        height: 70px;
+    }
+
+    #top div.logo {
+        margin: 22px 5px 5px 9px;
+        height: 5.5vh;
+        width: 60px;
+    }
+
+    div#top div.menu ul li a i {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+
+    div#login_rwd {
+        display: block;
+        line-height: 100px;
+    }
+
+    div#login_rwd i {
+        font-size: 30px;
+    }
+}

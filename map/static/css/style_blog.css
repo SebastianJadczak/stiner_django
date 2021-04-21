@@ -120,7 +120,7 @@ div.posts div.post div.info {
 @media only screen and (max-width: 1415px) {
     div.posts div.post {
         width: 300px;
-        margin: 10px 5;
+        margin: 10px;
     }
 }
 

@@ -512,4 +512,31 @@ div.popular-center button#left-popular, div.popular-center button#right-popular{
      div.popular-center button#right-popular{
         transform: translateX(35px);
     }
+     div.right{
+         margin:0 auto;
+         width:420px;
+     }
+     div.all_trails{
+         width:390px;
+         padding-right: 0;
+     }
+     div.all_trails div.all_trail-trails div.all_trails-trail{
+         min-width: 350px;
+     }
+     div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more div{
+         margin-right: 100px;
+     }
+     div.all_trails button#right {
+         transform: translateX(5px);
+     }
+     div.top_rate-center{
+         padding-right: 0;
+     }
+     div.top_rate-trails, div.popular-trails {
+         width: 390px;
+         padding-right: 0;
+     }
+     div.top_rate-center button#right-rate{
+            transform: translateX(5px);
+     }
 }
