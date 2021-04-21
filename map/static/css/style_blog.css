@@ -15,7 +15,10 @@ div.content_center{
 div.text h3{
     font-family: Verdana, sans-serif;
 }
-
+div.text p{
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.3px;
+}
 div.right_table{
     width:20vw;
     padding:50px;
@@ -54,21 +57,37 @@ div.posts div.post div.image{
 div.posts div.post div.image img{
     width:100%;
     height:100%;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 2px #bcbcbc;
 }
 div.posts div.post div.title{
     text-align: center;
-
+    padding: 0 10px;
+    height:50px;
 }
-div.posts div.post div.title p{
+div.posts div.post div.title p {
     color: #151515;
-    font-size: 29px;
+    font-size: 22px;
     font-weight: bold;
     font-family: 'Roboto Mono', monospace;
     margin: 10px 0;
     text-transform: uppercase;
 }
-div.posts div.post div.body{
-    margin:0;
+
+div.posts div.post div.body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 0 10px 0 15px;
+    letter-spacing: 1.6px;
+    height: 50px;
+}
+
+div.posts div.post div.info {
+    font-family: Arial, sans-serif;
+    padding: 0 20px 0 15px;
+    letter-spacing: 1.6px;
+    font-size: 13px;
+    text-align: right;
 }
 @media only screen and (max-width: 1680px) {
 
@@ -77,4 +96,11 @@ div.posts{
     margin: 50px 0 50px 50px;
 }
 
+}
+@media only screen and (max-width: 1537px) {
+    div.posts div.post {
+    width: 300px;
+    margin: 10px 25px;
+    height: 380px;
+}
 }
