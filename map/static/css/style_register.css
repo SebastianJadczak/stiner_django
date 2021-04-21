@@ -42,9 +42,9 @@ div.register div.register_form div.form form button{
     border: 1px solid #235171;
     background-color: #3375a4;
     color: #fff;
-    width:200px;
-    height:40px;
-    margin:15px 100px;
+    width: 200px;
+    height: 50px;
+    margin: 15px 100px;
     font-size: 18px;
     border-radius: 20px;
     letter-spacing: 3.6px;
@@ -65,7 +65,7 @@ div.register div.register_image div.text-top{
     margin: 70px 50px;
 }
 
-div.register div.register_image div.text-top h2{
+div.register div.register_image div.text-top h2 {
     font-size: 33px;
     font-family: "Lucida Grande", Verdana, Arial, sans-serif;
     font-weight: 600;
@@ -73,13 +73,119 @@ div.register div.register_image div.text-top h2{
     text-align: center;
     color: #d37900;
 }
-div.register div.register_image div.text-bottom{
-    margin:700px 0 0;
-    height:50px;
+
+div.register div.register_image div.text-bottom {
+    margin: 700px 0 0;
+    height: 50px;
     text-align: center;
     color: #d37800;
 }
-div.register div.register_image div.text-bottom p{
+
+div.register div.register_image div.text-bottom p {
     font-size: 27px;
     font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+@media only screen and (max-width: 1395px) {
+    div.register div.register_form div.form {
+        margin-left: 50px;
+    }
+
+    div.register div.register_image {
+        background-position: center;
+    }
+}
+
+@media only screen and (max-width: 1205px) {
+    div.register div.register_form div.form {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 1092px) {
+    div.register div.register_form div.form form input {
+        width: 200px;
+    }
+
+    div.register div.register_form div.form form button {
+        width: 160px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    div.register div.register_form {
+        margin: 50px 0 0 40px;
+        position: fixed;
+        top: 150px;
+        left: calc(50vw - 290px);
+        width: 500px;
+        height: 400px;
+        background-color: #fff;
+        border: 1px solid #9d9d9d;
+        box-shadow: 0 0 3px #bfbfbf;
+        border-radius: 10px;
+    }
+
+    div.register div.register_image {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    div.register div.register_form div.logo {
+        margin: 20px 0;
+        height: 70px;
+    }
+
+    div.register div.register_form div.logo img {
+        height: 100%;
+    }
+
+    div.register div.register_form h3 {
+        margin: 5px 0 25px;
+    }
+
+    div.register div.register_form div.form {
+        margin: 15px auto;
+    }
+
+    div.register div.register_form div.form form p {
+        margin: 15px;
+        text-align: center;
+        font-size: 20px;
+        letter-spacing: 1.3px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+    }
+
+    div.register div.register_form div.form form button {
+        margin: 0 0 0 170px;
+    }
+}
+
+@media only screen and (max-width: 662px) {
+    div.register div.register_image div.text-top h2 {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    div.register div.register_form {
+        top: 180px;
+        width: 400px;
+        left: calc(50vw - 240px);
+    }
+}
+@media only screen and (max-width: 425px) {
+   div.register div.register_form {
+        top: 210px;
+        width: 350px;
+        left: calc(50vw - 215px);
+       height: 380px;
+    }
+    div.register div.register_form div.form form input{
+        width: 170px;
+    }
+    div.register div.register_form div.form form p{
+        font-size: 17px;
+    }
 }
