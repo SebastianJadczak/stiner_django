@@ -162,8 +162,24 @@ div.buttons input.add_to_user_trail{
 
 /* Szkic trasy użytkownika */
 
-div.user_trail_draft{
-    height:100vh;
+div.user_trail_draft {
+    height: 100vh;
+}
+
+div.user_trail_draft div#title_draft {
+    width: 75vw;
+    font-family: Arial, sans-serif;
+}
+
+div.user_trail_draft div#title_draft h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+div.user_trail_draft div#title_draft p {
+    font-size: 17px;
+    letter-spacing: 1.2px;
+    line-height: 21px;
 }
 
 div.user_trail_draft div.draft-list_point {
