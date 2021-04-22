@@ -92,6 +92,15 @@
     if (yours_trails) {
         tr.classList.toggle("active");
     }
+    //------------------------------------------
+//The method responsible for choosing login / registration at low screen resolution
+let login_rwd = document.getElementById('login_rwd')
+let login_mapa_menu = document.querySelector('.login_mapa')
+if(login_rwd){
+    login_rwd.addEventListener('click',function(){
+        login_mapa_menu.classList.toggle('mini')
+    })
+}
 </script>
 </body>
 </html>

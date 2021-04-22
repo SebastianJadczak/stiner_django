@@ -309,4 +309,13 @@ function post_monuments(){
       $(window).bind('mousewheel DOMMouseScroll', function (event) {
            $('#map_1de6ef4f1218487da9d6da057bb8f454').removeClass('map-scroll');
       })
+//------------------------------------------
+//The method responsible for choosing login / registration at low screen resolution
+let login_rwd = document.getElementById('login_rwd')
+let login_mapa_menu = document.querySelector('.login_mapa')
+if(login_rwd){
+    login_rwd.addEventListener('click',function(){
+        login_mapa_menu.classList.toggle('mini')
+    })
+}
 </script>

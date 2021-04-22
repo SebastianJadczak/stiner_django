@@ -607,16 +607,35 @@ div#filter_mapa div:nth-of-type(1){
     div.login_mapa {
         display: none;
     }
-    /*div#top_mapa div.menu_mapa ul li a{*/
-    /*    height: 70px;*/
-    /*}*/
-
     div#login_rwd {
         display: block;
         margin-left: 30px;
         line-height: 100px;
     }
      div#login_rwd i{
-         font-size: 30px;
+         font-size:28px;
      }
+     div.login_mapa.mini{
+         display: block;
+         position: absolute;
+         width:90px;
+         height:76px;
+         top:60px;
+         right:0;
+         background-color: #ffffff;
+         z-index: 99;
+         border:1px solid #c3c3c3;
+        justify-content: space-between;
+     }
+     div.login_mapa.mini button{
+         border: 1px solid #428bca;
+         border-radius: 0;
+         margin: 0;
+         transform: translateY(0);
+         height: 38px;
+     }
+       div.login_mapa.mini button a{
+           line-height: 38px;
+       }
+
 }
