@@ -1,36 +1,48 @@
 /*Base dla Strony shop*/
-div.shop-content{
-    background-color: #f1f1f1;
-    padding-top:10px;
-    margin-top: 8px;
+div.shop-content {
+    background-color: #f4f4f4;
+    margin-top: 2px;
+    z-index: 4;
 }
-div.menu-shop{
-    height:7vh;
-    background-color: #fff;
-      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-    display: flex;
 
-}
-div.menu-shop div.shop-user-menu{
+div.menu-shop {
+    height: 7vh;
+    background-color: #fff;
+    box-shadow: 0 1px 2px #c3c3c3, 0 -1px 2px #c3c3c3;
     display: flex;
 }
-div.menu-shop div.search-product{
+
+div.menu-shop div.shop-user-menu {
+    display: flex;
+}
+
+div#search-icon {
+    display: none;
+}
+
+div.menu-shop div.search-product {
     line-height: 7vh;
-    width:700px;
+    width: 700px;
     margin-left: 500px;
 }
-div.menu-shop div.search-product input{
+
+div#search_x {
+    display: none;
+}
+
+div.menu-shop div.search-product input {
     width: 330px;
     height: 33px;
     padding: 0 0 0 20px;
 }
-div.menu-shop div.search-product select{
+
+div.menu-shop div.search-product select {
     height: 36px;
     width: 180px;
     padding: 0 0 0 20px;
 }
 
-div.menu-shop div.search-product button{
+div.menu-shop div.search-product button {
     background-color: #ff6f00;
     color: white;
     border: none;
@@ -81,56 +93,92 @@ div.menu-shop div.shop-user-menu div#bell:hover i{
 }
 
 /* Głowna strona sklepu - Lista */
-div.shop-list{
-    background-color: #f1f1f1;
-    min-height: 100vh;
+div#sh-list {
+    background-color: #f4f4f4;
+    min-height: 74vh;
     margin: 3px 0 0 0;
-    padding: 20px 100px;
+    padding: 20px 0 50px 100px;
 }
-div.first-section{
-    width:100%;
-    height: 60vh;
+
+div.first-section {
+    width: 100%;
+    min-height: 60vh;
     display: flex;
     justify-content: center;
 }
 
-div.first-section div.left div{
-    width: 15vw;
-    height: 100%;
-    margin-right: 130px;
-    background-color: #ffffff;
-      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-}
-div.first-section div.left div.filter-left{
-    margin-top:20px;
+
+div#hamburger-shop {
+    display: none;
+    cursor: pointer;
 }
 
-div.first-section div.left div.filter-left h3{
+div#hamburger-shop_x {
+    display: none;
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    z-index: 2;
+    top: 67px;
+    left: 310px;
+}
+
+div#hamburger-shop_x i {
+    font-size: 20px;
+}
+
+div#hamburger-shop i {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+div.first-section div.left div {
+    width: 15vw;
+    height: 460px;
+    margin-right: 130px;
+    background-color: #ffffff;
+}
+
+div.first-section div.left div.filter-left {
+    margin-top: 20px;
+    border: 1px solid #bfbfbf;
+}
+
+div.first-section div.left div.filter-left h3 {
     font-family: 'Roboto Mono', monospace;
     color: #131313;
     text-shadow: 0 1px #cbcbcb;
     font-weight: normal;
     text-align: center;
-    padding: 15px 0;
+    padding: 9px 0;
+    margin: 0;
 }
 
-div.first-section div.left ul.menu-category{
+div.first-section div.left ul.menu-category {
     list-style: none;
     padding: 0;
     margin: 0;
-    height: 100%;
+    height: 460px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-div.first-section div.left ul.menu-category li{
+
+div.first-section div.left ul.menu-category li {
     width: 100%;
-    height: 100%;
+    height: 36px;
+    border: 0.5px solid #d7d7d7;
+    padding:8px 0 0;
 }
 
 div.first-section div.left ul.menu-category li:hover{
-    background-color: #f6f6f6;
+    background-color: #dd0000;
     cursor: pointer;
+}
+div.first-section div.left ul.menu-category li:hover a{
+    color: white;
+     font-weight: bold;
 }
 
 div.first-section div.left ul.menu-category li a{
@@ -141,11 +189,13 @@ div.first-section div.left ul.menu-category li a{
     font-family: 'Roboto Mono', monospace;
     color: #131313;
     text-shadow: 0 1px #cbcbcb;
-    padding: 15px 0 0 30px;
+    padding: 5px 0 0 20px;
+    letter-spacing: 1.4px;
+    font-size: 15px;
 }
 
 div.first-section div.center{
-    width: 45vw;
+    width: 80vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -155,75 +205,568 @@ div.first-section div.center{
 
 div.first-section div.center div.top{
     width: 100%;
-    height: 48%;
+    height: 385px;
     background-color: #fff;
-     box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
 }
 div.first-section div.center div.bottom{
-     width: 100%;
-    height: 48%;
-    background-color: #fff;
-      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-}
-
-div.first-section div.right{
-    width: 21vw;
-    height: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    padding-top: 25px;
 }
-
-div.first-section div.right div.top{
-    width: 100%;
-    height: 48%;
-    background-color: #fff;
-      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+div.first-section div.center div.bottom div{
+    width:270px;
+    height:130px;
+    border: 0.5px solid #bebebe;
+    box-shadow: 0 0 1px #d2d2d2;
 }
-div.first-section div.right div.bottom{
-     width: 100%;
-    height: 48%;
-    background-color: #fff;
-      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-}
-
-div.product_detail{
-    width:80vw;
-    display: flex;
-    margin:100px auto;
-    border:2px solid red;
-    padding: 50px;
-    background-color: rgba(255, 209, 211, 0.53);
-}
-div.product_image{
-    height:300px;
-    width:600px;
-    margin-right: 50px;
-}
-div.product_detail div.product_image img{
+div.first-section div.center div.bottom div img{
     width:100%;
     height:100%;
 }
-div.product_description{
-    width:80%;
-    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-    letter-spacing: 2px;
-}
-div.product_description span.price{
-    position: relative;
-    top:30px;
+/*Slider*/
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+    height: 853px;
+  position: relative;
+  margin: auto;
 }
 
-div.product_description button.buy{
-    background-color: #d80000;
-    border: none;
-    width:90px;
-    height:40px;
-    color:whitesmoke;
-    border-radius: 8px;
+/* Caption text */
+.text {
+    color: #ff000d;
+    width:280px;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    border-radius: 15px;
+    bottom: 80px;
+    right: 50px;
+    text-align: center;
     font-weight: bold;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    font-family:  Arial, sans-serif;
-    margin-left:400px;
+    background-color: rgba(255,255,255, 0.6);
+    border: 0.5px solid #868686;
+    font-family: Arial, sans-serif;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.mySlides{
+    width:100%;
+    height: 100%;
+}
+.mySlides img{
+    width: 100%;
+     height: 100%;
+}
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+@media only screen and (max-width: 1680px) {
+
+    div.menu-shop div.search-product{
+       text-align: center;
+    }
+    div.menu-shop div.search-product input{
+        width: 250px;
+        height: 28px;
+    }
+    div.menu-shop div.search-product select{
+        height: 32px;
+        width: 145px;
+        padding: 0 0 0 2px;
+    }
+
+    div.menu-shop div.search-product button {
+        font-size: 14px;
+        padding: 8.5px 15px;
+    }
+
+    div.first-section div.left div {
+        width: 19vw;
+        height: 502px;
+        margin-right: 80px;
+        padding-bottom: 0;
+    }
+
+    .slideshow-container {
+        max-width: 1000px;
+        height: 385px;
+        position: relative;
+        margin: auto;
+    }
+
+}
+@media only screen and (max-width: 1506px) {
+   div.menu-shop div.search-product{
+        margin-left: 350px;
+    }
+    div.menu-shop div.shop-user-menu{
+        margin-left: 100px;
+    }
+}
+@media only screen and (max-width: 1304px) {
+    div.menu-shop div.shop-user-menu {
+        margin-left: 50px;
+    }
+
+    div.menu-shop div.shop-user-menu div#account {
+        margin-left: 30px;
+    }
+    div.menu-shop div.shop-user-menu div{
+        margin-right: 20px;
+    }
+
+    div.menu-shop div.search-product {
+        margin-left: 300px;
+    }
+}
+
+@media only screen and (max-width: 1154px) {
+    div#sh-list {
+        padding: 20px 0 50px 40px;
+    }
+
+    div.first-section div.center {
+        width: 70vw;
+        height: 100%;
+        margin-right: 40px;
+    }
+
+    div.first-section div.left ul.menu-category li a {
+
+        padding: 5px 0 0 15px;
+        letter-spacing: 1.2px;
+        font-size: 13px;
+    }
+
+    div.menu-shop div.shop-user-menu {
+        margin-left: 10px;
+    }
+
+    div.menu-shop div.shop-user-menu div#account {
+        margin-left: 10px;
+    }
+
+    div.menu-shop div.search-product input {
+        width: 200px;
+    }
+
+    div.menu-shop div.search-product button {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    div.menu-shop div.search-product input {
+        height: 24px;
+    }
+
+    div.menu-shop div.search-product select {
+        height: 29px;
+    }
+}
+
+@media only screen and (max-width: 1027px) {
+    div.menu-shop div.shop-user-menu div {
+        margin-right: 10px;
+    }
+
+    div.menu-shop div.shop-user-menu div i {
+        font-size: 22px;
+    }
+
+    div.menu-shop div.shop-user-menu div#account i {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 965px) {
+    div.menu-shop div.search-product {
+        margin-left: 200px;
+    }
+
+    div.first-section div.center {
+        width: 60vw;
+        height: 100%;
+        margin-right: 40px;
+    }
+
+    div.first-section div.center div.top {
+        height: 320px;
+    }
+
+    .slideshow-container {
+        height: 320px;
+    }
+
+    div.first-section div.left div {
+        width: 25vw;
+    }
+
+    div.first-section div.center div.bottom div {
+        height: 110px;
+    }
+}
+
+@media only screen and (max-width: 862px) {
+    div.menu-shop div.search-product input {
+        width: 140px;
+    }
+
+    div.first-section div.center div.top {
+        height: 280px;
+    }
+
+    .slideshow-container {
+        height: 280px;
+    }
+
+    div.first-section div.left div {
+        height: 450px;
+    }
+
+    div.first-section div.left ul.menu-category {
+        height: 450px;
+    }
+
+    div.first-section div.left ul.menu-category li {
+        width: 100%;
+        height: 31px;
+        border: 0.5px solid #d7d7d7;
+        padding: 8px 0 0;
+    }
+}
+
+@media only screen and (max-width: 802px) {
+    div.menu-shop div.search-product {
+        margin-left: 5px;
+    }
+
+    div.left {
+        width: 230px;
+    }
+
+    div.first-section div.left ul.menu-category li a {
+        font-size: 12px;
+    }
+
+    div.first-section div.center div.top {
+        height: 250px;
+    }
+
+    .slideshow-container {
+        height: 250px;
+    }
+
+    .text {
+        bottom: 30px;
+        right: 30px;
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+@media only screen and (max-width: 673px) {
+    .left {
+        display: none;
+    }
+
+    div#hamburger-shop {
+        display: block;
+        margin: 10px;
+    }
+
+    div#hamburger-shop_x {
+        display: block;
+    }
+
+    div.first-section div.center {
+        width: 80vw
+    }
+
+    .left.rwd {
+        display: block;
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.4);
+        z-index: 99;
+    }
+
+    div.first-section div.left.rwd div {
+        background-color: #fff;
+        width: 335px;
+        top:10vh;
+        position: relative;
+    }
+     div.first-section div.left.rwd div ul li a{
+         font-size: 14px;
+     }
+}
+
+@media only screen and (max-width: 632px) {
+    div.menu-shop div.search-product {
+        margin-left: 10px;
+    }
+
+    div.menu-shop div.search-product input {
+        width: 120px;
+    }
+
+    div.menu-shop div.search-product select {
+        width: 120px;
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 589px) {
+
+    div#hamburger-shop {
+        margin: 10px;
+        margin-right: 35%;
+    }
+
+    div.menu-shop div.shop-user-menu div i {
+        font-size: 18px;
+    }
+
+    div.menu-shop div.shop-user-menu div {
+        margin-right: 5px;
+    }
+
+    div#search-icon {
+        display: block;
+        margin-right: 10px;
+        line-height: 7vh;
+        font-size: 23px;
+        color: #565656;
+    }
+
+    div.search-product {
+        display: none;
+    }
+
+    div.menu-shop div.shop-user-menu {
+        width: 270px;
+        margin-left: 0;
+    }
+
+    div.menu-shop div.shop-user-menu div i {
+        font-size: 25px;
+        margin-right: 15px;
+    }
+
+    /*    Search modal.*/
+    div.menu-shop div.search-product.rwd {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: auto;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(255, 255, 255, 0.6);
+        z-index: 99;
+    }
+
+    div.menu-shop div.search-product.rwd div#search_x {
+        display: block;
+        position: fixed;
+        top: 190px;
+        right: 7px
+    }
+
+    div.menu-shop div.search-product.rwd div#search_x i {
+        font-size: 22px;
+    }
+
+    div.menu-shop div.search-product.rwd form {
+        margin: 200px auto;
+        background-color: #fff;
+        width: 99vw;
+        line-height: 150px;
+        height: 150px;
+        border: 1px solid #515151;
+    }
+
+    div.menu-shop {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+    div.menu-shop div.search-product.rwd input {
+        width: 180px;
+        height: 36px;
+        padding: 0 0 0 20px;
+    }
+
+    div.menu-shop div.search-product select {
+        height: 39px;
+        width: 170px;
+        padding: 0 0 0 5px;
+        font-size: 13px;
+    }
+
+    div.menu-shop div.search-product button {
+        background-color: #ff6f00;
+        color: white;
+        border: none;
+        font-size: 15px;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        font-weight: bold;
+        letter-spacing: 2.5px;
+        height: 43px;
+    }
+
+    div.first-section div.center div.bottom div {
+        height: 95px;
+    }
+
+    div.first-section div.center {
+        width: 90vw;
+    }
+}
+
+
+@media only screen and (max-width: 493px) {
+    div#hamburger-shop {
+        margin-right: 25%;
+    }
+
+    div.menu-shop div.search-product.rwd input {
+        width: 170px;
+        height: 31px;
+        padding: 0 0 0 10px;
+    }
+
+    div.menu-shop div.search-product select {
+        height: 36px;
+        width: 140px;
+        padding: 0 0 0 5px;
+        font-size: 13px;
+    }
+
+    div.menu-shop div.search-product button {
+        font-size: 14px;
+        padding: 10px 10px 8px;
+        height: 36px;
+        line-height: 17px;
+    }
+}
+
+@media only screen and (max-width: 439px) {
+     div#hamburger-shop {
+        margin-right: 20%;
+    }
+    div.menu-shop div.search-product.rwd input {
+        height: 28px;
+    }
+
+    div.menu-shop div.search-product select {
+        height: 33px;
+        width: 110px;
+        font-size: 12px;
+    }
+
+    div.menu-shop div.search-product button {
+        font-size: 11px;
+        padding: 7px 7px 6px;
+        height: 33px;
+        line-height: 17px;
+    }
+
+    div.first-section div.center div.bottom div {
+        height: 85px;
+    }
+
+    .text {
+        right: 5px;
+    }
+}
+@media only screen and (max-width: 398px) {
+
+    div#hamburger-shop {
+        margin-right: 15%;
+    }
+}
+@media only screen and (max-width: 380px) {
+    div#hamburger-shop {
+        margin-right: 10%;
+    }
+    div.menu-shop div.search-product.rwd input {
+        width: 120px;
+    }
+
+    div.menu-shop div.search-product select {
+        height: 33px;
+        width: 100px;
+        font-size: 11px;
+    }
+
+    div.menu-shop div.search-product button {
+        font-size: 10px;
+        padding: 7px 2px 3px;
+    }
+
+    .text {
+        font-size: 13px;
+        padding: 5px 7px;
+    }
+}
+@media only screen and (max-width: 356px) {
+    div#hamburger-shop {
+        margin-right: 5%;
+    }
+}
+@media only screen and (max-width: 305px) {
+     div.menu-shop div.search-product.rwd input {
+        width: 110px;
+        height: 27px;
+        padding: 0 0 0 10px;
+    }
+
+    div.menu-shop div.search-product select {
+        height: 31px;
+        padding: -1px 0 0 3px;
+          width: 70px;
+    }
+
+    div.menu-shop div.search-product button {
+        padding: 4px 4px 1px;
+        font-size: 8px;
+        height: 31px;
+    }
 }

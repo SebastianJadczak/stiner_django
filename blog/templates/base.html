@@ -74,33 +74,6 @@
 
 
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
-<script>
-    <!--    "Przycisk rozwijania menu"-->
-
-    let menu = document.querySelector("button.user_menu");
-    let icon = document.querySelector("i.fa-angle-down");
-    let user_menu = document.querySelector("div.user_menu");
-    let yours_trails = document.querySelector("li.yours_trails");
-    let tr = document.querySelector("div.tr")
-
-    if (menu) {
-        menu.addEventListener('click', function () {
-            user_menu.classList.toggle("active");
-            icon.classList.toggle("active");
-        });
-    }
-    if (yours_trails) {
-        tr.classList.toggle("active");
-    }
-    //------------------------------------------
-//The method responsible for choosing login / registration at low screen resolution
-let login_rwd = document.getElementById('login_rwd')
-let login_mapa_menu = document.querySelector('.login_mapa')
-if(login_rwd){
-    login_rwd.addEventListener('click',function(){
-        login_mapa_menu.classList.toggle('mini')
-    })
-}
-</script>
+<script src="{% static 'js/base.js' %}" type="text/javascript"></script>
 </body>
 </html>

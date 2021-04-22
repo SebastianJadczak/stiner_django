@@ -16,7 +16,8 @@ div.wrap-account div.left_account div.menu_account{
     width: 260px;
     margin-right: 130px;
     background-color: #ffffff;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
     display: flex;
     flex-direction: column;
 }
@@ -78,8 +79,8 @@ div.wrap-account div.right_account  div.sort#exception{
     flex-direction: row;
     transform: translateX(270px);
     border-radius: 15px;
-       border: 0.5px solid #868686;
-    box-shadow: 1px 1px 4px 1px rgba(33, 33, 33, 0.4);
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
 }
 div.wrap-account div.right_account  div.sort#account button,
 div.wrap-account div.right_account  div.sort#exception button{
@@ -113,7 +114,9 @@ div.wrap-account div.right_account  div.sort#exception form button{
     background-color: #ff3857;
     color: white;
     cursor:pointer;
-    border: none;
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
+    border-radius: 7px;
     width:88px;
     height:35px;
     font-weight: bold;
@@ -163,3 +166,22 @@ div.wrap-account div.right_account div.products div.price p{
     font-weight: bold;
     letter-spacing: 1.5px;
 }
+@media only screen and (max-width: 1680px) {
+div.wrap-account{
+    width: 90vw;
+    padding: 20px 55px 20px 80px;
+
+
+}div.wrap-account div.right_account {
+      margin-left: 30px;
+}
+
+ div.wrap-account div.right_account  div.sort#exception{
+    width:40%;
+    padding: 20px 5px 20px 50px;
+    transform: translateX(170px);
+}
+
+}
+
+

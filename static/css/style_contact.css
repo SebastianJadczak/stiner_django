@@ -1,0 +1,369 @@
+
+div.contact p#contact{
+    background-color: #0f0c6a;
+    color: whitesmoke;
+    margin: 4px 0 0 0;
+    height:60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    font-family:Verdana, Arial, sans-serif;
+    letter-spacing: 3px;
+}
+div.contact div.person {
+    width: 50vw;
+    margin: 80px auto 130px;
+
+}
+
+div.contact div.person div.person-text {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 30px;
+}
+
+div.contact div.person div.person-text h1 {
+    font-weight: normal;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    color: #0b0950;
+    text-align: center;
+}
+
+div.contact div.person div.person-text p {
+    font-size: 18px;
+    letter-spacing: 1.6px;
+    color: #0f0c6a;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+div.contact div.person div.person-info {
+    display: flex;
+}
+div.contact div.person div.person-info div.image{
+    width:240px;
+    height:200px;
+    margin-left: 20px;
+    margin-top: 80px;
+}
+div.contact div.person div.person-info div.image img{
+   height: auto;
+    max-width: 100%;
+    display:block;
+    border-radius: 130px;
+}
+
+div.contact div.person div.person-info div.info{
+    margin-left: 50px;
+}
+
+div.contact div.person div.person-info div.info div.motto p:nth-of-type(1){
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 19px;
+}
+div.contact div.person div.person-info div.info div.motto p:nth-of-type(2){
+     font-family: sans-serif;
+    letter-spacing: 1.1px;
+}
+
+div.contact div.person div.person-info div.info div.data{
+    margin-top:40px;
+}
+div.contact div.person div.person-info div.info div.data h3{
+    font-family: sans-serif;
+    letter-spacing: 1.2px;
+    font-size: 18px;
+}
+
+div.contact div.person div.person-info div.info div.data p{
+    font-size: 18px;
+}
+
+div.contact div.person div.person-info div.info div.data p i{
+    color: #1268a2;
+    margin-right: 15px;
+}
+
+div.contact div#data_company{
+    background-color: #0e0b53;
+    color: whitesmoke;
+    height:40vh;
+}
+
+div.contact div#data_company i {
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    padding-top: 50px;
+    color: #44a3e2;
+}
+
+div.contact div#data_company p{
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+div.contact div#data_company div.data{
+    margin-top:70px;
+}
+div.contact div#data_company div.data p{
+    font-size: 16px;
+}
+
+/*Formularz*/
+
+div.contact div.form{
+    width: 40vw;
+    margin: 0 auto;
+}
+div.contact div.form h2{
+    letter-spacing: 1.5px;
+    margin: 60px 0 15px;
+    font-family: sans-serif;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 0 5px 20px 10px;
+}
+div.contact div.form p#help{
+    margin-bottom: 40px;
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    padding: 0 10px 20px;
+    border-bottom: 1px solid #cfcfcf;
+}
+div.contact div.form h3{
+    margin-left: 50px;
+    margin-bottom: 25px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+div.contact div.form form{
+    height:300px;
+    margin-left: 50px;
+}
+div.contact div.form form p{
+    height: 40px;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+div.contact div.form form p input{
+    width:360px;
+    margin-left: 36px;
+    height: 35px;
+}
+div.contact div.form form p textarea{
+    width:360px
+}
+div.contact div.form form input[type=submit]{
+    margin: 140px 0 30px 310px;
+    width: 140px;
+    height:40px;
+    background-color: whitesmoke;
+    color: #3375a4;
+    border: 1px solid #2e628d;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 17px;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+div.contact div.form form input[type=submit]:hover{
+    background-color: #2c668f;
+    color: whitesmoke;
+    border: 1px solid #2e628d;
+    cursor:pointer;
+}
+div.footer-contact{
+    background-color: #fff;
+    margin-top:90px;
+    height: 5vh;
+    line-height: 5vh;
+    box-shadow: 0 10px 5px  rgba(0,0,0,0.4);
+    border-top: 0.5px solid rgba(110, 110, 110, 0.4);
+    text-align: center;
+}
+div.footer-contact a{
+    text-decoration: none;
+    color: #0e446c;
+    letter-spacing: 1.4px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1680px) {
+    div.contact div#data_company {
+        height: 45vh;
+    }
+
+    div.contact div#data_company div.data {
+        margin-top: 45px;
+    }
+}
+
+@media only screen and (max-width: 1270px) {
+    div.contact div.form form {
+        width: 500px;
+        margin-left: 0;
+    }
+
+    div.contact div.form form p input {
+        width: 300px;
+    }
+
+    div.contact div.form form p textarea {
+        width: 300px
+    }
+
+    div.contact div.person div.person-info div.image {
+        width: 270px;
+        height: 150px;
+        margin-top: 150px;
+        margin-left: 0;
+    }
+
+    div.contact div.person div.person-info div.image img {
+        width: 100%;
+        height: 100%;
+    }
+
+    div.contact div.person div.person-info div.info {
+        margin-left: 25px;
+    }
+
+    div.contact div.person div.person-text {
+        padding-left: 15px;
+    }
+
+    div.contact div#data_company div.data {
+        margin-top: 15px;
+    }
+
+    div.contact div#data_company i {
+        padding-top: 40px;
+    }
+
+    div.contact div.form form input[type=submit] {
+        margin-left: 250px;
+    }
+}
+
+@media only screen and (max-width: 1089px) {
+    div.contact div.person {
+        width: 60vw;
+    }
+
+    div.contact div.person div.person-info div.image {
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 1005px) {
+    div.contact div#data_company {
+        height: 320px;
+    }
+
+    div.contact div.person {
+        width: 70vw;
+    }
+
+    div.contact div.person div.person-info div.image {
+        width: 220px;
+    }
+
+    div.contact div.form h3 {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    div.contact div.person {
+        width: 90vw;
+    }
+
+    div.contact div.person div.person-info div.image {
+        width: 150px;
+    }
+
+    div.contact div.person div.person-info div.info {
+        width: calc(90vw - 210px);
+    }
+
+    div.contact div.form {
+        width: 90vw;
+    }
+
+    div.contact div.form h3 {
+        text-align: center;
+        padding-right: 40px;
+    }
+
+    div.contact div.form form {
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    div.contact div.person {
+        margin-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    div.contact div.person div.person-info div.image {
+        margin-top: 220px;
+
+    }
+
+    div.contact div.person div.person-info div.info div.data p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    div.contact div.person div.person-info div.image {
+        width: 120px;
+        height: 120px;
+        margin-top: 210px;
+    }
+
+    div.contact div.person div.person-info div.info {
+        width: calc(95vw - 130px);
+    }
+
+    div.contact div.form form p input {
+        width: 230px;
+    }
+
+    div.contact div.form form p textarea {
+        width: 230px;
+    }
+    div.contact div.form form input[type=submit]{
+        margin-left: 190px;
+    }
+
+}
+@media only screen and (max-width: 370px) {
+div.contact div.person div.person-info{
+    flex-direction: column-reverse;
+}
+    div.contact div.person div.person-info div.image{
+        margin: 20px auto 0;
+    }
+    div.contact div.person div.person-info div.info{
+        margin: 0 auto;
+        width: 95vw;
+    }
+     div.contact div.form form p input {
+        width: 210px;
+    }
+
+    div.contact div.form form p textarea {
+        width: 210px;
+    }
+    div.contact div.form form input[type=submit]{
+        margin-left: 170px;
+    }
+}

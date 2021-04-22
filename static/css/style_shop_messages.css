@@ -1,23 +1,25 @@
 div.messages-wrap{
     background-color: #f1f1f1;
-    margin-top:6px;
-       padding: 20px 100px;
-    height: 78vh;
+    margin-top:2px;
+    padding: 20px 100px;
+    height: 90vh;
+    max-width: 90vw;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
 }
-
 
 div.messages-wrap div.box-left{
     width:14vw;
     height:78vh;
 }
 div.messages-wrap div.box-left div.menu-messages{
-        width: 100%;
+    width: 100%;
     height: 26%;
     margin-right: 130px;
     background-color: #ffffff;
-      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
     display: flex;
     flex-direction: column;
 }
@@ -53,10 +55,11 @@ div.messages-wrap div.box-left div.menu-messages ul li a{
 }
 
 div.messages-wrap div.box-right{
-    width: 70vw;
+    width: 60vw;
+    min-height: 80%;
 }
 div.messages-wrap div.box-right div.action{
-    width:100%;
+    width:68vw;
     height:5vh;
 }
 
@@ -64,11 +67,11 @@ div.messages-wrap div.box-right div.action div.action-button button{
     background-color: #00b6ff;
     cursor: pointer;
     text-align: center;
-    border: 1.5px solid white;
     width:90px;
     height:35px;
     margin-right: 5px;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
     font-family: 'Roboto Mono', monospace;
     font-size: 14px;
     text-shadow: 0 1px #cbcbcb;
@@ -88,10 +91,11 @@ div.messages-wrap div.box-right div.action div.action-button button a{
     text-decoration: none;
 }
 div.messages-wrap div.box-right div.messages-content{
-    width: 100%;
-    height:100%;
+    width: 60vw;
+    min-height:80%;
     background-color: #ffffff;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
     display: flex;
     flex-direction: column;
     font-family: Helvetica, Arial, sans-serif;
@@ -114,10 +118,29 @@ div.messages-wrap div.box-right div.messages-content ul li  div.message div.chec
 }
 
 div.messages-wrap div.box-right div.messages-content ul li  div.message div.author{
-     column-width: 220px;
+    column-width: 220px;
     padding-left: 10px;
 }
 div.messages-wrap div.box-right div.messages-content ul li  div.message div.title{
-      column-width: 850px;
+    column-width: 800px;
     padding-left: 10px;
+}
+div.messages-wrap div.box-right div.messages-content ul li  div.message div.date {
+     width: 150px;
+}
+@media only screen and (max-width: 1680px) {
+    div.messages-wrap div.box-left div.menu-messages{
+        width: 14vw;
+        height: 33%;
+        margin-right: 130px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+    }
+    div.messages-wrap div.box-right{
+        max-width: 66vw;
+    }
+    div.messages-wrap div.box-right div.messages-content ul li  div.message div.date p{
+        margin: 7px 0 0 0;
+    }
 }
