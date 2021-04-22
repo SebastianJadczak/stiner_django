@@ -135,7 +135,7 @@ div#hamburger-shop i {
 
 div.first-section div.left div {
     width: 15vw;
-    height: 460px;
+    height: 520px;
     margin-right: 130px;
     background-color: #ffffff;
 }
@@ -185,6 +185,23 @@ div.first-section div.left div.filter-left section#brand p.brand {
 div.first-section div.left div.filter-left section#brand p.brand input {
     transform: translateY(1px);
     margin-right: 6px;
+}
+
+div.first-section div.left div.filter-left section#rating p {
+    padding-left: 45px;
+    margin: 6px 0;
+}
+
+div.first-section div.left div.filter-left section#rating p i {
+    color: gold;
+    font-size: 12px;
+}
+
+div.first-section div.left div.filter-left section#size p {
+    padding-left: 45px;
+    margin: 6px 0;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
 }
 
 div.first-section div.left ul.menu-category {
@@ -351,6 +368,10 @@ div.first-section div.center div.bottom div img{
         padding-bottom: 0;
     }
 
+    div.first-section div.left div:nth-of-type(3) {
+        height: 590px;
+    }
+
     .slideshow-container {
         max-width: 1000px;
         height: 385px;
@@ -359,6 +380,7 @@ div.first-section div.center div.bottom div img{
     }
 
 }
+
 @media only screen and (max-width: 1506px) {
    div.menu-shop div.search-product{
         margin-left: 350px;
