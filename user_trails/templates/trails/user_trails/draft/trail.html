@@ -33,7 +33,7 @@
     </div>
 
     {% if user.is_authenticated %}
-    <a href="{% url "user_trails:save_draft_trail" %}">Zapisz trasę</a>
+    <div id="save_trail"><button><a href="{% url "user_trails:save_draft_trail" %}">Zapisz trasę</a></button></div>
     {% else %}
     <a href="#">Aby zapisać trasę, zarejestruj się</a>
     {%endif%}

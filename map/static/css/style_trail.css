@@ -1,7 +1,7 @@
 div.trail{
     display: flex;
     margin-top: 2px;
-    background-color: #f4f4f4;
+    background-color: #fff;
     min-height: 90vh;
 }
 div.trail div.menu_trail{
@@ -169,13 +169,34 @@ div.user_trail_draft{
 div.user_trail_draft div.draft-list_point {
     width: 80%;
     height: 60vh;
-    margin:0 auto;
+    margin: 0 auto;
     padding: 20px;
     overflow: scroll;
     overflow-x: hidden;
     border: 0.5px solid #0e446c;
-    background-color: #e7e7e7;
+    background-color: #fff;
     border-radius: 8px;
+}
+div.user_trail_draft div#save_trail {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+div.user_trail_draft div#save_trail button{
+    background-color: #00a200;
+    border: 1px solid #373737;
+    border-radius: 5px;
+    width:180px;
+    height:40px;
+    box-shadow: 0 0 3px #000000;
+}
+div.user_trail_draft div#save_trail button a{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.3px;
+    font-size: 17px;
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
 }
 
 div.user_trail_draft div.draft-list_point div.draft-point{
