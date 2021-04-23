@@ -272,7 +272,7 @@ div#edit_info_user.active {
     display: block;
     background-color: rgba(255, 255, 255, 0.7);
     position: fixed;
-    top: 20px;
+    top: 0;
     left: 0;
     min-height: 100vh;
     width: 100vw;
@@ -287,7 +287,21 @@ div#form_edit_info {
     left: 30%;
     top: 0;
     width: 600px;
-    height: 700px;
+    height: 90%;
+}
+div#edit_info_user.active form{
+    padding: 0 20px;
+}
+div#edit_info_user.active form div label{
+    display: inline-block;
+    padding-left: 30px;
+    width:150px;
+}
+div#edit_info_user.active form div input{
+    width: 200px;
+}
+div#edit_info_user.active form div{
+    margin-bottom: 8px;
 }
 
 div#edit_info_user.active div#title_edit_profile {
@@ -299,4 +313,25 @@ div#edit_info_user.active div#title_edit_profile h3{
     font-family: Verdana, sans-serif;
     text-align: center;
     letter-spacing: 1.3px;
+    font-size: 16px;
+    margin:15px 0;
+}
+div#edit_info_user.active form h4{
+    margin: 15px 0 10px;
+}
+div#edit_info_user.active form div#submit{
+    display: flex;
+    justify-content: flex-end;
+}
+div#edit_info_user.active form div#submit input[type='submit']{
+    transform: translateY(-40px);
+    width: 120px;
+    height: 34px;
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+    letter-spacing: 1.4px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #c6c6c6;
+    font-weight: bold;
 }
