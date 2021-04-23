@@ -118,7 +118,6 @@ class SaveDraftTrailUser(UserTrailFormAdd):
     def post(self, request):
         form = UserTrailCreateForm(request.POST)
         if form.is_valid():
-            print(self.user_trail[0][0].id)
             table = [i[0].id for i in self.user_trail]
 
             if self.user_trail:
@@ -128,7 +127,6 @@ class SaveDraftTrailUser(UserTrailFormAdd):
                 userTrail.descriptions = request.POST.get('descriptions')
                 userTrail.save()
                 userTrail.points.set(table)
-                print(userTrail)
             self.clear_board_user()
             return render(request, 'trails/user_trails/form_trails.html', {'form': form, 'user_trail': self.user_trail})
 
