@@ -24,7 +24,6 @@ class UserAccount(View):
                 filled_in_fields += 1 if value != '' and field != 'id' and field != 'user' else 0
 
             average = round((filled_in_fields / sum_fields) * 100)
-            print(preference.preference_fields_filled())
             return render(request, self.template_name, {"średnia": average, "fullname": profile.full_name(),
                                                         "date_of_birth": profile.date_of_birth_user(),
                                                         "contact_colors_star": profile.contact_fields_filled(),
