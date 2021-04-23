@@ -3,9 +3,9 @@ from django.views.generic.base import View
 
 from .models import Profile, Preference
 
-
 class UserAccount(View):
     template_name = 'account/user_account.html'
+
 
     def get(self, request):
         profile = Profile.objects.filter(user=request.user).first()
@@ -29,5 +29,5 @@ class UserAccount(View):
                                                         "contact_colors_star": profile.contact_fields_filled(),
                                                         'address_fields_filled': profile.address_fields_filled(),
                                                         'language_fields_filled': profile.language_fields_filled(),
-                                                        'preference_fields_filled': preference.preference_fields_filled()
+                                                        'preference_fields_filled': preference.preference_fields_filled(),
                                                         })

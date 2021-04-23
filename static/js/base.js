@@ -1,5 +1,3 @@
-<!--    "Przycisk rozwijania menu"-->
-console.log("base.js")
 let menu = document.querySelector("button.user_menu");
 let icon = document.querySelector("i.fa-angle-down");
 let user_menu = document.querySelector("div.user_menu");
