@@ -6,22 +6,20 @@ from time import strptime
 class Profile(models.Model):
     """Nadpisanie modelu User."""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    name = models.TextField(max_length=30)
-    surname = models.TextField(max_length=30)
+    name = models.TextField(max_length=30, null=True, blank=True)
+    surname = models.TextField(max_length=30, null=True, blank=True)
     date_of_birth = models.DateField(blank=True, null=True)
-    photo = models.ImageField(upload_to='users/%Y/%m/%d', blank=True)
-
-    country = models.TextField(max_length=30, blank=True)
-    city = models.TextField(max_length=30, blank=True)
-    street = models.TextField(max_length=30, blank=True)
-    house_number = models.IntegerField(blank=True)
-    apartment_number = models.IntegerField(blank=True)
-    postal_code = models.CharField(max_length=20, blank=True)
-
-    main_language = models.CharField(max_length=25, blank=True)
-    other_language = models.CharField(max_length=20, blank=True)
-    phone = models.TextField(max_length=10)
-    email = models.EmailField()
+    photo = models.ImageField(upload_to='users/img/%Y/%m%d', null=True, blank=True)
+    country = models.TextField(max_length=30, null=True, blank=True)
+    city = models.TextField(max_length=30, null=True, blank=True)
+    street = models.TextField(max_length=30, null=True, blank=True)
+    house_number = models.IntegerField(null=True, blank=True)
+    apartment_number = models.IntegerField(null=True, blank=True)
+    postal_code = models.CharField(max_length=20, null=True, blank=True)
+    main_language = models.CharField(max_length=25, null=True, blank=True)
+    other_language = models.CharField(max_length=20, null=True, blank=True)
+    phone = models.TextField(max_length=10, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
 
     MONTHS = ['', 'Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień',
               'Październik', 'Listopad', 'Grudzień']
@@ -37,8 +35,11 @@ class Profile(models.Model):
 
     def date_of_birth_user(self):
         date_with_model = self.date_of_birth
-        new_format = strptime(str(date_with_model), '%Y-%m-%d')
-        return '{} {} {}'.format(new_format.tm_mday, self.MONTHS[new_format.tm_mon], new_format.tm_year)
+        if date_with_model is not None:
+            new_format = strptime(str(date_with_model), '%Y-%m-%d')
+            return '{} {} {}'.format(new_format.tm_mday, self.MONTHS[new_format.tm_mon], new_format.tm_year)
+        else:
+            return None
 
     def language_fields_filled(self):
         """Sprawdza czy wszystkie pola z sekcji Adres są wypełnione."""

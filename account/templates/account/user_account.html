@@ -79,29 +79,31 @@
             <h3>Edytuj profil</h3>
             <span onclick="closeEditProfile()"><i class="fas fa-times"></i></span>
         </div>
-        <form action="" method="post">
-            <h4>Podstawowe informacje:</h4>
-            <div id="name"><label>Imię:</label><input type="text" name="name"></div>
-            <div id="surname"><label>Nazwisko:</label><input type="text" name="surname"></div>
-            <div id="date_of_birth"><label>Data urodzin:</label><input type="date" name="date_of_birth"></div>
-            <div id="photo"><label>Zdjęcie:</label><input type="file" name="photo" accept="image/*" required=""></div>
-            <h4>Dane kontaktowe:</h4>
-            <div id="phone"><label>Telefon:</label><input type="text" name="phone"></div>
-            <div id="email"><label>Email:</label><input type="text" name="email"></div>
-            <div id="country"><label>Kraj:</label><input type="text" name="country"></div>
-            <div id="city"><label>Miasto:</label><input type="text" name="city"></div>
-            <div id="street"><label>Ulica:</label><input type="text" name="street"></div>
-            <div id="house_number"><label>Nr domu:</label><input type="text" name="house_number"></div>
-            <div id="apartment_number"><label>Nr mieszkania:</label><input type="text" name="apartment_number"></div>
-            <div id="postal_code"><label>Kod pocztowy:</label><input type="text" name="postal_code"></div>
-            <h4>Języki:</h4>
-            <div id="main_language"><label>Główny język:</label><input type="text" name="main_language"></div>
-            <div id="other_language"><label>Inny język:</label><input type="text" name="other_language"></div>
-            <div id="favorite_country"><label>Ulubiony kraj:</label><input type="text" name="favorite_country"></div>
-            <div id="favorite_region"><label>Ulubiony region:</label><input type="text" name="favorite_region"></div>
-            <div id="favorite_city"><label>Ulubione miasto:</label><input type="text" name="favorite_city"></div>
-            <div id="favorite_place"><label>Ulubione miejsce</label><input type="text" name="favorite_place"></div>
-            <div id="favorite_restaurant"><label>Ulubiona restauracja</label><input type="text" name="favorite_restaurant"></div>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {{form.as_p}}
+<!--            <h4>Podstawowe informacje:</h4>-->
+<!--            <div id="name"><label>Imię:</label>{{form.name}}</div>-->
+<!--            <div id="surname"><label>Nazwisko:</label>{{form.surname}}</div>-->
+<!--            <div id="date_of_birth"><label>Data urodzin:</label>{{form.date_of_birth}}</div>-->
+<!--            <div id="photo"><label>Zdjęcie:</label>{{form.photo}}</div>-->
+<!--            <h4>Dane kontaktowe:</h4>-->
+<!--            <div id="phone"><label>Telefon:</label>{{form.phone}}</div>-->
+<!--            <div id="email"><label>Email:</label>{{form.email}}</div>-->
+<!--            <div id="country"><label>Kraj:</label>{{form.country}}</div>-->
+<!--            <div id="city"><label>Miasto:</label>{{form.city}}</div>-->
+<!--            <div id="street"><label>Ulica:</label>{{form.street}}</div>-->
+<!--            <div id="house_number"><label>Nr domu:</label>{{form.house_number}}</div>-->
+<!--            <div id="apartment_number"><label>Nr mieszkania:</label>{{form.apartment_number}}</div>-->
+<!--            <div id="postal_code"><label>Kod pocztowy:</label>{{form.postal_code}}</div>-->
+<!--            <h4>Języki:</h4>-->
+<!--            <div id="main_language"><label>Główny język:</label>{{form.main_language}}</div>-->
+<!--            <div id="other_language"><label>Inny język:</label>{{form.other_language}}</div>-->
+<!--            <div id="favorite_country"><label>Ulubiony kraj:</label>{{form.favorite_country}}</div>-->
+<!--            <div id="favorite_region"><label>Ulubiony region:</label>{{form.favorite_country}}</div>-->
+<!--            <div id="favorite_city"><label>Ulubione miasto:</label>{{form.favorite_city}}</div>-->
+<!--            <div id="favorite_place"><label>Ulubione miejsce</label>{{form.favorite_place}}</div>-->
+<!--            <div id="favorite_restaurant"><label>Ulubiona restauracja</label>{{form.favorite_restaurant}}</div>-->
             {% csrf_token %}
             <div id="submit"><input type="submit" value="Zapisz"></div>
         </form>
