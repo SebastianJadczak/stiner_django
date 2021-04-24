@@ -13,13 +13,13 @@ class Profile(models.Model):
     country = models.TextField(max_length=30, null=True, blank=True)
     city = models.TextField(max_length=30, null=True, blank=True)
     street = models.TextField(max_length=30, null=True, blank=True)
-    house_number = models.IntegerField(null=True, blank=True)
-    apartment_number = models.IntegerField(null=True, blank=True)
+    house_number = models.IntegerField(max_length=30, null=True, blank=True)
+    apartment_number = models.IntegerField(max_length=10,null=True, blank=True)
     postal_code = models.CharField(max_length=20, null=True, blank=True)
     main_language = models.CharField(max_length=25, null=True, blank=True)
     other_language = models.CharField(max_length=20, null=True, blank=True)
     phone = models.TextField(max_length=10, null=True, blank=True)
-    email = models.EmailField(null=True, blank=True)
+    email = models.EmailField(max_length=50 ,null=True, blank=True)
 
     MONTHS = ['', 'Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień',
               'Październik', 'Listopad', 'Grudzień']
