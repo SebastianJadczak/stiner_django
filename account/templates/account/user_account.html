@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="preference">
-            <h3>Preferencje</h3>
+            <div id="preference"><h3>Preferencje</h3><i class="far fa-edit" id="edit_preference" onclick="editPreference()"></i></div>
             <div class="country"><p>Ulubiony Kraj: </p><span>{{request.user.preference.favorite_country}}</span></div>
             <div class="region"><p>Ulubiony region: </p><span>{{request.user.preference.favorite_region}}</span></div>
             <div class="city"><p>Ulubione miasto: </p><span>{{request.user.preference.favorite_city}}</span></div>
@@ -80,9 +80,9 @@
             <span onclick="closeEditProfile()"><i class="fas fa-times"></i></span>
         </div>
 
-        <form action="" method="post" enctype="multipart/form-data">
-<!--            {{form.as_p}}-->
+        <form action="" method="post" enctype="multipart/form-data" >
             <h4>Podstawowe informacje:</h4>
+            <input hidden name="type" value="basic_info">
             <div id="name"><label>Imię:</label>{{form.name}}</div>
             <div id="surname"><label>Nazwisko:</label>{{form.surname}}</div>
             <div id="date_of_birth"><label>Data urodzin:</label>{{form.date_of_birth}}</div>
@@ -99,13 +99,26 @@
             <h4>Języki:</h4>
             <div id="main_language"><label>Główny język:</label>{{form.main_language}}</div>
             <div id="other_language"><label>Inny język:</label>{{form.other_language}}</div>
-<!--            <div id="favorite_country"><label>Ulubiony kraj:</label>{{form.favorite_country}}</div>-->
-<!--            <div id="favorite_region"><label>Ulubiony region:</label>{{form.favorite_country}}</div>-->
-<!--            <div id="favorite_city"><label>Ulubione miasto:</label>{{form.favorite_city}}</div>-->
-<!--            <div id="favorite_place"><label>Ulubione miejsce</label>{{form.favorite_place}}</div>-->
-<!--            <div id="favorite_restaurant"><label>Ulubiona restauracja</label>{{form.favorite_restaurant}}</div>-->
-            {% csrf_token %}
+        {% csrf_token %}
             <div id="submit"><input type="submit" value="Zapisz"></div>
+        </form>
+    </div>
+</div>
+<div id="editPreference">
+    <div id="formEditPreference">
+        <div id="title_edit_preference">
+            <h3>Edytuj preferencje</h3>
+            <span onclick="closeEditPreference()"><i class="fas fa-times"></i></span>
+        </div>
+        <form action="" method="post">
+
+            <div id="favorite_country"><label>Ulubiony kraj:</label>{{formPreference.favorite_country}}</div>
+            <div id="favorite_region"><label>Ulubiony region:</label>{{formPreference.favorite_country}}</div>
+            <div id="favorite_city"><label>Ulubione miasto:</label>{{formPreference.favorite_city}}</div>
+            <div id="favorite_place"><label>Ulubione miejsce</label>{{formPreference.favorite_place}}</div>
+            <div id="favorite_restaurant"><label>Ulubiona restauracja</label>{{formPreference.favorite_restaurant}}</div>
+            {% csrf_token %}
+             <div id="submitEditPreference"><input type="submit" value="Zapisz"></div>
         </form>
     </div>
 </div>

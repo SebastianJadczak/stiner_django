@@ -75,8 +75,8 @@ div.account div.column-left div.basic_info div.name_user div.date_of_birth p {
 
 div.account div.column-left div.basic_info div.photo{
     width:220px;
-    height:200px
-
+    height:200px;
+    margin-right: 10px;
 }
 div.account div.column-left div.basic_info div.photo img{
     height: 100%;
@@ -137,18 +137,31 @@ div.account div.column-left div.preference {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 }
 
-div.account div.column-left div.preference h3{
+div.account div.column-left div.preference div#preference {
+    background-color: #f1f1f1;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 7px;
+}
+
+div.account div.column-left div.preference div#preference h3 {
     text-align: center;
     color: #0e446c;
-   background-color: #f1f1f1;
     font-size: 22px;
     letter-spacing: 2.5px;
     font-weight: normal;
-    padding: 7px;
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin: 0;
+    width: 100%;
+    transform: translateX(15px);
 }
-div.account div.column-left div.preference div{
+div.account div.column-left div.preference div#preference i {
+    position: relative;
+    right: 10px;
+    font-size: 22px;
+     color: #0e446c;
+}
+
+div.account div.column-left div.preference div {
     display: flex;
 }
 
@@ -263,7 +276,7 @@ div.account div.column-right div.second-statistic div.summary div.precent i {
     color: #0e446c;
 }
 
-/*Forms edit information user*/
+/*Forms edit information user.*/
 div#edit_info_user {
     display: none;
 }
@@ -342,4 +355,17 @@ div#edit_info_user.active form div#submit input[type='submit']{
     font-family: Arial, sans-serif;
     border: 1px solid #c6c6c6;
     font-weight: bold;
+}
+/*Edit Preference User.*/
+div#editPreference{
+    display: none;
+}
+div#editPreference.active{
+    display: block;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100vw;
 }

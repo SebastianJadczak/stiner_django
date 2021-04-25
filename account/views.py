@@ -5,13 +5,14 @@ from django.shortcuts import render, redirect
 from django.views.generic import FormView
 from django.views.generic.base import View
 
-from .forms import ProfileForm
+from .forms import ProfileForm, PreferenceForm
 from .models import Profile, Preference
 
 
 class UserAccount(View):
     template_name = 'account/user_account.html'
     form = ProfileForm()
+    formPreference = PreferenceForm()
 
     def get(self, request):
         profile = Profile.objects.filter(user=request.user).first()
@@ -35,7 +36,8 @@ class UserAccount(View):
                                                         'address_fields_filled': profile.address_fields_filled(),
                                                         'language_fields_filled': profile.language_fields_filled(),
                                                         'preference_fields_filled': preference.preference_fields_filled(),
-                                                        'form': self.form})
+                                                        'form': self.form,
+                                                        'formPreference': self.formPreference})
 
     def get_object(self):
         return Profile.objects.get(user=self.request.user)
@@ -43,13 +45,14 @@ class UserAccount(View):
     def post(self, request):
         "Profile."
         form = ProfileForm(request.POST or None, request.FILES, instance=self.get_object(), )
-        if form.is_valid():
-            profile = form.save(commit=False)
-            profile.user = request.user
-            print(request.user)
-            profile.save()
+        if (request.POST.get('type') == 'basic_info'):
+            if form.is_valid():
+                profile = form.save(commit=False)
+                profile.user = request.user
+                profile.save()
+            else:
+                print(form.errors)
         else:
-            print(form.errors)
-            print(form.is_valid())
-
+            print('none basic info')
+        #     Do zrobienia drugi formularz
         return redirect('./my_account')
