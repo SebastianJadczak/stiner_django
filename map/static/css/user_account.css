@@ -81,6 +81,7 @@ div.account div.column-left div.basic_info div.photo{
 div.account div.column-left div.basic_info div.photo img{
     height: 100%;
     width: auto;
+    border-radius: 10px;
 }
 
 
@@ -158,7 +159,8 @@ div.account div.column-left div.preference div#preference i {
     position: relative;
     right: 10px;
     font-size: 22px;
-     color: #0e446c;
+    color: #0e446c;
+    cursor: pointer;
 }
 
 div.account div.column-left div.preference div {
@@ -356,11 +358,13 @@ div#edit_info_user.active form div#submit input[type='submit']{
     border: 1px solid #c6c6c6;
     font-weight: bold;
 }
+
 /*Edit Preference User.*/
-div#editPreference{
+div#editPreference {
     display: none;
 }
-div#editPreference.active{
+
+div#editPreference.active {
     display: block;
     background-color: rgba(255, 255, 255, 0.7);
     position: fixed;
@@ -368,4 +372,70 @@ div#editPreference.active{
     left: 0;
     min-height: 100vh;
     width: 100vw;
+}
+
+div#editPreference.active div#formEditPreference {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #acacac;
+    position: fixed;
+    left: 30%;
+    top: 80px;
+    width: 600px;
+    height: 320px;
+}
+
+div#editPreference.active div#formEditPreference div#title_edit_preference {
+    border-bottom: 1px solid #c3c3c3;
+    display: flex;
+}
+
+div#editPreference.active div#formEditPreference div#title_edit_preference h3 {
+    width: 98%;
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    letter-spacing: 1.3px;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+div#editPreference.active form {
+    padding: 30px 20px 30px 60px;
+}
+
+div#editPreference.active form div label {
+    width: 190px;
+    letter-spacing: 1.2px;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    transform: translateY(-10px);
+}
+
+div#editPreference.active form div textarea {
+    width: 290px;
+    height: 26px;
+    line-height: 26px;
+    padding-top: 2px;
+    resize: none;
+}
+
+div#editPreference.active form div#submitEditPreference {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+div#editPreference.active form div#submitEditPreference input[type='submit'] {
+    width: 120px;
+    height: 34px;
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+    letter-spacing: 1.4px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #c6c6c6;
+    font-weight: bold;
+    margin-right: 35px;
 }

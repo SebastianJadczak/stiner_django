@@ -9,3 +9,6 @@ closeEditProfile = () =>{
 editPreference=()=>{
     edit_Preference.classList.toggle('active')
 }
+closeEditPreference=()=>{
+    edit_Preference.classList.toggle('active')
+}
