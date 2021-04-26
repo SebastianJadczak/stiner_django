@@ -32,10 +32,12 @@ div#newsletter-wrap div#newsletter div#title_newsletter h3 {
     font-family: 'Bangers', cursive;
     width: 100%;
     text-align: center;
-    letter-spacing: 1.1px;
+    letter-spacing: 1.3px;
+    font-size: 26px;
 }
 div#newsletter-wrap div#newsletter div#title_newsletter i{
     font-size: 19px;
+    cursor: pointer;
 }
 div#newsletter-wrap div#newsletter div#logo_newsletter {
     text-align: center;
@@ -64,6 +66,7 @@ div#newsletter-wrap div#newsletter form input[type='submit'] {
     height: 37px;
     font-weight: bold;
     margin-left: 10px;
+    letter-spacing: 1.2px;
 }
 
 #top_mapa {

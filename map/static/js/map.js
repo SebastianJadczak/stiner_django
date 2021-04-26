@@ -5,10 +5,13 @@ let yours_trails = document.querySelector("li.yours_trails");
 let tr = document.querySelector("div.tr")
 let newsletter = document.getElementById('newsletter-wrap')
 
+
 setTimeout(function (){
     newsletter.classList.toggle("active")
 }, 3000)
-
+closeNewsletter=()=>{
+    newsletter.classList.toggle("active")
+}
 //starting geographic coordinates of the map
 var x = 52.22977
 var y = 21.01178
