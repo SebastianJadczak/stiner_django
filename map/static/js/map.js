@@ -3,6 +3,12 @@ let icon = document.querySelector("i.fa-angle-down");
 let user_menu = document.querySelector("div.user_menu");
 let yours_trails = document.querySelector("li.yours_trails");
 let tr = document.querySelector("div.tr")
+let newsletter = document.getElementById('newsletter-wrap')
+
+setTimeout(function (){
+    newsletter.classList.toggle("active")
+}, 3000)
+
 //starting geographic coordinates of the map
 var x = 52.22977
 var y = 21.01178

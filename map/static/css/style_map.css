@@ -1,24 +1,94 @@
-#top_mapa{
-    border-bottom:1px solid #cbcdcc;
-    height: 10vh;
-    display:flex;
+div#newsletter-wrap {
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(121, 121, 121, 0.4);
 }
-#top_mapa div.logo_mapa{
-    margin:18px 18px 18px 35px;
-    height:7vh;
+div#newsletter-wrap.active{
+    display: block;
+}
+
+div#newsletter-wrap div#newsletter {
+    background-color: #fff;
+    border: 1px solid #545454;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 580px;
+    height: 220px;
+    box-shadow: 0 0 7px #5b5b5b;
+    border-radius: 9px;
+}
+
+div#newsletter-wrap div#newsletter div#title_newsletter {
+    display: flex;
+}
+
+div#newsletter-wrap div#newsletter div#title_newsletter h3 {
+    font-family: 'Zen Dots', cursive;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1.1px;
+}
+
+div#newsletter-wrap div#newsletter div#logo_newsletter {
+    text-align: center;
+}
+
+div#newsletter-wrap div#newsletter div#logo_newsletter img {
+    width: 150px;
+    height: 70px;
+}
+
+div#newsletter-wrap div#newsletter form {
+    text-align: center;
+    margin-top: 15px;
+}
+
+div#newsletter-wrap div#newsletter form input#email {
+    height: 37px;
+    width: 280px;
+}
+
+div#newsletter-wrap div#newsletter form input[type='submit'] {
+    width: 130px;
+    border: none;
+    color: white;
+    background-color: orangered;
+    height: 37px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#top_mapa {
+    border-bottom: 1px solid #cbcdcc;
+    height: 10vh;
+    display: flex;
+}
+
+#top_mapa div.logo_mapa {
+    margin: 18px 18px 18px 35px;
+    height: 7vh;
     width: 110px;
 }
-#top_mapa div.logo_mapa img{
-    width:100%;
-    height:100%;
+
+#top_mapa div.logo_mapa img {
+    width: 100%;
+    height: 100%;
 }
+
 div#top_mapa div.menu_mapa {
-    width:65%;
-    height:10vh;
+    width: 65%;
+    height: 10vh;
     font-family: 'Roboto Mono', monospace;
 }
-div#top_mapa div.menu_mapa div.tr.active{
-     height: 240px;
+
+div#top_mapa div.menu_mapa div.tr.active {
+    height: 240px;
     position: relative;
     z-index: 9;
 }
