@@ -29,12 +29,14 @@ div#newsletter-wrap div#newsletter div#title_newsletter {
 }
 
 div#newsletter-wrap div#newsletter div#title_newsletter h3 {
-    font-family: 'Zen Dots', cursive;
+    font-family: 'Bangers', cursive;
     width: 100%;
     text-align: center;
     letter-spacing: 1.1px;
 }
-
+div#newsletter-wrap div#newsletter div#title_newsletter i{
+    font-size: 19px;
+}
 div#newsletter-wrap div#newsletter div#logo_newsletter {
     text-align: center;
 }
