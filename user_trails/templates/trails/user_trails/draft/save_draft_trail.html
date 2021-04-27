@@ -1,15 +1,16 @@
 {% extends 'base_trail.html' %}
-
+{% load static %}
 {% block content %}
 
 
     <div id="save_draft_trail">
+        <h3>Zapisz trasę:</h3>
         <form action="" method="post" class="user_trail-form">
-            <h3>Zapisz trasę:</h3>
-            <div id="name_trail"><label>Nazwa trasy</label>{{form.name}}</div>
-            <div id="description_trail"><label>Opis trasy</label>{{form.descriptions}}</div>
-            <div id="submit_trail"><input type="submit" value="Stwórz_trasę" id="save_trail"></div>
+            <div id="name_trail"><label>Nazwa trasy:</label>{{form.name}}</div>
+            <div id="description_trail"><label>Opis trasy:</label>{{form.descriptions}}</div>
+            <div id="submit_trail"><input type="submit" value="Stwórz trasę" id="save_trail"></div>
             {% csrf_token %}
         </form>
     </div>
+<script src="{% static './js/saveDraftTrail.js' %}" type="text/javascript"></script>
 {% endblock %}
