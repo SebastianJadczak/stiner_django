@@ -1,8 +1,8 @@
 div.trail{
     display: flex;
     margin-top: 2px;
-    background-color: #fafafa;
     min-height: 90vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
 }
 div.trail div.menu_trail{
     width:15vw;
@@ -71,13 +71,14 @@ div.points_add_to_user_trail{
     transition: .4s;
 }
 
-div.point_add{
-    width:450px;
-    height:500px;
-    margin-right:35px;
-    padding-right: 20px;
-    border-right: 1px solid #9c9c9c;
-     opacity: .7;
+div.point_add {
+    width: 450px;
+    height: 500px;
+    margin-right: 35px;
+    padding-right: 0;
+    border: 1px solid #9c9c9c;
+    opacity: .7;
+    background-color: #fff;
 }
 
 div.point_add:hover{
@@ -91,9 +92,9 @@ div.point_add p{
     margin-top: 20px;
 }
 
-div.point_add div.image{
-    width:400px;
-    height:400px;
+div.point_add div.image {
+    width: 450px;
+    height: 400px;
 }
 div.point_add div.image img{
     width:100%;
@@ -136,27 +137,27 @@ justify-content: space-between;
 div.buttons div.point_add form{
     text-align: right;
 }
-button.add{
+button.add {
     background-color: #198a00;
     border: 1px solid black;
     color: whitesmoke;
-    width:95px;
-    height:40px;
+    width: 95px;
+    height: 40px;
     border-radius: 10px;
     font-weight: bold;
-    margin-right: 30px;
+    margin-right: 10px;
     font-size: 16px;
 }
 
-div.buttons input.add_to_user_trail{
+div.buttons input.add_to_user_trail {
     background-color: #e06100;
     border: 1px solid black;
     color: whitesmoke;
-    width:95px;
-    height:40px;
+    width: 95px;
+    height: 40px;
     border-radius: 10px;
     font-weight: bold;
-    margin-left: 30px;
+    margin-left: 10px;
     font-size: 16px;
 }
 
