@@ -1,7 +1,7 @@
 div.trail{
     display: flex;
     margin-top: 2px;
-    background-color: #f8f8f8;
+    background-color: #fafafa;
     min-height: 90vh;
 }
 div.trail div.menu_trail{
