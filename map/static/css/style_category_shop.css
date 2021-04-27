@@ -1,6 +1,7 @@
 div.shop-list{
     min-height: 210vh;
-    background-color: #f8f8f8;
+    /*background-color: #f8f8f8;*/
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
     margin: 3px 0 0 0;
     padding: 20px 60px;
 }

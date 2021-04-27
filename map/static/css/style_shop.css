@@ -94,8 +94,9 @@ div.menu-shop div.shop-user-menu div#bell:hover i{
 
 /* Głowna strona sklepu - Lista */
 div#sh-list {
-    background-color: #f8f8f8;
+    /*background-color: #f8f8f8;*/
     min-height: 74vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
     margin: 3px 0 0 0;
     padding: 20px 0 50px 100px;
 }
