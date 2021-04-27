@@ -140,8 +140,9 @@
         </div>
         <div id="logo_newsletter"><img src="{% static "img/logo.png" %}" alt="logo"></div>
         <form action="" method="post" name="newsletter">
-            <input type="email" placeholder="email" id="email">
+            <input type="email" placeholder="email" id="email" name="email">
             <input type="submit" value="Zapisz mnie">
+            {%csrf_token%}
         </form>
         <div id="social-media">
             <p id="fb"><i class="fab fa-facebook"></i>Nasz Facebook</p>

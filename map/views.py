@@ -6,7 +6,7 @@ from rest_framework.response import Response
 
 from map.api.serializers import PointSerializer, LocationMapSerializer
 from map.forms import FormularzRejestracji
-from map.models import Point, Coordinates
+from map.models import Point, Coordinates, NewsletterEmail
 from shop.models import Category
 
 
@@ -14,8 +14,14 @@ class Map(View):
     template_name = 'map/map_index.html'
     category = Category.objects.all()
     coordinates = Coordinates.objects.all()
+
     def get(self, request):
         return render(request, self.template_name, {'category': self.category, 'coordinates':self.coordinates})
+
+    def post(self, request):
+        print(request.POST.get('email'))
+        NewsletterEmail.objects.create(email=request.POST.get('email'))
+        return render(request, self.template_name,)
 
 
 class PointViewsets(viewsets.ReadOnlyModelViewSet):
