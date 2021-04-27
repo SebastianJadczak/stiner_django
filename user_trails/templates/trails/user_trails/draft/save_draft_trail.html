@@ -3,12 +3,13 @@
 {% block content %}
 
 
-
-<form action="" method="post" class="user_trail-form">
-    <h3>Formularz trasy: </h3>
-    {{form.name}}
-    {{form.descriptions}}
-    <input type="submit" value="Stwórz_trasę" id="save_trail">
-  {% csrf_token %}
-</form>
+    <div id="save_draft_trail">
+        <form action="" method="post" class="user_trail-form">
+            <h3>Zapisz trasę:</h3>
+            <div id="name_trail"><label>Nazwa trasy</label>{{form.name}}</div>
+            <div id="description_trail"><label>Opis trasy</label>{{form.descriptions}}</div>
+            <div id="submit_trail"><input type="submit" value="Stwórz_trasę" id="save_trail"></div>
+            {% csrf_token %}
+        </form>
+    </div>
 {% endblock %}
