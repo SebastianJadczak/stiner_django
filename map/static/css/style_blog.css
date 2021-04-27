@@ -10,7 +10,7 @@ div.blog_title {
 
 div.content_center{
     display: flex;
-    background-color: #fbfbfb;
+    /*background-color: #fbfbfb;*/
 }
 div.text h3{
     font-family: Verdana, sans-serif;

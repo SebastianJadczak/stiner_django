@@ -151,6 +151,8 @@ div.search button {
 
 div.content {
     margin-top: 2px;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
+
 }
 
 div#top div.menu div.tr {
