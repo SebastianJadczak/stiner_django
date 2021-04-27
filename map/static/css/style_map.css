@@ -18,7 +18,7 @@ div#newsletter-wrap div#newsletter {
     position: absolute;
     top: 30%;
     left: 30%;
-    width: 580px;
+    width: 620px;
     height: 220px;
     box-shadow: 0 0 7px #5b5b5b;
     border-radius: 9px;
@@ -68,7 +68,26 @@ div#newsletter-wrap div#newsletter form input[type='submit'] {
     margin-left: 10px;
     letter-spacing: 1.2px;
 }
-
+div#newsletter-wrap div#newsletter div#social-media{
+    display: flex;
+    margin: 10px auto;
+    width: 90%;
+    justify-content: center;
+}
+div#newsletter-wrap div#newsletter div#social-media p {
+    margin-right: 20px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.1px;
+}
+div#newsletter-wrap div#newsletter div#social-media p#fb i {
+    color: rgb(6,115,231);
+}
+div#newsletter-wrap div#newsletter div#social-media p#li i {
+    color: rgb(10,102,194);
+}
+div#newsletter-wrap div#newsletter div#social-media p i {
+    margin-right: 5px;
+}
 #top_mapa {
     border-bottom: 1px solid #cbcdcc;
     height: 10vh;
