@@ -19,8 +19,10 @@ class Map(View):
         return render(request, self.template_name, {'category': self.category, 'coordinates':self.coordinates})
 
     def post(self, request):
-        print(request.POST.get('email'))
-        NewsletterEmail.objects.create(email=request.POST.get('email'))
+        if(len(NewsletterEmail.objects.filter(email=request.POST.get('email'))) ==0):
+            NewsletterEmail.objects.create(email=request.POST.get('email'))
+        else:
+            return render(request, self.template_name, )
         return render(request, self.template_name,)
 
 
