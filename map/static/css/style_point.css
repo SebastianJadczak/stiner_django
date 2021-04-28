@@ -105,7 +105,7 @@ div.point_detail div#right-point div#summary_information  div#map_1de6ef4f121848
 div.point_detail div.point_detail_name {
     border-bottom: 1px solid black;
     margin-bottom: 40px;
-    padding:20px 0;
+    padding:20px 0 15px 0;
     /*width: 100%;*/
     height: 100%;
     background-color: #fafafa;
@@ -115,9 +115,12 @@ div.point_detail div.point_detail_name {
 
 div.point_detail div.point_detail_name h2 {
     text-align: center;
-    margin: 0;
-    font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-    letter-spacing: 1.3px;
+    margin: 5px 0 0 0;
+    /*font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;*/
+    font-family: 'Bangers', cursive;
+    font-weight: normal;
+    font-size: 29px;
+    letter-spacing: 1.8px;
     color: #222222;
 
 }
