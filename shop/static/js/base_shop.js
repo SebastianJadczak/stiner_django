@@ -15,6 +15,7 @@ let hamburger_shop = document.getElementById('hamburger-shop')
 let left_column = document.getElementsByClassName('left')
 let left_column_x = document.getElementById('hamburger-shop_x')
 
+
 if (menu) {
     menu.addEventListener('click', function () {
         user_menu.classList.toggle("active");

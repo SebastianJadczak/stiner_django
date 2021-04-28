@@ -17,7 +17,6 @@ class UserRole(models.Model):
     def __str__(self):
         return 'Rola użytkownika {}.'.format(self.user)
 
-
 class Profile(models.Model):
     """Nadpisanie modelu User."""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
