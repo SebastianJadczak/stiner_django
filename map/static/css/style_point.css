@@ -1,18 +1,59 @@
 div.point_detail {
     border: 1px solid #b4b4b4;
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(../img/texture.jpg);
     border-radius: 15px;
-    padding: 0 80px;
+    padding: 0 50px;
+}
+div#wrap-left-right-point{
+    display: flex;
+    justify-content: space-between;
 }
 
-div.point_detail div.point_detail_name{
+div#wrap-left-right-point div#left-point {
+    width: 75%;
+}
+
+div#wrap-left-right-point div#right-point {
+    width: 20%;
+}
+
+div.point_detail div#right-point div#summary_information {
+    background-color: #fff;
+    width: 100%;
+    height: 90vh;
+    border: 1px solid #cdcdcd;
+    box-shadow: 0 0 3px #bcbcbc;
+    border-radius: 9px;
+}
+div.point_detail div#right-point div#summary_information div.title{
+    background-color: #efefef;
+    border-bottom: 1px solid #c3c3c3;
+    height:35px;
+}
+div#summary_information div.title h4{
+    margin: 0 auto;
+    text-align: center;
+    line-height: 35px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.3px;
+}
+div.point_detail div#right-point div#summary_information  div#map_1de6ef4f1218487da9d6da057bb8f454{
+    height:250px;
+    margin:5px;
+}
+
+
+/*--------------------------------------------------*/
+
+div.point_detail div.point_detail_name {
     border-bottom: 1px solid black;
-    margin-top:20px;
-       margin-bottom: 40px;
-    width:100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 100%;
 }
 
-div.point_detail div.point_detail_name h2{
+div.point_detail div.point_detail_name h2 {
     text-align: center;
     margin-right: 60px;
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
@@ -40,20 +81,40 @@ div.small{
     width:100%;
     text-align: center;
 }
-div.small img{
-    width:100px;
-    height:100px;
+
+div.small img {
+    width: 100px;
+    height: 100px;
 }
+
 /*----------------------------------------------*/
-div.point_detail div.content{
+div.point_detail div.content-point {
     display: flex;
 }
-div.point_detail div.content div.text{
-    width:100%;
+
+div.point_detail div.content-point div.text {
+    width: 100%;
+}
+
+div.history, div.curiosities, div.visiting {
+    background-color: #fff;
+    padding: 5px 15px;
+    border: 1px solid #cdcdcd;
+    box-shadow: 0 0 3px #bcbcbc;
+    margin: 20px 0;
+    border-radius: 9px;
+}
+
+div.history h3, div.curiosities h3, div.visiting h3 {
+    margin: 0 0 0 10px;
+}
+
+div.history p, div.curiosities p, div.visiting p {
+    margin: 10px;
 }
 
 /* Ostylowanie Opini */
-div.opinion{
+div.opinion {
     border: 0.5px solid #bcbcbc;
     border-radius: 15px;
     background-color: #f3f3f3;
@@ -71,7 +132,6 @@ div.opinion div.top p#user{
 }
 
 div.opinion div.top p#rating{
-
     text-align: right;
 }
 
@@ -80,8 +140,11 @@ div.opinion div.top p#rating span{
 }
 
 /*Style do gwiazdek -> Opinie*/
+div.taings form {
+    margin-bottom: 20px;
+}
 
-div.top_form{
+div.top_form {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
@@ -92,20 +155,25 @@ div.top_form input.nick{
     width:280px
 }
 
-div.top_form p#yours_stars{
-    margin-left: 85px;
+div.top_form p#yours_stars {
+    margin-left: 75px;
+    margin-right: 10px;
+    margin-top: 20px;
 }
 
 .stars {
-  background: #ffffff;
-  height: 30px;
-  width: 150px;
-  padding: 10px;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row-reverse;
+    background: #ffffff;
+    border: 1px solid #cdcdcd;
+    box-shadow: 0 0 3px #bcbcbc;
+    margin-top: 10px;
+    height: 25px;
+    width: 110px;
+    padding: 5px 10px 5px 0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
 }
 
 .stars input{
@@ -114,18 +182,18 @@ div.top_form p#yours_stars{
 }
 
 .stars label {
-  width: 20px;
-  height: 30px;
-  padding: 5px;
-  color: transparent;
+    width: 12px;
+    height: 30px;
+    padding: 5px;
+    color: transparent;
 }
 
 .stars label::before {
-  content: '★';
-  color: #c0c0c0;
-  font-size: 30px;
-  line-height: 30px;
-  margin-right: -100%;
+    content: '★';
+    color: #c0c0c0;
+    font-size: 25px;
+    line-height: 30px;
+    margin-right: -100%;
 }
 
 .stars label:hover::before,
@@ -147,15 +215,15 @@ form div.bottom_form textarea{
     height:130px;
 }
 
-form div.bottom_form button{
+form div.bottom_form button {
     margin: 20px 0 0 auto;
-    width:200px;
-    height:40px;
+    width: 180px;
+    height: 40px;
     background-color: rgba(5, 148, 0, 0.86);
     border-radius: 10px;
-    border:0.5px solid rgba(4, 96, 0, 0.96);
+    border: 0.5px solid rgba(4, 96, 0, 0.96);
     color: whitesmoke;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
     letter-spacing: 1.3px;
     text-transform: uppercase;
