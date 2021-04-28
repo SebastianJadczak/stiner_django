@@ -3,15 +3,20 @@ from django.db import models
 from django.conf import settings
 from time import strptime
 
+from rest_framework import request
+
+
 class UserRole(models.Model):
     TYPE_USER = (
         ('',''),
         ('USER_VIP','USER_VIP'),
-        ('MODERATOR', 'MODERATOR'),
-        ('ADMIN', 'ADMIN')
     )
     user = models.OneToOneField(User, related_name="userRole", on_delete=models.CASCADE)
     role = models.CharField(default='', max_length=30, choices=TYPE_USER)
+
+    def __str__(self):
+        return 'Rola użytkownika {}.'.format(self.user)
+
 
 class Profile(models.Model):
     """Nadpisanie modelu User."""

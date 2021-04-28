@@ -4,7 +4,7 @@ from django.views import View
 from rest_framework import viewsets, request
 from rest_framework.response import Response
 
-from account.models import UserRole
+# from account.models import UserRole
 from map.api.serializers import PointSerializer, LocationMapSerializer
 from map.forms import FormularzRejestracji
 from map.models import Point, Coordinates, NewsletterEmail
@@ -18,9 +18,8 @@ class Map(View):
     userRole = ''
     def get(self, request):
         # ---------------------------------------
-        # Pobiera dane o roli użytkownika
-        if (str(request.user) != 'AnonymousUser'):
-            self.userRole = UserRole.objects.filter(user=request.user).first()
+        # if (str(request.user) != 'AnonymousUser'):
+        #     self.userRole = UserRole.objects.filter(user=request.user).first()
         # ---------------------------------------
         return render(request, self.template_name, {'userRole':self.userRole,'category': self.category, 'coordinates':self.coordinates})
 
