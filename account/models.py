@@ -1,7 +1,17 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.conf import settings
 from time import strptime
 
+class UserRole(models.Model):
+    TYPE_USER = (
+        ('',''),
+        ('USER_VIP','USER_VIP'),
+        ('MODERATOR', 'MODERATOR'),
+        ('ADMIN', 'ADMIN')
+    )
+    user = models.OneToOneField(User, related_name="userRole", on_delete=models.CASCADE)
+    role = models.CharField(default='', max_length=30, choices=TYPE_USER)
 
 class Profile(models.Model):
     """Nadpisanie modelu User."""
@@ -13,8 +23,8 @@ class Profile(models.Model):
     country = models.TextField(max_length=30, null=True, blank=True)
     city = models.TextField(max_length=30, null=True, blank=True)
     street = models.TextField(max_length=30, null=True, blank=True)
-    house_number = models.IntegerField(max_length=30, null=True, blank=True)
-    apartment_number = models.IntegerField(max_length=10,null=True, blank=True)
+    house_number = models.IntegerField( null=True, blank=True)
+    apartment_number = models.IntegerField(null=True, blank=True)
     postal_code = models.CharField(max_length=20, null=True, blank=True)
     main_language = models.CharField(max_length=25, null=True, blank=True)
     other_language = models.CharField(max_length=20, null=True, blank=True)

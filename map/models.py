@@ -50,6 +50,7 @@ class Coordinates(models.Model):
     def __str__(self):
         return self.name
 
+
 class NewsletterEmail(models.Model):
     """Model odpowiadający za zapisanych użytkowników do newslettera."""
     email = models.EmailField()
