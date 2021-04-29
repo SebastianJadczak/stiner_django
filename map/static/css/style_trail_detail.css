@@ -17,7 +17,7 @@ div#points_in_trail ul li{
     border:1px solid #e5e5e5;
     box-shadow: 1px 1px 1px #e0e0e0;
     margin-bottom: 15px;
-
+    border-radius: 15px;
 }
 div#points_in_trail ul li div div.title_point{
     background-color: #00a4cb;
@@ -25,6 +25,8 @@ div#points_in_trail ul li div div.title_point{
     text-align: center;
     font-family: Arial, sans-serif;
     letter-spacing: 2px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 div#points_in_trail ul li div div.title_point h3{
     margin: 0;

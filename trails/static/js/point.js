@@ -7,8 +7,9 @@ let amount = document.querySelectorAll('img.img');
 
 rightArrow.addEventListener('click', function () {
     let wrapImage = document.getElementById('small');
-    if (position >= 0 && position <= (amount.length * 10)) {
-        position += 150;
+    if (position >= 0 && position <= (amount.length * 20)) {
+        console.log((amount.length * 10))
+        position += 240;
         wrapImage.style.transform = `translateX(-${position}px)`
     }
 
@@ -17,7 +18,7 @@ leftArrow.addEventListener('click', function () {
         let wrapImage = document.getElementById('small');
         console.log(position)
         if (position>0 ){
-            position -= 150;
+            position -= 240;
             wrapImage.style.transform =`translateX(${position}px)`
         }
     });
