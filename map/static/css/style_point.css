@@ -157,23 +157,63 @@ div.info-point div#info-point-left {
 div.point_detail div.gallery {
     width: 100%;
     min-height: 30vh;
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    border: 1px solid white;
+    box-shadow: 0 0 7px #3b3b3b;
+    border-radius: 10px;
+}
+
+.arrow {
+    position: absolute;
+    font-size: 30px;
+    color: #dbdbdb;
+    top:630px;
+    text-shadow: 0 0 3px white;
+}
+
+.arrow:nth-of-type(1) {
+    left:190px;
+}
+
+.arrow:nth-of-type(2) {
+    right: 490px;
 }
 
 div.big_image {
     width: 100%;
-    margin-bottom: 30px;
-      text-align: center;
-}
-div.big_image img{
-    width:400px;
-    height:300px;
-}
-div.small{
-    width:100%;
+    height: 370px;
+    /*margin-bottom: 30px;*/
     text-align: center;
+    /*background-color: #1a1a1a;*/
 }
 
-div.small img {
+div.big_image img {
+    margin-top: 20px;
+    width: 480px;
+    height: 330px;
+}
+
+div#small-wrap {
+    width: 80%;
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    margin:0 auto;
+}
+
+div#small {
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+
+div#small img {
     width: 100px;
     height: 100px;
 }

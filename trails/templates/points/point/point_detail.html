@@ -138,17 +138,21 @@
                             <img class="big" src="../../../../media/media/img_point/2020/0810/Teatr_Wielki.jpg"
                                  alt="room1"/>
                         </div>
-                        <div class="small">
-                            <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg"
-                                 class="room-active" alt=""/>
-                            <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" alt=""/>
-                            <img src="../../../../media/media/img_point/2020/0810/Łazienki_Królewskie.jpg" alt=""/>
-                            <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg"
-                                 class="room-active" alt=""/>
-                            <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" alt=""/>
-                            <img src="../../../../media/media/img_point/2020/0810/Łazienki_Królewskie.jpg" alt=""/>
-                            <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg"
-                                 class="room-active" alt=""/>
+                        <div id="small-wrap">
+                                <div id="small">
+                                    <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg"
+                                     class="room-active img" alt=""/>
+                                    <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" class="img" alt=""/>
+                                    <img src="../../../../media/media/img_point/2020/0810/Łazienki_Królewskie.jpg" class="img" alt=""/>
+                                    <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg" class="img" alt=""/>
+                                    <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" class="img" alt=""/>
+                                    <img src="../../../../media/media/img_point/2020/0810/Łazienki_Królewskie.jpg" class="img" alt=""/>
+                                    <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg" class="img" alt=""/>
+                                    <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" class="img" alt=""/>
+                                    <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" class="img" alt=""/>
+                            </div>
+                            <i class="fas fa-arrow-left arrow" id="left-arrow"></i>
+                            <i class="fas fa-arrow-right arrow" id="right-arrow"></i>
                         </div>
                     </div>
                     <div class="content-point">
@@ -309,7 +313,7 @@
 
 function imageGallery() {
   const big = document.querySelector(".big");
-  const small = document.querySelectorAll(".small img");
+  const small = document.querySelectorAll("#small img");
 
   small.forEach(preview => {
     preview.addEventListener("click", function() {

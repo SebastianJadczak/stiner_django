@@ -1,6 +1,28 @@
 var coordinateX = document.getElementById('x').innerText
 var coordinateY = document.getElementById('y').innerText
+let leftArrow = document.getElementById('left-arrow')
+let rightArrow = document.getElementById('right-arrow')
+let position = 0;
+let amount = document.querySelectorAll('img.img');
 
+rightArrow.addEventListener('click', function () {
+    let wrapImage = document.getElementById('small');
+    if (position >= 0 && position <= (amount.length * 10)) {
+        position += 150;
+        wrapImage.style.transform = `translateX(-${position}px)`
+    }
+
+});
+leftArrow.addEventListener('click', function () {
+        let wrapImage = document.getElementById('small');
+        console.log(position)
+        if (position>0 ){
+            position -= 150;
+            wrapImage.style.transform =`translateX(${position}px)`
+        }
+    });
+
+//Map-mini
 var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
     "map_1de6ef4f1218487da9d6da057bb8f454",
     {
