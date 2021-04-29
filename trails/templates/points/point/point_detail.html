@@ -259,9 +259,45 @@
 
                         </div>
                         <div class="info-point">
-                            <div id="info-point-left"></div>
+                            <div id="info-point-left">
+                                <div class="country">
+                                    <p>Kraj:</p>
+                                </div>
+                                <div class="region">
+                                    <p>Region:</p>
+                                </div>
+                                <div class="city">
+                                    <p>Miasto:</p>
+                                </div>
+                                <div class="address">
+                                    <p>Adres:</p>
+                                </div>
+                                <div class="coordinates">
+                                    <p>Współżędne:</p>
+                                </div>
+                                <div class="more_info">
+                                    <p>Dodatkowe informacje:</p>
+                                </div>
+                            </div>
                             <div id="info-point-right">
-                                <p class="xy"><span id="x">{{point.coordinateX}}</span> <span id="y">{{point.coordinateY}}</span></p>
+                                <div class="country">
+                                    <p>{{point.country}}</p>
+                                </div>
+                                <div class="region">
+                                    <p>{{point.region}}</p>
+                                </div>
+                                <div class="city">
+                                    <p>{{point.location}}</p>
+                                </div>
+                                <div class="address">
+                                    <p>{{point.address}}</p>
+                                </div>
+                                <div class="coordinates">
+                                    <p class="xy"><span id="x">{{point.coordinateX}}</span> <span id="y">{{point.coordinateY}}</span></p>
+                                </div>
+                                <div class="more_info">
+                                    <p>{{point.more_info}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>

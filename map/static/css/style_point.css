@@ -124,14 +124,43 @@ div.point_detail div.point_detail_name h2 {
     color: #222222;
 
 }
-/* ------------Galeria--------------------------- */
-div.point_detail div.gallery{
-    width:100%;
-    min-height:30vh;
+
+div.info-point {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #cbcbcb;
 }
 
-div.big_image{
-    width:100%;
+div.info-point p {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin: 9px 0 0 7px;
+}
+
+div.info-point div#info-point-left {
+    width: 40%;
+    height: 100%;
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.country, .region, .city, .address, .coordinates {
+    height: 51.5px;
+}
+
+.more_info {
+    height: 70px;
+}
+
+
+/* ------------Galeria--------------------------- */
+div.point_detail div.gallery {
+    width: 100%;
+    min-height: 30vh;
+}
+
+div.big_image {
+    width: 100%;
     margin-bottom: 30px;
       text-align: center;
 }

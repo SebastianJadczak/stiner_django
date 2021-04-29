@@ -23,13 +23,37 @@ class Point(models.Model):
         ('Filcharmonie', 'Filcharmonie')
     )
 
+    COUNTRY = (
+        ('Polska','Polska'),
+        ('Niemcy', 'Niemcy'),
+        ('Czechy', 'Czechy'),
+        ('Słowacja', 'Słowacja'),
+        ('Rosja', 'Rosja'),
+        ('Ukraina', 'Ukraina'),
+        ('Białoruś', 'Białoruś'),
+        ('Litwa', 'Litwa'),
+        ('Estonia', 'Estonia'),
+        ('Włochy', 'Włochy'),
+        ('Izrael', 'Izrael')
+    )
+    REGION = (
+        ('Góry','Góry'),
+        ('Pojezierze','Pojezierze'),
+        ('Morze','Morze'),
+        ('Nizinny', 'Nizinny')
+    )
+
     name = models.CharField(max_length=30)
     descriptions = models.TextField()
+    country = models.CharField(max_length=15, choices=COUNTRY, default='Polska')
     location = models.CharField(max_length=30)
+    region = models.CharField(max_length=15, choices=REGION, default='Nizinny')
+    address = models.CharField(max_length=40, default=' ')
     coordinateX = models.DecimalField(max_length=30, decimal_places=7, max_digits=100)
     coordinateY = models.DecimalField(max_length=30, decimal_places=7, max_digits=100)
     image = models.ImageField(upload_to='media/img_point/%Y/%m%d')
     type = models.CharField(max_length=15, choices=TYPE_POINT)
+    more_info = models.CharField(max_length=70, default=' ')
 
     def __str__(self):
         return self.name
