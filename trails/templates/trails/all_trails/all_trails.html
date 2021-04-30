@@ -4,12 +4,14 @@
 <div class="wrap-trails">
     <div class="title-trails">
             <h3>Wybierz trasę</h3>
-            <p class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            <p class="title">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
                 type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
                 essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
             </div>
+    {% if not search %}
     <div class="trail-center">
         <div class="filter_trails">
              <div id="x_hamburger"><i class="fas fa-times"></i></div>
@@ -23,28 +25,28 @@
                         <div class="country">
                             <label>Kraj:</label>
                                 {% for c in country_trail %}
-                                    <label><input type="checkbox" name="country_{{c}}" value="Polska">{{c}}</label>
+                                    <label><input type="checkbox" name="country" value="{{c}}">{{c}}</label>
                                 {% endfor %}
                                 <p>Pokaż więcej</p>
                         </div>
                         <div class="region">
                             <label>Region:</label>
                                 {% for r in region_trail %}
-                                    <label><input type="checkbox" name="region_{{r}}" value="{{i}}">{{r}}</label>
+                                    <label><input type="checkbox" name="region" value="{{r}}">{{r}}</label>
                                 {% endfor %}
                             <p>Pokaż więcej</p>
                         </div>
                         <div class="city">
                             <label>Miasto:</label>
                                 {% for i in city %}
-                                        <label><input type="checkbox" name="city{{i.id}}" value="{{i}}">{{i}}</label>
+                                        <label><input type="checkbox" name="city" value="{{i}}">{{i}}</label>
                                 {% endfor %}
                             <p class="city">Pokaż więcej</p>
                         </div>
                          <div class="type">
                             <label>Typ trasy:</label>
                              {% for r in type_trail %}
-                             <label><input type="checkbox" name="region_{{r}}" value="{{r}}">{{r}}</label>
+                             <label><input type="checkbox" name="type" value="{{r}}">{{r}}</label>
                             {% endfor %}
                             <p>Pokaż więcej</p>
                         </div>
@@ -58,10 +60,8 @@
                         </div>
                         <div class="popular">
                             <label>Popularne:</label>
-                            {% for p in popular_trail_only_three%}
-                                <label><input type="checkbox"  name="{{p}}">{{p}}</label>
-                            {% endfor %}
-                            <p>Pokaż więcej</p>
+                                <label><input type="checkbox"  name="popular" value="True">Tak</label>
+                                <label><input type="checkbox"  name="popular" value="False">Nie</label>
                         </div>
                         <div class="accept_filter">
                             <button id="button-filter">ZASTOSUJ FILTRY</button>
@@ -138,6 +138,71 @@
             </div>
             </div>
     </div>
+    {% else %}
+     <div class="trail-center">
+        <div class="filter_trails">
+             <div id="x_hamburger"><i class="fas fa-times"></i></div>
+            <h3> Filtrowanie tras: </h3>
+            <div class="filter">
+                    <form action="" method="post">
+                        <div class="name">
+                            <label>Nazwa:</label>
+                            <input type="text" name="name" placeholder="Wyszukaj trasę po nazwie">
+                        </div>
+                        <div class="country">
+                            <label>Kraj:</label>
+                                {% for c in country_trail %}
+                                    <label><input type="checkbox" name="country_{{c}}" value="Polska">{{c}}</label>
+                                {% endfor %}
+                                <p>Pokaż więcej</p>
+                        </div>
+                        <div class="region">
+                            <label>Region:</label>
+                                {% for r in region_trail %}
+                                    <label><input type="checkbox" name="region_{{r}}" value="{{i}}">{{r}}</label>
+                                {% endfor %}
+                            <p>Pokaż więcej</p>
+                        </div>
+                        <div class="city">
+                            <label>Miasto:</label>
+                                {% for i in city %}
+                                        <label><input type="checkbox" name="city{{i.id}}" value="{{i}}">{{i}}</label>
+                                {% endfor %}
+                            <p class="city">Pokaż więcej</p>
+                        </div>
+                         <div class="type">
+                            <label>Typ trasy:</label>
+                             {% for r in type_trail %}
+                             <label><input type="checkbox" name="region_{{r}}" value="{{r}}">{{r}}</label>
+                            {% endfor %}
+                            <p>Pokaż więcej</p>
+                        </div>
+                        <div class="top_rate">
+                            <label>Ocena:</label>
+                             <label class="star"><input type="checkbox" name="star_5" value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star_4" value="4">&#9733;&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star_3" value="3">&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star_2" value="2">&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star_1" value="1">&#9733;</label>
+                        </div>
+                        <div class="popular">
+                            <label>Popularne:</label>
+                                <label><input type="checkbox"  name="popular" value="True">Tak</label>
+                                <label><input type="checkbox"  name="popular" value="False">Nie</label>
+                        </div>
+                        <div class="accept_filter">
+                            <button id="button-filter">ZASTOSUJ FILTRY</button>
+                        </div>
+                        {% csrf_token %}
+                    </form>
+            </div>
+        </div>
+        <div id="hamburger"><i class="fas fa-bars"></i></div>
+         <div class="right">
+              {{search}}
+         </div>
+    </div>
+    {% endif %}
 </div>
 <script>
 <!--    Wszystkie trasy-->

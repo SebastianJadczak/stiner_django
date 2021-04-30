@@ -107,7 +107,8 @@ class PointDetailView(DetailView):
 class TrailsListView(ListView):
     template_name = 'trails/all_trails/all_trails.html'
     model = Trail
-    list_trails = []
+    list_trails = Trail.objects.all()
+
     def get_top_rate_trails(self):
         top_rate_trails = Trail.objects.order_by('average_grade').reverse()
         return top_rate_trails
@@ -147,27 +148,49 @@ class TrailsListView(ListView):
         trails = super(TrailsListView, self).get_queryset()
         return trails
 
-    def post(self, request, *args, **kwargs):
-        self.list_trails.clear()
+    def search_trail(self, request):
+        name = ''
+        country = ''
+        region = ''
+        city = ''
+        type_trail = ''
+        star = (int(0), (float(5) + 0.9))
+        popular = False
         for key, value in request.POST.items():
-            if 'name' in key:
-                self.list_trails.append(Trail.objects.filter(name__contains=value))
-            if 'country' in key:
-                self.list_trails.append(Trail.objects.filter(country=value))
-            if 'region' in key:
-                self.list_trails.append(Trail.objects.filter(region__contains=value))
-            if 'city' in key:
-                self.list_trails.append(Trail.objects.filter(city__contains=value))
-            if 'type_trail' in key:
-                self.list_trails.append(Trail.objects.filter(type=value))
-            if 'star' in key:
-                self.list_trails.append(Trail.objects.filter(average_grade__range=(int(value), (float(value) + 0.9))))
-            if 'popular' in key:
-                # Do zastanowienia i zrobienia mechanizm popularności i wymyśleć jak obsłużyć
-                pass
+            if 'name' in key and value != '':
+                name = value
+            if 'country' in key and value != '':
+                country = value
+            if 'region' in key and value != '':
+                region = value
+            if 'city' in key and value != '':
+                city = value
+            if 'type_trail' in key and value != '':
+                type_trail = value
+            if 'star' in key and value != '':
+                star = (int(value), (float(value) + 0.9))
+            if 'popular' in key and value != False:
+                popular = value
 
-        return redirect('./search_trails/',
-                      {'list': self.list_trails})
+        print( region)
+        self.list_search = self.list_trails.exclude(name__exact='', country__exact='', region__exact='', city__exact='',
+                                                    type__exact='').filter(
+            name__contains=name, country__contains=country,
+            region__contains=region, city__contains=city,
+            type__contains=type_trail, average_grade__range=star,
+            popular=popular)
+        if (len(self.list_search) == 0): self.list_search = 'Brak wyników wyszukiwania'
+        return self.list_search
+
+    def post(self, request, *args, **kwargs):
+        search = self.search_trail(request)
+
+        return render(request, self.template_name,
+                      {'search': search, 'city': self.get_city(), 'top_rate': self.get_top_rate_trails(),
+                       'popular_trail': self.get_wached_trails(),
+                       'popular_trail_only_three': self.get_wached_trails()[:3],
+                       'type_trail': self.get_type_trail(), 'region_trail': self.get_region_trail(),
+                       'country_trail': self.get_country_trail()})
 
 
 class TrailDetailView(DetailView):
@@ -223,14 +246,3 @@ class TrailApiFilterListView(generics.ListAPIView):
     def get_queryset(self):
         pk = self.kwargs['pk']
         return list(Trail.objects.filter(id=pk))[0].points.all()
-
-
-class SearchTrails(TrailsListView):
-    template_name = 'trails/all_trails/search_trails.html'
-    model = Trail
-
-
-    def get_context_data(self, **kwargs):
-        context = super(SearchTrails, self).get_context_data(**kwargs)
-        context['list'] = self.list_trails
-        return context
