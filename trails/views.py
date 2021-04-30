@@ -120,11 +120,27 @@ class TrailsListView(ListView):
         city = list(Coordinates.objects.all())
         return city
 
+    def get_type_trail(self):
+        type_trail =[value for key, value in Trail.get_type_trail(Trail)]
+        return type_trail
+
+    def get_region_trail(self):
+        region_trail = [value for key,value in Trail.get_region_trail(Trail)]
+        return region_trail
+
+    def get_country_trail(self):
+        country_trail = [value for key,value in Trail.get_country_trail(Trail)]
+        return country_trail
+
     def get_context_data(self, **kwargs):
         context = super(TrailsListView, self).get_context_data(**kwargs)
         context['city'] = self.get_city()
         context['top_rate'] = self.get_top_rate_trails()
         context['popular_trail'] = self.get_wached_trails()
+        context['popular_trail_only_three'] = self.get_wached_trails()[:3]
+        context['type_trail'] = self.get_type_trail()
+        context['region_trail'] = self.get_region_trail()
+        context['country_trail'] = self.get_country_trail()
         return context
 
     def get_queryset(self):

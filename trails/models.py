@@ -5,11 +5,18 @@ from map.models import Point
 
 
 class Trail(models.Model):
-    COUNTRY_TRAIL=(
-        ('Polska', 'Polska'),
-        ('Niemcy', 'Niemcy')
-    )
-    TYPE_TRAIL=(
+    COUNTRY_TRAIL = (('Polska', 'Polska'),
+                     ('Niemcy', 'Niemcy'),
+                     ('Czechy', 'Czechy'),
+                     ('Słowacja', 'Słowacja'),
+                     ('Rosja', 'Rosja'),
+                     ('Ukraina', 'Ukraina'),
+                     ('Białoruś', 'Białoruś'),
+                     ('Litwa', 'Litwa'),
+                     ('Estonia', 'Estonia'),
+                     ('Włochy', 'Włochy'),
+                     ('Izrael', 'Izrael'))
+    TYPE_TRAIL = (
         ('Krajoznawcza', 'krajoznawcza'),
         ('Rodzinna', 'Rodzinna'),
         ('Górska', 'Górska'),
@@ -17,11 +24,17 @@ class Trail(models.Model):
         ('Wakacyjna', 'Wakacyjna'),
         ('Inna', 'Inna')
     )
+    REGION = (
+        ('Góry', 'Góry'),
+        ('Pojezierze', 'Pojezierze'),
+        ('Morze', 'Morze'),
+        ('Nizinny', 'Nizinny')
+    )
 
     name = models.CharField(max_length=30)
     descriptions = models.TextField()
     country = models.CharField(max_length=15, choices=COUNTRY_TRAIL)
-    region = models.CharField(max_length=30)
+    region = models.CharField(max_length=15, choices=REGION, default='Nizinny')
     city = models.CharField(max_length=30)
     type = models.CharField(max_length=15, choices=TYPE_TRAIL)
     image = models.ImageField(upload_to='media/img_trail/%Y/%m%d', blank=True)
@@ -32,6 +45,15 @@ class Trail(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_type_trail(self):
+        return self.TYPE_TRAIL
+
+    def get_region_trail(self):
+        return self.REGION
+
+    def get_country_trail(self):
+        return self.COUNTRY_TRAIL
 
 class Rate_trail(models.Model):
     user = models.ForeignKey(User , on_delete=models.CASCADE)
