@@ -135,21 +135,15 @@
                 <div id="left-point">
                     <div class="gallery">
                         <div class="big_image">
-                            <img class="big" src="../../../../media/media/img_point/2020/0810/Teatr_Wielki.jpg"
+                            <img class="big" src="{{point.image.url}}"
                                  alt="room1"/>
                         </div>
                         <div id="small-wrap">
                                 <div id="small">
-                                    <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg"
-                                     class="room-active img" alt=""/>
-                                    <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" class="img" alt=""/>
-                                    <img src="../../../../media/media/img_point/2020/0810/Łazienki_Królewskie.jpg" class="img" alt=""/>
-                                    <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg" class="img" alt=""/>
-                                    <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" class="img" alt=""/>
-                                    <img src="../../../../media/media/img_point/2020/0810/Łazienki_Królewskie.jpg" class="img" alt=""/>
-                                    <img src="../../../../media/media/img_point/2020/0810/Biblioteka_Narodowa_w_Warszawie.jpg" class="img" alt=""/>
-                                    <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" class="img" alt=""/>
-                                    <img src="../../../../media/media/img_point/2020/0810/Kościół_św_Anny.jpg" class="img" alt=""/>
+                                    <img src="{{point.image.url}}" alt=""/>
+                                    {% for g in gallery %}
+                                            <img src="{{g.url}}" class="img" alt=""/>
+                                    {% endfor %}
                             </div>
                             <i class="fas fa-arrow-left arrow" id="left-arrow"></i>
                             <i class="fas fa-arrow-right arrow" id="right-arrow"></i>

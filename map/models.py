@@ -1,6 +1,17 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+class Galery(models.Model):
+    """Model odpowiadający galerii zdjęć konkretnego punktu."""
+    name = models.CharField(max_length=30)
+    image1 = models.ImageField(upload_to='media/img_point/%Y/%m%d', blank=True)
+    image2 = models.ImageField(upload_to='media/img_point/%Y/%m%d', blank=True)
+    image3 = models.ImageField(upload_to='media/img_point/%Y/%m%d', blank=True)
+    image4 = models.ImageField(upload_to='media/img_point/%Y/%m%d', blank=True)
+    image5 = models.ImageField(upload_to='media/img_point/%Y/%m%d', blank=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Point(models.Model):
@@ -54,6 +65,7 @@ class Point(models.Model):
     image = models.ImageField(upload_to='media/img_point/%Y/%m%d')
     type = models.CharField(max_length=15, choices=TYPE_POINT)
     more_info = models.CharField(max_length=70, default=' ')
+    gallery = models.ManyToManyField(Galery)
 
     def __str__(self):
         return self.name
@@ -78,3 +90,4 @@ class Coordinates(models.Model):
 class NewsletterEmail(models.Model):
     """Model odpowiadający za zapisanych użytkowników do newslettera."""
     email = models.EmailField()
+

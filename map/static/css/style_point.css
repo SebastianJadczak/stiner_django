@@ -190,7 +190,7 @@ div.big_image {
 
 div.big_image img {
     margin-top: 20px;
-    width: 480px;
+    width: auto;
     height: 330px;
 }
 

@@ -61,6 +61,7 @@ class PointDetailView(DetailView):
     template_name = 'points/point/point_detail.html'
     model = Point
 
+
     def post(self, request, *args, **kwargs):
         nick = request.user
         star = request.POST.get('star')
@@ -80,12 +81,31 @@ class PointDetailView(DetailView):
                 print('Brak recenzji')
         return redirect('../../point/' + point_id)
 
+    def getGallery(self, gallery):
+        galleryArray = []
+
+        for i in gallery:
+            if i.image1 != '':
+                galleryArray.append(i.image1)
+            if i.image2 != '':
+                galleryArray.append(i.image2)
+            if i.image3 != '':
+                galleryArray.append(i.image3)
+            if i.image4 != '':
+                galleryArray.append(i.image4)
+            if i.image5 != '':
+                galleryArray.append(i.image5)
+        return galleryArray
+
+
     def get(self, request, *args, **kwargs):
         opinion = list(Opinion_about_Point.objects.filter(point=self.kwargs['pk']))
         point = Point.objects.filter(id=self.kwargs['pk'])
         point_id = self.kwargs['pk']
-
-        return render(request, self.template_name, {'opinion': opinion, 'point': point[0], 'point_id': point_id})
+        gallery = point.first().gallery.all()
+        gallery = self.getGallery(gallery)
+        return render(request, self.template_name,
+                      {'opinion': opinion, 'point': point[0], 'point_id': point_id, 'gallery': gallery})
 
 
 class TrailsListView(ListView):
