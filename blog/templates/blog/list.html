@@ -20,12 +20,14 @@
     <div class="content_center">
         <div class="posts">
             {% for post in posts %}
-            <div class="post">
-                <div class="image"><img src='{{post.image.url}}' alt=""></div>
-                <div class="title"><p>{{post.title}}</p></div>
-                <div class="body"><p>{{post.short_description}}</p></div>
-                <div class="info"><p>{{post.created}} {{post.owner}}</p></div>
-            </div>
+            <a href="#">
+                <div class="post">
+                    <div class="image"><img src='{{post.image.url}}' alt=""></div>
+                    <div class="title"><p>{{post.title}}</p></div>
+                    <div class="body"><p>{{post.short_description}}</p></div>
+                    <div class="info"><p>{{post.created}} {{post.owner}}</p></div>
+                </div>
+            </a>
             {% endfor %}
         </div>
         <div class="right_table">

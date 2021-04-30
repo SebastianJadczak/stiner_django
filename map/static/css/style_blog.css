@@ -43,6 +43,10 @@ div.posts{
     margin: 50px 0 50px 200px;
     justify-content: space-between;
 }
+div.posts a{
+    color: black;
+    text-decoration: none;
+}
 div.posts div.post{
     width:300px;
     margin: 10px 25px;
