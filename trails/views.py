@@ -24,28 +24,24 @@ class PointsListView(ListView):
     model = Point
     list = Point.objects.all()
 
-    def search_point(self, name=None, type=None, location=None):
-        if name and location and type:
-            self.list = self.list.filter(name__contains=name, type=type, location__contains=location)
-        if name and location:
-            self.list = self.list.filter(name__contains=name, location__contains=location)
-        if name and type:
-            self.list = self.list.filter(name__contains=name, type=type)
-        if location and type:
-            self.list = self.list.filter(type=type, location__contains=location)
-        if name:
-            self.list = self.list.filter(name__contains=name)
-        if location:
-            self.list = self.list.filter(location__contains=location)
-        if type:
-            self.list = self.list.filter(type=type)
+    def search_point(self, request):
+        search = ''
+        location = ''
+        type = ''
+
+        for key, value in request.POST.items():
+            if 'search' in key and value != '':
+                search = value
+            if 'location' in key and value != '':
+                location = value
+            if 'type' in key and value != '':
+                type = value
+        self.list = self.list.exclude(name__exact='', location__exact='', type__exact='').filter(
+            name__contains=search, type__contains =type, location__contains=location)
 
     def post(self, request, *args, **kwargs):
         template_name = 'points/points.html'
-        query_name = request.POST.get('search')
-        query_location = request.POST.get('location_points')
-        query_type = request.POST.get('point_type')
-        self.search_point(query_name, query_type, query_location)
+        self.search_point(request)
         return render(request, template_name,
                       {'list': self.list})
 
