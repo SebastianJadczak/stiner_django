@@ -191,6 +191,7 @@ div.big_image {
 div.big_image img {
     margin-top: 20px;
     width: auto;
+    max-width:630px;
     height: 330px;
 }
 
