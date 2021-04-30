@@ -172,7 +172,6 @@ class TrailsListView(ListView):
             if 'popular' in key and value != False:
                 popular = value
 
-        print( region)
         self.list_search = self.list_trails.exclude(name__exact='', country__exact='', region__exact='', city__exact='',
                                                     type__exact='').filter(
             name__contains=name, country__contains=country,
