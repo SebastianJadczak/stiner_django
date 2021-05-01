@@ -65,7 +65,8 @@ ROOT_URLCONF = 'stiner.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,10 +90,11 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-EMAIL_HOST = ''
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+# stinerpass@gmail.com / hasło: passwordreset (na potrzeby testow konto)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'stinerpass@gmail.com'
+EMAIL_HOST_PASSWORD = 'passwordreset'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -138,3 +140,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 LOGIN_REDIRECT_URL = reverse_lazy('map')
 LOGOUT_REDIRECT_URL = reverse_lazy('map')
+
+#mail do pliku w dir 'sent_emails'
+#EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend' #na czas testow
+#EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
+

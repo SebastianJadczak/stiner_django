@@ -1,6 +1,7 @@
 from xml.dom.minidom import Document
 
 from django.contrib.auth.models import User
+
 from django.shortcuts import render, redirect
 from django.views.generic import FormView
 from django.views.generic.base import View
@@ -56,3 +57,8 @@ class UserAccount(View):
             print('none basic info')
         #     Do zrobienia drugi formularz
         return redirect('./my_account')
+
+
+
+def user_settings(request):
+    return render(request, 'user_settings.html')

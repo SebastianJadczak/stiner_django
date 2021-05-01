@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: test2@test.pl
+Date: Fri, 30 Apr 2021 15:30:01 -0000
+Message-ID: <161979660108.10484.14566267149593345994@DESKTOP-FEU4UIA>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Ktoś prosił o zmianę hasła. Jeżeli to ty, to podążaj dalej:
+
+http://127.0.0.1:8000/account/reset/MTE/alxhy1-5d25225431cb24be7af2fb43e6facda5/
+
+Your username, in case you've forgotten: test2
+
+</body>
+</html>
+-------------------------------------------------------------------------------

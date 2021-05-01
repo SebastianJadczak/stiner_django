@@ -9,6 +9,7 @@ from django.conf.urls.static import static
 from shop.views import ProductContentListView
 from user_trails.views import UserTrailsListView
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Map.as_view(), name='map'),
@@ -26,7 +27,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('register/', views.UserFormView.as_view(), name='register'),
     path('cart/', include('cart.urls', namespace='cart')),
-    path('contact', include('contact.urls', namespace='contact'))
+    path('contact', include('contact.urls', namespace='contact')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
