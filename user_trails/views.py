@@ -5,40 +5,37 @@ from django.views.generic import ListView, DetailView
 from rest_framework import generics
 
 from map.models import Point, Coordinates
+from trails.views import MethodTrail
 from user_trails.models import UserTrail, UserPoint
 from .api.serializers import UserTrailsSerializer
 from .forms import UserTrailCreateForm
 
 
-class UserTrailsListView(ListView):
+class UserTrailsListView(ListView, MethodTrail):
     """Klasa odpowiedzialna za wyświetlenie widoku Tras zwiedzania użytkowników"""
     template_name = 'trails/user_trails/user_trails.html'
     model = UserTrail
-    your_list_trails = []
 
     def post(self, request, *args, **kwargs):
-        self.your_list_trails.clear()
-        for key, value in request.POST.items():
-            if 'name' in key:
-                self.your_list_trails.append(UserTrail.objects.filter(name__contains=value))
-            if 'country' in key:
-                self.your_list_trails.append(UserTrail.objects.filter(country=value))
-            if 'region' in key:
-                self.your_list_trails.append(UserTrail.objects.filter(region__contains=value))
-            if 'city' in key:
-                self.your_list_trails.append(UserTrail.objects.filter(city__contains=value))
-        return redirect('../user_trails/search_user_trails/',
-                        {'list': self.your_list_trails})
+        search = self.search_trail(request, 'user_trail')
 
-    def get_city(self):
-        city = list(Coordinates.objects.all())
-        return city
+        return render(request, self.template_name,
+                      {'search': search, 'city': self.get_city(), 'top_rate': self.get_top_rate_trails(),
+                       'popular_trail': self.get_wached_trails(),
+                       'type_trail': self.get_type_trail(), 'region_trail': self.get_region_trail(),
+                       'country_trail': self.get_country_trail()})
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['user_trails'] = UserTrail.objects.filter(user=self.request.user)
         context['user_trails_point'] = UserPoint.objects.all()
         context['city'] = self.get_city()
+        context['top_rate'] = self.get_top_rate_trails()
+        context['popular_trail'] = self.get_wached_trails()
+        context['type_trail'] = self.get_type_trail()
+        context['region_trail'] = self.get_region_trail()
+        context['country_trail'] = self.get_country_trail()
         return context
 
 class SearchUserTrails(UserTrailsListView):
