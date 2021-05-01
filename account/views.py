@@ -56,3 +56,6 @@ class UserAccount(View):
             print('none basic info')
         #     Do zrobienia drugi formularz
         return redirect('./my_account')
+
+def user_settings(request):
+    return render(request, 'account/user_settings.html')
