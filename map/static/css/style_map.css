@@ -482,24 +482,34 @@ div.footer a{
 }
 
 @media only screen and (max-width: 1280px) {
+    div#newsletter-wrap div#newsletter {
+        left: 25%;
+    }
 
     div#top_mapa div.menu_mapa {
         width: 60%;
     }
-     div.login_mapa {
+
+    div.login_mapa {
         margin-left: 15px;
         margin-right: 15px;
     }
-     div#top_mapa div.menu_mapa div.tr{
-    width: 200px;
-    color: #2e6993;
-    position: relative;
-    transform: translateY(-460px);
-    z-index: 9;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+
+    div#top_mapa div.menu_mapa div.tr {
+        width: 200px;
+        color: #2e6993;
+        position: relative;
+        transform: translateY(-460px);
+        z-index: 9;
+        box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
+    }
 }
-}
+
 @media only screen and (max-width: 1071px) {
+    div#newsletter-wrap div#newsletter {
+        left: 20%;
+    }
+
     div#top div.menu div.tr ul li a {
         display: block;
         font-size: 16px;
@@ -550,134 +560,193 @@ div.footer a{
     }
 
 }
+
 @media only screen and (max-width: 866px) {
-    #top_mapa div.logo_mapa{
-    margin:18px 10px 18px 25px;
-    height:6.5vh;
-    width: 80px;
-}
-    div#filter_mapa div:nth-of-type(1){
-    padding-left: 40px;
-}
-      div#filter_mapa div.search_mapa{
-          margin-right: 10px;
-      }
-}
-@media only screen and (max-width: 844px) {
-    #top_mapa{
-        width:100vw;
-    }
-        div#top_mapa div.menu_mapa ul {
-        padding-left: 5px;
-    }
-      div#top_mapa div.menu_mapa {
-        width: 58%;
-    }
-    div#top_mapa div.menu_mapa ul li a{
-    font-size:11px;
-}
-}
-@media only screen and (max-width: 768px) {
-       div#top_mapa div.menu_mapa {
-        width: 52%;
-    }
-        div#top_mapa div.menu_mapa ul li a{
-    width:30px;
-}
-    div#top_mapa div.menu_mapa div.tr.active {
-        height:180px;
+    div#newsletter-wrap div#newsletter {
+        left: 10%;
     }
 
-div#top_mapa div.menu_mapa div.tr ul{
-    height: 100%;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    padding: 8px 0;
+    #top_mapa div.logo_mapa {
+        margin: 18px 10px 18px 25px;
+        height: 6.5vh;
+        width: 80px;
+    }
+
+    div#filter_mapa div:nth-of-type(1) {
+        padding-left: 40px;
+    }
+
+    div#filter_mapa div.search_mapa {
+        margin-right: 10px;
+    }
 }
-div#top_mapa div.menu_mapa div.tr ul li{
-    height: 30px;
-   width: 300px;
-    line-height: 2px;
-    padding: 8px 0;
+
+@media only screen and (max-width: 844px) {
+    #top_mapa {
+        width: 100vw;
+    }
+
+    div#top_mapa div.menu_mapa ul {
+        padding-left: 5px;
+    }
+
+    div#top_mapa div.menu_mapa {
+        width: 58%;
+    }
+
+    div#top_mapa div.menu_mapa ul li a {
+        font-size: 11px;
+    }
 }
-div#top_mapa div.menu_mapa div.tr ul li:hover{
-     background-color: #f8f8f8;
+
+@media only screen and (max-width: 768px) {
+    div#newsletter-wrap div#newsletter {
+        left: 5%;
+    }
+
+    div#top_mapa div.menu_mapa {
+        width: 52%;
+    }
+
+    div#top_mapa div.menu_mapa ul li a {
+        width: 30px;
+    }
+
+    div#top_mapa div.menu_mapa div.tr.active {
+        height: 180px;
+    }
+
+    div#top_mapa div.menu_mapa div.tr ul {
+        height: 100%;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        padding: 8px 0;
+    }
+
+    div#top_mapa div.menu_mapa div.tr ul li {
+        height: 30px;
+        width: 300px;
+        line-height: 2px;
+        padding: 8px 0;
+    }
+
+    div#top_mapa div.menu_mapa div.tr ul li:hover {
+        background-color: #f8f8f8;
+    }
+
+    div#top_mapa div.menu_mapa div.tr ul li a {
+        font-size: 13px;
+        letter-spacing: 1.6px;
+        line-height: 10px;
+        width: 200px;
+    }
+
+    div#top_mapa div.menu_mapa ul li.green:hover div.tr {
+        transform: translate(-80px, -120px);
+        z-index: 1;
+    }
 }
-div#top_mapa div.menu_mapa div.tr ul li a{
-    font-size: 13px;
-    letter-spacing: 1.6px;
-    line-height: 10px;
-    width: 200px;
-}
-div#top_mapa div.menu_mapa ul li.green:hover div.tr{
-    transform: translate(-80px,-120px);
-    z-index: 1;
-}
-}
+
 @media only screen and (max-width: 666px) {
-      div#top_mapa div.menu_mapa {
+    div#newsletter-wrap div#newsletter {
+        width: 550px;
+        left: 5%;
+    }
+
+    div#top_mapa div.menu_mapa {
         width: 45%;
     }
-    div#filter_mapa div:nth-of-type(1){
-    margin-right: 30px;
+
+    div#filter_mapa div:nth-of-type(1) {
+        margin-right: 30px;
+    }
 }
-}
+
 @media only screen and (max-width: 578px) {
-      div#top_mapa div.menu_mapa {
+    div#newsletter-wrap div#newsletter {
+        width: 480px;
+        left: 5%;
+    }
+
+    div#top_mapa div.menu_mapa {
         width: 35%;
     }
-     div.login_mapa button {
+
+    div.login_mapa button {
         width: 90px;
         height: 33px;
 
     }
-     div.login_mapa button a{
-         font-size: 10px;
-     }
+
+    div.login_mapa button a {
+        font-size: 10px;
+    }
+
     div.login_mapa button.register {
         width: 90px;
         margin-top: 5px;
         transform: translateY(10px);
     }
-       div.login_mapa button.register a {
+
+    div.login_mapa button.register a {
         line-height: 33px;
     }
-        div#filter_mapa div i{
-         font-size: 16px;
-     }
+
+    div#filter_mapa div i {
+        font-size: 16px;
+    }
 }
+
 @media only screen and (max-width: 506px) {
-    #top_mapa div.logo_mapa{
-    margin:22px 5px 5px 9px;
-    height:5.5vh;
-    width: 60px;
-}
-     div.login_mapa {
+    div#newsletter-wrap div#newsletter {
+        width: 410px;
+        left: 5%;
+    }
+
+    div#newsletter-wrap div#newsletter form input#email {
+        width: 150px;
+    }
+
+    div#newsletter-wrap div#newsletter form input[type='submit'] {
+        width: 110px;
+    }
+
+    #top_mapa div.logo_mapa {
+        margin: 22px 5px 5px 9px;
+        height: 5.5vh;
+        width: 60px;
+    }
+
+    div.login_mapa {
         margin-left: 5px;
         margin-right: 5px;
     }
-     div#filter_mapa{
-    display:flex;
-    height:7vh;
-    line-height:8vh;
-    justify-content: left;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-    border-bottom: 1px solid rgba(0,0,0,0.4);
-}
-     div.login_mapa div.user_menu.active{
-    right: 10px;
-    z-index: 1;
-         width:240px;
-}
-     div#filter_mapa div i{
-         font-size: 14px;
-     }
-div#filter_mapa div:nth-of-type(1){
-    padding-left: 10px;
-    margin-right: 10px;
-    width: 100px;
-}
+
+    div#filter_mapa {
+        display: flex;
+        height: 7vh;
+        line-height: 8vh;
+        justify-content: left;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    }
+
+    div.login_mapa div.user_menu.active {
+        right: 10px;
+        z-index: 1;
+        width: 240px;
+    }
+
+    div#filter_mapa div i {
+        font-size: 14px;
+    }
+
+    div#filter_mapa div:nth-of-type(1) {
+        padding-left: 10px;
+        margin-right: 10px;
+        width: 100px;
+    }
 
     div#filter_mapa div:nth-of-type(1) select {
         font-size: 11px;
@@ -688,6 +757,13 @@ div#filter_mapa div:nth-of-type(1){
         margin-top: 15px;
         padding: 0 8px;
         font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    div#newsletter-wrap div#newsletter {
+        width: 350px;
+        left: 5%;
     }
 }
 
@@ -728,8 +804,22 @@ div#filter_mapa div:nth-of-type(1){
          transform: translateY(0);
          height: 38px;
      }
-       div.login_mapa.mini button a{
-           line-height: 38px;
-       }
 
+    div.login_mapa.mini button a {
+        line-height: 38px;
+    }
+
+}
+
+@media only screen and (max-width: 370px) {
+    div#newsletter-wrap div#newsletter {
+        width: 330px;
+        left: 5%;
+    }
+}
+
+@media only screen and (max-width: 348px) {
+    div#newsletter-wrap div#newsletter {
+        left: 0;
+    }
 }
