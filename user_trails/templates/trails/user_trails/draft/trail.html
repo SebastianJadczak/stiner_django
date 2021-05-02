@@ -33,7 +33,11 @@
     </div>
 
     {% if user.is_authenticated %}
-    <div id="save_trail"><button><a href="{% url "user_trails:save_draft_trail" %}">Zapisz trasę</a></button></div>
+        {% if len_user_trail == 0 %}
+            <div id="fail_save_trail"><button>Zapisz trasę</button></div>
+        {% else %}
+            <div id="save_trail"><button><a href="{% url "user_trails:save_draft_trail" %}">Zapisz trasę</a></button></div>
+        {% endif %}
     {% else %}
     <a href="#">Aby zapisać trasę, zarejestruj się</a>
     {%endif%}

@@ -90,7 +90,7 @@ class UserTrailDraft(UserTrailFormAdd):
                         self.user_trail.remove(z)
                         break
 
-        return render(request, self.template_name, {'list': self.list, 'user_trail': self.user_trail, 'zmienna': self.zmienna})
+        return render(request, self.template_name, {'list': self.list, 'user_trail': self.user_trail, 'zmienna': self.zmienna, 'len_user_trail':len(self.user_trail)})
 
 
 class DetailPoint(DetailView):
