@@ -103,6 +103,7 @@ class DetailPoint(DetailView):
 
 
 class SaveDraftTrailUser(UserTrailFormAdd):
+    """Klasa odpowiedzialna za formularz zapisu trasy użytkownika."""
     template_name = 'trails/user_trails/draft/save_draft_trail.html'
 
     def clear_board_user(self):
@@ -112,20 +113,45 @@ class SaveDraftTrailUser(UserTrailFormAdd):
         form = UserTrailCreateForm()
         return render(request, self.template_name, {'form': form, 'user_trail': self.user_trail})
 
+    # Funkcje do dorobienia:
+    #
+    # def set_country -> Sprawdza wszystkie punkty z jakich krajów pochodzą, jeśli wszystkie są z jednego np Polska, ustawia
+    #                       pole na Polska, jeśli nie to ustawia pole na różne
+    # =========================================
+    # def set_region -> Sprawdza wszystkie punkty z jakich krajów pochodzą, jeśli wszystkie są z jednego Regionu
+    # =========================================
+
+    def set_city(self):
+        table = [i[0].id for i in self.user_trail]
+        points = []
+        result=False
+        for i in range(len(table)):
+            points.append(Point.objects.filter(id=table[i]).first().location)
+        if len(points) > 0:
+            result = all(elem == points[0] for elem in points)
+        if result == False:
+            return 'Różne'
+        else:
+            return points[0]
+
+
     def post(self, request):
         form = UserTrailCreateForm(request.POST)
         if form.is_valid():
             table = [i[0].id for i in self.user_trail]
-
+            print('wewnątrz')
             if self.user_trail:
                 userTrail = UserTrail()
                 userTrail.user = request.user
                 userTrail.name = request.POST.get('name')
                 userTrail.descriptions = request.POST.get('descriptions')
+                userTrail.city = self.set_city()
                 userTrail.save()
                 userTrail.points.set(table)
             self.clear_board_user()
             return render(request, 'trails/user_trails/form_trails.html', {'form': form, 'user_trail': self.user_trail})
+        else:
+            print(form.errors)
 
 
 class UserTrailDetail(DetailView):

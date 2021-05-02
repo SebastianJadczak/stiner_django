@@ -16,7 +16,8 @@ class UserTrail(models.Model):
                      ('Litwa', 'Litwa'),
                      ('Estonia', 'Estonia'),
                      ('Włochy', 'Włochy'),
-                     ('Izrael', 'Izrael'))
+                     ('Izrael', 'Izrael'),
+                     ('Różne', 'Różne'))
     TYPE_TRAIL = (
         ('Krajoznawcza', 'krajoznawcza'),
         ('Rodzinna', 'Rodzinna'),
