@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-
+from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic import ListView, DetailView
 from rest_framework import generics
 
@@ -113,18 +113,43 @@ class SaveDraftTrailUser(UserTrailFormAdd):
         form = UserTrailCreateForm()
         return render(request, self.template_name, {'form': form, 'user_trail': self.user_trail})
 
-    # Funkcje do dorobienia:
-    #
-    # def set_country -> Sprawdza wszystkie punkty z jakich krajów pochodzą, jeśli wszystkie są z jednego np Polska, ustawia
-    #                       pole na Polska, jeśli nie to ustawia pole na różne
-    # =========================================
-    # def set_region -> Sprawdza wszystkie punkty z jakich krajów pochodzą, jeśli wszystkie są z jednego Regionu
-    # =========================================
+    def set_region(self):
+        table = [i[0].id for i in self.user_trail]
+        points = []
+        result = False
+        for i in range(len(table)):
+            points.append(Point.objects.filter(id=table[i]).first().region)
+        if len(points) > 0:
+            result = all(elem == points[0] for elem in points)
+        if result == False:
+            return 'Różne'
+        else:
+            return points[0]
+
+    def check_image(self,request):
+        try:
+            print('image')
+            return request.FILES['image']
+        except:
+            return staticfiles_storage.url('./grece.jpg')
+
+    def set_country(self):
+        table = [i[0].id for i in self.user_trail]
+        points = []
+        result = False
+        for i in range(len(table)):
+            points.append(Point.objects.filter(id=table[i]).first().country)
+        if len(points) > 0:
+            result = all(elem == points[0] for elem in points)
+        if result == False:
+            return 'Różne'
+        else:
+            return points[0]
 
     def set_city(self):
         table = [i[0].id for i in self.user_trail]
         points = []
-        result=False
+        result = False
         for i in range(len(table)):
             points.append(Point.objects.filter(id=table[i]).first().location)
         if len(points) > 0:
@@ -136,16 +161,18 @@ class SaveDraftTrailUser(UserTrailFormAdd):
 
 
     def post(self, request):
-        form = UserTrailCreateForm(request.POST)
+        form = UserTrailCreateForm(request.POST, request.FILES)
         if form.is_valid():
             table = [i[0].id for i in self.user_trail]
-            print('wewnątrz')
             if self.user_trail:
                 userTrail = UserTrail()
                 userTrail.user = request.user
                 userTrail.name = request.POST.get('name')
                 userTrail.descriptions = request.POST.get('descriptions')
                 userTrail.city = self.set_city()
+                userTrail.country = self.set_country()
+                userTrail.image = self.check_image(request)
+                userTrail.region = self.set_region()
                 userTrail.save()
                 userTrail.points.set(table)
             self.clear_board_user()

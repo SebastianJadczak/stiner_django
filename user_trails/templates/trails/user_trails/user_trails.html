@@ -77,7 +77,7 @@
                          {% for i in user_trails %}
                          <li>
                              <div class="user_trail">
-                                 <div class="img"><img src="{%if i.image.url %}{{i.image.url}} {%else%} {% static "img/grece.jpg" %} {%endif%}" alt=""></div>
+                                 <div class="img"><img src="{{ i.image.url }}" alt=""></div>
                                  <div class="content_trail">
                                      <div class="title"><h3>{{i.name}}</h3></div>
                                      <div class="description"><p><span>Opis:</span>{{i.descriptions}}</p></div>
@@ -200,17 +200,16 @@ more.addEventListener('click', function () {
     div_city.classList.toggle("active");
 
 })
-const button = document.getElementById('button-filter_your-trail')
+const button = document.getElementById('button-filter_search')
 
     window.addEventListener(
         'scroll',
         () => {
             if (window.scrollY >= 170) {
             button.style.position = 'static'
-            console.log(window.scrollY)
+
         }else {
             button.style.position = 'fixed'
-            console.log(window.scrollY)
         }
     }
     )

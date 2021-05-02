@@ -25,7 +25,7 @@
              <div class="filter_trails">
                 <h3> Filtrowanie tras: </h3>
                 <div class="filter">
-                        <form action="" method="post">
+                        <form action="" method="post" >
                             <div class="name">
                                 <label>Nazwa:</label>
                                 <input type="text" placeholder="Wyszukaj trasę po nazwie">
@@ -105,7 +105,6 @@ more.addEventListener('click', function () {
         let list_point_user_add = document.getElementById('points_add_to_user_trail');
         if(position>=0 && position<= amount.length *350){
             position += 350;
-            console.log(position);
             list_point_user_add.style.marginLeft =`-${position}px`
         }
     });
@@ -113,7 +112,6 @@ more.addEventListener('click', function () {
         let list_point_user_add = document.getElementById('points_add_to_user_trail');
         if (position>=350){
             position -= 350;
-            console.log(position);
             list_point_user_add.style.marginLeft =`-${position}px`
         }
     });
@@ -125,10 +123,8 @@ const button = document.getElementById('button-filter_your-trail')
         () => {
             if (window.scrollY >= 175) {
             button.style.position = 'static'
-            console.log(window.scrollY)
         }else {
             button.style.position = 'fixed'
-            console.log(window.scrollY)
         }
     }
     )
