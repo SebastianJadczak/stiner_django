@@ -152,7 +152,7 @@ class MethodTrail():
                 region = value
             if 'city' in key and value != '':
                 city = value
-            if 'type_trail' in key and value != '':
+            if 'type' in key and value != '':
                 type_trail = value
             if 'star' in key and value != '':
                 star = (int(value), (float(value) + 0.9))
