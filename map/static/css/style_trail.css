@@ -214,7 +214,7 @@ div.user_trail_draft div#fail_save_trail {
 div.user_trail_draft div#fail_save_trail button {
     background-color: rgba(0, 162,0, 0.6);
     border: 1px solid #373737;
-    border-radius: 5px;
+    border-radius: 15px;
     width: 180px;
     height: 45px;
     color: white;
