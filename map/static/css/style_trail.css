@@ -2,6 +2,7 @@ div.trail{
     display: flex;
     margin-top: 2px;
     min-height: 90vh;
+    border-top: 1px solid #b5b5b5;
     background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
 }
 div.trail div.menu_trail{
@@ -307,7 +308,7 @@ form.delete button{
 @media only screen and (max-width: 1680px) {
     div.trail div.content_trail {
         margin: 20px auto;
-        width: 90vw;
+        width: 82vw;
     }
 
 }

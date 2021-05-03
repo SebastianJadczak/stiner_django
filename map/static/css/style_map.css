@@ -92,6 +92,9 @@ div#newsletter-wrap div#newsletter div#social-media p i {
     border-bottom: 1px solid #cbcdcc;
     height: 10vh;
     display: flex;
+    justify-content: space-between;
+    width: 86vw;
+    margin: 0 auto;
 }
 
 #top_mapa div.logo_mapa {
@@ -105,10 +108,29 @@ div#newsletter-wrap div#newsletter div#social-media p i {
     height: 100%;
 }
 
-div#top_mapa div.menu_mapa {
-    width: 65%;
-    height: 10vh;
-    font-family: 'Roboto Mono', monospace;
+div#top div.menu_mapa {
+    margin-top: 15px;
+    display: block;
+}
+
+div#top div.menu ul li.green:hover a {
+    color: #0085e9;
+}
+
+div#top div.menu ul li.green:hover a i {
+    color: #0085e9;
+}
+
+div#top div.menu ul li.green a {
+    display: flex;
+    flex-direction: row;
+}
+
+div#top div.menu ul li.green a i {
+    margin-top: 27px;
+    margin-left: 5px;
+    font-size: 15px;
+    color: #919191;
 }
 
 div#top_mapa div.menu_mapa div.tr.active {
@@ -117,23 +139,26 @@ div#top_mapa div.menu_mapa div.tr.active {
     z-index: 9;
 }
 
-div#top div.menu div.tr ul{
+div#top div.menu div.tr ul {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     padding: 0;
 }
-div#top div.menu div.tr ul li{
+
+div#top div.menu div.tr ul li {
     height: 100%;
-    width: 100%;
+    width: 15%;
     line-height: 0;
     padding: 12px 0;
 }
-div#top div.menu div.tr ul li:hover{
-     background-color: #f8f8f8;
+
+div#top div.menu div.tr ul li:hover {
+    background-color: #f8f8f8;
 }
-div#top div.menu div.tr ul li a{
+
+div#top div.menu div.tr ul li a {
     display: block;
     font-size: 14px;
     letter-spacing: 3px;
@@ -183,36 +208,28 @@ div#top_mapa div.menu_mapa div.tr ul li a{
     color: #2e6993;
 }
 
-div#top_mapa div.menu_mapa ul{
-    display:flex;
-    justify-content:space-between;
-    list-style:none;
-    height:10vh;
-    margin: 0;
+div#top_mapa div.menu_mapa ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    height: 10vh;
 }
 
 div#top_mapa div.menu_mapa ul li {
-    width: 25%;
-    line-height:12vh;
+    width: 10%;
+    line-height: 12vh;
 }
 
-div#top_mapa div.menu_mapa ul li a{
-    display:block;
+div#top_mapa div.menu_mapa ul li a {
+    color: #323232;
+    font-family: Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 13px;
+    display: block;
     text-align: center;
-    color: black;
-    font-weight:bold;
-    font-size:16px;
-    letter-spacing:2px;
-    text-decoration:none;
-}
-div#top_mapa div.menu_mapa ul li.red a{
-    color:red;
-}
-div#top_mapa div.menu_mapa ul li.blue a{
-    color:blue;
-}
-div#top_mapa div.menu_mapa ul li.green a{
-    color:green
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 
@@ -220,27 +237,10 @@ div#top_mapa div.menu_mapa ul li.green:hover div.tr{
     transform: translateY(-20px);
     z-index: 1;
 }
-
-div#top_mapa div.menu_mapa ul li.gold a {
-    color: #ab0fb5;
-}
-
 div#top_mapa div.menu_mapa ul li a i{
     font-size:25px;
     margin-right:10px;
     color: #3b372b;
-}
-div#top_mapa div.menu_mapa ul li.red a i{
-    color:red;
-}
-div#top_mapa div.menu_mapa ul li.green a i{
-    color:green;
-}
-div#top_mapa div.menu_mapa ul li.blue a i{
-    color:blue;
-}
-div#top_mapa div.menu_mapa ul li.gold a i{
-    color: #ab0fb5;
 }
 
 
@@ -264,16 +264,19 @@ div.login_mapa div.user_menu.active{
     border-radius: 20px 0 20px 20px;
     z-index: 1;
 }
-div.login_mapa div.user_menu.active ul{
+
+div.login_mapa div.user_menu.active ul {
     padding: 5px 10px 0;
 }
-div.login_mapa div.user_menu.active ul li{
+
+div.login_mapa div.user_menu.active ul li {
     border-bottom: 1px solid white;
     list-style: none;
-    height:33px;
+    height: 33px;
     line-height: 33px;
 }
-div.login_mapa div.user_menu.active ul li a{
+
+div.login_mapa div.user_menu.active ul li a {
     color: whitesmoke;
     text-decoration: none;
     display: block;
@@ -281,23 +284,28 @@ div.login_mapa div.user_menu.active ul li a{
     letter-spacing: 1.2px;
     padding-left: 10px;
 }
-div.login_mapa button.user_menu i{
-    font-size: 28px;
+
+div.login_mapa button.user_menu i {
+    font-size: 20px;
     color: #235171;
 }
-div.login_mapa button.user_menu i.fa-angle-down{
-    font-size: 18px;
+
+div.login_mapa button.user_menu i.fa-angle-down {
+    font-size: 14px;
     color: #112636;
     margin: 5px;
 
-}div.login_mapa button.user_menu i.fa-angle-down.active{
-    transform:rotate(180deg);
 }
 
-div.login_mapa button.user_menu{
+div.login_mapa button.user_menu i.fa-angle-down.active {
+    transform: rotate(180deg);
+}
+
+div.login_mapa button.user_menu {
     margin-left: 100px;
 }
-div.login_mapa button.user_menu span{
+
+div.login_mapa button.user_menu span {
     margin-left: 5px;
     color: black;
     font-size: 17px;
@@ -466,7 +474,7 @@ div.footer a{
     }
 
     div#top_mapa div.menu_mapa {
-        width: 65%;
+        width: 30%;
     }
 
     #top_mapa div.logo_mapa {

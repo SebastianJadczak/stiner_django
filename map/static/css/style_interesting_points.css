@@ -127,8 +127,9 @@ div.search_points{
 
 div.point_list_interest_point{
  justify-content: space-between;
-    width: 90vw;
+    width: 89vw;
     margin: 0 auto;
+    transform: translateX(-50px);
 }
 
 }

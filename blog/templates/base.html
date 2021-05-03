@@ -9,6 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %} {% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Chau+Philomene+One:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_map.css' %}">
     <link rel="stylesheet" href="{% static 'css/user_account.css' %}">
@@ -22,35 +24,36 @@
     <div class="logo"><img src="{% static 'img/logo.png' %}" alt="logo"></div>
     <div class="menu">
         <ul>
-            <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
-            <li class="green"><a href="{% url 'trails:all_trails' %}"><i class="fas fa-map-signs"></i>Trasy</a>
+            <li class="red"><a href="/">Mapa</a></li>
+            <li class="green"><a href="{% url 'trails:all_trails' %}">Trasy <i class="fas fa-angle-down"></i></a>
                 <div class="tr">
                     <ul>
                         <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
                         <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
                         {% if user.is_authenticated %}
-                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
-                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
-                        {%else%}
-                        <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>
-                        <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
+                            <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
+                            <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
+                        {% else %}
+                            <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>
+                            <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
                         {% endif %}
                     </ul>
                 </div>
             </li>
-            <li class="blue"><a href="{% url "blog:list_posts" %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
-            <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
+            <li class="blue"><a href="{% url "blog:list_posts" %}">Blog</a></li>
+            <li class="black"><a href="{% url "list_products" %}">Sklep</a></li>
+            <li class="gold"><a href="{% url 'contact:contact_detail' %}">Kontakt</a></li>
         </ul>
     </div>
     <div class="login_mapa">
         {% if user.is_authenticated %}
-        <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i> <span>{{user.username}}</span><i
-                class="fas fa-angle-down"></i></button>
-        <div class="user_menu">
-            <ul>
-                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
-                 <li><a href="{% url 'account:user_settings' %}">Ustawienia</a></li>
+            <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i>
+                <span>{{ user.username }}</span><i
+                        class="fas fa-angle-down"></i></button>
+            <div class="user_menu">
+                <ul>
+                    <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
+                    <li><a href="{% url 'account:user_settings' %}">Ustawienia</a></li>
 
                 {% if perms.blog.view_post %}
                 <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
