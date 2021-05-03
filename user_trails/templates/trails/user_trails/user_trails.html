@@ -67,23 +67,24 @@
         </div>
             <div id="hamburger"><i class="fas fa-bars"></i></div>
 
-                 <div class="user_trail_wrap">
+                 <div class="search-trail-wrap">
                      <ul>
                          {% for i in user_trails %}
                          <li>
-                             <div class="user_trail">
-                                 <div class="img"><img src="{{ i.image.url }}" alt=""></div>
-                                 <div class="content_trail">
-                                     <div class="title"><h3>{{i.name}}</h3></div>
-                                     <div class="description"><p><span>Opis:</span>{{i.descriptions}}</p></div>
-                                     <div class="more">
-                                             <p><span>Ocena:</span> Xx.Xx</p>
-                                             <p><span>Zwiedzających: </span>Xxx</p>
-                                             <p><a href="{% url 'user_trails:user_trail_detail' i.id %}">Więcej</a></p>
-                                     </div>
-                                 </div>
-                             </div>
-                         </li>
+                                <div id="search-trail">
+                                    <div id="search_image"><img src="{{i.image.url}}" alt=""></div>
+                                    <p id="search-trail_name">{{i.name}}</p>
+                                    <p><span>Kraj: </span>{{i.country}}</p>
+                                    <p><span>Miasto: </span>{{i.city}}</p>
+                                    <div id="search-trail_more" style="display: flex">
+                                        <div>
+                                            <p>Wykonało: <span> {{i.watched}} </span></p>
+                                            <p>Ocena: <span> {{i.average_grade}}</span> </p>
+                                        </div>
+                                    <button><a href="{% url 'trails:trail_detail' i.id %}">Więcej</a></button>
+                                    </div>
+                                </div>
+                            </li>
                          {% endfor %}
                      </ul>
                  </div>

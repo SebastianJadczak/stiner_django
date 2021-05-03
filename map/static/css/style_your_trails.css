@@ -130,66 +130,48 @@ div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div
 div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.top_rate label.star {
     color: gold;
 }
-div.user_trail_wrap{
-    width:70vw;
+
+div.search-trail-wrap {
+    width: 70vw;
 }
-div.user_trail_wrap ul{
+
+div.search-trail-wrap ul {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-div.user_trail_wrap ul li {
-    width: 64vw;
-    height: 300px;
-    margin-bottom: 25px;
-}
-div.user_trail_wrap ul li div.user_trail{
+
+div.search-trail-wrap ul li {
     background-color: #fff;
-    width: 62.5vw;
-    height: 270px;
     margin: 5px auto;
     padding: 10px;
+    display: flex;
+    border-radius: 15px;
+}
+
+div.search-trail-wrap ul li div#search-trail {
+    border-radius: 15px;
+    width: 300px;
+    height: 370px;
+    margin: 5px 0 5px 5px;
+    text-align: center;
+    background-color: #fff;
     border: 0.5px solid #868686;
     box-shadow: 0 0 1px #d2d2d2;
-    display: flex;
+     overflow: hidden;
 }
-
-div.user_trail_wrap ul li div.user_trail div.content_trail{
-    width:75%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    letter-spacing: 1.8px;
+div.search-trail-wrap ul li div#search-trail div#search_image{
+    overflow: hidden;
 }
-div.user_trail_wrap ul li div.user_trail div.content_trail div.title{
-    text-align: center;
+div.search-trail-wrap ul li div#search-trail  img{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: 0.3s;
+    transform: scale(1.0);
 }
-div.user_trail_wrap ul li div.user_trail div.content_trail div.title h3{
-    color: #1a1a1a;
-    margin: 5px 0 0 0;
-    text-decoration: underline;
-}
-div.user_trail_wrap ul li div.user_trail div.content_trail div.description{
-    padding: 10px;
-    height: 180px;
-}
-div.user_trail_wrap ul li div.user_trail div.content_trail div.description p span{
-    font-weight: bold;
-}
-div.user_trail_wrap ul li div.user_trail div.content_trail div.more{
-    display: flex;
-    justify-content: space-between;
-    margin: 0 20px;
-}
-
-div.user_trail_wrap ul li div.user_trail div.content_trail div.more p span{
-    font-weight: bold;
-}
-
-div.user_trail_wrap ul li div.user_trail div.img{
-    width:350px;
-    height: 270px;
-}
-div.user_trail_wrap ul li div.user_trail div.img img{
-    width: 100%;
-    height: 100%;
+div.search-trail-wrap ul li div#search-trail:hover img{
+    transform: scale(1.1);
 }
 @media only screen and (max-width: 1680px) {
 
