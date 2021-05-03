@@ -43,21 +43,19 @@ class SearchUserTrails(UserTrailsListView):
     template_name = 'trails/user_trails/search_user_trails.html'
     model = UserTrail
 
-class UserTrailFormAdd(ListView):
+class UserTrailFormAdd(ListView, MethodTrail):
     """Klasa odpowiedzialna za wyświetlenie obiektów które możesz dodasz do szkicu trasy"""
     template_name = 'trails/user_trails/form_trails.html'
     model = Point
     list = Point.objects.all()
     user_trail = []
     zmienna = ""
-    city = Coordinates.objects.all()
 
     def checkQueryinUserDraftTrail(self, query):
         for a in self.user_trail:
             for z in a:
                 if query == str(z):
                     return False
-
     def get(self, request, *args, **kwargs):
 
         query = request.GET.get('add_point')
@@ -70,8 +68,35 @@ class UserTrailFormAdd(ListView):
         len_user = len(self.user_trail)
 
         return render(request, self.template_name,
-                      {'list': self.list,'city':self.city, 'user_trail': self.user_trail, 'len_user': len_user, 'zmienna': self.zmienna})
+                      {'list': self.list, 'city': self.get_city(), 'type': self.get_type_trail(),
+                       'region': self.get_region_trail(), 'country': self.get_country_trail(),
+                       'user_trail': self.user_trail, 'len_user': len_user,
+                       'zmienna': self.zmienna})
 
+    def post(self, request):
+        list_point = Point.objects.all()
+        name = ''
+        city = ''
+        country = ''
+        region = ''
+        for key, value in request.POST.items():
+            if 'name' in key and value != '':
+                name = value
+
+            if 'country' in key and value != '':
+                country = value
+
+            if 'region' in key and value != '':
+                region = value
+
+            if 'city' in key and value != '':
+                city = value
+
+        list_point = list_point.exclude(name__exact='', country__exact='', region__exact=region,
+                                        location__exact=city).filter(
+            name__contains=name, country__contains=country, region__contains=region, location__contains=city)
+
+        return render(request, self.template_name, {'list_point': list_point})
 
 class UserTrailDraft(UserTrailFormAdd):
     """Klasa odpowiedzialna za Szkic trasy zwiedzania"""
