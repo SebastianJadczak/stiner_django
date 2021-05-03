@@ -4,11 +4,12 @@
 
 
     <div class="content">
-
-        <div class="content_center">
-        <h3>Podróżnicze inspiracje:</h3>
-            <div class="posts">
-                {% for post in posts %}
+        <div class="karaibs"></div>
+        <div class="content-bottom">
+            <div class="content_center">
+                <h3>Podróżnicze inspiracje:</h3>
+                <div class="posts">
+                    {% for post in posts %}
                     <a href="#">
                         <div class="post">
                             <div class="image"><img src='{{ post.image.url }}' alt=""></div>
@@ -20,10 +21,11 @@
                         </div>
                     </a>
                 {% endfor %}
+                </div>
             </div>
-        </div>
-        <div class="content-right">
-            <h3>Inspirujące miejsca</h3>
+            <div class="content-right">
+                <h3>Inspirujące miejsca</h3>
+            </div>
         </div>
     </div>
     <div class="footer">

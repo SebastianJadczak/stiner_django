@@ -1,12 +1,22 @@
-div.content{
+
+div.karaibs {
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../img/karaiby.jpg");
+    height: 190px;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid grey;
+}
+
+div.content div.content-bottom {
     display: flex;
     flex-direction: row;
 }
 
-div.content div.content-right{
-    width:15vw;
+div.content div.content-bottom div.content-right {
+    width: 15vw;
 }
-div.content_center{
+
+div.content_center {
     display: flex;
     width: 75vw;
     flex-direction: column;
