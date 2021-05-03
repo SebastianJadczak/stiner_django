@@ -1,44 +1,41 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-
+from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic import ListView, DetailView
 from rest_framework import generics
 
 from map.models import Point, Coordinates
+from trails.views import MethodTrail
 from user_trails.models import UserTrail, UserPoint
 from .api.serializers import UserTrailsSerializer
 from .forms import UserTrailCreateForm
 
 
-class UserTrailsListView(ListView):
+class UserTrailsListView(ListView, MethodTrail):
     """Klasa odpowiedzialna za wyświetlenie widoku Tras zwiedzania użytkowników"""
     template_name = 'trails/user_trails/user_trails.html'
     model = UserTrail
-    your_list_trails = []
 
     def post(self, request, *args, **kwargs):
-        self.your_list_trails.clear()
-        for key, value in request.POST.items():
-            if 'name' in key:
-                self.your_list_trails.append(UserTrail.objects.filter(name__contains=value))
-            if 'country' in key:
-                self.your_list_trails.append(UserTrail.objects.filter(country=value))
-            if 'region' in key:
-                self.your_list_trails.append(UserTrail.objects.filter(region__contains=value))
-            if 'city' in key:
-                self.your_list_trails.append(UserTrail.objects.filter(city__contains=value))
-        return redirect('../user_trails/search_user_trails/',
-                        {'list': self.your_list_trails})
+        search = self.search_trail(request, 'user_trail')
 
-    def get_city(self):
-        city = list(Coordinates.objects.all())
-        return city
+        return render(request, self.template_name,
+                      {'search': search, 'city': self.get_city(), 'top_rate': self.get_top_rate_trails(),
+                       'popular_trail': self.get_wached_trails(),
+                       'type_trail': self.get_type_trail(), 'region_trail': self.get_region_trail(),
+                       'country_trail': self.get_country_trail()})
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['user_trails'] = UserTrail.objects.filter(user=self.request.user)
         context['user_trails_point'] = UserPoint.objects.all()
         context['city'] = self.get_city()
+        context['top_rate'] = self.get_top_rate_trails()
+        context['popular_trail'] = self.get_wached_trails()
+        context['type_trail'] = self.get_type_trail()
+        context['region_trail'] = self.get_region_trail()
+        context['country_trail'] = self.get_country_trail()
         return context
 
 class SearchUserTrails(UserTrailsListView):
@@ -46,21 +43,19 @@ class SearchUserTrails(UserTrailsListView):
     template_name = 'trails/user_trails/search_user_trails.html'
     model = UserTrail
 
-class UserTrailFormAdd(ListView):
+class UserTrailFormAdd(ListView, MethodTrail):
     """Klasa odpowiedzialna za wyświetlenie obiektów które możesz dodasz do szkicu trasy"""
     template_name = 'trails/user_trails/form_trails.html'
     model = Point
     list = Point.objects.all()
     user_trail = []
     zmienna = ""
-    city = Coordinates.objects.all()
 
     def checkQueryinUserDraftTrail(self, query):
         for a in self.user_trail:
             for z in a:
                 if query == str(z):
                     return False
-
     def get(self, request, *args, **kwargs):
 
         query = request.GET.get('add_point')
@@ -73,8 +68,35 @@ class UserTrailFormAdd(ListView):
         len_user = len(self.user_trail)
 
         return render(request, self.template_name,
-                      {'list': self.list,'city':self.city, 'user_trail': self.user_trail, 'len_user': len_user, 'zmienna': self.zmienna})
+                      {'list': self.list, 'city': self.get_city(), 'type': self.get_type_trail(),
+                       'region': self.get_region_trail(), 'country': self.get_country_trail(),
+                       'user_trail': self.user_trail, 'len_user': len_user,
+                       'zmienna': self.zmienna})
 
+    def post(self, request):
+        list_point = Point.objects.all()
+        name = ''
+        city = ''
+        country = ''
+        region = ''
+        for key, value in request.POST.items():
+            if 'name' in key and value != '':
+                name = value
+
+            if 'country' in key and value != '':
+                country = value
+
+            if 'region' in key and value != '':
+                region = value
+
+            if 'city' in key and value != '':
+                city = value
+
+        list_point = list_point.exclude(name__exact='', country__exact='', region__exact=region,
+                                        location__exact=city).filter(
+            name__contains=name, country__contains=country, region__contains=region, location__contains=city)
+
+        return render(request, self.template_name, {'list_point': list_point})
 
 class UserTrailDraft(UserTrailFormAdd):
     """Klasa odpowiedzialna za Szkic trasy zwiedzania"""
@@ -93,7 +115,7 @@ class UserTrailDraft(UserTrailFormAdd):
                         self.user_trail.remove(z)
                         break
 
-        return render(request, self.template_name, {'list': self.list, 'user_trail': self.user_trail, 'zmienna': self.zmienna})
+        return render(request, self.template_name, {'list': self.list, 'user_trail': self.user_trail, 'zmienna': self.zmienna, 'len_user_trail':len(self.user_trail)})
 
 
 class DetailPoint(DetailView):
@@ -106,6 +128,7 @@ class DetailPoint(DetailView):
 
 
 class SaveDraftTrailUser(UserTrailFormAdd):
+    """Klasa odpowiedzialna za formularz zapisu trasy użytkownika."""
     template_name = 'trails/user_trails/draft/save_draft_trail.html'
 
     def clear_board_user(self):
@@ -115,20 +138,72 @@ class SaveDraftTrailUser(UserTrailFormAdd):
         form = UserTrailCreateForm()
         return render(request, self.template_name, {'form': form, 'user_trail': self.user_trail})
 
+    def set_region(self):
+        table = [i[0].id for i in self.user_trail]
+        points = []
+        result = False
+        for i in range(len(table)):
+            points.append(Point.objects.filter(id=table[i]).first().region)
+        if len(points) > 0:
+            result = all(elem == points[0] for elem in points)
+        if result == False:
+            return 'Różne'
+        else:
+            return points[0]
+
+    def check_image(self,request):
+        try:
+            print('image')
+            return request.FILES['image']
+        except:
+            return staticfiles_storage.url('./grece.jpg')
+
+    def set_country(self):
+        table = [i[0].id for i in self.user_trail]
+        points = []
+        result = False
+        for i in range(len(table)):
+            points.append(Point.objects.filter(id=table[i]).first().country)
+        if len(points) > 0:
+            result = all(elem == points[0] for elem in points)
+        if result == False:
+            return 'Różne'
+        else:
+            return points[0]
+
+    def set_city(self):
+        table = [i[0].id for i in self.user_trail]
+        points = []
+        result = False
+        for i in range(len(table)):
+            points.append(Point.objects.filter(id=table[i]).first().location)
+        if len(points) > 0:
+            result = all(elem == points[0] for elem in points)
+        if result == False:
+            return 'Różne'
+        else:
+            return points[0]
+
+
     def post(self, request):
-        form = UserTrailCreateForm(request.POST)
+        form = UserTrailCreateForm(request.POST, request.FILES)
         if form.is_valid():
             table = [i[0].id for i in self.user_trail]
-
             if self.user_trail:
                 userTrail = UserTrail()
                 userTrail.user = request.user
                 userTrail.name = request.POST.get('name')
                 userTrail.descriptions = request.POST.get('descriptions')
+                userTrail.city = self.set_city()
+                userTrail.country = self.set_country()
+                userTrail.image = self.check_image(request)
+                userTrail.region = self.set_region()
                 userTrail.save()
                 userTrail.points.set(table)
             self.clear_board_user()
             return render(request, 'trails/user_trails/form_trails.html', {'form': form, 'user_trail': self.user_trail})
+        else:
+            print(form.errors)
 
 
 class UserTrailDetail(DetailView):

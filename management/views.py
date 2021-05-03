@@ -1,4 +1,6 @@
+
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -10,6 +12,7 @@ from shop.models import Product
 class OwnerMixin(object):
     def get_queryset(self):
         qs = super(OwnerMixin, self).get_queryset()
+        print(qs.filter(owner=self.request.user))
         return qs.filter(owner=self.request.user)
 
 

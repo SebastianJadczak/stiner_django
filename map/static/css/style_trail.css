@@ -199,15 +199,32 @@ div.user_trail_draft div#save_trail {
     display: flex;
     justify-content: center;
 }
-div.user_trail_draft div#save_trail button{
+div.user_trail_draft div#save_trail button {
     background-color: #00a200;
     border: 1px solid #373737;
-    border-radius: 5px;
-    width:180px;
-    height:40px;
-    box-shadow: 0 0 3px #000000;
+    border-radius: 15px;
+    width: 180px;
+    height: 45px;
 }
-div.user_trail_draft div#save_trail button a{
+div.user_trail_draft div#fail_save_trail {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+div.user_trail_draft div#fail_save_trail button {
+    background-color: rgba(0, 162,0, 0.6);
+    border: 1px solid #373737;
+    border-radius: 15px;
+    width: 180px;
+    height: 45px;
+    color: white;
+    letter-spacing: 1.3px;
+    font-size: 17px;
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+}
+
+div.user_trail_draft div#save_trail button a {
     text-decoration: none;
     color: white;
     letter-spacing: 1.3px;

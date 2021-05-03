@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-    <div class="wrap-your_trails">
-        <div class="title-your_trail">
+    <div class="wrap-trails">
+        <div class="title-trails">
             <h3>Twoje trasy</h3>
             <p class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
@@ -11,51 +11,73 @@
                 essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
         </div>
-        <div class="your_trail-center">
+        {% if not search %}
+        <div class="trail-center">
              <div class="filter_trails">
                  <div id="x_hamburger"><i class="fas fa-times"></i></div>
                 <h3> Filtrowanie tras: </h3>
                 <div class="filter">
                         <form action="" method="post">
-                            <div class="name">
-                                <label>Nazwa:</label>
-                                <input type="text" placeholder="Wyszukaj trasę po nazwie">
-                            </div>
-                            <div class="country">
-                                <label>Kraj:</label>
-                                <label><input type="checkbox">Polska</label>
-                                <label><input type="checkbox">Niemcy</label>
-                                <label><input type="checkbox">Czechy</label>
-                                <p>Pokaż więcej</p>
-                            </div>
-                            <div class="region">
-                                <label>Region:</label>
-                                 <label><input type="checkbox">Mazury</label>
-                                 <label><input type="checkbox">Śląsk</label>
-                                 <label><input type="checkbox">Morze</label>
-                                <p>Pokaż więcej</p>
-                            </div>
-                            <div class="city">
-                                <label>Miasto:</label>
-                                    {% for i in city %}
-                                            <label><input type="checkbox">{{i}}</label>
-                                    {% endfor %}
-                                <p class="city">Pokaż więcej</p>
-                            </div>
-                           <div class="accept_filter">
-                            <button id="button-filter_your-trail">ZASTOSUJ FILTRY</button>
+                        <div class="name">
+                            <label>Nazwa:</label>
+                            <input type="text" name="name" placeholder="Wyszukaj trasę po nazwie">
                         </div>
-                            {% csrf_token %}
-                        </form>
+                        <div class="country">
+                            <label>Kraj:</label>
+                                {% for c in country_trail %}
+                                    <label><input type="checkbox" name="country" value="{{c}}">{{c}}</label>
+                                {% endfor %}
+                                <p>Pokaż więcej</p>
+                        </div>
+                        <div class="region">
+                            <label>Region:</label>
+                                {% for r in region_trail %}
+                                    <label><input type="checkbox" name="region" value="{{r}}">{{r}}</label>
+                                {% endfor %}
+                            <p>Pokaż więcej</p>
+                        </div>
+                        <div class="city">
+                            <label>Miasto:</label>
+                                {% for i in city %}
+                                        <label><input type="checkbox" name="city" value="{{i}}">{{i}}</label>
+                                {% endfor %}
+                            <p class="city">Pokaż więcej</p>
+                        </div>
+                         <div class="type">
+                            <label>Typ trasy:</label>
+                             {% for r in type_trail %}
+                             <label><input type="checkbox" name="type" value="{{r}}">{{r}}</label>
+                            {% endfor %}
+                            <p>Pokaż więcej</p>
+                        </div>
+                        <div class="top_rate">
+                            <label>Ocena:</label>
+                             <label class="star"><input type="checkbox" name="star" value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="4">&#9733;&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="3">&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="2">&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="1">&#9733;</label>
+                        </div>
+                        <div class="popular">
+                            <label>Popularne:</label>
+                                <label><input type="checkbox"  name="popular" value="True">Tak</label>
+                                <label><input type="checkbox"  name="popular" value="False">Nie</label>
+                        </div>
+                        <div class="accept_filter">
+                            <button id="button-filter_search">ZASTOSUJ FILTRY</button>
+                        </div>
+                        {% csrf_token %}
+                    </form>
                 </div>
         </div>
             <div id="hamburger"><i class="fas fa-bars"></i></div>
+
                  <div class="user_trail_wrap">
                      <ul>
                          {% for i in user_trails %}
                          <li>
                              <div class="user_trail">
-                                 <div class="img"><img src="{%if i.image.url %}{{i.image.url}} {%else%} {% static "img/grece.jpg" %} {%endif%}" alt=""></div>
+                                 <div class="img"><img src="{{ i.image.url }}" alt=""></div>
                                  <div class="content_trail">
                                      <div class="title"><h3>{{i.name}}</h3></div>
                                      <div class="description"><p><span>Opis:</span>{{i.descriptions}}</p></div>
@@ -72,6 +94,102 @@
                  </div>
 
         </div>
+        {% else %}
+         <div class="trail-center">
+             <div class="filter_trails">
+                 <div id="x_hamburger"><i class="fas fa-times"></i></div>
+                <h3> Filtrowanie tras: </h3>
+                <div class="filter">
+                        <form action="" method="post">
+                        <div class="name">
+                            <label>Nazwa:</label>
+                            <input type="text" name="name" placeholder="Wyszukaj trasę po nazwie">
+                        </div>
+                        <div class="country">
+                            <label>Kraj:</label>
+                                {% for c in country_trail %}
+                                    <label><input type="checkbox" name="country" value="{{c}}">{{c}}</label>
+                                {% endfor %}
+                                <p>Pokaż więcej</p>
+                        </div>
+                        <div class="region">
+                            <label>Region:</label>
+                                {% for r in region_trail %}
+                                    <label><input type="checkbox" name="region" value="{{r}}">{{r}}</label>
+                                {% endfor %}
+                            <p>Pokaż więcej</p>
+                        </div>
+                        <div class="city">
+                            <label>Miasto:</label>
+                                {% for i in city %}
+                                        <label><input type="checkbox" name="city" value="{{i}}">{{i}}</label>
+                                {% endfor %}
+                            <p class="city">Pokaż więcej</p>
+                        </div>
+                         <div class="type">
+                            <label>Typ trasy:</label>
+                             {% for r in type_trail %}
+                             <label><input type="checkbox" name="type" value="{{r}}">{{r}}</label>
+                            {% endfor %}
+                            <p>Pokaż więcej</p>
+                        </div>
+                        <div class="top_rate">
+                            <label>Ocena:</label>
+                             <label class="star"><input type="checkbox" name="star" value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="4">&#9733;&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="3">&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="2">&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="1">&#9733;</label>
+                        </div>
+                        <div class="popular">
+                            <label>Popularne:</label>
+                                <label><input type="checkbox"  name="popular" value="True">Tak</label>
+                                <label><input type="checkbox"  name="popular" value="False">Nie</label>
+                        </div>
+                        <div class="accept_filter">
+                            <button id="button-filter_search">ZASTOSUJ FILTRY</button>
+                        </div>
+                        {% csrf_token %}
+                    </form>
+                </div>
+        </div>
+            <div id="hamburger"><i class="fas fa-bars"></i></div>
+
+            <div class="right-search">
+             {% if search == 'Brak wyników wyszukiwania' %}
+                <div id="info-error">
+                    <h3>{{search}}</h3>
+                </div>
+             {% else %}
+                <div id="title-search">
+                    <h3>Wynik wyszukiwania:</h3>
+                </div>
+                <div id="search-trail-wrap">
+                    <ul>
+                        {% for s in search %}
+                            <li>
+                                <div id="search-trail">
+                                    <div id="search_image"><img src="{{s.image.url}}" alt=""></div>
+                                    <p id="search-trail_name">{{s.name}}</p>
+                                    <p><span>Kraj: </span>{{s.country}}</p>
+                                    <p><span>Miasto: </span>{{s.city}}</p>
+                                    <div id="search-trail_more" style="display: flex">
+                                        <div>
+                                            <p>Wykonało: <span> {{s.watched}} </span></p>
+                                            <p>Ocena: <span> {{s.average_grade}}</span> </p>
+                                        </div>
+                                    <button><a href="{% url 'trails:trail_detail' s.id %}">Więcej</a></button>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+             {% endif %}
+         </div>
+
+        </div>
+         {% endif %}
     </div>
 <script>
     //    Obsługa przycisku Pokaż więcej
@@ -82,17 +200,16 @@ more.addEventListener('click', function () {
     div_city.classList.toggle("active");
 
 })
-const button = document.getElementById('button-filter_your-trail')
+const button = document.getElementById('button-filter_search')
 
     window.addEventListener(
         'scroll',
         () => {
             if (window.scrollY >= 170) {
             button.style.position = 'static'
-            console.log(window.scrollY)
+
         }else {
             button.style.position = 'fixed'
-            console.log(window.scrollY)
         }
     }
     )

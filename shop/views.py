@@ -35,9 +35,10 @@ class Search(TemplateView):
              'purchased_products': purchased_products})
 
     def post(self, request):
+
         category = Category.objects.all()
-        xx = request.POST
-        products = self.search(xx)
+        product_request = request.POST
+        products = self.search(product_request)
         self.template_name = 'shop/search/search.html'
         return self.render_to_response({'products': products,
                                         'category': category})

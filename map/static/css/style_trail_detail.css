@@ -1,9 +1,14 @@
-div#points_in_trail{
-    width:75vw;
-    margin: 30px auto;
+div.center {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
 }
 
-div#points_in_trail ul{
+div#points_in_trail {
+    width: 75vw;
+    margin: 30px auto;
+    background-color: #fff;
+}
+
+div#points_in_trail ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -12,7 +17,7 @@ div#points_in_trail ul li{
     border:1px solid #e5e5e5;
     box-shadow: 1px 1px 1px #e0e0e0;
     margin-bottom: 15px;
-
+    border-radius: 15px;
 }
 div#points_in_trail ul li div div.title_point{
     background-color: #00a4cb;
@@ -20,6 +25,8 @@ div#points_in_trail ul li div div.title_point{
     text-align: center;
     font-family: Arial, sans-serif;
     letter-spacing: 2px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 div#points_in_trail ul li div div.title_point h3{
     margin: 0;
@@ -60,21 +67,75 @@ div.panorama_mapa{
       opacity: 0.8;
 box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
 }
-div.panorama_mapa div.x{
+div.panorama_mapa div.x {
     opacity: 1;
-    background-color: rgba(255,255,255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-    transform: translate(40vw, 7vh);
-    width: 360px;
-  text-align: center;
-    margin: 0;
+    text-align: center;
+    margin: 0 auto;
 }
-div.panorama_mapa h3{
+
+div.panorama_mapa h3 {
     margin: 0;
-    padding: 0 0 0 25px;
+    padding: 50px 0 0 25px;
     color: #c40000;
     font-weight: bold;
     letter-spacing: 2px;
     font-size: 35px;
     /*text-align: center;*/
+}
+
+/*Opinion trails.*/
+div.opinion-trail {
+    border: 0.5px solid #bcbcbc;
+    border-radius: 15px;
+    background-color: #f3f3f3;
+    margin: 30px auto;
+    width: 660px;
+    padding: 0 30px;
+}
+div.top_form p#yours_stars-trail {
+    margin-top: 15px;
+    margin-left: 85px;
+}
+.stars-trail {
+    background: #ffffff;
+    height: 30px;
+    width: 110px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    margin-top: 8px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    /*transform: translateY(-5px);*/
+}
+
+.stars-trail input {
+    position: absolute;
+    left: -99999px;
+}
+
+.stars-trail label {
+    width: 20px;
+    height: 30px;
+    padding: 5px;
+    color: transparent;
+}
+
+.stars-trail label::before {
+    content: '★';
+    color: #c0c0c0;
+    font-size: 30px;
+    line-height: 30px;
+    margin-right: -100%;
+}
+
+.stars-trail label:hover::before,
+.stars-trail label:hover ~ label::before,
+.stars-trail input:checked ~ label::before {
+    color: #ffa500;
 }

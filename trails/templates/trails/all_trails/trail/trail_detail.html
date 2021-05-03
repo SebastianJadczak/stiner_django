@@ -117,7 +117,7 @@
             {% endfor %}
         </ul>
     </div>
-    <div class="opinion">
+    <div class="opinion-trail">
                    <h3>Oceny i opinie</h3>
                     <p>
                       {{object.0.name}}
@@ -151,8 +151,8 @@
                            <div class="top_form">
                                <input type="text" class="nick" name="nick" placeholder="Podaj swój nick", value="{{request.user}}" disabled style="width: 100px;text-align:center; margin-right: 170px">
                                <input type="text" class="nick" name="trail_id" placeholder="id punbktu" value="{{trail_id}}" hidden>
-                               <p id="yours_stars">Twoja ocena</p>
-                               <div class="stars">
+                               <p id="yours_stars-trail">Twoja ocena</p>
+                               <div class="stars-trail">
                                     <input type="radio" id="star5" name="star" value="5">
                                     <label for="star5"> Five Stars </label>
                                     <input type="radio" id="star4" name="star" value="4">

@@ -1,15 +1,18 @@
 {% extends 'base_trail.html' %}
+{% load static %}
 {% block title %} Trasy zwiedzania {% endblock %}
 {% block content %}
 <div class="wrap-trails">
     <div class="title-trails">
             <h3>Wybierz trasę</h3>
-            <p class="title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            <p class="title">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
                 type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
                 essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
             </div>
+    {% if not search %}
     <div class="trail-center">
         <div class="filter_trails">
              <div id="x_hamburger"><i class="fas fa-times"></i></div>
@@ -22,30 +25,30 @@
                         </div>
                         <div class="country">
                             <label>Kraj:</label>
-                            <label><input type="checkbox" name="country_Poland" value="Polska">Polska</label>
-                            <label><input type="checkbox" name="country_German" value="Niemcy">Niemcy</label>
-                            <label><input type="checkbox" name="country_Czech" value="Czechy">Czechy</label>
-                            <p>Pokaż więcej</p>
+                                {% for c in country_trail %}
+                                    <label><input type="checkbox" name="country" value="{{c}}">{{c}}</label>
+                                {% endfor %}
+                                <p>Pokaż więcej</p>
                         </div>
                         <div class="region">
                             <label>Region:</label>
-                             <label><input type="checkbox" name="region_Mazury" value="Mazury">Mazury</label>
-                             <label><input type="checkbox" name="region_Śląsk" value="Śląsk">Śląsk</label>
-                             <label><input type="checkbox" name="region_Morze" value="Morze">Morze</label>
+                                {% for r in region_trail %}
+                                    <label><input type="checkbox" name="region" value="{{r}}">{{r}}</label>
+                                {% endfor %}
                             <p>Pokaż więcej</p>
                         </div>
                         <div class="city">
                             <label>Miasto:</label>
                                 {% for i in city %}
-                                        <label><input type="checkbox" name="city{{i.id}}" value="{{i}}">{{i}}</label>
+                                        <label><input type="checkbox" name="city" value="{{i}}">{{i}}</label>
                                 {% endfor %}
                             <p class="city">Pokaż więcej</p>
                         </div>
                          <div class="type">
                             <label>Typ trasy:</label>
-                             <label><input type="checkbox" name="type_historyczna" value="Historyczna">Historyczna</label>
-                             <label><input type="checkbox" name="type_Krajobrazowa" value="Krajobrazowa">Krajobrazowa</label>
-                             <label><input type="checkbox" name="type_Fajna" value="Fajna">Fajna</label>
+                             {% for r in type_trail %}
+                             <label><input type="checkbox" name="type" value="{{r}}">{{r}}</label>
+                            {% endfor %}
                             <p>Pokaż więcej</p>
                         </div>
                         <div class="top_rate">
@@ -58,10 +61,8 @@
                         </div>
                         <div class="popular">
                             <label>Popularne:</label>
-                             <label><input type="checkbox" name="popular_historic" value="Historyczna Stefana">Historyczna Stefana (200)</label>
-                             <label><input type="checkbox" name="popular_seks" value="Seksowna">Seksowna (100)</label>
-                             <label><input type="checkbox" >Moja (9)</label>
-                            <p>Pokaż więcej</p>
+                                <label><input type="checkbox"  name="popular" value="True">Tak</label>
+                                <label><input type="checkbox"  name="popular" value="False">Nie</label>
                         </div>
                         <div class="accept_filter">
                             <button id="button-filter">ZASTOSUJ FILTRY</button>
@@ -138,94 +139,100 @@
             </div>
             </div>
     </div>
+    {% else %}
+     <div class="trail-center">
+        <div class="filter_trails">
+             <div id="x_hamburger"><i class="fas fa-times"></i></div>
+            <h3> Filtrowanie tras: </h3>
+            <div class="filter">
+                    <form action="" method="post">
+                        <div class="name">
+                            <label>Nazwa:</label>
+                            <input type="text" name="name" placeholder="Wyszukaj trasę po nazwie">
+                        </div>
+                        <div class="country">
+                            <label>Kraj:</label>
+                                {% for c in country_trail %}
+                                    <label><input type="checkbox" name="country" value="{{c}}">{{c}}</label>
+                                {% endfor %}
+                                <p>Pokaż więcej</p>
+                        </div>
+                        <div class="region">
+                            <label>Region:</label>
+                                {% for r in region_trail %}
+                                    <label><input type="checkbox" name="region" value="{{r}}">{{r}}</label>
+                                {% endfor %}
+                            <p>Pokaż więcej</p>
+                        </div>
+                        <div class="city">
+                            <label>Miasto:</label>
+                                {% for i in city %}
+                                        <label><input type="checkbox" name="city" value="{{i}}">{{i}}</label>
+                                {% endfor %}
+                            <p class="city">Pokaż więcej</p>
+                        </div>
+                         <div class="type">
+                            <label>Typ trasy:</label>
+                             {% for r in type_trail %}
+                             <label><input type="checkbox" name="type" value="{{r}}">{{r}}</label>
+                            {% endfor %}
+                            <p>Pokaż więcej</p>
+                        </div>
+                        <div class="top_rate">
+                            <label>Ocena:</label>
+                             <label class="star"><input type="checkbox" name="star" value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="4">&#9733;&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="3">&#9733;&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="2">&#9733;&#9733;</label>
+                             <label class="star"><input type="checkbox" name="star" value="1">&#9733;</label>
+                        </div>
+                        <div class="popular">
+                            <label>Popularne:</label>
+                                <label><input type="checkbox"  name="popular" value="True">Tak</label>
+                                <label><input type="checkbox"  name="popular" value="False">Nie</label>
+                        </div>
+                        <div class="accept_filter">
+                            <button id="button-filter_search">ZASTOSUJ FILTRY</button>
+                        </div>
+                        {% csrf_token %}
+                    </form>
+            </div>
+        </div>
+        <div id="hamburger"><i class="fas fa-bars"></i></div>
+         <div class="right-search">
+             {% if search == 'Brak wyników wyszukiwania' %}
+                <div id="info-error">
+                    <h3>{{search}}</h3>
+                </div>
+             {% else %}
+                <div id="title-search">
+                    <h3>Wynik wyszukiwania:</h3>
+                </div>
+                <div id="search-trail-wrap">
+                    <ul>
+                        {% for s in search %}
+                            <li>
+                                <div id="search-trail">
+                                    <div id="search_image"><img src="{{s.image.url}}" alt=""></div>
+                                    <p id="search-trail_name">{{s.name}}</p>
+                                    <p><span>Kraj: </span>{{s.country}}</p>
+                                    <p><span>Miasto: </span>{{s.city}}</p>
+                                    <div id="search-trail_more" style="display: flex">
+                                        <div>
+                                            <p>Wykonało: <span> {{s.watched}} </span></p>
+                                            <p>Ocena: <span> {{s.average_grade}}</span> </p>
+                                        </div>
+                                    <button><a href="{% url 'trails:trail_detail' s.id %}">Więcej</a></button>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+             {% endif %}
+         </div>
+    </div>
+    {% endif %}
 </div>
-<script>
-<!--    Wszystkie trasy-->
-    let buttonRight = document.getElementById('right');
-    let buttonLeft = document.getElementById('left');
-    let amount = document.querySelectorAll('div.all_trails-trail');
-     let position = 0;
-    buttonRight.addEventListener('click', function () {
-        let list_point_user_add = document.getElementById('trails');
-            if(position>=0 && position<=amount.length*10) {
-                position += 350;
-                list_point_user_add.style.marginLeft = `-${position}px`
-            }
-    });
-    buttonLeft.addEventListener('click', function () {
-        let list_point_user_add = document.getElementById('trails');
-        if (position>=300 ){
-            position -= 350;
-            list_point_user_add.style.marginLeft =`-${position}px`
-        }
-    });
-//    Najwyżej oceniane
-    let buttonLeft_rate = document.getElementById('left-rate');
-    let buttonRight_rate = document.getElementById('right-rate');
-     let amount_top_rate = document.querySelectorAll('div.top_rate-trails');
-    let position_top_rate = 0;
-
-     buttonRight_rate.addEventListener('click', function () {
-        let list_point_user_add = document.getElementById('top_rate-trails');
-            if(position_top_rate>=0 && position_top_rate<=amount_top_rate.length*10) {
-                position_top_rate += 350;
-                list_point_user_add.style.marginLeft = `-${position_top_rate}px`
-            }
-    });
-    buttonLeft_rate.addEventListener('click', function () {
-        let list_point_user_add = document.getElementById('top_rate-trails');
-        if (position_top_rate>=300 ){
-            position_top_rate -= 350;
-            list_point_user_add.style.marginLeft =`-${position_top_rate}px`
-        }
-    });
-
-//    Najpopularniejsze
-  let buttonLeft_popular = document.getElementById('left-popular');
-    let buttonRight_popular = document.getElementById('right-popular');
-    let amount_popular_trail = document.querySelectorAll('div.popular-trail');
-     let position_popular_trail = 0;
-
-    buttonRight_popular.addEventListener('click', function () {
-        let list_point_user_add = document.getElementById('popular-trails');
-            if(position_popular_trail>=0 && position_popular_trail<=amount_popular_trail.length*10) {
-                position_popular_trail += 350;
-                list_point_user_add.style.marginLeft = `-${position_popular_trail}px`
-            }
-    });
-    buttonLeft_popular.addEventListener('click', function () {
-        let list_point_user_add = document.getElementById('popular-trails');
-        if (position_popular_trail>=300 ){
-            position_popular_trail -= 350;
-            list_point_user_add.style.marginLeft =`-${position_popular_trail}px`
-        }
-    });
-
-
-
-
-//    Obsługa przycisku Pokaż więcej
-let more = document.querySelector('p.city');
-let div_city = document.querySelector('div.city')
-
-more.addEventListener('click', function () {
-    div_city.classList.toggle("active");
-
-})
-//Obsługa skrolowania
-
-const button = document.getElementById('button-filter')
-
-    window.addEventListener(
-        'scroll',
-        () => {
-            if (window.scrollY >= 800) {
-            button.style.position = 'static'
-        }else {
-            button.style.position = 'fixed'
-        }
-    }
-    )
-
-</script>
+<script src="{% static 'js/all_trails.js' %}" type="text/javascript"></script>
 {% endblock %}

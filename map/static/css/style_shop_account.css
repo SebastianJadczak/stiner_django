@@ -1,6 +1,7 @@
 div.wrap-account{
-    background-color: #f1f1f1;
-    margin-top:6px;
+    /*background-color: #f1f1f1;*/
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
+    margin-top: 6px;
     padding: 20px 100px;
     min-height: 78vh;
     display: flex;

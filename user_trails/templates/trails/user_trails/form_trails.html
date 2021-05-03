@@ -25,29 +25,31 @@
              <div class="filter_trails">
                 <h3> Filtrowanie tras: </h3>
                 <div class="filter">
-                        <form action="" method="post">
+                        <form action="" method="post" >
                             <div class="name">
                                 <label>Nazwa:</label>
-                                <input type="text" placeholder="Wyszukaj trasę po nazwie">
+                                <input type="text" name="name" placeholder="Wyszukaj trasę po nazwie">
                             </div>
                             <div class="country">
                                 <label>Kraj:</label>
-                                <label><input type="checkbox">Polska</label>
-                                <label><input type="checkbox">Niemcy</label>
-                                <label><input type="checkbox">Czechy</label>
+                                    {% for c in country %}
+                                        <label><input type="checkbox" name="country" value="{{ c }}">{{ c }}</label>
+                                    {% endfor %}
                                 <p>Pokaż więcej</p>
                             </div>
                             <div class="region">
                                 <label>Region:</label>
-                                 <label><input type="checkbox">Mazury</label>
-                                 <label><input type="checkbox">Śląsk</label>
-                                 <label><input type="checkbox">Morze</label>
+
+                                {% for r in region %}
+                                    <label><input type="checkbox" name="region" value="{{ r }}">{{ r }}</label>
+                                {% endfor %}
+
                                 <p>Pokaż więcej</p>
                             </div>
                             <div class="city">
                                 <label>Miasto:</label>
                                     {% for i in city %}
-                                            <label><input type="checkbox">{{i}}</label>
+                                            <label><input type="checkbox" name="city" value="{{ i }}">{{i}}</label>
                                     {% endfor %}
                                 <p class="city">Pokaż więcej</p>
                             </div>
@@ -81,7 +83,7 @@
                         </div>
                     </div>
 
-
+            {{ list_point }}
         </div>
     </div>
 
@@ -105,7 +107,6 @@ more.addEventListener('click', function () {
         let list_point_user_add = document.getElementById('points_add_to_user_trail');
         if(position>=0 && position<= amount.length *350){
             position += 350;
-            console.log(position);
             list_point_user_add.style.marginLeft =`-${position}px`
         }
     });
@@ -113,7 +114,6 @@ more.addEventListener('click', function () {
         let list_point_user_add = document.getElementById('points_add_to_user_trail');
         if (position>=350){
             position -= 350;
-            console.log(position);
             list_point_user_add.style.marginLeft =`-${position}px`
         }
     });
@@ -125,10 +125,8 @@ const button = document.getElementById('button-filter_your-trail')
         () => {
             if (window.scrollY >= 175) {
             button.style.position = 'static'
-            console.log(window.scrollY)
         }else {
             button.style.position = 'fixed'
-            console.log(window.scrollY)
         }
     }
     )

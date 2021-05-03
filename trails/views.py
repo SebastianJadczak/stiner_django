@@ -6,6 +6,7 @@ from map.models import Point, Opinion_about_Point, Coordinates
 from shop.models import Category
 from trails.api.serializers import PointTrailsSerializer
 from trails.models import Trail, Rate_trail
+from user_trails.models import UserTrail
 
 
 class Trails(TemplateView):
@@ -24,28 +25,24 @@ class PointsListView(ListView):
     model = Point
     list = Point.objects.all()
 
-    def search_point(self, name=None, type=None, location=None):
-        if name and location and type:
-            self.list = self.list.filter(name__contains=name, type=type, location__contains=location)
-        if name and location:
-            self.list = self.list.filter(name__contains=name, location__contains=location)
-        if name and type:
-            self.list = self.list.filter(name__contains=name, type=type)
-        if location and type:
-            self.list = self.list.filter(type=type, location__contains=location)
-        if name:
-            self.list = self.list.filter(name__contains=name)
-        if location:
-            self.list = self.list.filter(location__contains=location)
-        if type:
-            self.list = self.list.filter(type=type)
+    def search_point(self, request):
+        search = ''
+        location = ''
+        type = ''
+
+        for key, value in request.POST.items():
+            if 'search' in key and value != '':
+                search = value
+            if 'location' in key and value != '':
+                location = value
+            if 'type' in key and value != '':
+                type = value
+        self.list = self.list.exclude(name__exact='', location__exact='', type__exact='').filter(
+            name__contains=search, type__contains =type, location__contains=location)
 
     def post(self, request, *args, **kwargs):
         template_name = 'points/points.html'
-        query_name = request.POST.get('search')
-        query_location = request.POST.get('location_points')
-        query_type = request.POST.get('point_type')
-        self.search_point(query_name, query_type, query_location)
+        self.search_point(request)
         return render(request, template_name,
                       {'list': self.list})
 
@@ -60,6 +57,7 @@ class PointDetailView(DetailView):
 
     template_name = 'points/point/point_detail.html'
     model = Point
+
 
     def post(self, request, *args, **kwargs):
         nick = request.user
@@ -80,18 +78,33 @@ class PointDetailView(DetailView):
                 print('Brak recenzji')
         return redirect('../../point/' + point_id)
 
+    def getGallery(self, gallery):
+        galleryArray = []
+
+        for i in gallery:
+            if i.image1 != '':
+                galleryArray.append(i.image1)
+            if i.image2 != '':
+                galleryArray.append(i.image2)
+            if i.image3 != '':
+                galleryArray.append(i.image3)
+            if i.image4 != '':
+                galleryArray.append(i.image4)
+            if i.image5 != '':
+                galleryArray.append(i.image5)
+        return galleryArray
+
+
     def get(self, request, *args, **kwargs):
         opinion = list(Opinion_about_Point.objects.filter(point=self.kwargs['pk']))
         point = Point.objects.filter(id=self.kwargs['pk'])
         point_id = self.kwargs['pk']
+        gallery = point.first().gallery.all()
+        gallery = self.getGallery(gallery)
+        return render(request, self.template_name,
+                      {'opinion': opinion, 'point': point[0], 'point_id': point_id, 'gallery': gallery})
 
-        return render(request, self.template_name, {'opinion': opinion, 'point': point[0], 'point_id': point_id})
-
-
-class TrailsListView(ListView):
-    template_name = 'trails/all_trails/all_trails.html'
-    model = Trail
-    list_trails = []
+class MethodTrail():
     def get_top_rate_trails(self):
         top_rate_trails = Trail.objects.order_by('average_grade').reverse()
         return top_rate_trails
@@ -104,38 +117,88 @@ class TrailsListView(ListView):
         city = list(Coordinates.objects.all())
         return city
 
+    def get_type_trail(self):
+        type_trail =[value for key, value in Trail.get_type_trail(Trail)]
+        return type_trail
+
+    def get_region_trail(self):
+        region_trail = [value for key,value in Trail.get_region_trail(Trail)]
+        return region_trail
+
+    def get_country_trail(self):
+        country_trail = [value for key,value in Trail.get_country_trail(Trail)]
+        return country_trail
+
+    def search_trail(self, request, type):
+        name = ''
+        country = ''
+        region = ''
+        city = ''
+        type_trail = ''
+        star = (int(0), (float(5) + 0.9))
+        popular = False
+        self.list_trails =[]
+        if(type == 'all_trail'):
+            self.list_trails = Trail.objects.all()
+        elif(type=='user_trail'):
+            self.list_trails = UserTrail.objects.all()
+
+        for key, value in request.POST.items():
+            if 'name' in key and value != '':
+                name = value
+            if 'country' in key and value != '':
+                country = value
+            if 'region' in key and value != '':
+                region = value
+            if 'city' in key and value != '':
+                city = value
+            if 'type' in key and value != '':
+                type_trail = value
+            if 'star' in key and value != '':
+                star = (int(value), (float(value) + 0.9))
+            if 'popular' in key and value != False:
+                popular = value
+
+        self.list_search = self.list_trails.exclude(name__exact='', country__exact='', region__exact='', city__exact='',
+                                                    type__exact='').filter(
+            name__contains=name, country__contains=country,
+            region__contains=region, city__contains=city,
+            type__contains=type_trail, average_grade__range=star,
+            popular=popular)
+
+        if (len(self.list_search) == 0): self.list_search = 'Brak wyników wyszukiwania'
+        return self.list_search
+
+class TrailsListView(ListView, MethodTrail):
+    template_name = 'trails/all_trails/all_trails.html'
+    model = Trail
+
+
+
     def get_context_data(self, **kwargs):
         context = super(TrailsListView, self).get_context_data(**kwargs)
         context['city'] = self.get_city()
         context['top_rate'] = self.get_top_rate_trails()
         context['popular_trail'] = self.get_wached_trails()
+        context['type_trail'] = self.get_type_trail()
+        context['region_trail'] = self.get_region_trail()
+        context['country_trail'] = self.get_country_trail()
         return context
 
     def get_queryset(self):
         trails = super(TrailsListView, self).get_queryset()
         return trails
 
-    def post(self, request, *args, **kwargs):
-        self.list_trails.clear()
-        for key, value in request.POST.items():
-            if 'name' in key:
-                self.list_trails.append(Trail.objects.filter(name__contains=value))
-            if 'country' in key:
-                self.list_trails.append(Trail.objects.filter(country=value))
-            if 'region' in key:
-                self.list_trails.append(Trail.objects.filter(region__contains=value))
-            if 'city' in key:
-                self.list_trails.append(Trail.objects.filter(city__contains=value))
-            if 'type_trail' in key:
-                self.list_trails.append(Trail.objects.filter(type=value))
-            if 'star' in key:
-                self.list_trails.append(Trail.objects.filter(average_grade__range=(int(value), (float(value) + 0.9))))
-            if 'popular' in key:
-                # Do zastanowienia i zrobienia mechanizm popularności i wymyśleć jak obsłużyć
-                pass
 
-        return redirect('./search_trails/',
-                      {'list': self.list_trails})
+
+    def post(self, request, *args, **kwargs):
+        search = self.search_trail(request,'all_trail')
+
+        return render(request, self.template_name,
+                      {'search': search, 'city': self.get_city(), 'top_rate': self.get_top_rate_trails(),
+                       'popular_trail': self.get_wached_trails(),
+                       'type_trail': self.get_type_trail(), 'region_trail': self.get_region_trail(),
+                       'country_trail': self.get_country_trail()})
 
 
 class TrailDetailView(DetailView):
@@ -191,14 +254,3 @@ class TrailApiFilterListView(generics.ListAPIView):
     def get_queryset(self):
         pk = self.kwargs['pk']
         return list(Trail.objects.filter(id=pk))[0].points.all()
-
-
-class SearchTrails(TrailsListView):
-    template_name = 'trails/all_trails/search_trails.html'
-    model = Trail
-
-
-    def get_context_data(self, **kwargs):
-        context = super(SearchTrails, self).get_context_data(**kwargs)
-        context['list'] = self.list_trails
-        return context

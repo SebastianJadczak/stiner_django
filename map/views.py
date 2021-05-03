@@ -4,6 +4,7 @@ from django.views import View
 from rest_framework import viewsets, request
 from rest_framework.response import Response
 
+# from account.models import UserRole
 from account.models import UserRole
 from map.api.serializers import PointSerializer, LocationMapSerializer
 from map.forms import FormularzRejestracji
@@ -15,14 +16,12 @@ class Map(View):
     template_name = 'map/map_index.html'
     category = Category.objects.all()
     coordinates = Coordinates.objects.all()
-    userRole = ''
     def get(self, request):
         # ---------------------------------------
-        # Pobiera dane o roli użytkownika
-        if (str(request.user) != 'AnonymousUser'):
-            self.userRole = UserRole.objects.filter(user=request.user).first()
+        # if (str(request.user) != 'AnonymousUser'):
+        #     self.userRole = UserRole.objects.filter(user=request.user).first()
         # ---------------------------------------
-        return render(request, self.template_name, {'userRole':self.userRole,'category': self.category, 'coordinates':self.coordinates})
+        return render(request, self.template_name, {'category': self.category, 'coordinates':self.coordinates})
 
     def post(self, request):
         if(len(NewsletterEmail.objects.filter(email=request.POST.get('email'))) ==0):

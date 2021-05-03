@@ -95,7 +95,7 @@
         <div class="user_menu">
             <ul>
                 <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
-                <li><a href="#">Ustawienia</a></li>
+                <li><a href="{% url 'account:user_settings' %}">Ustawienia</a></li>
 
                 {% if perms.blog.view_post%}
                     <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
