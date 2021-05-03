@@ -54,7 +54,7 @@ div.posts a{
 div.posts div.post{
     width:300px;
     margin: 10px 25px;
-    height:600px;
+    height:500px;
     border:1px solid #aeaeae;
     background-color: #fff;
 }
@@ -122,13 +122,10 @@ div.posts div.post div.info {
 
 @media only screen and (max-width: 1537px) {
     div.posts div.post {
-     width: 480px;
-        height:460px;
+        width: 310px;
+        height: 350px;
         margin: 10px;
     }
-     div.posts div.post div.image{
-         height:280px;
-     }
     div.right_table{
         padding:50px 10px;
     }
