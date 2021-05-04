@@ -18,6 +18,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
     <title>{% block title %} {% endblock %}</title>
@@ -125,15 +126,54 @@
     </div>
     <div id="login_rwd"><i class="fas fa-sign-in-alt"></i></div>
 </div>
-<div class="pointWrap">
-    <div class="content_trail">
-        <div class="point_detail">
-            <div class="point_detail_name">
-                <h2>{{point.name}}</h2>
+<div class="point-image" style="background-image: url({{point.image.url}}); ">
+    <div class="title-point">
+        <h3> {{point.name}}</h3>
+    </div>
+    <div id="file-point">
+            <button id="pdf"> <i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</button>
+            <button id="audio"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</button>
+        </div>
+</div>
+<div class="center">
+    <div id="trail-left">
+        <div id="basic-info">
+            <div class="name"><h3>{{ point.name }}:</h3></div>
+            <div class="more">
+                <div class="left">
+
+                    <div id="type">
+                        <i class="fas fa-road"></i> <p><span>Typ punktu:</span> <i>{{ point.type }}</i></p>
+                    </div>
+                    <div id="for_whom">
+                        <i class="fas fa-user-friends"></i> <p><span>Dla kogo: </span><i>{{ point.for_whom }}</i></p>
+                    </div>
+                    <div id="city">
+                        <i class="fas fa-city"></i> <p><span>Miasto: </span><i>{{ point.city }}</i></p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div id="len">
+                        <i class="fas fa-car"></i> <p><span>Współżędne:</span> <i id="x">{{point.coordinateX}}</i> <i id="y">{{point.coordinateY}}</i></p>
+                    </div>
+                    <div id="region">
+                        <i class="fas fa-mountain"></i>
+                        <p><span>Region:</span> <i>{{ point.region }}</i></p>
+                    </div>
+                    <div id="country">
+                        <i class="fas fa-globe-americas"></i> <p><span>Kraj: </span><i>{{ point.country }}</i></p>
+                    </div>
+                </div>
             </div>
-            <div id="wrap-left-right-point">
-                <div id="left-point">
-                    <div class="gallery">
+        </div>
+        <div class="map">
+            <h3>{{ point.name }}:</h3>
+            <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454">
+        </div>
+        <div id="point_description">
+             <p>{{ point.descriptions }}</p>
+        </div>
+        <div class="gallery">
                         <div class="big_image">
                             <img class="big" src="{{point.image.url}}"
                                  alt="room1"/>
@@ -149,50 +189,15 @@
                             <i class="fas fa-arrow-right arrow" id="right-arrow"></i>
                         </div>
                     </div>
-                    <div class="content-point">
-                        <div class="text">
-
-                            <div class="history">
-                                <h3>Historia</h3>
-                                <p>
-                                    {{point.descriptions}}
-                                </p>
-                            </div>
-                            <div class="curiosities">
-                                <h3>Ciekawostki</h3>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                    when an unknown printer took a galley of type and scrambled it to make a type
-                                    specimen book. It has survived not only five centuries, but also the leap into
-                                    electronic typesetting, remaining essentially unchanged. It was popularised in the
-                                    1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                    recently with desktop publishing software like Aldus PageMaker including versions of
-                                    Lorem Ipsum.
-                                </p>
-                            </div>
-                            <div class="visiting">
-                                <h3>Zwiedzanie</h3>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                    when an unknown printer took a galley of type and scrambled it to make a type
-                                    specimen book. It has survived not only five centuries, but also the leap into
-                                    electronic typesetting, remaining essentially unchanged. It was popularised in the
-                                    1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                    recently with desktop publishing software like Aldus PageMaker including versions of
-                                    Lorem Ipsum.
-                                </p>
-                            </div>
-                            <div class="taings">
-                                <h3>Oceny i opinie</h3>
-                                <p>
-                                    {{object.0.name}}
-                                </p>
-                                <!--                   Opinie -->
-                                {% if opinion %}
-                                <div class="opinions">
-                                    {% for element in opinion %}
+        <div class="opinion-trail">
+                       <h3>Oceny i opinie</h3>
+                        <p>
+                          {{object.0.name}}
+                       </p>
+    <!--                   Opinie -->
+                       {% if opinion %}
+                           <div class="opinions">
+                               {% for element in opinion %}
                                     <div class="opinion">
                                         <div class="top">
                                             <p id="user">{{element.user}}</p>
@@ -203,105 +208,56 @@
                                                 {% elif element.rating is 2 %}<span>★★</span>
                                                 {% elif element.rating is 1 %}<span>★</span>
                                                 {%endif%}</p>
-                                        </div>
+                                            </div>
                                         <p id="opinion">{{element.opinion}}</p>
                                     </div>
-                                    {% endfor %}
-                                </div>
-                                {% else %}
-                                <!--                   Jeśli brak opinie to...-->
-                                <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
-                                {% endif %}
-                                <h3>Napisz własną opinię:</h3>
-                                {% if user.is_authenticated %}
-                                <form action="" method="post">
-                                    <div class="top_form">
-                                        <input type="text" class="nick" name="nick" placeholder="Podaj swój nick" ,
-                                               value="{{request.user}}" disabled
-                                               style="width: 100px;text-align:center; margin-right: 170px">
-                                        <input type="text" class="nick" name="point_id" placeholder="id punbktu"
-                                               value="{{point_id}}" hidden>
-                                        <p id="yours_stars">Twoja ocena</p>
-                                        <div class="stars">
-                                            <input type="radio" id="star5" name="star" value="5">
-                                            <label for="star5"> Five Stars </label>
-                                            <input type="radio" id="star4" name="star" value="4">
-                                            <label for="star4"> Four Stars </label>
-                                            <input type="radio" id="star3" name="star" value="3">
-                                            <label for="star3"> Three Stars </label>
-                                            <input type="radio" id="star2" name="star" value="2">
-                                            <label for="star2"> Two Stars </label>
-                                            <input type="radio" id="star1" name="star" value="1">
-                                            <label for="star1"> One Star </label>
-                                        </div>
-                                    </div>
-                                    <div class="bottom_form">
-                                        <textarea name="recension" id="" placeholder="Twoja recenzja"></textarea>
-                                        <button>Zapisz Opinię</button>
-                                    </div>
-                                    {% csrf_token %}
-                                </form>
-                                {%else%}
-                                <p>Aby dodać opinię, proszę się zalogować.</p>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="right-point">
-                    <div id="summary_information">
-                        <div class="title">
-                            <h4>{{point.name}}</h4>
-                        </div>
-                        <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454">
-
-                        </div>
-                        <div class="info-point">
-                            <div id="info-point-left">
-                                <div class="country">
-                                    <p>Kraj:</p>
-                                </div>
-                                <div class="region">
-                                    <p>Region:</p>
-                                </div>
-                                <div class="city">
-                                    <p>Miasto:</p>
-                                </div>
-                                <div class="address">
-                                    <p>Adres:</p>
-                                </div>
-                                <div class="coordinates">
-                                    <p>Współżędne:</p>
-                                </div>
-                                <div class="more_info">
-                                    <p>Dodatkowe informacje:</p>
-                                </div>
-                            </div>
-                            <div id="info-point-right">
-                                <div class="country">
-                                    <p>{{point.country}}</p>
-                                </div>
-                                <div class="region">
-                                    <p>{{point.region}}</p>
-                                </div>
-                                <div class="city">
-                                    <p>{{point.location}}</p>
-                                </div>
-                                <div class="address">
-                                    <p>{{point.address}}</p>
-                                </div>
-                                <div class="coordinates">
-                                    <p class="xy"><span id="x">{{point.coordinateX}}</span> <span id="y">{{point.coordinateY}}</span></p>
-                                </div>
-                                <div class="more_info">
-                                    <p>{{point.more_info}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                               {% endfor %}
+                           </div>
+                       {% else %}
+        <!--                   Jeśli brak opinie to...-->
+                           <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
+                       {% endif %}
+                       <h3>Napisz własną opinię:</h3>
+                       {% if user.is_authenticated %}
+                           <form action="" method="post">
+                               <div class="top_form">
+                                   <input type="text" class="nick" name="nick" placeholder="Podaj swój nick", value="{{request.user}}" disabled style="width: 100px;text-align:center; margin-right: 170px">
+                                   <input type="text" class="nick" name="trail_id" placeholder="id punbktu" value="{{trail_id}}" hidden>
+                                   <p id="yours_stars-trail">Twoja ocena</p>
+                                   <div class="stars-trail">
+                                        <input type="radio" id="star5" name="star" value="5">
+                                        <label for="star5"> Five Stars </label>
+                                        <input type="radio" id="star4" name="star" value="4">
+                                        <label for="star4"> Four Stars </label>
+                                        <input type="radio" id="star3" name="star" value="3">
+                                        <label for="star3"> Three Stars </label>
+                                        <input type="radio" id="star2" name="star" value="2">
+                                        <label for="star2"> Two Stars </label>
+                                        <input type="radio" id="star1" name="star" value="1">
+                                        <label for="star1"> One Star </label>
+                                  </div>
+                               </div>
+                               <div class="bottom_form">
+                                   <textarea name="recension" id="" placeholder="Twoja recenzja"></textarea>
+                                   <button>Zapisz Opinię</button>
+                               </div>
+                               {% csrf_token %}
+                           </form>
+                       {%else%}
+                            <p>Aby dodać opinię, proszę się zalogować.</p>
+                       {% endif %}
+                   </div>
     </div>
+    </div>
+<div id="trail-right">
+
+</div>
+<div id="social-right">
+    <div id="fb"><i class="fab fa-facebook-square"></i></div>
+    <div id="li"><i class="fab fa-linkedin"></i></div>
+    <div id="contact"><i class="fas fa-envelope-open-text"></i></div>
+</div>
+
 <script>
 
 
