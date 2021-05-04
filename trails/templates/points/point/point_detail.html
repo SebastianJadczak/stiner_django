@@ -175,8 +175,12 @@
         </div>
         <div class="gallery">
                         <div class="big_image">
-                            <img class="big" src="{{point.image.url}}"
-                                 alt="room1"/>
+                            <div class="bigger">
+                                <img class="big" src="{{point.image.url}}"
+                                     alt="room1"/>
+                            </div>
+                            <i class="fas fa-arrow-left arrow" id="left-arrow"></i>
+                            <i class="fas fa-arrow-right arrow" id="right-arrow"></i>
                         </div>
                         <div id="small-wrap">
                                 <div id="small">
@@ -185,8 +189,7 @@
                                             <img src="{{g.url}}" class="img" alt=""/>
                                     {% endfor %}
                             </div>
-                            <i class="fas fa-arrow-left arrow" id="left-arrow"></i>
-                            <i class="fas fa-arrow-right arrow" id="right-arrow"></i>
+
                         </div>
                     </div>
         <div class="opinion-trail">
