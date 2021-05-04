@@ -122,13 +122,6 @@
     </div>
 <div class="center">
     <div id="trail-left">
-    {#    Podstawowe informacje o trasie. #}
-
-    {# Mapa trasy <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div> #}
-
-    {#Punkty.#}
-
-    {#Inne ciekawe trasy.#}
         <div id="basic-info">
             <div class="name"><h3>{{ trail.name }}:</h3></div>
             <div class="more">
@@ -137,13 +130,13 @@
                         <i class="fas fa-play"></i><p><span>Miejsce startowe: </span> <i id="first"></i></p>
                     </div>
                     <div id="type">
-                        <i class="fas fa-road"></i> <p><span>Typ trasy:</span></p>
+                        <i class="fas fa-road"></i> <p><span>Typ trasy:</span> <i>{{ trail.type }}</i></p>
                     </div>
                     <div id="for_whom">
-                        <i class="fas fa-user-friends"></i> <p><span>Dla kogo:</span></p>
+                        <i class="fas fa-user-friends"></i> <p><span>Dla kogo: </span><i>{{ trail.for_whom }}</i></p>
                     </div>
                     <div id="city">
-                        <i class="fas fa-city"></i> <p><span>Miasto:</span></p>
+                        <i class="fas fa-city"></i> <p><span>Miasto: </span><i>{{ trail.city }}</i></p>
                     </div>
                 </div>
                 <div class="right">
@@ -155,10 +148,10 @@
                     </div>
                     <div id="region">
                         <i class="fas fa-mountain"></i>
-                        <p><span>Region:</span></p>
+                        <p><span>Region:</span> <i>{{ trail.region }}</i></p>
                     </div>
                     <div id="country">
-                        <i class="fas fa-globe-americas"></i> <p><span>Kraj:</span></p>
+                        <i class="fas fa-globe-americas"></i> <p><span>Kraj: </span><i>{{ trail.country }}</i></p>
                     </div>
                 </div>
             </div>
@@ -171,11 +164,11 @@
             <ul>
                 {% for p in points %}
                     <li>
+                    <div class="image-trail"><img src="{{ p.image.url }}" alt=""></div>
                         <div class="point_in_trail" id="{{ p.id }}">
                             <div class="title_point"><h3>{{ p.name }}</h3></div>
                             <div class="description_point"><p>{{ p.descriptions }}</p></div>
-                            <div class="more" onclick="add_active_to_point({{ p.id }})"><p id="more" style="cursor:pointer">
-                                Zwiń</p></div>
+
                         </div>
                     </li>
                 {% endfor %}
@@ -242,6 +235,11 @@
     </div>
 <div id="trail-right">
 
+</div>
+<div id="social-right">
+    <div id="fb"><i class="fab fa-facebook-square"></i></div>
+    <div id="li"><i class="fab fa-linkedin"></i></div>
+    <div id="contact"><i class="fas fa-envelope-open-text"></i></div>
 </div>
 </div>
 
@@ -341,18 +339,4 @@ get_point_in_trail()
     }).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
                             }
 
-//Obsługa klawiszy Rozwiń
-
-
-function add_active_to_point (element) {
-    let point_in_trail = document.getElementById(`${element}`)
-    let p_more = document.getElementById(`${element}`).getElementsByTagName('p')
-        point_in_trail.classList.toggle("active");
-
-    if (point_in_trail.className === "point_in_trail active"){
-        p_more[1].innerText = "Rozwiń"
-    }else {
-         p_more[1].innerText = "Zwiń"
-    }
-    }
 </script>

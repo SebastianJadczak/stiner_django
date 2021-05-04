@@ -30,6 +30,13 @@ class Trail(models.Model):
         ('Morze', 'Morze'),
         ('Nizinny', 'Nizinny')
     )
+    FOR_WHOM = (
+        ('Dla wszystkich','Dla wszystkich') ,
+        ('Dla dzieci', 'Dla dzieci'),
+        ('Dla dorosłych', 'Dla dorosłych'),
+        ('Dla sportowców', 'Dla sportowców'),
+        ('Dla wymagających', 'Dla wymagających')
+    )
 
     name = models.CharField(max_length=30)
     descriptions = models.TextField()
@@ -37,6 +44,7 @@ class Trail(models.Model):
     region = models.CharField(max_length=15, choices=REGION, default='Nizinny')
     city = models.CharField(max_length=30)
     type = models.CharField(max_length=15, choices=TYPE_TRAIL)
+    for_whom = models.CharField(max_length=25, choices=FOR_WHOM, default='Dla wszystkich')
     image = models.ImageField(upload_to='media/img_trail/%Y/%m%d', blank=True)
     average_grade = models.DecimalField(max_digits=2, decimal_places=1)
     watched = models.IntegerField()
