@@ -6,7 +6,18 @@ div.karaibs {
     background-size: cover;
     border-bottom: 1px solid grey;
 }
-
+div.karaibs  h3 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 35px 0 0;
+    color: white;
+    -webkit-text-stroke: 0.6px black;
+    text-shadow: 0 0 3px black;
+}
 div.content div.content-bottom {
     display: flex;
     flex-direction: row;
