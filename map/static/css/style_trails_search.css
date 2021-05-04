@@ -14,6 +14,7 @@ button#button-filter_search {
 
 div.right-search {
     width: 69vw;
+    margin-left: 50px;
 }
 
 div.right-search div#info-error h3, div.right-search div#title-search h3 {

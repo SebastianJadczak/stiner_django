@@ -7,6 +7,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %} {% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -26,25 +28,25 @@
     <div class="logo"><img src="{% static 'img/logo.png' %}" alt="logo"></div>
     <div class="menu">
         <ul>
-            <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
-            <li class="green"><a href="{% url 'trails:all_trails'  %}"><i class="fas fa-map-signs"></i>Trasy</a>
-                 <div class="tr">
-                 <ul>
-                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
-                    <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
-                   {% if user.is_authenticated %}
-                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
-                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
-                    {%else%}
-                        <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>
-                        <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
-                     {% endif %}
-                </ul>
-        </div>
+            <li class="red"><a href="/">Mapa</a></li>
+            <li class="green"><a href="{% url 'trails:all_trails'  %}">Trasy <i class="fas fa-angle-down"></i></a>
+{#                 <div class="tr">#}
+{#                 <ul>#}
+{#                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>#}
+{#                    <li><a href="{% url 'trails:all_trails' %}">Trasy </a></li>#}
+{#                   {% if user.is_authenticated %}#}
+{#                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>#}
+{#                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>#}
+{#                    {%else%}#}
+{#                        <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>#}
+{#                        <li><a href="{% url 'login' %}">Stwórz trasę</a></li>#}
+{#                     {% endif %}#}
+{#                </ul>#}
+{#                </div>#}
             </li>
-            <li class="blue"><a href="{% url "blog:list_posts" %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
-            <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
+            <li class="blue"><a href="{% url "blog:list_posts" %}">Blog</a></li>
+            <li class="black"><a href="{%url "list_products"%}">Sklep</a></li>
+            <li class="gold"><a href="{% url 'contact:contact_detail' %}">Kontakt</a></li>
         </ul>
     </div>
     <div class="login_mapa" >

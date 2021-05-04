@@ -1,15 +1,17 @@
 /* Ustawienia ogólne */
-body {
+html, body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 #top {
-    border-bottom: 1px solid #cbcdcc;
     height: 10vh;
     display: flex;
     justify-content: space-between;
-    box-shadow:  0 -1px 2px #d2d2d2;
+    width: 86vw;
+    margin: 0 auto;
 }
 
 #top div.logo {
@@ -24,7 +26,7 @@ body {
 }
 
 div#top div.menu {
-    width: 65%;
+    width: 30%;
     height: 10vh;
     font-family: 'Roboto Mono', monospace;
 }
@@ -33,60 +35,47 @@ div#top div.menu ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    height: 10vh;
+    height: 6vh;
 }
-
+div#top div.menu ul li:nth-of-type(2){
+    width:20%;
+}
 div#top div.menu ul li {
-    width: 20%;
+    width: 10%;
     line-height: 9vh;
 }
 
 div#top div.menu ul li a {
-    display: block;
+    color: #323232;
+    font-family: Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
     text-align: center;
-    color: black;
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
-div#top div.menu ul li.red a {
-    color: red;
+div#top div.menu ul li.green:hover a {
+    color: #0085e9;
 }
 
-div#top div.menu ul li.blue a {
-    color: blue;
+div#top div.menu ul li.green:hover a i {
+    color: #0085e9;
 }
 
 div#top div.menu ul li.green a {
-    color: green
-}
-
-div#top div.menu ul li.gold a {
-    color: #ab0fb5;
-}
-
-div#top div.menu ul li a i {
-    font-size: 25px;
-    margin-right: 10px;
-    color: #3b372b;
-}
-
-div#top div.menu ul li.red a i {
-    color: red;
+    display: flex;
+    flex-direction: row;
 }
 
 div#top div.menu ul li.green a i {
-    color: green;
-}
-
-div#top div.menu ul li.blue a i {
-    color: blue;
-}
-
-div#top div.menu ul li.gold a i {
-    color: #ab0fb5;
+    margin-top: 27px;
+    margin-left: 5px;
+    font-size: 15px;
+    color: #919191;
 }
 
 div.login {
@@ -99,7 +88,7 @@ div.login button {
     height: 48px;
     border-radius: 25px;
     border-style: none;
-    background-color: #009900;
+    background-color: #fff;
 }
 
 div.login button a {
@@ -111,12 +100,28 @@ div.login button a {
 }
 
 div#filter {
+    border-top: 1px solid #c1c1c1;
     display: flex;
     height: 7vh;
-    line-height: 6.5vh;
-    margin: 0 20px;
+    line-height: 7.5vh;
     justify-content: space-between;
-    width: 81vw;
+    width: 98.5vw;
+}
+
+div#filter div#filter-insite {
+    margin: 0 auto;
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 80px;
+}
+div#filter div#filter-insite div.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 2px;
 }
 
 div#filter select.location {
@@ -127,7 +132,7 @@ div#filter select.location {
 
 div#filter i {
     margin: 12px 0 0 0;
-    font-size: 23px;
+    font-size: 18px;
 }
 
 div.search {
@@ -150,6 +155,7 @@ div.search button {
 /*Content*/
 
 div.content {
+    border-top: 1px solid #a9a9a9;
     margin-top: 2px;
         background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
 
@@ -160,7 +166,7 @@ div#top div.menu div.tr {
     height: 180px;
     background-color: #fdfdfd;
     color: #2e6993;
-    transform: translateY(-400px);
+    transform: translateY(-470px);
     z-index: -1;
     border: 0.5px solid #bababa;
     box-shadow: 0 0 1px #d2d2d2;

@@ -240,12 +240,12 @@ div.first-section div.left ul.menu-category li a{
     color: #131313;
     text-shadow: 0 1px #cbcbcb;
     padding: 5px 0 0 20px;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.2px;
     font-size: 15px;
 }
 
 div.first-section div.center{
-    width: 80vw;
+    width: 64vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -363,7 +363,7 @@ div.first-section div.center div.bottom div img{
     }
 
     div.first-section div.left div {
-        width: 19vw;
+        width: 15vw;
         height: 502px;
         margin-right: 80px;
         padding-bottom: 0;
@@ -389,7 +389,7 @@ div.first-section div.center div.bottom div img{
     }
 
     .slideshow-container {
-        max-width: 1000px;
+        max-width: 990px;
         height: 385px;
         position: relative;
         margin: auto;

@@ -61,32 +61,33 @@
 
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link rel="stylesheet" href="{% static "css/style_map.css" %}">
 </head>
 <body>
-<div id="top_mapa">
-    <div class="logo_mapa"><img src="{% static "img/logo.png" %}" alt="logo"></div>
-    <div class="menu_mapa">
+<div id="top">
+    <div class="logo"><img src="{% static "img/logo.png" %}" alt="logo"></div>
+    <div class="menu menu_mapa">
         <ul>
-            <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
-            <li class="green"><a href="{% url 'trails:all_trails' %}"><i class="fas fa-map-signs"></i>Trasy</a>
-            <div class="tr">
-                 <ul>
-                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
-                    <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
-                    {% if user.is_authenticated %}
-                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
-                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
-                    {%else%}
-                        <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>
-                        <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
-                     {% endif %}
-                </ul>
-        </div>
+            <li class="red"><a href="/"></i>Mapa</a></li>
+            <li class="green"><a href="{% url 'trails:all_trails' %}">Trasy <i class="fas fa-angle-down"></i></a>
+{#            <div class="tr">#}
+{#                 <ul>#}
+{#                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>#}
+{#                    <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>#}
+{#                    {% if user.is_authenticated %}#}
+{#                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>#}
+{#                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>#}
+{#                    {%else%}#}
+{#                        <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>#}
+{#                        <li><a href="{% url 'login' %}">Stwórz trasę</a></li>#}
+{#                     {% endif %}#}
+{#                </ul>#}
+{#        </div>#}
             </li>
-            <li class="blue"><a href="{% url 'blog:list_posts' %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
-            <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
+            <li class="blue"><a href="{% url 'blog:list_posts' %}">Blog</a></li>
+            <li class="black"><a href="{%url "list_products"%}">Sklep</a></li>
+            <li class="gold"><a href="{% url 'contact:contact_detail' %}">Kontakt</a></li>
         </ul>
     </div>
     <div class="login_mapa">
@@ -113,22 +114,25 @@
     </div>
     <div id="login_rwd"><i class="fas fa-sign-in-alt"></i></div>
 </div>
-<div id="filter_mapa">
-    <div class="select">
-        <select class="location" onchange="select_city()">
-            {% for element in coordinates %}
-            <option value="{{element.name}}" {% if "{{element.name}}" == "Warszawa" %} selected {%endif%}>{{element.name}}</option>
-            {%endfor%}
-        </select>
+<div id="filter">
+    <div id="filter-insite">
+        <div class="select">
+            <select class="location" onchange="select_city()">
+                {% for element in coordinates %}
+                <option value="{{element.name}}" {% if "{{element.name}}" == "Warszawa" %} selected {%endif%}>{{element.name}}</option>
+                {%endfor%}
+            </select>
+            </div>
+        <div class="icons">
+            <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><i class="fab fa-fort-awesome"></i></div>
+            <div class="church_mapa"><input type="checkbox" class="monuments" id="Kościoły"><i class="fas fa-church"></i></div>
+            <div class="tree_mapa"><input type="checkbox" class="monuments" id="Parki"><i class="fas fa-tree"></i></div>
+            <div class="monument_mapa"><input type="checkbox" class="monuments" id="Muzeum"><i class="fas fa-landmark"></i></div>
+            <div class="culture_mapa"><input type="checkbox" class="monuments" id="Budowle"><i class="fas fa-theater-masks"></i></div>
+            <div class="hotel_mapa"><input type="checkbox" class="monuments" id="hotel"><i class="fas fa-h-square"></i></div>
         </div>
-    <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><i class="fab fa-fort-awesome"></i></div>
-    <div class="church_mapa"><input type="checkbox" class="monuments" id="Kościoły"><i class="fas fa-church"></i></div>
-    <div class="tree_mapa"><input type="checkbox" class="monuments" id="Parki"><i class="fas fa-tree"></i></div>
-    <div class="monument_mapa"><input type="checkbox" class="monuments" id="Muzeum"><i class="fas fa-landmark"></i></div>
-    <div class="culture_mapa"><input type="checkbox" class="monuments" id="Budowle"><i class="fas fa-theater-masks"></i></div>
-    <div class="hotel_mapa"><input type="checkbox" class="monuments" id="hotel"><i class="fas fa-h-square"></i></i></div>
-    <div class="search_mapa"><button onclick="post_monuments()">Szukaj</button></div>
-
+     <div class="search_mapa"><button onclick="post_monuments()">Szukaj</button></div>
+    </div>
 </div>
 
 <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
