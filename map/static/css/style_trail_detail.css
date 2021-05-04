@@ -1,9 +1,22 @@
 div.center {
     background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-
+div.center div#trail-left{
+    width:60vw;
+    margin-left: 50px;
+}
+div.center div#trail-right{
+   width:20vw;
+    height:500px;
+    background-color: #fff;
+    margin-left: 50px;
+}
 div#points_in_trail {
-    width: 75vw;
+    width: 100%;
     margin: 0 auto;
     background-color: #fff;
 }
@@ -67,7 +80,6 @@ div.panorama_mapa {
 }
 
 div.panorama_mapa div.x {
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
     text-align: center;
     margin: 0 auto;
     padding-top: 5vh;
@@ -114,13 +126,87 @@ button#audio{
     letter-spacing: 1.3px;
 }
 
+/*Basic info trail.*/
+
+div#basic-info {
+    width:100%;
+    height: 300px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+div#basic-info h3 {
+    margin: 0 10px 25px;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 23px;
+    letter-spacing: 2.0px;
+    padding-left: 30px;
+}
+
+div#basic-info div.more {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div#basic-info div.more div.right {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+}
+
+div#basic-info div.more div.left {
+    width: 51%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+div#basic-info div.more div {
+    display: flex;
+    flex-direction: row;
+}
+div#basic-info div.more div.left div , div#basic-info div.more div.right div {
+    height: 70px;
+}
+div#basic-info div.more div.left div i, div#basic-info div.more div.right div i {
+    font-size: 25px;
+    margin-right: 7px;
+    color: #0099f5;
+    opacity: 0.6;
+}
+div#basic-info div.more div.left div p, div#basic-info div.more div.right div p{
+    line-height: 30px;
+    font-family: Arial, sans-serif;
+}
+div#basic-info div.more div.left div p, div#basic-info div.more div.right div p i{
+    font-size: 16px;
+    color: black;
+}
+div#basic-info div.more div.left div p span, div#basic-info div.more div.right div p span{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/*Map.*/
+div.map{
+    width:100%;
+}
+div.map div.folium-map{
+    width: 100%;
+}
+
+div.leaflet-control{
+display: none;
+}
 /*Opinion trails.*/
 div.opinion-trail {
     border: 0.5px solid #bcbcbc;
     border-radius: 15px;
     background-color: #f3f3f3;
     margin: 30px auto;
-    width: 660px;
+    width: 100%;
     padding: 0 30px;
 }
 div.top_form p#yours_stars-trail {
