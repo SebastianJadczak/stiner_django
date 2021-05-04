@@ -134,7 +134,7 @@
             <div class="more">
                 <div class="left">
                     <div id="start">
-                        <i class="fas fa-play"></i><p><span>Miejsce startowe:</span></p>
+                        <i class="fas fa-play"></i><p><span>Miejsce startowe: </span> <i id="first"></i></p>
                     </div>
                     <div id="type">
                         <i class="fas fa-road"></i> <p><span>Typ trasy:</span></p>
@@ -148,7 +148,7 @@
                 </div>
                 <div class="right">
                     <div id="end">
-                        <i class="far fa-stop-circle"></i> <p><span>Miejsce docelowe:</span></p>
+                        <i class="far fa-stop-circle"></i> <p><span>Miejsce docelowe:</span> <i id="last"></i></p>
                     </div>
                     <div id="len">
                         <i class="fas fa-car"></i> <p><span>Długość:</span> <i id="length"></i></p>
@@ -294,8 +294,19 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}{r}.png', {
 // Obsługa punktów na mapie
 
 let id_trail = document.querySelector("p#trail_id");
-let points = []
 const waypoints = []
+let first =  document.getElementById('first')
+let last =  document.getElementById('last')
+let firstLastPoints = []
+
+ function setFirstPoint(data){
+    console.log(first)
+    first.innerText = Object.values(data)[1]
+ }
+
+ function setLastPoint(data){
+    last.innerText = Object.values(data)[1]
+ }
 
  function get_point_in_trail(){
                 //Pobieranie danych z API odnośnie punktów w trasie
@@ -306,6 +317,8 @@ const waypoints = []
                             function addElements(item, index) {
                                 waypoints.push(L.latLng( parseFloat(item.coordinateX), parseFloat(item.coordinateY)))
                              }
+                             setFirstPoint(data[0])
+                            setLastPoint(data[data.length-1])
                         })
          setTimeout(add_points_to_waypoints, 1000)
             }
@@ -325,7 +338,6 @@ get_point_in_trail()
                                      }).on('routesfound', function(e) {
         var routes = e.routes;
         distance.innerText= (routes[0].summary.totalDistance / 1000).toFixed(2) + 'km'
-
     }).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
                             }
 

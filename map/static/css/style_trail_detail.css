@@ -14,6 +14,8 @@ div.center div#trail-right{
     height:500px;
     background-color: #fff;
     margin-left: 50px;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
 }
 div#points_in_trail {
     width: 100%;
@@ -133,6 +135,9 @@ div#basic-info {
     height: 300px;
     background-color: #fff;
     margin: 0 auto;
+    padding: 10px 0;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
 }
 
 div#basic-info h3 {
@@ -168,7 +173,7 @@ div#basic-info div.more div {
     flex-direction: row;
 }
 div#basic-info div.more div.left div , div#basic-info div.more div.right div {
-    height: 70px;
+    height: 65px;
 }
 div#basic-info div.more div.left div i, div#basic-info div.more div.right div i {
     font-size: 25px;
@@ -180,7 +185,7 @@ div#basic-info div.more div.left div p, div#basic-info div.more div.right div p{
     line-height: 30px;
     font-family: Arial, sans-serif;
 }
-div#basic-info div.more div.left div p, div#basic-info div.more div.right div p i{
+div#basic-info div.more div.left div p i, div#basic-info div.more div.right div p i{
     font-size: 16px;
     color: black;
 }
