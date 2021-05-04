@@ -4,85 +4,114 @@ div.center {
 
 div#points_in_trail {
     width: 75vw;
-    margin: 30px auto;
+    margin: 0 auto;
     background-color: #fff;
 }
 
-div#points_in_trail ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-div#points_in_trail ul li{
-    border:1px solid #e5e5e5;
-    box-shadow: 1px 1px 1px #e0e0e0;
-    margin-bottom: 15px;
-    border-radius: 15px;
-}
-div#points_in_trail ul li div div.title_point{
-    background-color: #00a4cb;
-    padding: 15px 0;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    letter-spacing: 2px;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-}
-div#points_in_trail ul li div div.title_point h3{
-    margin: 0;
-    color: #f5f5f5;
-    font-weight: bold;
-}
-div#points_in_trail ul li div.point_in_trail div.description_point{
-    padding: 10px 20px 5px;
-    visibility: initial;
-    height: auto;
-    letter-spacing: 1.7px;
-    font-family: Arial, sans-serif;
-}
-div#points_in_trail ul li div.point_in_trail.active div.description_point{
- height: 15px;
-    visibility: hidden;
+/*div#points_in_trail ul {*/
+/*    list-style: none;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+/*div#points_in_trail ul li{*/
+/*    border:1px solid #e5e5e5;*/
+/*    box-shadow: 1px 1px 1px #e0e0e0;*/
+/*    margin-bottom: 15px;*/
+/*    border-radius: 15px;*/
+/*}*/
+/*div#points_in_trail ul li div div.title_point{*/
+/*    background-color: #00a4cb;*/
+/*    padding: 15px 0;*/
+/*    text-align: center;*/
+/*    font-family: Arial, sans-serif;*/
+/*    letter-spacing: 2px;*/
+/*    border-top-right-radius: 15px;*/
+/*    border-top-left-radius: 15px;*/
+/*}*/
+/*div#points_in_trail ul li div div.title_point h3{*/
+/*    margin: 0;*/
+/*    color: #f5f5f5;*/
+/*    font-weight: bold;*/
+/*}*/
+/*div#points_in_trail ul li div.point_in_trail div.description_point{*/
+/*    padding: 10px 20px 5px;*/
+/*    visibility: initial;*/
+/*    height: auto;*/
+/*    letter-spacing: 1.7px;*/
+/*    font-family: Arial, sans-serif;*/
+/*}*/
+/*div#points_in_trail ul li div.point_in_trail.active div.description_point{*/
+/* height: 15px;*/
+/*    visibility: hidden;*/
 
-}
+/*}*/
 
-div#points_in_trail ul li div div.more{
-    text-align: right;
-    padding-right: 15px;
-    letter-spacing: 1.7px;
-    font-weight: bold;
-    font-size: 17px;
-}
-div.leaflet-routing-container{
-    display: none;
-}
+/*div#points_in_trail ul li div div.more{*/
+/*    text-align: right;*/
+/*    padding-right: 15px;*/
+/*    letter-spacing: 1.7px;*/
+/*    font-weight: bold;*/
+/*    font-size: 17px;*/
+/*}*/
+/*div.leaflet-routing-container{*/
+/*    display: none;*/
+/*}*/
 
 
-div.panorama_mapa{
+div.panorama_mapa {
     width: 99.8vw;
-    height: 20vh;
-    background-image: url("../../static/img/panorama2.jpg");
+    height: 45vh;
     background-position: center;
     background-size: cover;
-      opacity: 0.8;
-box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
 }
+
 div.panorama_mapa div.x {
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 0.1);
     font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
     text-align: center;
     margin: 0 auto;
+    padding-top: 5vh;
 }
 
-div.panorama_mapa h3 {
+div.panorama_mapa div.x h3 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
     margin: 0;
-    padding: 50px 0 0 25px;
-    color: #c40000;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 35px;
-    /*text-align: center;*/
+    color: white;
+    -webkit-text-stroke: 0.8px black;
+    text-shadow: 0 0 5px black;
+}
+
+div.panorama_mapa div#file-trail {
+    margin: 120px 0 0;
+    text-align: center;
+}
+
+button#pdf {
+    background-color: #12a900;
+    width: 330px;
+    height: 50px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 15px;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    color: white;
+    letter-spacing: 1.3px;
+}
+button#audio{
+    background-color: #e3df00;
+    width: 280px;
+    height: 50px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 15px;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    letter-spacing: 1.3px;
 }
 
 /*Opinion trails.*/

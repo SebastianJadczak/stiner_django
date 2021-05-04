@@ -55,22 +55,22 @@
     <div class="logo_mapa"><img src="{% static "img/logo.png" %}" alt="logo"></div>
     <div class="menu_mapa">
         <ul>
-            <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
-            <li class="green"><a href="{% url 'trails:all_trails' %}"><i class="fas fa-map-signs"></i>Trasy</a>
-            <div class="tr">
-                 <ul>
-                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
-                    <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
-                    {% if user.is_authenticated %}
-                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
-                    {% endif %}
-                    <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
-                </ul>
-        </div>
+            <li class="red"><a href="/">Mapa</a></li>
+            <li class="green"><a href="{% url 'trails:all_trails' %}">Trasy</a>
+{#                <div class="tr">#}
+{#                     <ul>#}
+{#                        <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>#}
+{#                        <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>#}
+{#                        {% if user.is_authenticated %}#}
+{#                            <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>#}
+{#                        {% endif %}#}
+{#                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>#}
+{#                    </ul>#}
+{#                </div>#}
             </li>
-            <li class="blue"><a href="{% url 'blog:list_posts' %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
-            <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
+            <li class="blue"><a href="{% url 'blog:list_posts' %}">Blog</a></li>
+            <li class="black"><a href="{%url "list_products"%}">klep</a></li>
+            <li class="gold"><a href="{% url 'contact:contact_detail' %}">Kontakt</a></li>
         </ul>
     </div>
     <div class="login_mapa">
@@ -97,13 +97,24 @@
     </div>
 </div>
 <p id="trail_id" hidden>{{trail.id}}</p>
-<div class="panorama_mapa" >
-<div class="x">
-    <h3>{{trail.name}}</h3>
+<div class="panorama_mapa" style="background-image:  url({{ trail.image.url }})">
+    <div class="x">
+        <h3>{{trail.name}}</h3>
+    </div>
+    <div id="file-trail">
+        <button id="pdf"> <i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</button>
+        <button id="audio"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</button>
     </div>
 </div>
 <div class="center">
-    <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
+{#    Podstawowe informacje o trasie. #}
+
+{# Mapa trasy <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div> #}
+
+{#Punkty.#}
+
+{#Inne ciekawe trasy.#}
+
     <div id="points_in_trail">
         <ul>
             {% for p in points %}
