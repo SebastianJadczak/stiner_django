@@ -182,8 +182,8 @@ div#social-right {
     position: fixed;
     top: 20vh;
     right: 0;
-    width: 35px;
-    height: 110px;
+    width: 39px;
+    height: 105px;
     background-color: #fff;
     border: 1px solid black;
     display: flex;
@@ -210,8 +210,9 @@ div#li {
     color: #0072ff;
 }
 
-div#contact {
+div#social-right div#youtube {
     color: #a20000;
+    font-size: 30px;
 }
 
 div#basic-info {

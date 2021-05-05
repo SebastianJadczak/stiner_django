@@ -91,3 +91,11 @@ class NewsletterEmail(models.Model):
     """Model odpowiadający za zapisanych użytkowników do newslettera."""
     email = models.EmailField()
 
+class News(models.Model):
+    """Model odpowiedzialny za nowości na stronie."""
+    title = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='media/img_news/%Y/%m%d')
+    descriptions = models.TextField()
+
+    def __str__(self):
+        return self.title

@@ -34,9 +34,12 @@
                    z-index: 0;
                     margin:2px auto;
                     width: 100.0%;
-                    height: 83.0%;
+                    height: 500px;
                     left: 0.0%;
                     top: 0.0%;
+                    border-top: 1px solid #228d00;
+                    border-bottom: 1px solid #228d00;
+                    box-shadow: 0 0 5px #228d00;
                 }
                 /* Obsługa scrolowania mapy tylko z ctrl + scroll*/
                 .map-scroll:before {
@@ -59,24 +62,27 @@
                 }
             </style>
 
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link rel="stylesheet" href="{% static "css/style_map.css" %}">
 </head>
 <body>
+
+
 <div id="top">
     <div class="logo"><img src="{% static "img/logo.png" %}" alt="logo"></div>
     <div class="menu menu_mapa">
         <ul>
             <li class="red"><a href="/"></i>Mapa</a></li>
             <li class="green"><a href="{% url 'trails:all_trails' %}">Trasy <i class="fas fa-angle-down"></i></a>
-{#            <div class="tr">#}
-{#                 <ul>#}
-{#                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>#}
-{#                    <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>#}
-{#                    {% if user.is_authenticated %}#}
-{#                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>#}
+                {#            <div class="tr">#}
+                {#                 <ul>#}
+                {#                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>#}
+                {#                    <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>#}
+                {#                    {% if user.is_authenticated %}#}
+                {#                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>#}
 {#                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>#}
 {#                    {%else%}#}
 {#                        <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>#}
@@ -114,6 +120,17 @@
     </div>
     <div id="login_rwd"><i class="fas fa-sign-in-alt"></i></div>
 </div>
+<div id="welcome">
+    <div class="text">
+       <section><div id="earth"><i class="fas fa-globe-americas"></i></div> <h2>Wakacje marzeń:</h2></section>
+        <section id="buttons_type_holiday">
+            <button class="active"><i class="fas fa-fish"></i> Morze</button>
+            <button> <i class="fas fa-mountain"></i> Góry</button>
+            <button><i class="fas fa-water"></i> Jeziora</button>
+        </section>
+    </div>
+    <div class="search-holiday"></div>
+</div>
 <div id="filter">
     <div id="filter-insite">
         <div class="select">
@@ -134,8 +151,56 @@
      <div class="search_mapa"><button onclick="post_monuments()">Szukaj</button></div>
     </div>
 </div>
-
+<div id="news">
+    <h2>Najnowsze informacje</h2>
+    <p>Zapraszamy do zapoznania z najnowszymi aktualnościami na naszej stronie i aplikacji. Dokładamy wszelkich starań aby zapewnić Państwu najwyższą jakość naszych usług.
+    <b>Dziękujemy za zaufanie!</b></p>
+    <section id="small">
+    <ul>
+        {% for n in news %}
+            <li>
+                <div id="news-post" style="background-image: linear-gradient(rgba(0,0,0,
+                        0.1) 80%, rgba(0,0,0,0.9)), url('{{ n.image.url}}')">
+                    <h3>{{ n.title }}</h3>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    </section>
+    <section id="big">
+        <ul>
+        {% for n in newsBig %}
+            <li>
+                <div id="news-post-big" style="background-image: linear-gradient(rgba(0,0,0,
+                        0.1) 80%, rgba(0,0,0,0.9)), url('{{ n.image.url}}')">
+                    <h3>{{ n.title }}</h3>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    </section>
+</div>
 <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
+
+<div id="info-about-trail">
+    <section>
+        <div></div>
+        <div></div>
+    </section>
+    <section>
+        <div></div>
+        <div></div>
+    </section>
+    <section>
+        <div></div>
+        <div></div>
+    </section>
+    <section>
+        <div></div>
+        <div></div>
+    </section>
+</div>
+
 <div id="newsletter-wrap">
     <div id="newsletter">
         <div id="title_newsletter">
@@ -153,6 +218,11 @@
             <p id="li"><i class="fab fa-linkedin"></i>Nasz Linkedin</p>
         </div>
     </div>
+</div>
+<div id="social-right">
+    <div id="fb"><i class="fab fa-facebook-square"></i></div>
+    <div id="li"><i class="fab fa-linkedin"></i></div>
+    <div id="youtube"><i class="fab fa-youtube"></i></i></div>
 </div>
 <div class="footer">
     <a href="https://www.linkedin.com/in/sebastian-jadczak-b74a40182">&copy; Sebastian Jadczak</a>

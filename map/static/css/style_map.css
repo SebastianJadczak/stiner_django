@@ -79,15 +79,56 @@ div#newsletter-wrap div#newsletter div#social-media p {
     font-family: Arial, sans-serif;
     letter-spacing: 1.1px;
 }
+
 div#newsletter-wrap div#newsletter div#social-media p#fb i {
-    color: rgb(6,115,231);
+    color: rgb(6, 115, 231);
 }
+
 div#newsletter-wrap div#newsletter div#social-media p#li i {
-    color: rgb(10,102,194);
+    color: rgb(10, 102, 194);
 }
+
 div#newsletter-wrap div#newsletter div#social-media p i {
     margin-right: 5px;
 }
+
+div#social-right {
+    position: fixed;
+    top: 20vh;
+    right: 0;
+    width: 39px;
+    height: 105px;
+    background-color: #fff;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div#social-right div {
+    line-height: 35px;
+    text-align: center;
+    font-size: 35px;
+    border-bottom: 0.6px solid black;
+}
+
+div#social-right:nth-of-type(3) {
+    border-bottom: none;
+}
+
+div#fb {
+    color: #00449b;
+}
+
+div#li {
+    color: #0072ff;
+}
+
+div#social-right div#youtube {
+    color: #a20000;
+    font-size: 30px;
+}
+
 #top_mapa {
     border-bottom: 1px solid #cbcdcc;
     height: 10vh;
@@ -109,9 +150,178 @@ div#newsletter-wrap div#newsletter div#social-media p i {
 }
 
 div#top div.menu_mapa {
-    margin-top: 15px;
+    /*margin-top: 15px;*/
     display: block;
+    width: 30%;
+    margin: 10px auto 0;
 }
+
+div#welcome {
+    background-image: url("../img/front-image.jpg");
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid grey;
+    height: 83vh;
+    display: flex;
+}
+
+div#welcome section#buttons_type_holiday {
+    margin-left: 110px;
+}
+
+div#welcome section#buttons_type_holiday button {
+    margin-left: 20px;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+    background-color: #f5fff3;
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+}
+
+div#welcome section#buttons_type_holiday button.active {
+    background: linear-gradient(#00a20d, #00730c);
+    color: white;
+}
+
+div#welcome div.text {
+    position: relative;
+    top: 70px;
+    left: 280px;
+}
+
+div#welcome div.text section {
+    display: flex;
+    flex-direction: row;
+}
+
+div#welcome div.text div#earth {
+    margin-top: 35px;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    background: linear-gradient(#00a20d, #00730c);
+    box-shadow: 0 0 3px #b8b8b8;
+}
+
+div#welcome div.text div#earth i {
+    color: white;
+    font-size: 50px;
+    line-height: 80px;
+    margin-left: 15px;
+}
+
+div#welcome div.text h2 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 45px 0 0 30px;
+    color: white;
+    -webkit-text-stroke: 0.8px black;
+    text-shadow: 0 0 4px black;
+}
+
+div#welcome div.search-holiday {
+    position: relative;
+    right: -530px;
+    top: 80px;
+    width: 290px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+div#news {
+    min-height: 500px;
+    margin: 0 auto 0;
+    padding: 50px 10vw;
+    background-color: #f7fff7;
+}
+
+div#news h2 {
+    font-family: 'Bangers', cursive;
+    color: black;
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin-left: 30px;
+    text-align: center;
+    -webkit-text-stroke: 0.5px #0085e9;
+}
+div#news  p{
+    text-align: center;
+    font-size: 18px;
+    width:70vw;
+    margin:0 auto;
+     font-family: 'Archivo Black', sans-serif;
+}
+div#news section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: space-between;
+}
+
+div#news section ul li div {
+    width: 360px;
+    height: 240px;
+    margin-right: 25px;
+    background-position: center;
+    background-size: cover;
+}
+
+div#news section ul li div h3 {
+    text-align: center;
+    line-height: 200px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 45px 0 0 30px;
+    color: white;
+    -webkit-text-stroke: 0.8px black;
+    text-shadow: 0 0 4px black;
+}
+
+div#news section#big ul {
+    justify-content: space-between;
+}
+
+div#news section#big ul li {
+    overflow: hidden;
+    width: 570px;
+    height: 340px;
+}
+
+div#news section ul li div#news-post-big {
+    width: 570px;
+    height: 340px;
+    margin-right: 25px;
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.0);
+    transition: 0.3s;
+}
+
+div#news section ul li div#news-post-big:hover {
+    transform: scale(1.1);
+}
+
+div#news section ul li div#news-post-big h3 {
+    padding-top: 150px;
+}
+
+/*------------------------------------*/
 
 div#top div.menu ul li:hover a {
     color: #0085e9;
