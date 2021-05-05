@@ -127,6 +127,7 @@ div.posts div.post div.info {
     font-size: 13px;
     text-align: right;
 }
+
 @media only screen and (max-width: 1680px) {
 
     div.posts {
