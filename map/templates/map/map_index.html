@@ -121,9 +121,9 @@
     <div class="text">
        <section><div id="earth"><i class="fas fa-globe-americas"></i></div> <h2>Wakacje marzeń:</h2></section>
         <section id="buttons_type_holiday">
-            <button class="active"><i class="fas fa-fish"></i> Morze</button>
-            <button> <i class="fas fa-mountain"></i> Góry</button>
-            <button><i class="fas fa-water"></i> Jeziora</button>
+            <button onclick="switchForms('sea')" id="sea" class="active"><i class="fas fa-fish"></i> Morze</button>
+            <button onclick="switchForms('mountains')" id="mountains"> <i class="fas fa-mountain"></i> Góry</button>
+            <button onclick="switchForms('lake')" id="lake"><i class="fas fa-water"></i> Jeziora</button>
         </section>
     </div>
     <div class="search-holiday"></div>
@@ -261,3 +261,11 @@
 <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
 <script src="{% static 'js/map.js' %}" type="text/javascript"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<script>
+    function switchForms(arg){
+        let active = document.querySelector('.active')
+        let clickButton = document.querySelector(`#${arg}`)
+        active.classList.toggle('active')
+        clickButton.classList.toggle('active')
+    }
+</script>
