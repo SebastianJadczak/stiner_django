@@ -494,7 +494,7 @@ div#mobile-app div.left h3 {
     letter-spacing: 3.5px;
     margin: 10px 0 0 0;
     color: white;
-    -webkit-text-stroke: 0.8px black;
+    -webkit-text-stroke: 0.3px black;
     text-shadow: 0 0 4px black;
 }
 

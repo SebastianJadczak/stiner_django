@@ -128,9 +128,9 @@
     </div>
     <div class="search-holiday">
         <form action="" method="post" id="search-sea">
+            <input type="text" value="Morze" hidden id="region" name="region">
             <label> Podaj nazwę trasy</label>
-            <input type="text" value="Góry" hidden>
-            <input type="text" placeholder="np. Górska">
+            <input type="text" placeholder="np. Górska" name="name">
             <label> Wybierz kraj</label>
             <select name="country">
                  <option value="" id="default">np. Polska</option>
@@ -146,8 +146,8 @@
                     {% endfor %}
             </select>
             <div id="popular">
-                <label><input type="radio" value="Tak">Popularna</label>
-                <label><input type="radio" value="Nie">Niepopularna</label>
+                <label><input type="radio" checked value="True" name="popular">Popularna</label>
+                <label><input type="radio" value="False" name="popular">Niepopularna</label>
             </div>
             <input type="submit" value="&#xf689 Szukaj">
             {% csrf_token %}
@@ -238,7 +238,7 @@
 <div id="mobile-app">
     <div class="left">
         <h2>Sciągnij aplikację:</h2>
-         <h3>Jeszcze więcej wspaniałych wspomnień. Nie czekaj, pobierz aplikację i zwiedzaj świat</h3>
+         <h3>Jeszcze więcej wspaniałych wspomnień. Nie czekaj, pobierz aplikację i zwiedzaj świat.</h3>
         <div id="logo_store">
             <div id="app_store">
                 <img src="{% static 'img/app_store.svg' %}" alt="">
@@ -275,7 +275,7 @@
 <div id="social-right">
     <div id="fb"><i class="fab fa-facebook-square"></i></div>
     <div id="li"><i class="fab fa-linkedin"></i></div>
-    <div id="youtube"><i class="fab fa-youtube"></i></i></div>
+    <div id="youtube"><i class="fab fa-youtube"></i></div>
 </div>
 <div class="footer">
     <a href="https://www.linkedin.com/in/sebastian-jadczak-b74a40182">&copy; Sebastian Jadczak</a>
@@ -292,8 +292,11 @@
     function switchForms(arg){
         let active = document.querySelector('.active')
         let clickButton = document.querySelector(`#${arg}`)
+        let region = document.getElementById('region')
         active.classList.toggle('active')
         clickButton.classList.toggle('active')
+        region.value = arg
+        console.log(region.value)
     }
 
 
