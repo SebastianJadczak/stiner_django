@@ -37,9 +37,6 @@
                     height: 500px;
                     left: 0.0%;
                     top: 0.0%;
-                    border-top: 1px solid #228d00;
-                    border-bottom: 1px solid #228d00;
-                    box-shadow: 0 0 5px #228d00;
                 }
                 /* Obsługa scrolowania mapy tylko z ctrl + scroll*/
                 .map-scroll:before {
@@ -72,7 +69,7 @@
 
 
 <div id="top">
-    <div class="logo"><img src="{% static "img/logo.png" %}" alt="logo"></div>
+    <div class="logo"><a href="map:map"><img src="{% static "img/logo.png" %}" alt="logo"></a></div>
     <div class="menu menu_mapa">
         <ul>
             <li class="red"><a href="/"></i>Mapa</a></li>
@@ -131,26 +128,26 @@
     </div>
     <div class="search-holiday"></div>
 </div>
-<div id="filter">
-    <div id="filter-insite">
-        <div class="select">
-            <select class="location" onchange="select_city()">
-                {% for element in coordinates %}
-                <option value="{{element.name}}" {% if "{{element.name}}" == "Warszawa" %} selected {%endif%}>{{element.name}}</option>
-                {%endfor%}
-            </select>
-            </div>
-        <div class="icons">
-            <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><i class="fab fa-fort-awesome"></i></div>
-            <div class="church_mapa"><input type="checkbox" class="monuments" id="Kościoły"><i class="fas fa-church"></i></div>
-            <div class="tree_mapa"><input type="checkbox" class="monuments" id="Parki"><i class="fas fa-tree"></i></div>
-            <div class="monument_mapa"><input type="checkbox" class="monuments" id="Muzeum"><i class="fas fa-landmark"></i></div>
-            <div class="culture_mapa"><input type="checkbox" class="monuments" id="Budowle"><i class="fas fa-theater-masks"></i></div>
-            <div class="hotel_mapa"><input type="checkbox" class="monuments" id="hotel"><i class="fas fa-h-square"></i></div>
-        </div>
-     <div class="search_mapa"><button onclick="post_monuments()">Szukaj</button></div>
-    </div>
-</div>
+{#<div id="filter">#}
+{#    <div id="filter-insite">#}
+{#        <div class="select">#}
+{#            <select class="location" onchange="select_city()">#}
+{#                {% for element in coordinates %}#}
+{#                <option value="{{element.name}}" {% if "{{element.name}}" == "Warszawa" %} selected {%endif%}>{{element.name}}</option>#}
+{#                {%endfor%}#}
+{#            </select>#}
+{#            </div>#}
+{#        <div class="icons">#}
+{#            <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><i class="fab fa-fort-awesome"></i></div>#}
+{#            <div class="church_mapa"><input type="checkbox" class="monuments" id="Kościoły"><i class="fas fa-church"></i></div>#}
+{#            <div class="tree_mapa"><input type="checkbox" class="monuments" id="Parki"><i class="fas fa-tree"></i></div>#}
+{#            <div class="monument_mapa"><input type="checkbox" class="monuments" id="Muzeum"><i class="fas fa-landmark"></i></div>#}
+{#            <div class="culture_mapa"><input type="checkbox" class="monuments" id="Budowle"><i class="fas fa-theater-masks"></i></div>#}
+{#            <div class="hotel_mapa"><input type="checkbox" class="monuments" id="hotel"><i class="fas fa-h-square"></i></div>#}
+{#        </div>#}
+{#     <div class="search_mapa"><button onclick="post_monuments()">Szukaj</button></div>#}
+{#    </div>#}
+{#</div>#}
 <div id="news">
     <h2>Najnowsze informacje</h2>
     <p>Zapraszamy do zapoznania z najnowszymi aktualnościami na naszej stronie i aplikacji. Dokładamy wszelkich starań aby zapewnić Państwu najwyższą jakość naszych usług.
@@ -183,22 +180,37 @@
 <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
 
 <div id="info-about-trail">
-    <section>
-        <div></div>
-        <div></div>
+    <section id="amount_point">
+        <div class="circle"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+            <p>{{ pointLength }}</p>
+            <p>Punktów</p>
+        </div>
     </section>
-    <section>
-        <div></div>
-        <div></div>
+    <section id="amount_trail">
+        <div class="circle"><i class="fas fa-map-signs"></i></div>
+        <div>
+            <p>{{ trailLength }}</p>
+            <p>Tras zwiedzania</p>
+        </div>
     </section>
-    <section>
-        <div></div>
-        <div></div>
+    <section id="amount_city">
+        <div class="circle"><i class="fas fa-city"></i></div>
+        <div>
+            <p>{{ coordinatesLength }}</p>
+            <p>Miast</p>
+        </div>
     </section>
-    <section>
-        <div></div>
-        <div></div>
+    <section id="amount_country">
+        <div class="circle"><i class="fas fa-flag-usa"></i></div>
+        <div>
+            <p>{{ countryLength }}</p>
+            <p>Krajów</p>
+        </div>
     </section>
+</div>
+<div id="mobile-app">
+
 </div>
 
 <div id="newsletter-wrap">

@@ -321,6 +321,70 @@ div#news section ul li div#news-post-big h3 {
     padding-top: 150px;
 }
 
+/*----------------------------------------*/
+/*Info under the map.*/
+div#info-about-trail {
+    position: relative;
+    top: -80px;
+    display: flex;
+    width: 60vw;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+div#info-about-trail section div.circle {
+    margin: 35px auto 0;
+    height: 94px;
+    width: 94px;
+    border-radius: 50%;
+    border: 9px solid #ffffff;
+    background: linear-gradient(#00a20d, #00730c);
+    box-shadow: 0 0 3px #b8b8b8;
+}
+
+div#info-about-trail section div.circle i {
+    color: white;
+    font-size: 35px;
+    line-height: 75px;
+    margin-left: 22px;
+
+}
+
+div#info-about-trail section:nth-of-type(1) div.circle i {
+    margin-left: 24px;
+}
+
+div#info-about-trail section:nth-of-type(2) div.circle i {
+    margin-left: 20px;
+}
+
+div#info-about-trail section:nth-of-type(3) div.circle i {
+    margin-left: 18px;
+}
+
+div#info-about-trail section div p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+div#info-about-trail section div p:nth-of-type(1) {
+    font-weight: bold;
+    font-size: 45px;
+}
+
+div#info-about-trail section div p:nth-of-type(2) {
+    font-size: 16px;
+}
+
+/*------------------------------------*/
+/*Mobile App.*/
+div#mobile-app {
+    min-height: 400px;
+    background: linear-gradient(#00a20d, #00730c);
+    color: white;
+}
+
 /*------------------------------------*/
 
 div#top div.menu ul li:hover a {

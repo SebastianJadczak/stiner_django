@@ -10,19 +10,26 @@ from map.api.serializers import PointSerializer, LocationMapSerializer
 from map.forms import FormularzRejestracji
 from map.models import Point, Coordinates, NewsletterEmail, News
 from shop.models import Category
+from trails.models import Trail
 
 
 class Map(View):
     template_name = 'map/map_index.html'
     category = Category.objects.all()
     coordinates = Coordinates.objects.all()
+    points = Point.objects.all()
+    trails = Trail.objects.all()
     news = News.objects.all()
+    country = Trail.get_country_trail(Trail)
     def get(self, request):
         # ---------------------------------------
         # if (str(request.user) != 'AnonymousUser'):
         #     self.userRole = UserRole.objects.filter(user=request.user).first()
         # ---------------------------------------
-        return render(request, self.template_name, {'category': self.category, 'coordinates':self.coordinates, 'news':self.news[:3], 'newsBig':self.news[3:5]})
+        return render(request, self.template_name, {'category': self.category, 'coordinates':self.coordinates,
+                                                    'coordinatesLength':len(self.coordinates),  'news':self.news[:3],
+                                                    'newsBig':self.news[3:5], 'pointLength':len(self.points),
+                                                    'trailLength':len(self.trails), 'countryLength':len(self.country)})
 
     def post(self, request):
         if(len(NewsletterEmail.objects.filter(email=request.POST.get('email'))) ==0):
