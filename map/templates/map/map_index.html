@@ -126,7 +126,33 @@
             <button onclick="switchForms('lake')" id="lake"><i class="fas fa-water"></i> Jeziora</button>
         </section>
     </div>
-    <div class="search-holiday"></div>
+    <div class="search-holiday">
+        <form action="" method="post" id="search-sea">
+            <label> Podaj nazwę trasy</label>
+            <input type="text" value="Góry" hidden>
+            <input type="text" placeholder="np. Górska">
+            <label> Wybierz kraj</label>
+            <select name="country">
+                 <option value="" id="default">np. Polska</option>
+                    {% for c in country %}
+                      <option value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
+            </select>
+            <label> Wybierz miasto</label>
+            <select name="city">
+                <option value="" id="default"> np. Kraków</option>
+                    {% for c in coordinates %}
+                      <option value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
+            </select>
+            <div id="popular">
+                <label><input type="radio" value="Tak">Popularna</label>
+                <label><input type="radio" value="Nie">Niepopularna</label>
+            </div>
+            <input type="submit" value="&#xf689 Szukaj">
+            {% csrf_token %}
+        </form>
+    </div>
 </div>
 {#<div id="filter">#}
 {#    <div id="filter-insite">#}
@@ -212,6 +238,7 @@
 <div id="mobile-app">
     <div class="left">
         <h2>Sciągnij aplikację:</h2>
+         <h3>Jeszcze więcej wspaniałych wspomnień. Nie czekaj, pobierz aplikację i zwiedzaj świat</h3>
         <div id="logo_store">
             <div id="app_store">
                 <img src="{% static 'img/app_store.svg' %}" alt="">
@@ -268,4 +295,6 @@
         active.classList.toggle('active')
         clickButton.classList.toggle('active')
     }
+
+
 </script>

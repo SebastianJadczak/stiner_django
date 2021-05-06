@@ -20,7 +20,7 @@ class Map(View):
     points = Point.objects.all()
     trails = Trail.objects.all()
     news = News.objects.all()
-    country = Trail.get_country_trail(Trail)
+    country = [value for key, value in Trail.get_country_trail(Trail)]
     def get(self, request):
         # ---------------------------------------
         # if (str(request.user) != 'AnonymousUser'):
@@ -29,7 +29,8 @@ class Map(View):
         return render(request, self.template_name, {'category': self.category, 'coordinates':self.coordinates,
                                                     'coordinatesLength':len(self.coordinates),  'news':self.news[:3],
                                                     'newsBig':self.news[3:5], 'pointLength':len(self.points),
-                                                    'trailLength':len(self.trails), 'countryLength':len(self.country)})
+                                                    'trailLength':len(self.trails), 'countryLength':len(self.country),
+                                                    'country':self.country})
 
     def post(self, request):
         if(len(NewsletterEmail.objects.filter(email=request.POST.get('email'))) ==0):
