@@ -383,6 +383,61 @@ div#mobile-app {
     min-height: 400px;
     background: linear-gradient(#00a20d, #00730c);
     color: white;
+    box-shadow: 0 -3px 4px #b0b0b0;
+    display: flex;
+    flex-direction: row;
+    padding: 50px 15vw;
+}
+
+div#mobile-app div#logo_store {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+div#app_store {
+    width: 150px;
+    height: 45px;
+    margin-right: 15px;
+}
+div#app_store img{
+    width: 100%;
+    height: 100%;
+}
+div#google_play {
+    width: 150px;
+    height: 45px;
+}
+div#google_play img{
+    width: 100%;
+    height: 100%;
+}
+div#mobile-app div.left{
+    width:50%;
+    margin-left: 100px;
+}
+div#mobile-app div.left h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    color: white;
+    -webkit-text-stroke: 0.8px black;
+    text-shadow: 0 0 4px black;
+}
+
+div#mobile-app div.right {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+div#mobile-app div.right img {
+    width: 100%;
+    height: 100%;
 }
 
 /*------------------------------------*/
