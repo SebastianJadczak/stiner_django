@@ -11,9 +11,10 @@ from map.forms import FormularzRejestracji
 from map.models import Point, Coordinates, NewsletterEmail, News
 from shop.models import Category
 from trails.models import Trail
+from trails.views import MethodTrail
 
 
-class Map(View):
+class Map(View, MethodTrail):
     template_name = 'map/map_index.html'
     category = Category.objects.all()
     coordinates = Coordinates.objects.all()
@@ -32,13 +33,20 @@ class Map(View):
                                                     'trailLength':len(self.trails), 'countryLength':len(self.country),
                                                     'country':self.country})
 
-    def post(self, request):
-        if(len(NewsletterEmail.objects.filter(email=request.POST.get('email'))) ==0):
-            NewsletterEmail.objects.create(email=request.POST.get('email'))
-        else:
-            return render(request, self.template_name, )
-        return render(request, self.template_name,)
+    # def post(self, request):
+    #     if(len(NewsletterEmail.objects.filter(email=request.POST.get('email'))) ==0):
+    #         NewsletterEmail.objects.create(email=request.POST.get('email'))
+    #     else:
+    #         return render(request, self.template_name, )
+    #     return render(request, self.template_name,)
+    def post(self, request, *args, **kwargs):
+        search = self.search_trail(request,'all_trail')
 
+        return render(request, 'trails/all_trails/all_trails.html',
+                      {'search': search, 'city': self.get_city(), 'top_rate': self.get_top_rate_trails(),
+                       'popular_trail': self.get_wached_trails(),
+                       'type_trail': self.get_type_trail(), 'region_trail': self.get_region_trail(),
+                       'country_trail': self.get_country_trail()})
 
 class PointViewsets(viewsets.ReadOnlyModelViewSet):
     queryset = Point.objects.all()
