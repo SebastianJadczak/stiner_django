@@ -620,10 +620,11 @@ div#top_mapa div.menu_mapa ul li {
 
 div#top_mapa div.menu_mapa ul li a {
     color: #323232;
-    font-family: Arial, sans-serif;
-    font-weight: lighter;
-    font-size: 13px;
-    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    display: flex;
+    font-weight: bold;
+    flex-direction: row;
     text-align: center;
     letter-spacing: 1.5px;
     text-decoration: none;

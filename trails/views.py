@@ -110,7 +110,7 @@ class MethodTrail():
         return top_rate_trails
 
     def get_wached_trails(self):
-        watched_trails = Trail.objects.order_by('watched').reverse()
+        watched_trails = Trail.objects.order_by('done').reverse()
         return watched_trails
 
     def get_city(self):

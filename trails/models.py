@@ -47,7 +47,10 @@ class Trail(models.Model):
     for_whom = models.CharField(max_length=25, choices=FOR_WHOM, default='Dla wszystkich')
     image = models.ImageField(upload_to='media/img_trail/%Y/%m%d', blank=True)
     average_grade = models.DecimalField(max_digits=2, decimal_places=1)
-    watched = models.IntegerField()
+    done = models.ManyToManyField(User, blank=True, related_name='done_trail')
+    heart = models.ManyToManyField(User, blank=True, related_name='heart_trail')
+    downloads = models.ManyToManyField(User, blank=True, related_name='downloads_trail')
+    sound = models.ManyToManyField(User, blank=True, related_name='sound_trail')
     popular = models.BooleanField(default=False)
     points = models.ManyToManyField(Point)
 

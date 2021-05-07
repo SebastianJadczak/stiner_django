@@ -65,6 +65,10 @@ class Point(models.Model):
     image = models.ImageField(upload_to='media/img_point/%Y/%m%d')
     type = models.CharField(max_length=15, choices=TYPE_POINT)
     more_info = models.CharField(max_length=70, default=' ')
+    done = models.ManyToManyField(User, blank=True, related_name='done_point')
+    heart = models.ManyToManyField(User, blank=True, related_name='heart_point')
+    downloads = models.ManyToManyField(User, blank=True, related_name='downloads_point')
+    sound = models.ManyToManyField(User, blank=True, related_name='sound_point')
     gallery = models.ManyToManyField(Galery)
 
     def __str__(self):

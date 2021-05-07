@@ -139,8 +139,8 @@ button#audio{
 /*Basic info trail.*/
 
 div#basic-info {
-    width:100%;
-    height: 300px;
+    width: 100%;
+    height: 320px;
     background-color: #fff;
     margin: 0 auto;
     padding: 10px 0;
@@ -149,7 +149,7 @@ div#basic-info {
 }
 
 div#basic-info h3 {
-    margin: 0 10px 25px;
+    margin: 0 10px 5px;
     font-family: Arial, sans-serif;
     font-weight: 600;
     font-size: 23px;
@@ -157,6 +157,35 @@ div#basic-info h3 {
     padding-left: 30px;
 }
 
+div#basic-info div.icons {
+    margin: 8px 0 10px 55px;
+    display: flex;
+}
+
+div#basic-info div.icons p {
+    margin-right: 10px;
+}
+
+div#basic-info div.icons p span {
+    margin-right: 5px;
+    font-family: Arial, sans-serif;
+    color: #9f9f9f;
+}
+
+div#basic-info div.icons p i {
+    margin-right: 5px;
+}
+
+div#basic-info div.icons p#done i {
+    color: #0e446c;
+}
+
+div#basic-info div.icons p#heart i {
+    color: #e90000;
+}
+div#basic-info div.icons p#downloads i {
+    color: #949494;
+}
 div#basic-info div.more {
     display: flex;
     flex-direction: row;
