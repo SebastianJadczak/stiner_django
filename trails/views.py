@@ -244,6 +244,7 @@ class TrailDetailView(DetailView):
         context['trail'] = list(Trail.objects.filter(id=self.kwargs['pk']))[0]
         context['trail_id'] = self.kwargs['pk']
         context['points'] =list(list(Trail.objects.filter(id=self.kwargs['pk']))[0].points.all())
+        context['opinion_trail'] = list(list(Rate_trail.objects.filter(trail=self.kwargs['pk'])))
         return context
 
 
