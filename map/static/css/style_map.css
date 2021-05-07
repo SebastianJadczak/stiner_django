@@ -225,8 +225,7 @@ div#welcome div.text h2 {
     margin: 0;
     padding: 45px 0 0 30px;
     color: white;
-    -webkit-text-stroke: 0.8px black;
-    text-shadow: 0 0 4px black;
+    text-shadow: 0 3px black;
 }
 
 div#welcome div.search-holiday {
@@ -483,8 +482,7 @@ div#mobile-app div.left h2 {
     letter-spacing: 3px;
     margin: 0;
     color: white;
-    -webkit-text-stroke: 0.8px black;
-    text-shadow: 0 0 4px black;
+    text-shadow: 0 3px black;
 }
 div#mobile-app div.left h3 {
     font-family: 'Archivo Black', sans-serif;
@@ -494,8 +492,7 @@ div#mobile-app div.left h3 {
     letter-spacing: 3.5px;
     margin: 10px 0 0 0;
     color: white;
-    -webkit-text-stroke: 0.3px black;
-    text-shadow: 0 0 4px black;
+    text-shadow: 0 3px black;
 }
 
 div#mobile-app div.right {
