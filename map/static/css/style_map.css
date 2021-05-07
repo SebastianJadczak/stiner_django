@@ -484,7 +484,7 @@ div#mobile-app div.left h2 {
     letter-spacing: 3px;
     margin: 0;
     color: white;
-    text-shadow: 0 3px black;
+    text-shadow: 0 2px black;
 }
 div#mobile-app div.left h3 {
     font-family: 'Archivo Black', sans-serif;
@@ -494,7 +494,7 @@ div#mobile-app div.left h3 {
     letter-spacing: 3.5px;
     margin: 10px 0 0 0;
     color: white;
-    text-shadow: 0 3px black;
+    text-shadow: 0 2px black;
 }
 
 div#mobile-app div.right {
