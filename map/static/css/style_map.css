@@ -79,15 +79,56 @@ div#newsletter-wrap div#newsletter div#social-media p {
     font-family: Arial, sans-serif;
     letter-spacing: 1.1px;
 }
+
 div#newsletter-wrap div#newsletter div#social-media p#fb i {
-    color: rgb(6,115,231);
+    color: rgb(6, 115, 231);
 }
+
 div#newsletter-wrap div#newsletter div#social-media p#li i {
-    color: rgb(10,102,194);
+    color: rgb(10, 102, 194);
 }
+
 div#newsletter-wrap div#newsletter div#social-media p i {
     margin-right: 5px;
 }
+
+div#social-right {
+    position: fixed;
+    top: 20vh;
+    right: 5px;
+    width: 39px;
+    height: 105px;
+    background-color: #fff;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div#social-right div {
+    line-height: 35px;
+    text-align: center;
+    font-size: 35px;
+    border-bottom: 0.6px solid black;
+}
+
+div#social-right:nth-of-type(3) {
+    border-bottom: none;
+}
+
+div#fb {
+    color: #00449b;
+}
+
+div#li {
+    color: #0072ff;
+}
+
+div#social-right div#youtube {
+    color: #a20000;
+    font-size: 30px;
+}
+
 #top_mapa {
     border-bottom: 1px solid #cbcdcc;
     height: 10vh;
@@ -109,9 +150,367 @@ div#newsletter-wrap div#newsletter div#social-media p i {
 }
 
 div#top div.menu_mapa {
-    margin-top: 15px;
+    /*margin-top: 15px;*/
     display: block;
+    width: 30%;
+    margin: 10px auto 0;
 }
+
+div#welcome {
+    background-image: url("../img/front-image.jpg");
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid grey;
+    height: 83vh;
+    display: flex;
+}
+
+div#welcome section#buttons_type_holiday {
+    margin-left: 110px;
+}
+
+div#welcome section#buttons_type_holiday button {
+    margin-left: 20px;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+    background-color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+}
+
+div#welcome section#buttons_type_holiday button.active {
+    background: linear-gradient(#00a20d, #00730c);
+    color: white;
+}
+
+div#welcome div.text {
+    position: relative;
+    top: 70px;
+    left: 280px;
+}
+
+div#welcome div.text section {
+    display: flex;
+    flex-direction: row;
+}
+
+div#welcome div.text div#earth {
+    margin-top: 35px;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    background: linear-gradient(#00a20d, #00730c);
+    box-shadow: 0 0 3px #b8b8b8;
+}
+
+div#welcome div.text div#earth i {
+    color: white;
+    font-size: 50px;
+    line-height: 80px;
+    margin-left: 15px;
+}
+
+div#welcome div.text h2 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 45px 0 0 30px;
+    color: white;
+    -webkit-text-stroke: 0.8px black;
+    text-shadow: 0 0 4px black;
+}
+
+div#welcome div.search-holiday {
+    position: relative;
+    right: -530px;
+    top: 80px;
+    width: 290px;
+    height: 300px;
+    background-color: rgba(255,255,255,0.7);
+    border:0.4px solid black;
+    border-radius: 15px;
+}
+
+div#welcome div.search-holiday form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 10px;
+}
+div#welcome div.search-holiday form  input{
+    margin: 0 auto 10px;
+    border-radius: 5px;
+    height:30px;
+    width: 80%;
+}
+div#welcome div.search-holiday form select{
+    margin: 5px auto 10px;
+    border-radius: 5px;
+    height:30px;
+    width: 80%;
+}
+div#welcome div.search-holiday form label{
+    margin:0;
+    margin-left:30px;
+    font-family: Arial, sans-serif;
+}
+div#welcome div.search-holiday form  input::placeholder{
+    margin-left: 6px;
+}
+select,option#default {
+    font-size: 15px;
+    background-color: #fff;
+}
+
+div#welcome div.search-holiday input[type='submit'] {
+    font-family: FontAwesome;
+    margin-top: 20px;
+    background: linear-gradient(to right,#00a20d, #24d236);
+    color: white;
+    border: 0.5px solid black;
+}
+div#welcome div.search-holiday div#popular {
+    display: flex;
+    margin-top: 5px;
+    flex-direction: row;
+}
+div#welcome div.search-holiday div#popular label{
+    display: flex;
+    flex-direction: row;
+    width:40%;
+    font-size: 14px;
+}div#welcome div.search-holiday div#popular label:nth-of-type(2){
+    margin-left: 5px;
+ }
+div#welcome div.search-holiday div#popular label input[type='radio']{
+    width: 15px;
+    height: 15px;
+    margin: 0 5px 0 0;
+}
+
+/*-----------------------------------*/
+/*News*/
+div#news {
+    min-height: 500px;
+    margin: 0 auto 0;
+    padding: 50px 10vw;
+    background-color: #f7fff7;
+}
+
+div#news h2 {
+    font-family: 'Bangers', cursive;
+    color: black;
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin-left: 30px;
+    text-align: center;
+    -webkit-text-stroke: 0.5px #0085e9;
+}
+div#news  p{
+    text-align: center;
+    font-size: 18px;
+    width:70vw;
+    margin:0 auto;
+     font-family: 'Archivo Black', sans-serif;
+}
+div#news section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: space-between;
+}
+
+div#news section ul li div {
+    width: 360px;
+    height: 240px;
+    margin-right: 25px;
+    background-position: center;
+    background-size: cover;
+}
+
+div#news section ul li div h3 {
+    text-align: center;
+    line-height: 200px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 45px 0 0 30px;
+    color: white;
+    -webkit-text-stroke: 0.8px black;
+    text-shadow: 0 0 4px black;
+}
+
+div#news section#big ul {
+    justify-content: space-between;
+}
+
+div#news section#big ul li {
+    overflow: hidden;
+    width: 570px;
+    height: 340px;
+}
+
+div#news section ul li div#news-post-big {
+    width: 570px;
+    height: 340px;
+    margin-right: 25px;
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.0);
+    transition: 0.3s;
+}
+
+div#news section ul li div#news-post-big:hover {
+    transform: scale(1.1);
+}
+
+div#news section ul li div#news-post-big h3 {
+    padding-top: 150px;
+}
+
+/*----------------------------------------*/
+/*Info under the map.*/
+div#info-about-trail {
+    position: relative;
+    top: -80px;
+    display: flex;
+    width: 60vw;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+div#info-about-trail section div.circle {
+    margin: 35px auto 0;
+    height: 94px;
+    width: 94px;
+    border-radius: 50%;
+    border: 9px solid #ffffff;
+    background: linear-gradient(#00a20d, #00730c);
+    box-shadow: 0 0 3px #b8b8b8;
+}
+
+div#info-about-trail section div.circle i {
+    color: white;
+    font-size: 35px;
+    line-height: 75px;
+    margin-left: 22px;
+
+}
+
+div#info-about-trail section:nth-of-type(1) div.circle i {
+    margin-left: 24px;
+}
+
+div#info-about-trail section:nth-of-type(2) div.circle i {
+    margin-left: 20px;
+}
+
+div#info-about-trail section:nth-of-type(3) div.circle i {
+    margin-left: 18px;
+}
+
+div#info-about-trail section div p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+div#info-about-trail section div p:nth-of-type(1) {
+    font-weight: bold;
+    font-size: 45px;
+}
+
+div#info-about-trail section div p:nth-of-type(2) {
+    font-size: 16px;
+}
+
+/*------------------------------------*/
+/*Mobile App.*/
+div#mobile-app {
+    min-height: 400px;
+    background: linear-gradient(#00a20d, #00730c);
+    color: white;
+    box-shadow: 0 -3px 4px #b0b0b0;
+    display: flex;
+    flex-direction: row;
+    padding: 50px 15vw;
+}
+
+div#mobile-app div#logo_store {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+div#app_store {
+    width: 150px;
+    height: 45px;
+    margin-right: 25px;
+}
+div#app_store img{
+    width: 100%;
+    height: 100%;
+}
+div#google_play {
+    width: 150px;
+    height: 45px;
+}
+div#google_play img{
+    width: 100%;
+    height: 100%;
+}
+div#mobile-app div.left{
+    width:55%;
+    margin-left: 100px;
+}
+div#mobile-app div.left h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    color: white;
+    -webkit-text-stroke: 0.8px black;
+    text-shadow: 0 0 4px black;
+}
+div#mobile-app div.left h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: 900;
+    letter-spacing: 3.5px;
+    margin: 10px 0 0 0;
+    color: white;
+    -webkit-text-stroke: 0.3px black;
+    text-shadow: 0 0 4px black;
+}
+
+div#mobile-app div.right {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+div#mobile-app div.right img {
+    width: 100%;
+    height: 100%;
+}
+
+/*------------------------------------*/
 
 div#top div.menu ul li:hover a {
     color: #0085e9;

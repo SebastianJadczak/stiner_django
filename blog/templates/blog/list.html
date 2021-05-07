@@ -4,13 +4,15 @@
 
 
     <div class="content">
-        <div class="karaibs"></div>
+        <div class="karaibs">
+            <h3>Inspiracje</h3>
+        </div>
         <div class="content-bottom">
             <div class="content_center">
                 <h3>Podróżnicze inspiracje:</h3>
                 <div class="posts">
                     {% for post in posts %}
-                    <a href="#">
+                    <a href="{% url 'blog:post_detail' post.id %}">
                         <div class="post">
                             <div class="image"><img src='{{ post.image.url }}' alt=""></div>
                             <section>

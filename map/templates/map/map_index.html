@@ -32,9 +32,9 @@
             <style>
                 #map_1de6ef4f1218487da9d6da057bb8f454 {
                    z-index: 0;
-                    margin-top:2px;
+                    margin:2px auto;
                     width: 100.0%;
-                    height: 83.0%;
+                    height: 500px;
                     left: 0.0%;
                     top: 0.0%;
                 }
@@ -59,24 +59,27 @@
                 }
             </style>
 
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link rel="stylesheet" href="{% static "css/style_map.css" %}">
 </head>
 <body>
+
+
 <div id="top">
-    <div class="logo"><img src="{% static "img/logo.png" %}" alt="logo"></div>
+    <div class="logo"><a href="map:map"><img src="{% static "img/logo.png" %}" alt="logo"></a></div>
     <div class="menu menu_mapa">
         <ul>
             <li class="red"><a href="/"></i>Mapa</a></li>
             <li class="green"><a href="{% url 'trails:all_trails' %}">Trasy <i class="fas fa-angle-down"></i></a>
-{#            <div class="tr">#}
-{#                 <ul>#}
-{#                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>#}
-{#                    <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>#}
-{#                    {% if user.is_authenticated %}#}
-{#                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>#}
+                {#            <div class="tr">#}
+                {#                 <ul>#}
+                {#                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>#}
+                {#                    <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>#}
+                {#                    {% if user.is_authenticated %}#}
+                {#                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>#}
 {#                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>#}
 {#                    {%else%}#}
 {#                        <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>#}
@@ -114,28 +117,143 @@
     </div>
     <div id="login_rwd"><i class="fas fa-sign-in-alt"></i></div>
 </div>
-<div id="filter">
-    <div id="filter-insite">
-        <div class="select">
-            <select class="location" onchange="select_city()">
-                {% for element in coordinates %}
-                <option value="{{element.name}}" {% if "{{element.name}}" == "Warszawa" %} selected {%endif%}>{{element.name}}</option>
-                {%endfor%}
+<div id="welcome">
+    <div class="text">
+       <section><div id="earth"><i class="fas fa-globe-americas"></i></div> <h2>Wakacje marzeń:</h2></section>
+        <section id="buttons_type_holiday">
+            <button onclick="switchForms('sea')" id="sea" class="active"><i class="fas fa-fish"></i> Morze</button>
+            <button onclick="switchForms('mountains')" id="mountains"> <i class="fas fa-mountain"></i> Góry</button>
+            <button onclick="switchForms('lake')" id="lake"><i class="fas fa-water"></i> Jeziora</button>
+        </section>
+    </div>
+    <div class="search-holiday">
+        <form action="" method="post" id="search-sea">
+            <input type="text" value="Morze" hidden id="region" name="region">
+            <label> Podaj nazwę trasy</label>
+            <input type="text" placeholder="np. Górska" name="name">
+            <label> Wybierz kraj</label>
+            <select name="country">
+                 <option value="" id="default">np. Polska</option>
+                    {% for c in country %}
+                      <option value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
             </select>
+            <label> Wybierz miasto</label>
+            <select name="city">
+                <option value="" id="default"> np. Kraków</option>
+                    {% for c in coordinates %}
+                      <option value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
+            </select>
+            <div id="popular">
+                <label><input type="radio" checked value="True" name="popular">Popularna</label>
+                <label><input type="radio" value="False" name="popular">Niepopularna</label>
             </div>
-        <div class="icons">
-            <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><i class="fab fa-fort-awesome"></i></div>
-            <div class="church_mapa"><input type="checkbox" class="monuments" id="Kościoły"><i class="fas fa-church"></i></div>
-            <div class="tree_mapa"><input type="checkbox" class="monuments" id="Parki"><i class="fas fa-tree"></i></div>
-            <div class="monument_mapa"><input type="checkbox" class="monuments" id="Muzeum"><i class="fas fa-landmark"></i></div>
-            <div class="culture_mapa"><input type="checkbox" class="monuments" id="Budowle"><i class="fas fa-theater-masks"></i></div>
-            <div class="hotel_mapa"><input type="checkbox" class="monuments" id="hotel"><i class="fas fa-h-square"></i></div>
+            <input type="submit" value="&#xf689 Szukaj">
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+{#<div id="filter">#}
+{#    <div id="filter-insite">#}
+{#        <div class="select">#}
+{#            <select class="location" onchange="select_city()">#}
+{#                {% for element in coordinates %}#}
+{#                <option value="{{element.name}}" {% if "{{element.name}}" == "Warszawa" %} selected {%endif%}>{{element.name}}</option>#}
+{#                {%endfor%}#}
+{#            </select>#}
+{#            </div>#}
+{#        <div class="icons">#}
+{#            <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><i class="fab fa-fort-awesome"></i></div>#}
+{#            <div class="church_mapa"><input type="checkbox" class="monuments" id="Kościoły"><i class="fas fa-church"></i></div>#}
+{#            <div class="tree_mapa"><input type="checkbox" class="monuments" id="Parki"><i class="fas fa-tree"></i></div>#}
+{#            <div class="monument_mapa"><input type="checkbox" class="monuments" id="Muzeum"><i class="fas fa-landmark"></i></div>#}
+{#            <div class="culture_mapa"><input type="checkbox" class="monuments" id="Budowle"><i class="fas fa-theater-masks"></i></div>#}
+{#            <div class="hotel_mapa"><input type="checkbox" class="monuments" id="hotel"><i class="fas fa-h-square"></i></div>#}
+{#        </div>#}
+{#     <div class="search_mapa"><button onclick="post_monuments()">Szukaj</button></div>#}
+{#    </div>#}
+{#</div>#}
+<div id="news">
+    <h2>Najnowsze informacje</h2>
+    <p>Zapraszamy do zapoznania z najnowszymi aktualnościami na naszej stronie i aplikacji. Dokładamy wszelkich starań aby zapewnić Państwu najwyższą jakość naszych usług.
+    <b>Dziękujemy za zaufanie!</b></p>
+    <section id="small">
+    <ul>
+        {% for n in news %}
+            <li>
+                <div id="news-post" style="background-image: linear-gradient(rgba(0,0,0,
+                        0.1) 80%, rgba(0,0,0,0.9)), url('{{ n.image.url}}')">
+                    <h3>{{ n.title }}</h3>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    </section>
+    <section id="big">
+        <ul>
+        {% for n in newsBig %}
+            <li>
+                <div id="news-post-big" style="background-image: linear-gradient(rgba(0,0,0,
+                        0.1) 80%, rgba(0,0,0,0.9)), url('{{ n.image.url}}')">
+                    <h3>{{ n.title }}</h3>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    </section>
+</div>
+<div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
+
+<div id="info-about-trail">
+    <section id="amount_point">
+        <div class="circle"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+            <p>{{ pointLength }}</p>
+            <p>Punktów</p>
         </div>
-     <div class="search_mapa"><button onclick="post_monuments()">Szukaj</button></div>
+    </section>
+    <section id="amount_trail">
+        <div class="circle"><i class="fas fa-map-signs"></i></div>
+        <div>
+            <p>{{ trailLength }}</p>
+            <p>Tras zwiedzania</p>
+        </div>
+    </section>
+    <section id="amount_city">
+        <div class="circle"><i class="fas fa-city"></i></div>
+        <div>
+            <p>{{ coordinatesLength }}</p>
+            <p>Miast</p>
+        </div>
+    </section>
+    <section id="amount_country">
+        <div class="circle"><i class="fas fa-flag-usa"></i></div>
+        <div>
+            <p>{{ countryLength }}</p>
+            <p>Krajów</p>
+        </div>
+    </section>
+</div>
+<div id="mobile-app">
+    <div class="left">
+        <h2>Sciągnij aplikację:</h2>
+         <h3>Jeszcze więcej wspaniałych wspomnień. Nie czekaj, pobierz aplikację i zwiedzaj świat.</h3>
+        <div id="logo_store">
+            <div id="app_store">
+                <img src="{% static 'img/app_store.svg' %}" alt="">
+            </div>
+            <div id="google_play">
+                <img src="{% static 'img/Google_Play_Store.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div><img src="{% static 'img/Frame 2.svg' %}" alt=""></div>
+        <div><img src="{% static 'img/Group 2.svg' %}" alt=""></div>
     </div>
 </div>
 
-<div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
 <div id="newsletter-wrap">
     <div id="newsletter">
         <div id="title_newsletter">
@@ -154,6 +272,11 @@
         </div>
     </div>
 </div>
+<div id="social-right">
+    <div id="fb"><i class="fab fa-facebook-square"></i></div>
+    <div id="li"><i class="fab fa-linkedin"></i></div>
+    <div id="youtube"><i class="fab fa-youtube"></i></div>
+</div>
 <div class="footer">
     <a href="https://www.linkedin.com/in/sebastian-jadczak-b74a40182">&copy; Sebastian Jadczak</a>
 </div>
@@ -165,3 +288,16 @@
 <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
 <script src="{% static 'js/map.js' %}" type="text/javascript"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<script>
+    function switchForms(arg){
+        let active = document.querySelector('.active')
+        let clickButton = document.querySelector(`#${arg}`)
+        let region = document.getElementById('region')
+        active.classList.toggle('active')
+        clickButton.classList.toggle('active')
+        region.value = arg
+        console.log(region.value)
+    }
+
+
+</script>

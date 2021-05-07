@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div id="title_post" style="background-image: url({{ post.image.url }})">
+    <div id="title">
+        <h3>{{ post.title }}</h3>
+    </div>
+</div>
+
+
+{% endblock %}

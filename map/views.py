@@ -8,28 +8,47 @@ from rest_framework.response import Response
 from account.models import UserRole
 from map.api.serializers import PointSerializer, LocationMapSerializer
 from map.forms import FormularzRejestracji
-from map.models import Point, Coordinates, NewsletterEmail
+from map.models import Point, Coordinates, NewsletterEmail, News
 from shop.models import Category
+from trails.models import Trail
+from trails.views import MethodTrail
 
 
-class Map(View):
+class Map(View, MethodTrail):
     template_name = 'map/map_index.html'
     category = Category.objects.all()
     coordinates = Coordinates.objects.all()
+    points = Point.objects.all()
+    trails = Trail.objects.all()
+    news = News.objects.all()
+    country = [value for key, value in Trail.get_country_trail(Trail)]
     def get(self, request):
         # ---------------------------------------
         # if (str(request.user) != 'AnonymousUser'):
         #     self.userRole = UserRole.objects.filter(user=request.user).first()
         # ---------------------------------------
-        return render(request, self.template_name, {'category': self.category, 'coordinates':self.coordinates})
+        return render(request, self.template_name, {'category': self.category, 'coordinates':self.coordinates,
+                                                    'coordinatesLength':len(self.coordinates),  'news':self.news[:3],
+                                                    'newsBig':self.news[3:5], 'pointLength':len(self.points),
+                                                    'trailLength':len(self.trails), 'countryLength':len(self.country),
+                                                    'country':self.country})
 
-    def post(self, request):
-        if(len(NewsletterEmail.objects.filter(email=request.POST.get('email'))) ==0):
+    def add_to_Newsletter(self, request):
+        if (len(NewsletterEmail.objects.filter(email=request.POST.get('email'))) == 0):
             NewsletterEmail.objects.create(email=request.POST.get('email'))
-        else:
-            return render(request, self.template_name, )
-        return render(request, self.template_name,)
 
+    def post(self, request, *args, **kwargs):
+        """Obsługa formularzy na stronie głównej."""
+        if request.POST.get('email'):
+            self.add_to_Newsletter(request)
+            return render(request, self.template_name, )
+        else:
+            search = self.search_trail(request, 'all_trail')
+            return render(request, 'trails/all_trails/all_trails.html',
+                      { 'search': search,'city': self.get_city(), 'top_rate': self.get_top_rate_trails(),
+                       'popular_trail': self.get_wached_trails(),
+                       'type_trail': self.get_type_trail(), 'region_trail': self.get_region_trail(),
+                       'country_trail': self.get_country_trail()})
 
 class PointViewsets(viewsets.ReadOnlyModelViewSet):
     queryset = Point.objects.all()
