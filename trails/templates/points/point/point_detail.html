@@ -138,7 +138,13 @@
 <div class="center">
     <div id="trail-left">
         <div id="basic-info">
-            <div class="name"><h3>{{ point.name }}:</h3></div>
+            <div class="name">
+                <h3>{{ point.name }}:</h3>
+                 <div id="buttons_point">
+                    <form action="" method="post"><input type="text" value="done" hidden name="name" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
+                    <form action="" method="post"><input type="text" value="favorites" hidden name="name" />{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
+                 </div>
+            </div>
             <div class="more">
                 <div class="left">
 

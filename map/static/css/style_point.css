@@ -225,6 +225,45 @@ div#basic-info {
     border: 1px solid #e0e0e0;
 }
 
+div#basic-info div.name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div#basic-info div.name div#title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div#basic-info div.name div#buttons_point {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+div#basic-info div.name div#buttons_point button {
+    border: 1px solid #bebebe;
+    background-color: #fff;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+div#basic-info div.name div#buttons_point form:nth-of-type(1) button {
+    margin-right: 5px;
+}
+
+div#basic-info div.name div#buttons_point form:nth-of-type(1) button i {
+    color: #0e446c;
+    margin-right: 4px;
+}
+
+div#basic-info div.name div#buttons_point form:nth-of-type(2) button i {
+    color: red;
+    margin-right: 4px;
+}
+
 div#basic-info h3 {
     margin: 0 10px 25px;
     font-family: Arial, sans-serif;

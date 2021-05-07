@@ -16,6 +16,5 @@ urlpatterns = [
     path('all_trails', views.TrailsListView.as_view(), name='all_trails'),
     path('trail_detail/<int:pk>/', views.TrailDetailView.as_view(), name='trail_detail'),
     path('api/<int:pk>', views.TrailApiFilterListView.as_view()),
-
 ]
 
