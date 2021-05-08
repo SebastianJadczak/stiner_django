@@ -17,7 +17,7 @@ div#newsletter-wrap div#newsletter {
     border: 1px solid #545454;
     position: absolute;
     top: 30%;
-    left: 30%;
+    left: calc(50vw - 310px);
     width: 620px;
     height: 220px;
     box-shadow: 0 0 7px #5b5b5b;
@@ -116,8 +116,9 @@ div#social-right div a{
     text-decoration: none;
 }
 
-div#social-right:nth-of-type(3) {
+div#social-right div:nth-of-type(3) {
     border-bottom: none;
+     line-height: 32px;
 }
 
 
@@ -186,7 +187,7 @@ div#welcome section#buttons_type_holiday button {
 }
 
 div#welcome section#buttons_type_holiday button.active {
-    background: linear-gradient(#00a20d, #00730c);
+    background: linear-gradient(#00bc0f, #00980f);
     color: white;
 }
 
@@ -232,10 +233,10 @@ div#welcome div.text h2 {
 
 div#welcome div.search-holiday {
     position: relative;
-    right: -530px;
-    top: 80px;
-    width: 290px;
-    height: 300px;
+    right: -630px;
+    top: 120px;
+    width: 340px;
+    height: 350px;
     background-color: rgba(255,255,255,0.7);
     border:0.4px solid black;
     border-radius: 15px;
@@ -245,18 +246,19 @@ div#welcome div.search-holiday form {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 div#welcome div.search-holiday form  input{
-    margin: 0 auto 10px;
+    margin: 0 auto 15px;
     border-radius: 5px;
-    height:30px;
+    height:33px;
     width: 80%;
+    border: 1px solid #666666;
 }
 div#welcome div.search-holiday form select{
-    margin: 5px auto 10px;
+    margin: 5px auto 15px;
     border-radius: 5px;
-    height:30px;
+    height:35px;
     width: 80%;
 }
 div#welcome div.search-holiday form label{
@@ -273,10 +275,14 @@ select,option#default {
 }
 
 div#welcome div.search-holiday input[type='submit'] {
-    font-family: FontAwesome;
+    font-family: FontAwesome, sans-serif;
+    font-size: 17px;
+    letter-spacing: 1.4px;
     margin-top: 20px;
     background: linear-gradient(to right,#00a20d, #24d236);
     color: white;
+    height: 39px;
+    font-weight: bold;
     border: 0.5px solid black;
 }
 div#welcome div.search-holiday div#popular {
@@ -303,7 +309,7 @@ div#welcome div.search-holiday div#popular label input[type='radio']{
 div#news {
     min-height: 500px;
     margin: 0 auto 0;
-    padding: 50px 10vw;
+    padding: 50px 300px;
     background-color: #f7fff7;
 }
 
@@ -331,10 +337,19 @@ div#news section ul {
     margin-top: 50px;
     justify-content: space-between;
 }
+div#news section ul li {
+    width: 400px;
+    height: 230px;
+    margin-right: 15px;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #4e4e4e;
+    box-shadow: 0 0 3px #acacac;
+}
 
 div#news section ul li div {
-    width: 360px;
-    height: 240px;
+    width: 100%;
+    height: 100%;
     margin-right: 25px;
     background-position: center;
     background-size: cover;
@@ -344,7 +359,7 @@ div#news section ul li div h3 {
     text-align: center;
     line-height: 200px;
     font-family: 'Archivo Black', sans-serif;
-    font-size: 32px;
+    font-size: 27px;
     font-weight: 900;
     letter-spacing: 3px;
     margin: 0;
@@ -360,13 +375,13 @@ div#news section#big ul {
 
 div#news section#big ul li {
     overflow: hidden;
-    width: 570px;
-    height: 340px;
+    width: 600px;
+    height: 370px;
 }
 
 div#news section ul li div#news-post-big {
-    width: 570px;
-    height: 340px;
+    width: 100%;
+    height: 100%;
     margin-right: 25px;
     background-position: center;
     background-size: cover;
@@ -379,7 +394,8 @@ div#news section ul li div#news-post-big:hover {
 }
 
 div#news section ul li div#news-post-big h3 {
-    padding-top: 150px;
+    padding-top: 120px;
+    font-size: 37px;
 }
 
 /*----------------------------------------*/
@@ -441,7 +457,7 @@ div#info-about-trail section div p:nth-of-type(2) {
 /*------------------------------------*/
 /*Mobile App.*/
 div#mobile-app {
-    min-height: 400px;
+    min-height: 410px;
     background: linear-gradient(#00a20d, #00730c);
     color: white;
     box-shadow: 0 -3px 4px #b0b0b0;
@@ -453,7 +469,7 @@ div#mobile-app {
 div#mobile-app div#logo_store {
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 div#app_store {
@@ -492,7 +508,7 @@ div#mobile-app div.left h3 {
     line-height: 24px;
     font-weight: 900;
     letter-spacing: 3.5px;
-    margin: 10px 0 0 0;
+    margin: 20px 0 0 0;
     color: white;
     text-shadow: 0 2px black;
 }
@@ -525,10 +541,11 @@ div#top div.menu ul li.green a {
 }
 
 div#top div.menu ul li.green a i {
-    margin-top: 27px;
+    margin-top: 35px;
     margin-left: 5px;
     font-size: 15px;
     color: #919191;
+    height: 40px;
 }
 
 div#top_mapa div.menu_mapa div.tr.active {

@@ -157,33 +157,33 @@ div#basic-info h3 {
     padding-left: 30px;
 }
 
-div#basic-info div.name div#title {
+div#basic-info div.name-trail div#title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-div#basic-info div.name div#title div#buttons_trail {
+div#basic-info div.name-trail div#title div#buttons_trail {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
 }
 
-div#basic-info div.name div#title div#buttons_trail form:nth-of-type(1) button {
+div#basic-info div.name-trail div#title div#buttons_trail form:nth-of-type(1) button {
     margin-right: 5px;
 }
 
-div#basic-info div.name div#title div#buttons_trail form:nth-of-type(1) button i {
+div#basic-info div.name-trail div#title div#buttons_trail form:nth-of-type(1) button i {
     color: #0e446c;
     margin-right: 4px;
 }
 
-div#basic-info div.name div#title div#buttons_trail form:nth-of-type(2) button i {
+div#basic-info div.name-trail div#title div#buttons_trail form:nth-of-type(2) button i {
     color: red;
     margin-right: 4px;
 }
 
-div#basic-info div.name div#title div#buttons_trail button {
+div#basic-info div.name-trail div#title div#buttons_trail button {
     border: 1px solid #bebebe;
     background-color: #fff;
     margin-right: 10px;
@@ -220,47 +220,47 @@ div#basic-info div.icons p#heart i {
 div#basic-info div.icons p#downloads i {
     color: #949494;
 }
-div#basic-info div.more {
+div#basic-info div.more-trail {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-div#basic-info div.more div.right {
+div#basic-info div.more-trail div.right {
     width: 47%;
     display: flex;
     flex-direction: column;
 }
 
-div#basic-info div.more div.left {
+div#basic-info div.more-trail div.left {
     width: 51%;
     display: flex;
     flex-direction: column;
     padding-left: 30px;
 }
 
-div#basic-info div.more div {
+div#basic-info div.more-trail div {
     display: flex;
     flex-direction: row;
 }
-div#basic-info div.more div.left div , div#basic-info div.more div.right div {
+div#basic-info div.more-trail div.left div , div#basic-info div.more-trail div.right div {
     height: 65px;
 }
-div#basic-info div.more div.left div i, div#basic-info div.more div.right div i {
+div#basic-info div.more-trail div.left div i, div#basic-info div.more-trail div.right div i {
     font-size: 25px;
     margin-right: 7px;
     color: #0099f5;
     opacity: 0.6;
 }
-div#basic-info div.more div.left div p, div#basic-info div.more div.right div p{
+div#basic-info div.more-trail div.left div p, div#basic-info div.more-trail div.right div p{
     line-height: 30px;
     font-family: Arial, sans-serif;
 }
-div#basic-info div.more div.left div p i, div#basic-info div.more div.right div p i{
+div#basic-info div.more-trail div.left div p i, div#basic-info div.more-trail div.right div p i{
     font-size: 16px;
     color: black;
 }
-div#basic-info div.more div.left div p span, div#basic-info div.more div.right div p span{
+div#basic-info div.more-trail div.left div p span, div#basic-info div.more-trail div.right div p span{
     font-weight: bold;
     font-size: 15px;
 }

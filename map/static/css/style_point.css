@@ -78,7 +78,7 @@ div.map p{
     line-height: 22px;
 }
 div#map_1de6ef4f1218487da9d6da057bb8f454 {
-    height: 200px;
+    height: 280px;
     width: 100%;
 }
 
@@ -217,7 +217,7 @@ div#social-right div#youtube {
 
 div#basic-info {
     width: 100%;
-    height: 300px;
+    height: 250px;
     background-color: #fff;
     margin: 0 auto;
     padding: 10px 0;
@@ -225,13 +225,40 @@ div#basic-info {
     border: 1px solid #e0e0e0;
 }
 
-div#basic-info div.name {
+div#basic-info div.name div.icons {
+    margin: 0 0 0 55px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
-div#basic-info div.name div#title {
+div#basic-info div.icons p {
+    margin: 0 10px 10px 0;
+    font-size: 14px;
+}
+
+div#basic-info div.icons p span {
+    margin-right: 5px;
+    font-family: Arial, sans-serif;
+    color: #9f9f9f;
+}
+
+div#basic-info div.icons p i {
+    margin-right: 5px;
+}
+
+div#basic-info div.icons p#done i {
+    color: #0e446c;
+}
+
+div#basic-info div.icons p#heart i {
+    color: #e90000;
+}
+
+div#basic-info div.icons p#downloads i {
+    color: #949494;
+}
+
+div#basic-info div.name div.title-point {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -265,7 +292,7 @@ div#basic-info div.name div#buttons_point form:nth-of-type(2) button i {
 }
 
 div#basic-info h3 {
-    margin: 0 10px 25px;
+    margin: 5px 10px 5px;
     font-family: Arial, sans-serif;
     font-weight: 600;
     font-size: 23px;
@@ -304,8 +331,10 @@ div#basic-info div.more div.left div, div#basic-info div.more div.right div {
 div#basic-info div.more div.left div i, div#basic-info div.more div.right div i {
     font-size: 25px;
     margin-right: 7px;
+    margin-top: 15px;
     color: #0099f5;
     opacity: 0.6;
+    height: 45px;
 }
 
 div#basic-info div.more div.left div p, div#basic-info div.more div.right div p {

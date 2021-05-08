@@ -139,11 +139,20 @@
     <div id="trail-left">
         <div id="basic-info">
             <div class="name">
-                <h3>{{ point.name }}:</h3>
-                 <div id="buttons_point">
-                    <form action="" method="post"><input type="text" value="done" hidden name="name" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
-                    <form action="" method="post"><input type="text" value="favorites" hidden name="name" />{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
-                 </div>
+                <div class="title-point">
+                    <h3>{{ point.name }}:</h3>
+                     <div id="buttons_point">
+                        <form action="" method="post"><input type="text" value="done" hidden name="name" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
+                        <form action="" method="post"><input type="text" value="favorites" hidden name="name" />{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
+                     </div>
+                </div>
+
+                <div class="icons">
+                    <p id="done"><i class="fas fa-eye"></i> <span>{{ point.done|length }} x wykonano</span>|</p>
+                    <p id="heart"><i class="fas fa-heart"></i><span>{{ point.heart|length }} x W ulubionych</span>|</p>
+                    <p id="downloads"><i class="fas fa-file-download"></i><span>{{ point.downloads|length }} x pobrań</span>|</p>
+                    <p id="sound"><i class="fas fa-volume-up"></i><span>{{ point.sound|length }} x odsłuchań</span>|</p>
+                </div>
             </div>
             <div class="more">
                 <div class="left">
