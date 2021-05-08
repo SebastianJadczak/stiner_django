@@ -161,10 +161,18 @@ div#filter {
     z-index: 99;
     padding: 0;
 }
-div#filter p#search-filter{
+div#filter div#search-filter{
     border-bottom: 0.5px solid grey;
+    display: flex;
+    flex-direction: row;
 }
-
+div#filter div#search-filter i{
+  padding:15px 0 0 15px;
+}
+div#filter div#search-filter p {
+    margin: 0;
+    padding: 12px 0 10px 10px;
+}
 div#filter div.icons {
     display: flex;
     flex-direction: column;
