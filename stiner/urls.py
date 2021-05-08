@@ -3,7 +3,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 
 from map import views
-from map.views import Map
+from map.views import Map, MapFullScreen
 from django.conf import settings
 from django.conf.urls.static import static
 from shop.views import ProductContentListView
@@ -12,6 +12,7 @@ from user_trails.views import UserTrailsListView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Map.as_view(), name='map'),
+    path('mapFullScreen/', MapFullScreen.as_view(), name='mapFullScreen'),
     path('map/', include('map.urls')),
     path('account/', include('account.urls')),
     path('blog/', include('blog.urls'), name='blog'),

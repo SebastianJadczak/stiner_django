@@ -100,3 +100,17 @@ class UserFormView(View):
                     return redirect('../')
 
         return render(request, self.template_name, {'form': form})
+
+
+class MapFullScreen(View):
+    template_name = 'map/map.html'
+    coordinates = Coordinates.objects.all()
+    country = [value for key, value in Trail.get_country_trail(Trail)]
+
+    def get(self, request):
+        # ---------------------------------------
+        # if (str(request.user) != 'AnonymousUser'):
+        #     self.userRole = UserRole.objects.filter(user=request.user).first()
+        # ---------------------------------------
+        return render(request, self.template_name,
+                      {'coordinates': self.coordinates, 'countryLength': len(self.country), 'country': self.country})

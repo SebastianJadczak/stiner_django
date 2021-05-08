@@ -764,47 +764,23 @@ div.login_mapa button.register a{
     line-height:45px;
 }
 
-div#filter_mapa{
-    display:flex;
-    height:7vh;
-    line-height:8vh;
-    justify-content: left;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-    border-bottom: 1px solid rgba(0,0,0,0.4);
-}
-div#filter_mapa div:nth-of-type(1){
-    padding-left: 280px;
-    margin-right: 230px;
-    width: 200px;
-}
-div#filter_mapa div{
-    width:120px;
-}
-div#filter_mapa select.location{
-    padding:5px 10px;
-    border: 0.5px solid #cbcdcc;
-    border-radius:15px;
-}
-
-div#filter_mapa i{
-    margin:12px 0 0 2px;
-    font-size:23px;
-}
-div.search_mapa{
-    height:30px;
-    line-height:5px;
-}
-
 div.search_mapa button{
-    height:29px;
-    background-color:orange;
-    border:0 solid white;
-    color:white;
-    padding:8px 12px;
-    border-radius:15px;
-    font-weight:bold;
-    letter-spacing:1.5px;
-    font-size: 12px;
+    font-family: FontAwesome, sans-serif;
+    font-size: 17px;
+    letter-spacing: 1.4px;
+    background: linear-gradient(to right, #00a20d, #24d236);
+    color: white;
+    height: 35px;
+    width: 198px;
+    margin:0 auto;
+    font-weight: bold;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top:0.5px solid black;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    box-shadow: 1.3px 1.7px 0 black;
 }
 
 /*Renderowanie mapy*/
