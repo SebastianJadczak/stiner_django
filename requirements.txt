@@ -83,7 +83,6 @@ python-docx==0.8.10
 python-gitlab==2.6.0
 pytoml==0.1.21
 pytz==2020.1
-pywin32==300
 PyYAML==5.4.1
 reportlab==3.5.67
 requests==2.24.0
