@@ -1,6 +1,5 @@
 allure-pytest==2.8.18
 allure-python-commons==2.8.18
-addaltair==4.1.0
 altair-recipes==0.9.0
 appdirs==1.4.4
 arabic-reshaper==2.1.3
