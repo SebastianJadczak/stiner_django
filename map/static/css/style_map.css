@@ -548,81 +548,6 @@ div#top div.menu ul li.green a i {
     height: 40px;
 }
 
-div#top_mapa div.menu_mapa div.tr.active {
-    height: 240px;
-    position: relative;
-    z-index: 9;
-}
-
-div#top div.menu div.tr ul {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-}
-
-div#top div.menu div.tr ul li {
-    height: 100%;
-    width: 15%;
-    line-height: 0;
-    padding: 12px 0;
-}
-
-div#top div.menu div.tr ul li:hover {
-    background-color: #f8f8f8;
-}
-
-div#top div.menu div.tr ul li a {
-    display: block;
-    font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    line-height: 35px;
-    margin: 0;
-    padding: 0;
-    color: #2e6993;
-}
-
-div#top_mapa div.menu_mapa div.tr{
-    width: 100%;
-    height: 180px;
-    background-color: #fdfdfd;
-    border: 0.5px solid #e9e8e8;
-    color: #2e6993;
-    position: relative;
-    transform: translateY(-400px);
-    z-index: 9;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-}
-
-div#top_mapa div.menu_mapa div.tr ul{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-}
-div#top_mapa div.menu_mapa div.tr ul li{
-    height: 100%;
-    width: 100%;
-    line-height: 0;
-    padding: 12px 0;
-}
-div#top_mapa div.menu_mapa div.tr ul li:hover{
-     background-color: #f8f8f8;
-}
-div#top_mapa div.menu_mapa div.tr ul li a{
-    display: block;
-    font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    line-height: 35px;
-    margin: 0;
-    padding: 0;
-    color: #2e6993;
-}
-
 div#top_mapa div.menu_mapa ul {
     display: flex;
     justify-content: space-between;
@@ -838,9 +763,6 @@ div.footer a{
 
 @media only screen and (max-width: 1698px) {
 
-    div#top_mapa div.menu_mapa div.tr {
-        transform: translateY(-450px);
-    }
 
     div#filter_mapa div:nth-of-type(1) {
         padding-left: 80px;
@@ -895,14 +817,6 @@ div.footer a{
         margin-right: 15px;
     }
 
-    div#top_mapa div.menu_mapa div.tr {
-        width: 200px;
-        color: #2e6993;
-        position: relative;
-        transform: translateY(-460px);
-        z-index: 9;
-        box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
-    }
 }
 
 @media only screen and (max-width: 1071px) {
@@ -910,11 +824,6 @@ div.footer a{
         left: 20%;
     }
 
-    div#top div.menu div.tr ul li a {
-        display: block;
-        font-size: 16px;
-        letter-spacing: 2px;
-    }
 
     div#top_mapa div.menu_mapa ul li a {
         font-size: 14px;
@@ -1016,36 +925,7 @@ div.footer a{
         height: 180px;
     }
 
-    div#top_mapa div.menu_mapa div.tr ul {
-        height: 100%;
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        padding: 8px 0;
-    }
 
-    div#top_mapa div.menu_mapa div.tr ul li {
-        height: 30px;
-        width: 300px;
-        line-height: 2px;
-        padding: 8px 0;
-    }
-
-    div#top_mapa div.menu_mapa div.tr ul li:hover {
-        background-color: #f8f8f8;
-    }
-
-    div#top_mapa div.menu_mapa div.tr ul li a {
-        font-size: 13px;
-        letter-spacing: 1.6px;
-        line-height: 10px;
-        width: 200px;
-    }
-
-    div#top_mapa div.menu_mapa ul li.green:hover div.tr {
-        transform: translate(-80px, -120px);
-        z-index: 1;
-    }
 }
 
 @media only screen and (max-width: 666px) {
