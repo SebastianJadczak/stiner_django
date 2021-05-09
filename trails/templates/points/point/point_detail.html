@@ -131,7 +131,7 @@
         <h3> {{point.name}}</h3>
     </div>
     <div id="file-point">
-            <button id="pdf" ><a href="{% url 'trails:pdf_point' %}"> <i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</a></button>
+            <button id="pdf" ><a href="{% url 'trails:pdf_point' point.id %}"> <i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</a></button>
             <button id="audio"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</button>
         </div>
 </div>

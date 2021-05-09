@@ -7,31 +7,38 @@ from shop.models import Category
 from trails.api.serializers import PointTrailsSerializer
 from trails.models import Trail, Rate_trail
 from user_trails.models import UserTrail
-# -------------------------------
 from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
-from django.contrib.staticfiles import finders
-# ---------------------------
 
-def render_pdf_view(request):
+
+def point_render_pdf_view(request, pk):
     template_path = 'pdf1.html'
-    context = {'myvar': 'this is your template context'}
-    # Create a Django response object, and specify content_type as pdf
+    point = Point.objects.filter(id=pk).first()
+    context = {'point': point}
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
-    # find the template and render it.
+    response['Content-Disposition'] = 'attachment; filename="point.pdf"'
     template = get_template(template_path)
     html = template.render(context)
-
-    # create a pdf
     pisa_status = pisa.CreatePDF(
-        html, dest=response)
-    # if error then show some funy view
+        html, dest=response, encoding='UTF-8')
     if pisa_status.err:
         return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
+def trail_render_pdf_view(request, pk):
+    template_path = 'trailPDF.html'
+    trail = Trail.objects.filter(id=pk).first()
+    context = {'trail': trail}
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="trail.pdf"'
+    template = get_template(template_path)
+    html = template.render(context)
+    pisa_status = pisa.CreatePDF(
+        html, dest=response, encoding='UTF-8')
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
 
 
 
