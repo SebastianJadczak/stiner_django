@@ -45,20 +45,61 @@ div#top div.menu ul li a {
     text-transform: uppercase;
 }
 
-div#top div.menu ul li.green:hover a {
+div#top div.menu ul li {
+    color: #323232;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    display: flex;
+    font-weight: bold;
+    flex-direction: row;
+    text-align: center;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+div#top div.menu ul li.green:hover {
     color: #0085e9;
 }
 
-div#top div.menu ul li.green:hover a i {
-    color: #0085e9;
+div.menu_mapa ul li.green div#menu-detail-trail {
+    display: none;
+    position: absolute;
+    height: 70px;
+    width: 600px;
+    top: 85px;
+    left: 30vw;
+    background-color: #fff;
+    justify-content: space-between;
 }
 
-div#top div.menu ul li.green a {
+div#top div.menu div#menu-detail-trail ul {
     display: flex;
     flex-direction: row;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
 }
 
-div#top div.menu ul li.green a i {
+div#top div.menu  div#menu-detail-trail ul li {
+    width: 100%;
+    margin:0;
+}
+
+div#top div.menu  div#menu-detail-trail ul li a {
+    color: black;
+    font-size: 12px;
+    display: block;
+    width: 100%;
+       text-align: center;
+}
+
+div#top div.menu ul li.green:hover i {
+    color: #0085e9;
+}
+
+div#top div.menu ul li.green i {
     margin-top: 27px;
     margin-left: 5px;
     font-size: 15px;
