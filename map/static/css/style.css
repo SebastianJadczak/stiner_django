@@ -80,6 +80,7 @@ div.menu_mapa ul li.green div#menu-detail-trail, div.menu ul li.green div#menu-d
     top: -100px;
     left: 30vw;
     background-color: #fff;
+    z-index: 99;
     justify-content: space-between;
 }
 
@@ -114,7 +115,7 @@ div#top div.menu ul li.green:hover i {
 }
 
 div#top div.menu ul li.green i {
-    margin-top: 27px;
+    margin-top: 37px;
     margin-left: 5px;
     font-size: 15px;
     color: #919191;
