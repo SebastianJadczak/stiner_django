@@ -5,7 +5,12 @@ let yours_trails = document.querySelector("li.yours_trails");
 let tr = document.querySelector("div.tr")
 let login_rwd = document.getElementById('login_rwd')
 let login_mapa_menu = document.querySelector('.login_mapa')
+let menuDetail = document.getElementById('menu-detail-trail')
 
+//Top Menu
+function menuDetailTrail() {
+    menuDetail.classList.toggle('active')
+}
 if (menu) {
     menu.addEventListener('click', function () {
         user_menu.classList.toggle("active");

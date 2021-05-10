@@ -527,11 +527,11 @@ div#mobile-app div.right img {
 
 /*------------------------------------*/
 
-div#top div.menu ul li:hover a {
+div#top div.menu ul li.top_menu:hover a {
     color: #0085e9;
 }
 
-div#top div.menu ul li:hover a i {
+div#top div.menu ul li.top_menu:hover a i {
     color: #0085e9;
 }
 

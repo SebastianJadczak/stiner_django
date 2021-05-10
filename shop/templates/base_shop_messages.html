@@ -23,20 +23,20 @@
     <div class="menu">
         <ul>
             <li class="red"><a href="/"><i class="fas fa-map-marked-alt"></i>Mapa</a></li>
-            <li class="green"><a href="{% url 'trails:all_trails'  %}"><i class="fas fa-map-signs"></i>Trasy</a>
-                 <div class="tr">
+               <li class="green top_menu" onclick="menuDetailTrail()">Trasy <i class="fas fa-angle-down"></i>
+                <div id="menu-detail-trail">
                     <ul>
                         <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
                         <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
-                       {% if user.is_authenticated %}
-                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
-                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
-                    {%else%}
-                        <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>
-                        <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
-                     {% endif %}
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
+                            <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
+                        {%else%}
+                            <li><a href="{% url 'login' %}">Twoje trasy</a></li>
+                            <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
+                        {% endif %}
                     </ul>
-        </div>
+                </div>
             </li>
             <li class="blue"><a href="{% url "blog:list_posts" %}"><i class="fas fa-book-open"></i>Blog</a></li>
             <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>

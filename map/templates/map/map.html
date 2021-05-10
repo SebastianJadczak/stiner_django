@@ -74,25 +74,25 @@
    <div class="logo"><a href="{% url 'map' %}"><img src="{% static "img/logo.png" %}" alt="logo"></a></div>
     <div class="menu menu_mapa">
         <ul>
-            <li class="red"><a href="{% url 'mapFullScreen' %}"></i>Mapa</a></li>
-            <li class="green"><a href="{% url 'trails:all_trails' %}">Trasy <i class="fas fa-angle-down"></i></a>
-                {#            <div class="tr">#}
-                {#                 <ul>#}
-                {#                    <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>#}
-                {#                    <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>#}
-                {#                    {% if user.is_authenticated %}#}
-                {#                        <li class="yours_trails"><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>#}
-{#                        <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>#}
-{#                    {%else%}#}
-{#                        <li class="yours_trails"><a href="{% url 'login' %}">Twoje trasy</a></li>#}
-{#                        <li><a href="{% url 'login' %}">Stwórz trasę</a></li>#}
-{#                     {% endif %}#}
-{#                </ul>#}
-{#        </div>#}
+            <li class="red top_menu"><a href="{% url 'mapFullScreen' %}"></i>Mapa</a></li>
+            <li class="green top_menu" onclick="menuDetailTrail()">Trasy <i class="fas fa-angle-down"></i>
+                <div id="menu-detail-trail">
+                    <ul>
+                        <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
+                        <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
+                            <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
+                        {%else%}
+                            <li><a href="{% url 'login' %}">Twoje trasy</a></li>
+                            <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
             </li>
-            <li class="blue"><a href="{% url 'blog:list_posts' %}">Blog</a></li>
-            <li class="black"><a href="{%url "list_products"%}">Sklep</a></li>
-            <li class="gold"><a href="{% url 'contact:contact_detail' %}">Kontakt</a></li>
+            <li class="blue top_menu"><a href="{% url 'blog:list_posts' %}">Blog</a></li>
+            <li class="black top_menu"><a href="{%url "list_products"%}">Sklep</a></li>
+            <li class="gold top_menu"><a href="{% url 'contact:contact_detail' %}">Kontakt</a></li>
         </ul>
     </div>
     <div class="login_mapa">
