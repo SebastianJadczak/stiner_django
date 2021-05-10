@@ -27,7 +27,7 @@ def point_render_pdf_view(request, pk):
     return response
 
 def trail_render_pdf_view(request, pk):
-    template_path = 'trailPDF.html'
+    template_path = 'trailsPDF.html'
     trail = Trail.objects.filter(id=pk).first()
     context = {'trail': trail}
     response = HttpResponse(content_type='application/pdf')

@@ -63,14 +63,24 @@ div#top div.menu ul li.green:hover {
     color: #0085e9;
 }
 
-div.menu_mapa ul li.green div#menu-detail-trail {
-    display: none;
+div#top div.menu ul li.green:hover div#menu-detail-trail {
+    top: 70px
+}
+
+div#top div.menu ul li.green div#menu-detail-trail.active {
+    top: 70px;
+    z-index: 100;
+}
+
+div.menu_mapa ul li.green div#menu-detail-trail, div.menu ul li.green div#menu-detail-trail {
+    display: flex;
     position: absolute;
-    height: 70px;
+    height: 60px;
     width: 600px;
-    top: 85px;
+    top: -100px;
     left: 30vw;
     background-color: #fff;
+    z-index: 99;
     justify-content: space-between;
 }
 
@@ -82,17 +92,22 @@ div#top div.menu div#menu-detail-trail ul {
     width: 100%;
 }
 
-div#top div.menu  div#menu-detail-trail ul li {
+div#top div.menu div#menu-detail-trail ul li {
     width: 100%;
-    margin:0;
+    margin: 0;
 }
 
-div#top div.menu  div#menu-detail-trail ul li a {
+div#top div.menu div#menu-detail-trail ul li:hover a {
+    color: #0085e9;
+}
+
+div#top div.menu div#menu-detail-trail ul li a {
     color: black;
     font-size: 12px;
     display: block;
     width: 100%;
-       text-align: center;
+    text-align: center;
+    line-height: 60px;
 }
 
 div#top div.menu ul li.green:hover i {
@@ -100,7 +115,7 @@ div#top div.menu ul li.green:hover i {
 }
 
 div#top div.menu ul li.green i {
-    margin-top: 27px;
+    margin-top: 37px;
     margin-left: 5px;
     font-size: 15px;
     color: #919191;

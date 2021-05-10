@@ -14,7 +14,12 @@ let search_x = document.getElementById('search_x')
 let hamburger_shop = document.getElementById('hamburger-shop')
 let left_column = document.getElementsByClassName('left')
 let left_column_x = document.getElementById('hamburger-shop_x')
+let menuDetail = document.getElementById('menu-detail-trail')
 
+//Top Menu
+function menuDetailTrail() {
+    menuDetail.classList.toggle('active')
+}
 
 if (menu) {
     menu.addEventListener('click', function () {
