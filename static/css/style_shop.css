@@ -94,8 +94,9 @@ div.menu-shop div.shop-user-menu div#bell:hover i{
 
 /* Głowna strona sklepu - Lista */
 div#sh-list {
-    background-color: #fdfdfd;
+    /*background-color: #f8f8f8;*/
     min-height: 74vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
     margin: 3px 0 0 0;
     padding: 20px 0 50px 100px;
 }
@@ -239,12 +240,12 @@ div.first-section div.left ul.menu-category li a{
     color: #131313;
     text-shadow: 0 1px #cbcbcb;
     padding: 5px 0 0 20px;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.2px;
     font-size: 15px;
 }
 
 div.first-section div.center{
-    width: 80vw;
+    width: 64vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -362,10 +363,25 @@ div.first-section div.center div.bottom div img{
     }
 
     div.first-section div.left div {
-        width: 19vw;
+        width: 15vw;
         height: 502px;
         margin-right: 80px;
         padding-bottom: 0;
+    }
+
+    div.first-section div.left div#submit_filter {
+        height: 50px;
+    }
+
+    div.first-section div.left div#submit_filter input[type='submit'] {
+        width: 100%;
+        height: 50px;
+        letter-spacing: 1.4px;
+        background-color: #f8ff00;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
     }
 
     div.first-section div.left div:nth-of-type(3) {
@@ -373,7 +389,7 @@ div.first-section div.center div.bottom div img{
     }
 
     .slideshow-container {
-        max-width: 1000px;
+        max-width: 990px;
         height: 385px;
         position: relative;
         margin: auto;

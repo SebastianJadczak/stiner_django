@@ -1,16 +1,51 @@
-div.blog_title {
-    width: 99.1vw;
-    height: 80vh;
-    background-image: url("../img/city.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+
+div.karaibs {
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../img/karaiby.jpg");
+    height: 190px;
     background-position: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    border-bottom: 1px solid grey;
+}
+div.karaibs  h3 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 35px 0 0;
+    color: white;
+    -webkit-text-stroke: 0.6px black;
+    text-shadow: 0 0 3px black;
+}
+div.content div.content-bottom {
+    display: flex;
+    flex-direction: row;
 }
 
-div.content_center{
+div.content div.content-bottom div.content-right {
+    width: 15vw;
+}
+
+div.content_center {
     display: flex;
-    background-color: #fbfbfb;
+    width: 75vw;
+    flex-direction: column;
+    margin: 0 auto;
+}
+div.content_center h3{
+    margin-left:70px;
+    font-family: 'Chau Philomene One', sans-serif;
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+div.content-right h3{
+     margin:30px 0 0 0;
+    font-family: 'Chau Philomene One', sans-serif;
+    font-weight: normal;
+    letter-spacing: 1.3px;
+    font-size: 19px;
 }
 div.text h3{
     font-family: Verdana, sans-serif;
@@ -20,37 +55,40 @@ div.text p{
     letter-spacing: 1.3px;
 }
 div.right_table{
-    width:20vw;
+    width:10vw;
     padding:50px;
 }
 
-div.right_table div.reklama{
-    width:310px;
-    height:260px;
-      margin: 0 auto;
-    background-color: white;
-    background-image: url("../img/baner.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    box-shadow: 0 0 0 1px #bdbdbd;
-}
+
 div.posts{
     display: flex;
-    width:60vw;
+    width:75vw;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 50px 0 50px 200px;
+    margin: 10px 0 30px 200px;
     justify-content: space-between;
+}
+div.posts a{
+    color: black;
+    text-decoration: none;
 }
 div.posts div.post{
     width:300px;
     margin: 10px 25px;
-    height:600px;
+    height:500px;
+    border:1px solid #aeaeae;
+    background-color: #fff;
+}
+div.posts div.post section{
+    background-color: #fff;
+    width:85%;
+    height: 170px;
+    margin: 0 auto;
+    transform: translateY(-30px);
 }
 
 div.posts div.post div.image{
-    width:90%;
+    width:100%;
     margin: 0 auto;
     height: 200px;
 }
@@ -89,15 +127,17 @@ div.posts div.post div.info {
     font-size: 13px;
     text-align: right;
 }
+
 @media only screen and (max-width: 1680px) {
 
     div.posts {
         width: 70vw;
-        margin: 50px 0 50px 50px;
+        margin: 10px 0 50px 50px;
     }
 
     div.posts div.post {
         height: 380px;
+
     }
 
 }
@@ -105,6 +145,7 @@ div.posts div.post div.info {
 @media only screen and (max-width: 1537px) {
     div.posts div.post {
         width: 310px;
+        height: 350px;
         margin: 10px;
     }
     div.right_table{
@@ -138,6 +179,7 @@ div.posts div.post div.info {
 @media only screen and (max-width: 1340px) {
     div.posts div.post {
         width: 250px;
+
     }
 
     div.posts div.post div.image {

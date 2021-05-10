@@ -7,7 +7,12 @@ let data = []
 let list_checkbox_message = document.querySelectorAll(".checkbox_message")
 let login_rwd = document.getElementById('login_rwd')
 let login_mapa_menu = document.querySelector('.login_mapa')
+let menuDetail = document.getElementById('menu-detail-trail')
 
+//Top Menu
+function menuDetailTrail() {
+    menuDetail.classList.toggle('active')
+}
 //------------------------------------------
 // Handle menu users.
 if (menu) {

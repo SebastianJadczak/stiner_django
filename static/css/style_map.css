@@ -1,124 +1,576 @@
-#top_mapa{
-    border-bottom:1px solid #cbcdcc;
-    height: 10vh;
-    display:flex;
+div#newsletter-wrap {
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(121, 121, 121, 0.4);
 }
-#top_mapa div.logo_mapa{
-    margin:18px 18px 18px 35px;
-    height:7vh;
+div#newsletter-wrap.active{
+    display: block;
+}
+
+div#newsletter-wrap div#newsletter {
+    background-color: #fff;
+    border: 1px solid #545454;
+    position: absolute;
+    top: 30%;
+    left: calc(50vw - 310px);
+    width: 620px;
+    height: 220px;
+    box-shadow: 0 0 7px #5b5b5b;
+    border-radius: 9px;
+}
+
+div#newsletter-wrap div#newsletter div#title_newsletter {
+    display: flex;
+}
+
+div#newsletter-wrap div#newsletter div#title_newsletter h3 {
+    font-family: 'Bangers', cursive;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1.3px;
+    font-size: 26px;
+}
+div#newsletter-wrap div#newsletter div#title_newsletter i{
+    font-size: 19px;
+    cursor: pointer;
+}
+div#newsletter-wrap div#newsletter div#logo_newsletter {
+    text-align: center;
+}
+
+div#newsletter-wrap div#newsletter div#logo_newsletter img {
+    width: 150px;
+    height: 70px;
+}
+
+div#newsletter-wrap div#newsletter form {
+    text-align: center;
+    margin-top: 15px;
+}
+
+div#newsletter-wrap div#newsletter form input#email {
+    height: 37px;
+    width: 280px;
+}
+
+div#newsletter-wrap div#newsletter form input[type='submit'] {
+    width: 130px;
+    border: none;
+    color: white;
+    background-color: orangered;
+    height: 37px;
+    font-weight: bold;
+    margin-left: 10px;
+    letter-spacing: 1.2px;
+}
+div#newsletter-wrap div#newsletter div#social-media{
+    display: flex;
+    margin: 10px auto;
+    width: 90%;
+    justify-content: center;
+}
+div#newsletter-wrap div#newsletter div#social-media p {
+    margin-right: 20px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.1px;
+}
+
+div#newsletter-wrap div#newsletter div#social-media p#fb i {
+    color: rgb(6, 115, 231);
+}
+
+div#newsletter-wrap div#newsletter div#social-media p#li i {
+    color: rgb(10, 102, 194);
+}
+
+div#newsletter-wrap div#newsletter div#social-media p i {
+    margin-right: 5px;
+}
+
+div#social-right {
+    position: fixed;
+    top: 20vh;
+    right: 5px;
+    width: 39px;
+    height: 105px;
+    background-color: #fff;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div#social-right div {
+    line-height: 35px;
+    text-align: center;
+    font-size: 35px;
+    border-bottom: 0.6px solid black;
+}
+div#social-right div a{
+    color: #00449b;
+    text-decoration: none;
+}
+
+div#social-right div:nth-of-type(3) {
+    border-bottom: none;
+     line-height: 32px;
+}
+
+
+
+div#li {
+    color: #0072ff;
+}
+
+div#social-right div#youtube {
+    color: #a20000;
+    font-size: 30px;
+}
+
+#top_mapa {
+    border-bottom: 1px solid #cbcdcc;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    width: 86vw;
+    margin: 0 auto;
+}
+
+#top_mapa div.logo_mapa {
+    margin: 18px 18px 18px 35px;
+    height: 7vh;
     width: 110px;
 }
-#top_mapa div.logo_mapa img{
-    width:100%;
-    height:100%;
+
+#top_mapa div.logo_mapa img {
+    width: 100%;
+    height: 100%;
 }
-div#top_mapa div.menu_mapa {
-    width:65%;
-    height:10vh;
+
+div#top div.menu_mapa {
+    /*margin-top: 15px;*/
+    display: block;
+    width: 30%;
+    margin: 10px auto 0;
+}
+
+div#welcome {
+    background-image: url("../img/front-image.jpg");
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid grey;
+    height: 83vh;
+    display: flex;
+}
+
+div#welcome section#buttons_type_holiday {
+    margin-left: 110px;
+}
+
+div#welcome section#buttons_type_holiday button {
+    margin-left: 20px;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+    background-color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
     font-family: 'Roboto Mono', monospace;
-}
-div#top_mapa div.menu_mapa div.tr.active{
-     height: 240px;
-    position: relative;
-    z-index: 9;
+    font-weight: bold;
+    letter-spacing: 1.3px;
 }
 
-div#top div.menu div.tr ul{
-    height: 100%;
-    width: 100%;
+div#welcome section#buttons_type_holiday button.active {
+    background: linear-gradient(#00bc0f, #00980f);
+    color: white;
+}
+
+div#welcome div.text {
+    position: relative;
+    top: 70px;
+    left: 280px;
+}
+
+div#welcome div.text section {
+    display: flex;
+    flex-direction: row;
+}
+
+div#welcome div.text div#earth {
+    margin-top: 35px;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    background: linear-gradient(#00a20d, #00730c);
+    box-shadow: 0 0 3px #b8b8b8;
+}
+
+div#welcome div.text div#earth i {
+    color: white;
+    font-size: 50px;
+    line-height: 80px;
+    margin-left: 15px;
+}
+
+div#welcome div.text h2 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 45px 0 0 30px;
+    color: white;
+    text-shadow: 0 3px black;
+}
+
+div#welcome div.search-holiday {
+    position: relative;
+    right: -630px;
+    top: 120px;
+    width: 340px;
+    height: 350px;
+    background-color: rgba(255,255,255,0.7);
+    border:0.4px solid black;
+    border-radius: 15px;
+}
+
+div#welcome div.search-holiday form {
     display: flex;
     flex-direction: column;
-    padding: 0;
-}
-div#top div.menu div.tr ul li{
     height: 100%;
-    width: 100%;
-    line-height: 0;
-    padding: 12px 0;
+    padding-top: 20px;
 }
-div#top div.menu div.tr ul li:hover{
-     background-color: #f8f8f8;
+div#welcome div.search-holiday form  input{
+    margin: 0 auto 15px;
+    border-radius: 5px;
+    height:33px;
+    width: 80%;
+    border: 1px solid #666666;
 }
-div#top div.menu div.tr ul li a{
-    display: block;
-    font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    line-height: 35px;
-    margin: 0;
-    padding: 0;
-    color: #2e6993;
+div#welcome div.search-holiday form select{
+    margin: 5px auto 15px;
+    border-radius: 5px;
+    height:35px;
+    width: 80%;
+}
+div#welcome div.search-holiday form label{
+    margin:0;
+    margin-left:30px;
+    font-family: Arial, sans-serif;
+}
+div#welcome div.search-holiday form  input::placeholder{
+    margin-left: 6px;
+}
+select,option#default {
+    font-size: 15px;
+    background-color: #fff;
 }
 
-div#top_mapa div.menu_mapa div.tr{
-    width: 100%;
-    height: 180px;
-    background-color: #fdfdfd;
-    border: 0.5px solid #e9e8e8;
-    color: #2e6993;
-    position: relative;
-    transform: translateY(-400px);
-    z-index: 9;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+div#welcome div.search-holiday input[type='submit'] {
+    font-family: FontAwesome, sans-serif;
+    font-size: 17px;
+    letter-spacing: 1.4px;
+    margin-top: 20px;
+    background: linear-gradient(to right,#00a20d, #24d236);
+    color: white;
+    height: 39px;
+    font-weight: bold;
+    border: 0.5px solid black;
 }
-
-div#top_mapa div.menu_mapa div.tr ul{
-    height: 100%;
-    width: 100%;
+div#welcome div.search-holiday div#popular {
     display: flex;
-    flex-direction: column;
-    padding: 0;
+    margin-top: 5px;
+    flex-direction: row;
 }
-div#top_mapa div.menu_mapa div.tr ul li{
-    height: 100%;
-    width: 100%;
-    line-height: 0;
-    padding: 12px 0;
-}
-div#top_mapa div.menu_mapa div.tr ul li:hover{
-     background-color: #f8f8f8;
-}
-div#top_mapa div.menu_mapa div.tr ul li a{
-    display: block;
+div#welcome div.search-holiday div#popular label{
+    display: flex;
+    flex-direction: row;
+    width:40%;
     font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    line-height: 35px;
-    margin: 0;
-    padding: 0;
-    color: #2e6993;
+}div#welcome div.search-holiday div#popular label:nth-of-type(2){
+    margin-left: 5px;
+ }
+div#welcome div.search-holiday div#popular label input[type='radio']{
+    width: 15px;
+    height: 15px;
+    margin: 0 5px 0 0;
 }
 
-div#top_mapa div.menu_mapa ul{
-    display:flex;
-    justify-content:space-between;
-    list-style:none;
-    height:10vh;
+/*-----------------------------------*/
+/*News*/
+div#news {
+    min-height: 500px;
+    margin: 0 auto 0;
+    padding: 50px 300px;
+    background-color: #f7fff7;
+}
+
+div#news h2 {
+    font-family: 'Bangers', cursive;
+    color: black;
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin-left: 30px;
+    text-align: center;
+    -webkit-text-stroke: 0.5px #0085e9;
+}
+div#news  p{
+    text-align: center;
+    font-size: 18px;
+    width:70vw;
+    margin:0 auto;
+     font-family: 'Archivo Black', sans-serif;
+}
+div#news section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: space-between;
+}
+div#news section ul li {
+    width: 400px;
+    height: 230px;
+    margin-right: 15px;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #4e4e4e;
+    box-shadow: 0 0 3px #acacac;
+}
+
+div#news section ul li div {
+    width: 100%;
+    height: 100%;
+    margin-right: 25px;
+    background-position: center;
+    background-size: cover;
+}
+
+div#news section ul li div h3 {
+    text-align: center;
+    line-height: 200px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 3px;
     margin: 0;
+    padding: 45px 0 0 30px;
+    color: white;
+    -webkit-text-stroke: 0.8px black;
+    text-shadow: 0 0 4px black;
+}
+
+div#news section#big ul {
+    justify-content: space-between;
+}
+
+div#news section#big ul li {
+    overflow: hidden;
+    width: 600px;
+    height: 370px;
+}
+
+div#news section ul li div#news-post-big {
+    width: 100%;
+    height: 100%;
+    margin-right: 25px;
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.0);
+    transition: 0.3s;
+}
+
+div#news section ul li div#news-post-big:hover {
+    transform: scale(1.1);
+}
+
+div#news section ul li div#news-post-big h3 {
+    padding-top: 120px;
+    font-size: 37px;
+}
+
+/*----------------------------------------*/
+/*Info under the map.*/
+div#info-about-trail {
+    position: relative;
+    top: -80px;
+    display: flex;
+    width: 60vw;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+div#info-about-trail section div.circle {
+    margin: 35px auto 0;
+    height: 94px;
+    width: 94px;
+    border-radius: 50%;
+    border: 9px solid #ffffff;
+    background: linear-gradient(#00a20d, #00730c);
+    box-shadow: 0 0 3px #b8b8b8;
+}
+
+div#info-about-trail section div.circle i {
+    color: white;
+    font-size: 35px;
+    line-height: 75px;
+    margin-left: 22px;
+
+}
+
+div#info-about-trail section:nth-of-type(1) div.circle i {
+    margin-left: 24px;
+}
+
+div#info-about-trail section:nth-of-type(2) div.circle i {
+    margin-left: 20px;
+}
+
+div#info-about-trail section:nth-of-type(3) div.circle i {
+    margin-left: 18px;
+}
+
+div#info-about-trail section div p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+div#info-about-trail section div p:nth-of-type(1) {
+    font-weight: bold;
+    font-size: 45px;
+}
+
+div#info-about-trail section div p:nth-of-type(2) {
+    font-size: 16px;
+}
+
+/*------------------------------------*/
+/*Mobile App.*/
+div#mobile-app {
+    min-height: 410px;
+    background: linear-gradient(#00a20d, #00730c);
+    color: white;
+    box-shadow: 0 -3px 4px #b0b0b0;
+    display: flex;
+    flex-direction: row;
+    padding: 50px 15vw;
+}
+
+div#mobile-app div#logo_store {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+div#app_store {
+    width: 150px;
+    height: 45px;
+    margin-right: 25px;
+}
+div#app_store img{
+    width: 100%;
+    height: 100%;
+}
+div#google_play {
+    width: 150px;
+    height: 45px;
+}
+div#google_play img{
+    width: 100%;
+    height: 100%;
+}
+div#mobile-app div.left{
+    width:55%;
+    margin-left: 100px;
+}
+div#mobile-app div.left h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    color: white;
+    text-shadow: 0 2px black;
+}
+div#mobile-app div.left h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: 900;
+    letter-spacing: 3.5px;
+    margin: 20px 0 0 0;
+    color: white;
+    text-shadow: 0 2px black;
+}
+
+div#mobile-app div.right {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+div#mobile-app div.right img {
+    width: 100%;
+    height: 100%;
+}
+
+/*------------------------------------*/
+
+div#top div.menu ul li.top_menu:hover a {
+    color: #0085e9;
+}
+
+div#top div.menu ul li.top_menu:hover a i {
+    color: #0085e9;
+}
+
+div#top div.menu ul li.green a {
+    display: flex;
+    flex-direction: row;
+}
+
+div#top div.menu ul li.green a i {
+    margin-top: 35px;
+    margin-left: 5px;
+    font-size: 15px;
+    color: #919191;
+    height: 40px;
+}
+
+div#top_mapa div.menu_mapa ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    height: 10vh;
 }
 
 div#top_mapa div.menu_mapa ul li {
-    width: 25%;
-    line-height:12vh;
+    width: 10%;
+    line-height: 12vh;
 }
 
-div#top_mapa div.menu_mapa ul li a{
-    display:block;
+div#top_mapa div.menu_mapa ul li a {
+    color: #323232;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    display: flex;
+    font-weight: bold;
+    flex-direction: row;
     text-align: center;
-    color: black;
-    font-weight:bold;
-    font-size:16px;
-    letter-spacing:2px;
-    text-decoration:none;
-}
-div#top_mapa div.menu_mapa ul li.red a{
-    color:red;
-}
-div#top_mapa div.menu_mapa ul li.blue a{
-    color:blue;
-}
-div#top_mapa div.menu_mapa ul li.green a{
-    color:green
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 
@@ -126,27 +578,10 @@ div#top_mapa div.menu_mapa ul li.green:hover div.tr{
     transform: translateY(-20px);
     z-index: 1;
 }
-
-div#top_mapa div.menu_mapa ul li.gold a {
-    color: #ab0fb5;
-}
-
 div#top_mapa div.menu_mapa ul li a i{
     font-size:25px;
     margin-right:10px;
     color: #3b372b;
-}
-div#top_mapa div.menu_mapa ul li.red a i{
-    color:red;
-}
-div#top_mapa div.menu_mapa ul li.green a i{
-    color:green;
-}
-div#top_mapa div.menu_mapa ul li.blue a i{
-    color:blue;
-}
-div#top_mapa div.menu_mapa ul li.gold a i{
-    color: #ab0fb5;
 }
 
 
@@ -170,16 +605,19 @@ div.login_mapa div.user_menu.active{
     border-radius: 20px 0 20px 20px;
     z-index: 1;
 }
-div.login_mapa div.user_menu.active ul{
+
+div.login_mapa div.user_menu.active ul {
     padding: 5px 10px 0;
 }
-div.login_mapa div.user_menu.active ul li{
+
+div.login_mapa div.user_menu.active ul li {
     border-bottom: 1px solid white;
     list-style: none;
-    height:33px;
+    height: 33px;
     line-height: 33px;
 }
-div.login_mapa div.user_menu.active ul li a{
+
+div.login_mapa div.user_menu.active ul li a {
     color: whitesmoke;
     text-decoration: none;
     display: block;
@@ -187,23 +625,28 @@ div.login_mapa div.user_menu.active ul li a{
     letter-spacing: 1.2px;
     padding-left: 10px;
 }
-div.login_mapa button.user_menu i{
-    font-size: 28px;
+
+div.login_mapa button.user_menu i {
+    font-size: 20px;
     color: #235171;
 }
-div.login_mapa button.user_menu i.fa-angle-down{
-    font-size: 18px;
+
+div.login_mapa button.user_menu i.fa-angle-down {
+    font-size: 14px;
     color: #112636;
     margin: 5px;
 
-}div.login_mapa button.user_menu i.fa-angle-down.active{
-    transform:rotate(180deg);
 }
 
-div.login_mapa button.user_menu{
+div.login_mapa button.user_menu i.fa-angle-down.active {
+    transform: rotate(180deg);
+}
+
+div.login_mapa button.user_menu {
     margin-left: 100px;
 }
-div.login_mapa button.user_menu span{
+
+div.login_mapa button.user_menu span {
     margin-left: 5px;
     color: black;
     font-size: 17px;
@@ -246,47 +689,23 @@ div.login_mapa button.register a{
     line-height:45px;
 }
 
-div#filter_mapa{
-    display:flex;
-    height:7vh;
-    line-height:8vh;
-    justify-content: left;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-    border-bottom: 1px solid rgba(0,0,0,0.4);
-}
-div#filter_mapa div:nth-of-type(1){
-    padding-left: 280px;
-    margin-right: 230px;
-    width: 200px;
-}
-div#filter_mapa div{
-    width:120px;
-}
-div#filter_mapa select.location{
-    padding:5px 10px;
-    border: 0.5px solid #cbcdcc;
-    border-radius:15px;
-}
-
-div#filter_mapa i{
-    margin:12px 0 0 2px;
-    font-size:23px;
-}
-div.search_mapa{
-    height:30px;
-    line-height:0;
-}
-
 div.search_mapa button{
-    margin-top:20px;
-    height:32px;
-    background-color:orange;
-    border:0 solid white;
-    color:white;
-    padding:10px 14px;
-    border-radius:15px;
-    font-weight:bold;
-    letter-spacing:1.5px;
+    font-family: FontAwesome, sans-serif;
+    font-size: 17px;
+    letter-spacing: 1.4px;
+    background: linear-gradient(to right, #00a20d, #24d236);
+    color: white;
+    height: 35px;
+    width: 198px;
+    margin:0 auto;
+    font-weight: bold;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top:0.5px solid black;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    box-shadow: 1.3px 1.7px 0 black;
 }
 
 /*Renderowanie mapy*/
@@ -319,7 +738,7 @@ div.footer a{
 }
 
     div.search_mapa button {
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     div#filter_mapa select.location {
@@ -343,9 +762,23 @@ div.footer a{
 }
 
 @media only screen and (max-width: 1698px) {
+    div#news {
+        padding: 50px 200px;
+    }
 
-    div#top_mapa div.menu_mapa div.tr {
-        transform: translateY(-450px);
+    div#news section ul li {
+        width: 380px;
+        height: 240px;
+        margin-right: 10px;
+    }
+
+    div#news section ul li div {
+        margin-right: 5px;
+    }
+
+    div#news section#big ul li {
+        width: 570px;
+        height: 350px;
     }
 
     div#filter_mapa div:nth-of-type(1) {
@@ -372,7 +805,7 @@ div.footer a{
     }
 
     div#top_mapa div.menu_mapa {
-        width: 65%;
+        width: 30%;
     }
 
     #top_mapa div.logo_mapa {
@@ -388,29 +821,26 @@ div.footer a{
 }
 
 @media only screen and (max-width: 1280px) {
+    div#newsletter-wrap div#newsletter {
+        left: 25%;
+    }
 
     div#top_mapa div.menu_mapa {
         width: 60%;
     }
-     div.login_mapa {
+
+    div.login_mapa {
         margin-left: 15px;
         margin-right: 15px;
     }
-     div#top_mapa div.menu_mapa div.tr{
-    width: 200px;
-    color: #2e6993;
-    position: relative;
-    transform: translateY(-460px);
-    z-index: 9;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
+
 }
-}
+
 @media only screen and (max-width: 1071px) {
-    div#top div.menu div.tr ul li a {
-        display: block;
-        font-size: 16px;
-        letter-spacing: 2px;
+    div#newsletter-wrap div#newsletter {
+        left: 20%;
     }
+
 
     div#top_mapa div.menu_mapa ul li a {
         font-size: 14px;
@@ -456,134 +886,164 @@ div.footer a{
     }
 
 }
+
 @media only screen and (max-width: 866px) {
-    #top_mapa div.logo_mapa{
-    margin:18px 10px 18px 25px;
-    height:6.5vh;
-    width: 80px;
-}
-    div#filter_mapa div:nth-of-type(1){
-    padding-left: 40px;
-}
-      div#filter_mapa div.search_mapa{
-          margin-right: 10px;
-      }
-}
-@media only screen and (max-width: 844px) {
-    #top_mapa{
-        width:100vw;
-    }
-        div#top_mapa div.menu_mapa ul {
-        padding-left: 5px;
-    }
-      div#top_mapa div.menu_mapa {
-        width: 58%;
-    }
-    div#top_mapa div.menu_mapa ul li a{
-    font-size:11px;
-}
-}
-@media only screen and (max-width: 768px) {
-       div#top_mapa div.menu_mapa {
-        width: 52%;
-    }
-        div#top_mapa div.menu_mapa ul li a{
-    width:30px;
-}
-    div#top_mapa div.menu_mapa div.tr.active {
-        height:180px;
+    div#newsletter-wrap div#newsletter {
+        left: 10%;
     }
 
-div#top_mapa div.menu_mapa div.tr ul{
-    height: 100%;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    padding: 8px 0;
+    #top_mapa div.logo_mapa {
+        margin: 18px 10px 18px 25px;
+        height: 6.5vh;
+        width: 80px;
+    }
+
+    div#filter_mapa div:nth-of-type(1) {
+        padding-left: 40px;
+    }
+
+    div#filter_mapa div.search_mapa {
+        margin-right: 10px;
+    }
 }
-div#top_mapa div.menu_mapa div.tr ul li{
-    height: 30px;
-   width: 300px;
-    line-height: 2px;
-    padding: 8px 0;
+
+@media only screen and (max-width: 844px) {
+    #top_mapa {
+        width: 100vw;
+    }
+
+    div#top_mapa div.menu_mapa ul {
+        padding-left: 5px;
+    }
+
+    div#top_mapa div.menu_mapa {
+        width: 58%;
+    }
+
+    div#top_mapa div.menu_mapa ul li a {
+        font-size: 11px;
+    }
 }
-div#top_mapa div.menu_mapa div.tr ul li:hover{
-     background-color: #f8f8f8;
+
+@media only screen and (max-width: 768px) {
+    div#newsletter-wrap div#newsletter {
+        left: 5%;
+    }
+
+    div#top_mapa div.menu_mapa {
+        width: 52%;
+    }
+
+    div#top_mapa div.menu_mapa ul li a {
+        width: 30px;
+    }
+
+    div#top_mapa div.menu_mapa div.tr.active {
+        height: 180px;
+    }
+
+
 }
-div#top_mapa div.menu_mapa div.tr ul li a{
-    font-size: 13px;
-    letter-spacing: 1.6px;
-    line-height: 10px;
-    width: 200px;
-}
-div#top_mapa div.menu_mapa ul li.green:hover div.tr{
-    transform: translate(-80px,-120px);
-    z-index: 1;
-}
-}
+
 @media only screen and (max-width: 666px) {
-      div#top_mapa div.menu_mapa {
+    div#newsletter-wrap div#newsletter {
+        width: 550px;
+        left: 5%;
+    }
+
+    div#top_mapa div.menu_mapa {
         width: 45%;
     }
-    div#filter_mapa div:nth-of-type(1){
-    margin-right: 30px;
+
+    div#filter_mapa div:nth-of-type(1) {
+        margin-right: 30px;
+    }
 }
-}
+
 @media only screen and (max-width: 578px) {
-      div#top_mapa div.menu_mapa {
+    div#newsletter-wrap div#newsletter {
+        width: 480px;
+        left: 5%;
+    }
+
+    div#top_mapa div.menu_mapa {
         width: 35%;
     }
-     div.login_mapa button {
+
+    div.login_mapa button {
         width: 90px;
         height: 33px;
 
     }
-     div.login_mapa button a{
-         font-size: 10px;
-     }
+
+    div.login_mapa button a {
+        font-size: 10px;
+    }
+
     div.login_mapa button.register {
         width: 90px;
         margin-top: 5px;
         transform: translateY(10px);
     }
-       div.login_mapa button.register a {
+
+    div.login_mapa button.register a {
         line-height: 33px;
     }
-        div#filter_mapa div i{
-         font-size: 16px;
-     }
+
+    div#filter_mapa div i {
+        font-size: 16px;
+    }
 }
+
 @media only screen and (max-width: 506px) {
-    #top_mapa div.logo_mapa{
-    margin:22px 5px 5px 9px;
-    height:5.5vh;
-    width: 60px;
-}
-     div.login_mapa {
+    div#newsletter-wrap div#newsletter {
+        width: 410px;
+        left: 5%;
+    }
+
+    div#newsletter-wrap div#newsletter form input#email {
+        width: 150px;
+    }
+
+    div#newsletter-wrap div#newsletter form input[type='submit'] {
+        width: 110px;
+    }
+
+    #top_mapa div.logo_mapa {
+        margin: 22px 5px 5px 9px;
+        height: 5.5vh;
+        width: 60px;
+    }
+
+    div.login_mapa {
         margin-left: 5px;
         margin-right: 5px;
     }
-     div#filter_mapa{
-    display:flex;
-    height:7vh;
-    line-height:8vh;
-    justify-content: left;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-    border-bottom: 1px solid rgba(0,0,0,0.4);
-}
-     div.login_mapa div.user_menu.active{
-    right: 10px;
-    z-index: 1;
-         width:240px;
-}
-     div#filter_mapa div i{
-         font-size: 14px;
-     }
-div#filter_mapa div:nth-of-type(1){
-    padding-left: 10px;
-    margin-right: 10px;
-    width: 100px;
-}
+
+    div#filter_mapa {
+        display: flex;
+        height: 7vh;
+        line-height: 8vh;
+        justify-content: left;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    }
+
+    div.login_mapa div.user_menu.active {
+        right: 10px;
+        z-index: 1;
+        width: 240px;
+    }
+
+    div#filter_mapa div i {
+        font-size: 14px;
+    }
+
+    div#filter_mapa div:nth-of-type(1) {
+        padding-left: 10px;
+        margin-right: 10px;
+        width: 100px;
+    }
 
     div#filter_mapa div:nth-of-type(1) select {
         font-size: 11px;
@@ -594,6 +1054,13 @@ div#filter_mapa div:nth-of-type(1){
         margin-top: 15px;
         padding: 0 8px;
         font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    div#newsletter-wrap div#newsletter {
+        width: 350px;
+        left: 5%;
     }
 }
 
@@ -634,8 +1101,22 @@ div#filter_mapa div:nth-of-type(1){
          transform: translateY(0);
          height: 38px;
      }
-       div.login_mapa.mini button a{
-           line-height: 38px;
-       }
 
+    div.login_mapa.mini button a {
+        line-height: 38px;
+    }
+
+}
+
+@media only screen and (max-width: 370px) {
+    div#newsletter-wrap div#newsletter {
+        width: 330px;
+        left: 5%;
+    }
+}
+
+@media only screen and (max-width: 348px) {
+    div#newsletter-wrap div#newsletter {
+        left: 0;
+    }
 }

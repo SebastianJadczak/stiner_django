@@ -49,31 +49,46 @@ div.point_list_interest_point{
 
 
 div.point{
-    width:250px;
-    height:300px;
+    width: 250px;
+    height: 300px;
     margin: 20px 20px 5px 0;
     display: flex;
     flex-direction: column;
     background-color: #fff;
     border: 0.5px solid #868686;
     box-shadow: 0 0 1px #d2d2d2;
-}
-div.point div.image_point{
-    width:100%;
-    height: 200px;
-}
-div.point div.image_point img{
-    width:100%;
-    height:100%;
+    border-radius: 10px;
+     overflow: hidden;
 }
 
-div.point div.point_descriptions{
-    width:100%;
-    height:100%;
+div.point div.image_point {
+    width: 250px;
+    height: 190px;
+
+}
+
+div.point div.image_point img {
+    width: 250px;
+    height: 190px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: center;
+    transform: scale(1);
+    transition: all 0.3s;
+}
+
+div.point div.image_point:hover img {
+    transform: scale(1.1);
+}
+
+div.point div.point_descriptions {
+    width: 100%;
+    height: 100%;
     justify-content: end;
 }
+
 div.point div.point_descriptions p {
-    width:95%;
+    width: 100%;
     height: 30%;
     font-size: 17px;
     text-align: center;
@@ -112,8 +127,9 @@ div.search_points{
 
 div.point_list_interest_point{
  justify-content: space-between;
-    width: 90vw;
+    width: 89vw;
     margin: 0 auto;
+    transform: translateX(-50px);
 }
 
 }

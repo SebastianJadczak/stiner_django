@@ -4,23 +4,27 @@ div.wrap-trails_add{
     flex-direction: column;
 }
 div.wrap-trails_add div.title-trail_add{
-     background-color: #fff;
-    border: 0.5px solid #868686;
-    box-shadow: 0 0 1px #d2d2d2;
-    padding: 5px 20px 10px;
-    margin: 5px 5px 30px;
-    border-radius: 20px;
-    letter-spacing: 1.3px;
-    font-family: Arial, sans-serif;
+    position: relative;
+    top: -20px;
+    left: -134px;
+    width: 99vw;
+    height: 150px;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url(../img/trail.jpg);
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid grey;
+
 }
-div.wrap-trails_add div.title-trail_add h3{
+div.wrap-trails_add div.title-trail_add h3 {
     text-align: center;
-    color: #1a1a1a;
-    letter-spacing: 1.8px;
-}
-div.wrap-trails_add div.title-trail_add p{
-     color: #212121;
-    letter-spacing: 1.8px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 35px 0 0;
+    color: white;
+    -webkit-text-stroke: 0.6px black;
+    text-shadow: 0 0 3px black;
 }
 
 div.wrap-trails_add div.trail_add-center{
@@ -53,22 +57,34 @@ div.wrap-trails_add div.trail_add-center div.filter_trails div.filter{
     min-height: 60vh;
     font-size: 14px;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div{
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div {
     display: flex;
     flex-direction: column;
     border-bottom: 0.5px solid #a5a5a5;
     padding: 10px 10px;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city{
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.country {
+    height: 430px;
+}
+
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.region {
+    height: 200px;
+}
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city {
     height: 195px;
     overflow: hidden;
 }
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city p.city{
+
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.city p.city {
     background-color: white;
     width: 100%;
     position: relative;
     display: block;
-    height:25px;
+    height: 25px;
     top: -80px;
     margin: 10px 0 10px 0;
     padding:5px 0 10px 0;

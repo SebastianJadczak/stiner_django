@@ -1,18 +1,23 @@
 
 div.contact p#contact{
-    background-color: #0f0c6a;
-    color: whitesmoke;
-    margin: 4px 0 0 0;
-    height:60px;
-    line-height: 60px;
+    background-image: url('../img/polynesia.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    line-height: 150px;
     text-align: center;
-    font-size: 24px;
-    font-family:Verdana, Arial, sans-serif;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
     letter-spacing: 3px;
+    color: white;
+    -webkit-text-stroke: 0.6px black;
+    text-shadow: 0 0 3px black;
+    margin: 0;
 }
 div.contact div.person {
     width: 50vw;
-    margin: 80px auto 130px;
+    margin: 30px auto 130px;
 
 }
 
@@ -40,39 +45,42 @@ div.contact div.person div.person-text p {
 
 div.contact div.person div.person-info {
     display: flex;
+    justify-content: space-between;
+    padding: 0 130px;
 }
-div.contact div.person div.person-info div.image{
-    width:240px;
-    height:200px;
+div.contact div.person div.person-info div.image {
+    width: 200px;
+    height: 200px;
     margin-left: 20px;
-    margin-top: 80px;
+    margin-top: 20px;
 }
-div.contact div.person div.person-info div.image img{
-   height: auto;
-    max-width: 100%;
-    display:block;
+
+div.contact div.person div.person-info div.image img {
+    width: 100%;
+    display: block;
     border-radius: 130px;
 }
 
-div.contact div.person div.person-info div.info{
+div.contact div.person div.person-info div.info {
     margin-left: 50px;
 }
 
-div.contact div.person div.person-info div.info div.motto p:nth-of-type(1){
-    font-weight: bold;
-    font-family: sans-serif;
-    letter-spacing: 1.5px;
-    font-size: 19px;
-}
-div.contact div.person div.person-info div.info div.motto p:nth-of-type(2){
-     font-family: sans-serif;
-    letter-spacing: 1.1px;
+div.motto b {
+    font-size: 14px;
 }
 
-div.contact div.person div.person-info div.info div.data{
-    margin-top:40px;
+div.motto p {
+    font-family: sans-serif;
+    letter-spacing: 1.2px;
+    font-size: 18px;
 }
-div.contact div.person div.person-info div.info div.data h3{
+
+
+div.contact div.person div.person-info div.info div.data {
+    margin-top: 40px;
+}
+
+div.contact div.person div.person-info div.info div.data h3 {
     font-family: sans-serif;
     letter-spacing: 1.2px;
     font-size: 18px;
@@ -87,10 +95,10 @@ div.contact div.person div.person-info div.info div.data p i{
     margin-right: 15px;
 }
 
-div.contact div#data_company{
-    background-color: #0e0b53;
+div.contact div#data_company {
+    background: url("../img/underwater.jpg");
     color: whitesmoke;
-    height:40vh;
+    height: 40vh;
 }
 
 div.contact div#data_company i {
@@ -101,10 +109,12 @@ div.contact div#data_company i {
     color: #44a3e2;
 }
 
-div.contact div#data_company p{
+div.contact div#data_company p {
     text-align: center;
     font-size: 22px;
     letter-spacing: 2px;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
 }
 div.contact div#data_company div.data{
     margin-top:70px;
