@@ -762,7 +762,24 @@ div.footer a{
 }
 
 @media only screen and (max-width: 1698px) {
+    div#news {
+        padding: 50px 200px;
+    }
 
+    div#news section ul li {
+        width: 380px;
+        height: 240px;
+        margin-right: 10px;
+    }
+
+    div#news section ul li div {
+        margin-right: 5px;
+    }
+
+    div#news section#big ul li {
+        width: 570px;
+        height: 350px;
+    }
 
     div#filter_mapa div:nth-of-type(1) {
         padding-left: 80px;
