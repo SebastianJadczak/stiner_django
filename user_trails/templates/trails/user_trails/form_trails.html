@@ -57,6 +57,7 @@
  <p id="error"> {{zmienna}}</p>
         {% if search == 'true' %}
             {% if list_point|length > 0  %}
+                <p id="add"></p>
                 <div class="przyklad">
                              {% for element in list_point %}
                                 <div class="point_add {{element.name}}">
@@ -79,8 +80,8 @@
                 {% endif %}
                   </div>
         {% else %}
+            <p id="add"></p>
             <div class="przyklad">
-
                          {% for element in list %}
                             <div class="point_add {{element.name}}">
                                 <div class="image_point">
@@ -95,9 +96,6 @@
                                 </div>
                             </div>
                         {% endfor %}
-
-
-                           <p id="error"> {{zmienna}}</p>
               </div>
         {% endif %}
 
@@ -118,20 +116,18 @@ $.ajaxSetup({
     }
 });
 var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
-let errorText = document.getElementById('error')
+let add = document.getElementById('add')
 let len_trail = document.getElementById('len_trail')
 function test(id){
     $.post({
             url: "test/",
             success: function(){
-                        len_trail.innerText = parseInt(len_trail.innerText)  +1
-                        alert('Brawo udało się dodać element');
+                add.innerText = "Poprawnie dodano Punkt."
+                len_trail.innerText = parseInt(len_trail.innerText)  +1
                       },
             dataType: 'json',
             error: function (response, error) {
-                console.log(response.responseText)
-                {#errorText.innerText = response.responseText#}
-                alert('Ten element już został dodany');
+                add.innerText = "Tekt Punkt już został dodany."
             },
             data: {'id': id},
             headers: {
