@@ -194,7 +194,7 @@ div.account div.column-right div.first-statistic{
     min-height: 200px;
     background-color: white;
     background-image: url("../img/baner.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     box-shadow: 0 0 3px rgba(0,0,0,0.4);
@@ -299,9 +299,9 @@ div#form_edit_info {
     box-shadow: 0 0 15px #acacac;
     position: fixed;
     left: 30%;
-    top: 0;
+    top: 60px;
     width: 600px;
-    height: 90%;
+    height: 686px;
 }
 div#edit_info_user.active form{
     padding: 0 20px;

@@ -132,33 +132,6 @@ div#social-right div#youtube {
     font-size: 30px;
 }
 
-#top_mapa {
-    border-bottom: 1px solid #cbcdcc;
-    height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    width: 86vw;
-    margin: 0 auto;
-}
-
-#top_mapa div.logo_mapa {
-    margin: 18px 18px 18px 35px;
-    height: 7vh;
-    width: 110px;
-}
-
-#top_mapa div.logo_mapa img {
-    width: 100%;
-    height: 100%;
-}
-
-div#top div.menu_mapa {
-    /*margin-top: 15px;*/
-    display: block;
-    width: 30%;
-    margin: 10px auto 0;
-}
-
 div#welcome {
     background-image: url("../img/front-image.jpg");
     background-position: center;
@@ -527,67 +500,9 @@ div#mobile-app div.right img {
 
 /*------------------------------------*/
 
-div#top div.menu ul li.top_menu:hover a {
-    color: #0085e9;
-}
-
-div#top div.menu ul li.top_menu:hover a i {
-    color: #0085e9;
-}
-
-div#top div.menu ul li.green a {
-    display: flex;
-    flex-direction: row;
-}
-
-div#top div.menu ul li.green a i {
-    margin-top: 35px;
-    margin-left: 5px;
-    font-size: 15px;
-    color: #919191;
-    height: 40px;
-}
-
-div#top_mapa div.menu_mapa ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    height: 10vh;
-}
-
-div#top_mapa div.menu_mapa ul li {
-    width: 10%;
-    line-height: 12vh;
-}
-
-div#top_mapa div.menu_mapa ul li a {
-    color: #323232;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    display: flex;
-    font-weight: bold;
-    flex-direction: row;
-    text-align: center;
-    letter-spacing: 1.5px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
 
 
-div#top_mapa div.menu_mapa ul li.green:hover div.tr{
-    transform: translateY(-20px);
-    z-index: 1;
-}
-div#top_mapa div.menu_mapa ul li a i{
-    font-size:25px;
-    margin-right:10px;
-    color: #3b372b;
-}
 
-
-div.login_mapa {
-    margin-left: 130px;
-}
 
 div#login_rwd {
     display: none;
@@ -808,10 +723,6 @@ div.footer a{
         width: 30%;
     }
 
-    #top_mapa div.logo_mapa {
-        margin: 18px 8px 18px 25px;
-        width: 110px;
-    }
 
 }
 @media only screen and (max-width: 1480px) {

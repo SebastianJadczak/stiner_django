@@ -1,31 +1,22 @@
 /* Ustawienia ogólne */
-body {
+html, body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 #top {
-    border-bottom: 1px solid #cbcdcc;
-    height: 10vh;
+    height: 80px;
     display: flex;
     justify-content: space-between;
-    box-shadow:  0 -1px 2px #d2d2d2;
+    margin: 0 auto;
+    padding-left: 100px;
 }
 
-#top div.logo {
-    margin: 18px 10px 10px 33px;
-    height: 7vh;
-    width: 110px;
-}
-
-#top div.logo img {
-    width: 100%;
-    height: 100%;
-}
 
 div#top div.menu {
-    width: 65%;
-    height: 10vh;
+    width: 30%;
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -33,60 +24,101 @@ div#top div.menu ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    height: 10vh;
+    height: 6vh;
 }
 
 div#top div.menu ul li {
-    width: 20%;
     line-height: 9vh;
+    width: 10%
 }
 
 div#top div.menu ul li a {
-    display: block;
-    text-align: center;
-    color: black;
+    color: #323232;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    display: flex;
     font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 2px;
+    flex-direction: row;
+    text-align: center;
+    letter-spacing: 1.5px;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
-div#top div.menu ul li.red a {
-    color: red;
+div#top div.menu ul li {
+    color: #323232;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    display: flex;
+    font-weight: bold;
+    flex-direction: row;
+    text-align: center;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
-div#top div.menu ul li.blue a {
-    color: blue;
+div#top div.menu ul li.green:hover {
+    color: #0085e9;
 }
 
-div#top div.menu ul li.green a {
-    color: green
+div#top div.menu ul li.green:hover div#menu-detail-trail {
+    top: 70px
 }
 
-div#top div.menu ul li.gold a {
-    color: #ab0fb5;
+div#top div.menu ul li.green div#menu-detail-trail.active {
+    top: 70px;
+    z-index: 100;
 }
 
-div#top div.menu ul li a i {
-    font-size: 25px;
-    margin-right: 10px;
-    color: #3b372b;
+div.menu_mapa ul li.green div#menu-detail-trail, div.menu ul li.green div#menu-detail-trail {
+    display: flex;
+    position: absolute;
+    height: 60px;
+    width: 600px;
+    top: -100px;
+    left: 30vw;
+    background-color: #fff;
+    z-index: 99;
+    justify-content: space-between;
 }
 
-div#top div.menu ul li.red a i {
-    color: red;
+div#top div.menu div#menu-detail-trail ul {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
 }
 
-div#top div.menu ul li.green a i {
-    color: green;
+div#top div.menu div#menu-detail-trail ul li {
+    width: 100%;
+    margin: 0;
 }
 
-div#top div.menu ul li.blue a i {
-    color: blue;
+div#top div.menu div#menu-detail-trail ul li:hover a {
+    color: #0085e9;
 }
 
-div#top div.menu ul li.gold a i {
-    color: #ab0fb5;
+div#top div.menu div#menu-detail-trail ul li a {
+    color: black;
+    font-size: 12px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+}
+
+div#top div.menu ul li.green:hover i {
+    color: #0085e9;
+}
+
+div#top div.menu ul li.green i {
+    margin-top: 37px;
+    margin-left: 5px;
+    font-size: 15px;
+    color: #919191;
 }
 
 div.login {
@@ -99,7 +131,7 @@ div.login button {
     height: 48px;
     border-radius: 25px;
     border-style: none;
-    background-color: #009900;
+    background-color: #fff;
 }
 
 div.login button a {
@@ -110,13 +142,120 @@ div.login button a {
     font-size: 15px;
 }
 
-div#filter {
+div.regulations {
+    height: 30px;
+    padding-left: 200px;
+    border-bottom: 1px solid #d9d9d9;
+    background-color: rgba(255, 122, 0, 0.05);
     display: flex;
-    height: 7vh;
-    line-height: 6.5vh;
-    margin: 0 20px;
     justify-content: space-between;
-    width: 81vw;
+    flex-direction: row;
+}
+
+div.regulations div.right {
+    display: flex;
+}
+
+div.logo {
+    height: 70px;
+    width: 160px;
+}
+
+div.logo img {
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+div#select-country-city {
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #4c4c4c;
+    box-shadow: 0 0 3px #b8b8b8;
+    position: absolute;
+    top: 110px;
+    left: calc(50vw - 150px);
+    width: 300px;
+    height: 50px;
+    z-index: 99;
+
+}
+
+div#select-country-city label {
+    width: 120px;
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 12px;
+}
+
+div#select-country-city section {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div#select-country-city select {
+    background-color: #fff;
+    border: none;
+    width: 100px;
+    margin-right: 22px;
+}
+
+div#filter {
+    position: absolute;
+    width: 200px;
+    top: 180px;
+    left: 20px;
+    min-height: 400px;
+    border-radius: 10px;
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #4c4c4c;
+    box-shadow: 0 0 3px #b8b8b8;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 99;
+    padding: 0;
+}
+div#filter div#search-filter{
+    border-bottom: 0.5px solid grey;
+    display: flex;
+    flex-direction: row;
+}
+div#filter div#search-filter i{
+  padding:15px 0 0 15px;
+}
+div#filter div#search-filter p {
+    margin: 0;
+    padding: 12px 0 10px 10px;
+}
+div#filter div.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+div#filter div.icons div {
+    display: flex;
+    flex-direction: row;
+    height: 26px;
+}
+div#filter p {
+    padding: 10px 0 10px 20px;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #373737;
+}
+div#filter div.icons div p {
+    margin: 2px 0 0 7px;
+    padding: 0;
+    font-size: 13px;
+    color: #4f4f4f;
 }
 
 div#filter select.location {
@@ -125,10 +264,8 @@ div#filter select.location {
     border-radius: 15px
 }
 
-div#filter i {
-    margin: 12px 0 0 0;
-    font-size: 23px;
-}
+
+
 
 div.search {
     height: 30px;
@@ -150,224 +287,8 @@ div.search button {
 /*Content*/
 
 div.content {
+    border-top: 1px solid #a9a9a9;
     margin-top: 2px;
-}
+        background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
 
-div#top div.menu div.tr {
-    width: 100%;
-    height: 180px;
-    background-color: #fdfdfd;
-    color: #2e6993;
-    transform: translateY(-400px);
-    z-index: -1;
-    border: 0.5px solid #bababa;
-    box-shadow: 0 0 1px #d2d2d2;
-}
-
-div#top div.menu div.tr.active {
-    height: 240px;
-    position: relative;
-}
-
-div#top div.menu div.tr ul {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-}
-
-div#top div.menu div.tr ul li {
-    height: 100%;
-    width: 100%;
-    line-height: 0;
-    padding: 12px 0;
-}
-
-div#top div.menu div.tr ul li:hover {
-    background-color: #f8f8f8;
-}
-
-div#top div.menu div.tr ul li a {
-    display: block;
-    font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    line-height: 35px;
-    margin: 0;
-    padding: 0;
-    color: #2e6993;
-}
-
-div#top div.menu ul li.green:hover div.tr {
-    transform: translateY(-3px);
-    z-index: 1;
-}
-@media only screen and (max-width: 1400px) {
-    div#top div.menu ul li.green:hover div.tr {
-        width: 190px;
-    }
-
-    div#top div.menu div.tr.active ul {
-        width: 200px;
-    }
-
-    div#top div.menu div.tr.active ul li {
-        width: 200px;
-    }
-}
-@media only screen and (max-width: 1220px) {
-
-    div#top div.menu {
-        width: 60%;
-    }
-     div.login{
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-
-}
-@media only screen and (max-width: 1084px){
-    div#top div.menu ul{
-        padding-left: 5px;
-    }
-    div#top div.menu ul li a i{
-       font-size: 22px;
-        margin-right: 3px;
-    }
-     div#top div.menu ul li a{
-         font-size: 15px;
-     }
-         div#top div.menu div.tr.active ul {
-        width: 200px;
-    }
-
-    div#top div.menu div.tr.active ul li {
-        width: 200px;
-    }
-
-    div#top div.menu div.tr.active ul li a {
-        width: 200px;
-        height: 34px;
-    }
-}
-@media only screen and (max-width: 895px){
-    #top div.logo{
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    div#top div.menu ul li a{
-         font-size: 14px;
-     }
-    div#top div.menu ul li a i{
-       font-size: 18px;
-
-    }
-}
-@media only screen and (max-width: 822px){
-       div#top div.menu {
-        width: 45%;
-    }
-     div#top div.menu ul li a{
-         font-size: 11px;
-     }
-     #top div.logo {
-    width: 90px;
-}
-}
-@media only screen and (max-width: 760px){
-
-     div#top div.menu ul li a {
-        font-size: 0;
-        display: block;
-        width: 45px;
-        height: 45px;
-    }
-    div.login_mapa{
-        transform: translateY(-10px);
-    }
-}
-
-
-@media only screen and (max-width: 680px) {
-
-    div#top div.menu ul li.green:hover div.active {
-        transform: translateY(12px) translateX(-40px);
-    }
-
-    div#top div.menu ul li {
-        display: block;
-        width: 45px;
-        height: 45px;
-    }
-    div#top div.menu {
-        width: 35%;
-    }
-
-}
-@media only screen and (max-width: 518px){
-    div#top div.menu {
-        width: 35%;
-    }
-    div#top div.menu ul li {
-        display: block;
-        width: 35px;
-        height: 35px;
-    }
-    div#top div.menu ul li a i{
-       font-size: 16px;
-        margin-right: 3px;
-    }
-  div#top div.menu div.tr.active ul {
-        width: 200px;
-    }
-
-    div#top div.menu div.tr.active ul li {
-        width: 200px;
-    }
-
-    div#top div.menu div.tr.active ul li a {
-        width: 200px;
-        height: 34px;
-    }
-}
-
-@media only screen and (max-width: 413px) {
-    #top {
-        width: 99vw;
-        justify-content: normal;
-    }
-
-    div#top div.menu {
-        width: 50%;
-        margin: 0 0 0 20px;
-    }
-
-    div.login {
-        display: none;
-    }
-
-    div#top div.menu ul li a {
-        height: 70px;
-    }
-
-    #top div.logo {
-        margin: 22px 5px 5px 9px;
-        height: 5.5vh;
-        width: 60px;
-    }
-
-    div#top div.menu ul li a i {
-        font-size: 20px;
-        margin-right: 5px;
-    }
-
-    div#login_rwd {
-        display: block;
-        line-height: 100px;
-    }
-
-    div#login_rwd i {
-        font-size: 30px;
-    }
 }

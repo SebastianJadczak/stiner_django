@@ -1,8 +1,9 @@
 div.product_detail{
-    min-height:75vh;
+    min-height: 75vh;
     margin-top: 5px;
     background-color: #f5f5f5;
     padding-top: 30px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
 }
 div.product_detail div.advertisement{
     width:65vw;

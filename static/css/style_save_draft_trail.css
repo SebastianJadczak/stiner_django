@@ -1,0 +1,66 @@
+div#save_draft_trail {
+    width: 35vw;
+    height: 60vh;
+    margin: 50px auto;
+    border: 1px solid grey;
+    box-shadow: 0 0 5px #9f9f9f;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+div#save_draft_trail h3 {
+    font-family: 'Bangers', cursive;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1.6px;
+    font-size: 26px;
+    font-weight: normal;
+}
+
+div#save_draft_trail form {
+    width: 90%;
+    margin: 0 auto;
+}
+
+div#save_draft_trail form div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+div#save_draft_trail form div label {
+    width: 160px;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    letter-spacing: 1.2px;
+    margin: 0 0 10px 0;
+}
+
+div#save_draft_trail form div input {
+    width: 98%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+div#save_draft_trail form div textarea {
+    width: 98%;
+}
+
+div#save_draft_trail form div#submit_trail{
+    width: 100%;
+    margin-top: 30px;
+}
+div#save_draft_trail form div#submit_trail input[type='submit']{
+    position: relative;
+    right: calc(150px - 100% );
+    width:140px;
+    height: 35px;
+    background-color: #008d00;
+    color: white;
+    letter-spacing: 1.4px;
+    border:none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+}

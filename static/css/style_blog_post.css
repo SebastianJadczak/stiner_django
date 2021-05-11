@@ -1,0 +1,17 @@
+div#title_post{
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+div#title_post div#title h3{
+    margin:0;
+    padding-top: 35px;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: white;
+    -webkit-text-stroke: 0.6px black;
+    text-shadow: 0 0 3px black;
+}

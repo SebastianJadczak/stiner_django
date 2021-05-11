@@ -22,10 +22,10 @@
 </head>
 <body>
 <div id="top">
-    <div class="logo"><a href="../"><img src="{% static "img/logo.png" %}" alt="logo"></a></div>
+   <div class="logo"><a href="{% url 'map' %}"><img src="{% static "img/logo.png" %}" alt="logo"></a></div>
     <div class="menu">
         <ul>
-            <li class="red top_menu"><a href="/">Mapa</a></li>
+            <li class="red top_menu"><a href="{% url 'mapFullScreen' %}"></i>Mapa</a></li>
             <li class="green top_menu" onclick="menuDetailTrail()">Trasy <i class="fas fa-angle-down"></i>
                 <div id="menu-detail-trail">
                     <ul>
@@ -41,25 +41,23 @@
                     </ul>
                 </div>
             </li>
-            <li class="blue top_menu"><a href="{% url "blog:list_posts" %}">Blog</a></li>
-            <li class="black top_menu"><a href="{% url "list_products" %}">Sklep</a></li>
+            <li class="blue top_menu"><a href="{% url 'blog:list_posts' %}">Blog</a></li>
+            <li class="black top_menu"><a href="{%url "list_products"%}">Sklep</a></li>
             <li class="gold top_menu"><a href="{% url 'contact:contact_detail' %}">Kontakt</a></li>
         </ul>
     </div>
     <div class="login_mapa">
-        {% if user.is_authenticated %}
-            <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i>
-                <span>{{ user.username }}</span><i
-                        class="fas fa-angle-down"></i></button>
-            <div class="user_menu">
-                <ul>
-                    <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
-                    <li><a href="{% url 'account:user_settings' %}">Ustawienia</a></li>
+       {% if user.is_authenticated %}
+        <button class="user_menu"><i class="fas fa-user"></i> <span>{{user.username}}</span><i class="fas fa-angle-down"></i></button>
+        <div class="user_menu">
+            <ul>
+                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
+                <li><a href="{% url 'account:user_settings' %}">Ustawienia</a></li>
 
-                {% if perms.blog.view_post %}
-                <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
+                {% if perms.blog.view_post%}
+                    <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
                 {% elif perms.shop.view_product %}
-                <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
+                    <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
                 {% endif %}
 
                 <li><a href="{% url 'logout' %}">Wyloguj</a></li>
