@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+from django.http import JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.decorators.http import require_POST
 from django.views.generic import ListView, DetailView
 from rest_framework import generics
 
@@ -42,6 +44,9 @@ class SearchUserTrails(UserTrailsListView):
     """Klasa odpowiedzialna za wyświetlenie wyników wyszukania tras użytkownika."""
     template_name = 'trails/user_trails/search_user_trails.html'
     model = UserTrail
+
+
+
 
 class UserTrailFormAdd(ListView, MethodTrail):
     """Klasa odpowiedzialna za wyświetlenie obiektów które możesz dodasz do szkicu trasy"""
@@ -95,8 +100,25 @@ class UserTrailFormAdd(ListView, MethodTrail):
         list_point = list_point.exclude(name__exact='', country__exact='', region__exact=region,
                                         location__exact=city).filter(
             name__contains=name, country__contains=country, region__contains=region, location__contains=city)
+        return render(request, self.template_name, {'list_point': list_point, 'city': self.get_city(), 'type': self.get_type_trail(),
+                       'region': self.get_region_trail(), 'country': self.get_country_trail(),
+                       'user_trail': self.user_trail, 'search':'true',
+                       'zmienna': self.zmienna})
 
-        return render(request, self.template_name, {'list_point': list_point})
+class AddToTrail(UserTrailFormAdd):
+    elements = Point.objects.all()
+    def post(self, request):
+        if request.POST:
+            result = self.checkQueryinUserDraftTrail(request.POST.get('id'))
+            if result == False:
+                response = JsonResponse({"message": "Taki element już istnieje"})
+                response.status_code = 403
+                return response
+            else:
+                self.user_trail.append(self.list.filter(name=request.POST.get('id')))
+                response = JsonResponse({"message": "Dodano element"})
+                response.status_code = 200
+                return response
 
 class UserTrailDraft(UserTrailFormAdd):
     """Klasa odpowiedzialna za Szkic trasy zwiedzania"""

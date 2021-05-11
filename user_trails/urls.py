@@ -17,5 +17,6 @@ urlpatterns = [
     path('search_user_trails/', views.SearchUserTrails.as_view(), name='search_user_trails'),
     path('user_trail_detail/<int:pk>', views.UserTrailDetail.as_view(), name='user_trail_detail'),
     path('api/<int:pk>', views.TrailUserApiFilterListView.as_view()),
+    path('test/', views.AddToTrail.as_view(), name='test')
 ]
 

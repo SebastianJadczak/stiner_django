@@ -8,11 +8,11 @@
 
     {% if len_user %}
     <div class="opacity" style=" height: 50px; width: 50px; position: absolute; right: 160px; top:320px" >
-        <a href="{% url "user_trails:user_trail_draft"%}"><img src="{% static 'img/map_draft.png' %}" alt="" style="height: 50px; width: 50px;"> <span style="position: absolute; right: 21px; top:15px; font-size: 24px; font-weight: bold; color: #565656">{{len_user}}</span></a>
+        <a href="{% url "user_trails:user_trail_draft"%}"><img src="{% static 'img/map_draft.png' %}" alt="" style="height: 50px; width: 50px;"> <span id="len_trail" style="position: absolute; right: 21px; top:15px; font-size: 24px; font-weight: bold; color: #565656">{{ len_user }}</span></a>
     </div>
         {%else%}
     <div class="opacity" style=" height: 50px; width: 50px; position: absolute; right: 140px;top:320px" >
-        <img src="{% static 'img/map_draft.png' %}" alt="" style="height: 50px; width: 50px;position: relative; right: 20px">
+        <a href="{% url "user_trails:user_trail_draft"%}"><img src="{% static 'img/map_draft.png' %}" alt="" style="height: 50px; width: 50px;"> <span id="len_trail" style="position: absolute; right: 21px; top:15px; font-size: 24px; font-weight: bold; color: #565656">{{ len_user }}</span></a>
           </div>
         {% endif %}
 
@@ -54,35 +54,94 @@
                 </div>
             </div>
 
+ <p id="error"> {{zmienna}}</p>
+        {% if search == 'true' %}
+            {% if list_point|length > 0  %}
+                <div class="przyklad">
+                             {% for element in list_point %}
+                                <div class="point_add {{element.name}}">
+                                    <div class="image_point">
+                                        <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
+                                        </div>
+                                    <div class="point_description">
+                                        <p>{{element.name}}</p>
+                                        <div class="buttons">
+                                        <a href="{% url "user_trails:detail_point" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
+                                                 <button class="add" onclick="test('{{ element.name }}')">Dodaj</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+            {% else %}
+                <div class="empty">
+                   <p id="empty">Brak wyników wyszukiwania</p>
+                </div>
+                {% endif %}
+                  </div>
+        {% else %}
+            <div class="przyklad">
 
-
-              <div class="przyklad">
-                    <div class="points_add_to_user_trail" id="points_add_to_user_trail">
                          {% for element in list %}
                             <div class="point_add {{element.name}}">
-                                <div class="image">
+                                <div class="image_point">
                                     <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
                                     </div>
-                                <p>{{element.name}}</p>
-                                <div class="buttons">
-                                <a href="{% url "user_trails:detail_point" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
-                                <form action="" method="GET" >{% csrf_token %}<input hidden name="add_point" type="text" value='{{element.name}}'><button class="add" >Dodaj</button></form>
+                                <div class="point_description">
+                                    <p>{{element.name}}</p>
+                                    <div class="buttons">
+                                    <a href="{% url "user_trails:detail_point" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
+                                             <button class="add" onclick="test('{{ element.name }}')">Dodaj</button>
+                                    </div>
                                 </div>
                             </div>
                         {% endfor %}
-                    </div>
-                    <button id="left"><</button>
-                    <button id="right">></button>
 
-                            {{zmienna}}
-                        </div>
-                    </div>
 
-            {{ list_point }}
+                           <p id="error"> {{zmienna}}</p>
+              </div>
+        {% endif %}
+
+        </div>
         </div>
     </div>
-
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+let errorText = document.getElementById('error')
+let len_trail = document.getElementById('len_trail')
+function test(id){
+    $.post({
+            url: "test/",
+            success: function(){
+                        len_trail.innerText = parseInt(len_trail.innerText)  +1
+                        alert('Brawo udało się dodać element');
+                      },
+            dataType: 'json',
+            error: function (response, error) {
+                console.log(response.responseText)
+                {#errorText.innerText = response.responseText#}
+                alert('Ten element już został dodany');
+            },
+            data: {'id': id},
+            headers: {
+                'csrfmiddlewaretoken': csrftoken
+
+            }
+
+        })
+
+}
 
         //    Obsługa przycisku Pokaż więcej
 let more = document.querySelector('p.city');
