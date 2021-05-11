@@ -167,7 +167,18 @@ div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_mo
     letter-spacing: 1.6px;
     text-decoration: none;
 }
-
+div.all_trails button#left, div.all_trails button#right {
+    position: relative;
+    color: white;
+    background-color: red;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    top: -190px;
+}
 div.all_trails button#left, div.all_trails button#right {
     top: -190px;
 }
