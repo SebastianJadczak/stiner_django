@@ -123,10 +123,15 @@ div.point_add p{
 div.point_add div.image_point {
     width: 250px;
     height: 190px;
+    overflow: hidden;
 }
 div.point_add div.image_point img{
     width:100%;
     height:100%;
+    transition: .3s;
+}
+div.point_add div.image_point img:hover{
+    transform: scale(1.1);
 }
 div.empty{
     width: 70vw;

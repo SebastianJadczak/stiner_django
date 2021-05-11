@@ -67,7 +67,7 @@
                                     <div class="point_description">
                                         <p>{{element.name}}</p>
                                         <div class="buttons">
-                                        <a href="{% url "user_trails:detail_point" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
+                                        <a href="{% url "trails:point_detail" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
                                                  <button class="add" onclick="test('{{ element.name }}')">Dodaj</button>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@
                                 <div class="point_description">
                                     <p>{{element.name}}</p>
                                     <div class="buttons">
-                                    <a href="{% url "user_trails:detail_point" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
+                                    <a href="{% url "trails:point_detail" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
                                              <button class="add" onclick="test('{{ element.name }}')">Dodaj</button>
                                     </div>
                                 </div>
