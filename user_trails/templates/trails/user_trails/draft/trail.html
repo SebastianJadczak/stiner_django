@@ -12,7 +12,7 @@
                     <div class="draft-point_image"><img src="{{a.image.url}}" alt=""></div>
                     <div class="text" >
                         <p>{{a.name}}</p>
-                        <p >{{a.descriptions}}</p>
+                        <p >{{a.descriptions|slice:":200"}}...</p>
                     </div>
                     <div class="button_delete">
                         <form action="" method="get" class="delete">
