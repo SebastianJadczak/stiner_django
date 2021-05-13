@@ -682,8 +682,8 @@ div.footer a{
     }
 
     div#news section ul li {
-        width: 380px;
-        height: 240px;
+        width: 330px;
+        height: 220px;
         margin-right: 10px;
     }
 
@@ -692,8 +692,8 @@ div.footer a{
     }
 
     div#news section#big ul li {
-        width: 570px;
-        height: 350px;
+        width: 510px;
+        height: 320px;
     }
 
     div#filter_mapa div:nth-of-type(1) {
