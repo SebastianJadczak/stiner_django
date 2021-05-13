@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, TemplateView, DetailView
 from rest_framework import generics
 
@@ -7,7 +7,7 @@ from shop.models import Category
 from trails.api.serializers import PointTrailsSerializer
 from trails.models import Trail, Rate_trail
 from user_trails.models import UserTrail
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template.loader import get_template
 from xhtml2pdf import pisa
 
@@ -17,6 +17,7 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
 from django.contrib.staticfiles import finders
+from django.urls import reverse
 
 
 def link_callback(uri, rel):
@@ -176,6 +177,16 @@ class PointDetailView(DetailView):
         return render(request, self.template_name,
                       {'opinion': opinion, 'point': point[0], 'point_id': point_id, 'gallery': gallery})
 
+    def point_heart(request, pk):
+        point = get_object_or_404(Point, id=request.POST.get('heart_id'))
+        point.heart.add(request.user)
+        return HttpResponseRedirect(reverse('trails:point_detail', args=[str(pk)]))
+
+    def point_done(request, pk):
+        point = get_object_or_404(Point, id=request.POST.get('point_done'))
+        point.done.add(request.user)
+        return HttpResponseRedirect(reverse('trails:point_detail', args=[str(pk)]))
+
 class MethodTrail():
     def get_top_rate_trails(self):
         top_rate_trails = Trail.objects.order_by('average_grade').reverse()
@@ -310,6 +321,17 @@ class TrailDetailView(DetailView):
             elif recension == "":
                 print('Brak recenzji')
         return redirect('../../trail_detail/' + trail_id)
+
+    def trail_done(request, pk):
+        trail = get_object_or_404(Trail, id=request.POST.get('done_trail'))
+        trail.done.add(request.user)
+        return HttpResponseRedirect(reverse('trails:trail_detail', args=[str(pk)]))
+
+    def trail_heart(request, pk):
+        trail = get_object_or_404(Trail, id=request.POST.get('heart_trail'))
+        trail.heart.add(request.user)
+        return HttpResponseRedirect(reverse('trails:trail_detail', args=[str(pk)]))
+
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)

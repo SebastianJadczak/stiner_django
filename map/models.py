@@ -72,6 +72,9 @@ class Point(models.Model):
     sound = models.ManyToManyField(User, blank=True, related_name='sound_point')
     gallery = models.ManyToManyField(Galery)
 
+    def total_hearts(self):
+        return self.heart.all().count()
+
     def __str__(self):
         return self.name
 
