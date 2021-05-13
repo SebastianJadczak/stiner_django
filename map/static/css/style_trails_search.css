@@ -7,7 +7,6 @@ button#button-filter_search {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    position: fixed;
     top: 644px;
     left: 69.5px;
 }

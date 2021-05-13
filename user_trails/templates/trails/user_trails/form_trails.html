@@ -192,17 +192,5 @@ more.addEventListener('click', function () {
         }
     });
 
-const button = document.getElementById('button-filter_your-trail')
-
-    window.addEventListener(
-        'scroll',
-        () => {
-            if (window.scrollY >= 175) {
-            button.style.position = 'static'
-        }else {
-            button.style.position = 'fixed'
-        }
-    }
-    )
 </script>
 {% endblock %}

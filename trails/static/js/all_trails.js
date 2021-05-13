@@ -75,17 +75,3 @@ more.addEventListener('click', function () {
     div_city.classList.toggle("active");
 
 })
-//Obsługa skrolowania
-
-const button = document.getElementById('button-filter')
-
-window.addEventListener(
-    'scroll',
-    () => {
-        if (window.scrollY >= 800) {
-            button.style.position = 'static'
-        } else {
-            button.style.position = 'fixed'
-        }
-    }
-)
