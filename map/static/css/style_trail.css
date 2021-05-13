@@ -95,8 +95,8 @@ div.przyklad{
 }
 
 div.point_add {
-    width: 250px;
-    height: 300px;
+    width: 290px;
+    height: 360px;
     margin: 20px 20px 5px 0;
     display: flex;
     flex-direction: column;
@@ -113,15 +113,48 @@ div.point_add:hover{
 
 div.point_add p{
     text-align: center;
-    height: 40px;
+    height: 32px;
     font-weight: bold;
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
     margin-top: 10px;
     font-size: 14px;
 }
-
+div.point_add div.average_grade, div.country, div.city{
+    height: 20px;
+    margin-bottom: 5px;
+}
+div.country p, div.city p {
+    margin:0;
+    font-size: 13px;
+    font-weight: normal;
+}
+div.country p span, div.city p span{
+    font-weight: bold;
+    margin-right: 5px;
+}
+div.average_grade{
+    box-sizing: border-box;
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+    padding: 0 7px 0 12px;
+}
+div.point_add div.average_grade p {
+    display: inline-block;
+    width: 90px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    margin: 0;
+}
+div.point_add div.average_grade p span{
+    font-weight: bold;
+    padding-right: 3px;
+}
 div.point_add div.image_point {
-    width: 250px;
+    width: 290px;
     height: 190px;
     overflow: hidden;
 }

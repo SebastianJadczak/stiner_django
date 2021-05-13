@@ -56,47 +56,71 @@
 
  <p id="error"> {{zmienna}}</p>
         {% if search == 'true' %}
-            {% if list_point|length > 0  %}
+            {% if list_point|length > 0 %}
                 <p id="add"></p>
                 <div class="przyklad">
-                             {% for element in list_point %}
-                                <div class="point_add {{element.name}}">
-                                    <div class="image_point">
-                                        <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
-                                        </div>
-                                    <div class="point_description">
-                                        <p>{{element.name}}</p>
-                                        <div class="buttons">
-                                        <a href="{% url "trails:point_detail" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
-                                                 <button class="add" onclick="test('{{ element.name }}')">Dodaj</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
+                {% for element in list_point %}
+                    <div class="point_add {{ element.name }}">
+                        <div class="image_point">
+                            <img src=" {{ element.image.url }}" alt="image_point" class="point_add_image">
+                        </div>
+                        <div class="point_description">
+                            <p>{{ element.name }}</p>
+                            <div class="country">
+                                <p><span>Kraj:</span> {{ element.country }}</p>
+                            </div>
+                            <div class="city">
+                                <p><span>Miasto:</span> {{ element.location }}</p>
+                            </div>
+                            <div class="average_grade">
+                                <p><span>Ocena:</span>{{ element.average_grade }}</p>
+                                <p><span>Zwiedziło:</span> {{ element.done|length }}</p>
+                            </div>
+                            <div class="buttons">
+                                <a href="{% url "trails:point_detail" element.id %}"><input type="submit"
+                                                                                            value="Szczegóły"
+                                                                                            class="add_to_user_trail"></a>
+                                <button class="add" onclick="test('{{ element.name }}')">Dodaj</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             {% else %}
                 <div class="empty">
-                   <p id="empty">Brak wyników wyszukiwania</p>
+                    <p id="empty">Brak wyników wyszukiwania</p>
                 </div>
                 {% endif %}
                   </div>
         {% else %}
             <p id="add"></p>
             <div class="przyklad">
-                         {% for element in list %}
-                            <div class="point_add {{element.name}}">
-                                <div class="image_point">
-                                    <img src=" {{element.image.url}}" alt="image_point" class="point_add_image">
-                                    </div>
-                                <div class="point_description">
-                                    <p>{{element.name}}</p>
-                                    <div class="buttons">
-                                    <a href="{% url "trails:point_detail" element.id %}"><input type="submit" value="Szczegóły" class="add_to_user_trail"></a>
-                                             <button class="add" onclick="test('{{ element.name }}')">Dodaj</button>
-                                    </div>
-                                </div>
+                {% for element in list %}
+                    <div class="point_add {{ element.name }}">
+                        <div class="image_point">
+                            <img src=" {{ element.image.url }}" alt="image_point" class="point_add_image">
+                        </div>
+                        <div class="point_description">
+                            <p>{{ element.name }}</p>
+                            <div class="country">
+                                <p><span>Kraj:</span> {{ element.country }}</p>
                             </div>
-                        {% endfor %}
-              </div>
+                            <div class="city">
+                                <p><span>Miasto:</span> {{ element.location }}</p>
+                            </div>
+                            <div class="average_grade">
+                                <p><span>Ocena:</span>{{ element.average_grade }}</p>
+                                <p><span>Zwiedziło:</span> {{ element.done|length }}</p>
+                            </div>
+                            <div class="buttons">
+                                <a href="{% url "trails:point_detail" element.id %}"><input type="submit"
+                                                                                            value="Szczegóły"
+                                                                                            class="add_to_user_trail"></a>
+                                <button class="add" onclick="test('{{ element.name }}')">Dodaj</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         {% endif %}
 
         </div>
