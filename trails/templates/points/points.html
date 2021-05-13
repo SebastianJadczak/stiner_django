@@ -28,22 +28,37 @@
                 <option value="Parki">Parki</option>
                 <option value="Biblioteka">Biblioteka</option>
             </select>
-                </label>
+            </label>
             <button class="search">Szukaj</button>
             {% csrf_token %}
         </form>
     </div>
 
-<div class="point_list_interest_point">
-    {% for element in list %}
-        <div class="point">
-            <div class="image_point"><img src="{{element.image.url}}" alt=""></div>
-            <div class="point_descriptions">
-                <p>{{element.name}}</p>
-
-                 <div class="point_descriptions_more"><button class="more"><a href="{% url 'trails:point_detail' element.id %}">Więcej</a></button></div>
+    <div class="point_list_interest_point">
+        {% for element in list %}
+            <div class="point_add {{ element.name }}">
+                <div class="image_point">
+                    <img src=" {{ element.image.url }}" alt="image_point" class="point_add_image">
+                </div>
+                <div class="point_description">
+                    <p>{{ element.name }}</p>
+                    <div class="country">
+                        <p><span>Kraj:</span> {{ element.country }}</p>
+                    </div>
+                    <div class="city">
+                        <p><span>Miasto:</span> {{ element.location }}</p>
+                    </div>
+                    <div class="average_grade">
+                        <p><span>Ocena:</span>{{ element.average_grade }}</p>
+                        <p><span>Zwiedziło:</span> {{ element.done|length }}</p>
+                    </div>
+                    <div class="buttons-interesting">
+                        <a href="{% url "trails:point_detail" element.id %}"><input type="submit"
+                                                                                    value="Szczegóły"
+                                                                                    class="add_to_user_trail"></a>
+                    </div>
+                </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
     </div>
 {% endblock %}

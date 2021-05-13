@@ -46,78 +46,25 @@ div.point_list_interest_point{
     display: flex;
     flex-wrap: wrap;
 }
-
-
-div.point{
-    width: 250px;
-    height: 300px;
-    margin: 20px 20px 5px 0;
+div.buttons-interesting{
     display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border: 0.5px solid #868686;
-    box-shadow: 0 0 1px #d2d2d2;
-    border-radius: 10px;
-     overflow: hidden;
+    justify-content: flex-end;
 }
-
-div.point div.image_point {
-    width: 250px;
-    height: 190px;
-
-}
-
-div.point div.image_point img {
-    width: 250px;
-    height: 190px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    position: center;
-    transform: scale(1);
-    transition: all 0.3s;
-}
-
-div.point div.image_point:hover img {
-    transform: scale(1.1);
-}
-
-div.point div.point_descriptions {
-    width: 100%;
-    height: 100%;
-    justify-content: end;
-}
-
-div.point div.point_descriptions p {
-    width: 100%;
-    height: 30%;
-    font-size: 17px;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 1.1px;
-    font-family: Arial, sans-serif;
-    text-shadow: 1px 0 1px #d7d7d7;
-}
-
-div.point div.point_descriptions div.point_descriptions_more{
-    text-align: right;
-}
-
-button.more{
-    width:80px;
-    height:30px;
-    background-color: #ff6a1e;
-    border-radius: 15px;
-    border: 0.5px solid #868686;
-    box-shadow: 0 0 1px #d2d2d2;
+div.buttons-interesting a{
     margin-right: 10px;
 }
-button.more a{
-    color:white;
-    text-decoration: none;
-    letter-spacing: 1.5px;
+div.buttons-interesting a input{
+   background-color: #e06100;
+    border: 1px solid black;
+    color: whitesmoke;
+    width: 85px;
+    height: 35px;
+    border-radius: 10px;
     font-weight: bold;
+    margin-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
 }
-
 
 @media only screen and (max-width: 1680px) {
 

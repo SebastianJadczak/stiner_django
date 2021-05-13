@@ -129,6 +129,15 @@ class PointDetailView(DetailView):
     template_name = 'points/point/point_detail.html'
     model = Point
 
+    def calculation_mean(self, point_id):
+        rate_point = list(Opinion_about_Point.objects.filter(point=Point.objects.get(id=point_id)))
+        average_grade = 0
+        for element in rate_point:
+            average_grade = average_grade + element.rating
+        average_grade = average_grade / len(rate_point)
+        point = Point.objects.get(id=point_id)
+        point.average_grade = average_grade
+        point.save()
 
     def post(self, request, *args, **kwargs):
         nick = request.user
@@ -140,6 +149,7 @@ class PointDetailView(DetailView):
                                                opinion=recension,
                                                rating=star,
                                                point=Point.objects.get(id=point_id))
+            self.calculation_mean(point_id)
         else:
             if nick == "":
                 print('brak nicku')
