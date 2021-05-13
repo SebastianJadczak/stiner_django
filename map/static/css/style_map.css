@@ -1228,8 +1228,8 @@ div.footer a{
 
 @media only screen and (max-width: 578px) {
 #top {
-        padding-left: 0px;
-        height: 70px;
+        padding-left: 30px;
+        height: 60px;
 }
 div#top div.menu_mapa {
     width: 80%;
@@ -1322,10 +1322,91 @@ div#news section ul li div#news-post-big h3 {
 }
 
 @media only screen and (max-width: 506px) {
-    div#newsletter-wrap div#newsletter {
-        width: 410px;
-        left: 5%;
-    }
+#top {
+    padding-left: 0px;
+}
+div.logo img, div.logo_mapa img {
+    margin-top: 10px;
+    margin-left: 2px;
+    width: 60px;
+    height: 40px;
+}
+div#top div.menu_mapa ul li {
+    line-height: 60px;
+    margin-left: -30px;
+    font-size: 12px;
+}
+div#top div.menu ul li a {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+}
+div.login_mapa {
+    margin-left: -10px;
+    margin-right: -20px;
+}
+div.login_mapa {
+    margin: -10px;
+}
+div.login_mapa button.user_menu {
+    height: 5px;
+    margin-left: 50px;
+    width: 145px;
+}
+div#welcome div.text {
+    top: -25px;
+    left: 30px;
+}
+div#welcome {
+    height: 65vh;
+}
+div#welcome div.search-holiday {
+    right: 246px;
+    top: 145px;
+    width: 200px;
+    height: 270px;
+}
+div#welcome div.search-holiday div#popular {
+    margin-top: 0px;
+    margin-left: -25px;
+}
+div#news h2 {
+    font-size: 25px;
+    margin-left: 25px;
+}
+div#news p {
+    width: 85vw;
+    font-size: 15px;
+}
+div#news section ul li {
+    width: 360px;
+    height: 220px;
+    margin: auto;
+}
+div#news section ul li div h3 {
+    line-height: 290px;
+    font-size: 30px;
+    padding: 45px 0 0 1px;
+}
+div#news section#big ul li {
+    width: 420px;
+    height: 250px;
+}
+div#news section ul li div#news-post-big h3 {
+    padding-top: 170px;
+}
+#map_1de6ef4f1218487da9d6da057bb8f454 {
+    height: 350px;
+}
+div#info-about-trail {
+    width: 90vw;
+}
+div#info-about-trail section div p:nth-of-type(1) {
+    font-size: 40px;
+}
+div#mobile-app {
+    padding: 35px 5vw;
+}
+
 
     div#newsletter-wrap div#newsletter form input#email {
         width: 150px;
@@ -1341,10 +1422,6 @@ div#news section ul li div#news-post-big h3 {
         width: 60px;
     }
 
-    div.login_mapa {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
 
     div#filter_mapa {
         display: flex;
@@ -1384,6 +1461,20 @@ div#news section ul li div#news-post-big h3 {
 }
 
 @media only screen and (max-width: 430px) {
+div.login_mapa {
+    margin: -15px;
+}
+div#welcome div.text {
+    top: -28px;
+    left: 5px;
+}
+div#welcome div.search-holiday {
+    right: 275px;
+}
+div#welcome div.search-holiday div#popular {
+    margin-top: -10px;
+    margin-left: -27px;
+}
     div#newsletter-wrap div#newsletter {
         width: 350px;
         left: 5%;
