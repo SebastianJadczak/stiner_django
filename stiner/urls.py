@@ -16,8 +16,6 @@ urlpatterns = [
     path('map/', include('map.urls')),
     path('account/', include('account.urls')),
     path('blog/', include('blog.urls'), name='blog'),
-    path('shop/', ProductContentListView.as_view(), name='list_products'),
-    path('shop/', include('shop.urls'), name='shop'),
     path('orders/', include('orders.urls', namespace='orders')),
     path('trails/', include('trails.urls', namespace='trails')),
     path('yours_trails/', UserTrailsListView.as_view(), name='yours_trails'),
