@@ -1,7 +1,21 @@
 {% extends "base1.html" %}
 {% load static %}
 {% block content %}
-
-
+     <div class="content">
+     <div class="title-management">
+        <h3>Management Trasy</h3>
+     </div>
+        <div class="news_manage trails_manage">
+            {% for trails in object_list %}
+                <div class="news trails">
+                    <div class="image"><img src='{{ trails.image.url }}' alt=""></div>
+                    <div class="title"><p>{{ trails.title }}</p></div>
+                    <div class="body"><p>{{ trails.descriptions|truncatechars:300 }}</p></div>
+                    <button id="delete"><a href="">Usuń</a></button>
+                    <button id="edit"><a href="">Edytuj</a></button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}

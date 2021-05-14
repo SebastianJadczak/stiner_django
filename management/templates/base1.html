@@ -35,7 +35,7 @@
             {% if perms.map.view_point %}
                 <li class="management-points">Zabytki <i class="fas fa-chevron-down"></i>
                     <div class="management-points">
-                        <a href="">Wszystkie Zabytki</a>
+                        <a href="{% url 'management:manage_points_list' %}">Wszystkie Zabytki</a>
                         <a href="">Dodaj Zabytek</a>
                     </div>
                 </li>

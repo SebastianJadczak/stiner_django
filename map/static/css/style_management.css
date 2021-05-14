@@ -113,6 +113,29 @@ div.management-login button a {
     letter-spacing: 1.3px;
 }
 
+/* Title-management. */
+div.title-management {
+    width: 100vw;
+    height: 150px;
+    background-position: center;
+    background-size: contain;
+    border-bottom: 1px solid grey;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../img/trail.jpg");
+}
+
+div.title-management h3 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 35px 0 0;
+    color: white;
+    -webkit-text-stroke: 0.6px black;
+    text-shadow: 0 0 3px black;
+}
+
 /* Management Post. */
 div.posts_manage {
     width: 70vw;
@@ -192,4 +215,56 @@ div.form_post form p label {
     width: 100px;
 }
 
-/**/
+/* News. */
+div.news_manage {
+    width: 75vw;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.news_manage div.news {
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.news_manage div.news div.title p {
+    font-weight: bold;
+}
+
+div.news_manage div.news div.image {
+    width: 400px;
+    height: 200px;
+}
+
+div.news_manage div.news div.image img {
+    width: 100%;
+    height: 100%;
+}
+
+div.news_manage div.news button {
+    width: 80px;
+    height: 36px;
+    border: none;
+    border-radius: 10px;
+}
+
+div.news_manage div.news button a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.3px;
+}
+
+div.news_manage div.news button#delete {
+    background-color: #bf0000;
+}
+
+div.news_manage div.news button#edit {
+    background-color: #009f00;
+    margin-left: 10px;
+}
