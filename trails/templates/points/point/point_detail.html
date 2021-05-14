@@ -135,7 +135,7 @@
             <button id="audio"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</button>
         {% else %}
             <button id="pdf" ><a href="{% url 'login' %}"> <i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</a></button>
-            <button id="audio"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</button>
+            <button id="audio"><a href="{% url 'login' %}"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</a></button>
         {% endif %}
         </div>
 </div>
