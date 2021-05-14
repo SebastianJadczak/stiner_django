@@ -73,9 +73,6 @@ class Point(models.Model):
     average_grade = models.DecimalField(max_digits=2, decimal_places=1)
     gallery = models.ManyToManyField(Galery)
 
-    def total_hearts(self):
-        return self.heart.all().count()
-
     def __str__(self):
         return self.name
 

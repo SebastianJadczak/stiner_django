@@ -61,6 +61,8 @@ def point_render_pdf_view(request, pk):
     html = template.render(context)
     pisa_status = pisa.CreatePDF(
         html, dest=response, link_callback=link_callback)
+    point = get_object_or_404(Point, id=pk)
+    point.downloads.add(request.user)
     if pisa_status.err:
         return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response

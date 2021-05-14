@@ -128,8 +128,10 @@
                 <div id="title">
                     <h3>{{ trail.name }}:</h3>
                     <div id="buttons_trail">
-                        <form action="{% url 'trails:trail_done' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="done_trail" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
-                        <form action="{% url 'trails:trail_heart' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="heart_trail"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
+                        {% if user.is_authenticated %}
+                            <form action="{% url 'trails:trail_done' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="done_trail" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
+                            <form action="{% url 'trails:trail_heart' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="heart_trail"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="icons">
