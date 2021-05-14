@@ -122,6 +122,8 @@ class PointsListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PointsListView, self).get_context_data(**kwargs)
+        context['city'] = Coordinates.objects.all()
+        context['type'] = Point.TYPE_POINT
         context['list'] = Point.objects.all()
         return context
 

@@ -27,18 +27,17 @@
 <div class="management">
     <div class="management_menu">
         <span>Panel moderatora: </span>
+        {% if perms.blog.view_post%}
         <p class="management_menu_section">Blog:</p>
         <button><a href="{%url 'management:blog_manage_post_list' %}">Wszystkie wpisy</a></button>
         <button><a href="{%url 'management:blog_post_create' %}">Dodaj wpis</a></button>
-        <button><a href="{%url 'management:blog_posts_edit' %}">Edytuj wpis</a></button>
-        <button><a href="{%url 'management:blog_posts_delete' %}">Usuń wpis</a></button>
 
+        {% endif %}
+        {% if perms.shop.view_product %}
          <p class="management_menu_section">Sklep:</p>
         <button><a href="{%url 'management:shop_manage_product_list' %}">Wszystkie produkty</a></button>
         <button><a href="{%url 'management:shop_product_create' %}">Dodaj produkt</a></button>
-        <button><a href="{%url 'management:shop_products_edit' %}">Edytuj produkt</a></button>
-        <button><a href="{%url 'management:shop_products_delete' %}">Usuń produkt</a></button>
-
+        {% endif %}
         <button class="exit_manage"><a href="{%url 'map' %}">Wyjście z panelu</a></button>
     </div>
 

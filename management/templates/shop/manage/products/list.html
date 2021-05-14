@@ -9,6 +9,8 @@
         {% for product in object_list %}
             <div class="product_manage">
                 <p>{{product.name}}</p>
+            <button><a href="{% url 'management:shop_product_edit' product.id %}">Edytuj</a></button>
+            <button><a href="{% url 'management:shop_product_delete' product.id %}">Usuń</a></button>
             </div>
         {% endfor %}
     </div>

@@ -13,20 +13,18 @@
             <label class="location"> Lokalizacja:
             <select name="location_points" id="location">
                 <option value=""></option>
-                <option value="Warszawa">Warszawa</option>
-                <option value="Kraków">Kraków</option>
-                <option value="Wrocław">Wrocław</option>
-                <option value="Poznań">Poznań</option>
+                {% for  val in city %}
+                    <option value="val.name">{{ val.name }}</option>
+                {% endfor %}
             </select>
                 </label>
 
             <label class="type"> Rodzaj:
             <select name="point_type" id="type">
                 <option value=""></option>
-                <option value="Zamki">Zamki</option>
-                <option value="Kościoły">Kościoły</option>
-                <option value="Parki">Parki</option>
-                <option value="Biblioteka">Biblioteka</option>
+                  {% for key, val in type %}
+                    <option value="val">{{ val }}</option>
+                {% endfor %}
             </select>
             </label>
             <button class="search">Szukaj</button>
