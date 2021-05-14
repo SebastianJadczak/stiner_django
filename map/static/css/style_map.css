@@ -680,7 +680,9 @@ div.footer a{
     div#news {
         padding: 50px 200px;
     }
-
+    div#news section ul{
+        padding-left: 0;
+    }
     div#news section ul li {
         width: 330px;
         height: 220px;
