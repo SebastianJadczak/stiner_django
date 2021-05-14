@@ -128,13 +128,13 @@
                 <div id="title">
                     <h3>{{ trail.name }}:</h3>
                     <div id="buttons_trail">
-                        <form action="" method="post"><input type="text" value="done" hidden name="name" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
-                        <form action="" method="post"><input type="text" value="favorites" hidden name="name" />{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
+                        <form action="{% url 'trails:trail_done' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="done_trail" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
+                        <form action="{% url 'trails:trail_heart' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="heart_trail"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
                     </div>
                 </div>
                 <div class="icons">
-                    <p id="done"><i class="fas fa-eye"></i> <span>{{ trail.done|length }} x wykonano</span>|</p>
-                    <p id="heart"><i class="fas fa-heart"></i><span>{{ trail.heart|length }} x W ulubionych</span>|</p>
+                    <p id="done"><i class="fas fa-eye"></i> <span>{{ trail.done.all.count }} x wykonano</span>|</p>
+                    <p id="heart"><i class="fas fa-heart"></i><span>{{ trail.heart.all.count }} x W ulubionych</span>|</p>
                     <p id="downloads"><i class="fas fa-file-download"></i><span>{{ trail.downloads|length }} x pobrań</span>|</p>
                     <p id="sound"><i class="fas fa-volume-up"></i><span>{{ trail.sound|length }} x odsłuchań</span>|</p>
                 </div>

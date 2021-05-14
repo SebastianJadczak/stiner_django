@@ -7,4 +7,3 @@ admin.site.register(Coordinates)
 admin.site.register(NewsletterEmail)
 admin.site.register(Galery)
 admin.site.register(News)
-
