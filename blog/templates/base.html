@@ -50,7 +50,7 @@
         <button class="user_menu"><i class="fas fa-user"></i> <span>{{user.username}}</span><i class="fas fa-angle-down"></i></button>
         <div class="user_menu">
             <ul>
-                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
+{#                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>#}
                 <li><a href="{% url 'account:user_settings' %}">Ustawienia</a></li>
 
                 {% if perms.blog.view_post%}
