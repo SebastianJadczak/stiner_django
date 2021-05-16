@@ -49,8 +49,12 @@
         </ul>
     </div>
     <div class="login_mapa" >
+        {% if user.is_authenticated %}
+            <a href="" id="eye"><i class="far fa-eye"></i></a>
+            <a href="" id="heart"><i class="far fa-heart"></i></a>
+        {% endif %}
        {% if user.is_authenticated %}
-        <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i> <span>{{user.username}}</span><i class="fas fa-angle-down"></i></button>
+        <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i><i class="fas fa-angle-down"></i></button>
         <div class="user_menu">
             <ul>
 {#                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>#}

@@ -121,8 +121,6 @@ div#social-right div:nth-of-type(3) {
      line-height: 32px;
 }
 
-
-
 div#li {
     color: #0072ff;
 }
@@ -501,20 +499,30 @@ div#mobile-app div.right img {
 /*------------------------------------*/
 
 
-
-
-
 div#login_rwd {
     display: none;
 }
 
-div.login_mapa div.user_menu{
+div.login_mapa a i {
+    margin-left: 15px;
+    color: #757575;
+    font-size: 22px;
+}
+
+div.login_mapa a#eye:hover i {
+    color: #0b0950;
+}
+div.login_mapa a#heart:hover i {
+    color: #c30000;
+}
+div.login_mapa div.user_menu {
     display: none;
 }
-div.login_mapa div.user_menu.active{
+
+div.login_mapa div.user_menu.active {
     display: block;
     position: absolute;
-    right: 160px;
+    right: 70px;
     border: 1px solid #112938;
     background-color: #2e6993;
     border-radius: 20px 0 20px 20px;
@@ -646,10 +654,11 @@ div.footer a{
 }
 
 @media only screen and (max-width: 1680px) {
-
-    div.login_mapa button.user_menu{
-        margin-left: 60px;
-        width: 160px;
+    div.login_mapa button.user_menu {
+        margin-left: 10px;
+        margin-right: 20px;
+        width: 80px;
+        padding: 0;
     }
 
     div.search_mapa button {
@@ -665,7 +674,7 @@ div.footer a{
     }
 
     div.login_mapa button {
-        margin-top: 25px;
+        margin-top: 30px;
         width: 160px;
         height: 40px;
     }
