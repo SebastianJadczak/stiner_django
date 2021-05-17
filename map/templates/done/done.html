@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link rel="stylesheet" href="{% static "css/style_map.css" %}">
-    <link rel="stylesheet" href="{% static "css/style_favorite.css" %}">
+    <link rel="stylesheet" href="{% static "css/style_done.css" %}">
 </head>
 <body>
 
@@ -79,19 +79,40 @@
     </div>
     <div id="login_rwd"><i class="fas fa-sign-in-alt"></i></div>
 </div>
-<div id="favorite-top">
-    <h3>Ulubione</h3>
-    <div class="list_favorite">
-        <a href="{% url 'favorite' %}" id="all">Wszystkie</a>
-        <a href="{% url 'favorite_point' %}" id="point">Punkty</a>
-        <a href="{% url 'favorite_trail' %}" id="trail">Trasy</a>
-        <a href="{% url 'favorite_your_trail' %}" id="your_trail">Twoje trasy</a>
-    </div>
+<div id="done-top">
+    <h3>Wykonane</h3>
 </div>
 
-<div id="favorite-wrap">
-    {% block content %}
-    {% endblock %}
+<div id="done-wrap">
+    <div class="sort_menu">
+        <div class="sort">
+            <p>Sortuj według:</p>
+            <select name="" id="sort">
+                <option value="1">1</option>
+            </select>
+        </div>
+        <div class="filter">
+            <p>Filtruj według:</p>
+            <div class="filter-select">
+                <select name="" id="city">
+                    <option value="1">1</option>
+                </select>
+                <select name="" id="ocena">
+                    <option value="1">1</option>
+                </select>
+                <select name="" id="ocena">
+                    <option value="1">1</option>
+                </select>
+            </div>
+        </div>
+        <div class="search-done">
+            <p></p>
+            <form action="" method="post">
+                <input type="text" placeholder="Szukaj...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
 </div>
 
 <div id="social-right">

@@ -1,0 +1,40 @@
+{% extends 'favorite/favorite_base.html' %}
+{% load static %}
+{% block content %}
+    <div class="sort_menu">
+        <div class="sort">
+            <p>Sortuj według:</p>
+            <select name="" id="sort">
+                <option value="1">1</option>
+            </select>
+        </div>
+        <div class="filter">
+            <p>Filtruj według:</p>
+            <div class="filter-select">
+                <select name="" id="city">
+                    <option value="1">1</option>
+                </select>
+                <select name="" id="ocena">
+                    <option value="1">1</option>
+                </select>
+                <select name="" id="ocena">
+                    <option value="1">1</option>
+                </select>
+            </div>
+        </div>
+        <div class="search-favorite">
+            <p></p>
+            <form action="" method="post">
+                <input type="text" placeholder="Szukaj...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="favorite_your_trail">
+
+    </div>
+    <script>
+        let allElements = document.getElementById('your_trail')
+        allElements.classList.add('underline')
+    </script>
+{% endblock %}

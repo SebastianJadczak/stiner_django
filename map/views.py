@@ -123,3 +123,22 @@ class MapFullScreen(View):
 class FavoriteList(ListView):
     template_name = 'favorite/favorite.html'
     model = Trail
+
+
+class FavoritePoint(ListView):
+    template_name = 'favorite/favorite_point.html'
+    model = Point
+
+
+class FavoriteTrail(ListView):
+    template_name = 'favorite/favorite_trail.html'
+    model = Trail
+
+
+class FavoriteYourTrail(ListView):
+    template_name = 'favorite/favorite_your_trail.html'
+    model = UserTrail
+
+class DoneList(ListView):
+    template_name = 'done/done.html'
+    model = Trail
