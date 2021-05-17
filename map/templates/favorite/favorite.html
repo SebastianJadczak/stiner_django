@@ -1,171 +1,40 @@
+{% extends 'favorite/favorite_base.html' %}
 {% load static %}
-<!DOCTYPE html>
-
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-
-    <script>
-        L_NO_TOUCH = false;
-        L_DISABLE_3D = false;
-    </script>
-    <script data-ad-client="ca-pub-5722846627217105" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet"
-          href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
-    <style>html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }</style>
-    <style>#map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-    }
-
-    </style>
-
-
-    <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <style>
-        #map_1de6ef4f1218487da9d6da057bb8f454 {
-            z-index: 0;
-            margin: 2px auto;
-            width: 100.0%;
-            height: 90vh;
-            left: 0.0%;
-            top: 0.0%;
-            border-top: 1px solid #808080;
-            border-bottom: 1px solid #808080;
-        }
-
-        /* Obsługa scrolowania mapy tylko z ctrl + scroll*/
-        .map-scroll:before {
-            content: 'Use ctrl + scroll to zoom the map';
-            position: absolute;
-            top: 50%;
-            left: 35%;
-            z-index: 999;
-            font-size: 34px;
-        }
-
-        .map-scroll:after {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            content: '';
-            background: #00000061;
-            z-index: 999;
-        }
-    </style>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <link rel="stylesheet" href="{% static "css/style_map.css" %}">
-    <link rel="stylesheet" href="{% static "css/style_favorite.css" %}">
-</head>
-<body>
-
-
-<div id="top">
-    <div class="logo"><a href="{% url 'map' %}"><img src="{% static "img/logo.png" %}" alt="logo"></a></div>
-    <div class="menu menu_mapa">
-        <ul>
-            <li class="red top_menu"><a href="{% url 'mapFullScreen' %}"></i>Mapa</a></li>
-            <li class="green top_menu" onclick="menuDetailTrail()">Trasy <i class="fas fa-angle-down"></i>
-                <div id="menu-detail-trail">
-                    <ul>
-                        <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
-                        <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
-                        {% if user.is_authenticated %}
-                            <li><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
-                            <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
-                        {% else %}
-                            <li><a href="{% url 'login' %}">Twoje trasy</a></li>
-                            <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </li>
-            <li class="blue top_menu"><a href="{% url 'blog:list_posts' %}">Blog</a></li>
-            <li class="gold top_menu"><a href="{% url 'contact:contact_detail' %}">Kontakt</a></li>
-        </ul>
-    </div>
-
-    <div class="login_mapa">
-
-        {% if user.is_authenticated %}
-            <a href="" id="eye"><i class="far fa-eye"></i></a>
-            <a href="" id="heart"><i class="far fa-heart"></i></a>
-        {% endif %}
-
-        {% if user.is_authenticated %}
-            <button class="user_menu"><i class="fas fa-user"></i><i class="fas fa-angle-down"></i></button>
-            <div class="user_menu">
-                <ul>
-                    {#                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>#}
-                    <li><a href="{% url 'account:user_settings' %}">Ustawienia</a></li>
-
-                    {% if perms.blog.view_post %}
-                        <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
-                    {% elif perms.shop.view_product %}
-                        <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
-                    {% endif %}
-
-                    <li><a href="{% url 'logout' %}">Wyloguj</a></li>
-                </ul>
+{% block content %}
+    <div class="sort_menu">
+        <div class="sort">
+            <p>Sortuj według:</p>
+            <select name="" id="sort">
+                <option value="1">1</option>
+            </select>
+        </div>
+        <div class="filter">
+            <p>Filtruj według:</p>
+            <div class="filter-select">
+                <select name="" id="city">
+                    <option value="1">1</option>
+                </select>
+                <select name="" id="ocena">
+                    <option value="1">1</option>
+                </select>
+                <select name="" id="ocena">
+                    <option value="1">1</option>
+                </select>
             </div>
-        {% else %}
-            <button><a href="{% url 'login' %}">Zaloguj się</a></button>
-            <button class="register"><a href="{% url 'register' %}">Załóż konto</a></button>
-        {% endif %}
+        </div>
+        <div class="search-favorite">
+            <p></p>
+            <form action="" method="post">
+                <input type="text" placeholder="Szukaj...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
     </div>
-    <div id="login_rwd"><i class="fas fa-sign-in-alt"></i></div>
-</div>
-<div id="favorite-top">
-    <h3>Ulubione</h3>
-    <div class="list_favorite">
-        <a href="">Wszystkie</a>
-        <a href="">Punkty</a>
-        <a href="">Trasy</a>
-        <a href="">Twoje trasy</a>
+    <div class="favorite_all">
+
     </div>
-</div>
-
-<div id="favorite-wrap">
-
-</div>
-
-<div id="social-right">
-    <div id="fb"><a href="https://www.facebook.com/Stiner-100928478828163"><i class="fab fa-facebook-square"></i></a>
-    </div>
-    <div id="li"><a href="https://www.linkedin.com/company/stiner/"><i class="fab fa-linkedin"></i></a></div>
-    <div id="youtube"><i class="fab fa-youtube"></i></div>
-</div>
-<div class="footer">
-    <a href="https://www.linkedin.com/in/sebastian-jadczak-b74a40182">&copy; Sebastian Jadczak</a>
-</div>
-
-
-<script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.gstatic.com">
+    <script>
+        let allElements = document.getElementById('all')
+        allElements.classList.add('underline')
+    </script>
+{% endblock %}
