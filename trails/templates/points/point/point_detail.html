@@ -150,9 +150,18 @@
                     <h3 id="point-name">{{ point.name }}:</h3>
                      <div id="buttons_point">
                          {% if user.is_authenticated %}
-                            <form action="{% url 'trails:point_done' point.pk%}" method="post"><input type="text" value="{{ point.id }}" hidden name="point_done" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
-                            <form action="{% url 'trails:heart_add' point.pk%}" method="post"><input type="text" value="{{ point.id }}" hidden name="heart_id"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
-                        {% endif %}
+                            {% if point_dones %}
+                                <form action="{% url 'trails:point_done' point.pk%}" method="post"><input type="text" value="{{ point.id }}" hidden name="point_done" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Usuń z wykonanych</button></form>
+                            {% else %}
+                                <form action="{% url 'trails:point_done' point.pk%}" method="post"><input type="text" value="{{ point.id }}" hidden name="point_done" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
+                            {% endif %}
+
+                            {% if point_liked %}
+                                <form action="{% url 'trails:heart_add' point.pk%}" method="post"><input type="text" value="{{ point.id }}" hidden name="heart_id"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Usuń z ulubionych</button></form>
+                            {% else %}
+                                <form action="{% url 'trails:heart_add' point.pk%}" method="post"><input type="text" value="{{ point.id }}" hidden name="heart_id"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
+                            {% endif %}
+                         {% endif %}
                      </div>
                 </div>
 

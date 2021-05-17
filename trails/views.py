@@ -188,17 +188,37 @@ class PointDetailView(DetailView):
         point_id = self.kwargs['pk']
         gallery = point.first().gallery.all()
         gallery = self.getGallery(gallery)
+        stuff = get_object_or_404(Point, id=self.kwargs['pk'])
+        point_liked = False
+        if stuff.heart.filter(id=self.request.user.id).exists():
+            point_liked = True
+        point_dones = False
+        if stuff.done.filter(id=self.request.user.id).exists():
+            point_dones = True
         return render(request, self.template_name,
-                      {'opinion': opinion, 'point': point[0], 'point_id': point_id, 'gallery': gallery})
+                      {'opinion': opinion, 'point': point[0], 'point_id': point_id, 'gallery': gallery, 'point_liked': point_liked, 'point_dones': point_dones})
 
     def point_heart(request, pk):
         point = get_object_or_404(Point, id=request.POST.get('heart_id'))
-        point.heart.add(request.user)
+        point_liked = False
+        if point.heart.filter(id=request.user.id).exists():
+            point.heart.remove(request.user)
+            point_liked = False
+        else:
+            point.heart.add(request.user)
+            point_liked = True
+
         return HttpResponseRedirect(reverse('trails:point_detail', args=[str(pk)]))
 
     def point_done(request, pk):
         point = get_object_or_404(Point, id=request.POST.get('point_done'))
-        point.done.add(request.user)
+        point_dones = False
+        if point.done.filter(id=request.user.id).exists():
+            point.done.remove(request.user)
+            point_dones = False
+        else:
+            point.done.add(request.user)
+            point_dones = True
         return HttpResponseRedirect(reverse('trails:point_detail', args=[str(pk)]))
 
 class MethodTrail():
@@ -338,17 +358,38 @@ class TrailDetailView(DetailView):
 
     def trail_done(request, pk):
         trail = get_object_or_404(Trail, id=request.POST.get('done_trail'))
-        trail.done.add(request.user)
+        trail_dones = False
+        if trail.done.filter(id=request.user.id).exists():
+            trail.done.remove(request.user)
+            trail_dones = False
+        else:
+            trail.done.add(request.user)
+            trail_dones = True
         return HttpResponseRedirect(reverse('trails:trail_detail', args=[str(pk)]))
 
     def trail_heart(request, pk):
         trail = get_object_or_404(Trail, id=request.POST.get('heart_trail'))
-        trail.heart.add(request.user)
+        trail_liked = False
+        if trail.heart.filter(id=request.user.id).exists():
+            trail.heart.remove(request.user)
+            trail_liked = False
+        else:
+            trail.heart.add(request.user)
+            trail_liked = True
         return HttpResponseRedirect(reverse('trails:trail_detail', args=[str(pk)]))
 
 
     def get_context_data(self, *args, **kwargs):
+        stuff = get_object_or_404(Trail, id=self.kwargs['pk'])
+        trail_dones = False
+        if stuff.done.filter(id=self.request.user.id).exists():
+            trail_dones = True
+        trail_liked = False
+        if stuff.heart.filter(id=self.request.user.id).exists():
+            trail_liked = True
         context = super().get_context_data(**kwargs)
+        context['trail_liked'] = trail_liked
+        context['trail_dones'] = trail_dones
         context['trail'] = list(Trail.objects.filter(id=self.kwargs['pk']))[0]
         context['trail_id'] = self.kwargs['pk']
         context['points'] =list(list(Trail.objects.filter(id=self.kwargs['pk']))[0].points.all())
