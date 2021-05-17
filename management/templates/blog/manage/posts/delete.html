@@ -4,12 +4,14 @@
 
 {% block content %}
 
-    <h1>Usuń kurs "{{object.title}}"</h1>
+    <div class="title-management">
+        <h3>Usuń {{ object.name }}</h3>
+    </div>
 
     <div class="module">
         <form action="" method="post">
             {% csrf_token %}
-            <p>Czy aby na pewno chcesz usunąć post "{{object}}"?</p>
+            <p>Czy aby na pewno chcesz usunąć post "{{ object }}"?</p>
             <input type="submit" class="button" value="Potwierdź">
         </form>
     </div>

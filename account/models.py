@@ -20,20 +20,20 @@ class UserRole(models.Model):
 class Profile(models.Model):
     """Nadpisanie modelu User."""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    name = models.TextField(max_length=30, null=True, blank=True)
-    surname = models.TextField(max_length=30, null=True, blank=True)
+    name = models.TextField(max_length=30, blank=True, null=True)
+    surname = models.TextField(max_length=30, blank=True, null=True)
     date_of_birth = models.DateField(blank=True, null=True)
-    photo = models.ImageField(upload_to='users/img/%Y/%m%d', null=True, blank=True)
-    country = models.TextField(max_length=30, null=True, blank=True)
-    city = models.TextField(max_length=30, null=True, blank=True)
-    street = models.TextField(max_length=30, null=True, blank=True)
-    house_number = models.IntegerField( null=True, blank=True)
-    apartment_number = models.IntegerField(null=True, blank=True)
-    postal_code = models.CharField(max_length=20, null=True, blank=True)
-    main_language = models.CharField(max_length=25, null=True, blank=True)
-    other_language = models.CharField(max_length=20, null=True, blank=True)
-    phone = models.TextField(max_length=10, null=True, blank=True)
-    email = models.EmailField(max_length=50 ,null=True, blank=True)
+    photo = models.ImageField(upload_to='users/img/%Y/%m%d', blank=True, null=True)
+    country = models.TextField(max_length=30, blank=True, null=True)
+    city = models.TextField(max_length=30, blank=True, null=True)
+    street = models.TextField(max_length=30, blank=True, null=True)
+    house_number = models.IntegerField(blank=True, null=True)
+    apartment_number = models.IntegerField(blank=True, null=True)
+    postal_code = models.CharField(max_length=20, blank=True, null=True)
+    main_language = models.CharField(max_length=25, blank=True, null=True)
+    other_language = models.CharField(max_length=20, blank=True, null=True)
+    phone = models.TextField(max_length=10, blank=True, null=True)
+    email = models.EmailField(max_length=50, blank=True, null=True)
 
     MONTHS = ['', 'Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień',
               'Październik', 'Listopad', 'Grudzień']

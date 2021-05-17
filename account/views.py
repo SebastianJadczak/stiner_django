@@ -1,8 +1,4 @@
-from xml.dom.minidom import Document
-
-from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from django.views.generic import FormView
 from django.views.generic.base import View
 
 from .forms import ProfileForm, PreferenceForm
@@ -39,13 +35,17 @@ class UserAccount(View):
                                                         'form': self.form,
                                                         'formPreference': self.formPreference})
 
-    def get_object(self):
+    def get_object_profile(self):
         return Profile.objects.get(user=self.request.user)
+
+    def get_object_preference(self):
+        return Preference.objects.get(user=self.request.user)
 
     def post(self, request):
         "Profile."
-        form = ProfileForm(request.POST or None, request.FILES, instance=self.get_object(), )
+
         if (request.POST.get('type') == 'basic_info'):
+            form = ProfileForm(request.POST or None, request.FILES, instance=self.get_object_profile(), )
             if form.is_valid():
                 profile = form.save(commit=False)
                 profile.user = request.user
@@ -53,8 +53,14 @@ class UserAccount(View):
             else:
                 print(form.errors)
         else:
-            print('none basic info')
-        #     Do zrobienia drugi formularz
+            request.POST.get('type')
+            form = PreferenceForm(request.POST or None, request.FILES, instance=self.get_object_preference(), )
+            if form.is_valid():
+                preference = form.save(commit=False)
+                preference.user = request.user
+                preference.save()
+            else:
+                print(form.errors)
         return redirect('./my_account')
 
 def user_settings(request):

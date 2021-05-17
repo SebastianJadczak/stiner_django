@@ -6,7 +6,9 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from blog.models import Post
+from map.models import Point, News
 from shop.models import Product
+from trails.models import Trail
 
 
 class OwnerMixin(object):
@@ -143,3 +145,25 @@ class ShopProductDeleteView(ShopOwnerProductsMixin, DeleteView):
     template_name = 'shop/manage/products/delete.html'
     success_url = reverse_lazy('management:shop_manage_product_list')
     permission_required = 'shop.delete_product'
+
+# Widoki zarządzania Trasami
+
+class TrailsManagePostListView(PermissionRequiredMixin, ListView):
+    """ Widok wyświetlający wszystkie trasy zwiedzania """
+    model = Trail
+    permission_required = 'trail.add_trail'
+    template_name = 'trails/manage/trails/list.html'
+
+# Widoki zarządzania Punktami
+
+class PointsManagePostListView(PermissionRequiredMixin, ListView):
+    """ Widok wyświetlający wszystkie posty stworzone przez konkretnego użytkownika """
+    model = Point
+    permission_required = 'map.add_point'
+    template_name = 'points/manage/points/list.html'
+
+class NewsManagePostListView(PermissionRequiredMixin, ListView):
+    """ Widok wyświetlający wszystkie posty stworzone przez konkretnego użytkownika """
+    model = News
+    permission_required = 'map.add_news'
+    template_name = 'news/manage/news/list.html'

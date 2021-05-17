@@ -3,7 +3,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 
 from map import views
-from map.views import Map, MapFullScreen
+from map.views import Map, MapFullScreen, FavoriteList
 from django.conf import settings
 from django.conf.urls.static import static
 from shop.views import ProductContentListView
@@ -15,10 +15,9 @@ urlpatterns = [
     path('mapFullScreen/', MapFullScreen.as_view(), name='mapFullScreen'),
     path('map/', include('map.urls')),
     path('account/', include('account.urls')),
+    path('favorite/', FavoriteList.as_view(), name='favorite'),
     path('blog/', include('blog.urls'), name='blog'),
-    path('shop/', ProductContentListView.as_view(), name='list_products'),
-    path('shop/', include('shop.urls'), name='shop'),
-    path('orders/', include('orders.urls', namespace='orders')),
+    # path('orders/', include('orders.urls', namespace='orders')),
     path('trails/', include('trails.urls', namespace='trails')),
     path('yours_trails/', UserTrailsListView.as_view(), name='yours_trails'),
     path('user_trails/', include('user_trails.urls',namespace='user_trails')),
@@ -26,7 +25,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('register/', views.UserFormView.as_view(), name='register'),
-    path('cart/', include('cart.urls', namespace='cart')),
+    # path('cart/', include('cart.urls', namespace='cart')),
     path('contact', include('contact.urls', namespace='contact')),
     path('password_reset/done/',
          auth_views.PasswordResetDoneView.as_view(template_name='account/password_reset_done.html'),

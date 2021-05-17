@@ -97,17 +97,19 @@
                 </div>
             </li>
             <li class="blue top_menu"><a href="{% url 'blog:list_posts' %}">Blog</a></li>
-            <li class="black top_menu"><a href="{%url 'list_products'%}">Sklep</a></li>
             <li class="gold top_menu"><a href="{% url 'contact:contact_detail' %}">Kontakt</a></li>
         </ul>
     </div>
     <div class="login_mapa">
         {% if user.is_authenticated %}
-        <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i> <span>{{user.username}}</span><i
-                class="fas fa-angle-down"></i></button>
+            <a href="" id="eye"><i class="far fa-eye"></i></a>
+            <a href="" id="heart"><i class="far fa-heart"></i></a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i><i class="fas fa-angle-down"></i></button>
         <div class="user_menu">
             <ul>
-                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
+{#                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>#}
                 <li><a href="#">Ustawienia</a></li>
 
                 {% if perms.blog.view_post%}
@@ -131,8 +133,13 @@
         <h3> {{point.name}}</h3>
     </div>
     <div id="file-point">
+        {% if user.is_authenticated %}
             <button id="pdf" ><a href="{% url 'trails:pdf_point' point.id %}"> <i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</a></button>
             <button id="audio"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</button>
+        {% else %}
+            <button id="pdf" ><a href="{% url 'login' %}"> <i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</a></button>
+            <button id="audio"><a href="{% url 'login' %}"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</a></button>
+        {% endif %}
         </div>
 </div>
 <div class="center">
@@ -142,16 +149,18 @@
                 <div class="title-point">
                     <h3 id="point-name">{{ point.name }}:</h3>
                      <div id="buttons_point">
-                        <form action="{% url 'trails:point_done' point.pk%}" method="post"><input type="text" value="{{ point.id }}" hidden name="point_done" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
-                        <form action="{% url 'trails:heart_add' point.pk%}" method="post"><input type="text" value="{{ point.id }}" hidden name="heart_id"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
+                         {% if user.is_authenticated %}
+                            <form action="{% url 'trails:point_done' point.pk%}" method="post"><input type="text" value="{{ point.id }}" hidden name="point_done" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
+                            <form action="{% url 'trails:heart_add' point.pk%}" method="post"><input type="text" value="{{ point.id }}" hidden name="heart_id"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
+                        {% endif %}
                      </div>
                 </div>
 
                 <div class="icons">
                     <p id="done"><i class="fas fa-eye"></i> <span>{{ point.done.all.count }} x wykonano</span>|</p>
                     <p id="heart"><i class="fas fa-heart"></i><span>{{ point.heart.all.count }} x W ulubionych</span>|</p>
-                    <p id="downloads"><i class="fas fa-file-download"></i><span>{{ point.downloads|length }} x pobrań</span>|</p>
-                    <p id="sound"><i class="fas fa-volume-up"></i><span>{{ point.sound|length }} x odsłuchań</span>|</p>
+                    <p id="downloads"><i class="fas fa-file-download"></i><span>{{ point.downloads.all.count }} x pobrań</span>|</p>
+                    <p id="sound"><i class="fas fa-volume-up"></i><span>{{ point.sound.all.count }} x odsłuchań</span>|</p>
                 </div>
             </div>
             <div class="more">

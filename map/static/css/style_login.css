@@ -41,14 +41,23 @@ div.login div.login_form form input:focus{
 div.login div.login_form form p{
     margin: 20px 0;
 }
-
+div.login div.login_form form p#reset{
+    margin: 5px 0;
+    text-align: center;
+    font-size: 15px;
+}
+div.login div.login_form form p#reset a{
+    text-decoration: none;
+    color: #0d3757;
+    margin-left: 40px;
+}
 div.login div.login_form form button{
     border: 1px solid #235171;
     background-color: #3375a4;
     color: #fff;
     width:200px;
     height:40px;
-    margin:15px 100px;
+    margin:5px 100px;
     font-size: 18px;
     border-radius: 20px;
     letter-spacing: 3.6px;

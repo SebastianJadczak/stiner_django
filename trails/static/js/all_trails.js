@@ -3,12 +3,7 @@ let buttonRight = document.getElementById('right');
 let buttonLeft = document.getElementById('left');
 let amount = document.querySelectorAll('div.all_trails-trail');
 let position = 0;
-let menuDetail = document.getElementById('menu-detail-trail')
 
-//Top Menu
-function menuDetailTrail() {
-    menuDetail.classList.toggle('active')
-}
 buttonRight.addEventListener('click', function () {
     let list_point_user_add = document.getElementById('trails');
     if (position >= 0 && position <= amount.length * 10) {
@@ -65,27 +60,3 @@ buttonLeft_popular.addEventListener('click', function () {
         list_point_user_add.style.marginLeft = `-${position_popular_trail}px`
     }
 });
-
-
-//    Obsługa przycisku Pokaż więcej
-let more = document.querySelector('p.city');
-let div_city = document.querySelector('div.city')
-
-more.addEventListener('click', function () {
-    div_city.classList.toggle("active");
-
-})
-//Obsługa skrolowania
-
-const button = document.getElementById('button-filter')
-
-window.addEventListener(
-    'scroll',
-    () => {
-        if (window.scrollY >= 800) {
-            button.style.position = 'static'
-        } else {
-            button.style.position = 'fixed'
-        }
-    }
-)

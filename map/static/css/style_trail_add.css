@@ -136,9 +136,6 @@ div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.a
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    position: fixed;
-    top: 917px;
-    left:136px;
 }
 
 div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.top_rate label.star {
@@ -151,17 +148,19 @@ div.wrap-trails_add div.trail_add-center div.przyklad{
     margin: 60px 20px;
 }
 @media only screen and (max-width: 1680px) {
-
+    div.opacity{
+        transform: translateY(-40px);
+    }
     div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.name input {
         width: 170px;
         margin-left: 10px;
         padding-left: 15px;
     }
     div.wrap-trails_add div.trail_add-center div.przyklad{
-        margin: 80px auto;
-    width: 67vw;
-        padding-right: 30px;
-}
+        margin: 80px 0 80px 60px;
+        width: 67vw;
+        justify-content: space-between;
+    }
     div.wrap-trails_add div.trail_add-center div.przyklad button#right{
         right: -950px;
     }

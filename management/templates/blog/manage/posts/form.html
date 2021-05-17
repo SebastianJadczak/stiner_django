@@ -11,9 +11,10 @@
 {% endblock %}
 
 {% block content %}
-<div class="create_post">
-    <h2>
-        {% if object %}
+    <div class="content">
+        <div class="create_post">
+            <h2>
+                {% if object %}
             Edytuj post "{{object.title}}"
         {% else %}
             Nowy post
@@ -26,5 +27,6 @@
             <p><input type="submit" value="Zapisz"></p>
         </form>
     </div>
+        </div>
     </div>
 {% endblock %}

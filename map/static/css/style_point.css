@@ -47,21 +47,26 @@ button#audio {
     background-color: #e3df00;
     width: 280px;
     height: 50px;
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 15px;
     border: none;
     box-shadow: none;
     border-radius: 5px;
+}
+
+button#audio a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 15px;
     letter-spacing: 1.3px;
 }
 
-div.map{
+div.map {
     width: calc(100% - 30px);
     margin: 20px 0;
     border-radius: 15px;
     padding: 0 15px;
     background-color: #fff;
-    border:1px solid #e0e0e0;
+    border: 1px solid #e0e0e0;
     box-shadow: 0 0 3px #e3e3e3;
 }
 
@@ -90,7 +95,7 @@ div.gallery {
     width: 100%;
     min-height: 30vh;
     margin: 0 auto;
-    background-color: #1a1a1a;
+    background-color: white;
     border: 1px solid white;
     box-shadow: 0 0 7px #3b3b3b;
     border-radius: 10px;
@@ -99,7 +104,7 @@ div.gallery {
 .arrow {
     position: relative;
     font-size: 30px;
-    color: #ffffff;
+    color: #343434;
     top: 60px;
     text-shadow: 0 0 3px white;
 }

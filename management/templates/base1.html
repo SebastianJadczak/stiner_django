@@ -7,40 +7,74 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %} {% endblock %}</title>
-     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_management.css' %}">
 </head>
 <body>
 <div id="top_manage">
     <div class="logo"><img src="{% static 'img/logo.png' %}" alt="logo"></div>
-    <div class="login_mapa">
+    <div class="menu-moderator">
+        <ul>
+            {% if perms.map.view_news %}
+                <li class="management-news">News <i class="fas fa-chevron-down"></i>
+                    <div class="management-news">
+                        <a href="{% url 'management:manage_news_list' %}">Wszystkie Newsy</a>
+                        <a href="">Dodaj News</a>
+                    </div>
+                </li>
+            {% endif %}
+            {% if perms.trails.view_trail %}
+                <li class="management-trails">Trasy <i class="fas fa-chevron-down"></i>
+                    <div class="management-trails">
+                        <a href="{% url 'management:manage_trail_list' %}">Wszystkie Trasy</a>
+                        <a href="">Dodaj Trasę</a>
+                    </div>
+                </li>
+            {% endif %}
+            {% if perms.map.view_point %}
+                <li class="management-points">Zabytki <i class="fas fa-chevron-down"></i>
+                    <div class="management-points">
+                        <a href="{% url 'management:manage_points_list' %}">Wszystkie Zabytki</a>
+                        <a href="">Dodaj Zabytek</a>
+                    </div>
+                </li>
+            {% endif %}
+            {% if perms.blog.view_post %}
+                <li class="management-blog"> Blog <i class="fas fa-chevron-down"></i>
+                    <div class="management-blog">
+                        <a href="{% url 'management:blog_manage_post_list' %}">Wszystkie wpisy</a>
+                        <a href="{% url 'management:blog_post_create' %}">Dodaj wpis</a>
+                    </div>
+
+                </li>
+            {% endif %}
+            {#            {% if perms.shop.view_product %}#}
+            {#                <li class="management-shop">Sklep <i class="fas fa-chevron-down"></i>#}
+            {#                    <div class="management-shop">#}
+            {#                        <a href="{% url 'management:shop_manage_product_list' %}">Wszystkie produkty</a>#}
+            {#                        <a href="{% url 'management:shop_product_create' %}">Dodaj produkt</a>#}
+            {#                    </div>#}
+            {#                </li>#}
+            {#            {% endif %}#}
+
+        </ul>
+    </div>
+    <div class="exit_panel">
+        <a href="{% url 'map' %}">Wyjdź</a>
+    </div>
+    <div class="management-login">
         {% if user.is_authenticated %}
-        <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
+            <button><a href="{% url 'logout' %}">Wyloguj się</a></button>
         {% else %}
-           <button><a href="{% url 'login' %}">Zaloguj się</a></button>
-       <button class="register"><a href="{% url 'register' %}">Załóż konto</a></button>
+            <button><a href="{% url 'login' %}">Zaloguj się</a></button>
+            <button class="register"><a href="{% url 'register' %}">Załóż konto</a></button>
         {% endif %}
     </div>
-    <div id="login_rwd"><i class="fas fa-sign-in-alt"></i></div>
+    {#    <div id="login_rwd"><i class="fas fa-sign-in-alt"></i></div>#}
 </div>
 <div class="management">
-    <div class="management_menu">
-        <span>Panel moderatora: </span>
-        <p class="management_menu_section">Blog:</p>
-        <button><a href="{%url 'management:blog_manage_post_list' %}">Wszystkie wpisy</a></button>
-        <button><a href="{%url 'management:blog_post_create' %}">Dodaj wpis</a></button>
-        <button><a href="{%url 'management:blog_posts_edit' %}">Edytuj wpis</a></button>
-        <button><a href="{%url 'management:blog_posts_delete' %}">Usuń wpis</a></button>
 
-         <p class="management_menu_section">Sklep:</p>
-        <button><a href="{%url 'management:shop_manage_product_list' %}">Wszystkie produkty</a></button>
-        <button><a href="{%url 'management:shop_product_create' %}">Dodaj produkt</a></button>
-        <button><a href="{%url 'management:shop_products_edit' %}">Edytuj produkt</a></button>
-        <button><a href="{%url 'management:shop_products_delete' %}">Usuń produkt</a></button>
-
-        <button class="exit_manage"><a href="{%url 'map' %}">Wyjście z panelu</a></button>
-    </div>
 
     {% block content %}
     {% endblock %}

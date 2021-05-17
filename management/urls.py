@@ -21,6 +21,12 @@ urlpatterns = [
     path('product/<pk>/delete/',views.ShopProductDeleteView.as_view() , name='shop_product_delete'),
     path('product_edit/', views.ShopManageEditListView.as_view(), name='shop_products_edit'),
     path('product_delete/', views.ShopDeleteProductsListView.as_view(), name='shop_products_delete'),
+    # Trails
+    path('trails_manage/', views.TrailsManagePostListView.as_view() , name='manage_trail_list'),
+    # Points
+    path('points_manage/', views.PointsManagePostListView.as_view(), name='manage_points_list'),
+    # News
+    path('news_manage/', views.NewsManagePostListView.as_view(), name='manage_news_list')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

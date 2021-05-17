@@ -72,16 +72,19 @@
                 </div>
             </li>
             <li class="blue"><a href="{% url 'blog:list_posts' %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li class="black"><a href="{%url "list_products"%}"><i class="fas fa-cart-plus"></i>Sklep</a></li>
             <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
         </ul>
     </div>
     <div class="login_mapa">
+        {% if user.is_authenticated %}
+            <a href="" id="eye"><i class="far fa-eye"></i></a>
+            <a href="" id="heart"><i class="far fa-heart"></i></a>
+        {% endif %}
        {% if user.is_authenticated %}
-        <button class="user_menu"><i class="fas fa-user"></i> <span>{{user.username}}</span><i class="fas fa-angle-down"></i></button>
+        <button class="user_menu"><i class="fas fa-user"></i><i class="fas fa-angle-down"></i></button>
         <div class="user_menu">
             <ul>
-                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>
+{#                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>#}
                 <li><a href="#">Ustawienia</a></li>
 
                 {% if perms.blog.view_post%}

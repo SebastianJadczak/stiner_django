@@ -205,6 +205,7 @@ div.posts div.post div.info {
 @media only screen and (max-width: 1140px) {
     div.posts div.post {
         width: 320px;
+        height: 380px;
     }
 
     div.posts div.post div.image {
@@ -215,6 +216,7 @@ div.posts div.post div.info {
 @media only screen and (max-width: 1060px) {
     div.posts div.post {
         width: 280px;
+        height: 350px;
     }
 
     div.posts div.post div.image {
@@ -223,8 +225,10 @@ div.posts div.post div.info {
 }
 
 @media only screen and (max-width: 980px) {
-    div.content_center {
-        flex-direction: column-reverse;
+
+
+    div.content div.content-bottom {
+        flex-direction: column;
     }
 
     div.right_table {
@@ -233,7 +237,7 @@ div.posts div.post div.info {
     }
 
     div.posts {
-        width: 95vw;
+        width: 100%;
         margin: 10px auto;
     }
 
@@ -252,6 +256,7 @@ div.posts div.post div.info {
     }
     div.posts div.post {
         width: 350px;
+         height: 410px;
     }
 
     div.posts div.post div.image {

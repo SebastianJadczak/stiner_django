@@ -61,6 +61,8 @@ def point_render_pdf_view(request, pk):
     html = template.render(context)
     pisa_status = pisa.CreatePDF(
         html, dest=response, link_callback=link_callback)
+    point = get_object_or_404(Point, id=pk)
+    point.downloads.add(request.user)
     if pisa_status.err:
         return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
@@ -120,6 +122,8 @@ class PointsListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PointsListView, self).get_context_data(**kwargs)
+        context['city'] = Coordinates.objects.all()
+        context['type'] = Point.TYPE_POINT
         context['list'] = Point.objects.all()
         return context
 
@@ -130,6 +134,15 @@ class PointDetailView(DetailView):
     template_name = 'points/point/point_detail.html'
     model = Point
 
+    def calculation_mean(self, point_id):
+        rate_point = list(Opinion_about_Point.objects.filter(point=Point.objects.get(id=point_id)))
+        average_grade = 0
+        for element in rate_point:
+            average_grade = average_grade + element.rating
+        average_grade = average_grade / len(rate_point)
+        point = Point.objects.get(id=point_id)
+        point.average_grade = average_grade
+        point.save()
 
     def post(self, request, *args, **kwargs):
         nick = request.user
@@ -141,6 +154,7 @@ class PointDetailView(DetailView):
                                                opinion=recension,
                                                rating=star,
                                                point=Point.objects.get(id=point_id))
+            self.calculation_mean(point_id)
         else:
             if nick == "":
                 print('brak nicku')

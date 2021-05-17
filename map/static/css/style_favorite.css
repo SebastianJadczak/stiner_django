@@ -1,0 +1,44 @@
+div#favorite-top {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25)), url("../img/cathedral.jpg");
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid grey;
+    width: 99.8vw;
+    height: 200px;
+}
+
+div#favorite-top h3 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 37px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    padding-top: 50px;
+    margin: 0;
+    color: white;
+    -webkit-text-stroke: 0.6px black;
+    text-shadow: 0 0 3px black;
+}
+
+div.list_favorite {
+    margin: 70px auto 0;
+    height: 55px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+div.list_favorite a {
+    line-height: 45px;
+    color: black;
+    margin-right: 25px;
+    font-size: 17px;
+
+    letter-spacing: 1.5px;
+    font-family: 'Roboto', sans-serif;
+}
+div#favorite-wrap{
+    min-height: 90vh;
+}
