@@ -3,7 +3,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 
 from map import views
-from map.views import Map, MapFullScreen
+from map.views import Map, MapFullScreen, FavoriteList
 from django.conf import settings
 from django.conf.urls.static import static
 from shop.views import ProductContentListView
@@ -15,6 +15,7 @@ urlpatterns = [
     path('mapFullScreen/', MapFullScreen.as_view(), name='mapFullScreen'),
     path('map/', include('map.urls')),
     path('account/', include('account.urls')),
+    path('favorite/', FavoriteList.as_view(), name='favorite'),
     path('blog/', include('blog.urls'), name='blog'),
     # path('orders/', include('orders.urls', namespace='orders')),
     path('trails/', include('trails.urls', namespace='trails')),
