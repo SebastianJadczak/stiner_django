@@ -133,8 +133,16 @@
                     <h3>{{ trail.name }}:</h3>
                     <div id="buttons_trail">
                         {% if user.is_authenticated %}
-                            <form action="{% url 'trails:trail_done' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="done_trail" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
-                            <form action="{% url 'trails:trail_heart' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="heart_trail"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
+                            {% if trail_dones %}
+                                <form action="{% url 'trails:trail_done' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="done_trail" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Usuń z wykonanych</button></form>
+                            {% else %}
+                                <form action="{% url 'trails:trail_done' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="done_trail" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>
+                            {% endif %}
+                            {% if trail_liked %}
+                                <form action="{% url 'trails:trail_heart' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="heart_trail"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Usuń z ulubionych</button></form>
+                            {% else %}
+                                <form action="{% url 'trails:trail_heart' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="heart_trail"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>
+                            {% endif %}
                         {% endif %}
                     </div>
                 </div>
