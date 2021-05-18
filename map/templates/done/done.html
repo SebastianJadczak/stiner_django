@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <script data-ad-client="ca-pub-5722846627217105" async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+
+    <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/style_map.css" %}">
+    <link rel="stylesheet" href="{% static "css/style_done.css" %}">
+</head>
+<body>
+
+
+<div id="top">
+    <div class="logo"><a href="{% url 'map' %}"><img src="{% static "img/logo.png" %}" alt="logo"></a></div>
+    <div class="menu menu_mapa">
+        <ul>
+            <li class="red top_menu"><a href="{% url 'mapFullScreen' %}"></i>Mapa</a></li>
+            <li class="green top_menu" onclick="menuDetailTrail()">Trasy <i class="fas fa-angle-down"></i>
+                <div id="menu-detail-trail">
+                    <ul>
+                        <li><a href="{% url 'trails:points' %}">Ciekawe miejsca</a></li>
+                        <li><a href="{% url 'trails:all_trails' %}">Trasy</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'yours_trails' %}">Twoje trasy</a></li>
+                            <li><a href="{% url 'user_trails:user_trail_add' %}">Stwórz trasę</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Twoje trasy</a></li>
+                            <li><a href="{% url 'login' %}">Stwórz trasę</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </li>
+            <li class="blue top_menu"><a href="{% url 'blog:list_posts' %}">Blog</a></li>
+            <li class="gold top_menu"><a href="{% url 'contact:contact_detail' %}">Kontakt</a></li>
+        </ul>
+    </div>
+
+    <div class="login_mapa">
+
+        {% if user.is_authenticated %}
+            <a href="" id="eye"><i class="far fa-eye"></i></a>
+            <a href="" id="heart"><i class="far fa-heart"></i></a>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+            <button class="user_menu"><i class="fas fa-user"></i><i class="fas fa-angle-down"></i></button>
+            <div class="user_menu">
+                <ul>
+                    {#                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>#}
+                    <li><a href="{% url 'account:user_settings' %}">Ustawienia</a></li>
+
+                    {% if perms.blog.view_post %}
+                        <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>
+                    {% elif perms.shop.view_product %}
+                        <li><a href="{% url 'management:shop_manage_product_list' %}">Panel administracyjny</a></li>
+                    {% endif %}
+
+                    <li><a href="{% url 'logout' %}">Wyloguj</a></li>
+                </ul>
+            </div>
+        {% else %}
+            <button><a href="{% url 'login' %}">Zaloguj się</a></button>
+            <button class="register"><a href="{% url 'register' %}">Załóż konto</a></button>
+        {% endif %}
+    </div>
+    <div id="login_rwd"><i class="fas fa-sign-in-alt"></i></div>
+</div>
+<div id="done-top">
+    <h3>Zwiedzone</h3>
+</div>
+
+<div id="done-wrap">
+    <div class="sort_menu">
+        <div class="sort">
+            <p>Sortuj według:</p>
+            <select name="" id="sort">
+                <option value="done">Zwiadzających</option>
+                <option value="rate">Ocena</option>
+            </select>
+        </div>
+        <div class="filter">
+            <p>Filtruj według:</p>
+            <div class="filter-select">
+                <select name="" id="city">
+                    <option value="" disabled selected >Miasto</option>
+                    {% for c in city %}
+                        <option value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
+                </select>
+                <select name="" id="country">
+                    <option value="" disabled selected>Kraj</option>
+                    {% for c in country %}
+                        <option value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
+                </select>
+                <select name="" id="Autor">
+                    <option value="" disabled selected>Autor</option>
+                    <option value="your">Twoja</option>
+                    <option value="no_your" >Nie Twoja</option>
+                </select>
+            </div>
+        </div>
+        <div class="search-done">
+            <p></p>
+            <form action="" method="post">
+                <input type="text" placeholder="Szukaj...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="done_elements">
+        <div class="done_points">
+            <h3>Zwiedzone Punkty</h3>
+            <div id="done_points">
+                <ul>
+                    {% for point in point_done %}
+                        <li>
+                            <div class="point">
+                                <div class="image_point">
+                                    <img src="{{ point.image.url }}" alt="">
+                                </div>
+                                <div class="point_description">
+                                    <p id="name-point">{{ point.name }}</p>
+                                    <div class="country">
+                                        <p><span>Kraj:</span> {{ point.country }}</p>
+                                    </div>
+                                    <div class="city">
+                                        <p><span>Miasto:</span> {{ point.location }}</p>
+                                    </div>
+                                    <div class="average_grade">
+                                        <p><span>Ocena:</span> {{ point.average_grade }}</p>
+                                        <p><span>Zwiedziło:</span> {{ point.done.all.count }}</p>
+                                    </div>
+                                    <div class="button-interesting">
+                                        <button><a href="{% url 'trails:point_detail' point.id %}">Szczegóły</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="done_trails">
+            <h3>Zwiedzone trasy</h3>
+            <div id="done_trails">
+                <ul>
+                    {% for trail in trail_done %}
+                        <li>
+                            <div class="trail">
+                                <div class="image_trail">
+                                    <img src="{{ trail.image.url }}" alt="">
+                                </div>
+                                <div class="trail_description">
+                                    <p id="name-trail">{{ trail.name }}</p>
+                                    <div class="country">
+                                        <p><span>Kraj:</span> {{ trail.country }}</p>
+                                    </div>
+                                    <div class="city">
+                                        <p><span>Miasto:</span> {{ trail.city }}</p>
+                                    </div>
+                                    <div class="average_grade">
+                                        <p><span>Ocena:</span> {{ trail.average_grade }}</p>
+                                        <p><span>Zwiedziło:</span> {{ trail.done.all.count }}</p>
+                                    </div>
+                                    <div class="button-interesting">
+                                        <button><a href="{% url 'trails:trail_detail' trail.id %}">Szczegóły</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="social-right">
+    <div id="fb"><a href="https://www.facebook.com/Stiner-100928478828163"><i class="fab fa-facebook-square"></i></a>
+    </div>
+    <div id="li"><a href="https://www.linkedin.com/company/stiner/"><i class="fab fa-linkedin"></i></a></div>
+    <div id="youtube"><i class="fab fa-youtube"></i></div>
+</div>
+<div class="footer">
+    <a href="https://www.linkedin.com/in/sebastian-jadczak-b74a40182">&copy; Sebastian Jadczak</a>
+</div>
+
+
+<script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">

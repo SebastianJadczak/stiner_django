@@ -566,7 +566,7 @@ div.login_mapa button.user_menu i.fa-angle-down.active {
 }
 
 div.login_mapa button.user_menu {
-    margin-left: 100px;
+    margin-left: 0;
 }
 
 div.login_mapa button.user_menu span {

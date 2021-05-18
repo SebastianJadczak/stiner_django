@@ -1,4 +1,6 @@
-
+ div.opacity{
+        transform: translateY(-60px);
+    }
 div.wrap-trails_add{
     display: flex;
     flex-direction: column;
