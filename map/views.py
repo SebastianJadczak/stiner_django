@@ -139,6 +139,13 @@ class FavoriteYourTrail(ListView):
     template_name = 'favorite/favorite_your_trail.html'
     model = UserTrail
 
+    def get_context_data(self, **kwargs):
+        self.favorite_trail = UserTrail.objects.filter(favorite=self.request.user)
+        context = super().get_context_data(**kwargs)
+        context['trail_favorite'] = self.favorite_trail
+        return context
+
+
 class DoneList(ListView):
     template_name = 'done/done.html'
     model = Trail
