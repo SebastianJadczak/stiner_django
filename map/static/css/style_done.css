@@ -7,10 +7,12 @@ div#top div.menu_mapa ul li.green i {
 }
 
 div#done-wrap {
-    min-height: 75vh;
+    min-height: 90vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
 }
-
+div.done_elements{
+    height: 100%;
+}
 div#done-top {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25)), url("../img/cathedral.jpg");
     background-position: center;
@@ -98,3 +100,100 @@ div.sort_menu div.search-done form button {
     transform: translateX(-5px);
 }
 
+/* Done Point. */
+
+div.done_points, div.done_trails {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 200px;
+}
+div.done_points h3, div.done_trails h3{
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+div.done_points ul, div.done_trails ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+div.done_points ul li, div.done_trails ul li {
+    min-width: 280px;
+    max-width: 280px;
+    height: 350px;
+    margin: 5px 10px 5px 5px;
+}
+
+div.point, div.trail {
+    min-width: 280px;
+    max-width: 280px;
+    height: 350px;
+    text-align: center;
+    background-color: #fff;
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+div.point p, div.trail p {
+    font-size: 14px;
+    margin: 5px;
+}
+p#name-point, p#name-trail {
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1.3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+p span {
+    font-weight: bold;
+}
+p.description {
+    height: 50px;
+    width: 90%;
+}
+div.image_trail, div.image_point {
+    width: 100%;
+    height: 58%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+div.image_trail img, div.image_point img  {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.0);
+    transition: all 0.3s;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+div.image_trail:hover img, div.image_point:hover img {
+    transform: scale(1.1);
+}
+div.average_grade{
+    display: flex;
+    padding: 0 7px;
+    justify-content: space-between;
+}
+div.point button, div.trail button {
+    background-color: #e06100;
+    border: 1px solid #c0c0c0;
+    box-shadow: 1px 1px 0 black;
+    width: 90px;
+    height: 33px;
+    border-radius: 15px;
+    margin-left: 170px;
+
+}
+div.point button a, div.trail button  a{
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    text-decoration: none;
+}

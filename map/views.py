@@ -142,3 +142,17 @@ class FavoriteYourTrail(ListView):
 class DoneList(ListView):
     template_name = 'done/done.html'
     model = Trail
+    done_trail = []
+    done_point = []
+    coordinates = Coordinates.objects.all()
+    country = [value for key, value in Trail.get_country_trail(Trail)]
+
+    def get_context_data(self, **kwargs):
+        self.done_trail = Trail.objects.filter(done=self.request.user)
+        self.done_point = Point.objects.filter(done=self.request.user)
+        context = super().get_context_data(**kwargs)
+        context['trail_done'] = self.done_trail
+        context['point_done'] = self.done_point
+        context['country'] = self.country
+        context['city'] = self.coordinates
+        return context

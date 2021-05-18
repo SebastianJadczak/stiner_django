@@ -80,7 +80,7 @@
     <div id="login_rwd"><i class="fas fa-sign-in-alt"></i></div>
 </div>
 <div id="done-top">
-    <h3>Wykonane</h3>
+    <h3>Zwiedzone</h3>
 </div>
 
 <div id="done-wrap">
@@ -88,20 +88,29 @@
         <div class="sort">
             <p>Sortuj według:</p>
             <select name="" id="sort">
-                <option value="1">1</option>
+                <option value="done">Zwiadzających</option>
+                <option value="rate">Ocena</option>
             </select>
         </div>
         <div class="filter">
             <p>Filtruj według:</p>
             <div class="filter-select">
                 <select name="" id="city">
-                    <option value="1">1</option>
+                    <option value="" disabled selected >Miasto</option>
+                    {% for c in city %}
+                        <option value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
                 </select>
-                <select name="" id="ocena">
-                    <option value="1">1</option>
+                <select name="" id="country">
+                    <option value="" disabled selected>Kraj</option>
+                    {% for c in country %}
+                        <option value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
                 </select>
-                <select name="" id="ocena">
-                    <option value="1">1</option>
+                <select name="" id="Autor">
+                    <option value="" disabled selected>Autor</option>
+                    <option value="your">Twoja</option>
+                    <option value="no_your" >Nie Twoja</option>
                 </select>
             </div>
         </div>
@@ -111,6 +120,74 @@
                 <input type="text" placeholder="Szukaj...">
                 <button type="submit"><i class="fas fa-search"></i></button>
             </form>
+        </div>
+    </div>
+    <div class="done_elements">
+        <div class="done_points">
+            <h3>Zwiedzone Punkty</h3>
+            <div id="done_points">
+                <ul>
+                    {% for point in point_done %}
+                        <li>
+                            <div class="point">
+                                <div class="image_point">
+                                    <img src="{{ point.image.url }}" alt="">
+                                </div>
+                                <div class="point_description">
+                                    <p id="name-point">{{ point.name }}</p>
+                                    <div class="country">
+                                        <p><span>Kraj:</span> {{ point.country }}</p>
+                                    </div>
+                                    <div class="city">
+                                        <p><span>Miasto:</span> {{ point.location }}</p>
+                                    </div>
+                                    <div class="average_grade">
+                                        <p><span>Ocena:</span> {{ point.average_grade }}</p>
+                                        <p><span>Zwiedziło:</span> {{ point.done.all.count }}</p>
+                                    </div>
+                                    <div class="button-interesting">
+                                        <button><a href="{% url 'trails:point_detail' point.id %}">Szczegóły</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="done_trails">
+            <h3>Zwiedzone trasy</h3>
+            <div id="done_trails">
+                <ul>
+                    {% for trail in trail_done %}
+                        <li>
+                            <div class="trail">
+                                <div class="image_trail">
+                                    <img src="{{ trail.image.url }}" alt="">
+                                </div>
+                                <div class="trail_description">
+                                    <p id="name-trail">{{ trail.name }}</p>
+                                    <div class="country">
+                                        <p><span>Kraj:</span> {{ trail.country }}</p>
+                                    </div>
+                                    <div class="city">
+                                        <p><span>Miasto:</span> {{ trail.city }}</p>
+                                    </div>
+                                    <div class="average_grade">
+                                        <p><span>Ocena:</span> {{ trail.average_grade }}</p>
+                                        <p><span>Zwiedziło:</span> {{ trail.done.all.count }}</p>
+                                    </div>
+                                    <div class="button-interesting">
+                                        <button><a href="{% url 'trails:trail_detail' trail.id %}">Szczegóły</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
 </div>
