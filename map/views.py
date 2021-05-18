@@ -140,7 +140,7 @@ class FavoriteYourTrail(ListView):
     model = UserTrail
 
     def get_context_data(self, **kwargs):
-        self.favorite_trail = UserTrail.objects.filter(favorite=self.request.user)
+        self.favorite_trail = UserTrail.objects.filter(heart=self.request.user)
         context = super().get_context_data(**kwargs)
         context['trail_favorite'] = self.favorite_trail
         return context

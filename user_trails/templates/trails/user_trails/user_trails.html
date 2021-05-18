@@ -81,7 +81,7 @@
                                             <p>Wykonało: <span> {{i.watched}} </span></p>
                                             <p>Ocena: <span> {{i.average_grade}}</span> </p>
                                         </div>
-                                    <button><a href="{% url 'trails:trail_detail' i.id %}">Więcej</a></button>
+                                    <button><a href="{% url 'user_trails:user_trail_detail' i.id %}">Więcej</a></button>
                                     </div>
                                 </div>
                             </li>
@@ -174,7 +174,7 @@
                                             <p>Wykonało: <span> {{s.watched}} </span></p>
                                             <p>Ocena: <span> {{s.average_grade}}</span> </p>
                                         </div>
-                                    <button><a href="{% url 'trails:trail_detail' s.id %}">Więcej</a></button>
+                                    <button><a href="{% url 'user_trails:user_trail_detail' s.id %}">Więcej</a></button>
                                     </div>
                                 </div>
                             </li>
