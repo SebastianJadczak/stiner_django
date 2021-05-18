@@ -31,8 +31,38 @@
         </div>
     </div>
     <div class="favorite_your_trail">
-
-    </div>
+                <h3>Ulubione Twoje trasy</h3>
+                <div id="favorite__your_trails">
+                    <ul>
+                        {% for trail in your_trail_favorite %}
+                            <li>
+                                <div class="your_trail">
+                                    <div class="image_trail">
+                                        <img src="{{ trail.image.url }}" alt="">
+                                    </div>
+                                    <div class="trail_description">
+                                        <p id="name-trail">{{ trail.name }}</p>
+                                        <div class="country">
+                                            <p><span>Kraj:</span> {{ trail.country }}</p>
+                                        </div>
+                                        <div class="city">
+                                            <p><span>Miasto:</span> {{ trail.city }}</p>
+                                        </div>
+                                        <div class="average_grade">
+                                            <p><span>Ocena:</span> {{ trail.average_grade }}</p>
+                                            <p><span>Zwiedziło:</span> {{ trail.done.all.count }}</p>
+                                        </div>
+                                        <div class="button-interesting">
+                                            <button><a href="{% url 'trails:trail_detail' trail.id %}">Szczegóły</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
     <script>
         let allElements = document.getElementById('your_trail')
         allElements.classList.add('underline')

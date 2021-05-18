@@ -31,7 +31,107 @@
         </div>
     </div>
     <div class="favorite_all">
-
+        <div class="favorite_elements">
+            <div class="favorite_points">
+                <h3>Ulubione Punkty</h3>
+                <div id="favorite_points">
+                    <ul>
+                        {% for point in point_favorite %}
+                            <li>
+                                <div class="point">
+                                    <div class="image_point">
+                                        <img src="{{ point.image.url }}" alt="">
+                                    </div>
+                                    <div class="point_description">
+                                        <p id="name-point">{{ point.name }}</p>
+                                        <div class="country">
+                                            <p><span>Kraj:</span> {{ point.country }}</p>
+                                        </div>
+                                        <div class="city">
+                                            <p><span>Miasto:</span> {{ point.location }}</p>
+                                        </div>
+                                        <div class="average_grade">
+                                            <p><span>Ocena:</span> {{ point.average_grade }}</p>
+                                            <p><span>Zwiedziło:</span> {{ point.done.all.count }}</p>
+                                        </div>
+                                        <div class="button-interesting">
+                                            <button><a href="{% url 'trails:point_detail' point.id %}">Szczegóły</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="favorite_trails">
+                <h3>Ulubione trasy</h3>
+                <div id="favorite_trails">
+                    <ul>
+                        {% for trail in trail_favorite %}
+                            <li>
+                                <div class="trail">
+                                    <div class="image_trail">
+                                        <img src="{{ trail.image.url }}" alt="">
+                                    </div>
+                                    <div class="trail_description">
+                                        <p id="name-trail">{{ trail.name }}</p>
+                                        <div class="country">
+                                            <p><span>Kraj:</span> {{ trail.country }}</p>
+                                        </div>
+                                        <div class="city">
+                                            <p><span>Miasto:</span> {{ trail.city }}</p>
+                                        </div>
+                                        <div class="average_grade">
+                                            <p><span>Ocena:</span> {{ trail.average_grade }}</p>
+                                            <p><span>Zwiedziło:</span> {{ trail.done.all.count }}</p>
+                                        </div>
+                                        <div class="button-interesting">
+                                            <button><a href="{% url 'trails:trail_detail' trail.id %}">Szczegóły</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="favorite_your_trails">
+                <h3>Ulubione Twoje trasy</h3>
+                <div id="favorite__your_trails">
+                    <ul>
+                        {% for trail in your_trail_favorite %}
+                            <li>
+                                <div class="your_trail">
+                                    <div class="image_trail">
+                                        <img src="{{ trail.image.url }}" alt="">
+                                    </div>
+                                    <div class="trail_description">
+                                        <p id="name-trail">{{ trail.name }}</p>
+                                        <div class="country">
+                                            <p><span>Kraj:</span> {{ trail.country }}</p>
+                                        </div>
+                                        <div class="city">
+                                            <p><span>Miasto:</span> {{ trail.city }}</p>
+                                        </div>
+                                        <div class="average_grade">
+                                            <p><span>Ocena:</span> {{ trail.average_grade }}</p>
+                                            <p><span>Zwiedziło:</span> {{ trail.done.all.count }}</p>
+                                        </div>
+                                        <div class="button-interesting">
+                                            <button><a href="{% url 'trails:trail_detail' trail.id %}">Szczegóły</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         let allElements = document.getElementById('all')
