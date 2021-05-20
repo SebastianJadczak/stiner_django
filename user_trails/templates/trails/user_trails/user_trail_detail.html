@@ -3,12 +3,10 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -28,22 +26,8 @@
 
     <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <style>
-        #map_1de6ef4f1218487da9d6da057bb8f454 {
-                   z-index: 0;
-                    margin-top:7px;
-                    width: 100vw;
-                    height: 600px;
-                    left: 0.0%;
-                    top: 0.0%;
-                    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.4);
-                }
-    </style>
-
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_map.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_point.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_all_trails.css' %}">
@@ -51,11 +35,11 @@
     <link rel="stylesheet" href="{% static 'css/style_trail_detail.css' %}">
 </head>
 <body>
-<div id="top_mapa">
-    <div class="logo_mapa"><img src="{% static "img/logo.png" %}" alt="logo"></div>
-    <div class="menu_mapa">
+<div id="top">
+    <div class="logo"><img src="{% static "img/logo.png" %}" alt="logo"></div>
+    <div class="menu">
         <ul>
-            <li class="red top_menu"><a href="{% url  'mapFullScreen'%}" ></i>Mapa</a></li>
+            <li class="red top_menu"><a href="{% url  'mapFullScreen'%}" >Mapa</a></li>
             <li class="green top_menu" onclick="menuDetailTrail()">Trasy <i class="fas fa-angle-down"></i>
                 <div id="menu-detail-trail">
                     <ul>
@@ -71,13 +55,13 @@
                     </ul>
                 </div>
             </li>
-            <li class="blue"><a href="{% url 'blog:list_posts' %}"><i class="fas fa-book-open"></i>Blog</a></li>
-            <li class="gold"><a href="{% url 'contact:contact_detail' %}"><i class="fas fa-at"></i>Kontakt</a></li>
+            <li class="blue top_menu"><a href="{% url 'blog:list_posts' %}">Blog</a></li>
+            <li class="gold top_menu"><a href="{% url 'contact:contact_detail' %}">Kontakt</a></li>
         </ul>
     </div>
     <div class="login_mapa">
         {% if user.is_authenticated %}
-              <a href="{% url 'done' %}" id="eye"><i class="far fa-eye"></i></a>
+             <a href="{% url 'done' %}" id="eye"><i class="far fa-eye"></i></a>
             <a href="{% url 'favorite' %}" id="heart"><i class="far fa-heart"></i></a>
         {% endif %}
        {% if user.is_authenticated %}
@@ -102,86 +86,169 @@
         {% endif %}
     </div>
 </div>
-<p id="trail_id" hidden>{{user_trail.id}}</p>
-<div class="panorama_mapa" >
-<div class="x">
-    <h3>{{user_trail.name}}</h3>
+<p id="trail_id" hidden>{{user_trail_id}}</p>
+    <div class="panorama_mapa" style="background-image:  url({{ user_trail.image.url }})">
+        <div class="x">
+            <h3>{{user_trail.name}}</h3>
+        </div>
+        <div id="file-trail">
+{#            <button id="pdf"><a href="{% url 'trails:pdf_trail' trail.id %}"><i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</a></button>#}
+            <button id="pdf"><a href=""><i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</a></button>
+            <button id="audio"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</button>
+        </div>
     </div>
-</div>
 <div class="center">
-    <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
-    <div id="points_in_trail">
-        <ul>
-            {% for p in points %}
-                <li>
-                    <div class="point_in_trail" id="{{p.id}}">
-                        <div class="title_point" ><h3>{{p.name}}</h3></div>
-                        <div class="description_point" ><p>{{p.descriptions}}</p></div>
-                        <div class="more" onclick="add_active_to_point({{p.id}})"><p style="cursor:pointer">Rozwiń</p></div>
+    <div id="trail-left">
+        <div id="basic-info">
+            <div class="name-trail">
+                <div id="title">
+                    <h3>{{ user_trail.name }}:</h3>
+                    <div id="buttons_trail">
+{#                        {% if user.is_authenticated %}#}
+{#                            {% if trail_dones %}#}
+{#                                <form action="{% url 'trails:trail_done' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="done_trail" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Usuń z wykonanych</button></form>#}
+{#                            {% else %}#}
+{#                                <form action="{% url 'trails:trail_done' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="done_trail" />{%   csrf_token %}<button type="submit"><i class="fas fa-eye"></i> Dodaj do wykonanych</button></form>#}
+{#                            {% endif %}#}
+{#                            {% if trail_liked %}#}
+{#                                <form action="{% url 'trails:trail_heart' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="heart_trail"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Usuń z ulubionych</button></form>#}
+{#                            {% else %}#}
+{#                                <form action="{% url 'trails:trail_heart' trail.pk%}" method="post"><input type="text" value="{{ trail.id }}" hidden name="heart_trail"/>{%   csrf_token %}<button type="submit"><i class="fas fa-heart"></i> Dodaj do ulubionych</button></form>#}
+{#                            {% endif %}#}
+{#                        {% endif %}#}
                     </div>
-                </li>
-            {% endfor %}
-        </ul>
+                </div>
+                <div class="icons">
+                    <p id="done"><i class="fas fa-eye"></i> <span>{{ user_trail.done.all.count }} x wykonano</span>|</p>
+                    <p id="heart"><i class="fas fa-heart"></i><span>{{ user_trail.heart.all.count }} x W ulubionych</span>|</p>
+                    <p id="downloads"><i class="fas fa-file-download"></i><span>{{ user_trail.downloads|length }} x pobrań</span>|</p>
+                    <p id="sound"><i class="fas fa-volume-up"></i><span>{{ user_trail.sound|length }} x odsłuchań</span>|</p>
+                </div>
+            </div>
+            <div class="more-trail">
+                <div class="left">
+                    <div id="start">
+                        <i class="fas fa-play"></i><p><span>Miejsce startowe: </span> <i id="first"></i></p>
+                    </div>
+                    <div id="type">
+                        <i class="fas fa-road"></i> <p><span>Typ trasy:</span> <i>{{ user_trail.type }}</i></p>
+                    </div>
+                    <div id="for_whom">
+                        <i class="fas fa-user-friends"></i> <p><span>Dla kogo: </span><i>{{ user_trail.for_whom }}</i></p>
+                    </div>
+                    <div id="city">
+                        <i class="fas fa-city"></i> <p><span>Miasto: </span><i>{{ user_trail.city }}</i></p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div id="end">
+                        <i class="far fa-stop-circle"></i> <p><span>Miejsce docelowe:</span> <i id="last"></i></p>
+                    </div>
+                    <div id="len">
+                        <i class="fas fa-car"></i> <p><span>Długość:</span> <i id="length"></i></p>
+                    </div>
+                    <div id="region">
+                        <i class="fas fa-mountain"></i>
+                        <p><span>Region:</span> <i>{{ user_trail.region }}</i></p>
+                    </div>
+                    <div id="country">
+                        <i class="fas fa-globe-americas"></i> <p><span>Kraj: </span><i>{{ user_trail.country }}</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+            <h3>Trasa na mapie:</h3>
+            <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
+        </div>
+        <div id="points_in_trail">
+            <ul>
+                {% for p in points %}
+                    <li>
+                    <div class="image-trail"><img src="{{ p.image.url }}" alt=""></div>
+                        <div class="point_in_trail" id="{{ p.id }}">
+                            <div class="title_point"><h3>{{ p.name }}</h3></div>
+                            <div class="description_point"><p>{{ p.descriptions }}</p></div>
+
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="opinion-trail">
+                       <h3>Oceny i opinie</h3>
+                        <p>
+                       </p>
+    <!--                   Opinie -->
+                       {% if opinion_trail %}
+                           <div class="opinions">
+                               {% for element in opinion_trail %}
+                                    <div class="opinion">
+                                        <div class="top">
+                                            <p id="user">{{element.user}}</p>
+                                            <p id="rating">Ocena
+                                                {% if element.rate == 5.0 %} <span>★★★★★</span>
+                                                {% elif element.rate == 4.0 %}<span>★★★★</span>
+                                                {% elif element.rate == 3.0 %}<span>★★★</span>
+                                                {% elif element.rate == 2.0 %}<span>★★</span>
+                                                {% elif element.rate == 1.0 %}<span>★</span>
+                                                {%endif%}</p>
+                                            </div>
+                                        <p id="opinion">{{element.opinion}}</p>
+                                    </div>
+                               {% endfor %}
+                           </div>
+                       {% else %}
+        <!--                   Jeśli brak opinie to...-->
+                           <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
+                       {% endif %}
+                       <h3>Napisz własną opinię:</h3>
+                       {% if user.is_authenticated %}
+                           <form action="" method="post">
+                               <div class="top_form">
+                                   <input type="text" class="nick" name="nick" placeholder="Podaj swój nick", value="{{request.user}}" disabled style="width: 100px;text-align:center; margin-right: 170px">
+                                   <input type="text" class="nick" name="trail_id" placeholder="id punbktu" value="{{trail_id}}" hidden>
+                                   <p id="yours_stars-trail">Twoja ocena</p>
+                                   <div class="stars-trail">
+                                        <input type="radio" id="star5" name="star" value="5">
+                                        <label for="star5"> Five Stars </label>
+                                        <input type="radio" id="star4" name="star" value="4">
+                                        <label for="star4"> Four Stars </label>
+                                        <input type="radio" id="star3" name="star" value="3">
+                                        <label for="star3"> Three Stars </label>
+                                        <input type="radio" id="star2" name="star" value="2">
+                                        <label for="star2"> Two Stars </label>
+                                        <input type="radio" id="star1" name="star" value="1">
+                                        <label for="star1"> One Star </label>
+                                  </div>
+                               </div>
+                               <div class="bottom_form">
+                                   <textarea name="recension" id="" placeholder="Twoja recenzja"></textarea>
+                                   <button>Zapisz Opinię</button>
+                               </div>
+                               {% csrf_token %}
+                           </form>
+                       {%else%}
+                            <p>Aby dodać opinię, proszę się zalogować.</p>
+                       {% endif %}
+        </div>
     </div>
-    <div class="opinion">
-                   <h3>Oceny i opinie</h3>
-                    <p>
-                      {{object.0.name}}
-                   </p>
-<!--                   Opinie -->
-                   {% if opinion %}
-                       <div class="opinions">
-                           {% for element in opinion %}
-                                <div class="opinion">
-                                    <div class="top">
-                                        <p id="user">{{element.user}}</p>
-                                        <p id="rating">Ocena
-                                            {% if element.rating is 5 %} <span>★★★★★</span>
-                                            {% elif element.rating is 4 %}<span>★★★★</span>
-                                            {% elif element.rating is 3 %}<span>★★★</span>
-                                            {% elif element.rating is 2 %}<span>★★</span>
-                                            {% elif element.rating is 1 %}<span>★</span>
-                                            {%endif%}</p>
-                                        </div>
-                                    <p id="opinion">{{element.opinion}}</p>
-                                </div>
-                           {% endfor %}
-                       </div>
-                   {% else %}
-    <!--                   Jeśli brak opinie to...-->
-                       <p>Ten obiekt nie posiada jeszcze recenzji. Bądź pierwszy.</p>
-                   {% endif %}
-                   <h3>Napisz własną opinię:</h3>
-                   {% if user.is_authenticated %}
-                       <form action="" method="post">
-                           <div class="top_form">
-                               <input type="text" class="nick" name="nick" placeholder="Podaj swój nick", value="{{request.user}}" disabled style="width: 100px;text-align:center; margin-right: 170px">
-                               <input type="text" class="nick" name="trail_id" placeholder="id punbktu" value="{{trail_id}}" hidden>
-                               <p id="yours_stars">Twoja ocena</p>
-                               <div class="stars">
-                                    <input type="radio" id="star5" name="star" value="5">
-                                    <label for="star5"> Five Stars </label>
-                                    <input type="radio" id="star4" name="star" value="4">
-                                    <label for="star4"> Four Stars </label>
-                                    <input type="radio" id="star3" name="star" value="3">
-                                    <label for="star3"> Three Stars </label>
-                                    <input type="radio" id="star2" name="star" value="2">
-                                    <label for="star2"> Two Stars </label>
-                                    <input type="radio" id="star1" name="star" value="1">
-                                    <label for="star1"> One Star </label>
-                              </div>
-                           </div>
-                           <div class="bottom_form">
-                               <textarea name="recension" id="" placeholder="Twoja recenzja"></textarea>
-                               <button>Zapisz Opinię</button>
-                           </div>
-                           {% csrf_token %}
-                       </form>
-                   {%else%}
-                        <p>Aby dodać opinię, proszę się zalogować.</p>
-                   {% endif %}
-               </div>
+    <div id="trail-right">
+
+    </div>
+    <div id="social-right">
+        <div id="fb"><a href="https://www.facebook.com/Stiner-100928478828163"><i class="fab fa-facebook-square"></i></a></div>
+        <div id="li"><a href="https://www.linkedin.com/company/stiner/"><i class="fab fa-linkedin"></i></a></div>
+        <div id="youtube"><i class="fab fa-youtube"></i></div>
+    </div>
 </div>
+
+{#<script src="{% static 'js/all_trails.js' %}" type="text/javascript"></script>#}
+<script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!--Skrypty do mapy-->
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
 <!--Skrypty do mapy-->
 <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
@@ -195,6 +262,7 @@ let icon = document.querySelector("i.fa-angle-down");
 let user_menu = document.querySelector("div.user_menu");
 let yours_trails = document.querySelector("li.yours_trails");
 let tr = document.querySelector("div.tr")
+let distance = document.getElementById('length');
 
 if (menu) {
     menu.addEventListener('click', function () {
@@ -231,6 +299,16 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}{r}.png', {
 let id_trail = document.querySelector("p#trail_id");
 let points = []
 const waypoints = []
+let first =  document.getElementById('first')
+let last =  document.getElementById('last')
+let firstLastPoints = []
+ function setFirstPoint(data){
+    first.innerText = Object.values(data)[1]
+ }
+
+ function setLastPoint(data){
+    last.innerText = Object.values(data)[1]
+ }
 
  function get_point_in_trail(){
                 //Pobieranie danych z API odnośnie punktów w trasie
@@ -241,6 +319,8 @@ const waypoints = []
                             function addElements(item, index) {
                                 waypoints.push(L.latLng( parseFloat(item.coordinateX), parseFloat(item.coordinateY)))
                              }
+                             setFirstPoint(data[0])
+                            setLastPoint(data[data.length-1])
                         })
          setTimeout(add_points_to_waypoints, 1000)
             }
@@ -256,7 +336,9 @@ get_point_in_trail()
                                     routeWhileDragging: false,
                                     lineOptions : {
                                         addWaypoints: false
-                                    }
+                                    }}).on('routesfound', function(e) {
+        var routes = e.routes;
+        distance.innerText= (routes[0].summary.totalDistance / 1000).toFixed(2) + 'km'
                                      }).addTo(map_1de6ef4f1218487da9d6da057bb8f454);
                             }
 

@@ -7,6 +7,7 @@ from django.views.generic import ListView, DetailView
 from rest_framework import generics
 
 from map.models import Point, Coordinates
+from trails.models import Trail
 from trails.views import MethodTrail
 from user_trails.models import UserTrail, UserPoint
 from .api.serializers import UserTrailsSerializer
@@ -237,6 +238,7 @@ class UserTrailDetail(DetailView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
         context['user_trail'] = list(UserTrail.objects.filter(id=self.kwargs['pk']))[0]
+        context['points'] = list(list(UserTrail.objects.filter(id=self.kwargs['pk']))[0].points.all())
         context['user_trail_id'] = self.kwargs['pk']
         return context
 

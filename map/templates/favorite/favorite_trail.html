@@ -31,7 +31,37 @@
         </div>
     </div>
     <div class="favorite_trail">
-
+        <h3>Ulubione trasy</h3>
+        <div id="favorite_trails">
+            <ul>
+                {% for trail in trail_favorite %}
+                    <li>
+                        <div class="trail">
+                            <div class="image_trail">
+                                <img src="{{ trail.image.url }}" alt="">
+                            </div>
+                            <div class="trail_description">
+                                <p id="name-trail">{{ trail.name }}</p>
+                                <div class="country">
+                                    <p><span>Kraj:</span> {{ trail.country }}</p>
+                                </div>
+                                <div class="city">
+                                    <p><span>Miasto:</span> {{ trail.city }}</p>
+                                </div>
+                                <div class="average_grade">
+                                    <p><span>Ocena:</span> {{ trail.average_grade }}</p>
+                                    <p><span>Zwiedziło:</span> {{ trail.done.all.count }}</p>
+                                </div>
+                                <div class="button-interesting">
+                                    <button><a href="{% url 'trails:trail_detail' trail.id %}">Szczegóły</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
     <script>
         let allElements = document.getElementById('trail')
