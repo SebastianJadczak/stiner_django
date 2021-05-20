@@ -31,7 +31,7 @@
             font-family: 'Lato-Bold', sans-serif;
             letter-spacing: 1.3px;
             font-size: 18px;
-            margin: 10px 0 30px;
+            margin: 10px 0 40px;
             padding: 0;
         }
 
@@ -41,6 +41,7 @@
             font-size: 17px;
             font-weight: bold;
             margin-bottom: 0;
+            padding-left: 50px;
         }
 
         div.image-point {
@@ -53,13 +54,31 @@
         }
 
         div.description-point {
-            padding: 0 80px 20px 0;
+            padding: 0 130px 20px 50px;
         }
 
         div.description-point p {
             font-size: 15px;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             margin: 0;
+        }
+
+        div.basic-info {
+            margin: 20px 0 40px 50px;
+
+        }
+
+        div.basic-info div p {
+            font-size: 15px;
+            display: inline-block;
+        }
+        p#blank{
+            font-size: 10px;
+            color: white;
+        }
+
+        div.basic-info p span {
+            font-family: Lato-Bold, sans-serif;
         }
     </style>
 </head>
@@ -70,6 +89,24 @@
 </div>
 <div class="name-point">
     <h3>{{ point.name }}</h3>
+</div>
+<div class="basic-info">
+        <div>
+            <p id="type"><span>Typ punktu: </span>{{ point.type }}</p>
+            <p id="blank">__________________</p>
+            <p id="coordinates"><span>Współżędne: </span>{{ point.coordinateX }} {{ point.coordinateY }}</p>
+        </div>
+        <div>
+            <p id="for_whom"><span>Dla kogo: </span>{{ point.for_whom }}</p>
+            <p id="blank">_________________________________</p>
+            <p id="region"><span>Region: </span>{{ point.region }}</p>
+        </div>
+        <div>
+            <p id="city"><span>Miasto: </span>{{ point.location }}</p>
+            <p id="blank">________________________</p>
+            <p id="country"><span>Kraj: </span> {{ point.country }}</p>
+        </div>
+
 </div>
 <div class="description-point">
     <p>{{ point.descriptions }}</p>
