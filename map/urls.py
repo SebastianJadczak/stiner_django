@@ -10,7 +10,7 @@ router.register(r'mapCenter', MapCenterViewsets)
 urlpatterns = [
 
     path('api/', include(router.urls)),
-    path('sort/', views.Sort.sort, name='sort')
+    path('sort/', views.DoneList.sort, name='sort')
 
 ]
 
