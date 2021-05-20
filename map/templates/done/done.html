@@ -87,7 +87,7 @@
     <div class="sort_menu">
         <div class="sort">
             <p>Sortuj według:</p>
-            <select name="" id="sort">
+            <select name="" id="sort" onchange=sort('ocena')>
                 <option value="done">Zwiadzających</option>
                 <option value="rate">Ocena</option>
             </select>
@@ -202,6 +202,7 @@
     <a href="https://www.linkedin.com/in/sebastian-jadczak-b74a40182">&copy; Sebastian Jadczak</a>
 </div>
 
-
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="https://kit.fontawesome.com/e4892fcf67.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<script src="{% static 'js/done.js' %}" type="text/javascript"></script>

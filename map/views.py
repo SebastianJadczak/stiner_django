@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.views.generic import ListView
 from rest_framework import viewsets, request
 from rest_framework.response import Response
@@ -163,3 +164,8 @@ class DoneList(ListView):
         context['country'] = self.country
         context['city'] = self.coordinates
         return context
+
+class Sort(DoneList):
+    @csrf_exempt
+    def sort(self ):
+        pass
