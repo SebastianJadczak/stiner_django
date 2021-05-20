@@ -9,7 +9,6 @@ from trails.models import Trail, Rate_trail
 from user_trails.models import UserTrail
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template.loader import get_template
-from xhtml2pdf import pisa
 
 import os
 from django.conf import settings

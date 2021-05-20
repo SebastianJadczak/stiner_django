@@ -14,17 +14,69 @@
             src: url("../static/Lato/Lato-Regular.ttf") format('truetype');
         }
 
-        p{
-            font-family: 'Lato', serif;
-            font-size: 20px
+        @font-face {
+            font-family: 'Lato-Bold';
+            src: url("../static/Lato/Lato-Bold.ttf") format('truetype');
         }
 
+        body {
+            font-family: 'Lato', sans-serif;
+        }
 
+        div.logo_pdf {
+            text-align: center;
+        }
+
+        div.logo_pdf h3 {
+            font-family: 'Lato-Bold', sans-serif;
+            letter-spacing: 1.3px;
+            font-size: 18px;
+            margin: 10px 0 30px;
+            padding: 0;
+        }
+
+        div.name-point h3 {
+            font-family: 'Lato-Bold', sans-serif;
+            letter-spacing: 1.3px;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        div.image-point {
+            text-align: center;
+        }
+
+        div.image-point img {
+            width: 550px;
+            height: 300px;
+        }
+
+        div.description-point {
+            padding: 0 80px 20px 0;
+        }
+
+        div.description-point p {
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
-<p>{{ point.name }}ęś</p>
-<p id="pi">Sęś</p>
-</body>
+<div class="logo_pdf">
+    <img src="./map/static/img/logo.png" alt="">
+    <h3>Z nami zaplanujesz wakacje.</h3>
+</div>
+<div class="name-point">
+    <h3>{{ point.name }}</h3>
+</div>
+<div class="description-point">
+    <p>{{ point.descriptions }}</p>
+</div>
+<div class="image-point">
+    <img src="media/{{ point.image }}">
+</div>
 
+</body>
 </html>
