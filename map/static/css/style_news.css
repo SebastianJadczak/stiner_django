@@ -1,5 +1,5 @@
 div.title-news {
-    width: 100vw;
+    width: 99vw;
     height: 300px;
     background-position: center;
     background-size: cover;
@@ -7,7 +7,7 @@ div.title-news {
 
 div.title-news h3 {
     margin: 0;
-    padding-top: 35px;
+    padding-top: 55px;
     text-align: center;
     font-family: 'Archivo Black', sans-serif;
     font-size: 40px;
@@ -16,4 +16,39 @@ div.title-news h3 {
     color: white;
     -webkit-text-stroke: 0.6px black;
     text-shadow: 0 0 3px black;
+}
+
+div.content_news {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
+    min-height: 90vh;
+    display: flex;
+    flex-direction: row;
+    padding: 30px 100px;
+    justify-content: space-between;
+}
+
+div.content_news div.text {
+    width: 60vw;
+}
+
+div.content_news div.text p {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+     background: rgba(255,255,255,0.7);
+    border-radius: 10px;
+    border: 1px solid #c4c4c4;
+    padding: 30px 30px;
+}
+
+div.top_rate-trails {
+    width: 20vw;
+    padding: 0 15px;
+}
+
+div.top_rate-trails h4 {
+    font-family: 'Chau Philomene One', sans-serif;
+    font-weight: normal;
+    letter-spacing: 1.4px;
+    font-size: 19px;
+    margin-top: 0;
 }
