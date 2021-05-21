@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.views import View
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from rest_framework import viewsets, request
 from rest_framework.response import Response
 
@@ -169,3 +169,12 @@ class DoneList(ListView):
         context['country'] = self.country
         context['city'] = self.coordinates
         return context
+
+
+class NewsDetail(DetailView):
+    template_name = 'news/news.html'
+    model = News
+
+    def get(self, request, *args, **kwargs):
+        news = News.objects.filter(id=self.kwargs['pk']).first()
+        return render(request, self.template_name, {'news': news})
