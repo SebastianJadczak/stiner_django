@@ -382,6 +382,9 @@ form.delete button{
         width: 100vw;
 
     }
+   div#top div.menu ul li.green i#arrow{
+        margin-top: 35px;
+    }
 }
 @media only screen and (max-width: 1189px) {
     div.title-points {
