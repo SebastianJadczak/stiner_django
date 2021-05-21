@@ -68,15 +68,164 @@ div.buttons-interesting a input{
 
 @media only screen and (max-width: 1680px) {
 
-div.search_points{
-    width:65%;
+    div.search_points {
+        width: 65%;
+    }
+
+    div.point_list_interest_point {
+        justify-content: space-between;
+        width: 89vw;
+        margin: 0 auto;
+        transform: translateX(-50px);
+    }
+
 }
 
-div.point_list_interest_point{
- justify-content: space-between;
-    width: 89vw;
-    margin: 0 auto;
-    transform: translateX(-50px);
+@media only screen and (max-width: 1260px) {
+    div.search_points {
+        width: 85%;
+    }
 }
 
+@media only screen and (max-width: 1140px) {
+    div.search_points {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1140px) {
+    div.search_points {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    div.search_points form input {
+        width: 100px;
+        height: 19px;
+    }
+
+    div.search_points form select {
+        height: 27px;
+        width: 100px;
+    }
+
+    div.search_points form button {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+}
+
+@media only screen and (max-width: 835px) {
+    div.search_points form label {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 755px) {
+    div.search_points form button {
+        margin-top: 15px;
+        font-size: 15px;
+        padding: 9px 20px;
+    }
+}
+
+@media only screen and (max-width: 675px) {
+    div.search_points {
+        width: 70%;
+    }
+
+    div.search_points form button {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+}
+
+@media only screen and (max-width: 655px) {
+    div.search_points {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    div.search_points {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 512px) {
+    div.search_points {
+        padding-bottom: 5px;
+    }
+
+    div.search_points form label {
+        display: block;
+        height: 40px;
+        font-size: 16px;
+        text-align: left;
+        margin-left: 30px;
+    }
+
+    div.search_points form label input {
+        margin-left: 35px;
+        width: 190px
+    }
+
+    div.search_points form label.location select {
+        width: 200px
+    }
+
+    div.search_points form label.type select {
+        width: 200px;
+        margin-left: 30px;
+    }
+
+    div.search_points form button {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 7px 20px;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+
+    div.search_points form label {
+        margin-left: 10px;
+    }
+     div.search_points form label input {
+        margin-left: 35px;
+        width: 150px
+    }
+
+    div.search_points form label.location select {
+        width: 160px
+    }
+
+    div.search_points form label.type select {
+        width: 160px;
+        margin-left: 30px;
+    }
+}
+@media only screen and (max-width: 395px) {
+
+    div.search_points form label {
+        margin-left: 25px;
+    }
+     div.search_points form label input {
+        width: 100px
+    }
+
+    div.search_points form label.location select {
+        width: 110px
+    }
+
+    div.search_points form label.type select {
+        width: 110px;
+    }
+}
+@media only screen and (max-width: 341px) {
+
+    div.search_points form label {
+        margin-left: 5px;
+    }
 }
