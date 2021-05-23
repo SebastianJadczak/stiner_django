@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from account.models import UserRole
 from map.api.serializers import PointSerializer, LocationMapSerializer
 from map.forms import FormularzRejestracji
-from map.models import Point, Coordinates, NewsletterEmail, News
+from map.models import Point, Coordinates, NewsletterEmail, News, AdvertisementNews
 from shop.models import Category
 from trails.models import Trail
 from trails.views import MethodTrail
@@ -190,4 +190,6 @@ class NewsDetail(DetailView):
 
     def get(self, request, *args, **kwargs):
         news = News.objects.filter(id=self.kwargs['pk']).first()
-        return render(request, self.template_name, {'news': news, 'top_rate_trails': self.get_top_rate_trails(),'top_rate_points':self.get_top_rate_points()})
+        ad = AdvertisementNews.objects.filter(active=True).first()
+        return render(request, self.template_name, {'news': news, 'top_rate_trails': self.get_top_rate_trails(),
+                                                    'top_rate_points':self.get_top_rate_points(), 'ad': ad})

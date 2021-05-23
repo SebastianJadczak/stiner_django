@@ -14,6 +14,14 @@
                 <h4>Aktualności:</h4>
                 <p> {{ news.descriptions }}</p>
             </div>
+            <div class="advertisement">
+                <p id="advertisement">Reklama</p>
+                <div id="ad">
+                    <a href="{{ ad.url }}">
+                        <img src="{{ ad.image.url }}" alt="">
+                    </a>
+                </div>
+            </div>
             <div class="top_rate-points">
                 <h4>Najwyżej ocenione punkty</h4>
                 <div class="wrap-points">

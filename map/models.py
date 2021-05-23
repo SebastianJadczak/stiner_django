@@ -106,3 +106,13 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
+
+class AdvertisementNews(models.Model):
+    """Model odpowiedzialny za reklamę na stronie News."""
+    title = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='media/advertisement')
+    url = models.CharField(max_length=60)
+    active = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
