@@ -154,7 +154,6 @@ class DoneList(ListView):
     done_point = []
     coordinates = Coordinates.objects.all()
     country = [value for key, value in Trail.get_country_trail(Trail)]
-    def sort(self):
 
     def get_context_data(self, **kwargs):
         self.done_trail = Trail.objects.filter(done=self.request.user)
