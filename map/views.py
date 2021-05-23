@@ -1,5 +1,5 @@
 from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.views.generic import ListView, DetailView
@@ -156,16 +156,15 @@ class DoneList(ListView):
     country = [value for key, value in Trail.get_country_trail(Trail)]
     def sort(self):
 
-        # print(request.POST.get('type'))
-        # if request.POST.get('type') == 'rate':
-        #     pass
-        # else:
-        #     pass
-        return render(request,template_name='done/done.html',)
-
     def get_context_data(self, **kwargs):
         self.done_trail = Trail.objects.filter(done=self.request.user)
         self.done_point = Point.objects.filter(done=self.request.user)
+        sorting = self.request.GET.get('sorting', "") #http//..../done/?sorting=rate ---  geting rate or done and adding to url
+        if sorting == "rate":
+            self.done_point = Point.objects.filter(done=self.request.user).order_by('-average_grade')
+        elif sorting == "done":
+            self.done_point = Point.objects.filter(done=self.request.user).order_by('done_count') #NOT WORKING
+                                                            # we should add some calculation in model to count 'done'
         context = super().get_context_data(**kwargs)
         context['trail_done'] = self.done_trail
         context['point_done'] = self.done_point
