@@ -1,7 +1,8 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.views import View
-from django.views.generic import ListView
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
+from django.views.generic import ListView, DetailView
 from rest_framework import viewsets, request
 from rest_framework.response import Response
 
@@ -154,6 +155,11 @@ class DoneList(ListView):
     coordinates = Coordinates.objects.all()
     country = [value for key, value in Trail.get_country_trail(Trail)]
 
+    @csrf_exempt
+    def sort(request):
+        print(request.POST.get('type'))
+        return render(request,template_name='done/done.html',)
+
     def get_context_data(self, **kwargs):
         self.done_trail = Trail.objects.filter(done=self.request.user)
         self.done_point = Point.objects.filter(done=self.request.user)
@@ -163,3 +169,16 @@ class DoneList(ListView):
         context['country'] = self.country
         context['city'] = self.coordinates
         return context
+
+
+class NewsDetail(DetailView):
+    template_name = 'news/news.html'
+    model = News
+
+    def get_top_rate_trails(self):
+        top_rate_trails = Trail.objects.order_by('average_grade').reverse()
+        return top_rate_trails
+
+    def get(self, request, *args, **kwargs):
+        news = News.objects.filter(id=self.kwargs['pk']).first()
+        return render(request, self.template_name, {'news': news, 'top_rate_trails': self.get_top_rate_trails()})

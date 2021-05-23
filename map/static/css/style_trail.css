@@ -376,3 +376,23 @@ form.delete button{
     }
 
 }
+@media only screen and (max-width: 1260px) {
+    div.title-points {
+        left: -115px;
+        width: 100vw;
+
+    }
+   div#top div.menu ul li.green i#arrow{
+        margin-top: 35px;
+    }
+}
+@media only screen and (max-width: 1189px) {
+    div.title-points {
+        left: -11%;
+    }
+}
+@media only screen and (max-width: 610px) {
+    div.title-points h3{
+        font-size: 33px;
+    }
+}

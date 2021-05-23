@@ -301,3 +301,14 @@ div.content {
     background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
 
 }
+@media only screen and (max-width: 1500px) {
+    div#top div.menu ul li.green {
+        width:50px;
+    }
+
+}
+@media only screen and (max-width: 666px){
+    div#top div.menu{
+        width: 40%;
+    }
+}

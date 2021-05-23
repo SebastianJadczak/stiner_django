@@ -738,8 +738,8 @@ div.footer a{
 }
 @media only screen and (max-width: 1480px) {
     div#top div.menu ul li.green i {
-        margin-top: 40px;
-        margin-left: -30px;
+        margin-top: 35px;
+        margin-left: 5px;
     }
 
     div#welcome div.search-holiday {
@@ -797,7 +797,7 @@ div.footer a{
     }
 
     div#top div.menu ul li.green i {
-        margin-top: 60px;
+        margin-top: 50px;
     }
 
     div#welcome div.search-holiday {
@@ -873,8 +873,19 @@ div.footer a{
         width: 135px;
     }
 
+    div.login_mapa a#heart, div.login_mapa a#eye {
+        display: inline-block;
+        margin-top: 40px;
+    }
+
     div#top div.menu_mapa {
         width: 40%;
+    }
+
+    div#top div.menu ul li.green div#menu-detail-trail.active {
+        top: 70px;
+        left: 20%;
+        z-index: 100;
     }
 
     div#welcome div.text {
@@ -926,8 +937,8 @@ div.footer a{
     div.login_mapa button {
         width: 100px;
         height: 33px;
-        margin-top: 20px;
-        transform: translateY(10px);
+        margin-top: 10px;
+
     }
     div.login_mapa button.register {
         width: 110px;
@@ -1010,7 +1021,7 @@ div.footer a{
 
 @media only screen and (max-width: 844px) {
     div#top div.menu ul li.green i {
-        margin-top: 60px;
+        margin-top: 50px;
     }
 
     #top_mapa {
@@ -1021,8 +1032,18 @@ div.footer a{
         padding: 50px 30px;
     }
 
+    div.logo {
+        height: 60px;
+        width: 125px;
+        margin-top: 10px;
+    }
+
     div#top_mapa div.menu_mapa ul {
         padding-left: 5px;
+    }
+
+    div#top div.menu ul {
+        padding-left: 0;
     }
 
     div#top_mapa div.menu_mapa {
@@ -1036,7 +1057,10 @@ div.footer a{
 
 @media only screen and (max-width: 768px) {
     #top {
-        padding-left: 25px;
+        padding-left: 15px;
+    }
+     div#top div.menu ul li.green div#menu-detail-trail.active {
+        left: 10%;
     }
 
     div.logo {
@@ -1045,7 +1069,23 @@ div.footer a{
     }
 
     div#top div.menu_mapa {
-        width: 45%;
+        width: 40%;
+    }
+
+    div.login_mapa a i {
+        font-size: 18px;
+    }
+
+    div.login_mapa {
+        width: 150px;
+        padding-top: 5px;
+        margin-left: 15px;
+    }
+
+    div.login_mapa button.user_menu {
+        margin-left: 0;
+        margin-right: 0;
+        width: 60px;
     }
 
     div#welcome {
@@ -1054,6 +1094,10 @@ div.footer a{
 
     body {
         font-size: 12px;
+    }
+
+    div#welcome div.text {
+        left: 10px;
     }
 
     div#welcome div.text div#earth {
@@ -1074,13 +1118,21 @@ div.footer a{
     }
 
     div#welcome div.text h2 {
-        font-size: 35px;
+        font-size: 30px;
         letter-spacing: 3px;
-        margin: 10px;
+        margin: 10px 0;
+        padding-left: 10px;
     }
 
     div#welcome section#buttons_type_holiday {
-        margin-left: 60px;
+        margin-left: 20px;
+    }
+
+    div#welcome section#buttons_type_holiday button {
+        margin-left: 15px;
+        width: 100px;
+        height: 35px;
+        letter-spacing: 1.1px;
     }
 
     div#news {
@@ -1127,27 +1179,45 @@ div.footer a{
     }
 
     div#top div.menu_mapa {
-        width: 50%;
+        width: 40%;
     }
-
+     div#top div.menu ul li.green div#menu-detail-trail.active {
+         width: 500px;
+         height: 50px;
+    }
+div#top div.menu div#menu-detail-trail ul li a{
+    font-size: 10px;
+    line-height: 55px;
+}
     div#welcome div.text {
         left: 10px;
     }
 
     div#welcome section#buttons_type_holiday button {
-        margin-left: 15px;
-        width: 105px;
+        margin-left: 10px;
+        width: 95px;
         height: 35px;
     }
 
     div#welcome div.text h2 {
-        font-size: 30px;
+        font-size: 26px;
         letter-spacing: 1px;
         margin: 9px;
     }
 
+    div#welcome div.text div#earth {
+        width: 57px;
+        height: 57px;
+    }
+
+    div#welcome div.text div#earth i {
+        line-height: 48px;
+        font-size: 35px;
+        margin-left: 7px;
+    }
+
     div#welcome section#buttons_type_holiday {
-        margin-left: 50px;
+        margin-left: 20px;
     }
 
     div#welcome div.search-holiday {
@@ -1238,68 +1308,90 @@ div.footer a{
 }
 
 @media only screen and (max-width: 578px) {
-#top {
-        padding-left: 30px;
+    #top {
+        padding-left: 10px;
         height: 60px;
-}
-div#top div.menu_mapa {
-    width: 80%;
-}
-div#top div.menu ul li.green i {
-    margin-top: 40px;
-}
-div.logo {
-    height: 45px;
-}
-div#welcome {
-    height: 65vh;
-}
-div#top div.menu_mapa ul li {
-    line-height: 65px;
-}
-div.login_mapa button.user_menu {
-    height: 8px;
-    margin-left: 52px;
-    width: 150px;
-}
-div#welcome div.text {
-    position: relative;
-    top: -25px;
-    left: 50px;
-}
-div#welcome div.text h2 {
-    font-size: 28px;
-}
-div#welcome div.search-holiday {
-    position: relative;
-    right: 230px;
-    top: 138px;
-    width: 215px;
-    height: 270px;
-}
-div#news p {
-    width: 90vw;
-}
-div#news section ul li {
-    width: 166px;
-    height: 131px;
-}
-div#news section ul li div h3 {
-    line-height: 140px;
-    font-size: 15px;
-    padding: 41px 0 0 1px;
-    text-shadow: 0 0 2px black;
-}
-div#news section#big ul li {
-    width: 253px;
-    height: 170px;
-}
-div#news section ul li div#news-post-big h3 {
-    padding-top: 64px;
-}
+    }
+
+    div#top div.menu_mapa {
+        width: 40%;
+    }
+
+    div#top div.menu ul li.green i {
+        margin-top: 40px;
+    }
+
+    div.logo {
+        height: 45px;
+        width: 90px;
+    }
+
+    div.login_mapa {
+        width: 170px;
+    }
+
+    div#welcome {
+        height: 70vh;
+    }
+
+    div#top div.menu_mapa ul li {
+        line-height: 80px;
+    }
+
+    div.login_mapa button.user_menu {
+        height: 8px;
+        margin-left: 3px;
+    }
+
+    div.login_mapa a#heart, div.login_mapa a#eye {
+        margin-top: 25px;
+    }
+
+    div#welcome div.text {
+        position: relative;
+        top: -25px;
+        left: 50px;
+    }
+
+    div#welcome div.text h2 {
+        font-size: 26px;
+    }
+
+    div#welcome div.search-holiday {
+        position: relative;
+        right: 210px;
+        top: 168px;
+        width: 215px;
+        height: 270px;
+    }
+
+    div#news p {
+        width: 90vw;
+    }
+
+    div#news section ul li {
+        width: 166px;
+        height: 131px;
+    }
+
+    div#news section ul li div h3 {
+        line-height: 140px;
+        font-size: 15px;
+        padding: 41px 0 0 1px;
+        text-shadow: 0 0 2px black;
+    }
+
+    div#news section#big ul li {
+        width: 253px;
+        height: 170px;
+    }
+
+    div#news section ul li div#news-post-big h3 {
+        padding-top: 64px;
+    }
 
     div#newsletter-wrap div#newsletter {
-        width: 480px;
+        width: 450px;
         left: 5%;
     }
 
@@ -1333,90 +1425,81 @@ div#news section ul li div#news-post-big h3 {
 }
 
 @media only screen and (max-width: 506px) {
-#top {
-    padding-left: 0px;
-}
-div.logo img, div.logo_mapa img {
-    margin-top: 10px;
-    margin-left: 2px;
-    width: 60px;
-    height: 40px;
-}
-div#top div.menu_mapa ul li {
-    line-height: 60px;
-    margin-left: -30px;
-    font-size: 12px;
-}
-div#top div.menu ul li a {
-    font-size: 12px;
-    letter-spacing: 2.5px;
-}
-div.login_mapa {
-    margin-left: -10px;
-    margin-right: -20px;
-}
-div.login_mapa {
-    margin: -10px;
-}
-div.login_mapa button.user_menu {
-    height: 5px;
-    margin-left: 50px;
-    width: 145px;
-}
-div#welcome div.text {
-    top: -25px;
-    left: 30px;
-}
-div#welcome {
-    height: 65vh;
-}
-div#welcome div.search-holiday {
-    right: 246px;
-    top: 145px;
-    width: 200px;
-    height: 270px;
-}
-div#welcome div.search-holiday div#popular {
-    margin-top: 0px;
-    margin-left: -25px;
-}
-div#news h2 {
-    font-size: 25px;
-    margin-left: 25px;
-}
-div#news p {
-    width: 85vw;
-    font-size: 15px;
-}
-div#news section ul li {
-    width: 360px;
-    height: 220px;
-    margin: auto;
-}
-div#news section ul li div h3 {
-    line-height: 290px;
-    font-size: 30px;
-    padding: 45px 0 0 1px;
-}
-div#news section#big ul li {
-    width: 420px;
-    height: 250px;
-}
-div#news section ul li div#news-post-big h3 {
-    padding-top: 170px;
-}
-#map_1de6ef4f1218487da9d6da057bb8f454 {
-    height: 350px;
-}
-div#info-about-trail {
-    width: 90vw;
-}
-div#info-about-trail section div p:nth-of-type(1) {
-    font-size: 40px;
-}
-div#mobile-app {
-    padding: 35px 5vw;
-}
+    div.logo img, div.logo_mapa img {
+        margin-top: 10px;
+        margin-left: 2px;
+        width: 60px;
+        height: 40px;
+    }
+
+    div#top div.menu_mapa {
+        margin-right: 14px;
+    }
+
+    div.login_mapa {
+        width: 140px;
+    }
+
+    div#top div.menu ul li a, div#top div.menu ul li.green {
+        font-size: 12px;
+    }
+
+    div#welcome div.text {
+        top: -25px;
+        left: 30px;
+    }
+
+    div#welcome div.search-holiday div#popular {
+        margin-top: 0px;
+        margin-left: -25px;
+    }
+
+    div#news h2 {
+        font-size: 25px;
+        margin-left: 25px;
+    }
+
+    div#news p {
+        width: 85vw;
+        font-size: 15px;
+    }
+
+    div#news section ul li {
+        width: 360px;
+        height: 220px;
+        margin: auto;
+    }
+
+    div#news section ul li div h3 {
+        line-height: 290px;
+        font-size: 30px;
+        padding: 45px 0 0 1px;
+    }
+
+    div#news section#big ul li {
+        width: 420px;
+        height: 250px;
+    }
+
+    div#news section ul li div#news-post-big h3 {
+        padding-top: 170px;
+    }
+
+    #map_1de6ef4f1218487da9d6da057bb8f454 {
+        height: 350px;
+    }
+
+    div#info-about-trail {
+        width: 90vw;
+    }
+
+    div#info-about-trail section div p:nth-of-type(1) {
+        font-size: 40px;
+    }
+
+    div#mobile-app {
+        padding: 35px 5vw;
+    }
 
 
     div#newsletter-wrap div#newsletter form input#email {
@@ -1471,21 +1554,42 @@ div#mobile-app {
     }
 }
 
+@media only screen and (max-width: 460px) {
+    div#newsletter-wrap div#newsletter {
+        width: 430px;
+        left: 5%;
+    }
+
+    div#top div.menu ul li.green i {
+        display: none;
+    }
+
+    div#top div.menu ul li.green {
+        width: 65px;
+        margin-left: 7px;
+        display: block;
+    }
+}
+
 @media only screen and (max-width: 430px) {
-div.login_mapa {
-    margin: -15px;
-}
-div#welcome div.text {
-    top: -28px;
-    left: 5px;
-}
-div#welcome div.search-holiday {
-    right: 275px;
-}
-div#welcome div.search-holiday div#popular {
-    margin-top: -10px;
-    margin-left: -27px;
-}
+    div.login_mapa {
+        margin: -15px;
+    }
+
+    div#welcome div.text {
+        top: -28px;
+        left: 5px;
+    }
+
+    div#welcome div.search-holiday {
+        right: 275px;
+    }
+
+    div#welcome div.search-holiday div#popular {
+        margin-top: -10px;
+        margin-left: -27px;
+    }
+
     div#newsletter-wrap div#newsletter {
         width: 350px;
         left: 5%;
@@ -1494,11 +1598,13 @@ div#welcome div.search-holiday div#popular {
 
 @media only screen and (max-width: 413px) {
 
-    div#top_mapa div.menu_mapa {
+    div#top_mapa div.menu_mapa, div#top div.menu_mapa {
         width: 50%;
-        margin: 0 0 0 20px;
+        margin: 0 10px 0 0;
     }
-
+    div#login_rwd i{
+        transform: translateY(-5px);
+    }
     div.login_mapa {
         display: none;
     }
@@ -1513,10 +1619,10 @@ div#welcome div.search-holiday div#popular {
      div.login_mapa.mini{
          display: block;
          position: absolute;
-         width:90px;
-         height:76px;
+         width:150px;
+         height:80px;
          top:60px;
-         right:0;
+         right:5px;
          background-color: #ffffff;
          z-index: 99;
          border:1px solid #c3c3c3;
@@ -1532,6 +1638,9 @@ div#welcome div.search-holiday div#popular {
 
     div.login_mapa.mini button a {
         line-height: 38px;
+    }
+    div#top div.menu ul li.green{
+        width:50px;
     }
 
 }
