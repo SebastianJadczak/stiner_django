@@ -34,7 +34,7 @@ div.content_news div.text {
 div.content_news div.text p {
     font-family: Arial, sans-serif;
     font-size: 15px;
-     background: rgba(255,255,255,0.7);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     border: 1px solid #c4c4c4;
     padding: 30px 30px;
@@ -51,4 +51,81 @@ div.top_rate-trails h4 {
     letter-spacing: 1.4px;
     font-size: 19px;
     margin-top: 0;
+}
+
+div.top_rate-trails div.trails {
+    padding-left: 15px;
+}
+
+div.top_rate-trails div.trails div.trail {
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    border: 1px solid #c4c4c4;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+div.top_rate-trails div.trails div.trail div.image {
+    width: 120px;
+    height: 100px;
+}
+
+div.top_rate-trails div.trails div.trail div.image img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+div.top_rate-trails div.trails div.trail div.name {
+    margin-left: 10px;
+    width: 270px;
+}
+
+div.top_rate-trails div.trails div.trail div.name p#name {
+    font-family: 'Pattaya', sans-serif;
+    letter-spacing: 1.6px;
+    margin: 10px 0 14px 0;
+}
+
+div.top_rate-trails div.trails div.trail div.name div.more {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+div.top_rate-trails div.trails div.trail div.name div.more p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+
+div.top_rate-trails div.trails div.trail div.name div.more p span {
+    font-weight: bold;
+}
+
+div.top_rate-trails div.trails div.trail div.name div#more-button {
+    width: 260px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+div.top_rate-trails div.trails div.trail div.name div#more-button button {
+    margin-right: 10px;
+    background-color: #00bf0f;
+    border-radius: 10px;
+    border: none;
+    width: 70px;
+    height: 24px;
+}
+
+div.top_rate-trails div.trails div.trail div.name div#more-button button a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.1px;
 }

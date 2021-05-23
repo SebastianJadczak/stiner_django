@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style_news.css' %}">
     <div class="title-news" style="background-image:linear-gradient(rgba(59,59,59,0.4), rgba(0,0,0,0.4)), url({{ news.image.url }})">
         <h3>{{ news.title }}</h3>
@@ -9,15 +11,23 @@
         <div class="text">
             <p> {{ news.descriptions }}</p>
         </div>
-    <div class="top_rate-trails">
-        <h4>Najwyżej oceniane Trasy:</h4>
-        <div class="trails">
-            {% for trail in top_rate_trails %}
-                <div class="trail">
-                {{ trail }}
-                </div>
-            {% endfor %}
+        <div class="top_rate-trails">
+            <h4>Najwyżej oceniane Trasy:</h4>
+            <div class="trails">
+                {% for trail in top_rate_trails %}
+                    <div class="trail">
+                        <div class="image"><img src="{{ trail.image.url }}" alt=""></div>
+                        <div class="name">
+                            <p id="name">{{ trail.name }}</p>
+                            <div class="more">
+                                <p><span>Ocena:</span>{{ trail.average_grade }}</p>
+                                <p><span>Wykonało:</span> {{ trail.done_count }}</p>
+                            </div>
+                            <div id="more-button"><button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-    </div>
     </div>
 {% endblock %}

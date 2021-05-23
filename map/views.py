@@ -180,6 +180,8 @@ class NewsDetail(DetailView):
 
     def get_top_rate_trails(self):
         top_rate_trails = Trail.objects.order_by('average_grade').reverse()
+        if len(top_rate_trails) >=10:
+            top_rate_trails = top_rate_trails[0:10]
         return top_rate_trails
 
     def get(self, request, *args, **kwargs):

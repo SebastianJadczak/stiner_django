@@ -59,7 +59,7 @@ div.sort_menu div.sort p, div.filter p, div.search-done p {
     height: 20px;
 }
 
-select#sort {
+select#sort-list{
     width: 140px;
     height: 40px;
     padding: 10px;

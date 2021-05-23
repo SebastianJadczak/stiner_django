@@ -8,10 +8,6 @@ function get(name) {
   document.getElementById('placeholder').innerText = "Sort: " + document.getElementById(get('sorting')).innerText;
 
 
-
-
-
-
   // for getting url after applying sorting
 function finalurl() {
    var url = new URL(window.location.href);
