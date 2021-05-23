@@ -154,10 +154,13 @@ class DoneList(ListView):
     done_point = []
     coordinates = Coordinates.objects.all()
     country = [value for key, value in Trail.get_country_trail(Trail)]
+    def sort(self):
 
-    @csrf_exempt
-    def sort(request):
-        print(request.POST.get('type'))
+        # print(request.POST.get('type'))
+        # if request.POST.get('type') == 'rate':
+        #     pass
+        # else:
+        #     pass
         return render(request,template_name='done/done.html',)
 
     def get_context_data(self, **kwargs):
