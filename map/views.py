@@ -161,9 +161,11 @@ class DoneList(ListView):
         sorting = self.request.GET.get('sorting', "") #http//..../done/?sorting=rate ---  geting rate or done and adding to url
         if sorting == "rate":
             self.done_point = Point.objects.filter(done=self.request.user).order_by('-average_grade')
+            self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-average_grade')
         elif sorting == "done":
-            self.done_point = Point.objects.filter(done=self.request.user).order_by('done_count') #NOT WORKING
-                                                            # we should add some calculation in model to count 'done'
+            self.done_point = Point.objects.filter(done=self.request.user).order_by('-done_count')
+            self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-done_count')
+
         context = super().get_context_data(**kwargs)
         context['trail_done'] = self.done_trail
         context['point_done'] = self.done_point

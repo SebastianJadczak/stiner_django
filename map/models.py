@@ -67,6 +67,7 @@ class Point(models.Model):
     type = models.CharField(max_length=15, choices=TYPE_POINT)
     more_info = models.CharField(max_length=70, default=' ')
     done = models.ManyToManyField(User, blank=True, related_name='done_point')
+    done_count = models.IntegerField(default=0)
     heart = models.ManyToManyField(User, blank=True, related_name='heart_point')
     downloads = models.ManyToManyField(User, blank=True, related_name='downloads_point')
     sound = models.ManyToManyField(User, blank=True, related_name='sound_point')

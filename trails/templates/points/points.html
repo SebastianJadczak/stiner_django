@@ -48,7 +48,7 @@
                     </div>
                     <div class="average_grade">
                         <p><span>Ocena:</span>{{ element.average_grade }}</p>
-                        <p><span>Zwiedziło:</span> {{ element.done|length }}</p>
+                        <p><span>Zwiedziło:</span> {{ element.done.all.count }}</p>
                     </div>
                     <div class="buttons-interesting">
                         <a href="{% url "trails:point_detail" element.id %}"><input type="submit"

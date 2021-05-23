@@ -5,7 +5,7 @@ function get(name) {
   }
 
   if(get('sorting'))
-  document.getElementById('placeholder').innerHTML = "Sort: " + document.getElementById(get('sorting')).innerHTML;
+  document.getElementById('placeholder').innerText = "Sort: " + document.getElementById(get('sorting')).innerText;
 
 
 
