@@ -184,6 +184,10 @@ class NewsDetail(DetailView):
             top_rate_trails = top_rate_trails[0:10]
         return top_rate_trails
 
+    def get_top_rate_points(self):
+        top_rate_points = Point.objects.order_by('-average_grade')[0:4]
+        return top_rate_points
+
     def get(self, request, *args, **kwargs):
         news = News.objects.filter(id=self.kwargs['pk']).first()
-        return render(request, self.template_name, {'news': news, 'top_rate_trails': self.get_top_rate_trails()})
+        return render(request, self.template_name, {'news': news, 'top_rate_trails': self.get_top_rate_trails(),'top_rate_points':self.get_top_rate_points()})
