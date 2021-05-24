@@ -814,7 +814,10 @@ div.footer a{
     }
 
 }
-@media only screen and (max-width: 1480px) {
+@media only screen and (max-width: 1560px) {
+#top {
+    height: 100px;
+}
     div.login_mapa button.user_menu {
         height: 35px;
     }

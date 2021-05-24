@@ -159,6 +159,9 @@ div.posts div.post div.info {
     }
 }
 @media only screen and (max-width: 1415px) {
+div#top div.menu ul li.green i {
+    margin-top: 100px;
+}
     div.posts div.post {
         width: 300px;
         margin: 10px;
@@ -213,6 +216,9 @@ div.posts div.post div.info {
 }
 
 @media only screen and (max-width: 1060px) {
+div#top div.menu {
+    width: 40%;
+}
     div.posts div.post {
         width: 280px;
     }

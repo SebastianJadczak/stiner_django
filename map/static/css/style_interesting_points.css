@@ -78,5 +78,11 @@ div.point_list_interest_point{
     margin: 0 auto;
     transform: translateX(-50px);
 }
+@media only screen and (max-width: 1560px) {
+
+div.search_points {
+    width: auto;
+}
+}
 
 }

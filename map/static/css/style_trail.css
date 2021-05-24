@@ -376,3 +376,15 @@ form.delete button{
     }
 
 }
+@media only screen and (max-width: 1560px) {
+#top {
+    padding-left: 105px;
+}
+div#top div.menu ul li.green i {
+    margin-top: 60px;
+    margin-left: -32px;
+}
+
+}
+
+}
