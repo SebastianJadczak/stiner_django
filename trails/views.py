@@ -180,6 +180,11 @@ class PointDetailView(DetailView):
                 galleryArray.append(i.image5)
         return galleryArray
 
+    def get_top_rate_point(self):
+        top_rate_trails = Point.objects.order_by('average_grade').reverse()
+        if len(top_rate_trails) >= 10:
+            top_rate_trails = top_rate_trails[0:10]
+        return top_rate_trails
 
     def get(self, request, *args, **kwargs):
         opinion = list(Opinion_about_Point.objects.filter(point=self.kwargs['pk']))
@@ -195,7 +200,8 @@ class PointDetailView(DetailView):
         if stuff.done.filter(id=self.request.user.id).exists():
             point_dones = True
         return render(request, self.template_name,
-                      {'opinion': opinion, 'point': point[0], 'point_id': point_id, 'gallery': gallery, 'point_liked': point_liked, 'point_dones': point_dones})
+                      {'opinion': opinion, 'point': point[0], 'point_id': point_id, 'gallery': gallery, 'point_liked': point_liked,
+                       'point_dones': point_dones, 'top_rate_point':self.get_top_rate_point()})
 
     def point_heart(request, pk):
         point = get_object_or_404(Point, id=request.POST.get('heart_id'))
