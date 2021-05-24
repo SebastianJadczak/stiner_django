@@ -453,29 +453,111 @@ div.point div.more-buttons button a {
         justify-content: space-between;
         padding-bottom: 10px;
     }
-    div.top_rate-trails div.trails div.trail div.name div#more-button{
+
+    div.top_rate-trails div.trails div.trail div.name div#more-button {
         width: 190px;
     }
 }
+
 @media only screen and (max-width: 920px) {
-div.content_news{
+    div.content_news {
         padding: 30px 20px;
-}
-    div.top_rate-trails{
+    }
+
+    div.top_rate-trails {
         padding: 0;
     }
+
     div.top_rate-trails div.trails div.trail {
-    margin: 15px 10px;
-}
-}
-@media only screen and (max-width: 815px){
-     div.top_rate-trails div.trails div.trail {
-    width:500px;
-}
-    div.top_rate-trails div.trails div.trail div.name, div.top_rate-trails div.trails div.trail div.name div#more-button{
-        width:320px
+        margin: 15px 10px;
     }
-    div.top_rate-trails div.trails div.trail div.name p#name{
+}
+
+@media only screen and (max-width: 815px) {
+    div.point div.more p.name {
         font-size: 17px;
     }
+
+    div.top_rate-trails div.trails div.trail {
+        width: 500px;
+    }
+
+    div.top_rate-trails div.trails div.trail div.name, div.top_rate-trails div.trails div.trail div.name div#more-button {
+        width: 320px
+    }
+
+    div.top_rate-trails div.trails div.trail div.name p#name {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 525px) {
+    div.top_rate-trails div.trails div.trail {
+        width: 450px;
+        margin-left: 0;
+    }
+    div.advertisement{
+        height: 130px;
+    }
+    div.advertisement div#ad{
+        height: 90px;
+    }
+    div.point{
+            width: 240px;
+    height: 310px;
+    }
+    div.point div.image {
+    width: 240px;
+    height: 140px;
+}
+    div.point div.more-buttons{
+        width: 230px;
+    }
+    div.point div.more-buttons button{
+        height: 31px;
+        width: 75px;
+    }
+    div.top_rate-trails div.trails div.trail div.name, div.top_rate-trails div.trails div.trail div.name div#more-button {
+        width: 270px
+    }
+
+    div.top_rate-trails div.trails div.trail div.name p#name {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    div.top_rate-trails div.trails div.trail {
+        width: 360px;
+        height: 120px;
+    }
+
+    div.top_rate-trails div.trails div.trail div.image {
+        height: 120px;
+    }
+
+    div.top_rate-trails div.trails div.trail div.name, div.top_rate-trails div.trails div.trail div.name div#more-button {
+        width: 240px
+    }
+}
+@media only screen and (max-width: 385px) {
+     div.advertisement{
+        height: 110px;
+    }
+    div.advertisement div#ad{
+        height: 70px;
+    }
+    div.top_rate-trails div.trails div.trail {
+        width: 330px;
+        height: 100px;
+    }
+
+    div.top_rate-trails div.trails div.trail div.image {
+        height: 100px;
+    }
+
+    div.top_rate-trails div.trails div.trail div.name, div.top_rate-trails div.trails div.trail div.name div#more-button {
+        width: 220px
+    }
+
 }
