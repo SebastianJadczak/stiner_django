@@ -72,11 +72,10 @@ div.map {
 
 div.map h3{
     font-family: 'Archivo Black', sans-serif;
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 20px;
     letter-spacing: 3px;
+    font-weight: normal;
     margin: 10px 0;
-    text-shadow: 0 0 2px black;
 }
 
 div.map p{
@@ -171,12 +170,12 @@ div.center {
     justify-content: center;
 }
 
-div.center div#trail-left {
+div.center div#point-left {
     width: 60vw;
     margin-left: 50px;
 }
 
-div.center div#trail-right {
+div.center div#point-right {
     width: 20vw;
     height: 500px;
     background-color: #fff;

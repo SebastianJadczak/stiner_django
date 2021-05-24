@@ -14,7 +14,7 @@
             <select name="location_points" id="location">
                 <option value=""></option>
                 {% for  val in city %}
-                    <option value="val.name">{{ val.name }}</option>
+                    <option value="{{ val }}">{{ val.name }}</option>
                 {% endfor %}
             </select>
                 </label>
@@ -23,7 +23,7 @@
             <select name="point_type" id="type">
                 <option value=""></option>
                   {% for key, val in type %}
-                    <option value="val">{{ val }}</option>
+                    <option value="{{ val }}">{{ val }}</option>
                 {% endfor %}
             </select>
             </label>

@@ -14,6 +14,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Chau+Philomene+One:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
@@ -262,7 +264,24 @@
         </div>
     </div>
     <div id="trail-right">
-
+        <h4>Najwyżej ocenione Trasy</h4>
+        {% for trail in top_rate_trails %}
+            <div class="trail">
+                <div class="trail-image">
+                    <img src="{{ trail.image.url }}" alt="">
+                </div>
+                <div class="trail-description">
+                    <p id="trail-name">{{ trail.name }}</p>
+                    <div class="more">
+                        <p id="rate"><span>Ocena: </span>{{ trail.average_grade }}</p>
+                        <p id="done"><span>Zwiedziło: </span>{{ trail.done_count }}</p>
+                    </div>
+                    <div class="more-button">
+                        <button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
     <div id="social-right">
         <div id="fb"><a href="https://www.facebook.com/Stiner-100928478828163"><i class="fab fa-facebook-square"></i></a></div>
