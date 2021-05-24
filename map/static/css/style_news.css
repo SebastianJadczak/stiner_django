@@ -136,7 +136,7 @@ div.top_rate-trails div.trails div.trail div.name div#more-button button a {
 div.advertisement{
     height:200px;
     width: 59vw;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 div.advertisement p#advertisement{
     font-family: Arial, sans-serif;
@@ -162,6 +162,9 @@ div.advertisement div#ad a img{
     border-radius: 10px;
 }
 /*Top rate points.*/
+div.top_rate-points{
+    margin-top: 40px;
+}
 div.wrap-points {
     display: flex;
     flex-direction: row;
