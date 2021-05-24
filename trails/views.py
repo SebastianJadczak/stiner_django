@@ -108,7 +108,6 @@ class PointsListView(ListView):
                 search = value
             if 'location' in key and value != '':
                 location = value
-                print(value)
             if 'type' in key and value != '':
                 type = value
         self.list = self.list.exclude(name__exact='', location__exact='', type__exact='').filter(
