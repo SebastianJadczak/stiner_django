@@ -289,6 +289,25 @@
     </div>
     <div id="point-right">
         <h4>Najwyżej ocenione punkty</h4>
+        <div class="top_rate-points">
+            {% for point in top_rate_point %}
+                <div class="top-rate-point">
+                    <div class="top-rate-point-image">
+                        <img src="{{ point.image.url }}" alt="">
+                    </div>
+                    <div class="point-description">
+                        <p id="name">{{ point.name| slice:":20"}}...</p>
+                        <div class="more">
+                            <p id="rate"><span>Ocena: </span> {{ point.average_grade }}</p>
+                            <p id="done"><span>Zwiedziło: </span>{{ point.done_count }}</p>
+                        </div>
+                        <div class="more-button">
+                            <button><a href="{% url 'trails:point_detail' point.id %}">Więcej</a></button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 
 </div>
