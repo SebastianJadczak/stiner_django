@@ -40,7 +40,7 @@ button#pdf a{
     color: white;
     letter-spacing: 1.3px;
     text-decoration: none;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 15px;
 }
 button#audio {
@@ -72,15 +72,15 @@ div.map {
 
 div.map h3{
     font-family: 'Archivo Black', sans-serif;
-    font-size: 20px;
-    letter-spacing: 3px;
-    font-weight: normal;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: lighter;
     margin: 10px 0;
 }
 
 div.map p{
-    font-family: 'Archivo Black', sans-serif;
-    letter-spacing: 1.3px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.1px;
     line-height: 22px;
 }
 div#map_1de6ef4f1218487da9d6da057bb8f454 {
@@ -178,10 +178,17 @@ div.center div#point-left {
 div.center div#point-right {
     width: 20vw;
     height: 500px;
-    background-color: #fff;
     margin-left: 50px;
-    border-radius: 15px;
-    border: 1px solid #e0e0e0;
+    padding-top: 10px;
+}
+
+div.center div#point-right h4 {
+    font-family: 'Chau Philomene One', sans-serif;
+    font-weight: normal;
+    letter-spacing: 1.4px;
+    font-size: 19px;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 div#social-right {
