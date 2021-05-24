@@ -48,6 +48,7 @@ class Trail(models.Model):
     image = models.ImageField(upload_to='media/img_trail/%Y/%m%d', blank=True)
     average_grade = models.DecimalField(max_digits=2, decimal_places=1)
     done = models.ManyToManyField(User, blank=True, related_name='done_trail')
+    done_count = models.IntegerField(default=0)
     heart = models.ManyToManyField(User, blank=True, related_name='heart_trail')
     downloads = models.ManyToManyField(User, blank=True, related_name='downloads_trail')
     sound = models.ManyToManyField(User, blank=True, related_name='sound_trail')

@@ -301,6 +301,7 @@ div.content {
     background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
 
 }
+<<<<<<< HEAD
 
 @media only screen and (max-width: 1560px) {
 
@@ -311,3 +312,16 @@ div#top div.menu ul li.green i {
 
 }
 }
+=======
+@media only screen and (max-width: 1500px) {
+    div#top div.menu ul li.green {
+        width:50px;
+    }
+
+}
+@media only screen and (max-width: 666px){
+    div#top div.menu{
+        width: 40%;
+    }
+}
+>>>>>>> 82347d22e5a60a0185e83714d9429f4986adaeaa

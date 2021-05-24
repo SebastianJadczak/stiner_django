@@ -199,25 +199,23 @@ class PointDetailView(DetailView):
 
     def point_heart(request, pk):
         point = get_object_or_404(Point, id=request.POST.get('heart_id'))
-        point_liked = False
         if point.heart.filter(id=request.user.id).exists():
             point.heart.remove(request.user)
-            point_liked = False
         else:
             point.heart.add(request.user)
-            point_liked = True
 
         return HttpResponseRedirect(reverse('trails:point_detail', args=[str(pk)]))
 
     def point_done(request, pk):
         point = get_object_or_404(Point, id=request.POST.get('point_done'))
-        point_dones = False
         if point.done.filter(id=request.user.id).exists():
             point.done.remove(request.user)
-            point_dones = False
+            point.done_count -= 1
+            point.save()
         else:
             point.done.add(request.user)
-            point_dones = True
+            point.done_count += 1
+            point.save()
         return HttpResponseRedirect(reverse('trails:point_detail', args=[str(pk)]))
 
 class MethodTrail():
@@ -360,10 +358,12 @@ class TrailDetailView(DetailView):
         trail_dones = False
         if trail.done.filter(id=request.user.id).exists():
             trail.done.remove(request.user)
-            trail_dones = False
+            trail.done_count -= 1
+            trail.save()
         else:
             trail.done.add(request.user)
-            trail_dones = True
+            trail.done_count += 1
+            trail.save()
         return HttpResponseRedirect(reverse('trails:trail_detail', args=[str(pk)]))
 
     def trail_heart(request, pk):

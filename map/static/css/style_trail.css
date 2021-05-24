@@ -376,6 +376,7 @@ form.delete button{
     }
 
 }
+<<<<<<< HEAD
 @media only screen and (max-width: 1560px) {
 #top {
     padding-left: 105px;
@@ -387,4 +388,25 @@ div#top div.menu ul li.green i {
 
 }
 
+=======
+@media only screen and (max-width: 1260px) {
+    div.title-points {
+        left: -115px;
+        width: 100vw;
+
+    }
+   div#top div.menu ul li.green i#arrow{
+        margin-top: 35px;
+    }
+}
+@media only screen and (max-width: 1189px) {
+    div.title-points {
+        left: -11%;
+    }
+}
+@media only screen and (max-width: 610px) {
+    div.title-points h3{
+        font-size: 33px;
+    }
+>>>>>>> 82347d22e5a60a0185e83714d9429f4986adaeaa
 }

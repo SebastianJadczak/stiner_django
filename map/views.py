@@ -1,8 +1,8 @@
 from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from rest_framework import viewsets, request
 from rest_framework.response import Response
 
@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from account.models import UserRole
 from map.api.serializers import PointSerializer, LocationMapSerializer
 from map.forms import FormularzRejestracji
-from map.models import Point, Coordinates, NewsletterEmail, News
+from map.models import Point, Coordinates, NewsletterEmail, News, AdvertisementNews
 from shop.models import Category
 from trails.models import Trail
 from trails.views import MethodTrail
@@ -155,17 +155,41 @@ class DoneList(ListView):
     coordinates = Coordinates.objects.all()
     country = [value for key, value in Trail.get_country_trail(Trail)]
 
-    @csrf_exempt
-    def sort(request):
-        print(request.POST.get('type'))
-        return render(request,template_name='done/done.html',)
-
     def get_context_data(self, **kwargs):
         self.done_trail = Trail.objects.filter(done=self.request.user)
         self.done_point = Point.objects.filter(done=self.request.user)
+        sorting = self.request.GET.get('sorting', "") #http//..../done/?sorting=rate ---  geting rate or done and adding to url
+        if sorting == "rate":
+            self.done_point = Point.objects.filter(done=self.request.user).order_by('-average_grade')
+            self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-average_grade')
+        elif sorting == "done":
+            self.done_point = Point.objects.filter(done=self.request.user).order_by('-done_count')
+            self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-done_count')
+
         context = super().get_context_data(**kwargs)
         context['trail_done'] = self.done_trail
         context['point_done'] = self.done_point
         context['country'] = self.country
         context['city'] = self.coordinates
         return context
+
+
+class NewsDetail(DetailView):
+    template_name = 'news/news.html'
+    model = News
+
+    def get_top_rate_trails(self):
+        top_rate_trails = Trail.objects.order_by('average_grade').reverse()
+        if len(top_rate_trails) >=10:
+            top_rate_trails = top_rate_trails[0:10]
+        return top_rate_trails
+
+    def get_top_rate_points(self):
+        top_rate_points = Point.objects.order_by('-average_grade')[0:4]
+        return top_rate_points
+
+    def get(self, request, *args, **kwargs):
+        news = News.objects.filter(id=self.kwargs['pk']).first()
+        ad = AdvertisementNews.objects.filter(active=True).first()
+        return render(request, self.template_name, {'news': news, 'top_rate_trails': self.get_top_rate_trails(),
+                                                    'top_rate_points':self.get_top_rate_points(), 'ad': ad})

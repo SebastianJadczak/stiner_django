@@ -170,10 +170,12 @@
     <ul>
         {% for n in news %}
             <li>
-                <div id="news-post" style="background-image: linear-gradient(rgba(0,0,0,
-                        0.1) 80%, rgba(0,0,0,0.9)), url('{{ n.image.url}}')">
-                    <h3>{{ n.title }}</h3>
-                </div>
+                <a href="{% url 'news' n.id %}">
+                    <div id="news-post" style="background-image: linear-gradient(rgba(0,0,0,
+                            0.1) 80%, rgba(0,0,0,0.9)), url('{{ n.image.url}}')">
+                        <h3>{{ n.title }}</h3>
+                    </div>
+                </a>
             </li>
         {% endfor %}
     </ul>
@@ -182,10 +184,12 @@
         <ul>
         {% for n in newsBig %}
             <li>
-                <div id="news-post-big" style="background-image: linear-gradient(rgba(0,0,0,
-                        0.1) 80%, rgba(0,0,0,0.9)), url('{{ n.image.url}}')">
-                    <h3>{{ n.title }}</h3>
-                </div>
+                <a href="{% url 'news' n.id %}">
+                    <div id="news-post-big" style="background-image: linear-gradient(rgba(0,0,0,
+                            0.1) 80%, rgba(0,0,0,0.9)), url('{{ n.image.url}}')">
+                        <h3>{{ n.title }}</h3>
+                    </div>
+                </a>
             </li>
         {% endfor %}
     </ul>
