@@ -24,16 +24,13 @@ div#top div.menu ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    height: 80px
+    height: 80px;
+    margin-top:16px;
 }
 
 div#top div.menu ul li {
     line-height: 80px;
     width: 10%
-}
-
-div#top div.menu_mapa ul li {
-    line-height: 110px;
 }
 
 div#top div.menu ul li a {
@@ -112,7 +109,7 @@ div#top div.menu div#menu-detail-trail ul li a {
     display: block;
     width: 100%;
     text-align: center;
-    line-height: 60px;
+    line-height: 40px;
 }
 
 div#top div.menu ul li.green:hover i, div.menu_mapa div#top div.menu ul li.green:hover i {
