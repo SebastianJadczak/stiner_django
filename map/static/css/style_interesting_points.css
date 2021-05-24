@@ -92,13 +92,11 @@ div.buttons-interesting a input{
         width: 100%;
     }
 }
-
-@media only screen and (max-width: 1140px) {
-    div.search_points {
-        width: 100%;
-    }
+@media only screen and (max-width: 1040px){
+div.point_list_interest_point{
+    justify-content: space-around;
 }
-
+}
 @media only screen and (max-width: 970px) {
     div.search_points form input {
         width: 100px;
@@ -148,8 +146,14 @@ div.buttons-interesting a input{
 }
 
 @media only screen and (max-width: 576px) {
+    div.point_list_interest_point{
+        width:99vw;
+    }
     div.search_points {
         width: 90%;
+    }
+    div.point_add{
+        margin:20px auto;
     }
 }
 

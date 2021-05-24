@@ -1565,7 +1565,7 @@ div#top div.menu div#menu-detail-trail ul li a{
     }
 
     div#top div.menu ul li.green {
-        width: 65px;
+        width: 25px;
         margin-left: 7px;
         display: block;
     }
@@ -1640,9 +1640,12 @@ div#top div.menu div#menu-detail-trail ul li a{
         line-height: 38px;
     }
     div#top div.menu ul li.green{
-        width:50px;
+        width:26px;
     }
-
+    div#top div.menu{
+        width:50%;
+        margin-right: 50px;
+    }
 }
 
 @media only screen and (max-width: 370px) {
