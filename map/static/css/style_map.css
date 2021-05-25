@@ -1345,6 +1345,7 @@ div.footer a{
 
     div#welcome {
         height: 70vh;
+        padding-top: 40px;
     }
 
     div#top div.menu_mapa ul li {
@@ -1369,16 +1370,35 @@ div.footer a{
 
     div#welcome div.text h2 {
         font-size: 26px;
+        display: block;
+        width:300px;
     }
 
     div#welcome div.search-holiday {
         position: relative;
-        right: 180px;
+        right: 200px;
         top: 168px;
-        width: 215px;
+        width: 245px;
         height: 270px;
     }
-
+    div#welcome div.search-holiday div#popular{
+        width:90%;
+    }
+      div#welcome div.search-holiday  form{
+          width: 245px;
+      }
+    div#welcome div.search-holiday form label{
+        margin-left: 25px;
+    }
+    div#welcome div.search-holiday form label:nth-of-type(1){
+        margin-left: 25px;
+    }
+    div#welcome div.search-holiday div#popular label{
+        width:55%;
+    }
+    div#welcome div.search-holiday div#popular label input[type='radio']{
+        margin-right: 2px;
+    }
     div#news p {
         width: 90vw;
     }
@@ -1461,11 +1481,6 @@ div.footer a{
     div#welcome div.text {
         top: -25px;
         left: 30px;
-    }
-
-    div#welcome div.search-holiday div#popular {
-        margin-top: 0px;
-        margin-left: -25px;
     }
 
     div#news h2 {
@@ -1599,11 +1614,6 @@ div.footer a{
         right: calc(99vw - 155px)
     }
 
-    div#welcome div.search-holiday div#popular {
-        margin-top: -10px;
-        margin-left: -27px;
-    }
-
     div#newsletter-wrap div#newsletter {
         width: 350px;
         left: 5%;
@@ -1664,15 +1674,17 @@ div.footer a{
         margin-right: 10px;
     }
 }
-
+@media only screen and (max-width: 390px) {
+    div#welcome div.search-holiday {
+        right: 280px;
+    }
+}
 @media only screen and (max-width: 370px) {
     div#newsletter-wrap div#newsletter {
         width: 330px;
         left: 5%;
     }
-    div#welcome div.search-holiday {
-    right: calc(99vw - 120px);
-}
+
 }
 
 @media only screen and (max-width: 348px) {
