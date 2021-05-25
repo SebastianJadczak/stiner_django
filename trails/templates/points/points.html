@@ -14,7 +14,7 @@
             <select name="location_points" id="location">
                 <option value=""></option>
                 {% for  val in city %}
-                    <option value="val.name">{{ val.name }}</option>
+                    <option value="{{ val }}">{{ val.name }}</option>
                 {% endfor %}
             </select>
                 </label>
@@ -23,7 +23,7 @@
             <select name="point_type" id="type">
                 <option value=""></option>
                   {% for key, val in type %}
-                    <option value="val">{{ val }}</option>
+                    <option value="{{ val }}">{{ val }}</option>
                 {% endfor %}
             </select>
             </label>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="average_grade">
                         <p><span>Ocena:</span>{{ element.average_grade }}</p>
-                        <p><span>Zwiedziło:</span> {{ element.done|length }}</p>
+                        <p><span>Zwiedziło:</span> {{ element.done.all.count }}</p>
                     </div>
                     <div class="buttons-interesting">
                         <a href="{% url "trails:point_detail" element.id %}"><input type="submit"

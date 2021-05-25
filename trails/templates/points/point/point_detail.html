@@ -18,6 +18,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Chau+Philomene+One:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
@@ -143,7 +145,7 @@
         </div>
 </div>
 <div class="center">
-    <div id="trail-left">
+    <div id="point-left">
         <div id="basic-info">
             <div class="name">
                 <div class="title-point">
@@ -285,7 +287,28 @@
                    </div>
     </div>
     </div>
-<div id="trail-right">
+    <div id="point-right">
+        <h4>Najwyżej ocenione punkty</h4>
+        <div class="top_rate-points">
+            {% for point in top_rate_point %}
+                <div class="top-rate-point">
+                    <div class="top-rate-point-image">
+                        <img src="{{ point.image.url }}" alt="">
+                    </div>
+                    <div class="point-description">
+                        <p id="name">{{ point.name| slice:":20"}}...</p>
+                        <div class="more">
+                            <p id="rate"><span>Ocena: </span> {{ point.average_grade }}</p>
+                            <p id="done"><span>Zwiedziło: </span>{{ point.done_count }}</p>
+                        </div>
+                        <div class="more-button">
+                            <button><a href="{% url 'trails:point_detail' point.id %}">Więcej</a></button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 
 </div>
 <div id="social-right">

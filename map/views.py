@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from account.models import UserRole
 from map.api.serializers import PointSerializer, LocationMapSerializer
 from map.forms import FormularzRejestracji
-from map.models import Point, Coordinates, NewsletterEmail, News
+from map.models import Point, Coordinates, NewsletterEmail, News, AdvertisementNews
 from shop.models import Category
 from trails.models import Trail
 from trails.views import MethodTrail
@@ -154,7 +154,6 @@ class DoneList(ListView):
     done_point = []
     coordinates = Coordinates.objects.all()
     country = [value for key, value in Trail.get_country_trail(Trail)]
-    def sort(self):
 
     def get_context_data(self, **kwargs):
         self.done_trail = Trail.objects.filter(done=self.request.user)
@@ -162,9 +161,11 @@ class DoneList(ListView):
         sorting = self.request.GET.get('sorting', "") #http//..../done/?sorting=rate ---  geting rate or done and adding to url
         if sorting == "rate":
             self.done_point = Point.objects.filter(done=self.request.user).order_by('-average_grade')
+            self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-average_grade')
         elif sorting == "done":
-            self.done_point = Point.objects.filter(done=self.request.user).order_by('done_count') #NOT WORKING
-                                                            # we should add some calculation in model to count 'done'
+            self.done_point = Point.objects.filter(done=self.request.user).order_by('-done_count')
+            self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-done_count')
+
         context = super().get_context_data(**kwargs)
         context['trail_done'] = self.done_trail
         context['point_done'] = self.done_point
@@ -179,8 +180,16 @@ class NewsDetail(DetailView):
 
     def get_top_rate_trails(self):
         top_rate_trails = Trail.objects.order_by('average_grade').reverse()
+        if len(top_rate_trails) >=10:
+            top_rate_trails = top_rate_trails[0:10]
         return top_rate_trails
+
+    def get_top_rate_points(self):
+        top_rate_points = Point.objects.order_by('-average_grade')[0:4]
+        return top_rate_points
 
     def get(self, request, *args, **kwargs):
         news = News.objects.filter(id=self.kwargs['pk']).first()
-        return render(request, self.template_name, {'news': news, 'top_rate_trails': self.get_top_rate_trails()})
+        ad = AdvertisementNews.objects.filter(active=True).first()
+        return render(request, self.template_name, {'news': news, 'top_rate_trails': self.get_top_rate_trails(),
+                                                    'top_rate_points':self.get_top_rate_points(), 'ad': ad})

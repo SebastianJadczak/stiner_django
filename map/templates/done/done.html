@@ -96,7 +96,7 @@
         <div class="filter">
             <p>Filtruj według:</p>
             <div class="filter-select">
-                <select name="" id="city">
+                <select name="" id="city" onchange="location = filterCity();">
                     <option value="" disabled selected >Miasto</option>
                     {% for c in city %}
                         <option value="{{ c }}">{{ c }}</option>

@@ -117,7 +117,7 @@ class PointsListView(ListView):
         template_name = 'points/points.html'
         self.search_point(request)
         return render(request, template_name,
-                      {'list': self.list})
+                      {'list': self.list,'city':Coordinates.objects.all(), 'type':Point.TYPE_POINT})
 
     def get_context_data(self, **kwargs):
         context = super(PointsListView, self).get_context_data(**kwargs)
@@ -180,6 +180,11 @@ class PointDetailView(DetailView):
                 galleryArray.append(i.image5)
         return galleryArray
 
+    def get_top_rate_point(self):
+        top_rate_trails = Point.objects.order_by('average_grade').reverse()
+        if len(top_rate_trails) >= 10:
+            top_rate_trails = top_rate_trails[0:10]
+        return top_rate_trails
 
     def get(self, request, *args, **kwargs):
         opinion = list(Opinion_about_Point.objects.filter(point=self.kwargs['pk']))
@@ -195,29 +200,28 @@ class PointDetailView(DetailView):
         if stuff.done.filter(id=self.request.user.id).exists():
             point_dones = True
         return render(request, self.template_name,
-                      {'opinion': opinion, 'point': point[0], 'point_id': point_id, 'gallery': gallery, 'point_liked': point_liked, 'point_dones': point_dones})
+                      {'opinion': opinion, 'point': point[0], 'point_id': point_id, 'gallery': gallery, 'point_liked': point_liked,
+                       'point_dones': point_dones, 'top_rate_point': self.get_top_rate_point()})
 
     def point_heart(request, pk):
         point = get_object_or_404(Point, id=request.POST.get('heart_id'))
-        point_liked = False
         if point.heart.filter(id=request.user.id).exists():
             point.heart.remove(request.user)
-            point_liked = False
         else:
             point.heart.add(request.user)
-            point_liked = True
 
         return HttpResponseRedirect(reverse('trails:point_detail', args=[str(pk)]))
 
     def point_done(request, pk):
         point = get_object_or_404(Point, id=request.POST.get('point_done'))
-        point_dones = False
         if point.done.filter(id=request.user.id).exists():
             point.done.remove(request.user)
-            point_dones = False
+            point.done_count -= 1
+            point.save()
         else:
             point.done.add(request.user)
-            point_dones = True
+            point.done_count += 1
+            point.save()
         return HttpResponseRedirect(reverse('trails:point_detail', args=[str(pk)]))
 
 class MethodTrail():
@@ -360,10 +364,12 @@ class TrailDetailView(DetailView):
         trail_dones = False
         if trail.done.filter(id=request.user.id).exists():
             trail.done.remove(request.user)
-            trail_dones = False
+            trail.done_count -= 1
+            trail.save()
         else:
             trail.done.add(request.user)
-            trail_dones = True
+            trail.done_count += 1
+            trail.save()
         return HttpResponseRedirect(reverse('trails:trail_detail', args=[str(pk)]))
 
     def trail_heart(request, pk):
@@ -377,6 +383,11 @@ class TrailDetailView(DetailView):
             trail_liked = True
         return HttpResponseRedirect(reverse('trails:trail_detail', args=[str(pk)]))
 
+    def get_top_rate_trails(self):
+        top_rate_trails = Trail.objects.order_by('average_grade').reverse()
+        if len(top_rate_trails) >=10:
+            top_rate_trails = top_rate_trails[0:10]
+        return top_rate_trails
 
     def get_context_data(self, *args, **kwargs):
         stuff = get_object_or_404(Trail, id=self.kwargs['pk'])
@@ -393,6 +404,7 @@ class TrailDetailView(DetailView):
         context['trail_id'] = self.kwargs['pk']
         context['points'] =list(list(Trail.objects.filter(id=self.kwargs['pk']))[0].points.all())
         context['opinion_trail'] = list(list(Rate_trail.objects.filter(trail=self.kwargs['pk'])))
+        context['top_rate_trails'] = self.get_top_rate_trails()
         return context
 
 

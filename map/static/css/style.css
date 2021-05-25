@@ -24,16 +24,13 @@ div#top div.menu ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    height: 80px
+    height: 80px;
+    margin-top:16px;
 }
 
 div#top div.menu ul li {
     line-height: 80px;
     width: 10%
-}
-
-div#top div.menu_mapa ul li {
-    line-height: 110px;
 }
 
 div#top div.menu ul li a {
@@ -112,7 +109,7 @@ div#top div.menu div#menu-detail-trail ul li a {
     display: block;
     width: 100%;
     text-align: center;
-    line-height: 60px;
+    line-height: 40px;
 }
 
 div#top div.menu ul li.green:hover i, div.menu_mapa div#top div.menu ul li.green:hover i {
@@ -301,14 +298,30 @@ div.content {
     background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
 
 }
+
 @media only screen and (max-width: 1500px) {
     div#top div.menu ul li.green {
-        width:50px;
+        width: 50px;
     }
 
 }
-@media only screen and (max-width: 666px){
-    div#top div.menu{
+
+@media only screen and (max-width: 1000px) {
+    div#top div.menu ul li.green:hover div#menu-detail-trail {
+        top: -100px
+    }
+
+
+}
+
+@media only screen and (max-width: 666px) {
+    div#top div.menu {
         width: 40%;
     }
+}
+
+@media only screen and (max-width: 579px) {
+    div#top div.menu ul {
+        margin-top: 0;
+}
 }

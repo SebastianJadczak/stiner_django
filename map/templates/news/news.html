@@ -1,23 +1,69 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style_news.css' %}">
-    <div class="title-news" style="background-image:linear-gradient(rgba(59,59,59,0.4), rgba(0,0,0,0.4)), url({{ news.image.url }})">
+    <div class="title-news"
+         style="background-image:linear-gradient(rgba(59,59,59,0.4), rgba(0,0,0,0.4)), url({{ news.image.url }})">
         <h3>{{ news.title }}</h3>
     </div>
     <div class="content_news">
-        <div class="text">
-            <p> {{ news.descriptions }}</p>
-        </div>
-    <div class="top_rate-trails">
-        <h4>Najwyżej oceniane Trasy:</h4>
-        <div class="trails">
-            {% for trail in top_rate_trails %}
-                <div class="trail">
-                {{ trail }}
+        <div class="main-page">
+            <div class="text">
+                <h4>Aktualności:</h4>
+                <p> {{ news.descriptions }}</p>
+            </div>
+            <div class="advertisement">
+                <p id="advertisement">Reklama</p>
+                <div id="ad">
+                    <a href="{{ ad.url }}">
+                        <img src="{{ ad.image.url }}" alt="">
+                    </a>
                 </div>
-            {% endfor %}
+            </div>
+            <div class="top_rate-points">
+                <h4>Najwyżej ocenione punkty</h4>
+                <div class="wrap-points">
+                    {% for point in top_rate_points %}
+                        <div class="point">
+                            <div class="image">
+                                <img src="{{ point.image.url }}">
+                            </div>
+                            <div class="more">
+                                <p class="name">{{ point.name|slice:":20" }}...</p>
+                                <p id="country"><span>Kraj: </span>{{ point.country }}</p>
+                                <p id="city"><span>Miasto: </span>{{ point.location }}</p>
+                                <div class="more_info">
+                                    <p><span>Ocena:</span> {{ point.average_grade }}</p>
+                                    <p><span>Zwiedziło:</span> {{ point.done.all.count }}</p>
+                                </div>
+                            </div>
+                            <div class="more-buttons">
+                                <button><a href="{% url 'trails:point_detail' point.id %}">Więcej</a></button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="top_rate-trails">
+            <h4>Najwyżej oceniane Trasy:</h4>
+            <div class="trails">
+                {% for trail in top_rate_trails %}
+                    <div class="trail">
+                        <div class="image"><img src="{{ trail.image.url }}" alt=""></div>
+                        <div class="name">
+                            <p id="name">{{ trail.name }}</p>
+                            <div class="more">
+                                <p><span>Ocena:</span>{{ trail.average_grade }}</p>
+                                <p><span>Wykonało:</span> {{ trail.done_count }}</p>
+                            </div>
+                            <div id="more-button"><button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 {% endblock %}

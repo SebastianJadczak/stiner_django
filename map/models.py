@@ -67,6 +67,7 @@ class Point(models.Model):
     type = models.CharField(max_length=15, choices=TYPE_POINT)
     more_info = models.CharField(max_length=70, default=' ')
     done = models.ManyToManyField(User, blank=True, related_name='done_point')
+    done_count = models.IntegerField(default=0)
     heart = models.ManyToManyField(User, blank=True, related_name='heart_point')
     downloads = models.ManyToManyField(User, blank=True, related_name='downloads_point')
     sound = models.ManyToManyField(User, blank=True, related_name='sound_point')
@@ -102,6 +103,16 @@ class News(models.Model):
     title = models.CharField(max_length=30)
     image = models.ImageField(upload_to='media/img_news/%Y/%m%d')
     descriptions = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+class AdvertisementNews(models.Model):
+    """Model odpowiedzialny za reklamę na stronie News."""
+    title = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='media/advertisement')
+    url = models.CharField(max_length=60)
+    active = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
