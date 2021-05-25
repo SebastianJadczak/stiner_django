@@ -1310,8 +1310,11 @@ div#top div.menu div#menu-detail-trail ul li a{
 @media only screen and (max-width: 578px) {
     #top {
         padding-left: 10px;
-        height: 60px;
+        height: 80px;
     }
+    div#top div.menu ul li {
+    line-height: 95px;
+}
 
     div#top div.menu_mapa {
         width: 40%;
@@ -1324,10 +1327,11 @@ div#top div.menu div#menu-detail-trail ul li a{
     div.logo {
         height: 45px;
         width: 90px;
+        margin-top: 15px;
     }
 
     div.login_mapa {
-        width: 170px;
+        width: 140px;
     }
 
     div#welcome {
@@ -1341,10 +1345,11 @@ div#top div.menu div#menu-detail-trail ul li a{
     div.login_mapa button.user_menu {
         height: 8px;
         margin-left: 3px;
+        transform: translateY(-2px);
     }
 
     div.login_mapa a#heart, div.login_mapa a#eye {
-        margin-top: 25px;
+        margin-top: 32px;
     }
 
     div#welcome div.text {
@@ -1610,7 +1615,7 @@ div#top div.menu div#menu-detail-trail ul li a{
     }
     div#login_rwd {
         display: block;
-        margin-left: 30px;
+        margin-left: 10px;
         line-height: 100px;
     }
      div#login_rwd i{
@@ -1639,12 +1644,15 @@ div#top div.menu div#menu-detail-trail ul li a{
     div.login_mapa.mini button a {
         line-height: 38px;
     }
+    div#top div.menu ul li{
+        width:60px;
+    }
     div#top div.menu ul li.green{
-        width:26px;
+        width: 75px;
     }
     div#top div.menu{
-        width:50%;
-        margin-right: 50px;
+        width:60%;
+        margin-right: 10px;
     }
 }
 
