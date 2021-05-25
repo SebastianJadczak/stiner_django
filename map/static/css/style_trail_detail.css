@@ -413,3 +413,126 @@ div.top_form p#yours_stars-trail {
 .stars-trail input:checked ~ label::before {
     color: #ffa500;
 }
+
+@media only screen and (max-width: 1490px) {
+    div.center div#trail-right {
+        margin-left: 20px;
+    }
+
+    div.center div#trail-left {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 1365px) {
+    div.center {
+        justify-content: left;
+    }
+
+    div.center div#trail-left {
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-width: 1185px) {
+    div.center div#trail-right {
+        width: 380px;
+    }
+
+    div.center div#trail-left {
+        margin-left: 20px;
+    }
+
+    div.center div#trail-right div.trail {
+        width: 370px
+    }
+
+    div.center div#trail-right div.trail div.trail-image {
+        width: 120px
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    div.center div#trail-left div#basic-info {
+        height: 360px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    div.center div#trail-left div#basic-info {
+        height: 380px;
+    }
+
+    div#basic-info div.more-trail div.left div p i, div#basic-info div.more-trail div.right div p i {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 880px) {
+    div.center{
+        flex-direction: column;
+    }
+    div.center div#trail-left{
+        width: 95vw;
+    }
+    div.center div#trail-left div#basic-info {
+        height: 350px;
+    }
+    div.center div#trail-right{
+        margin:0 auto;
+    }
+}
+@media only screen and (max-width: 630px){
+div#points_in_trail ul li{
+    flex-direction: column-reverse;
+}
+    div.point_in_trail{
+        width:100%;
+    }
+    div#points_in_trail ul li div.image-trail{
+        margin:0 auto;
+    }
+}
+@media only screen and (max-width: 600px){
+    div.center div#trail-left div#basic-info {
+        height: 380px;
+    }
+}
+@media only screen and (max-width: 555px) {
+     div.center div#trail-left div#basic-info {
+        height: 370px;
+    }
+}
+@media only screen and (max-width: 500px) {
+     div#basic-info div.more-trail div.left div#start, div#basic-info div.more-trail div.right div#end{
+         height: 85px;
+     }
+    div#basic-info div.more-trail div.right div#end p{
+        line-height: 22px;
+    }
+    div.center div#trail-left div#basic-info {
+        height: 400px;
+    }
+}@media only screen and (max-width: 407px) {
+    div.center div#trail-left{
+        margin-left: 0;
+    }
+    div#basic-info h3{
+        padding-left: 5px;
+    }
+    div#basic-info div.icons{
+        margin-left: 20px;
+    }
+    div#basic-info div.more-trail div.left{
+        padding-left: 15px;
+    }
+     div.center div#trail-left div#basic-info {
+        height: 420px;
+    }
+     div.center div#trail-right div.trail, div.center div#trail-right h4{
+         width:340px;
+         margin:10px auto 20px;
+     }
+     div.center div#trail-right div.trail div.trail-description,div#trail-right div.trail div.more{
+         width:190px;
+     }
+}
