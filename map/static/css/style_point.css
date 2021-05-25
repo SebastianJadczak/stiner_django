@@ -498,3 +498,60 @@ div.top_form p#yours_stars-trail {
 .stars-trail input:checked ~ label::before {
     color: #ffa500;
 }
+
+@media only screen and (max-width: 1505px) {
+    div.center div#point-left {
+        margin-left: 10px;
+    }
+
+    div.center div#point-right {
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (max-width: 1395px) {
+    div.center div#point-left {
+        width: 55vw;
+        margin-left: 0;
+    }
+    div.center div#point-right div.top-rate-point{
+        width:350px;
+    }
+    .arrow:nth-of-type(1){
+        left: -280px;
+    }
+
+    .arrow:nth-of-type(2) {
+    right: -280px;
+    }
+}
+@media only screen and (max-width: 1130px){
+div.center{
+    justify-content: left;
+}
+    div.center div#point-left {
+    margin-left: 30px;
+}
+    div#basic-info{
+        height:270px;
+    }
+     .arrow:nth-of-type(1){
+        left: -250px;
+    }
+
+    .arrow:nth-of-type(2) {
+    right: -250px;
+    }
+}
+@media only screen and (max-width: 1020px){
+     .arrow:nth-of-type(1){
+        left: -200px;
+    }
+
+    .arrow:nth-of-type(2) {
+    right: -200px;
+    }
+     div#basic-info{
+        height:290px;
+    }
+}
