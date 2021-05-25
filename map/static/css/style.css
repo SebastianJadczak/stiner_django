@@ -309,3 +309,8 @@ div.content {
         width: 40%;
     }
 }
+@media only screen and (max-width: 579px){
+div#top div.menu ul{
+    margin-top: 0;
+}
+}
