@@ -1,105 +1,270 @@
 
-div#top_manage{
+div#top_manage {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px solid green;
+    height: 80px;
+    line-height: 90px;
+    padding: 0 100px;
 }
 
+div#top_manage div.menu-moderator {
+    width: 500px;
+    margin: 0 200px 0 100px;
+}
 
-div.management{
+div#top_manage div.menu-moderator ul {
     display: flex;
     flex-direction: row;
-}
-div.management div.management_menu{
-    padding: 20px 10px;
-    width:20vw;
-    height:70vh;
-    background-color: rgba(185, 255, 200, 0.75);
-    border-right: 1px solid green;
-    border-bottom: 1px solid green;
+    list-style: none;
+    width: 500px;
 }
 
-div.management div.management_menu span{
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 19px;
-}
-div.management div.management_menu p.management_menu_section{
-    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
-    font-weight: bold;
-}
-div.management div.management_menu button{
-    background-color: green;
-    width:200px;
-    height:25px;
-    box-shadow: 1px 1px 0 white;
-    border: 1px solid white;
-}
-div.management div.management_menu button a{
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-
-/*block content moderowania stron */
-div.posts_manage{
+div#top_manage div.menu-moderator ul li {
+    width: 110px;
+    line-height: 60px;
+    color: #323232;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
     display: flex;
+    font-weight: bold;
     flex-direction: row;
-    flex-wrap: wrap;
-    margin: 50px 0;
-    width:80vw;
-}
-div.posts_manage div.post_manage{
-    width:45vw;
-    margin: 10px auto;
-    height:600px;
-}
-
-div.posts_manage div.post_manage div.image{
-    width:100%;
-    height: 300px;
-}
-div.posts_manage div.post_manage div.image img{
-    width:100%;
-    height:100%;
-}
-div.posts_manage div.post_manage div.title{
-    position: relative;
-    top:-180px;
-    border:3px solid white;
-    width: 400px;
-    left:15%;
-    background-color: rgba(0, 0, 0, 0.87);
     text-align: center;
-
-}
-div.posts_manage div.post_manage div.title p{
-    color: white;
-    font-size: 29px;
-    font-weight: bold;
-    font-family: 'Roboto Mono', monospace;
-    margin: 10px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
     text-transform: uppercase;
-}
-/*Dodawanie postów na stronie*/
-div.create_post{
-    width:80vw;
-}
-div.create_post h2{
-    padding-left: 50px;
+    cursor: pointer;
 }
 
-div.form_post{
+div#top_manage div.menu-moderator ul li i {
+    line-height: 60px;
+}
+
+div#top_manage div.menu-moderator ul li.management-blog:hover div.management-blog {
+    top: 70px;
+    left: 600px;
+}
+
+/*div#top_manage div.menu-moderator ul li.management-shop:hover div.management-shop {*/
+/*    top: 80px;*/
+/*    left: 650px;*/
+/*}*/
+
+div#top_manage div.menu-moderator ul li.management-news:hover div.management-news {
+    top: 70px;
+    left: 300px;
+}
+
+div#top_manage div.menu-moderator ul li.management-trails:hover div.management-trails {
+    top: 70px;
+    left: 430px;
+}
+
+div#top_manage div.menu-moderator ul li.management-points:hover div.management-points {
+    top: 70px;
+    left: 520px;
+}
+
+div.management-blog, div.management-shop, div.management-news, div.management-trails, div.management-points {
+    position: absolute;
+    top: -280px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    margin: 50px 0;
-    margin-left: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 400px;
+    justify-content: center;
 }
-/*Wyjście z panelu moderatora*/
 
-div.management div.management_menu button.exit_manage{
-    margin-top:50px;
-    background-color: red;
+div#top_manage div.menu-moderator ul li div a {
+    color: #484848;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+}
+
+div#top_manage div.menu-moderator ul li div a:nth-of-type(1) {
+    margin-right: 30px;
+}
+
+div.exit_panel a {
+    color: #990000;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div.management-login button {
+    background-color: #087500;
+    border: none;
+    border-radius: 10px;
+    width: 130px;
+    height: 39px;
+}
+
+div.management-login button a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.3px;
+}
+
+/* Title-management. */
+div.title-management {
+    width: 100vw;
+    height: 150px;
+    background-position: center;
+    background-size: contain;
+    border-bottom: 1px solid grey;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../img/trail.jpg");
+}
+
+div.title-management h3 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 35px 0 0;
+    color: white;
+    -webkit-text-stroke: 0.6px black;
+    text-shadow: 0 0 3px black;
+}
+
+/* Management Post. */
+div.posts_manage {
+    width: 70vw;
+    margin: 40px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.posts_manage div.post_manage {
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.posts_manage div.post_manage div.title p {
+    font-weight: bold;
+}
+
+div.posts_manage div.post_manage div.image {
+    width: 400px;
+    height: 200px;
+}
+
+div.posts_manage div.post_manage div.image img {
+    width: 100%;
+    height: 100%;
+}
+
+div.posts_manage div.post_manage button {
+    width: 80px;
+    height: 36px;
+    border: none;
+    border-radius: 10px;
+}
+
+div.posts_manage div.post_manage button a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.3px;
+}
+
+div.posts_manage div.post_manage button#delete {
+    background-color: #bf0000;
+}
+
+div.posts_manage div.post_manage button#edit {
+    background-color: #009f00;
+    margin-left: 10px;
+}
+
+/* Formularz dodawania/edycji posta. */
+div.create_post {
+    width: 70vw;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+div.create_post h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.form_post {
+    background-color: #fff;
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid #999999;
+    border-radius: 10px;
+    padding: 25px 50px;
+}
+
+div.form_post form p label {
+    width: 100px;
+}
+
+/* News. */
+div.news_manage {
+    width: 75vw;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.news_manage div.news {
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.news_manage div.news div.title p {
+    font-weight: bold;
+}
+
+div.news_manage div.news div.image {
+    width: 400px;
+    height: 200px;
+}
+
+div.news_manage div.news div.image img {
+    width: 100%;
+    height: 100%;
+}
+
+div.news_manage div.news button {
+    width: 80px;
+    height: 36px;
+    border: none;
+    border-radius: 10px;
+}
+
+div.news_manage div.news button a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.3px;
+}
+
+div.news_manage div.news button#delete {
+    background-color: #bf0000;
+}
+
+div.news_manage div.news button#edit {
+    background-color: #009f00;
+    margin-left: 10px;
 }

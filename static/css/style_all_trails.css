@@ -27,12 +27,12 @@ div#x_hamburger{
     position: absolute;
     width: 30px;
     z-index: 2;
-    top: 2px;
-    left: 270px;
+    top: 70px;
+    left: 215px;
 }
 
 div#x_hamburger i {
-    font-size: 30px;
+    font-size: 22px;
 }
 
 div.wrap-trails div.trail-center {
@@ -167,7 +167,18 @@ div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_mo
     letter-spacing: 1.6px;
     text-decoration: none;
 }
-
+div.all_trails button#left, div.all_trails button#right {
+    position: relative;
+    color: white;
+    background-color: red;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    top: -190px;
+}
 div.all_trails button#left, div.all_trails button#right {
     top: -190px;
 }
@@ -183,7 +194,16 @@ div.wrap-trails div.trail-center div.filter_trails {
     min-height: 70vh;
 }
 
-div.wrap-trails div.trail-center div.filter_trails h3{
+div.wrap-trails div.trail-center div.filter_trails.active {
+    position: absolute;
+    display: block;
+    top: 100px;
+    left: 0;
+    z-index: 99;
+    width: 240px;
+}
+
+div.wrap-trails div.trail-center div.filter_trails h3 {
     color: #646464;
     letter-spacing: 1.7px;
     font-size: 20px;
@@ -279,9 +299,6 @@ div.wrap-trails div.trail-center div.filter_trails div.filter form div.accept_fi
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    position: fixed;
-    top: 902px;
-    left: 137px;
 }
 
 div.wrap-trails div.trail-center div.filter_trails div.filter form div.top_rate label.star {
@@ -431,19 +448,27 @@ div.popular-center button#left-popular, div.popular-center button#right-popular 
 }
 @media only screen and (max-width: 1680px) {
 
-    div.wrap-trails div.trail-center div.filter_trails div.filter form div.name input{
+    div.wrap-trails div.trail-center div.filter_trails div.filter form div.name input {
         width: 80%;
         margin-left: 10px;
         padding-left: 15px;
-}
+    }
 
     div.wrap-trails div.trail-center div.filter_trails div.filter form div.accept_filter button {
         width: 100%;
     }
 
+    div.wrap-trails div.title-trails {
+        width: 100vw;
+        left: -9vw
+    }
 }
 
 @media only screen and (max-width: 1110px) {
+    div.wrap-trails div.trail-center {
+        justify-content: space-around;
+    }
+
     div#hamburger {
         display: block;
     }
@@ -460,11 +485,6 @@ div.popular-center button#left-popular, div.popular-center button#right-popular 
         min-height: 100vh;
         transition: 0.4s;
         border: 1px solid #b7b7b7;
-    }
-
-    div.wrap-trails div.trail-center div.filter_trails.rwd div#x_hamburger,
-    div.wrap-your_trails div.your_trail-center div.filter_trails.rwd div#x_hamburger {
-        display: block;
     }
 
     div.wrap-trails div.trail-center div.filter_trails.rwd div.filter,
@@ -493,7 +513,7 @@ div.popular-center button#left-popular, div.popular-center button#right-popular 
     }
 
     div.right {
-        width: 100vw;
+        width: 90vw;
     }
 
     div.all_trails {
@@ -501,19 +521,19 @@ div.popular-center button#left-popular, div.popular-center button#right-popular 
     }
 
     div.all_trails button#right {
-        transform: translateX(235px);
+        transform: translateX(295px);
     }
     div.top_rate-center{
         width:90vw;
     }
-    div.top_rate-center button#right-rate{
-        transform: translateX(235px);
+    div.top_rate-center button#right-rate {
+        transform: translateX(295px);
     }
     div.popular-center{
         width:90vw;
     }
-    div.popular-center button#right-popular{
-        transform: translateX(235px);
+    div.popular-center button#right-popular {
+        transform: translateX(295px);
     }
 
 }
@@ -591,9 +611,6 @@ div.popular-center button#left-popular, div.popular-center button#right-popular 
 }
 @media only screen and (max-width: 465px) {
 
-     div.all_trails button#right{
-        transform: translateX(35px);
-    }
      div.top_rate-center button#right-rate{
         transform: translateX(35px);
     }
@@ -608,23 +625,30 @@ div.popular-center button#left-popular, div.popular-center button#right-popular 
          width:390px;
          padding-right: 0;
      }
-     div.all_trails div.all_trail-trails div.all_trails-trail{
-         min-width: 350px;
-     }
-     div.all_trails div.all_trail-trails div.all_trails-trail div.all_trails-trail_more div{
-         margin-right: 100px;
-     }
-     div.all_trails button#right {
-         transform: translateX(5px);
-     }
-     div.top_rate-center{
-         padding-right: 0;
-     }
-     div.top_rate-trails, div.popular-trails {
-         width: 390px;
-         padding-right: 0;
-     }
-     div.top_rate-center button#right-rate{
-            transform: translateX(5px);
-     }
+
+    div.all_trails button#right {
+        transform: translateX(35px);
+    }
+
+    div.top_rate-center, div.popular-center {
+        padding-right: 0;
+        width: 390px;
+    }
+
+    div.top_rate-center button#right-rate {
+        transform: translateX(35px);
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    div#hamburger {
+        position: relative;
+        left: 10px;
+        transform: translateY(-15px);
+    }
+}
+@media only screen and (max-width: 395px){
+div.all_trails,div.top_rate-center, div.popular-center,div.top_rate-center, div.popular-center{
+    width:94vw
+}
 }
