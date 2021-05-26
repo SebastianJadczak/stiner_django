@@ -201,7 +201,7 @@ class PointDetailView(DetailView):
             point_dones = True
         return render(request, self.template_name,
                       {'opinion': opinion, 'point': point[0], 'point_id': point_id, 'gallery': gallery, 'point_liked': point_liked,
-                       'point_dones': point_dones, 'top_rate_point':self.get_top_rate_point()})
+                       'point_dones': point_dones, 'top_rate_point': self.get_top_rate_point()})
 
     def point_heart(request, pk):
         point = get_object_or_404(Point, id=request.POST.get('heart_id'))

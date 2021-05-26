@@ -96,7 +96,7 @@ div.gallery {
     margin: 0 auto;
     background-color: white;
     border: 1px solid white;
-    box-shadow: 0 0 7px #3b3b3b;
+    box-shadow: 0 0 3px #3b3b3b;
     border-radius: 10px;
 }
 
@@ -191,6 +191,73 @@ div.center div#point-right h4 {
     margin-bottom: 10px;
 }
 
+div.center div#point-right div.top-rate-point {
+    width: 400px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #dddddd;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+div.center div#point-right div.top-rate-point div.top-rate-point-image {
+    width: 120px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+div.center div#point-right div.top-rate-point div.top-rate-point-image img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+div.center div#point-right div.top-rate-point div.point-description {
+    width: 280px
+}
+
+div.top-rate-point div.point-description div.more {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+div.top-rate-point div.point-description div.more p {
+    margin: 5px 0;
+}
+div.top-rate-point div.point-description div.more p span{
+    font-weight: bold;
+}
+div.top-rate-point div.point-description div.more-button{
+    text-align: right;
+    padding-right: 20px;
+    margin-top: 2px;
+}
+div.top-rate-point div.point-description div.more-button button{
+    background-color: #00c403;
+    border:none;
+    border-radius: 10px;
+    padding:6px 10px;
+}
+div.top-rate-point div.point-description div.more-button button a{
+    color:white;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.1px;
+    text-decoration: none;
+}
+div.top-rate-point div.point-description p#name {
+    font-family: 'Pattaya', sans-serif;
+    letter-spacing: 1.6px;
+    margin: 10px 0 5px 0;
+}
+
+/*Social icons. */
 div#social-right {
     position: fixed;
     top: 20vh;
@@ -404,7 +471,6 @@ div.top_form p#yours_stars-trail {
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
-    /*transform: translateY(-5px);*/
 }
 
 .stars-trail input {
@@ -433,145 +499,250 @@ div.top_form p#yours_stars-trail {
     color: #ffa500;
 }
 
+@media only screen and (max-width: 1505px) {
+    div.center div#point-left {
+        margin-left: 10px;
+    }
 
-/*----------------------------------------------*/
-/*div.point_detail div.content-point {*/
-/*    display: flex;*/
-/*}*/
+    div.center div#point-right {
+        margin-left: 30px;
+    }
+}
 
-/*div.point_detail div.content-point div.text {*/
-/*    width: 100%;*/
-/*}*/
+@media only screen and (max-width: 1395px) {
+    div.center div#point-left {
+        width: 55vw;
+        margin-left: 0;
+    }
 
-/*div.history, div.curiosities, div.visiting {*/
-/*    background-color: #fff;*/
-/*    padding: 5px 15px;*/
-/*    border: 1px solid #cdcdcd;*/
-/*    box-shadow: 0 0 3px #bcbcbc;*/
-/*    margin: 20px 0;*/
-/*    border-radius: 9px;*/
-/*}*/
+    div.center div#point-right div.top-rate-point {
+        width: 350px;
+    }
 
-/*div.history h3, div.curiosities h3, div.visiting h3 {*/
-/*    margin: 0 0 0 10px;*/
-/*}*/
+    .arrow:nth-of-type(1) {
+        left: -280px;
+    }
 
-/*div.history p, div.curiosities p, div.visiting p {*/
-/*    margin: 10px;*/
-/*}*/
+    .arrow:nth-of-type(2) {
+        right: -280px;
+    }
+}
 
-/* Ostylowanie Opini */
-/*div.opinion {*/
-/*    border: 0.5px solid #bcbcbc;*/
-/*    border-radius: 15px;*/
-/*    background-color: #f3f3f3;*/
-/*    margin-bottom: 20px;*/
-/*    width: 500px;*/
-/*    padding: 0 30px;*/
-/*}*/
+@media only screen and (max-width: 1130px) {
+    div.center {
+        justify-content: left;
+    }
 
-/*div.opinion div.top{*/
-/*    display: flex;*/
-/*}*/
-/*div.opinion div.top p#user{*/
-/*    padding: 5px;*/
-/*    width:200px;*/
-/*}*/
+    div.center div#point-left {
+        margin-left: 30px;
+    }
 
-/*div.opinion div.top p#rating{*/
-/*    text-align: right;*/
-/*}*/
+    div#basic-info {
+        height: 270px;
+    }
 
-/*div.opinion div.top p#rating span{*/
-/*    color: gold;*/
-/*}*/
+    .arrow:nth-of-type(1) {
+        left: -250px;
+    }
 
-/*!*Style do gwiazdek -> Opinie*!*/
-/*div.taings form {*/
-/*    margin-bottom: 20px;*/
-/*}*/
+    .arrow:nth-of-type(2) {
+        right: -250px;
+    }
+}
 
-/*div.top_form {*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    margin-bottom: 10px;*/
-/*}*/
-/*div.top_form input.nick{*/
-/*    height:27px;*/
-/*    margin-top: 8px;*/
-/*    width:280px*/
-/*}*/
+@media only screen and (max-width: 1020px) {
+    .arrow:nth-of-type(1) {
+        left: -200px;
+    }
 
-/*div.top_form p#yours_stars {*/
-/*    margin-left: 75px;*/
-/*    margin-right: 10px;*/
-/*    margin-top: 20px;*/
-/*}*/
+    .arrow:nth-of-type(2) {
+        right: -200px;
+    }
 
-/*.stars {*/
-/*    background: #ffffff;*/
-/*    border: 1px solid #cdcdcd;*/
-/*    box-shadow: 0 0 3px #bcbcbc;*/
-/*    margin-top: 10px;*/
-/*    height: 25px;*/
-/*    width: 110px;*/
-/*    padding: 5px 10px 5px 0;*/
-/*    border-radius: 15px;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    flex-direction: row-reverse;*/
-/*}*/
+    div#basic-info {
+        height: 290px;
+    }
+}
 
-/*.stars input{*/
-/*  position: absolute;*/
-/*  left: -99999px;*/
-/*}*/
+@media only screen and (max-width: 920px) {
+    div.center {
+        flex-direction: column;
+        justify-content: center;
+    }
 
-/*.stars label {*/
-/*    width: 12px;*/
-/*    height: 30px;*/
-/*    padding: 5px;*/
-/*    color: transparent;*/
-/*}*/
+    div.center div#point-left {
+        width: 90vw;
+        margin: 0 auto;
+    }
 
-/*.stars label::before {*/
-/*    content: '★';*/
-/*    color: #c0c0c0;*/
-/*    font-size: 25px;*/
-/*    line-height: 30px;*/
-/*    margin-right: -100%;*/
-/*}*/
+    div#basic-info {
+        height: 240px;
+    }
 
-/*.stars label:hover::before,*/
-/*.stars label:hover ~ label::before,*/
-/*.stars input:checked ~ label::before {*/
-/*  color: #ffa500;*/
-/*}*/
+    div.center div#point-right {
+        height: auto;
+        width: 90vw;
+        margin: 0 auto;
+    }
 
+    div.center div#point-right div.top_rate-points {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+}
 
-/*form div.bottom_form{*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    text-align: right;*/
-/*    width: 600px;*/
-/*}*/
+@media only screen and (max-width: 785px) {
+    div.center div#point-right div.top_rate-points {
+        display: flex;
 
-/*form div.bottom_form textarea{*/
-/*    width:600px;*/
-/*    height:130px;*/
-/*}*/
+        width: 90vw;
+    }
 
-/*form div.bottom_form button {*/
-/*    margin: 20px 0 0 auto;*/
-/*    width: 180px;*/
-/*    height: 40px;*/
-/*    background-color: rgba(5, 148, 0, 0.86);*/
-/*    border-radius: 10px;*/
-/*    border: 0.5px solid rgba(4, 96, 0, 0.96);*/
-/*    color: whitesmoke;*/
-/*    font-size: 15px;*/
-/*    font-weight: bold;*/
-/*    letter-spacing: 1.3px;*/
-/*    text-transform: uppercase;*/
-/*}*/
+    div.center div#point-right div.top-rate-point {
+        margin: 0 auto 20px;
+        width: 300px;
+    }
+
+    div.top-rate-point div.point-description p#name {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 715px) {
+    div#basic-info {
+        height: 270px;
+    }
+}
+
+@media only screen and (max-width: 672px) {
+    div.center div#point-right div.top-rate-point {
+        margin: 0 auto 20px;
+        width: 430px;
+        height: 130px;
+    }
+
+    div.center div#point-right div.top-rate-point div.top-rate-point-image {
+        width: 170px;
+        height: 130px;
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 613px) {
+    button#audio {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    div.big_image img {
+        width: 400px
+    }
+
+    div#basic-info {
+        height: 320px;
+    }
+
+    div#basic-info div.more div.right div#len, div#basic-info div.more div.left div#type {
+        height: 95px;
+    }
+
+    div#basic-info div.more div.right div#len p {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div#basic-info div.more div.right div#len i#y, div#basic-info div.more div.right div#len i#x {
+        font-size: 14px;
+        margin: 3px 0 3px 10px;
+        height: 20px;
+    }
+
+    .arrow:nth-of-type(1) {
+        left: -170px;
+    }
+
+    .arrow:nth-of-type(2) {
+        right: -170px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    div.big_image {
+        height: 300px;
+    }
+
+    div.big_image img {
+        width: 350px;
+        height: auto;
+    }
+
+    div.gallery {
+        min-height: 10vh;
+    }
+}
+
+@media only screen and (max-width: 435px) {
+    .arrow:nth-of-type(1) {
+        left: -140px;
+    }
+
+    .arrow:nth-of-type(2) {
+        right: -140px;
+    }
+
+    div.center div#point-right div.top-rate-point {
+        width: 350px;
+        height: 100px;
+    }
+
+    div.center div#point-right div.top-rate-point div.top-rate-point-image {
+        width: 130px;
+        height: 100px;
+    }
+
+    div.big_image img {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    div#basic-info div.name div.title-point {
+        flex-direction: column;
+    }
+
+    div#basic-info h3#point-name {
+        margin-bottom: 5px;
+    }
+
+    div#basic-info div.name div#buttons_point {
+        margin: 5px auto 10px;
+    }
+
+    div#basic-info div.name div.icons {
+        margin: 0 auto;
+        justify-content: space-between;
+        padding: 0 25px;
+    }
+
+    div#basic-info div.icons p {
+        margin-right: 0;
+        width: 75px
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    div#basic-info {
+        height: 340px
+    }
+    .arrow:nth-of-type(1) {
+        left: -110px;
+    }
+
+    .arrow:nth-of-type(2) {
+        right: -110px;
+    }
+}
