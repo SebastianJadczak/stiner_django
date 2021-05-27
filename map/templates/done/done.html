@@ -96,20 +96,20 @@
         <div class="filter">
             <p>Filtruj według:</p>
             <div class="filter-select">
-                <select name="" id="city" onchange="location = filterCity();">
-                    <option value="" disabled selected >Miasto</option>
+                <select name="" id="filtr-city" onchange="location = filteringcity();">
+                    <option value="" id="placeholder" disabled selected >Miasto</option>
                     {% for c in city %}
-                        <option value="{{ c }}">{{ c }}</option>
+                        <option id="city" value="{{ c }}">{{ c }}</option>
                     {% endfor %}
                 </select>
-                <select name="" id="country">
-                    <option value="" disabled selected>Kraj</option>
+                <select name="" id="filtr-country" onchange="location = filteringcountry();">
+                    <option value="" id="placeholder" disabled selected>Kraj</option>
                     {% for c in country %}
                         <option value="{{ c }}">{{ c }}</option>
                     {% endfor %}
                 </select>
-                <select name="" id="Autor">
-                    <option value="" disabled selected>Autor</option>
+                <select name="" id="filtr-author" onchange="">
+                    <option value=""  id="placeholder" disabled selected>Autor</option>
                     <option value="your">Twoja</option>
                     <option value="no_your" >Nie Twoja</option>
                 </select>

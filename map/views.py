@@ -159,6 +159,14 @@ class DoneList(ListView):
         self.done_trail = Trail.objects.filter(done=self.request.user)
         self.done_point = Point.objects.filter(done=self.request.user)
         sorting = self.request.GET.get('sorting', "") #http//..../done/?sorting=rate ---  geting rate or done and adding to url
+        filtercity = self.request.GET.get('filtercity', "")
+        filtercountry = self.request.GET.get('filtercountry', "")
+        if filtercity != "":
+            self.done_point = Point.objects.filter(done=self.request.user, location=filtercity)
+            self.done_trail = Trail.objects.filter(done=self.request.user, city=filtercity)
+        if filtercountry != "":
+            self.done_point = Point.objects.filter(done=self.request.user, country=filtercountry)
+            self.done_trail = Trail.objects.filter(done=self.request.user, country=filtercity)
         if sorting == "rate":
             self.done_point = Point.objects.filter(done=self.request.user).order_by('-average_grade')
             self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-average_grade')
