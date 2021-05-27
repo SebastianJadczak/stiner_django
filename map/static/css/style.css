@@ -303,15 +303,12 @@ div.content {
     div#top div.menu ul li.green {
         width: 50px;
     }
-
 }
 
 @media only screen and (max-width: 1000px) {
     div#top div.menu ul li.green:hover div#menu-detail-trail {
         top: -100px
     }
-
-
 }
 
 @media only screen and (max-width: 666px) {
@@ -319,7 +316,6 @@ div.content {
         width: 40%;
     }
 }
-
 @media only screen and (max-width: 579px) {
     div#top div.menu ul {
         margin-top: 0;

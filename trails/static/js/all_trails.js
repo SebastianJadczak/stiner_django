@@ -60,3 +60,20 @@ buttonLeft_popular.addEventListener('click', function () {
         list_point_user_add.style.marginLeft = `-${position_popular_trail}px`
     }
 });
+
+let hamburger = document.getElementById('hamburger')
+let filter_trails = document.querySelector('.filter_trails')
+let x_hamburger = document.getElementById('x_hamburger')
+
+if(hamburger){
+    hamburger.addEventListener('click', function (){
+        filter_trails.classList.toggle('active')
+        x_hamburger.style.display = 'block'
+    })
+}
+if(x_hamburger){
+    x_hamburger.addEventListener('click', function (){
+        filter_trails.classList.toggle('active')
+        x_hamburger.style.display = 'none'
+    })
+}

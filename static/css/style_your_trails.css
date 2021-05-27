@@ -115,16 +115,13 @@ div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div
 }
 #button-filter_your-trail{
    width:287px;
-    height:50px;
+    height:56px;
     letter-spacing: 1.4px;
     background-color: #f8ff00;
     border: none;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    top: 917px;
-    left:136px;
-    position: fixed;
 }
 
 div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.top_rate label.star {
@@ -174,13 +171,21 @@ div.search-trail-wrap ul li div#search-trail:hover img{
 }
 @media only screen and (max-width: 1680px) {
 
-    div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.name input{
+    div.wrap-your_trails div.your_trail-center div.filter_trails div.filter form div.name input {
         width: 170px;
         margin-left: 10px;
         padding-left: 15px;
-}
-    div.accept_filter button#button-filter_your-trail{
-       width:229px;
+    }
+
+    div.accept_filter button#button-filter_your-trail {
+        width: 14.4vw;
+        height: 50px;
+        letter-spacing: 1.4px;
+        background-color: #f8ff00;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
     }
     button#right{
     right:-880px;

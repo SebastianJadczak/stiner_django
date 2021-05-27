@@ -1,0 +1,121 @@
+div#top div.menu_mapa ul li {
+    line-height: 80px;
+}
+
+div#top div.menu_mapa ul li.green i {
+    margin-top: 35px;
+}
+
+div#favorite-top {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25)), url("../img/cathedral.jpg");
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid grey;
+    width: 99.8vw;
+    height: 220px;
+}
+
+div#favorite-top h3 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 37px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    padding-top: 50px;
+    margin: 0;
+    color: white;
+    -webkit-text-stroke: 0.6px black;
+    text-shadow: 0 0 3px black;
+}
+
+div.list_favorite {
+    margin: 70px auto 0;
+    height: 55px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+div.list_favorite a {
+    height: 32px;
+    line-height: 53px;
+    color: black;
+    margin-right: 25px;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+div.list_favorite a.underline {
+    border-bottom: 2px solid #969696;
+    padding-bottom: 4px
+}
+
+div#favorite-wrap {
+    min-height: 90vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
+}
+
+/* Page favorite all. */
+div.sort_menu {
+    width: 65vw;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div.sort_menu div.sort{
+    width:20%;
+    height: 80px;
+}
+div.sort_menu div.sort p, div.filter p, div.search-favorite p {
+     font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: #4e4e4e;
+    margin:15px 0 10px;
+    height:20px;
+}
+select#sort{
+    width:140px;
+    height:40px;
+    padding:10px;
+    border: 1px solid #28608a;
+    background-color: white;
+}
+div.sort_menu div.filter{
+    width:50%;
+    height: 80px;
+}
+div.filter-select select{
+       width:140px;
+    height:40px;
+    padding:10px;
+    border: 1px solid #28608a;
+    background-color: white;
+    margin-right: 10px;
+}
+div.sort_menu div.search-favorite{
+    width:25%;
+    height: 80px;
+}
+div.sort_menu div.search-favorite form input{
+    height:34px;
+    padding-left: 10px;
+}
+div.sort_menu div.search-favorite form  button{
+    height:40px;
+    width:50px;
+    background-color: #fff;
+    border: 1px solid #757575;
+    border-left: none;
+    transform: translateX(-5px);
+}
+div.favorite_all {
+    width: 75vw;
+    min-height: 75vh;
+    margin: 0 auto;
+}
