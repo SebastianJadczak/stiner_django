@@ -155,6 +155,12 @@ class DoneList(ListView):
     coordinates = Coordinates.objects.all()
     country = [value for key, value in Trail.get_country_trail(Trail)]
 
+    def post(self, request):
+        search = self.request.POST.get('search')
+        self.done_trail = Trail.objects.exclude(name__exact='').filter(done=self.request.user, name__contains=search)
+        self.done_point = Point.objects.exclude(name__exact='').filter(done=self.request.user,  name__contains=search)
+        return render(request, self.template_name, {'trail_done':self.done_trail, 'point_done':self.done_point,'country': self.country,'city' : self.coordinates})
+
     def get_context_data(self, **kwargs):
         self.done_trail = Trail.objects.filter(done=self.request.user)
         self.done_point = Point.objects.filter(done=self.request.user)
@@ -172,19 +178,6 @@ class DoneList(ListView):
             elif sorting == "done":
                 self.done_point = self.done_point.order_by('-done_count')
                 self.done_trail = self.done_trail.order_by('-done_count')
-
-        # if filtercity != "":
-        #     self.done_point = Point.objects.filter(done=self.request.user, location=filtercity)
-        #     self.done_trail = Trail.objects.filter(done=self.request.user, city=filtercity)
-        # if filtercountry != "":
-        #     self.done_point = Point.objects.filter(done=self.request.user, country=filtercountry)
-        #     self.done_trail = Trail.objects.filter(done=self.request.user, country=filtercity)
-        # if sorting == "rate":
-        #     self.done_point = Point.objects.filter(done=self.request.user).order_by('-average_grade')
-        #     self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-average_grade')
-        # elif sorting == "done":
-        #     self.done_point = Point.objects.filter(done=self.request.user).order_by('-done_count')
-        #     self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-done_count')
 
         context = super().get_context_data(**kwargs)
         context['trail_done'] = self.done_trail

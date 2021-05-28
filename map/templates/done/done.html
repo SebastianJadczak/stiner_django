@@ -118,7 +118,8 @@
         <div class="search-done">
             <p></p>
             <form action="" method="post">
-                <input type="text" placeholder="Szukaj...">
+                <input name="search" type="text" placeholder="Szukaj...">
+                {% csrf_token %}
                 <button type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
