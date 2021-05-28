@@ -88,7 +88,7 @@
         <div class="sort">
             <p>Sortuj według:</p>
             <select name="sort" id="sort-list" onchange="location = finalurl();">
-                <option value="" id="placeholder" disabled selected hidden>Sort</option>
+                <option value="" id="placeholder-sort" disabled selected hidden>Sort</option>
                 <option id="done" value="done">Zwiadzających</option>
                 <option id="rate" value="rate">Ocena</option>
             </select>
@@ -96,19 +96,19 @@
         <div class="filter">
             <p>Filtruj według:</p>
             <div class="filter-select">
-                <select name="" id="filtr-city" onchange="location = filteringcity();">
-                    <option value="" id="placeholder" disabled selected >Miasto</option>
+                <select name="" id="filter-city" onchange="location = filteringcity();">
+                    <option value="" id="placeholder-city" disabled selected hidden>Miasto</option>
                     {% for c in city %}
                         <option id="city" value="{{ c }}">{{ c }}</option>
                     {% endfor %}
                 </select>
-                <select name="" id="filtr-country" onchange="location = filteringcountry();">
-                    <option value="" id="placeholder" disabled selected>Kraj</option>
+                <select name="" id="filter-country" onchange="location = filteringcountry();">
+                    <option value="" id="placeholder-country" disabled selected hidden>Kraj</option>
                     {% for c in country %}
                         <option value="{{ c }}">{{ c }}</option>
                     {% endfor %}
                 </select>
-                <select name="" id="filtr-author" onchange="">
+                <select name="" id="filter-author" onchange="">
                     <option value=""  id="placeholder" disabled selected>Autor</option>
                     <option value="your">Twoja</option>
                     <option value="no_your" >Nie Twoja</option>

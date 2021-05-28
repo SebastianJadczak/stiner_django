@@ -161,18 +161,30 @@ class DoneList(ListView):
         sorting = self.request.GET.get('sorting', "") #http//..../done/?sorting=rate ---  geting rate or done and adding to url
         filtercity = self.request.GET.get('filtercity', "")
         filtercountry = self.request.GET.get('filtercountry', "")
-        if filtercity != "":
-            self.done_point = Point.objects.filter(done=self.request.user, location=filtercity)
-            self.done_trail = Trail.objects.filter(done=self.request.user, city=filtercity)
-        if filtercountry != "":
-            self.done_point = Point.objects.filter(done=self.request.user, country=filtercountry)
-            self.done_trail = Trail.objects.filter(done=self.request.user, country=filtercity)
-        if sorting == "rate":
-            self.done_point = Point.objects.filter(done=self.request.user).order_by('-average_grade')
-            self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-average_grade')
-        elif sorting == "done":
-            self.done_point = Point.objects.filter(done=self.request.user).order_by('-done_count')
-            self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-done_count')
+
+        if(filtercity != '' or  filtercountry != "" or sorting == "rate" or sorting == "done"):
+            self.done_point = self.done_point.exclude(location__exact='', country__exact='').filter(location__contains=filtercity,
+                                                                                                    country__contains=filtercountry)
+            self.done_trail = self.done_trail.exclude(city__exact='', country__exact='').filter(city=filtercity,country=filtercountry)
+            if sorting == "rate":
+                self.done_point = self.done_point.order_by('-average_grade')
+                self.done_trail = self.done_trail.order_by('-average_grade')
+            elif sorting == "done":
+                self.done_point = self.done_point.order_by('-done_count')
+                self.done_trail = self.done_trail.order_by('-done_count')
+
+        # if filtercity != "":
+        #     self.done_point = Point.objects.filter(done=self.request.user, location=filtercity)
+        #     self.done_trail = Trail.objects.filter(done=self.request.user, city=filtercity)
+        # if filtercountry != "":
+        #     self.done_point = Point.objects.filter(done=self.request.user, country=filtercountry)
+        #     self.done_trail = Trail.objects.filter(done=self.request.user, country=filtercity)
+        # if sorting == "rate":
+        #     self.done_point = Point.objects.filter(done=self.request.user).order_by('-average_grade')
+        #     self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-average_grade')
+        # elif sorting == "done":
+        #     self.done_point = Point.objects.filter(done=self.request.user).order_by('-done_count')
+        #     self.done_trail = Trail.objects.filter(done=self.request.user).order_by('-done_count')
 
         context = super().get_context_data(**kwargs)
         context['trail_done'] = self.done_trail
