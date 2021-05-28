@@ -350,7 +350,7 @@ div#basic-info div.more-trail div.left div p span, div#basic-info div.more-trail
 
 /*Map.*/
 div.map{
-    width:100%;
+    width:58vw;
 }
 div.map div.folium-map{
     width: 100%;
