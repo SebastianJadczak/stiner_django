@@ -116,3 +116,12 @@ class AdvertisementNews(models.Model):
 
     def __str__(self):
         return self.title
+
+class Country(models.Model):
+    """Model opisujący położenie krajów."""
+    name = models.CharField(max_length=30)
+    coordinateX = models.DecimalField(max_length=30, decimal_places=7, max_digits=100)
+    coordinateY = models.DecimalField(max_length=30, decimal_places=7, max_digits=100)
+
+    def __str__(self):
+        return self.name

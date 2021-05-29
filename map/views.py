@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from account.models import UserRole
 from map.api.serializers import PointSerializer, LocationMapSerializer
 from map.forms import FormularzRejestracji
-from map.models import Point, Coordinates, NewsletterEmail, News, AdvertisementNews
+from map.models import Point, Coordinates, NewsletterEmail, News, AdvertisementNews, Country
 from shop.models import Category
 from trails.models import Trail
 from trails.views import MethodTrail
@@ -24,7 +24,7 @@ class Map(View, MethodTrail):
     points = Point.objects.all()
     trails = Trail.objects.all()
     news = News.objects.all()
-    country = [value for key, value in Trail.get_country_trail(Trail)]
+    country = Country.objects.all()
 
     def get(self, request):
         # ---------------------------------------
@@ -110,7 +110,8 @@ class UserFormView(View):
 class MapFullScreen(View):
     template_name = 'map/map.html'
     coordinates = Coordinates.objects.all()
-    country = [value for key, value in Trail.get_country_trail(Trail)]
+    country = Country.objects.all()
+
 
     def get(self, request):
         # --------------------------------------

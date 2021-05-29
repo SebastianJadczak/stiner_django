@@ -224,7 +224,8 @@ class SaveDraftTrailUser(UserTrailFormAdd):
                 userTrail.save()
                 userTrail.points.set(table)
             self.clear_board_user()
-            return render(request, 'trails/user_trails/form_trails.html', {'form': form, 'user_trail': self.user_trail})
+            # return render(request, 'trails/user_trails/user_trails.html', {'form': form, 'user_trail': self.user_trail})
+            return redirect('yours_trails')
         else:
             print(form.errors)
 

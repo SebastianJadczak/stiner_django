@@ -8,7 +8,7 @@ div.wrap-trails_add{
 div.wrap-trails_add div.title-trail_add{
     position: relative;
     top: -20px;
-    left: -134px;
+     left: -105px;
     width: 99vw;
     height: 150px;
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url(../img/trail.jpg);
@@ -130,8 +130,8 @@ div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.a
     height:50px;
 }
 #button-filter_your-trail{
-    width:287px;
-    height:50px;
+    width:99.6%;
+    height:53px;
     letter-spacing: 1.4px;
     background-color: #f8ff00;
     border: none;
