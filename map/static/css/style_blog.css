@@ -24,14 +24,15 @@ div.content div.content-bottom {
 }
 
 div.content div.content-bottom div.content-right {
-    width: 15vw;
+    width: 20vw;
+    min-height: 500px;
+    margin-left: 50px;
+    padding-top: 10px;
 }
 
 div.content_center {
     display: flex;
-    width: 75vw;
     flex-direction: column;
-    margin: 0 auto;
 }
 div.content_center h3{
     margin-left:70px;
@@ -54,18 +55,14 @@ div.text p{
     font-family: Arial, sans-serif;
     letter-spacing: 1.3px;
 }
-div.right_table{
-    width:10vw;
-    padding:50px;
-}
-
 
 div.posts{
     display: flex;
-    width:75vw;
+    width:65vw;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 10px 0 30px 200px;
+    margin-left: 50px;
+    margin-right: 50px;
     justify-content: space-between;
 }
 div.posts a{
@@ -74,7 +71,7 @@ div.posts a{
 }
 div.posts div.post{
     width:300px;
-    margin: 10px 25px;
+    margin: 10px 25px 20px;
     height:360px;
     border:1px solid #aeaeae;
     background-color: #fff;
@@ -127,6 +124,86 @@ div.posts div.post div.info {
     font-size: 13px;
     text-align: right;
 }
+
+div.top_rate-points {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+div.top-rate-point {
+    width: 400px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #dddddd;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+div.top-rate-point-image {
+    width: 120px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+div.top-rate-point-image img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+div.point-description {
+    width: 280px
+}
+
+div.point-description div.more {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+div.top-rate-point div.point-description div.more p {
+    margin: 5px 0;
+}
+
+div.top-rate-point div.point-description div.more p span {
+    font-weight: bold;
+}
+
+div.top-rate-point div.point-description div.more-button {
+    text-align: right;
+    padding-right: 20px;
+    margin-top: 2px;
+}
+
+div.top-rate-point div.point-description div.more-button button {
+    background-color: #00c403;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 10px;
+}
+
+div.top-rate-point div.point-description div.more-button button a {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.1px;
+    text-decoration: none;
+}
+
+div.top-rate-point div.point-description p#name {
+    font-family: 'Pattaya', sans-serif;
+    letter-spacing: 1.6px;
+    margin: 10px 0 5px 0;
+}
+
 
 @media only screen and (max-width: 1680px) {
 

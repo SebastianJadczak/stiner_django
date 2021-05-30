@@ -1,11 +1,35 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div id="title_post" style="background-image: url({{ post.image.url }})">
-    <div id="title">
-        <h3>{{ post.title }}</h3>
+    <div id="title_post" style="background-image: url({{ post.image.url }})">
+        <div id="title">
+            <h3>{{ post.title }}</h3>
+        </div>
     </div>
-</div>
-
+    <div class="content_post">
+        <div class="left">
+            <h4>{{ post.title }}</h4>
+            <div class="body_post">
+                {{ post.body }}
+            </div>
+            {% if  post.additional_photo_first %}
+                <div class="image_post">
+                    <img src="{{ post.additional_photo_first.url }}" alt="">
+                </div>
+            {% endif %}
+        </div>
+        <div class="right">
+            <h4>Partnerzy:</h4>
+            <div class="ads">
+                {% for ad in ads %}
+                    <div class="ad">
+                        <div class="image-ad">
+                            <a href="{{ ad.url }}"><img src="{{ ad.image.url }}" alt=""></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
