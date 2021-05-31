@@ -620,24 +620,41 @@ div.search_mapa button{
     color: white;
     height: 35px;
     width: 198px;
-    margin:0 auto;
+    margin: 0 auto;
     font-weight: bold;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    border-top:0.5px solid black;
+    border-top: 0.5px solid black;
     border-bottom: none;
     border-right: none;
     border-left: none;
     box-shadow: 1.3px 1.7px 0 black;
 }
 
+div#hamburger-filter {
+    position: absolute;
+    display: none;
+    top: 180px;
+    left: 20px;
+    z-index: 99;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px 9px;
+    border: 1px solid black
+}
+
+div#hamburger-filter i {
+    font-size: 20px;
+}
+
 /*Renderowanie mapy*/
 
-iframe.map_render{
-    width:99vw;
+iframe.map_render {
+    width: 99vw;
     height: 79vh;
 }
-div.footer{
+
+div.footer {
     background-color: #fff;
     height: 5vh;
     line-height: 5vh;
@@ -867,6 +884,12 @@ div.footer a{
 @media only screen and (max-width: 1071px) {
     #top {
         padding-left: 50px;
+    }
+    div#hamburger-filter{
+        display: block;
+    }
+    div#filter{
+        display: none;
     }
 
     div.logo {

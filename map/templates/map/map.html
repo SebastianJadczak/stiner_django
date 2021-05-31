@@ -168,7 +168,9 @@
     <div class="search_mapa"><button onclick="post_monuments()">Szukaj</button></div>
 
 </div>
-
+<div id="hamburger-filter">
+    <i class="fas fa-bars"></i>
+</div>
 <div class="folium-map" id="map_1de6ef4f1218487da9d6da057bb8f454" ></div>
 
 
@@ -188,3 +190,13 @@
 <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
 <script src="{% static 'js/map.js' %}" type="text/javascript"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<script>
+    let hamburger_filter = document.getElementById('hamburger-filter')
+    let filter = document.getElementById('filter')
+    if (hamburger_filter){
+        hamburger_filter.addEventListener('click', function (){
+            filter.style.display = 'block'
+            hamburger_filter.style.display = 'none'
+        })
+    }
+</script>
