@@ -87,7 +87,12 @@ div#map_1de6ef4f1218487da9d6da057bb8f454 {
     height: 280px;
     width: 100%;
 }
-
+div#point_description p span{
+    font-style: italic;
+    display: block;
+    font-size: 13px;
+    margin-top: 10px;
+}
 
 /* ------------Galeria--------------------------- */
 div.gallery {

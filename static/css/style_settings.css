@@ -1,0 +1,59 @@
+div.title-reset_password {
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../img/corsica.jpg");
+    height: 190px;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid grey;
+}
+
+div.title-reset_password h3 {
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 35px 0 0;
+    color: white;
+    -webkit-text-stroke: 0.6px black;
+    text-shadow: 0 0 3px black;
+}
+
+div.content-reset_password {
+    min-height: 60vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
+    padding-top:70px;
+}
+div.content-reset_password div.form-reset{
+    width:400px;
+    height:105px;
+    margin: 0 auto;
+    border: 1px solid grey;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    padding:20px 30px;
+}
+div.content-reset_password div.form-reset p{
+     text-align: center;
+    height: 32px;
+    font-weight: bold;
+    font-family: Verdana, Arial, sans-serif;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+div.content-reset_password div.form-reset form{
+    text-align: center;
+}
+form input#id_email{
+    height: 22px;
+}
+div.content-reset_password div.form-reset form button.btn{
+    background-color: #00cf00;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    height: 30px;
+    width: 90px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+}

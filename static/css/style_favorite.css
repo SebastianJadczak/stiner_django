@@ -79,7 +79,7 @@ div.sort_menu div.sort p, div.filter p, div.search-favorite p {
     margin:15px 0 10px;
     height:20px;
 }
-select#sort{
+select#sort-list{
     width:140px;
     height:40px;
     padding:10px;
@@ -115,7 +115,264 @@ div.sort_menu div.search-favorite form  button{
     transform: translateX(-5px);
 }
 div.favorite_all {
-    width: 75vw;
     min-height: 75vh;
     margin: 0 auto;
+}
+/*--------------------------*/
+
+/* Favorite Point. */
+
+div.favorite_points, div.favorite_trails {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 200px;
+}
+div.favorite_points h3, div.favorite_trails h3{
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+div.favorite_points ul, div.favorite_trails ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+div.favorite_points ul li, div.favorite_trails ul li {
+    min-width: 280px;
+    max-width: 280px;
+    height: 350px;
+    margin: 5px 10px 5px 5px;
+}
+
+div.point, div.trail {
+    min-width: 280px;
+    max-width: 280px;
+    height: 350px;
+    text-align: center;
+    background-color: #fff;
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+div.point p, div.trail p {
+    font-size: 14px;
+    margin: 5px;
+}
+p#name-point, p#name-trail {
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1.3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+p span {
+    font-weight: bold;
+}
+p.description {
+    height: 50px;
+    width: 90%;
+}
+div.image_trail, div.image_point {
+    width: 100%;
+    height: 58%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+div.image_trail img, div.image_point img  {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.0);
+    transition: all 0.3s;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+div.image_trail:hover img, div.image_point:hover img {
+    transform: scale(1.1);
+}
+div.average_grade{
+    display: flex;
+    padding: 0 7px;
+    justify-content: space-between;
+}
+div.point button, div.trail button {
+    background-color: #e06100;
+    border: 1px solid #c0c0c0;
+    box-shadow: 1px 1px 0 black;
+    width: 90px;
+    height: 33px;
+    border-radius: 15px;
+    margin-left: 170px;
+
+}
+
+div.point button a, div.trail button a {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    text-decoration: none;
+}
+
+/*-------------RWD----------------*/
+@media only screen and (max-width: 1495px) {
+    div.sort_menu {
+        width: 90vw;
+        justify-content: center;
+    }
+
+    div.sort_menu div.sort {
+        width: 15%;
+    }
+
+    div.sort_menu div.filter {
+        width: 39%;
+    }
+}
+
+@media only screen and (max-width: 1320px) {
+    div.favorite_points, div.favorite_trails {
+        padding: 30px 100px;
+    }
+
+    div.sort_menu div.filter {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 1135px) {
+    div.sort_menu div.filter {
+        width: 52%;
+    }
+
+    div.favorite_points, div.favorite_trails {
+        padding: 30px 50px;
+    }
+
+    div.sort_menu div.search-favorite {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 1015px) {
+    div.favorite_points ul, div.favorite_trails ul {
+        justify-content: space-around;
+    }
+
+    div.sort_menu {
+        padding-top: 30px;
+        flex-direction: column;
+        height: auto;
+        width: 70vw;
+    }
+
+    div.sort_menu div.filter, div.sort_menu div.sort, div.sort_menu div.search-favorite {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 60px;
+    }
+
+    div.sort_menu div.filter p, div.sort_menu div.sort p, div.sort_menu div.search-favorite p {
+        display: inline-block;
+        width: 140px;
+    }
+
+    div.sort_menu div.search-favorite form input {
+        width: 380px
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    div.sort_menu {
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    div.filter-select select, select#sort-list {
+        width: 90px;
+    }
+
+    div.sort_menu div.search-favorite form input {
+        width: 250px
+    }
+
+    div.sort_menu {
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    div.sort_menu {
+        width: 90vw;
+    }
+
+    div.sort_menu div.filter, div.sort_menu div.sort, div.sort_menu div.search-favorite {
+        padding-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    div.sort_menu {
+        width: 95vw;
+    }
+
+    div.sort_menu div.filter, div.sort_menu div.sort, div.sort_menu div.search-favorite {
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    div.sort_menu div.filter p, div.sort_menu div.sort p, div.sort_menu div.search-favorite p {
+        font-size: 12px;
+        width: 90px;
+        margin-top: 5px;
+    }
+
+    div.sort_menu div.search-favorite form input {
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 422px) {
+    div.filter-select {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.sort_menu div.filter {
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    div.filter-select select {
+        margin-bottom: 10px;
+    }
+
+    div.filter-select select, select#sort-list {
+        width: 190px;
+    }
+
+    div.sort_menu div.filter, div.sort_menu div.sort, div.sort_menu div.search-favorite {
+        padding-left: 40px;
+        width: 85%;
+    }
+
+    div.sort_menu div.search-favorite form input {
+        width: 125px
+    }
+
+}
+
+@media only screen and (max-width: 360px) {
+    div.sort_menu div.filter, div.sort_menu div.sort, div.sort_menu div.search-favorite {
+        padding-left: 5px;
+        width: 95%;
+    }
 }
