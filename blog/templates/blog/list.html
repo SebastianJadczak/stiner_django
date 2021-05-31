@@ -2,7 +2,11 @@
 {% load static %}
 {% block content %}
 
-
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Chau+Philomene+One:ital@1&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <div class="content">
         <div class="karaibs">
             <h3>Inspiracje</h3>
@@ -22,11 +26,30 @@
                             </section>
                         </div>
                     </a>
-                {% endfor %}
+                    {% endfor %}
                 </div>
             </div>
             <div class="content-right">
                 <h3>Inspirujące miejsca</h3>
+                <div class="top_rate-points">
+                    {% for point in top_rate_points %}
+                        <div class="top-rate-point">
+                            <div class="top-rate-point-image">
+                                <img src="{{ point.image.url }}" alt="">
+                            </div>
+                            <div class="point-description">
+                                <p id="name">{{ point.name| slice:":20" }}...</p>
+                                <div class="more">
+                                    <p id="rate"><span>Ocena: </span> {{ point.average_grade }}</p>
+                                    <p id="done"><span>Zwiedziło: </span>{{ point.done_count }}</p>
+                                </div>
+                                <div class="more-button">
+                                    <button><a href="{% url 'trails:point_detail' point.id %}">Więcej</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

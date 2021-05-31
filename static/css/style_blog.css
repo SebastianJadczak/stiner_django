@@ -75,7 +75,7 @@ div.posts a{
 div.posts div.post{
     width:300px;
     margin: 10px 25px;
-    height:500px;
+    height:360px;
     border:1px solid #aeaeae;
     background-color: #fff;
 }
@@ -208,6 +208,7 @@ div#top div.menu ul li.green i {
 @media only screen and (max-width: 1140px) {
     div.posts div.post {
         width: 320px;
+        height: 380px;
     }
 
     div.posts div.post div.image {
@@ -221,6 +222,7 @@ div#top div.menu {
 }
     div.posts div.post {
         width: 280px;
+        height: 350px;
     }
 
     div.posts div.post div.image {
@@ -229,8 +231,10 @@ div#top div.menu {
 }
 
 @media only screen and (max-width: 980px) {
-    div.content_center {
-        flex-direction: column-reverse;
+
+
+    div.content div.content-bottom {
+        flex-direction: column;
     }
 
     div.right_table {
@@ -239,7 +243,7 @@ div#top div.menu {
     }
 
     div.posts {
-        width: 95vw;
+        width: 100%;
         margin: 10px auto;
     }
 
@@ -258,6 +262,7 @@ div#top div.menu {
     }
     div.posts div.post {
         width: 350px;
+         height: 410px;
     }
 
     div.posts div.post div.image {

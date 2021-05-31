@@ -5,22 +5,99 @@ div.center {
     flex-direction: row;
     justify-content: center;
 }
-div.center div#trail-left{
-    width:60vw;
+
+div.center div#trail-left {
+    width: 60vw;
     margin-left: 50px;
-}
-div.center div#trail-right{
-   width:20vw;
-    height:500px;
-    background-color: #fff;
-    margin-left: 50px;
-    border-radius: 15px;
-    border: 1px solid #e0e0e0;
 }
 
-div#social-right{
+div.center div#trail-right {
+    width: 20vw;
+    min-height: 500px;
+    margin-left: 50px;
+    border-radius: 15px;
+    padding-top: 10px;
+}
+
+/*Top rate trail in right column.*/
+div.center div#trail-right div.trail {
+    width: 400px;
+    height: 100px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+div.center div#trail-right div.trail div.trail-image {
+    height: 100px;
+    width: 150px;
+    margin-right: 10px;
+}
+
+div.center div#trail-right div.trail div.trail-image img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+div#trail-right div.trail p#trail-name {
+    font-family: 'Pattaya', sans-serif;
+    letter-spacing: 1.6px;
+    margin: 10px 0 10px 0;
+}
+
+div#trail-right div.trail div.more {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 220px;
+}
+
+div#trail-right div.trail div.more p {
+    margin-bottom: 5px;
+}
+
+div#trail-right div.trail div.more p span {
+    font-weight: bold;
+}
+
+div#trail-right div.trail div.more-button {
+    text-align: right;
+}
+
+div#trail-right div.trail div.more-button button {
+    background-color: #00e315;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 10px;
+}
+
+div#trail-right div.trail div.more-button button a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1.1px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*-------------------------------*/
+div.center div#trail-right h4 {
+    font-family: 'Chau Philomene One', sans-serif;
+    font-weight: normal;
+    letter-spacing: 1.4px;
+    font-size: 19px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+div#social-right {
     position: fixed;
-    top:20vh;
+    top: 20vh;
     right: 0;
     width: 35px;
     height: 110px;
@@ -114,21 +191,27 @@ div.panorama_mapa div#file-trail {
 
 button#pdf {
     background-color: #12a900;
-    width: 330px;
+    width: 350px;
     height: 50px;
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 15px;
     border: none;
     box-shadow: none;
     border-radius: 5px;
+}
+
+button#pdf a {
     color: white;
     letter-spacing: 1.3px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
 }
-button#audio{
+
+button#audio {
     background-color: #e3df00;
     width: 280px;
     height: 50px;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 15px;
     border: none;
     box-shadow: none;
@@ -267,7 +350,7 @@ div#basic-info div.more-trail div.left div p span, div#basic-info div.more-trail
 
 /*Map.*/
 div.map{
-    width:100%;
+    width:58vw;
 }
 div.map div.folium-map{
     width: 100%;
@@ -329,4 +412,127 @@ div.top_form p#yours_stars-trail {
 .stars-trail label:hover ~ label::before,
 .stars-trail input:checked ~ label::before {
     color: #ffa500;
+}
+
+@media only screen and (max-width: 1490px) {
+    div.center div#trail-right {
+        margin-left: 20px;
+    }
+
+    div.center div#trail-left {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 1365px) {
+    div.center {
+        justify-content: left;
+    }
+
+    div.center div#trail-left {
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-width: 1185px) {
+    div.center div#trail-right {
+        width: 380px;
+    }
+
+    div.center div#trail-left {
+        margin-left: 20px;
+    }
+
+    div.center div#trail-right div.trail {
+        width: 370px
+    }
+
+    div.center div#trail-right div.trail div.trail-image {
+        width: 120px
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    div.center div#trail-left div#basic-info {
+        height: 360px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    div.center div#trail-left div#basic-info {
+        height: 380px;
+    }
+
+    div#basic-info div.more-trail div.left div p i, div#basic-info div.more-trail div.right div p i {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 880px) {
+    div.center{
+        flex-direction: column;
+    }
+    div.center div#trail-left{
+        width: 95vw;
+    }
+    div.center div#trail-left div#basic-info {
+        height: 350px;
+    }
+    div.center div#trail-right{
+        margin:0 auto;
+    }
+}
+@media only screen and (max-width: 630px){
+div#points_in_trail ul li{
+    flex-direction: column-reverse;
+}
+    div.point_in_trail{
+        width:100%;
+    }
+    div#points_in_trail ul li div.image-trail{
+        margin:0 auto;
+    }
+}
+@media only screen and (max-width: 600px){
+    div.center div#trail-left div#basic-info {
+        height: 380px;
+    }
+}
+@media only screen and (max-width: 555px) {
+     div.center div#trail-left div#basic-info {
+        height: 370px;
+    }
+}
+@media only screen and (max-width: 500px) {
+     div#basic-info div.more-trail div.left div#start, div#basic-info div.more-trail div.right div#end{
+         height: 85px;
+     }
+    div#basic-info div.more-trail div.right div#end p{
+        line-height: 22px;
+    }
+    div.center div#trail-left div#basic-info {
+        height: 400px;
+    }
+}@media only screen and (max-width: 407px) {
+    div.center div#trail-left{
+        margin-left: 0;
+    }
+    div#basic-info h3{
+        padding-left: 5px;
+    }
+    div#basic-info div.icons{
+        margin-left: 20px;
+    }
+    div#basic-info div.more-trail div.left{
+        padding-left: 15px;
+    }
+     div.center div#trail-left div#basic-info {
+        height: 420px;
+    }
+     div.center div#trail-right div.trail, div.center div#trail-right h4{
+         width:340px;
+         margin:10px auto 20px;
+     }
+     div.center div#trail-right div.trail div.trail-description,div#trail-right div.trail div.more{
+         width:190px;
+     }
 }

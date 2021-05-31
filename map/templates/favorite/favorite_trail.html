@@ -4,65 +4,75 @@
     <div class="sort_menu">
         <div class="sort">
             <p>Sortuj według:</p>
-            <select name="" id="sort">
-                <option value="1">1</option>
+           <select name="sort" id="sort-list" onchange="location = finalurl();">
+                <option value="" id="placeholder-sort" disabled selected hidden>Sort</option>
+                <option id="done" value="done">Zwiadzających</option>
+                <option id="rate" value="rate">Ocena</option>
             </select>
         </div>
         <div class="filter">
             <p>Filtruj według:</p>
             <div class="filter-select">
-                <select name="" id="city">
-                    <option value="1">1</option>
+                <select name="" id="filter-city" onchange="location = filteringcity();">
+                    <option value="" id="placeholder-city" disabled selected hidden>Miasto</option>
+                    {% for c in city %}
+                        <option id="city" value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
                 </select>
-                <select name="" id="ocena">
-                    <option value="1">1</option>
+                <select name="" id="filter-country" onchange="location = filteringcountry();">
+                    <option value="" id="placeholder-country" disabled selected hidden>Kraj</option>
+                    {% for c in country %}
+                        <option value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
                 </select>
-                <select name="" id="ocena">
-                    <option value="1">1</option>
+                <select name="" id="filter-author" onchange="">
+                    <option value=""  id="placeholder" disabled selected>Autor</option>
+                    <option value="your">Wszystkie</option>
                 </select>
             </div>
         </div>
         <div class="search-favorite">
             <p></p>
             <form action="" method="post">
-                <input type="text" placeholder="Szukaj...">
+                <input type="text" name="search" placeholder="Szukaj...">
+                {% csrf_token %}
                 <button type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
     </div>
-    <div class="favorite_trail">
-        <h3>Ulubione trasy</h3>
-        <div id="favorite_trails">
-            <ul>
-                {% for trail in trail_favorite %}
-                    <li>
-                        <div class="trail">
-                            <div class="image_trail">
-                                <img src="{{ trail.image.url }}" alt="">
-                            </div>
-                            <div class="trail_description">
-                                <p id="name-trail">{{ trail.name }}</p>
-                                <div class="country">
-                                    <p><span>Kraj:</span> {{ trail.country }}</p>
+      <div class="favorite_trails">
+                <h3>Ulubione trasy</h3>
+                <div id="favorite_trails">
+                    <ul>
+                        {% for trail in trail_favorite %}
+                            <li>
+                                <div class="trail">
+                                    <div class="image_trail">
+                                        <img src="{{ trail.image.url }}" alt="">
+                                    </div>
+                                    <div class="trail_description">
+                                        <p id="name-trail">{{ trail.name }}</p>
+                                        <div class="country">
+                                            <p><span>Kraj:</span> {{ trail.country }}</p>
+                                        </div>
+                                        <div class="city">
+                                            <p><span>Miasto:</span> {{ trail.city }}</p>
+                                        </div>
+                                        <div class="average_grade">
+                                            <p><span>Ocena:</span> {{ trail.average_grade }}</p>
+                                            <p><span>Zwiedziło:</span> {{ trail.done.all.count }}</p>
+                                        </div>
+                                        <div class="button-interesting">
+                                            <button><a href="{% url 'trails:trail_detail' trail.id %}">Szczegóły</a>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="city">
-                                    <p><span>Miasto:</span> {{ trail.city }}</p>
-                                </div>
-                                <div class="average_grade">
-                                    <p><span>Ocena:</span> {{ trail.average_grade }}</p>
-                                    <p><span>Zwiedziło:</span> {{ trail.done.all.count }}</p>
-                                </div>
-                                <div class="button-interesting">
-                                    <button><a href="{% url 'trails:trail_detail' trail.id %}">Szczegóły</a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
     <script>
         let allElements = document.getElementById('trail')
         allElements.classList.add('underline')

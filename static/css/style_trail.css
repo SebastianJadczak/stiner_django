@@ -75,7 +75,7 @@ div.trail div.menu_trail ul li a:hover{
 
 div.trail div.content_trail{
     margin:20px auto;
-    width:85vw;
+    width:88vw;
 }
 
 
@@ -88,24 +88,23 @@ h3.user_trails_add{
 }
 
 div.przyklad{
-    width:63vw;
-    overflow:hidden;
-}
-div.points_add_to_user_trail{
+    width:67vw;
     display: flex;
     flex-direction: row;
-    overflow:hidden;
-    transition: .4s;
+    flex-wrap: wrap;
 }
 
 div.point_add {
-    width: 450px;
-    height: 500px;
-    margin-right: 35px;
-    padding-right: 0;
-    border: 1px solid #9c9c9c;
-    opacity: .7;
+    width: 290px;
+    height: 360px;
+    margin: 20px 20px 5px 0;
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
+    border: 0.5px solid #868686;
+    box-shadow: 0 0 1px #d2d2d2;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 div.point_add:hover{
@@ -114,48 +113,80 @@ div.point_add:hover{
 
 div.point_add p{
     text-align: center;
+    height: 32px;
     font-weight: bold;
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
-    margin-top: 20px;
+    margin-top: 10px;
+    font-size: 14px;
 }
-
-div.point_add div.image {
-    width: 450px;
-    height: 400px;
+div.point_add div.average_grade, div.country, div.city{
+    height: 20px;
+    margin-bottom: 5px;
 }
-div.point_add div.image img{
+div.country p, div.city p {
+    margin:0;
+    font-size: 13px;
+    font-weight: normal;
+}
+div.country p span, div.city p span{
+    font-weight: bold;
+    margin-right: 5px;
+}
+div.average_grade{
+    box-sizing: border-box;
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+    padding: 0 7px 0 12px;
+}
+div.point_add div.average_grade p {
+    display: inline-block;
+    width: 90px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    margin: 0;
+}
+div.point_add div.average_grade p span{
+    font-weight: bold;
+    padding-right: 3px;
+}
+div.point_add div.image_point {
+    width: 290px;
+    height: 190px;
+    overflow: hidden;
+}
+div.point_add div.image_point img{
     width:100%;
     height:100%;
+    transition: .3s;
 }
+div.point_add div.image_point img:hover{
+    transform: scale(1.1);
+}
+div.empty{
+    width: 70vw;
+    margin: 0 auto;
+}
+p#empty{
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 2px;
 
-button#right{
-    position: relative;
-    top:-270px;
-    right:-1120px;
-    color: white;
-    background-color: #00a523;
-    width:40px;
-    height:40px;
-    border:1px solid black;
-    border-radius: 25px;
-    font-size: 25px;
-    font-weight: bold;
-    outline: 0;
 }
-button#left{
-    position: relative;
-    top:-270px;
-     color: white;
-    background-color: #00a523;
-    width:40px;
-    height:40px;
-    border:1px solid black;
-    border-radius: 25px;
+p#add{
+    font-family: 'Bangers', cursive;
     font-size: 25px;
-    font-weight: bold;
-    outline: 0;
+    font-weight: normal;
+    letter-spacing: 2px;
+    position: absolute;
+    top:250px;
+    left:46vw;
 }
-
 div.buttons {
     display: flex;
 justify-content: space-between;
@@ -168,8 +199,8 @@ button.add {
     background-color: #198a00;
     border: 1px solid black;
     color: whitesmoke;
-    width: 95px;
-    height: 40px;
+    width: 85px;
+    height: 35px;
     border-radius: 10px;
     font-weight: bold;
     margin-right: 10px;
@@ -180,12 +211,12 @@ div.buttons input.add_to_user_trail {
     background-color: #e06100;
     border: 1px solid black;
     color: whitesmoke;
-    width: 95px;
-    height: 40px;
+    width: 85px;
+    height: 35px;
     border-radius: 10px;
     font-weight: bold;
     margin-left: 10px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* Szkic trasy użytkownika */
@@ -195,19 +226,28 @@ div.user_trail_draft {
 }
 
 div.user_trail_draft div#title_draft {
-    width: 75vw;
-    font-family: Arial, sans-serif;
+   position: relative;
+    top: -30px;
+    left: -134px;
+    width: 99vw;
+    height: 150px;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url(../img/trail.jpg);
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid grey;
 }
 
 div.user_trail_draft div#title_draft h3 {
-    text-align: center;
-    margin-top: 0;
-}
-
-div.user_trail_draft div#title_draft p {
-    font-size: 17px;
-    letter-spacing: 1.2px;
-    line-height: 21px;
+       text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0;
+    padding-top: 35px;
+    color: white;
+    -webkit-text-stroke: 0.6px black;
+    text-shadow: 0 0 3px black;
 }
 
 div.user_trail_draft div.draft-list_point {
@@ -217,8 +257,6 @@ div.user_trail_draft div.draft-list_point {
     padding: 20px;
     overflow: scroll;
     overflow-x: hidden;
-    border: 0.5px solid #0e446c;
-    background-color: #fff;
     border-radius: 8px;
 }
 div.user_trail_draft div#save_trail {
@@ -267,7 +305,7 @@ div.user_trail_draft div.draft-list_point div.draft-point{
     margin-bottom: 20px;
     padding:10px 15px;
     border: 0.5px solid #0e446c;
-    box-shadow: 1px 1px 1px 0.5px #0e446c;
+    box-shadow: 0 0 3px #0e446c;
     border-radius: 8px;
 }
 
@@ -337,4 +375,24 @@ form.delete button{
         width: 82vw;
     }
 
+}
+@media only screen and (max-width: 1260px) {
+    div.title-points {
+        left: -115px;
+        width: 100vw;
+
+    }
+   div#top div.menu ul li.green i#arrow{
+        margin-top: 35px;
+    }
+}
+@media only screen and (max-width: 1189px) {
+    div.title-points {
+        left: -11%;
+    }
+}
+@media only screen and (max-width: 610px) {
+    div.title-points h3{
+        font-size: 33px;
+    }
 }

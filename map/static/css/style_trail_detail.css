@@ -350,7 +350,7 @@ div#basic-info div.more-trail div.left div p span, div#basic-info div.more-trail
 
 /*Map.*/
 div.map{
-    width:100%;
+    width:58vw;
 }
 div.map div.folium-map{
     width: 100%;
@@ -422,6 +422,15 @@ div.top_form p#yours_stars-trail {
     div.center div#trail-left {
         margin-left: 0;
     }
+<<<<<<< HEAD
+=======
+    div#points_in_trail{
+        width: 90%;
+    }
+    div.opinion-trail{
+        width: 95%;
+    }
+>>>>>>> 19cf049560c4110a6d4977fbe1144f07a2281765
 }
 
 @media only screen and (max-width: 1365px) {
@@ -466,6 +475,12 @@ div.top_form p#yours_stars-trail {
     div#basic-info div.more-trail div.left div p i, div#basic-info div.more-trail div.right div p i {
         font-size: 14px;
     }
+<<<<<<< HEAD
+=======
+    div.opinion-trail{
+        width: 90%;
+    }
+>>>>>>> 19cf049560c4110a6d4977fbe1144f07a2281765
 }
 @media only screen and (max-width: 880px) {
     div.center{
@@ -480,6 +495,12 @@ div.top_form p#yours_stars-trail {
     div.center div#trail-right{
         margin:0 auto;
     }
+<<<<<<< HEAD
+=======
+    div.map {
+    width: 91vw;
+}
+>>>>>>> 19cf049560c4110a6d4977fbe1144f07a2281765
 }
 @media only screen and (max-width: 630px){
 div#points_in_trail ul li{
@@ -512,6 +533,19 @@ div#points_in_trail ul li{
     div.center div#trail-left div#basic-info {
         height: 400px;
     }
+<<<<<<< HEAD
+=======
+    div#basic-info div.name-trail div#title {
+    flex-direction: column;
+}
+    div#basic-info div.name-trail div#title div#buttons_trail{
+        padding-left: 20px;
+        margin: 5px 0 10px;
+    }
+    div.panorama_mapa div.x h3{
+        font-size: 33px;
+    }
+>>>>>>> 19cf049560c4110a6d4977fbe1144f07a2281765
 }@media only screen and (max-width: 407px) {
     div.center div#trail-left{
         margin-left: 0;

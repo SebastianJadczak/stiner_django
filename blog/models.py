@@ -12,6 +12,8 @@ class Post(models.Model):
     title = models.CharField(max_length=30)
     slug = models.SlugField(max_length=250)
     image = models.ImageField(upload_to='media/img/%Y/%m%d')
+    additional_photo_first = models.ImageField(upload_to='media/img/%Y/%m%d', blank=True)
+    additional_photo_second = models.ImageField(upload_to='media/img/%Y/%m%d', blank=True)
     body = models.TextField()
     short_description = models.CharField(max_length=60)
     publish = models.DateTimeField(default=timezone.now)

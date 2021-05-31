@@ -24,11 +24,12 @@ div#top div.menu ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    height: 6vh;
+    height: 80px;
+    margin-top:16px;
 }
 
 div#top div.menu ul li {
-    line-height: 9vh;
+    line-height: 80px;
     width: 10%
 }
 
@@ -72,7 +73,8 @@ div#top div.menu ul li.green div#menu-detail-trail.active {
     z-index: 100;
 }
 
-div.menu_mapa ul li.green div#menu-detail-trail, div.menu ul li.green div#menu-detail-trail {
+
+div.menu ul li.green div#menu-detail-trail {
     display: flex;
     position: absolute;
     height: 60px;
@@ -107,10 +109,10 @@ div#top div.menu div#menu-detail-trail ul li a {
     display: block;
     width: 100%;
     text-align: center;
-    line-height: 60px;
+    line-height: 40px;
 }
 
-div#top div.menu ul li.green:hover i {
+div#top div.menu ul li.green:hover i, div.menu_mapa div#top div.menu ul li.green:hover i {
     color: #0085e9;
 }
 
@@ -119,6 +121,10 @@ div#top div.menu ul li.green i {
     margin-left: 5px;
     font-size: 15px;
     color: #919191;
+}
+
+div#top div.menu_mapa ul li.green i {
+    margin-top: 50px;
 }
 
 div.login {
@@ -156,12 +162,12 @@ div.regulations div.right {
     display: flex;
 }
 
-div.logo {
+div.logo, div.logo_mapa {
     height: 70px;
     width: 160px;
 }
 
-div.logo img {
+div.logo img, div.logo_mapa img {
     margin-top: 5px;
     width: 100%;
     height: 100%;
@@ -289,6 +295,29 @@ div.search button {
 div.content {
     border-top: 1px solid #a9a9a9;
     margin-top: 2px;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
 
+}
+
+@media only screen and (max-width: 1500px) {
+    div#top div.menu ul li.green {
+        width: 50px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    div#top div.menu ul li.green:hover div#menu-detail-trail {
+        top: -100px
+    }
+}
+
+@media only screen and (max-width: 666px) {
+    div#top div.menu {
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 579px) {
+    div#top div.menu ul {
+        margin-top: 0;
+}
 }

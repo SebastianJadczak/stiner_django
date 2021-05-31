@@ -1,4 +1,4 @@
-allure-pytest==2.8.18
+﻿allure-pytest==2.8.18
 allure-python-commons==2.8.18
 altair-recipes==0.9.0
 appdirs==1.4.4
@@ -29,6 +29,7 @@ decorator==4.4.2
 defusedxml==0.6.0
 distlib==0.3.1
 dj-database-url==0.5.0
+dj-static==0.0.6
 Django==3.1.8
 django-cors-headers==3.7.0
 djangorestframework==3.12.1
@@ -79,6 +80,7 @@ pyrsistent==0.17.3
 pytest==6.1.1
 python-bidi==0.4.2
 python-dateutil==2.8.1
+python-decouple==3.4
 python-docx==0.8.10
 python-gitlab==2.6.0
 pytoml==0.1.21
@@ -97,6 +99,7 @@ selenium==3.141.0
 Shapely==1.7.1
 six==1.15.0
 sqlparse==0.3.1
+static3==0.7.0
 stringcase==1.2.0
 tabulate==0.8.7
 testpath==0.4.4

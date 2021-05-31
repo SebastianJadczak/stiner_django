@@ -69,7 +69,7 @@ var map_1de6ef4f1218487da9d6da057bb8f454 = L.map(
                                 var popup = L.popup({"Width": "300px"});
                                 var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%; font-family: Arial, sans-serif; letter-spacing: 1.1px">
                                 <strong style="font-size: 14px;">${item.name}</strong>
-                                <p> ${item.descriptions}</p>
+                                <p> ${item.descriptions.substring(0, 300)}...</p>
                                 <div class="img-map" style="width:300px; height:200px;">
                                     <img src="${item.image}" alt="" style="width: 100%; height: 100%;">
                                 </div>
@@ -151,7 +151,7 @@ function post_monuments() {
                     var popup = L.popup({"Width": "300px"});
                     var html = $(`<div id="html_96971d4f2da24e9499eaf1295989655a" style="width: 100.0%; height: 100.0%;">
                                 <strong>${item.name}</strong>
-                                <p> ${item.descriptions}</p>
+                                <p> ${item.descriptions.substring(0, 100)}...</p>
                                 <a href="/trails/point/${item.id}">Więcej</a></div>`)[0];
 
                     popup.setContent(html);

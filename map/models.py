@@ -73,6 +73,7 @@ class Point(models.Model):
     sound = models.ManyToManyField(User, blank=True, related_name='sound_point')
     average_grade = models.DecimalField(max_digits=2, decimal_places=1)
     gallery = models.ManyToManyField(Galery)
+    source = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
@@ -116,3 +117,12 @@ class AdvertisementNews(models.Model):
 
     def __str__(self):
         return self.title
+
+class Country(models.Model):
+    """Model opisujący położenie krajów."""
+    name = models.CharField(max_length=30)
+    coordinateX = models.DecimalField(max_length=30, decimal_places=7, max_digits=100)
+    coordinateY = models.DecimalField(max_length=30, decimal_places=7, max_digits=100)
+
+    def __str__(self):
+        return self.name

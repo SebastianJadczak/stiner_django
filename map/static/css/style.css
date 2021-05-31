@@ -300,6 +300,7 @@ div.content {
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 @media only screen and (max-width: 1560px) {
 
@@ -314,13 +315,22 @@ div#top div.menu ul li.green i {
 =======
 
 >>>>>>> 1fb02f0d4b8f80052f149e5b9330112216f3935f
+=======
+
+>>>>>>> 19cf049560c4110a6d4977fbe1144f07a2281765
 @media only screen and (max-width: 1500px) {
     div#top div.menu ul li.green {
         width: 50px;
     }
-
 }
 
+@media only screen and (max-width: 1000px) {
+    div#top div.menu ul li.green:hover div#menu-detail-trail {
+        top: -100px
+    }
+}
+
+<<<<<<< HEAD
 @media only screen and (max-width: 1000px) {
     div#top div.menu ul li.green:hover div#menu-detail-trail {
         top: -100px
@@ -329,18 +339,27 @@ div#top div.menu ul li.green i {
 
 }
 
+=======
+>>>>>>> 19cf049560c4110a6d4977fbe1144f07a2281765
 @media only screen and (max-width: 666px) {
     div#top div.menu {
         width: 40%;
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 82347d22e5a60a0185e83714d9429f4986adaeaa
 =======
 
+=======
+>>>>>>> 19cf049560c4110a6d4977fbe1144f07a2281765
 @media only screen and (max-width: 579px) {
     div#top div.menu ul {
         margin-top: 0;
 }
+<<<<<<< HEAD
 }
 >>>>>>> 1fb02f0d4b8f80052f149e5b9330112216f3935f
+=======
+}
+>>>>>>> 19cf049560c4110a6d4977fbe1144f07a2281765

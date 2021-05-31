@@ -15,3 +15,70 @@ div#title_post div#title h3{
     -webkit-text-stroke: 0.6px black;
     text-shadow: 0 0 3px black;
 }
+
+div.content_post {
+    min-height: 90vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+div.content_post div.left {
+    width: 60vw;
+    padding-top: 30px;
+}
+
+div.content_post div.right {
+    width: 25vw;
+    padding-top: 30px;
+}
+
+div.content_post div.left h4, div.content_post div.right h4 {
+    font-family: 'Chau Philomene One', sans-serif;
+    font-weight: normal;
+    letter-spacing: 1.4px;
+    font-size: 19px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+div.content_post div.right h4 {
+    font-size: 17px;
+}
+div.content_post div.right div.ads{
+    width: 25vw;
+    height: auto;
+    display: flex;
+}
+div.content_post div.right div.ads div.ad{
+    width:23vw;
+    margin: 10px auto;
+}
+div.ads div.ad div.image-ad{
+    width:100%;
+    height:90px;
+    border:1px solid #d2d2d2;
+    border-radius: 10px;
+}
+div.ads div.ad div.image-ad img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+div.body_post{
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    padding:10px 20px;
+    background-color: rgba(255,255,255, 0.7);
+}
+div.image_post{
+    width:100%;
+    height:200px;
+    text-align: center;
+    margin-top: 40px;
+}
+div.image_post img{
+    width: 45%;
+    height: auto;
+    border-radius: 15px;
+}
