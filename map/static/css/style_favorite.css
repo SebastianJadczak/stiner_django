@@ -115,13 +115,12 @@ div.sort_menu div.search-favorite form  button{
     transform: translateX(-5px);
 }
 div.favorite_all {
-    width: 75vw;
     min-height: 75vh;
     margin: 0 auto;
 }
 /*--------------------------*/
 
-/* Done Point. */
+/* Favorite Point. */
 
 div.favorite_points, div.favorite_trails {
     display: flex;
@@ -211,10 +210,169 @@ div.point button, div.trail button {
     margin-left: 170px;
 
 }
-div.point button a, div.trail button  a{
+
+div.point button a, div.trail button a {
     color: whitesmoke;
     font-weight: bold;
     font-size: 12px;
     letter-spacing: 1.6px;
     text-decoration: none;
+}
+
+/*-------------RWD----------------*/
+@media only screen and (max-width: 1495px) {
+    div.sort_menu {
+        width: 90vw;
+        justify-content: center;
+    }
+
+    div.sort_menu div.sort {
+        width: 15%;
+    }
+
+    div.sort_menu div.filter {
+        width: 39%;
+    }
+}
+
+@media only screen and (max-width: 1320px) {
+    div.favorite_points, div.favorite_trails {
+        padding: 30px 100px;
+    }
+
+    div.sort_menu div.filter {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 1135px) {
+    div.sort_menu div.filter {
+        width: 52%;
+    }
+
+    div.favorite_points, div.favorite_trails {
+        padding: 30px 50px;
+    }
+
+    div.sort_menu div.search-favorite {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 1015px) {
+    div.favorite_points ul, div.favorite_trails ul {
+        justify-content: space-around;
+    }
+
+    div.sort_menu {
+        padding-top: 30px;
+        flex-direction: column;
+        height: auto;
+        width: 70vw;
+    }
+
+    div.sort_menu div.filter, div.sort_menu div.sort, div.sort_menu div.search-favorite {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 60px;
+    }
+
+    div.sort_menu div.filter p, div.sort_menu div.sort p, div.sort_menu div.search-favorite p {
+        display: inline-block;
+        width: 140px;
+    }
+
+    div.sort_menu div.search-favorite form input {
+        width: 380px
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    div.sort_menu {
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    div.filter-select select, select#sort-list {
+        width: 90px;
+    }
+
+    div.sort_menu div.search-favorite form input {
+        width: 250px
+    }
+
+    div.sort_menu {
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    div.sort_menu {
+        width: 90vw;
+    }
+
+    div.sort_menu div.filter, div.sort_menu div.sort, div.sort_menu div.search-favorite {
+        padding-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    div.sort_menu {
+        width: 95vw;
+    }
+
+    div.sort_menu div.filter, div.sort_menu div.sort, div.sort_menu div.search-favorite {
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    div.sort_menu div.filter p, div.sort_menu div.sort p, div.sort_menu div.search-favorite p {
+        font-size: 12px;
+        width: 90px;
+        margin-top: 5px;
+    }
+
+    div.sort_menu div.search-favorite form input {
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 422px) {
+    div.filter-select {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.sort_menu div.filter {
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    div.filter-select select {
+        margin-bottom: 10px;
+    }
+
+    div.filter-select select, select#sort-list {
+        width: 190px;
+    }
+
+    div.sort_menu div.filter, div.sort_menu div.sort, div.sort_menu div.search-favorite {
+        padding-left: 40px;
+        width: 85%;
+    }
+
+    div.sort_menu div.search-favorite form input {
+        width: 125px
+    }
+
+}
+
+@media only screen and (max-width: 360px) {
+    div.sort_menu div.filter, div.sort_menu div.sort, div.sort_menu div.search-favorite {
+        padding-left: 5px;
+        width: 95%;
+    }
 }
