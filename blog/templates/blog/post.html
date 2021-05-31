@@ -10,11 +10,16 @@
         <div class="left">
             <h4>{{ post.title }}</h4>
             <div class="body_post">
-                {{ post.body }}
+                <p>{{ post.body }}</p>
             </div>
             {% if  post.additional_photo_first %}
                 <div class="image_post">
-                    <img src="{{ post.additional_photo_first.url }}" alt="">
+                    <div class="image_p">
+                        <img src="{{ post.additional_photo_first.url }}" alt="">
+                    </div>
+                    <div class="image_p">
+                        <img src="{{ post.additional_photo_second.url }}" alt="">
+                    </div>
                 </div>
             {% endif %}
         </div>

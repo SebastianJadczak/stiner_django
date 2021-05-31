@@ -17,7 +17,7 @@ div#title_post div#title h3{
 }
 
 div.content_post {
-    min-height: 90vh;
+    min-height: 70vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
     display: flex;
     flex-direction: row;
@@ -25,8 +25,9 @@ div.content_post {
 }
 
 div.content_post div.left {
-    width: 60vw;
+    width: 65vw;
     padding-top: 30px;
+    margin-left: 50px;
 }
 
 div.content_post div.right {
@@ -68,17 +69,74 @@ div.ads div.ad div.image-ad img{
 div.body_post{
     border: 1px solid #d7d7d7;
     border-radius: 10px;
-    padding:10px 20px;
+    padding:0 20px;
     background-color: rgba(255,255,255, 0.7);
+}
+div.body_post p{
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.2px;
+    font-size: 15px;
+    line-height: 22px;
 }
 div.image_post{
     width:100%;
-    height:200px;
-    text-align: center;
+    min-height:250px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     margin-top: 40px;
 }
-div.image_post img{
-    width: 45%;
-    height: auto;
+div.image_p{
+    max-width:50%;
+    height:250px;
+    text-align: center;
+}
+div.image_post div.image_p img{
+    width: auto;
+    max-width: 100%;
+    height: 100%;
     border-radius: 15px;
+    border: 1px solid #cdcdcd;
+    box-shadow: 0 0 3px #cbcbcb;
+}
+@media only screen and (max-width: 1500px){
+div.content_post div.right{
+    width: 30vw;
+}
+    div.content_post div.right div.ads, div.content_post div.right div.ads div.ad{
+        width:100%;
+    }
+}
+@media only screen and (max-width: 1290px){
+    div.content_post{
+        flex-direction:column-reverse;
+    }
+    div.content_post div.right, div.content_post div.left{
+        width: 80vw;
+        margin: 0 auto;
+    }
+    div.ads div.ad div.image-ad{
+        height: 110px;
+    }
+}
+@media only screen and (max-width: 830px){
+div.image_post{
+    flex-direction: column;
+}
+    div.image_p{
+        max-width: 100%;
+        margin-top:20px;
+    }
+    div#title_post div#title h3{
+        font-size: 35px;
+    }
+}
+@media only screen and (max-width: 505px){
+    div.ads div.ad div.image-ad{
+        height: 80px;
+    }
+     div#title_post div#title h3{
+        font-size: 30px;
+    }
 }

@@ -208,13 +208,14 @@ div.top-rate-point div.point-description p#name {
 @media only screen and (max-width: 1680px) {
 
     div.posts {
-        width: 70vw;
+        width: 65vw;
         margin: 10px 0 50px 50px;
     }
 
     div.posts div.post {
         height: 380px;
-
+        width: 300px;
+        margin: 0;
     }
 
 }
@@ -235,16 +236,21 @@ div.top-rate-point div.point-description p#name {
         margin: 10px;
     }
 }
+
 @media only screen and (max-width: 1415px) {
     div.posts div.post {
-        width: 300px;
+        width: 280px;
         margin: 10px;
+    }
+
+    div.top-rate-point {
+        width: 320px;
     }
 }
 
 @media only screen and (max-width: 1388px) {
     div.posts {
-        width: calc(99.5vw - 330px);
+        width: 65vw;
     }
 
     div.right_table {
@@ -256,13 +262,24 @@ div.top-rate-point div.point-description p#name {
 @media only screen and (max-width: 1340px) {
     div.posts div.post {
         width: 250px;
-
     }
 
     div.posts div.post div.image {
         width: 95%;
         margin: 0 auto;
         height: 170px;
+    }
+
+    div.posts div.post div.title p {
+        font-size: 19px;
+    }
+
+    div.posts div.post div.body {
+        margin-top: 15px;
+    }
+
+    div.posts div.post div.info {
+        margin-top: 35px;
     }
 }
 
@@ -299,10 +316,13 @@ div.top-rate-point div.point-description p#name {
     div.posts div.post div.image {
         height: 200px;
     }
+
+    div.posts div.post div.info {
+        margin-top: 20px;
+    }
 }
 
 @media only screen and (max-width: 980px) {
-
 
     div.content div.content-bottom {
         flex-direction: column;
@@ -325,6 +345,14 @@ div.top-rate-point div.point-description p#name {
     div.text p {
         margin-bottom: 0;
     }
+
+    div.content div.content-bottom div.content-right {
+        width: 90vw;
+    }
+
+    div.top-rate-point {
+        width: 370px;
+    }
 }
 
 @media only screen and (max-width: 949px) {
@@ -340,26 +368,55 @@ div.top-rate-point div.point-description p#name {
         height: 250px;
     }
 }
+
 @media only screen and (max-width: 785px) {
     div.posts div.post {
         width: 300px;
+        height: 380px;
     }
 
     div.posts div.post div.image {
         height: 210px;
     }
+
+    div.top-rate-point p {
+        font-size: 16px;
+    }
+
+    div.posts div.post div.body p {
+        font-size: 15px;
+    }
 }
-@media only screen and (max-width: 685px){
-      div.posts div.post {
+
+@media only screen and (max-width: 685px) {
+    div.posts div.post {
         width: 250px;
+        height: 330px;
     }
 
     div.posts div.post div.image {
         height: 160px;
     }
+
+    div.posts div.post div.title {
+        margin-bottom: 25px;
+    }
+
+    div.posts div.post div.info p {
+        margin-top: 10px;
+    }
+
+    div.posts div.post div.body {
+        margin-top: 0;
+    }
+
+    div.posts div.post div.body p {
+        margin-top: 0;
+    }
 }
-@media only screen and (max-width: 570px){
- div.posts div.post {
+
+@media only screen and (max-width: 570px) {
+    div.posts div.post {
         width: 90vw;
         height: 440px;
     }
@@ -368,16 +425,27 @@ div.top-rate-point div.point-description p#name {
         height: 270px;
     }
 }
-@media only screen and (max-width: 400px){
-      div.posts div.post div.image {
+
+@media only screen and (max-width: 435px) {
+    div.content div.content-bottom div.content-right {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    div.posts div.post div.image {
         height: 230px;
+    }
+     div.posts div.post {
+        height: 390px;
     }
 }
 @media only screen and (max-width: 340px){
-     div.posts div.post {
-        height: 400px;
-    }
+
     div.posts div.post div.image {
         height: 200px;
+    }
+     div.posts div.post {
+        height: 370px;
     }
 }
