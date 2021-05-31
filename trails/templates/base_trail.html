@@ -57,8 +57,7 @@
         <button class="user_menu" style="cursor: pointer"><i class="fas fa-user"></i><i class="fas fa-angle-down"></i></button>
         <div class="user_menu">
             <ul>
-{#                <li><a href="{% url 'account:user_account' %}">Moje konto</a></li>#}
-                <li><a href="#">Ustawienia</a></li>
+                <li><a href="{% url 'account:password_reset' %}">Ustawienia</a></li>
 
                 {% if perms.blog.view_post%}
                     <li><a href="{% url 'management:blog_manage_post_list' %}">Panel administracyjny</a></li>

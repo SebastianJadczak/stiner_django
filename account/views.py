@@ -62,6 +62,3 @@ class UserAccount(View):
             else:
                 print(form.errors)
         return redirect('./my_account')
-
-def user_settings(request):
-    return render(request, 'account/user_settings.html')
