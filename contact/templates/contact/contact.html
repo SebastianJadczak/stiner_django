@@ -48,6 +48,12 @@
         <form action="/contact" method="post">
             {{form.as_p}}
             {% csrf_token %}
+            <label id="regulations"><input type="checkbox" required >
+            <p>
+                Wyrażam zgodę na przetwarzanie moich danych osobowych przez Stiner.pl Sebastian Jadczak,
+                w celu udzielenia odpowiedzi na złożone zapytanie, jak również prowadzenia ewentualnej dalszej
+                korespondencji związanej ze złożonym zapytaniem.</p></label>
+
             <input type="submit" value="Wyślij">
         </form>
     </div>

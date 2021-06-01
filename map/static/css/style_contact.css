@@ -1,4 +1,6 @@
-
+div.contact{
+    min-height:90vh;
+}
 div.contact p#contact{
     background-image: url('../img/polynesia.jpg');
     background-size: cover;
@@ -130,6 +132,7 @@ div.contact div#data_company div.data p:nth-of-type(3){
 div.contact div.form{
     width: 40vw;
     margin: 0 auto;
+    min-height: 650px;
 }
 div.contact div.form h2{
     letter-spacing: 1.5px;
@@ -160,6 +163,23 @@ div.contact div.form form p{
     margin-bottom: 20px;
     font-family: sans-serif;
 }
+div.contact div.form form label#regulations{
+    display: flex;
+    flex-direction: row;
+    width:60%;
+    padding-left: 50px;
+}
+div.contact div.form form label#regulations input{
+    margin-top: 20px;
+    margin-right: 20px;
+}
+div.contact div.form form label#regulations p {
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+}
+div.contact div.form form p:nth-of-type(3){
+    height: 150px;
+}
 div.contact div.form form p input{
     width:360px;
     margin-left: 36px;
@@ -169,7 +189,7 @@ div.contact div.form form p textarea{
     width:360px
 }
 div.contact div.form form input[type=submit]{
-    margin: 140px 0 30px 310px;
+    margin: 10px 0 30px 310px;
     width: 140px;
     height:40px;
     background-color: white;
@@ -190,7 +210,7 @@ div.contact div.form form input[type=submit]:hover{
 }
 div.footer-contact{
     background-color: #fff;
-    margin-top:90px;
+    margin-top:10px;
     height: 5vh;
     line-height: 5vh;
     box-shadow: 0 10px 5px  rgba(0,0,0,0.4);
@@ -329,6 +349,9 @@ div.footer-contact a{
 }
 
 @media only screen and (max-width: 475px) {
+    div.contact div.form form input[type=submit]{
+        margin-top: 30px;
+    }
     div.contact div.person div.person-info div.image {
         width: 120px;
         height: 120px;
@@ -347,8 +370,13 @@ div.footer-contact a{
 }
 
 @media only screen and (max-width: 430px) {
-
-
+div.footer-contact{
+    margin-top: 30px;
+}
+div.contact div.form form label#regulations{
+    width: 100%;
+    padding-left: 0;
+}
     div.contact div.person div.person-info div.info {
         width: calc(95vw - 130px);
     }
