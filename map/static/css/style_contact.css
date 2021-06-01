@@ -117,12 +117,14 @@ div.contact div#data_company p {
     font-weight: bold;
 }
 div.contact div#data_company div.data{
-    margin-top:70px;
+    margin-top:40px;
 }
 div.contact div#data_company div.data p{
     font-size: 16px;
 }
-
+div.contact div#data_company div.data p:nth-of-type(3){
+    margin-top: 40px;
+}
 /*Formularz*/
 
 div.contact div.form{
@@ -170,7 +172,7 @@ div.contact div.form form input[type=submit]{
     margin: 140px 0 30px 310px;
     width: 140px;
     height:40px;
-    background-color: whitesmoke;
+    background-color: white;
     color: #3375a4;
     border: 1px solid #2e628d;
     font-weight: bold;
