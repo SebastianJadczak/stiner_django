@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from rest_framework import viewsets, request
 from rest_framework.response import Response
 
@@ -314,3 +314,6 @@ class NewsDetail(DetailView):
         ad = AdvertisementNews.objects.filter(active=True).first()
         return render(request, self.template_name, {'news': news, 'top_rate_trails': self.get_top_rate_trails(),
                                                     'top_rate_points':self.get_top_rate_points(), 'ad': ad})
+
+class Regulations(TemplateView):
+    template_name = 'regulations/regulations.html'

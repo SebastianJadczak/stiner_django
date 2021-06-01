@@ -11,7 +11,7 @@ urlpatterns = [
 
     path('api/', include(router.urls)),
     path('sort/', views.DoneList, name='sort'),
-    path('news/<int:pk>/', views.NewsDetail.as_view(), name='news')
-
+    path('news/<int:pk>/', views.NewsDetail.as_view(), name='news'),
+    path('regulations/', views.Regulations.as_view(), name='regulations')
 ]
 
