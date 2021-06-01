@@ -11,17 +11,18 @@
             <h4>{{ post.title }}</h4>
             <div class="body_post">
                 <p>{{ post.body }}</p>
+                {% if  post.additional_photo_first %}
+                    <div class="image_post">
+                        <div class="image_p">
+                            <img src="{{ post.additional_photo_first.url }}" alt="">
+                        </div>
+                        <div class="image_p">
+                            <img src="{{ post.additional_photo_second.url }}" alt="">
+                        </div>
+                    </div>
+                {% endif %}
             </div>
-            {% if  post.additional_photo_first %}
-                <div class="image_post">
-                    <div class="image_p">
-                        <img src="{{ post.additional_photo_first.url }}" alt="">
-                    </div>
-                    <div class="image_p">
-                        <img src="{{ post.additional_photo_second.url }}" alt="">
-                    </div>
-                </div>
-            {% endif %}
+
         </div>
         <div class="right">
             <h4>Partnerzy:</h4>

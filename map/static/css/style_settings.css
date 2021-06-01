@@ -47,7 +47,7 @@ div.content-reset_password div.form-reset form{
 form input#id_email{
     height: 22px;
 }
-div.content-reset_password div.form-reset form button.btn{
+div.content-reset_password div.form-reset form button.btn {
     background-color: #00cf00;
     color: white;
     border: none;
@@ -56,4 +56,26 @@ div.content-reset_password div.form-reset form button.btn{
     width: 90px;
     font-weight: bold;
     letter-spacing: 1.3px;
+}
+
+@media only screen and (max-width: 470px) {
+    div.content-reset_password div.form-reset {
+        padding: 20px 10px;
+        width: 350px;
+    }
+
+    div.title-reset_password h3 {
+        font-size: 33px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    div.content-reset_password div.form-reset {
+        padding: 20px 5px;
+        width: 320px;
+    }
+
+    div.title-reset_password h3 {
+        font-size: 28px;
+    }
 }
