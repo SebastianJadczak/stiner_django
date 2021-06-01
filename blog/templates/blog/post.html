@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}{{ post.title }}{% endblock %}
 {% block content %}
     <div id="title_post" style="background-image: url({{ post.image.url }})">
         <div id="title">
