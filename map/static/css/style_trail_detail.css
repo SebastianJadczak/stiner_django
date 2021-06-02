@@ -158,6 +158,11 @@ div#points_in_trail ul li div.image-trail img{
     transform: translateY(20px);
     border-radius: 15px;
 }
+div#points_in_trail ul li p#source{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+}
 div.panorama_mapa {
     width: 99.8vw;
     height: 45vh;

@@ -6,8 +6,120 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Lato';
+            src: url("../static/Lato/Lato-Regular.ttf") format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Lato-Bold';
+            src: url("../static/Lato/Lato-Bold.ttf") format('truetype');
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        div.logo_pdf {
+            text-align: center;
+        }
+
+        div.logo_pdf h3 {
+            font-family: 'Lato-Bold', sans-serif;
+            letter-spacing: 1.3px;
+            font-size: 18px;
+            margin: 10px 0 40px;
+            padding: 0;
+        }
+
+        div.name-trail h3 {
+            font-family: 'Lato-Bold', sans-serif;
+            letter-spacing: 1.3px;
+            font-size: 19px;
+            font-weight: bold;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        div.image-point img {
+            width: 550px;
+            height: 250px;
+        }
+
+
+        div.basic-info {
+            margin: 20px 0 20px 70px;
+
+        }
+
+        div.basic-info div p {
+            font-size: 15px;
+            display: inline-block;
+        }
+
+        p#name {
+            font-family: 'Lato-Bold', sans-serif;
+        }
+
+        p#blank {
+            font-size: 10px;
+            color: white;
+        }
+        p#line{
+            margin-bottom: 10px;
+        }
+
+        div.basic-info p span {
+            font-family: Lato-Bold, sans-serif;
+        }
+    </style>
 </head>
 <body>
-
+<br>
+<div class="logo_pdf">
+    <img src="./map/static/img/logo.png" alt="">
+    <h3>Z nami zaplanujesz wakacje.</h3>
+</div>
+<br>
+<div class="name-trail">
+    <h3>{{ trail.name }}</h3>
+</div>
+<div class="image-trail">
+    <img src="media/{{ trail.image }}">
+</div>
+<div class="basic-info">
+    <div>
+        <p id="type"><span>Miejsce startowe: </span>{{ first_point }}</p>
+        <p id="blank">_______</p>
+        <p id="coordinates"><span>Miejsce docelowe: </span>{{ last_point }}</p>
+    </div>
+    <div>
+        <p id="for_whom"><span>Typ trasy:: </span>{{ trail.type }}</p>
+        <p id="blank">________________________________________________</p>
+        <p id="region"><span>Dla kogo: </span>{{ trail.who_whom }}</p>
+    </div>
+    <div>
+        <p id="city"><span>Miasto: </span>{{ trail.city }}</p>
+        <p id="blank">________________________________________________________________________</p>
+        <p id="country"><span>Kraj: </span> {{ trail.country }}</p>
+    </div>
+    <div class="points">
+        {% for p in points %}
+            <p id="line">
+                ___________________________________________________________________________________________________________</p>
+            <div class="point">
+                <p id="name">{{ p.name }}</p><br>
+                <div class="image-point">
+                    <img src="media/{{ p.image }}">
+                </div>
+                <div class="description">
+                    <p id="description">{{ p.descriptions }}</p><br><br>
+                    <p id="sorce">Źródło: {{ p.source }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 </body>
 </html>

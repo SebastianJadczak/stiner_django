@@ -69,13 +69,15 @@ def point_render_pdf_view(request, pk):
 def trail_render_pdf_view(request, pk):
     template_path = 'trailsPDF.html'
     trail = Trail.objects.filter(id=pk).first()
-    context = {'trail': trail}
+    points = list(list(Trail.objects.filter(id=pk))[0].points.all())
+    last_point =points[(len(points) - 1)]
+    context = {'trail': trail, 'points':points, 'first_point':points[0],'last_point': last_point}
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename="trail.pdf"'
     template = get_template(template_path)
     html = template.render(context)
     pisa_status = pisa.CreatePDF(
-        html, dest=response, encoding='UTF-8')
+        html, dest=response, encoding='UTF-8', link_callback=link_callback)
     if pisa_status.err:
         return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response

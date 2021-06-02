@@ -174,13 +174,16 @@
                     <div class="image-trail"><img src="{{ p.image.url }}" alt=""></div>
                         <div class="point_in_trail" id="{{ p.id }}">
                             <div class="title_point"><h3>{{ p.name }}</h3></div>
-                            <div class="description_point"><p>{{ p.descriptions }}</p></div>
+                            <div class="description_point"><p>{{ p.descriptions }}</p>
+                                <p id="source">Źródło: {{ p.source }}</p>
+                            </div>
 
                         </div>
                     </li>
                 {% endfor %}
             </ul>
         </div>
+
         <div class="opinion-trail">
                        <h3>Oceny i opinie</h3>
                         <p>
