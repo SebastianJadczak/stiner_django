@@ -47,7 +47,7 @@ div.center div#trail-right div.trail div.trail-image img {
 div#trail-right div.trail p#trail-name {
     font-family: 'Pattaya', sans-serif;
     letter-spacing: 1.6px;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 5px 0;
 }
 
 div#trail-right div.trail div.more {
@@ -59,6 +59,7 @@ div#trail-right div.trail div.more {
 
 div#trail-right div.trail div.more p {
     margin-bottom: 5px;
+    margin-top: 10px;
 }
 
 div#trail-right div.trail div.more p span {
@@ -67,6 +68,7 @@ div#trail-right div.trail div.more p span {
 
 div#trail-right div.trail div.more-button {
     text-align: right;
+    margin-top: 4px;
 }
 
 div#trail-right div.trail div.more-button button {
