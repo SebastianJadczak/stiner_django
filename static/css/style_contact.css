@@ -1,4 +1,6 @@
-
+div.contact{
+    min-height:90vh;
+}
 div.contact p#contact{
     background-image: url('../img/polynesia.jpg');
     background-size: cover;
@@ -117,17 +119,20 @@ div.contact div#data_company p {
     font-weight: bold;
 }
 div.contact div#data_company div.data{
-    margin-top:70px;
+    margin-top:40px;
 }
 div.contact div#data_company div.data p{
     font-size: 16px;
 }
-
+div.contact div#data_company div.data p:nth-of-type(3){
+    margin-top: 40px;
+}
 /*Formularz*/
 
 div.contact div.form{
     width: 40vw;
     margin: 0 auto;
+    min-height: 650px;
 }
 div.contact div.form h2{
     letter-spacing: 1.5px;
@@ -158,6 +163,23 @@ div.contact div.form form p{
     margin-bottom: 20px;
     font-family: sans-serif;
 }
+div.contact div.form form label#regulations{
+    display: flex;
+    flex-direction: row;
+    width:60%;
+    padding-left: 50px;
+}
+div.contact div.form form label#regulations input{
+    margin-top: 20px;
+    margin-right: 20px;
+}
+div.contact div.form form label#regulations p {
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+}
+div.contact div.form form p:nth-of-type(3){
+    height: 150px;
+}
 div.contact div.form form p input{
     width:360px;
     margin-left: 36px;
@@ -167,10 +189,10 @@ div.contact div.form form p textarea{
     width:360px
 }
 div.contact div.form form input[type=submit]{
-    margin: 140px 0 30px 310px;
+    margin: 10px 0 30px 310px;
     width: 140px;
     height:40px;
-    background-color: whitesmoke;
+    background-color: white;
     color: #3375a4;
     border: 1px solid #2e628d;
     font-weight: bold;
@@ -188,7 +210,7 @@ div.contact div.form form input[type=submit]:hover{
 }
 div.footer-contact{
     background-color: #fff;
-    margin-top:90px;
+    margin-top:10px;
     height: 5vh;
     line-height: 5vh;
     box-shadow: 0 10px 5px  rgba(0,0,0,0.4);
@@ -213,6 +235,16 @@ div.footer-contact a{
     }
 }
 
+@media only screen and (max-width: 1430px) {
+    div.contact div.person div.person-info {
+        padding: 0 80px;
+    }
+
+    div.contact div.person div.person-info div.info {
+        margin-left: 0;
+    }
+}
+
 @media only screen and (max-width: 1270px) {
     div.contact div.form form {
         width: 500px;
@@ -225,13 +257,6 @@ div.footer-contact a{
 
     div.contact div.form form p textarea {
         width: 300px
-    }
-
-    div.contact div.person div.person-info div.image {
-        width: 270px;
-        height: 150px;
-        margin-top: 150px;
-        margin-left: 0;
     }
 
     div.contact div.person div.person-info div.image img {
@@ -260,13 +285,15 @@ div.footer-contact a{
     }
 }
 
+@media only screen and (max-width: 1180px) {
+    div.contact div.person div.person-info {
+        padding: 0 30px;
+    }
+}
+
 @media only screen and (max-width: 1089px) {
     div.contact div.person {
         width: 60vw;
-    }
-
-    div.contact div.person div.person-info div.image {
-        width: 250px;
     }
 }
 
@@ -279,10 +306,6 @@ div.footer-contact a{
         width: 70vw;
     }
 
-    div.contact div.person div.person-info div.image {
-        width: 220px;
-    }
-
     div.contact div.form h3 {
         margin-left: 0;
     }
@@ -290,15 +313,11 @@ div.footer-contact a{
 
 @media only screen and (max-width: 850px) {
     div.contact div.person {
-        width: 90vw;
+        width: 80vw;
     }
 
-    div.contact div.person div.person-info div.image {
-        width: 150px;
-    }
-
-    div.contact div.person div.person-info div.info {
-        width: calc(90vw - 210px);
+    div.contact div.person div.person-info {
+        justify-content: space-around;
     }
 
     div.contact div.form {
@@ -319,61 +338,107 @@ div.footer-contact a{
     div.contact div.person {
         margin-bottom: 40px;
     }
+
+    div.contact div.person div.person-info {
+        padding: 0;
+    }
+
+    div.contact div.form form {
+        width: 390px;
+    }
 }
 
 @media only screen and (max-width: 475px) {
+    div.contact div.form form input[type=submit]{
+        margin-top: 30px;
+    }
     div.contact div.person div.person-info div.image {
-        margin-top: 220px;
-
+        width: 120px;
+        height: 120px;
+        margin: 40px 0 0;
     }
 
     div.contact div.person div.person-info div.info div.data p {
         font-size: 16px;
     }
+    div.contact div#data_company i{
+        padding-top: 20px;
+    }
+    div.contact div#data_company div.data p{
+        font-size: 14px;
+    }
 }
 
 @media only screen and (max-width: 430px) {
-    div.contact div.person div.person-info div.image {
-        width: 120px;
-        height: 120px;
-        margin-top: 210px;
-    }
-
+div.footer-contact{
+    margin-top: 30px;
+}
+div.contact div.form form label#regulations{
+    width: 100%;
+    padding-left: 0;
+}
     div.contact div.person div.person-info div.info {
         width: calc(95vw - 130px);
     }
+    div.contact div.form form{
+        width: 300px;
+    }
+    div.contact div.form form p{
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+    }
+     div.contact div.form form p:nth-of-type(3){
+         height:180px
+     }
 
     div.contact div.form form p input {
         width: 230px;
+        height: 35px;
+        margin-left:0;
+        margin-top: 5px;
     }
 
     div.contact div.form form p textarea {
         width: 230px;
+           margin-top: 5px;
+        height: 150px;
     }
     div.contact div.form form input[type=submit]{
         margin-left: 190px;
+        margin-top: 0px;
+    }
+    div.contact p#contact{
+        font-size: 34px;
     }
 
 }
+
 @media only screen and (max-width: 370px) {
-div.contact div.person div.person-info{
-    flex-direction: column-reverse;
-}
-    div.contact div.person div.person-info div.image{
-        margin: 20px auto 0;
+    div.contact div.person div.person-info {
+        flex-direction: column-reverse;
     }
-    div.contact div.person div.person-info div.info{
-        margin: 0 auto;
-        width: 95vw;
-    }
-     div.contact div.form form p input {
+
+    div.contact div.form form p input {
         width: 210px;
+    }
+
+    div.contact div.person div.person-info div.info {
+        width: 81vw;
+    }
+    div.contact div.person div.person-info div.info div.data{
+        margin-left: 40px;
+    }
+
+    div.contact div.person div.person-info div.image {
+        margin: 20px auto;
     }
 
     div.contact div.form form p textarea {
         width: 210px;
     }
-    div.contact div.form form input[type=submit]{
+
+    div.contact div.form form input[type=submit] {
         margin-left: 170px;
     }
 }
