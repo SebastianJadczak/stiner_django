@@ -1,3 +1,58 @@
+/*Audio Wrap*/
+div#audioTrail {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+div#audioTrail div.audioTrail {
+    position: relative;
+    top: 25vh;
+    left: calc(50vw - 345px);
+    width: 690px;
+    min-height: 110px;
+    background-color: #fff;
+    border: 1px solid #c1c1c1;
+    box-shadow: 0 0 3px #a9a9a9;
+    border-radius: 15px;
+    text-align: center;
+}
+
+div#audioTrail div.audioTrail h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    margin: 10px 0;
+    text-align: center;
+}
+
+div#audioTrail div.audioTrail span#closeAudioTrail {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+div.pointAudio {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+    padding-left: 30px;
+}
+
+p#audioName {
+    text-align: left;
+    margin-right: 20px;
+    display: inline-block;
+    width: 45%;
+}
+
+/*Trail*/
 div.center {
     background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../img/texture.jpg");
     padding-top: 30px;
@@ -479,76 +534,129 @@ div.top_form p#yours_stars-trail {
     div#basic-info div.more-trail div.left div p i, div#basic-info div.more-trail div.right div p i {
         font-size: 14px;
     }
-    div.opinion-trail{
+
+    div.opinion-trail {
         width: 90%;
     }
 }
+
 @media only screen and (max-width: 880px) {
-    div.center{
+    div.center {
         flex-direction: column;
     }
-    div.center div#trail-left{
+
+    div.center div#trail-left {
         width: 95vw;
     }
+
     div.center div#trail-left div#basic-info {
         height: 350px;
     }
-    div.center div#trail-right{
-        margin:0 auto;
+
+    div.center div#trail-right {
+        margin: 0 auto;
     }
+
     div.map {
-    width: 91vw;
-}
-}
-@media only screen and (max-width: 630px){
-div#points_in_trail ul li{
-    flex-direction: column-reverse;
-}
-    div.point_in_trail{
-        width:100%;
-    }
-    div#points_in_trail ul li div.image-trail{
-        margin:0 auto;
+        width: 91vw;
     }
 }
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-width: 700px) {
+    div#audioTrail div.audioTrail {
+        width: 600px;
+        left: calc(50vw - 300px);
+    }
+
+    audio {
+        width: 250px;
+        height: 48px;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    div#points_in_trail ul li {
+        flex-direction: column-reverse;
+    }
+
+    div.point_in_trail {
+        width: 100%;
+    }
+
+    div#points_in_trail ul li div.image-trail {
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
     div.center div#trail-left div#basic-info {
         height: 380px;
     }
+
+    div#audioTrail div.audioTrail {
+        width: 550px;
+        left: calc(50vw - 275px);
+    }
 }
+
 @media only screen and (max-width: 555px) {
-     div.center div#trail-left div#basic-info {
+    div.center div#trail-left div#basic-info {
         height: 370px;
     }
+
+    div#audioTrail div.audioTrail {
+        width: 500px;
+        left: calc(50vw - 250px);
+    }
 }
+
 @media only screen and (max-width: 500px) {
-     div#basic-info div.more-trail div.left div#start, div#basic-info div.more-trail div.right div#end{
-         height: 85px;
-     }
-    div#basic-info div.more-trail div.right div#end p{
+    div#basic-info div.more-trail div.left div#start, div#basic-info div.more-trail div.right div#end {
+        height: 85px;
+    }
+
+    div#basic-info div.more-trail div.right div#end p {
         line-height: 22px;
     }
+
     div.center div#trail-left div#basic-info {
         height: 400px;
     }
+
     div#basic-info div.name-trail div#title {
-    flex-direction: column;
-}
-    div#basic-info div.name-trail div#title div#buttons_trail{
+        flex-direction: column;
+    }
+
+    div#basic-info div.name-trail div#title div#buttons_trail {
         padding-left: 20px;
         margin: 5px 0 10px;
     }
-    div.panorama_mapa div.x h3{
+
+    div.panorama_mapa div.x h3 {
         font-size: 33px;
     }
-}@media only screen and (max-width: 407px) {
-    div.center div#trail-left{
+
+    div#audioTrail div.audioTrail {
+        width: 400px;
+        left: calc(50vw - 200px);
+    }
+
+    audio {
+        width: 200px;
+        height: 35px;
+    }
+}
+
+@media only screen and (max-width: 407px) {
+    div.center div#trail-left {
         margin-left: 0;
     }
-    div#basic-info h3{
+
+    div#basic-info h3 {
         padding-left: 5px;
     }
-    div#basic-info div.icons{
+
+    div#basic-info div.icons {
         margin-left: 20px;
     }
     div#basic-info div.more-trail div.left{
@@ -564,4 +672,13 @@ div#points_in_trail ul li{
      div.center div#trail-right div.trail div.trail-description,div#trail-right div.trail div.more{
          width:190px;
      }
+      div#audioTrail div.audioTrail {
+        width: 330px;
+        left: calc(50vw - 165px);
+    }
+
+    audio {
+        width: 120px;
+        height: 30px;
+    }
 }

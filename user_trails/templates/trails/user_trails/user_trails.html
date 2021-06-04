@@ -9,7 +9,7 @@
         {% if not search %}
         <div class="trail-center">
              <div class="filter_trails">
-                 <div id="x_hamburger"><i class="fas fa-times"></i></div>
+                 <div id="x_hamburger_your"><i class="fas fa-times"></i></div>
                 <h3> Filtrowanie tras: </h3>
                 <div class="filter">
                         <form action="" method="post">
@@ -89,7 +89,7 @@
         {% else %}
          <div class="trail-center">
              <div class="filter_trails">
-                 <div id="x_hamburger"><i class="fas fa-times"></i></div>
+                 <div id="x_hamburger_your"><i class="fas fa-times"></i></div>
                 <h3> Filtrowanie tras: </h3>
                 <div class="filter">
                         <form action="" method="post">
@@ -180,14 +180,23 @@
          {% endif %}
     </div>
 <script>
-    //    Obsługa przycisku Pokaż więcej
-let more = document.querySelector('p.city');
-let div_city = document.querySelector('div.city')
-
-more.addEventListener('click', function () {
-    div_city.classList.toggle("active");
-
-})
+let hamburger = document.getElementById('hamburger')
+let filterTrails = document.querySelector('.filter_trails')
+let x_hamburger = document.getElementById('x_hamburger_your')
+if(hamburger){
+    hamburger.addEventListener('click', function (){
+        filterTrails.classList.toggle('rwd')
+        hamburger.style.display = 'none'
+        x_hamburger.style.display = 'block'
+    })
+}
+if(x_hamburger){
+    x_hamburger.addEventListener('click', function (){
+        filterTrails.classList.toggle('rwd')
+         hamburger.style.display = 'block'
+        x_hamburger.style.display = 'none'
+    })
+}
 const button = document.getElementById('button-filter_search')
 
     window.addEventListener(
