@@ -51,7 +51,6 @@ class Trail(models.Model):
     done_count = models.IntegerField(default=0)
     heart = models.ManyToManyField(User, blank=True, related_name='heart_trail')
     downloads = models.ManyToManyField(User, blank=True, related_name='downloads_trail')
-    sound = models.ManyToManyField(User, blank=True, related_name='sound_trail')
     popular = models.BooleanField(default=False)
     points = models.ManyToManyField(Point)
 

@@ -98,8 +98,10 @@
             <h3>{{trail.name}}</h3>
         </div>
         <div id="file-trail">
-            <button id="pdf"><a href="{% url 'trails:pdf_trail' trail.id %}"><i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</a></button>
-            <button id="audio"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</button>
+            <button id="pdf"><a href="{% url 'trails:pdf_trail' trail.id %}"><i class="fas fa-cloud-download-alt"></i>
+                Pobierz przewodnik w wersji PDF</a></button>
+            <button id="audio" onclick="openAudioTrail()"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio
+            </button>
         </div>
     </div>
 <div class="center">
@@ -268,6 +270,21 @@
         <div id="li"><a href="https://www.linkedin.com/company/stiner/"><i class="fab fa-linkedin"></i></a></div>
         <div id="youtube"><i class="fab fa-youtube"></i></div>
     </div>
+    <div id="audioTrail">
+        <div class="audioTrail">
+            <h3>{{ trail.name }} <span id="closeAudioTrail"><i class="fas fa-times"></i></span></h3>
+            {% for p in points %}
+                <div class="pointAudio">
+                    <p id="audioName">{{ p.name }}:</p>
+                    {% if p.sound %}
+                        <audio src="{{ p.sound.url }}" controls controlsList="nodownload"></audio>
+                    {% else %}
+                        <p>Brak pliku audio</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 
@@ -283,6 +300,17 @@
     let login_rwd = document.getElementById('login_rwd')
     let menuDetail = document.getElementById('menu-detail-trail')
     let login_mapa_menu = document.querySelector('.login_mapa')
+    let audioTrail = document.getElementById('audioTrail')
+    let closeAudioTrail = document.getElementById('closeAudioTrail')
+    {#Audio#}
+     function openAudioTrail(){
+        audioTrail.style.display = 'block'
+    }
+    if(closeAudioTrail){
+        closeAudioTrail.addEventListener('click',function (){
+            audioTrail.style.display = 'none'
+        })
+    }
     //------------------------------------------
     //The method responsible for choosing login / registration at low screen resolution
     if (login_rwd) {

@@ -36,8 +36,6 @@
     <link rel="stylesheet" href="{% static 'css/style_trail_add.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_interesting_points.css' %}">
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
-    <script data-ad-client="ca-pub-5722846627217105" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <style>
         #map_1de6ef4f1218487da9d6da057bb8f454 {
             position: relative;
@@ -137,7 +135,11 @@
     <div id="file-point">
         {% if user.is_authenticated %}
             <button id="pdf" ><a href="{% url 'trails:pdf_point' point.id %}"> <i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</a></button>
-            <button id="audio"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</button>
+            {% if point.sound %}
+                <button id="audio" onclick="openAudio()"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</button>
+            {% else %}
+                <button id="audio-none"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</button>
+            {% endif %}
         {% else %}
             <button id="pdf" ><a href="{% url 'login' %}"> <i class="fas fa-cloud-download-alt"></i> Pobierz przewodnik w wersji PDF</a></button>
             <button id="audio"><a href="{% url 'login' %}"><i class="fas fa-volume-up"></i> Odsłuchaj w formie Audio</a></button>
@@ -316,10 +318,27 @@
     <div id="li"><a href="https://www.linkedin.com/company/stiner/"><i class="fab fa-linkedin"></i></a></div>
     <div id="youtube"><i class="fab fa-youtube"></i></div>
 </div>
+<div id="audio-wrap">
+    <div class="play">
 
+        <h3>{{ point.name }}<span id="close"><i class="fas fa-times"></i></span></h3>
+        {% if point.sound %}
+            <audio src="{{ point.sound.url }}"  controls controlsList="nodownload"></audio>
+        {% endif %}
+
+    </div>
+</div>
 <script>
-
-
+let audio = document.getElementById('audio-wrap')
+let close = document.getElementById('close')
+if(close){
+    close.addEventListener('click', function (){
+        audio.style.display = 'none'
+    })
+}
+function openAudio(){
+    audio.style.display = 'block'
+}
 function imageGallery() {
   const big = document.querySelector(".big");
   const small = document.querySelectorAll("#small img");

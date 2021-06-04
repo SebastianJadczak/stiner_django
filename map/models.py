@@ -70,7 +70,7 @@ class Point(models.Model):
     done_count = models.IntegerField(default=0)
     heart = models.ManyToManyField(User, blank=True, related_name='heart_point')
     downloads = models.ManyToManyField(User, blank=True, related_name='downloads_point')
-    sound = models.ManyToManyField(User, blank=True, related_name='sound_point')
+    sound = models.FileField(upload_to='media/musics/points', blank=True)
     average_grade = models.DecimalField(max_digits=2, decimal_places=1)
     gallery = models.ManyToManyField(Galery)
     source = models.CharField(max_length=100)

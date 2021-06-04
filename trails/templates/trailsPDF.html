@@ -49,29 +49,29 @@
 
 
         div.basic-info {
-            margin: 20px 0 20px 70px;
+            margin: 10px 0 20px 70px;
 
         }
 
         div.basic-info div p {
             font-size: 15px;
-            display: inline-block;
+            margin: 7px 0;
+
         }
 
         p#name {
             font-family: 'Lato-Bold', sans-serif;
         }
 
-        p#blank {
-            font-size: 10px;
-            color: white;
+        p#start {
+            margin-top: 20px;
         }
         p#line{
             margin-bottom: 10px;
         }
-
         div.basic-info p span {
             font-family: Lato-Bold, sans-serif;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -90,19 +90,16 @@
 </div>
 <div class="basic-info">
     <div>
-        <p id="type"><span>Miejsce startowe: </span>{{ first_point }}</p>
-        <p id="blank">_______</p>
-        <p id="coordinates"><span>Miejsce docelowe: </span>{{ last_point }}</p>
+        <p id="start"><span>Miejsce startowe:    </span>{{ first_point }}</p>
+        <p id="end"><span>Miejsce docelowe: </span>{{ last_point }}</p>
     </div>
     <div>
-        <p id="for_whom"><span>Typ trasy:: </span>{{ trail.type }}</p>
-        <p id="blank">________________________________________________</p>
-        <p id="region"><span>Dla kogo: </span>{{ trail.who_whom }}</p>
+        <p id="for_whom"><span>Typ trasy:    </span>{{ trail.type }}</p>
+        <p id="region"><span>Dla kogo:    </span>{{ trail.who_whom }}</p>
     </div>
     <div>
-        <p id="city"><span>Miasto: </span>{{ trail.city }}</p>
-        <p id="blank">________________________________________________________________________</p>
-        <p id="country"><span>Kraj: </span> {{ trail.country }}</p>
+        <p id="city"><span>Miasto:    </span>{{ trail.city }}</p>
+        <p id="country"><span>Kraj:    </span> {{ trail.country }}</p>
     </div>
     <div class="points">
         {% for p in points %}
@@ -115,7 +112,7 @@
                 </div>
                 <div class="description">
                     <p id="description">{{ p.descriptions }}</p><br><br>
-                    <p id="sorce">Źródło: {{ p.source }}</p>
+                    <p id="source">Źródło: {{ p.source }}</p>
                 </div>
             </div>
         {% endfor %}
