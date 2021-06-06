@@ -183,7 +183,7 @@ div#select-country-city {
     left: calc(50vw - 150px);
     width: 300px;
     height: 50px;
-    z-index: 99;
+    z-index: 9;
 
 }
 
@@ -241,7 +241,7 @@ div#filter div.icons {
     justify-content: space-between;
     width: 60%;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     padding-left: 15px;
 }
 
@@ -269,9 +269,6 @@ div#filter select.location {
     border: 0.5px solid #cbcdcc;
     border-radius: 15px
 }
-
-
-
 
 div.search {
     height: 30px;

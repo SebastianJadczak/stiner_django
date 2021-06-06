@@ -8,8 +8,12 @@ div#newsletter-wrap {
     position: fixed;
     background-color: rgba(121, 121, 121, 0.4);
 }
-div#newsletter-wrap.active{
+div#newsletter-wrap.active {
     display: block;
+}
+
+div#x_hamburger_map {
+    display: none;
 }
 
 div#newsletter-wrap div#newsletter {
@@ -526,7 +530,7 @@ div.login_mapa div.user_menu.active {
     border: 1px solid #112938;
     background-color: #2e6993;
     border-radius: 20px 0 20px 20px;
-    z-index: 1;
+    z-index: 100;
 }
 
 div.login_mapa div.user_menu.active ul {
@@ -678,8 +682,12 @@ div.footer a{
         padding: 0;
     }
 
+    div.login_mapa button.log {
+        transform: translateY(0);
+    }
+
     div.search_mapa button {
-        margin-top: 15px;
+        margin-top: 10px;
     }
 
     div#filter_mapa select.location {
@@ -885,14 +893,24 @@ div.footer a{
     #top {
         padding-left: 50px;
     }
-    div#hamburger-filter{
+
+    div#hamburger-filter {
         display: block;
     }
-    div#filter{
+
+    div#x_hamburger_map {
+        position: absolute;
+        top: 0;
+        left: 180px;
+        font-size: 18px;
+    }
+
+    div#filter {
         display: none;
     }
 
     div.logo {
+        margin-top: 10px;
         height: 60px;
         width: 135px;
     }
@@ -955,15 +973,22 @@ div.footer a{
     div#top_mapa div.menu_mapa {
         width: 60%;
     }
+
     div.login_mapa {
-        margin:0;
+        margin: 0;
     }
+
+    div.login_mapa button.log {
+        transform: translateY(10px);
+    }
+
     div.login_mapa button {
         width: 100px;
         height: 33px;
-        margin-top: 10px;
+        margin-top: 20px;
 
     }
+
     div.login_mapa button.register {
         width: 110px;
         height: 38px;
@@ -1081,7 +1106,7 @@ div.footer a{
     }
      div#top div.menu ul li.green div#menu-detail-trail.active {
         left: 10%;
-    }
+     }
 
     div.logo {
         height: 55px;
@@ -1090,6 +1115,14 @@ div.footer a{
 
     div#top div.menu_mapa {
         width: 40%;
+    }
+
+    div.login_mapa button.log {
+        transform: translateY(-15px);
+    }
+
+    div.login_mapa button.register {
+        transform: translateY(-20px);
     }
 
     div.login_mapa a i {
@@ -1331,12 +1364,56 @@ div.footer a{
 }
 
 @media only screen and (max-width: 578px) {
+    div#login_rwd i {
+        font-size: 28px;
+    }
+
+    div#login_rwd i {
+        transform: translateY(-5px) translateX(-10px);
+    }
+
+    div.login_mapa.mini {
+        display: block;
+        position: absolute;
+        width: 150px;
+        height: 80px;
+        top: 60px;
+        right: 5px;
+        background-color: #ffffff;
+        z-index: 99;
+        border: 1px solid #c3c3c3;
+        justify-content: space-between;
+    }
+
+    div.login_mapa.mini button {
+        border: 1px solid #428bca;
+        border-radius: 0;
+        margin: 0;
+        transform: translateY(0);
+        height: 38px;
+    }
+
+    div.login_mapa.mini button a {
+        line-height: 38px;
+    }
+
+    div.login_mapa {
+        display: none;
+    }
+
+    div#login_rwd {
+        display: block;
+        margin-left: 10px;
+        line-height: 100px;
+    }
+
     #top {
         padding-left: 10px;
         height: 80px;
     }
+
     div#top div.menu ul li {
-    line-height: 95px;
+        line-height: 95px;
     }
 
     div#top div.menu_mapa {
@@ -1396,7 +1473,7 @@ div.footer a{
     div#welcome div.search-holiday {
         position: relative;
         right: 200px;
-        top: 168px;
+        top: 145px;
         width: 245px;
         height: 270px;
     }
@@ -1462,15 +1539,7 @@ div.footer a{
         font-size: 10px;
     }
 
-    div.login_mapa button.register {
-        width: 90px;
-        margin-top: 5px;
-        transform: translateY(10px);
-    }
 
-    div.login_mapa button.register a {
-        line-height: 33px;
-    }
 
     div#filter_mapa div i {
         font-size: 16px;
@@ -1572,7 +1641,6 @@ div.footer a{
 
     div.login_mapa div.user_menu.active {
         right: 10px;
-        z-index: 1;
         width: 240px;
     }
 
@@ -1641,43 +1709,7 @@ div.footer a{
         width: 50%;
         margin: 0 10px 0 0;
     }
-    div#login_rwd i{
-        transform: translateY(-5px);
-    }
-    div.login_mapa {
-        display: none;
-    }
-    div#login_rwd {
-        display: block;
-        margin-left: 10px;
-        line-height: 100px;
-    }
-     div#login_rwd i{
-         font-size:28px;
-     }
-     div.login_mapa.mini{
-         display: block;
-         position: absolute;
-         width:150px;
-         height:80px;
-         top:60px;
-         right:5px;
-         background-color: #ffffff;
-         z-index: 99;
-         border:1px solid #c3c3c3;
-        justify-content: space-between;
-     }
-     div.login_mapa.mini button{
-         border: 1px solid #428bca;
-         border-radius: 0;
-         margin: 0;
-         transform: translateY(0);
-         height: 38px;
-     }
 
-    div.login_mapa.mini button a {
-        line-height: 38px;
-    }
     div#top div.menu ul li{
         width:60px;
     }

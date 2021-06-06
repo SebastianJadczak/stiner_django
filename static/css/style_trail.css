@@ -273,6 +273,7 @@ div.user_trail_draft div#save_trail button {
 }
 div.user_trail_draft div#fail_save_trail {
     margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
 }
@@ -375,6 +376,14 @@ form.delete button{
         width: 82vw;
     }
 
+   div.user_trail_draft div#title_draft{
+        width: 100vw;
+        left: -9vw;
+    }
+   div.user_trail_draft div.draft-list_point div.draft-point div.draft-point_image{
+       width: 200px;
+   }
+
 }
 @media only screen and (max-width: 1260px) {
     div.title-points {
@@ -391,8 +400,40 @@ form.delete button{
         left: -11%;
     }
 }
+@media only screen and (max-width: 860px) {
+    div.user_trail_draft div.draft-list_point{
+        width: 90%;
+    }
+}
+
+
 @media only screen and (max-width: 610px) {
     div.title-points h3{
         font-size: 33px;
+    }
+     div.user_trail_draft div.draft-list_point{
+        width: 100%;
+    }
+     div.user_trail_draft div.draft-list_point div.draft-point div.text{
+         width: 60%;
+     }
+}
+@media only screen and (max-width: 476px) {
+div.user_trail_draft div.draft-list_point div.draft-point{
+    flex-direction: column;
+    height: 350px;
+    width: 70%;
+    margin:20px auto;
+}
+    div.button_delete form.delete button{
+        transform: translateX(100px);
+        padding: 8px 15px;
+    }
+    div.user_trail_draft div.draft-list_point div.draft-point div.text{
+        width: 100%;
+    }
+    div.user_trail_draft div.draft-list_point div.draft-point div.draft-point_image{
+        width: 100%;
+        margin:0 auto;
     }
 }

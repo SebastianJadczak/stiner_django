@@ -1,14 +1,20 @@
- div.opacity{
-        transform: translateY(-60px);
-    }
-div.wrap-trails_add{
+div.opacity {
+    transform: translateY(-60px);
+}
+
+div#hamburger-create-trail {
+    display: none;
+}
+
+div.wrap-trails_add {
     display: flex;
     flex-direction: column;
 }
-div.wrap-trails_add div.title-trail_add{
+
+div.wrap-trails_add div.title-trail_add {
     position: relative;
     top: -20px;
-     left: -105px;
+    left: -105px;
     width: 99vw;
     height: 150px;
     background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url(../img/trail.jpg);
@@ -17,6 +23,7 @@ div.wrap-trails_add div.title-trail_add{
     border-bottom: 1px solid grey;
 
 }
+
 div.wrap-trails_add div.title-trail_add h3 {
     text-align: center;
     font-family: 'Archivo Black', sans-serif;
@@ -38,12 +45,30 @@ div.wrap-trails_add div.trail_add-center{
 /*Sekcja filtrów tras*/
 
 div.wrap-trails_add div.trail_add-center div.filter_trails {
-     width: 15vw;
+    width: 15vw;
     min-height: 70vh;
     /*transform: translateY(-50px);*/
 }
 
-div.wrap-trails_add div.trail_add-center div.filter_trails h3{
+div.wrap-trails_add div.trail_add-center div.filter_trails.rwd {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 250px
+}
+
+div#x_hamburger_create-trail {
+    display: none;
+    width: 50px;
+    height: 50px;
+    font-size: 19px;
+    position: absolute;
+    top: 65px;
+    left: 235px;
+}
+
+div.wrap-trails_add div.trail_add-center div.filter_trails h3 {
     color: #646464;
     letter-spacing: 1.7px;
     font-size: 20px;
@@ -51,7 +76,7 @@ div.wrap-trails_add div.trail_add-center div.filter_trails h3{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter{
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter {
     background-color: #fff;
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
     border: 0.5px solid #868686;
@@ -146,24 +171,148 @@ div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.t
 
 /*Sekcja środkowa.*/
 
-div.wrap-trails_add div.trail_add-center div.przyklad{
+div.wrap-trails_add div.trail_add-center div.przyklad {
     margin: 60px 20px;
 }
+
 @media only screen and (max-width: 1680px) {
-    div.opacity{
+    div.opacity {
         transform: translateY(-40px);
     }
+
     div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.name input {
         width: 170px;
         margin-left: 10px;
         padding-left: 15px;
     }
-    div.wrap-trails_add div.trail_add-center div.przyklad{
+
+    div.wrap-trails_add div.title-trail_add {
+        width: 100vw;
+        left: -9vw;
+    }
+
+    div.wrap-trails_add div.trail_add-center div.przyklad {
         margin: 80px 0 80px 60px;
         width: 67vw;
         justify-content: space-between;
     }
-    div.wrap-trails_add div.trail_add-center div.przyklad button#right{
+
+    div.wrap-trails_add div.trail_add-center div.przyklad button#right {
         right: -950px;
+    }
+}
+
+@media only screen and (max-width: 1487px) {
+    div.point_add {
+        width: 260px;
+        margin-right: 10px;
+    }
+
+    div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.name input {
+        width: 150px;
+        padding-left: 5px;
+    }
+}
+
+@media only screen and (max-width: 1303px) {
+    div.point_add {
+        width: 290px;
+        margin-right: 15px;
+    }
+
+    div.wrap-trails_add div.trail_add-center div.filter_trails div.filter form div.name input {
+        margin-left: 0;
+    }
+
+    div.wrap-trails_add div.title-trail_add {
+        width: 100vw;
+        left: -9vw;
+    }
+
+}
+
+@media only screen and (max-width: 1152px) {
+    div.wrap-trails_add div.trail_add-center {
+        justify-content: space-around;
+    }
+
+    div.wrap-trails_add div.trail_add-center div.filter_trails {
+        width: 19vw;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    div.point_add {
+        width: 250px;
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    div.opacity {
+        transform: translateY(-40px) translateX(50px);
+    }
+
+    div.wrap-trails_add div.trail_add-center div.filter_trails {
+        display: none;
+    }
+
+    div.wrap-trails_add div.trail_add-center div.przyklad {
+        width: 95vw;
+        margin-left: 0;
+        justify-content: space-around;
+    }
+
+    div.point_add {
+        width: 290px;
+    }
+
+    p#add {
+        left: 30vw;
+    }
+
+    div#hamburger-create-trail {
+        display: block;
+        transform: translateX(-30px);
+        font-size: 27px;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    div.point_add {
+        width: 260px;
+    }
+}
+
+@media only screen and (max-width: 693px) {
+    div.point_add {
+        width: 290px;
+    }
+
+    div.opacity {
+        transform: translateY(-30px) translateX(95px);
+    }
+
+    p#add {
+        left: 20vw;
+    }
+}
+
+@media only screen and (max-width: 555px) {
+    div.opacity {
+        transform: translateY(-30px) translateX(145px);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    p#add {
+        font-size: 20px;
+        left: 23vw;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    div#hamburger-create-trail {
+        transform: translateX(-10px);
     }
 }
