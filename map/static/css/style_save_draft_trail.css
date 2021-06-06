@@ -58,9 +58,38 @@ div#save_draft_trail form div#submit_trail input[type='submit']{
     background-color: #008d00;
     color: white;
     letter-spacing: 1.4px;
-    border:none;
+    border: none;
     font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: 15px;
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 1680px) {
+    div#save_draft_trail {
+        height: 600px;
+    }
+}
+
+@media only screen and (max-width: 1206px) {
+    div#save_draft_trail {
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    div#save_draft_trail {
+        width: 350px;
+        height: 530px;
+    }
+    div#save_draft_trail h3{
+        font-size: 22px;
+        margin:10px 0;
+    }
+    div#save_draft_trail form div label{
+        font-size: 15px;
+    }
+    div#save_draft_trail form div#submit_trail{
+        margin-top: 20px;
+    }
 }
