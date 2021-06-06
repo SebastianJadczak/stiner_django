@@ -45,12 +45,30 @@ div.wrap-trails_add div.trail_add-center{
 /*Sekcja filtrów tras*/
 
 div.wrap-trails_add div.trail_add-center div.filter_trails {
-     width: 15vw;
+    width: 15vw;
     min-height: 70vh;
     /*transform: translateY(-50px);*/
 }
 
-div.wrap-trails_add div.trail_add-center div.filter_trails h3{
+div.wrap-trails_add div.trail_add-center div.filter_trails.rwd {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 250px
+}
+
+div#x_hamburger_create-trail {
+    display: none;
+    width: 50px;
+    height: 50px;
+    font-size: 19px;
+    position: absolute;
+    top: 65px;
+    left: 235px;
+}
+
+div.wrap-trails_add div.trail_add-center div.filter_trails h3 {
     color: #646464;
     letter-spacing: 1.7px;
     font-size: 20px;
@@ -58,7 +76,7 @@ div.wrap-trails_add div.trail_add-center div.filter_trails h3{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-div.wrap-trails_add div.trail_add-center div.filter_trails div.filter{
+div.wrap-trails_add div.trail_add-center div.filter_trails div.filter {
     background-color: #fff;
     font-family: "Roboto", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
     border: 0.5px solid #868686;
@@ -166,6 +184,11 @@ div.wrap-trails_add div.trail_add-center div.przyklad {
         width: 170px;
         margin-left: 10px;
         padding-left: 15px;
+    }
+
+    div.wrap-trails_add div.title-trail_add {
+        width: 100vw;
+        left: -9vw;
     }
 
     div.wrap-trails_add div.trail_add-center div.przyklad {
@@ -287,8 +310,9 @@ div.wrap-trails_add div.trail_add-center div.przyklad {
         left: 23vw;
     }
 }
-    @media only screen and (max-width: 390px){
-div#hamburger-create-trail{
-    transform: translateX(-10px);
-}
+
+@media only screen and (max-width: 390px) {
+    div#hamburger-create-trail {
+        transform: translateX(-10px);
     }
+}
