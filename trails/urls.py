@@ -22,5 +22,6 @@ urlpatterns = [
     path('point_done/<int:pk>', views.PointDetailView.point_done, name="point_done"),
     path('trail_done/<int:pk>', views.TrailDetailView.trail_done, name="trail_done"),
     path('trail_heart/<int:pk>', views.TrailDetailView.trail_heart, name="trail_heart"),
+    path('trail_detail/<int:pk>/audioCount/', views.TrailDetailView.audioCount, name='audioCount')
 ]
 

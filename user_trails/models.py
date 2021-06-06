@@ -45,6 +45,8 @@ class UserTrail(models.Model):
     average_grade = models.DecimalField(max_digits=2, decimal_places=1, default=5.0)
     watched = models.IntegerField(blank=True, default=False)
     popular = models.BooleanField(default=False)
+    auditions = models.IntegerField(default=0)
+    downloads = models.IntegerField(default=0)
     done = models.ManyToManyField(User, blank=True, related_name='done_your_trail')
     heart = models.ManyToManyField(User, blank=True, related_name='heart_your_trail')
     points = models.ManyToManyField(Point)

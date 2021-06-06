@@ -128,8 +128,8 @@
                 <div class="icons">
                     <p id="done"><i class="fas fa-eye"></i> <span>{{ trail.done.all.count }} x wykonano</span>|</p>
                     <p id="heart"><i class="fas fa-heart"></i><span>{{ trail.heart.all.count }} x W ulubionych</span>|</p>
-                    <p id="downloads"><i class="fas fa-file-download"></i><span>{{ trail.downloads|length }} x pobrań</span>|</p>
-                    <p id="sound"><i class="fas fa-volume-up"></i><span>{{ trail.sound|length }} x odsłuchań</span>|</p>
+                    <p id="downloads"><i class="fas fa-file-download"></i><span>{{ trail.downloads }} x pobrań</span>|</p>
+                    <p id="sound"><i class="fas fa-volume-up"></i><span>{{ trail.auditions }} x odsłuchań</span>|</p>
                 </div>
             </div>
             <div class="more-trail">
@@ -297,6 +297,29 @@
 ></script>
 
 <script>
+    function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+let add = document.getElementById('add')
+let len_trail = document.getElementById('len_trail')
+function addAudioCount(){
+    $.post({
+            url: "audioCount/",
+            headers: {
+                'csrfmiddlewaretoken': csrftoken
+            }
+        })
+
+}
     let login_rwd = document.getElementById('login_rwd')
     let menuDetail = document.getElementById('menu-detail-trail')
     let login_mapa_menu = document.querySelector('.login_mapa')
@@ -305,6 +328,7 @@
     {#Audio#}
      function openAudioTrail(){
         audioTrail.style.display = 'block'
+         addAudioCount()
     }
     if(closeAudioTrail){
         closeAudioTrail.addEventListener('click',function (){

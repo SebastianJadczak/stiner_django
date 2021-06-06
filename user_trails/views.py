@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.template.loader import get_template
@@ -55,9 +55,11 @@ def link_callback(uri, rel):
 def trail_render_pdf_view(request, pk):
     template_path = 'trailsPDF.html'
     trail = UserTrail.objects.filter(id=pk).first()
+    trail.downloads += 1
+    trail.save()
     points = list(list(UserTrail.objects.filter(id=pk))[0].points.all())
-    last_point =points[(len(points) - 1)]
-    context = {'trail': trail, 'points':points, 'first_point':points[0],'last_point': last_point}
+    last_point = points[(len(points) - 1)]
+    context = {'trail': trail, 'points': points, 'first_point': points[0], 'last_point': last_point}
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename="trail.pdf"'
     template = get_template(template_path)
@@ -276,6 +278,8 @@ class SaveDraftTrailUser(UserTrailFormAdd):
                 userTrail.country = self.set_country()
                 userTrail.image = self.check_image(request)
                 userTrail.region = self.set_region()
+                userTrail.downloads = 0
+                userTrail.auditions = 0
                 userTrail.save()
                 userTrail.points.set(table)
             self.clear_board_user()
@@ -290,6 +294,12 @@ class UserTrailDetail(DetailView):
 
     template_name = 'trails/user_trails/user_trail_detail.html'
     model = UserTrail
+
+    def audioCount(request, pk):
+        trail = get_object_or_404(UserTrail, id=pk)
+        trail.auditions += 1
+        trail.save()
+        return HttpResponseRedirect(reverse('user_trails:user_trail_detail', args=[str(pk)]))
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
