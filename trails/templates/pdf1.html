@@ -41,7 +41,7 @@
             font-size: 17px;
             font-weight: bold;
             margin-bottom: 0;
-            padding-left: 70px;
+            padding-left: 85px;
         }
 
         div.image-point {
@@ -54,7 +54,7 @@
         }
 
         div.description-point {
-            padding: 20px 130px 20px 50px;
+            padding: 20px 130px 20px 85px;
         }
 
         div.description-point p {
@@ -62,9 +62,13 @@
             letter-spacing: 1.2px;
             margin: 0;
         }
+        p#source{
+            font-size: 13px;
+            padding-left: 85px;
+        }
 
         div.basic-info {
-            margin: 20px 0 20px 70px;
+            margin: 20px 0 20px 85px;
 
         }
 
@@ -90,6 +94,9 @@
 <div class="name-point">
     <h3>{{ point.name }}</h3>
 </div>
+<div class="image-point">
+    <img src="media/{{ point.image }}">
+</div>
 <div class="basic-info">
         <div>
             <p id="type"><span>Typ punktu: </span>{{ point.type }}</p>
@@ -110,10 +117,9 @@
 </div>
 <div class="description-point">
     <p>{{ point.descriptions }}</p>
+    <p id="source">Źródło: {{ point.source }}</p>
 </div>
-<div class="image-point">
-    <img src="media/{{ point.image }}">
-</div>
+
 
 </body>
 </html>

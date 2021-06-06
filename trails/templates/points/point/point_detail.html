@@ -122,7 +122,7 @@
             </ul>
         </div>
         {% else %}
-        <button><a href="{% url 'login' %}">Zaloguj się</a></button>
+        <button class="log"><a href="{% url 'login' %}">Zaloguj się</a></button>
         <button class="register"><a href="{% url 'register' %}">Załóż konto</a></button>
         {% endif %}
     </div>
@@ -186,7 +186,7 @@
                         <i class="fas fa-user-friends"></i> <p><span>Dla kogo: </span><i>{{ point.for_whom }}</i></p>
                     </div>
                     <div id="city">
-                        <i class="fas fa-city"></i> <p><span>Miasto: </span><i>{{ point.city }}</i></p>
+                        <i class="fas fa-city"></i> <p><span>Miasto: </span><i>{{ point.location }}</i></p>
                     </div>
                 </div>
                 <div class="right">

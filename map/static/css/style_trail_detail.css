@@ -520,9 +520,18 @@ div.top_form p#yours_stars-trail {
     }
 }
 
-@media only screen and (max-width: 1150px) {
-    div.center div#trail-left div#basic-info {
-        height: 360px;
+@media only screen and (max-width: 1012px) {
+div.center div#trail-right{
+    width: 330px;
+}
+    div.center div#trail-right div.trail{
+        width:330px
+    }
+    div#trail-right div.trail div.more{
+        width: 200px;
+    }
+    div.center div#trail-right div.trail div.trail-image{
+        margin-right: 5px;
     }
 }
 
@@ -537,6 +546,11 @@ div.top_form p#yours_stars-trail {
 
     div.opinion-trail {
         width: 90%;
+    }
+}
+@media only screen and (max-width: 935px) {
+    div.center div#trail-left div#basic-info{
+        width: 95%;
     }
 }
 

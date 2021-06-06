@@ -54,6 +54,13 @@ class Point(models.Model):
         ('Morze','Morze'),
         ('Nizinny', 'Nizinny')
     )
+    FOR_WHOM = (
+        ('Dla wszystkich', 'Dla wszystkich'),
+        ('Dla dzieci', 'Dla dzieci'),
+        ('Dla dorosłych', 'Dla dorosłych'),
+        ('Dla sportowców', 'Dla sportowców'),
+        ('Dla wymagających', 'Dla wymagających')
+    )
 
     name = models.CharField(max_length=30)
     descriptions = models.TextField()
@@ -71,6 +78,7 @@ class Point(models.Model):
     heart = models.ManyToManyField(User, blank=True, related_name='heart_point')
     downloads = models.ManyToManyField(User, blank=True, related_name='downloads_point')
     sound = models.FileField(upload_to='media/musics/points', blank=True)
+    for_whom = models.CharField(max_length=25, choices=FOR_WHOM, default='Dla wszystkich')
     average_grade = models.DecimalField(max_digits=2, decimal_places=1)
     gallery = models.ManyToManyField(Galery)
     source = models.CharField(max_length=100)

@@ -22,6 +22,7 @@ div.content_post {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding-bottom: 20px;
 }
 
 div.content_post div.left {
@@ -79,7 +80,7 @@ div.body_post p{
     line-height: 22px;
 }
 div.image_post{
-    width:90%;
+    width:100%;
     min-height:250px;
     display: flex;
     flex-direction: row;

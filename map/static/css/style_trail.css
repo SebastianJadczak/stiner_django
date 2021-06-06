@@ -273,6 +273,7 @@ div.user_trail_draft div#save_trail button {
 }
 div.user_trail_draft div#fail_save_trail {
     margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
 }

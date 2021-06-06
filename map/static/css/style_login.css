@@ -97,12 +97,13 @@ div.login div.login_image {
         text-align: center;
         font-family: Arial, sans-serif;
         font-weight: bold;
-        font-size: 19px;
+        font-size: 15px;
         letter-spacing: 1.3px;
     }
 
     div.login div.login_form form button {
         margin-left: 150px;
+        margin-top: 10px;
     }
 
     div.login div.login_image {
@@ -118,14 +119,23 @@ div.login div.login_image {
 @media only screen and (max-width: 510px) {
     div.login div.login_form {
         width: 400px;
-        height: 300px;
-                left: calc(50vw - 240px);
+        height: 310px;
+        left: calc(50vw - 240px);
     }
 
     div.login div.login_form form p {
-        font-size: 15px;
+        font-size: 13px;
     }
-
+    div.login div.login_form form input{
+        width:200px;
+    }
+    div.login div.login_form form p#reset{
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+div.login div.login_form form p#reset a{
+    font-size: 13px;
+}
     div.login div.login_image {
         width: 100vw;
         height: 100vh;
@@ -140,14 +150,16 @@ div.login div.login_image {
         font-size: 20px;
     }
     div.login div.login_form form p {
-        margin: 10px;
+        margin: 5px 0 5px;
     }
     div.login div.login_form form p:nth-of-type(1){
         margin-top: 20px;
     }
     div.login div.login_form form button{
-        width:160px;
+        width:150px;
         margin: 5px 0 0 120px;
+        font-size: 16px;
+        height: 35px;
     }
 }
 @media only screen and (max-width: 410px) {
@@ -155,10 +167,10 @@ div.login div.login_form form input{
     width:150px;
 }
      div.login div.login_form {
-        width: 350px;
-        height: 300px;
+         width: 350px;
+         height: 310px;
          left: calc(50vw - 215px);
-    }
+     }
       div.login div.login_form form button {
         margin: 0 0 0 100px;
     }

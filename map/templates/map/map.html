@@ -128,7 +128,7 @@
             </ul>
         </div>
         {% else %}
-        <button><a href="{% url 'login' %}">Zaloguj się</a></button>
+        <button class="log"><a href="{% url 'login' %}">Zaloguj się</a></button>
         <button class="register"><a href="{% url 'register' %}">Załóż konto</a></button>
         {% endif %}
     </div>
@@ -153,16 +153,26 @@
     </section>
 </div>
 <div id="filter">
-    <div id="search-filter"><i class="fas fa-search"></i><p>Wyszukaj</p></div>
+    <div id="x_hamburger_map"><i class="fas fa-times"></i></div>
+    <div id="search-filter"><i class="fas fa-search"></i>
+        <p>Wyszukaj</p></div>
     <div class="icons">
-        <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki"><p>Zamki</p></div>
-        <div class="church_mapa"><input type="checkbox" class="monuments" id="Kościoły"><p>Kościoły</p></div>
-        <div class="tree_mapa"><input type="checkbox" class="monuments" id="Parki"><p>Parki</p></div>
-        <div class="monument_mapa"><input type="checkbox" class="monuments" id="Muzea"><p>Muzea</p></div>
-        <div class="culture_mapa"><input type="checkbox" class="monuments" id="Budowle"><p>Budowle</p></div>
-        <div class="hotel_mapa"><input type="checkbox" class="monuments" id="Hotele"><p>Hotele</p></div>
-        <div class="ogrody_mapa"><input type="checkbox" class="monuments" id="Ogrody"><p>Ogrody</p></div>
-        <div class="memorial_mapa"><input type="checkbox" class="monuments" id="Pomniki"><p>Pomniki</p></div>
+        <div class="castle_mapa"><input type="checkbox" class="monuments" id="Zamki">
+            <p>Zamki</p></div>
+        <div class="church_mapa"><input type="checkbox" class="monuments" id="Kościoły">
+            <p>Kościoły</p></div>
+        <div class="tree_mapa"><input type="checkbox" class="monuments" id="Parki">
+            <p>Parki</p></div>
+        <div class="monument_mapa"><input type="checkbox" class="monuments" id="Muzea">
+            <p>Muzea</p></div>
+        <div class="culture_mapa"><input type="checkbox" class="monuments" id="Budowle">
+            <p>Budowle</p></div>
+        <div class="hotel_mapa"><input type="checkbox" class="monuments" id="Hotele">
+            <p>Hotele</p></div>
+        <div class="ogrody_mapa"><input type="checkbox" class="monuments" id="Ogrody">
+            <p>Ogrody</p></div>
+        <div class="memorial_mapa"><input type="checkbox" class="monuments" id="Pomniki">
+            <p>Pomniki</p></div>
 
         <div class="memorial_mapa"><input type="checkbox" class="monuments" id="Rynki"><p>Rynki</p></div>
         <div class="memorial_mapa"><input type="checkbox" class="monuments" id="Mosty"><p>Mosty</p></div>
@@ -200,10 +210,19 @@
 <script>
     let hamburger_filter = document.getElementById('hamburger-filter')
     let filter = document.getElementById('filter')
-    if (hamburger_filter){
-        hamburger_filter.addEventListener('click', function (){
+    let x_hamburger_map = document.getElementById('x_hamburger_map')
+    if (hamburger_filter) {
+        hamburger_filter.addEventListener('click', function () {
             filter.style.display = 'block'
             hamburger_filter.style.display = 'none'
+            x_hamburger_map.style.display = 'block'
+        })
+    }
+    if (x_hamburger_map) {
+        x_hamburger_map.addEventListener('click', function () {
+            filter.style.display = 'none'
+            hamburger_filter.style.display = 'block'
+            x_hamburger_map.style.display = 'none'
         })
     }
 </script>
