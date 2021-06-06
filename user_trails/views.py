@@ -264,7 +264,6 @@ class SaveDraftTrailUser(UserTrailFormAdd):
         else:
             return points[0]
 
-
     def post(self, request):
         form = UserTrailCreateForm(request.POST, request.FILES)
         if form.is_valid():
@@ -294,6 +293,11 @@ class UserTrailDetail(DetailView):
 
     template_name = 'trails/user_trails/user_trail_detail.html'
     model = UserTrail
+    def get_top_rate_trails(self):
+        top_rate_trails = Trail.objects.order_by('average_grade').reverse()
+        if len(top_rate_trails) >=10:
+            top_rate_trails = top_rate_trails[0:10]
+        return top_rate_trails
 
     def audioCount(request, pk):
         trail = get_object_or_404(UserTrail, id=pk)
@@ -305,6 +309,7 @@ class UserTrailDetail(DetailView):
         context = super().get_context_data(**kwargs)
         context['user_trail'] = list(UserTrail.objects.filter(id=self.kwargs['pk']))[0]
         context['points'] = list(list(UserTrail.objects.filter(id=self.kwargs['pk']))[0].points.all())
+        context['top_rate_trails'] = self.get_top_rate_trails()
         context['user_trail_id'] = self.kwargs['pk']
         return context
 

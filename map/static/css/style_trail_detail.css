@@ -77,7 +77,7 @@ div.center div#trail-right {
 /*Top rate trail in right column.*/
 div.center div#trail-right div.trail {
     width: 400px;
-    height: 100px;
+    height: 105px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
@@ -578,7 +578,9 @@ div.top_form p#yours_stars-trail {
     div#points_in_trail ul li {
         flex-direction: column-reverse;
     }
-
+    div.panorama_mapa div#file-trail{
+        margin-top: 80px;
+    }
     div.point_in_trail {
         width: 100%;
     }

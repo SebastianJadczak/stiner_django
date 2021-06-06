@@ -12,8 +12,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
@@ -27,6 +25,9 @@
     <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Chau+Philomene+One:ital@1&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link rel="stylesheet" href="{% static 'css/style_map.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_point.css' %}">
@@ -227,20 +228,38 @@
                                </div>
                                {% csrf_token %}
                            </form>
-                       {%else%}
-                            <p>Aby dodać opinię, proszę się zalogować.</p>
+                       {% else %}
+                           <p>Aby dodać opinię, proszę się zalogować.</p>
                        {% endif %}
         </div>
     </div>
     <div id="trail-right">
-
+        <h4>Najwyżej ocenione Trasy</h4>
+        {% for trail in top_rate_trails %}
+            <div class="trail">
+                <div class="trail-image">
+                    <img src="{{ trail.image.url }}" alt="">
+                </div>
+                <div class="trail-description">
+                    <p id="trail-name">{{ trail.name }}</p>
+                    <div class="more">
+                        <p id="rate"><span>Ocena: </span>{{ trail.average_grade }}</p>
+                        <p id="done"><span>Zwiedziło: </span>{{ trail.done_count }}</p>
+                    </div>
+                    <div class="more-button">
+                        <button><a href="{% url 'trails:trail_detail' trail.id %}">Więcej</a></button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
     <div id="social-right">
-        <div id="fb"><a href="https://www.facebook.com/Stiner-100928478828163"><i class="fab fa-facebook-square"></i></a></div>
+        <div id="fb"><a href="https://www.facebook.com/Stiner-100928478828163"><i
+                class="fab fa-facebook-square"></i></a></div>
         <div id="li"><a href="https://www.linkedin.com/company/stiner/"><i class="fab fa-linkedin"></i></a></div>
         <div id="youtube"><i class="fab fa-youtube"></i></div>
     </div>
- <div id="audioTrail">
+    <div id="audioTrail">
         <div class="audioTrail">
             <h3>{{ user_trail.name }} <span id="closeAudioTrail"><i class="fas fa-times"></i></span></h3>
             {% for p in points %}
@@ -269,7 +288,11 @@
 <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
 <script src="{% static 'js/sound.js' %}"></script>
 <script>
-
+    let menuDetail = document.getElementById('menu-detail-trail')
+    //Top Menu
+    function menuDetailTrail() {
+        menuDetail.classList.toggle('active')
+    }
 <!--"Mapa"-->
 let menu = document.querySelector("button.user_menu");
 let icon = document.querySelector("i.fa-angle-down");
